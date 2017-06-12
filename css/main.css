@@ -1,17 +1,11 @@
+/* general */
+
 body {
 	margin: 0px;
 }
 
-#banner h1 {
-	margin: 0px;
-	padding: 0.67em;
-	padding-bottom: 0px;
-}
 
-#banner h3 {
-	margin: 0px;
-	padding: 1em;
-}
+/* header */
 
 #header {
 	text-align: center;
@@ -22,6 +16,41 @@ body {
 	color: #ffffff;
 }
 
+#banner h1 {
+	margin: 0px;
+	padding: 0.67em;
+	padding-bottom: 0px;
+}
+
+.cursor {
+	-webkit-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 #tagcloud {
 	background-color: #202020;
 }
@@ -30,6 +59,9 @@ body {
 	width: 70%;
 	height: 100px;
 }
+
+
+/* body */
 
 #body {
 	width: 70%;
@@ -47,6 +79,9 @@ body {
 .article h2 {
 	margin-top: 0px;
 }
+
+
+/* footer */
 
 #footer {
 	background-color: #111111;

@@ -7,7 +7,7 @@ var line = Math.floor(Math.random() * lines.length);
 
 function cli_write() {
 
-	document.getElementById("subtitle").innerHTML = "- " + lines[line].substr(0, character) + " -";
+	document.getElementById("subtitle").innerHTML = "- " + lines[line].substr(0, character);
 
 	if (up == true) {
 		character += 1;
@@ -25,6 +25,6 @@ function cli_write() {
 			line = Math.floor(Math.random() * lines.length);
 		}
 	}
-	setTimeout(cli_write, 100);
 
+	setTimeout(cli_write, 100);
 }

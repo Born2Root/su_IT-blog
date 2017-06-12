@@ -4,8 +4,37 @@
 <head>
     <title>test</title>
     <style>
-        h3 {
+        div {
             text-align: center;
+        }
+
+        .cursor {
+            -webkit-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 
@@ -13,17 +42,23 @@
 
 <body>
 
-    <h3 id="subtitle">- we sudo everything -</h3>
+    <div>
+        <span id="subtitle">- we sudo everything</span>
+        <span class="cursor">|</span> -
+    </div>
 
     <script>
         setTimeout(cli_write, 1);
+
         var character = 0;
         var up = true;
         var lines = new Array("hallo wie gehts", "test", "lululu");
         var line = Math.floor(Math.random() * lines.length);
 
         function cli_write() {
-            document.getElementById("subtitle").innerHTML = "- " + lines[line].substr(0, character) + " -";
+
+            document.getElementById("subtitle").innerHTML = "- " + lines[line].substr(0, character);
+
             if (up == true) {
                 character += 1;
             } else {
@@ -40,6 +75,7 @@
                     line = Math.floor(Math.random() * lines.length);
                 }
             }
+
             setTimeout(cli_write, 100);
         }
     </script>
