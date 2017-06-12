@@ -4,7 +4,7 @@
 <head>
     <title>test</title>
     <style>
-        div {
+        h3 {
             text-align: center;
         }
     </style>
@@ -13,32 +13,34 @@
 
 <body>
 
-    <div id="test">- we sudo everything -</div>
+    <h3 id="subtitle">- we sudo everything -</h3>
 
     <script>
-        setTimeout(myFunction, 100);
-        var i = 0;
-        var t = 0;
-        var hoch = true;
-        var text = new Array("hallo wie gehts, ich hoffe der test klappt", "test", "lululu");
+        setTimeout(cli_write, 1);
+        var character = 0;
+        var up = true;
+        var lines = new Array("hallo wie gehts", "test", "lululu");
+        var line = Math.floor(Math.random() * lines.length);
 
-        function myFunction() {
-            document.getElementById("test").innerHTML = "- " + text[t].substr(0, i) + " -";
-            if (hoch == true) {
-                i += 1;
+        function cli_write() {
+            document.getElementById("subtitle").innerHTML = "- " + lines[line].substr(0, character) + " -";
+            if (up == true) {
+                character += 1;
             } else {
-                i -= 1;
+                character -= 1;
             }
-            if (i == text[t].length + 5) {
-                hoch = !hoch;
-            } else if (i == -3) {
-                hoch = !hoch;
-                t += 1;
-                if (t == text.length) {
-                    t = 0;
+
+            if (character == lines[line].length + 5) {
+                up = !up;
+            } else if (character == -3) {
+                up = !up;
+
+                var old_line = line;
+                while (line == old_line) {
+                    line = Math.floor(Math.random() * lines.length);
                 }
             }
-            setTimeout(myFunction, 100);
+            setTimeout(cli_write, 100);
         }
     </script>
 </body>

@@ -2,13 +2,13 @@ body {
 	margin: 0px;
 }
 
-h1 {
+#banner h1 {
 	margin: 0px;
 	padding: 0.67em;
 	padding-bottom: 0px;
 }
 
-h3 {
+#banner h3 {
 	margin: 0px;
 	padding: 1em;
 }
@@ -27,14 +27,25 @@ h3 {
 }
 
 #tagcloud canvas {
-	width: 75%;
+	width: 70%;
 	height: 100px;
 }
 
 #body {
-	width: 75%;
+	width: 70%;
+	margin: 10px auto;
+	background-color: grey;
+	padding: 10px;
+}
+
+.article {
 	background-color: #367b44;
-	margin: 20px auto 10px;
+	margin: 10px;
+	padding: 20px;
+}
+
+.article h2 {
+	margin-top: 0px;
 }
 
 #footer {
