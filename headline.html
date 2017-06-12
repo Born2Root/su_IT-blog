@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="test">- we sudo everything -</div>
+
+    <script>
+        setTimeout(myFunction, 100);
+        var i = 0;
+        var t = 0;
+        var hoch = true;
+        var text = new Array("hallo wie gehts, ich hoffe der test klappt", "test", "lululu");
+
+        function myFunction() {
+            document.getElementById("test").innerHTML = "- " + text[t].substr(0, i) + " -";
+            if (hoch == true) {
+                i += 1;
+            } else {
+                i -= 1;
+            }
+            if (i == text[t].length + 5) {
+                hoch = !hoch;
+            } else if (i == -3) {
+                hoch = !hoch;
+                t += 1;
+                if (t == text.length) {
+                    t = 0;
+                }
+            }
+            setTimeout(myFunction, 100);
+        }
+    </script>
+</body>
+
+</html>
