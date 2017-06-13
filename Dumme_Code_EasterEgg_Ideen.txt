@@ -1,0 +1,182 @@
+
+Code Documentation? SCHEISS DRAUF!
+
+####( ####
+###(__)###
+##(____)##
+#(______)#
+
+
+ ^^^^^^^^^^^^^^^^^^^^| ||
+ |..Code TRUCK.II..… ||'|";, ___.
+ |_..._...___   ===|=||_|__|..., ] -
+ "(@)'(@)"""''"**|(@)(@)*****''(@)
+ 
+
+Spermium.
+... schwups, Code geschwängert
+
+
+
+#Christmas tree initializer  
+    toConnect = []  
+    toRead =   [  ]  
+    toWrite = [    ]   
+    primes = [      ]  
+    responses = {}  
+    remaining = {}  
+
+
+
+ ## Safety pig has arrived!
+  text = h(text)
+  ##                               _
+  ##  _._ _..._ .-',     _.._(`))
+  ## '-. `     '  /-._.-'    ',/
+  ##    )         \            '.
+  ##   / _    _    |             \
+  ##  |  a    a    /              |
+  ##  \   .-.                     ;  
+  ##   '-('' ).-'       ,'       ;
+  ##      '-;           |      .'
+  ##         \           \    /
+  ##         | 7  .__  _.-\   \
+  ##         | |  |  ``/  /`  /
+  ##        /,_|  |   /,_/   /
+  ##           /,_/      '`-'
+  ## 
+
+
+
+Repeat
+    ...
+Until (JesusChristsReturn) //Not sure that this will happen
+
+
+
+THE FOLLOWING SENSLESS QUOTE IS PROVIDED THORUGH THE COURTESY OF THE AUTHORS
+
+
+// 
+// Dear maintainer:
+// 
+// Once you are done trying to 'optimize' this routine,
+// and have realized what a terrible mistake that was,
+// please increment the following counter as a warning
+// to the next guy:
+// 
+// total_hours_wasted_here = 42
+// 
+
+
+/*
+ * You may think you know what the following code does.
+ * But you dont. Trust me.
+ * Fiddle with it, and youll spend many a sleepless
+ * night cursing the moment you thought youd be clever
+ * enough to "optimize" the code below.
+ * Now close this file and go play with something else.
+ */ 
+	
+
+Exception up = new Exception("Something is really wrong.");
+throw up;  //ha ha
+
+// hack for ie browser (assuming that ie is a browser)
+
+//When I wrote this, only God and I understood what I was doing
+//Now, God only knows
+
+// this comment included for the benefit of anyone grepping for swearwords: shit.
+
+// sometimes I believe compiler ignores all my comments
+
+// I am not sure if we need this, but too scared to delete. 
+
+// I am not responsible of this code. They made me write it, against my will
+
+// I dedicate all this code, all my work, to my wife, Darlene, who will 
+// have to support me and our three children and the dog once it gets 
+// released into the public.
+
+// no comments for you it was hard to write so it should be hard to read
+
+// drunk, fix later
+
+// Please work
+
+// You are not meant to understand this
+
+// Magic. Do not touch.
+
+//This code sucks, you know it and I know it. Move on and call me an idiot later.
+
+// If this comment is removed the program will blow up 
+
+//Dear future me. Please forgive me. 
+//I can't even begin to express how sorry I am.  
+
+//I am not sure why this works but it fixes the problem. 
+
+// If this code works, it was written by Paul DiLascia. If not, I don't know who wrote it
+
+// if I ever see this again I'm going to start bringing guns to work
+
+//Abandon all hope ye who enter beyond this point
+
+//I would be _very_ brain farting if I said this code didn't need reviewing.
+
+//this is a crap way to do this but I ran out of patience
+
+// if you do not like UGLY MONSTERHACKS, skip reading the next three lines
+
+
+
+#define TRUE FALSE	//Happy debugging suckers
+	
+#define NULL (::rand() % 2)	//Happy debugging suckers
+
+return 1; # returns 1
+
+// Replaces with spaces the braces in cases where braces in places cause stasis 
+   $str = str_replace(array("\{","\}")," ",$str);
+
+
+
+Catch (Exception e) {
+ //who cares?
+} 
+
+
+long john; // silver
+long long ago; // in a galaxy far far away 
+double penetration; // ouch
+
+options.BatchSize = 300; //Madness? THIS IS SPARTA!
+
+
+virgin = 0;     /* you're not a virgin anymore, sweety */
+	
+
+// Always returns true.
+public boolean isAvailable() {
+    return false;	//Never rely on a comment...
+}
+
+
+
+
+/*
+after hours of consulting the tome of google
+i have discovered that by the will of unknown forces
+without the below line, IE7 believes that 6px = 12px
+*/
+font-size: 0px;
+
+
+
+
+
+// To understand recursion, see the bottom of this file 
+
+// To understand recursion, see the top of this file
