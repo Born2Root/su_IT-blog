@@ -48,12 +48,30 @@
     </div>
 
     <script>
-        setTimeout(cli_write, 1);
+        //ajax
+        var lines = "";
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                var response = this.responseText.split("\n");
+                lines = new Array(response);
+                lines = lines[0];
+            }
+        };
+        xhttp.open("GET", "lines.txt", true);
+        xhttp.send();
+
+
+        //cli write
+
+        setTimeout(cli_write, 100);
 
         var character = 0;
         var up = true;
-        var lines = new Array("hallo wie gehts", "test", "lululu");
         var line = Math.floor(Math.random() * lines.length);
+
 
         function cli_write() {
 
@@ -79,6 +97,7 @@
             setTimeout(cli_write, 100);
         }
     </script>
+
 </body>
 
 </html>
