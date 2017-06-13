@@ -109,3 +109,7 @@ body {
 	text-align: center;
 	height: 75px;
 }
+
+.fix-cloud & {
+	display: none;
+}
