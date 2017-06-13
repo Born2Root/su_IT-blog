@@ -55,6 +55,12 @@ body {
 	background-color: #202020;
 }
 
+.fix-cloud {
+	position: fixed;
+	width: 100%;
+	top: 0px;
+}
+
 #tagcloud canvas {
 	width: 70%;
 	height: 100px;
@@ -108,8 +114,4 @@ body {
 	color: #ffffff;
 	text-align: center;
 	height: 75px;
-}
-
-.fix-cloud & {
-	display: none;
 }
