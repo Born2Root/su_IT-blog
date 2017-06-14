@@ -1,4 +1,4 @@
-document.getElementsByTagName("body")[0].onscroll = function () {
+window.onscroll = function () {
 
 	var tagcloud = document.getElementById("tagcloud");
 	var body = document.getElementById("body");
