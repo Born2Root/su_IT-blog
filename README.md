@@ -10,7 +10,7 @@ The idea is to create a place where we can put the things we made.
 And maybe someone gets inspired or reuses our ideas :)
 
 # what we are using:
-- html5
+- HTML5
 - JavaScript
 - "ajax"
 - CSS3
