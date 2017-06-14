@@ -138,8 +138,6 @@ Maybe some Heroin would help to understand what I've coded here
     responses = {}  
     remaining = {}  
 
-
-
  ## Safety pig has arrived!
   text = h(text)
   ##                               _
@@ -178,7 +176,6 @@ Until (JesusChristsReturn) //Not sure that this will happen
 
 
 THE FOLLOWING SENSLESS QUOTE IS PROVIDED THORUGH THE COURTESY OF THE AUTHORS
-
 
 // 
 // Dear maintainer:
