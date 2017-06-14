@@ -10,3 +10,8 @@ In the first place our goal is not to get "followers" or fame or entertain peopl
 - JavaScript
 - "ajax"
 - CSS5
+
+# timeline
+
+date of idea: 21.05.2017
+first commit: 12.06.2017
