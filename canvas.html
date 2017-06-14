@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Canvas Examples</title>
+
+<style>
+canvas{
+	border: 3px #cccccc solid;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+	<canvas id="myCanvas" height="100"  width="800"></canvas>
+</div>
+
+<hr/>
+
+<div id="container1">
+	<canvas id="yourCanvas" height="400"  width="400"></canvas>
+</div>
+
+<script>
+	var ctx = document.getElementById("myCanvas").getContext("2d");
+	
+	var text1 = "Linux";
+	var text2 = "Memes";
+	var text3 = "Pictures";
+	var text4 = "Blender";
+	var text5 = "Websites";
+	var text6 = "Programs";
+	var text7 = "Tutorials";
+	var text8 = "Projects";
+	var text9 = "Scripts";
+	
+	
+	ctx.fillStyle = "#000000";
+	ctx.font = "20px Georgia";
+			// x, y
+	ctx.fillText(text1, 10, 50);
+	ctx.fillText(text2, 75, 20);
+	ctx.fillText(text3, 250, 40);
+	ctx.fillText(text4, 150, 60);
+	ctx.fillText(text5, 230, 80);
+	ctx.fillText(text6, 450, 95);
+	ctx.fillText(text7, 360, 55);
+	ctx.fillText(text8, 700, 50);
+	ctx.fillText(text9, 550, 30);
+	
+	
+	ctx.beginPath();
+	
+	
+	ctx.moveTo(10 + ctx.measureText(text1).width, 50);
+	ctx.lineTo(75, 20);
+	
+	ctx.moveTo(75 + ctx.measureText(text2).width, 20);
+	ctx.lineTo(150, 60);
+	
+	ctx.moveTo(150 + ctx.measureText(text4).width, 60);
+	ctx.lineTo(250, 40);
+	
+	ctx.moveTo(250 + ctx.measureText(text3).width, 40);
+	ctx.lineTo(230 + ctx.measureText(text5).width, 60);
+	
+	ctx.lineTo(360, 55);
+	
+	ctx.moveTo(360 + ctx.measureText(text7).width, 55);
+	ctx.lineTo(450, 75);
+	
+	ctx.moveTo(450 + ctx.measureText(text6).width, 75);
+	ctx.lineTo(550, 30);
+	
+	ctx.moveTo(550 + ctx.measureText(text9).width, 30);
+	ctx.lineTo(700, 50);
+	
+	
+	ctx.stroke();
+	
+	//---------
+	
+	var canvas = document.getElementById("yourCanvas")
+	ctx = canvas.getContext("2d");
+	
+	var x = 200;
+	var y = 200;
+	var text = "Lululu";
+	
+	window.addEventListener("mousemove", move, false);
+	setInterval(drawAnimation, 1000/4);
+	
+	function drawAnimation(){
+		clearScreen();
+		drawText();
+	}
+	
+	function clearScreen(){
+		ctx.fillStyle = "#eeeeee";
+		ctx.fillRect(0, 0, 400, 400);
+	}
+	
+	function drawText(){
+		
+		ctx.fillStyle = color;
+		ctx.font = "20px Georgia";
+			// x, y
+		ctx.fillText(text, x, y);
+		
+	}
+	
+	function getMousePos(canvas, evt){
+		var rect = canvas.getBoundingClientRect();
+		return {
+			x: evt.clientX - rect.left,
+			y: evt.clientY - rect.top
+		};
+	}
+	
+	function move(e){
+		var pos = getMousePos(canvas, e);
+		if(pos.x >= x && pos.x <= x + ctx.measureText(text).width && pos.y <= y && pos.y >= y - 20){
+			color = "#ff0000";
+		}else{
+			color = "#000000";
+		}
+		drawAnimation();
+	}
+</script>
+
+</body>
+
+</html>
