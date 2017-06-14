@@ -3,7 +3,11 @@ source code for the su it --blog
 
 # what is the goal of this blog?
 
-In the first place our goal is not to get "followers" or fame or entertain people. The idea is to creat a place where we can put the things we made. And maybe someone gets inspired or reuses our idea :)
+In the first place our goal is not to get "followers" or fame or entertain people.<br>
+The idea is to create a place where we can put the things we made.
+<br>
+<br>
+And maybe someone gets inspired or reuses our ideas :)
 
 # what we are using:
 - html5
@@ -14,4 +18,5 @@ In the first place our goal is not to get "followers" or fame or entertain peopl
 # timeline
 
 date of idea: 21.05.2017
+<br>
 first commit: 12.06.2017
