@@ -1,21 +1,42 @@
 var canvas = document.getElementById("cloud_canvas");
 var context = canvas.getContext("2d");
 
-canvas.width = canvas.height * (canvas.clientWidth / canvas.clientHeight);
-
-context.font = "60px Georgia";
-
 var text = "test";
-
-context.fillStyle = "#ffffff";
-// x, y, x, y
-context.fillRect(0, 10, 10 + context.measureText(text).width, 50);
-context.fillStyle = "#000000";
-// x, y
-context.fillText(text, 5, 50);
-
+var text_height = 40;
 
 window.addEventListener("click", click, false);
+window.addEventListener('resize', resizeCanvas, false);
+
+resizeCanvas();
+
+function redraw() {
+
+	context.strokeStyle = "#367b44";
+	context.lineWidth = 5;
+	context.beginPath();
+	context.moveTo(45, 50);
+	context.lineTo(300, 90);
+	context.stroke();
+
+
+
+	context.textAlign = "center";
+	context.font = "60px Georgia";
+	context.fillStyle = "#ffffff";
+	// x, y, x, y
+	context.fillRect(0, 10, 10 + context.measureText(text).width, 50);
+	context.fillStyle = "#000000";
+	// x, y
+	context.fillText(text, 45, 50);
+
+
+
+}
+
+function resizeCanvas() {
+	canvas.width = window.innerWidth - (window.innerWidth * 0.3);
+	redraw();
+}
 
 function getMousePos(canvas, evt) {
 	var rect = canvas.getBoundingClientRect();
