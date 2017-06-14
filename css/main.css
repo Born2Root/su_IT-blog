@@ -55,10 +55,15 @@ body {
 	background-color: #202020;
 }
 
-.fix-cloud {
+.fixed-cloud {
 	position: fixed;
 	width: 100%;
 	top: 0px;
+}
+
+.fix-body {
+	margin-top: 116px !important;
+	/* adapt when banner height changes! */
 }
 
 #tagcloud canvas {
