@@ -13,7 +13,7 @@ And maybe someone gets inspired or reuses our ideas :)
 - html5
 - JavaScript
 - "ajax"
-- CSS5
+- CSS3
 
 # timeline
 
