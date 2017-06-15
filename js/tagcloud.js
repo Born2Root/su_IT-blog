@@ -1,11 +1,17 @@
 var canvas = document.getElementById("cloud_canvas");
 var context = canvas.getContext("2d");
 
-var text = "test mal schauen";
-
-var x = 0;
-var y = 0;
 var text_height = 40;
+
+var tags = new Array({
+	text: "Linux",
+	x: 100,
+	y: 50
+}, {
+	text: "Blender",
+	x: 300,
+	y: 70
+});
 
 window.addEventListener("click", click, false);
 window.addEventListener('resize', resizeCanvas, false);
@@ -19,27 +25,27 @@ function redraw() {
 
 	context.textAlign = "center";
 	context.font = "40px Georgia";
-	context.fillStyle = "#ffffff";
-
-	var text_x = 300;
-	var text_y = 70;
 
 
-	x = text_x - 5 - context.measureText(text).width / 2;
-	y = text_y - text_height + 5;
+	tags.forEach(function (entry) {
+
+		var x = entry.x - 5 - context.measureText(entry.text).width / 2;
+		var y = entry.y - text_height + 5;
+
+		context.fillStyle = "#ffffff";
+		context.beginPath();
+		context.moveTo(entry.x, entry.y);
+		context.lineTo(300, 90);
+		context.stroke();
 
 
-	context.beginPath();
-	context.moveTo(text_x, text_y);
-	context.lineTo(300, 90);
-	context.stroke();
+		// x, y, x, y
+		context.fillRect(x, y, context.measureText(entry.text).width + 10, text_height);
+		context.fillStyle = "#000000";
+		// x, y
+		context.fillText(entry.text, entry.x, entry.y);
 
-
-	// x, y, x, y
-	context.fillRect(x, y, context.measureText(text).width + 10, text_height);
-	context.fillStyle = "#000000";
-	// x, y
-	context.fillText(text, text_x, text_y);
+	});
 }
 
 function resizeCanvas() {
@@ -57,7 +63,15 @@ function getMousePos(canvas, evt) {
 
 function click(e) {
 	var pos = getMousePos(canvas, e);
-	if (pos.x >= x && pos.x <= x + context.measureText(text).width + 10 && pos.y >= y && pos.y <= y + text_height + 5) {
-		alert("link clicked!");
-	}
+
+	tags.forEach(function (entry) {
+
+		var x = entry.x - 5 - context.measureText(entry.text).width / 2;
+		var y = entry.y - text_height + 5;
+
+		if (pos.x >= x && pos.x <= x + context.measureText(entry.text).width + 10 && pos.y >= y && pos.y <= y + text_height + 5) {
+			alert("link clicked: " + entry.text);
+		}
+	});
+
 }
