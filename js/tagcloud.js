@@ -1,25 +1,50 @@
 var canvas = document.getElementById("cloud_canvas");
 var context = canvas.getContext("2d");
 
-var text_height = 40;
+var text_height = 30;
+var amount = 3;
 
-var tags = new Array({
-	text: "Linux",
-	x: 100,
+var tags = [{
+	text: "Software",
+	x: 65,
 	y: 50
 }, {
+	text: "Linux",
+	x: 200,
+	y: 90
+}, {
 	text: "Memes",
+	x: 350,
+	y: 70
+}, {
+	text: "Blender",
+	x: 450,
+	y: 40
+}, {
+	text: "Scripts",
+	x: 500,
+	y: 90
+}, {
+	text: "Tutorials",
 	x: 600,
 	y: 40
 }, {
-	text: "Websites",
+	text: "Projects",
 	x: 700,
+	y: 75
+}, {
+	text: "Website",
+	x: 900,
+	y: 30
+}, {
+	text: "Plans",
+	x: 900,
 	y: 90
 }, {
-	text: "Blender",
-	x: 300,
-	y: 70
-});
+	text: "Various",
+	x: 1200,
+	y: 60
+}];
 
 window.addEventListener("click", click, false);
 window.addEventListener('resize', resizeCanvas, false);
@@ -29,28 +54,34 @@ resizeCanvas();
 function redraw() {
 
 	context.strokeStyle = "#367b44";
-	context.lineWidth = 5;
+	context.lineWidth = 3;
 
 	context.textAlign = "center";
-	context.font = "40px Georgia";
+	context.font = "30px Georgia";
 
 
+	// draws connections	
 	tags.forEach(function (entry) {
 
-		var x = entry.x - 5 - context.measureText(entry.text).width / 2;
-		var y = entry.y - text_height + 5;
-
-		var result = nearest(entry)
-		var x_to = result.x;
-		var y_to = result.y - 10;
-
 		context.beginPath();
-		context.moveTo(entry.x, entry.y - 10);
-		context.lineTo(x_to, y_to);
+		var result = nearest(entry);
+
+		// [amount] connections per tag
+		for (i = 0; i < amount; i++) {
+
+			var x_to = result[i].x;
+			var y_to = result[i].y - 10;
+
+			context.moveTo(entry.x, entry.y - 10);
+			context.lineTo(x_to, y_to);
+
+		}
 		context.stroke();
 
 	});
 
+
+	// draws tags	
 	tags.forEach(function (entry) {
 
 		var x = entry.x - 5 - context.measureText(entry.text).width / 2;
@@ -95,28 +126,40 @@ function click(e) {
 }
 
 function nearest(tag) {
+
 	var x = 0;
 	var y = 0;
-	var diff_best = 1000;
-	var diff = 0;
+	var diff_best = [];
+	for (i = 0; i < amount; i++) {
+		diff_best.push({
+			x: 0,
+			y: 0,
+			diff: 1000
+		});
+	}
 
 	tags.forEach(function (entry) {
 
 		if (entry.text != tag.text) {
 
-			diff = Math.abs(entry.x - tag.x) + Math.abs(entry.y - tag.y);
-			if (diff < diff_best) {
-				diff_best = diff;
-				x = entry.x;
-				y = entry.y;
+			var diff = Math.abs(entry.x - tag.x) + Math.abs(entry.y - tag.y);
+
+			if (diff < diff_best[diff_best.length - 1].diff) {
+
+				diff_best[diff_best.length - 1] = {
+					x: entry.x,
+					y: entry.y,
+					diff: diff
+				};
+
+				diff_best.sort(function (a, b) {
+					return a.diff - b.diff;
+				});
 			}
 		}
 
 	});
 
-	return {
-		x: x,
-		y: y
-	};
+	return diff_best;
 
 }

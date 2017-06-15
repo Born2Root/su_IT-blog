@@ -6,7 +6,7 @@ xhttp.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 
 		var response = this.responseText.split("\n");
-		lines = new Array(response);
+		lines = [response];
 		lines = lines[0];
 	}
 };
