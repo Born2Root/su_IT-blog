@@ -15,13 +15,14 @@ xhttp.send();
 
 
 //cli write
-
-setTimeout(cli_write, 100);
-
+var line = 0;
 var character = 0;
 var up = true;
-var line = Math.floor(Math.random() * lines.length);
 
+setTimeout(function () {
+	line = Math.floor(Math.random() * lines.length);
+	cli_write();
+}, 3000);
 
 function cli_write() {
 
