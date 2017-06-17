@@ -1,12 +1,11 @@
 <?php
 
-require("header.html");
-// anpassen siehe website nur wenn von ajax
+if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
+	require("header.html");
+	echo '<div id="body">';
+}
 
 ?>
-
-<div id="body">
-
 
 	<div class="article" id="id">
 		<h2>Heading article 1</h2>
@@ -34,10 +33,11 @@ require("header.html");
 		</p>
 	</div>
 
-</div>
-
 <?php
 
-require("footer.php");
+if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
+	echo '</div>';
+	require("footer.php");
+}
 
 ?>

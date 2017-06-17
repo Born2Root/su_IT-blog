@@ -1,18 +1,19 @@
 document.getElementById("id").addEventListener("click", function () {
 
-	open("test_article.html");
+	open("test_article.php");
 	document.title = "This is the new page title.";
 
 }, false);
 
 function back() {
 	//window.history.back();
-	open("main.html");
-	// php anpassen, siehe internet
+	open("index.php");
 };
 
+
 window.onpopstate = function () {
-	location.reload();
+	//location.reload();
+	open("index.php");
 };
 
 
@@ -23,7 +24,7 @@ function open(path) {
 			document.getElementById("body").innerHTML = this.responseText;
 		}
 	};
-	xhttp.open("GET", path, true);
+	xhttp.open("GET", path + "?type=ajax", true);
 	xhttp.send();
 
 	window.history.pushState({
