@@ -1,6 +1,8 @@
 var animation_canvas = document.getElementById("animation_canvas");
 var animation_context = animation_canvas.getContext("2d");
 
+var amount_points = 100;
+var distance = 70;
 
 window.addEventListener('resize', resize_canvas_animation, false);
 
@@ -8,53 +10,49 @@ resize_canvas_animation();
 
 function resize_canvas_animation() {
 	animation_canvas.width = window.innerWidth - 15;
-	//redraw();
+	redraw_animation();
 }
 
-/*
-function redraw() {
 
-	context.strokeStyle = "#367b44";
-	context.lineWidth = 3;
+function redraw_animation() {
 
-	context.textAlign = "center";
-	context.font = "30px Georgia";
+	animation_context.strokeStyle = "#ffffff";
+	animation_context.fillStyle = "#ffffff";
+	animation_context.lineWidth = 1;
 
+	var arcs = [];
 
-	// draws connections	
-	tags.forEach(function (entry) {
+	// draws arcs
+	for (i = 0; i < amount_points; i++) {
+		//Math.floor(Math.random() * lines.length);
+		var r = Math.floor(Math.random() * 5) + 3;
+		var x = Math.floor(Math.random() * animation_canvas.width);
+		var y = Math.floor(Math.random() * animation_canvas.height);
+		animation_context.beginPath();
+		animation_context.arc(x, y, r, 0, 2 * Math.PI);
+		animation_context.fill();
+		animation_context.stroke();
+		arcs.push({
+			x: x,
+			y: y
+		});
+	}
 
-		context.beginPath();
-		var result = nearest(entry);
+	// draws connections
+	arcs.forEach(function (arc) {
 
-		// [amount] connections per tag
-		for (i = 0; i < amount; i++) {
+		arcs.forEach(function (entry) {
 
-			var x_to = result[i].x;
-			var y_to = result[i].y - 10;
+			var diff = Math.abs(entry.x - arc.x) + Math.abs(entry.y - arc.y);
 
-			context.moveTo(entry.x, entry.y - 10);
-			context.lineTo(x_to, y_to);
+			if (diff < distance) {
+				animation_context.beginPath();
+				animation_context.moveTo(arc.x, arc.y);
+				animation_context.lineTo(entry.x, entry.y);
+				animation_context.stroke();
+			}
 
-		}
-		context.stroke();
-
-	});
-
-
-	// draws tags	
-	tags.forEach(function (entry) {
-
-		var x = entry.x - 5 - context.measureText(entry.text).width / 2;
-		var y = entry.y - text_height + 5;
-
-		context.fillStyle = "#ffffff";
-		// x, y, x, y
-		context.fillRect(x, y, context.measureText(entry.text).width + 10, text_height);
-		context.fillStyle = "#000000";
-		// x, y
-		context.fillText(entry.text, entry.x, entry.y);
+		});
 
 	});
 }
-*/

@@ -2,7 +2,7 @@ var cloud_canvas = document.getElementById("cloud_canvas");
 var cloud_context = cloud_canvas.getContext("2d");
 
 var text_height = 30;
-var amount = 3;
+var amount_connections = 3;
 
 var tags = [{
 	text: "Software",
@@ -51,7 +51,7 @@ window.addEventListener('resize', resize_canvas_cloud, false);
 
 resize_canvas_cloud();
 
-function redraw() {
+function redraw_cloud() {
 
 	cloud_context.strokeStyle = "#367b44";
 	cloud_context.lineWidth = 3;
@@ -60,14 +60,14 @@ function redraw() {
 	cloud_context.font = "30px Georgia";
 
 
-	// draws connections	
+	// draws connections
+	cloud_context.beginPath();
 	tags.forEach(function (entry) {
 
-		cloud_context.beginPath();
-		var result = nearest(entry);
+		var result = nearest_tag(entry);
 
-		// [amount] connections per tag
-		for (i = 0; i < amount; i++) {
+		// [amount_connections] connections per tag
+		for (i = 0; i < amount_connections; i++) {
 
 			var x_to = result[i].x;
 			var y_to = result[i].y - 10;
@@ -76,12 +76,12 @@ function redraw() {
 			cloud_context.lineTo(x_to, y_to);
 
 		}
-		cloud_context.stroke();
 
 	});
+	cloud_context.stroke();
 
 
-	// draws tags	
+	// draws tags
 	tags.forEach(function (entry) {
 
 		var x = entry.x - 5 - cloud_context.measureText(entry.text).width / 2;
@@ -99,7 +99,7 @@ function redraw() {
 
 function resize_canvas_cloud() {
 	cloud_canvas.width = window.innerWidth - (window.innerWidth * 0.3);
-	redraw();
+	redraw_cloud();
 }
 
 function getMousePos(canvas, evt) {
@@ -111,7 +111,7 @@ function getMousePos(canvas, evt) {
 }
 
 function click(e) {
-	var pos = getMousePos(canvas, e);
+	var pos = getMousePos(cloud_canvas, e);
 
 	tags.forEach(function (entry) {
 
@@ -125,12 +125,12 @@ function click(e) {
 
 }
 
-function nearest(tag) {
+function nearest_tag(tag) {
 
 	var x = 0;
 	var y = 0;
 	var diff_best = [];
-	for (i = 0; i < amount; i++) {
+	for (i = 0; i < amount_connections; i++) {
 		diff_best.push({
 			x: 0,
 			y: 0,
