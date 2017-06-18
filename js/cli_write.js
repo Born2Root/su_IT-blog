@@ -1,13 +1,13 @@
 //ajax
 var lines = "";
+var line = 0;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 
 		var response = this.responseText.split("\n");
-		lines = [response];
-		lines = lines[0];
+		line = Math.floor(Math.random() * lines.length);
 	}
 };
 xhttp.open("GET", "lines.txt", true);
@@ -15,14 +15,12 @@ xhttp.send();
 
 
 //cli write
-var line = 0;
+setTimeout(cli_write(), 3000);
+
+
 var character = 0;
 var up = true;
 
-setTimeout(function () {
-	line = Math.floor(Math.random() * lines.length);
-	cli_write();
-}, 3000);
 
 function cli_write() {
 
