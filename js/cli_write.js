@@ -6,17 +6,16 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 
-		var response = this.responseText.split("\n");
+		lines = this.responseText.split("\n");
 		line = Math.floor(Math.random() * lines.length);
+
 	}
 };
 xhttp.open("GET", "lines.txt", true);
 xhttp.send();
 
-
 //cli write
-setTimeout(cli_write(), 3000);
-
+setTimeout(cli_write, 3000);
 
 var character = 0;
 var up = true;

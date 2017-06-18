@@ -22,6 +22,29 @@ body {
 	padding: 10px;
 }
 
+
+/* unvisited link */
+
+#banner a:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+
+/* visited link */
+
+#banner a:visited {
+	color: #ffffff;
+}
+
+
+/* selected link */
+
+#banner a:active {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
 .cursor {
 	-webkit-animation: blink 0.7s infinite;
 	animation: blink 0.7s infinite;
