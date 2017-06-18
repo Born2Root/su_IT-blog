@@ -1,5 +1,5 @@
-var canvas = document.getElementById("cloud_canvas");
-var context = canvas.getContext("2d");
+var cloud_canvas = document.getElementById("cloud_canvas");
+var cloud_context = cloud_canvas.getContext("2d");
 
 var text_height = 30;
 var amount = 3;
@@ -47,23 +47,23 @@ var tags = [{
 }];
 
 window.addEventListener("click", click, false);
-window.addEventListener('resize', resizeCanvas, false);
+window.addEventListener('resize', resize_canvas_cloud, false);
 
-resizeCanvas();
+resize_canvas_cloud();
 
 function redraw() {
 
-	context.strokeStyle = "#367b44";
-	context.lineWidth = 3;
+	cloud_context.strokeStyle = "#367b44";
+	cloud_context.lineWidth = 3;
 
-	context.textAlign = "center";
-	context.font = "30px Georgia";
+	cloud_context.textAlign = "center";
+	cloud_context.font = "30px Georgia";
 
 
 	// draws connections	
 	tags.forEach(function (entry) {
 
-		context.beginPath();
+		cloud_context.beginPath();
 		var result = nearest(entry);
 
 		// [amount] connections per tag
@@ -72,11 +72,11 @@ function redraw() {
 			var x_to = result[i].x;
 			var y_to = result[i].y - 10;
 
-			context.moveTo(entry.x, entry.y - 10);
-			context.lineTo(x_to, y_to);
+			cloud_context.moveTo(entry.x, entry.y - 10);
+			cloud_context.lineTo(x_to, y_to);
 
 		}
-		context.stroke();
+		cloud_context.stroke();
 
 	});
 
@@ -84,21 +84,21 @@ function redraw() {
 	// draws tags	
 	tags.forEach(function (entry) {
 
-		var x = entry.x - 5 - context.measureText(entry.text).width / 2;
+		var x = entry.x - 5 - cloud_context.measureText(entry.text).width / 2;
 		var y = entry.y - text_height + 5;
 
-		context.fillStyle = "#ffffff";
+		cloud_context.fillStyle = "#ffffff";
 		// x, y, x, y
-		context.fillRect(x, y, context.measureText(entry.text).width + 10, text_height);
-		context.fillStyle = "#000000";
+		cloud_context.fillRect(x, y, cloud_context.measureText(entry.text).width + 10, text_height);
+		cloud_context.fillStyle = "#000000";
 		// x, y
-		context.fillText(entry.text, entry.x, entry.y);
+		cloud_context.fillText(entry.text, entry.x, entry.y);
 
 	});
 }
 
-function resizeCanvas() {
-	canvas.width = window.innerWidth - (window.innerWidth * 0.3);
+function resize_canvas_cloud() {
+	cloud_canvas.width = window.innerWidth - (window.innerWidth * 0.3);
 	redraw();
 }
 
@@ -115,10 +115,10 @@ function click(e) {
 
 	tags.forEach(function (entry) {
 
-		var x = entry.x - 5 - context.measureText(entry.text).width / 2;
+		var x = entry.x - 5 - cloud_context.measureText(entry.text).width / 2;
 		var y = entry.y - text_height + 5;
 
-		if (pos.x >= x && pos.x <= x + context.measureText(entry.text).width + 10 && pos.y >= y && pos.y <= y + text_height + 5) {
+		if (pos.x >= x && pos.x <= x + cloud_context.measureText(entry.text).width + 10 && pos.y >= y && pos.y <= y + text_height + 5) {
 			alert("link clicked: " + entry.text);
 		}
 	});

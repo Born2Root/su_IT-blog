@@ -14,12 +14,18 @@ body {
 #banner {
 	background-color: #111111;
 	color: #ffffff;
-	padding: 10px;
 }
 
 #banner h1 {
 	margin: 0px;
 	padding: 10px;
+}
+
+#headline {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 20px;
 }
 
 

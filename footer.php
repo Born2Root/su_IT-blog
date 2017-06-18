@@ -9,6 +9,7 @@
 <script src="js/tagcloud.js"></script>
 <script src="js/change_site.js"></script>
 <script src="js/cli_write.js"></script>
+<script src="js/animation.js"></script>
 
 </body>
 
