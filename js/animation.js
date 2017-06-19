@@ -1,5 +1,7 @@
-var animation_canvas = document.getElementById("animation_canvas");
-var animation_context = animation_canvas.getContext("2d");
+var animation_canvas_header = document.getElementById("animation_canvas_header");
+var animation_canvas_footer = document.getElementById("animation_canvas_footer");
+var animation_context_header = animation_canvas_header.getContext("2d");
+var animation_context_footer = animation_canvas_footer.getContext("2d");
 
 var amount_points = 100;
 var distance = 70;
@@ -9,12 +11,13 @@ window.addEventListener('resize', resize_canvas_animation, false);
 resize_canvas_animation();
 
 function resize_canvas_animation() {
-	animation_canvas.width = window.innerWidth - 15;
-	redraw_animation();
+	animation_canvas_header.width = window.innerWidth - 15;
+	animation_canvas_footer.width = window.innerWidth - 15;
+	redraw_animation(animation_context_header, animation_canvas_header);
+	redraw_animation(animation_context_footer, animation_canvas_footer);
 }
 
-
-function redraw_animation() {
+function redraw_animation(animation_context, animation_canvas) {
 
 	animation_context.strokeStyle = "#ffffff";
 	animation_context.fillStyle = "#ffffff";
@@ -24,7 +27,6 @@ function redraw_animation() {
 
 	// draws arcs
 	for (i = 0; i < amount_points; i++) {
-		//Math.floor(Math.random() * lines.length);
 		var r = Math.floor(Math.random() * 5) + 3;
 		var x = Math.floor(Math.random() * animation_canvas.width);
 		var y = Math.floor(Math.random() * animation_canvas.height);
