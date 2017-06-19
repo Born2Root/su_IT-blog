@@ -1,7 +1,13 @@
 /* general */
 
+html {
+	height: 100%;
+}
+
 body {
 	margin: 0px;
+	min-height: 100%;
+	position: absolute;
 }
 
 
@@ -100,7 +106,7 @@ body {
 
 #body {
 	width: 70%;
-	margin: 10px auto;
+	margin: 10px auto 85px auto;
 	background-color: grey;
 	padding: 10px;
 }
@@ -147,7 +153,8 @@ body {
 	color: #ffffff;
 	text-align: center;
 	height: 75px;
-	width: 100%;
-	bottom: 0px;
 	position: absolute;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
 }
