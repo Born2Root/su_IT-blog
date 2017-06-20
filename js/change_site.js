@@ -1,19 +1,14 @@
-document.getElementById("id").addEventListener("click", function () {
-
-	open("test_article.php");
-	document.title = "This is the new page title.";
-
-}, false);
-
+// small close icon
 function back() {
-	//window.history.back();
 	open("index.php");
+	setTimeout(add_listener, 500);
 };
 
 
+// browser back button
 window.onpopstate = function () {
-	//location.reload();
 	open("index.php");
+	setTimeout(add_listener, 500);
 };
 
 
@@ -30,4 +25,14 @@ function open(path) {
 	window.history.pushState({
 		path: path
 	}, path, path);
+}
+
+
+function add_listener() {
+	document.getElementById("id").addEventListener("click", function () {
+
+		open("test_article.php");
+		document.title = "This is the new page title.";
+
+	}, false);
 }

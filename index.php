@@ -38,6 +38,7 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 	echo '</div>';
 	require("footer.php");
+	echo '<script>add_listener();</script>';
 }
 
 ?>
