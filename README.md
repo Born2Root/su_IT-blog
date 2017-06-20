@@ -21,3 +21,10 @@ And maybe someone gets inspired or reuses our ideas :)
 date of idea: 21.05.2017
 <br>
 first commit: 12.06.2017
+
+# To-DO:
+
+- add shadow to tag-cloud
+- add shadow to headline and disclaimer
+- animate header/footer
+- ...
