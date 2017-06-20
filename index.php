@@ -8,7 +8,7 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 ?>
 
 	<div class="article" id="id">
-		<h2>Heading article 1</h2>
+		<h2>Scripts To Rice Your Setup Pt.1</h2>
 		<p>
 			First preview paragraph
 		</p>
@@ -17,18 +17,18 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 	<div class="article">
 		<h2>Heading article 2</h2>
 		<p>
-			<img alt="macro" src="macro1.jpg" /> Some other stupid preview paragraph.
+			<img alt="macro" src="/content/macro1.jpg" /> Some other stupid preview paragraph.
 		</p>
 	</div>
 
 	<div class="image">
 		<h2>Heading Meme 3</h2>
-		<img alt="macro" src="macro2.jpg" />
+		<img alt="macro" src="/content/macro2.jpg" />
 	</div>
 
 	<div class="image">
 		<p>
-			<img alt="macro" src="macro2.jpg" />
+			<img alt="macro" src="/content/macro2.jpg" />
 			<br/> Some info about the image
 		</p>
 	</div>

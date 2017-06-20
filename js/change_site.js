@@ -31,8 +31,8 @@ function open(path) {
 function add_listener() {
 	document.getElementById("id").addEventListener("click", function () {
 
-		open("test_article.php");
-		document.title = "This is the new page title.";
+		open("/content/script_to_rice_your_setup_1.php");
+		document.title = "script_to_rice_your_setup_1";
 
 	}, false);
 }

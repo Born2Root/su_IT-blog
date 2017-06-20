@@ -11,7 +11,7 @@ xhttp.onreadystatechange = function () {
 
 	}
 };
-xhttp.open("GET", "lines.txt", true);
+xhttp.open("GET", "/lines.txt", true);
 xhttp.send();
 
 //cli write
