@@ -22,22 +22,27 @@ body {
 	color: #ffffff;
 }
 
-#banner h1 {
-	margin: 0px;
-	padding: 10px;
-}
-
 #headline {
 	position: absolute;
+	background: #111111;
 	left: 0px;
 	right: 0px;
-	top: 20px;
+	top: 10px;
+	width: 20%;
+	margin: auto;
+	padding-bottom: 10px;
+}
+
+#headline a {
+	display: block;
+	margin: 20px;
+	font-size: 25px;
 }
 
 
 /* unvisited link */
 
-#banner a:link {
+#headline a:link {
 	color: #ffffff;
 	text-decoration: none;
 }
@@ -45,14 +50,14 @@ body {
 
 /* visited link */
 
-#banner a:visited {
+#headline a:visited {
 	color: #ffffff;
 }
 
 
 /* selected link */
 
-#banner a:active {
+#headline a:active {
 	color: #ffffff;
 	text-decoration: underline;
 }
@@ -161,7 +166,10 @@ body {
 
 #disclaimer {
 	position: absolute;
+	background: #111111;
 	left: 0px;
 	right: 0px;
-	bottom: 20px;
+	top: 10px;
+	width: 20%;
+	margin: auto;
 }
