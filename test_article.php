@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
-	require("../header.html");
+	require("header.html");
 	echo '<div id="body">';
 }
 
@@ -34,7 +34,7 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 
 if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 	echo '</div>';
-	require("../footer.php");
+	require("footer.php");
 }
 
 ?>

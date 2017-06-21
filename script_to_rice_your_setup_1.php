@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
-	require("../header.html");
+	require("header.html");
 	echo '<div id="body">';
 }
 
@@ -90,7 +90,7 @@ This was my first post and it wasn't really educational or filled with content. 
 
 if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 	echo '</div>';
-	require("../footer.php");
+	require("footer.php");
 }
 
 ?>
