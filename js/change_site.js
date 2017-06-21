@@ -29,10 +29,24 @@ function open(path) {
 
 
 function add_listener() {
-	document.getElementById("id").addEventListener("click", function () {
+	var amount_posts = 0;
 
-		open("/script_to_rice_your_setup_1.php");
-		document.title = "script_to_rice_your_setup_1";
+	while (document.getElementById("post_" + amount_posts) != null) {
+		amount_posts += 1;
 
-	}, false);
+	}
+
+	//console.log(amount_posts);
+
+	for (i = 0; i < amount_posts; i++) {
+
+		document.getElementById("post_" + i).addEventListener("click", function () {
+
+			open("/script_to_rice_your_setup_1.php");
+			document.title = "script_to_rice_your_setup_1";
+
+		}, false);
+
+	}
+
 }

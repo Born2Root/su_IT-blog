@@ -7,29 +7,29 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 
 ?>
 
-	<div class="article" id="id">
+	<div class="article" id="post_3">
 		<h2>Scripts To Rice Your Setup Pt.1</h2>
 		<p>
 			First preview paragraph
 		</p>
 	</div>
 
-	<div class="article">
+	<div class="article" id="post_2">
 		<h2>Heading article 2</h2>
 		<p>
-			<img alt="macro" src="/macro1.jpg" /> Some other stupid preview paragraph.
+			<img alt="macro" src="/macro1.jpg" /> Some other preview paragraph.
 		</p>
 	</div>
 
-	<div class="image">
+	<div class="image" id="post_1">
 		<h2>Heading Meme 3</h2>
 		<img alt="macro" src="/macro2.jpg" />
 	</div>
 
-	<div class="image">
+	<div class="image" id="post_0">
 		<p>
 			<img alt="macro" src="/macro2.jpg" />
-			<br/> Some info about the image
+			<br/> Some info about the image; post 1
 		</p>
 	</div>
 
