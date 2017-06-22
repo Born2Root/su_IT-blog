@@ -7,7 +7,7 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 
 ?>
 
-	<img alt="close" src="/icons/x-square.svg" class="icon" onclick="back();" />
+	<img alt="close" src="/icon/x-square.svg" class="icon" onclick="back();" />
 
 	<h1>Hallo</h1>
 	<br> test, mal schauen wie das Funktioniert This article is about the type of website. For other uses, see Wiki (disambiguation).

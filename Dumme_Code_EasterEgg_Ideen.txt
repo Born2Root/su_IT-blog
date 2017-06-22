@@ -1,3 +1,9 @@
+- quell code
+- javascript console log
+- cli_write
+- easteregg.html
+
+
 
 Code Documentation? SCHEISS DRAUF!
 

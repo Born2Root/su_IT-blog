@@ -26,7 +26,7 @@ function redraw_animation(animation_context, animation_canvas) {
 	var arcs = [];
 
 	// draws arcs
-	for (i = 0; i < amount_points; i++) {
+	for (var i = 0; i < amount_points; i++) {
 		var r = Math.floor(Math.random() * 5) + 3;
 		var x = Math.floor(Math.random() * animation_canvas.width);
 		var y = Math.floor(Math.random() * animation_canvas.height);
