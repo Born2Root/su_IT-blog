@@ -102,8 +102,7 @@ body {
 }
 
 .fix-body {
-	margin-top: 116px !important;
-	/* adapt when banner height changes! */
+	margin-top: 126px !important;
 }
 
 
@@ -111,20 +110,23 @@ body {
 
 #body {
 	width: 70%;
-	margin: 10px auto 85px auto;
-	background-color: grey;
-	padding: 10px;
+	margin: 20px auto 95px auto;
 }
 
 #body h2 {
 	margin-top: 0px;
 }
 
-#body p {
+#list p {
 	font-weight: bold;
 }
 
-#body div {
+#list {
+	background-color: grey;
+	padding: 10px;
+}
+
+#list div {
 	background-color: #367b44;
 	margin: 10px;
 	padding: 20px;
@@ -138,6 +140,17 @@ body {
 	width: 300px;
 	float: left;
 	margin: 5px 10px;
+}
+
+#content {
+	background-color: #367b44;
+	padding: 30px 45px;
+	text-align: justify;
+}
+
+#content h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .image img {

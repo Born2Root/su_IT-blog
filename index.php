@@ -7,6 +7,8 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 
 ?>
 
+<div id="list">
+
 	<div class="article" id="post_3" title="script_to_rice_your_setup_1.php">
 		<h2>Scripts To Rice Your Setup Pt.1</h2>
 		<p>
@@ -29,9 +31,11 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 	<div class="image" id="post_0">
 		<p>
 			<img alt="macro" src="/macro2.jpg" />
-			<br/> Some info about the image; post 1
+			<br/> Some info about the image; post 0
 		</p>
 	</div>
+
+</div>
 
 <?php
 
