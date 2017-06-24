@@ -24,7 +24,5 @@ first commit: 12.06.2017
 
 # To-DO:
 
-- add shadow to tag-cloud
-- add shadow to headline and disclaimer
 - animate header/footer
 - ...

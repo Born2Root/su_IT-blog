@@ -23,6 +23,12 @@ if(isset($_GET['type']) == false || $_GET['type']!='ajax'){
 
 	<hr/>
 
+	<p id="intro">
+
+	Intro Paragraph
+
+	</p>
+
 	<p>
 		So in the progress of installing my Arch and ricing it, I also installed screenfetch.
 		<br/> Screenfetch is a small program to get
