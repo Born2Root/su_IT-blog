@@ -140,7 +140,7 @@ body {
 	overflow: auto;
 }
 
-.article img {
+.img {
 	width: 300px;
 	float: left;
 	margin: 5px 10px;
@@ -163,8 +163,12 @@ body {
 	margin: auto;
 }
 
+#close{
+float: right;
+}
+
 .icon {
-	float: right;
+	width: 25px;
 }
 
 #intro{
