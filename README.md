@@ -14,13 +14,14 @@ And maybe someone gets inspired or reuses our ideas :)
 - JavaScript
 - "ajax"
 - CSS3
-- PHP7
 
 # timeline
 
 date of idea: 21.05.2017
 <br>
 first commit: 12.06.2017
+<br>
+new branch: 06.07.2017
 
 # To-DO:
 
