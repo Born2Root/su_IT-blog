@@ -123,6 +123,7 @@ body {
 
 #list {
 	background-color: grey;
+	/* bild */
 	padding: 10px;
 }
 
@@ -132,18 +133,18 @@ body {
 	padding: 20px;
 }
 
-#list p {
+#list a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.intro {
 	font-weight: bold;
+	margin-bottom: 20px;
 }
 
-.article {
-	overflow: auto;
-}
-
-.img {
-	width: 300px;
-	float: left;
-	margin: 5px 10px;
+#close {
+	float: right;
 }
 
 #content {
@@ -157,23 +158,20 @@ body {
 	margin-bottom: 0px;
 }
 
+.article {
+	overflow: auto;
+}
+
+.article img {
+	max-width: 300px;
+	float: left;
+	margin: 5px 10px;
+}
+
 .image img {
 	width: 50%;
 	display: block;
 	margin: auto;
-}
-
-#close {
-	float: right;
-}
-
-.icon {
-	width: 25px;
-}
-
-#intro {
-	font-weight: bold;
-	margin-bottom: 20px;
 }
 
 

@@ -31,7 +31,7 @@
 			</canvas>
 
 			<div id="headline">
-				<a href="/index.php" target="_self">
+				<a href="/index.html" target="_self">
 					$ su it --blog
 				</a>
 				<span id="subtitle">- we sudo everything</span>
@@ -53,11 +53,11 @@
 
 	<div id="body">
 
-		<img alt="close" src="/icon/x-square.svg" id="close" onclick="back();" />
+		<a href="index.html" target="_self">
+			<img alt="close" src="/icon/x-square.svg" id="close" />
+		</a>
 
 		<div id="content">
-
-
 
 			<h1>Scripts To Rice Your Setup</h1>
 			<p>
@@ -69,10 +69,9 @@
 
 			<hr/>
 
-			<img alt="tag" src="/icon/tag.svg" class="icon" />
-			<img alt="scripts" src="/icon/programming.svg" class="icon" />
+			<!-- tags -->
 
-			<p id="intro">
+			<p class="intro">
 
 				Are you using a bash script for Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch? Don't you get bored to see the same distro logo all the time?
 				<br/> In this article, I'll show a little bash script on how to change this and rice your setup.
