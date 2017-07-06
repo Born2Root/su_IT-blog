@@ -40,7 +40,7 @@ function open(path) {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("body").innerHTML = this.responseText;
 			document.body.scrollTop = 0;
-			//document.documentElement.scrollTop = 0; // Firefox and IE
+			document.documentElement.scrollTop = 0; // Firefox and IE
 		}
 	};
 	xhttp.open("GET", path + "?type=ajax", true);
