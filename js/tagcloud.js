@@ -46,17 +46,6 @@ var tags = [{
 	y: 60
 }];
 
-var list = null;
-
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-	if (this.readyState == 4 && this.status == 200) {
-		list = this.responseText.split("\n");
-	}
-};
-xhttp.open("GET", "/article.db", true);
-xhttp.send();
-
 window.addEventListener("click", click, false);
 window.addEventListener('resize', resize_canvas_cloud, false);
 

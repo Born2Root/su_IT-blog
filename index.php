@@ -31,7 +31,7 @@
 			</canvas>
 
 			<div id="headline">
-				<a href="/index.html" target="_self">
+				<a href="index.php" target="_self">
 					$ su it --blog
 				</a>
 				<span id="subtitle">- we sudo everything</span>
@@ -54,6 +54,18 @@
 	<div id="body">
 
 		<div id="list">
+
+			<?php
+			$file = fopen("article.db", "r") or die("Unable to open file!");
+
+			$list = fread($file, filesize("article.db"));
+			
+			for ($i = 1; $i < count($list); $i += 2) {
+				echo $i;
+			}
+
+			fclose($file);
+			?>
 
 			<a href="script_to_rice_your_setup_1.html" target="_self">
 
