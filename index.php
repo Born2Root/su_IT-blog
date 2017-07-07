@@ -59,12 +59,23 @@
 			$file = fopen("article.db", "r") or die("Unable to open file!");
 
 			$list = fread($file, filesize("article.db"));
-			
-			for ($i = 1; $i < count($list); $i += 2) {
-				echo $i;
-			}
 
 			fclose($file);
+			
+			$lines = explode("\n", $list);
+
+			if (empty($_GET["tag"]) == true){
+
+			}else{
+				$tag = $_GET["tag"];
+
+				for ($i = 0; $i < count($lines); $i += 2) {
+					if (in_array($tag, explode(";", $lines[$i])) == true){
+						echo "found ".$i;
+					}
+				}
+			}
+
 			?>
 
 			<a href="script_to_rice_your_setup_1.html" target="_self">
