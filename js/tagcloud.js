@@ -46,6 +46,17 @@ var tags = [{
 	y: 60
 }];
 
+var list = null;
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function () {
+	if (this.readyState == 4 && this.status == 200) {
+		list = this.responseText.split("\n");
+	}
+};
+xhttp.open("GET", "/article.db", true);
+xhttp.send();
+
 window.addEventListener("click", click, false);
 window.addEventListener('resize', resize_canvas_cloud, false);
 
@@ -120,6 +131,17 @@ function click(e) {
 
 		if (pos.x >= x && pos.x <= x + cloud_context.measureText(entry.text).width + 10 && pos.y >= y && pos.y <= y + text_height + 5) {
 			alert("link clicked: " + entry.text);
+
+			for (var i = 0; i < list.length; i += 2) {
+				var tags = list[i].split(";");
+
+				if (tags.indexOf(entry.text) >= 0) {
+					//treffer
+					console.log("treffer " + tags);
+				}
+			}
+
+
 		}
 	});
 
@@ -130,7 +152,7 @@ function nearest_tag(tag) {
 	var x = 0;
 	var y = 0;
 	var diff_best = [];
-	for (i = 0; i < amount_connections; i++) {
+	for (var i = 0; i < amount_connections; i++) {
 		diff_best.push({
 			x: 0,
 			y: 0,
@@ -152,6 +174,7 @@ function nearest_tag(tag) {
 					diff: diff
 				};
 
+				//costume sort function; therefore the return				
 				diff_best.sort(function (a, b) {
 					return a.diff - b.diff;
 				});
