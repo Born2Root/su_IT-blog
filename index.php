@@ -53,6 +53,9 @@
 
 	<div id="body">
 
+		<div id="background">
+		</div>
+
 		<div id="list">
 
 			<?php
@@ -66,14 +69,36 @@
 
 			if (empty($_GET["tag"]) == true){
 
+				print_article("script_to_rice_your_setup_1.html", "test", "beschreibung");
+
 			}else{
 				$tag = $_GET["tag"];
 
 				for ($i = 0; $i < count($lines); $i += 2) {
 					if (in_array($tag, explode(";", $lines[$i])) == true){
-						echo "found ".$i;
+						print_article($lines[$i+1], "test", "test");
 					}
 				}
+			}
+
+			function print_article($filename, $title, $description){
+
+				echo <<<EOT
+				<a href="$filename" target="_self">
+
+					<div class="article">
+
+						<h2>$title</h2>
+
+						<p class="intro">
+							$description
+						</p>
+
+					</div>
+
+				</a>
+EOT;
+
 			}
 
 			?>
