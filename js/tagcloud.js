@@ -119,18 +119,7 @@ function click(e) {
 		var y = entry.y - text_height + 5;
 
 		if (pos.x >= x && pos.x <= x + cloud_context.measureText(entry.text).width + 10 && pos.y >= y && pos.y <= y + text_height + 5) {
-			alert("link clicked: " + entry.text);
-
-			for (var i = 0; i < list.length; i += 2) {
-				var tags = list[i].split(";");
-
-				if (tags.indexOf(entry.text) >= 0) {
-					//treffer
-					console.log("treffer " + tags);
-				}
-			}
-
-
+			window.open("index.php?tag=" + entry.text, "_self");
 		}
 	});
 

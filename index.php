@@ -76,7 +76,7 @@
 
 				for ($i = 0; $i < count($lines); $i += 2) {
 					if (in_array($tag, explode(";", $lines[$i])) == true){
-						print_article($lines[$i+1], "test", "test");
+						print_article($lines[$i+1], "titel", "beschreibung");
 					}
 				}
 			}
