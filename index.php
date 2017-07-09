@@ -11,7 +11,7 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="desciption" content="" />
+	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="author" content="" />
 	<meta name="robots" content="index, follow" />
@@ -69,7 +69,14 @@
 
 			if (empty($_GET["tag"]) == true){
 
-				print_article("script_to_rice_your_setup_1.html", "test", "beschreibung");
+				for ($i = 0; $i < count($lines); $i += 2) {
+
+					$html = file_get_contents($lines[$i+1]);
+
+					$description = substr($html, strpos($html, "intro") + 11, strpos($html, "/p", strpos($html, "intro")) - strpos($html, "intro") - 15);
+
+					print_article($lines[$i+1], "titel", $description);
+				}
 
 			}else{
 				$tag = $_GET["tag"];
