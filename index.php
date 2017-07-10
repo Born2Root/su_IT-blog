@@ -70,12 +70,7 @@
 			if (empty($_GET["tag"]) == true){
 
 				for ($i = 0; $i < count($lines); $i += 2) {
-
-					$html = file_get_contents($lines[$i+1]);
-
-					$description = substr($html, strpos($html, "intro") + 11, strpos($html, "/p", strpos($html, "intro")) - strpos($html, "intro") - 15);
-
-					print_article($lines[$i+1], "titel", $description);
+					print_content($lines[$i+1], $lines[$i]);
 				}
 
 			}else{
@@ -83,12 +78,24 @@
 
 				for ($i = 0; $i < count($lines); $i += 2) {
 					if (in_array($tag, explode(";", $lines[$i])) == true){
-						print_article($lines[$i+1], "titel", "beschreibung");
+
+						print_content($lines[$i+1], $lines[$i]);
+
 					}
 				}
 			}
 
-			function print_article($filename, $title, $description){
+			function print_content($file, $tags){
+				$html = file_get_contents($file);
+
+				$title = substr($html, strpos($html, "h1") + 3, strpos($html, "/h1") - strpos($html, "h1") - 4);
+				$tags = str_replace(";", ", ", $tags);
+				$description = substr($html, strpos($html, "intro") + 11, strpos($html, "/p", strpos($html, "intro")) - strpos($html, "intro") - 15);
+
+				print_article($file, $title, $tags, $description);
+			}
+
+			function print_article($filename, $title, $tags, $description){
 
 				echo <<<EOT
 				<a href="$filename" target="_self">
@@ -96,6 +103,8 @@
 					<div class="article">
 
 						<h2>$title</h2>
+
+						$tags
 
 						<p class="intro">
 							$description
