@@ -1,63 +1,115 @@
-var animation_canvas_header = document.getElementById("animation_canvas_header");
-var animation_canvas_footer = document.getElementById("animation_canvas_footer");
-var animation_context_header = animation_canvas_header.getContext("2d");
-var animation_context_footer = animation_canvas_footer.getContext("2d");
+var canvas_list = [{
+		canvas: document.getElementById("animation_canvas_header"),
+		context: document.getElementById("animation_canvas_header").getContext("2d"),
+		points: []
+	},
+	{
+		canvas: document.getElementById("animation_canvas_footer"),
+		context: document.getElementById("animation_canvas_footer").getContext("2d"),
+		points: []
+	}
+];
 
-var amount_points = 125;
+var amount_points = 100;
 var distance = 70;
+
+var loop = null;
 
 window.addEventListener('resize', resize_canvas_animation, false);
 
 resize_canvas_animation();
 
 function resize_canvas_animation() {
-	animation_canvas_header.width = window.innerWidth - 15;
-	animation_canvas_footer.width = window.innerWidth - 15;
-	redraw_animation(animation_context_header, animation_canvas_header);
-	redraw_animation(animation_context_footer, animation_canvas_footer);
+	canvas_list.forEach(function (entry) {
+		entry.canvas.width = window.innerWidth - 15;
+	});
+	init();
 }
 
-function redraw_animation(animation_context, animation_canvas) {
+function init() {
 
-	animation_context.strokeStyle = "#ffffff";
-	animation_context.fillStyle = "#ffffff";
+	clearInterval(loop);
 
-	var arcs = [];
+	canvas_list.forEach(function (entry) {
 
-	// draws arcs
-	for (var i = 0; i < amount_points; i++) {
+		entry.points = [];
 
-		var r = Math.floor(Math.random() * 5) + 2;
-		var x = Math.floor(Math.random() * animation_canvas.width);
-		var y = Math.floor(Math.random() * animation_canvas.height);
+		for (var i = 0; i < amount_points; i++) {
 
-		animation_context.beginPath();
-		animation_context.arc(x, y, r, 0, 2 * Math.PI);
-		animation_context.fill();
-		animation_context.stroke();
-		arcs.push({
-			x: x,
-			y: y
-		});
-	}
+			var r = Math.floor(Math.random() * 1.5);
+			var x = Math.floor(Math.random() * entry.canvas.width);
+			var y = Math.floor(Math.random() * entry.canvas.height);
 
-	// draws connections
-	arcs.forEach(function (arc) {
+			entry.points.push({
+				x: x,
+				y: y,
+				r: r
+			});
+		}
 
-		arcs.forEach(function (entry) {
+		entry.context.strokeStyle = "#ffffff";
+		entry.context.fillStyle = "#ffffff";
 
-			var diff = Math.abs(entry.x - arc.x) + Math.abs(entry.y - arc.y);
+	});
+
+
+	loop = setInterval(draw, 1000);
+	draw();
+}
+
+function draw() {
+	canvas_list.forEach(function (entry) {
+		clear_screen(entry.context, entry.canvas);
+		move(entry.context, entry.canvas, entry.points);
+		connect(entry.context, entry.points);
+	});
+}
+
+function clear_screen(context, canvas) {
+	context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function move(context, canvas, points) {
+
+	points.forEach(function (point) {
+
+		do {
+			point.x = point.x + (Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1));
+		} while (point.x > canvas.width + 5 || point.x < -5);
+
+		do {
+			point.y = point.y + (Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1));
+		} while (point.y > canvas.height + 5 || point.y < -5);
+
+		do {
+			point.r = point.r + Math.floor(Math.random() * 1.5) * (Math.random() < 0.5 ? -1 : 1);
+		} while (point.r > 4 || point.r < 1);
+
+		context.beginPath();
+		context.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
+		context.fill();
+		context.stroke();
+	});
+}
+
+function connect(context, points) {
+	points.forEach(function (point) {
+
+		points.forEach(function (other) {
+
+			var diff = Math.abs(other.x - point.x) + Math.abs(other.y - point.y);
 
 			if (diff < distance) {
-				animation_context.lineWidth = Math.random();
+				context.lineWidth = diff / 55 + 0.1;
 
-				animation_context.beginPath();
-				animation_context.moveTo(arc.x, arc.y);
-				animation_context.lineTo(entry.x, entry.y);
-				animation_context.stroke();
+				context.beginPath();
+				context.moveTo(point.x, point.y);
+				context.lineTo(other.x, other.y);
+				context.stroke();
 			}
 
 		});
 
 	});
+
 }

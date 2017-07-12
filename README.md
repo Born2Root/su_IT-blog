@@ -26,5 +26,4 @@ new branch: 06.07.2017
 
 # To-DO:
 
-- animate header/footer
-- ...
+- redesign
