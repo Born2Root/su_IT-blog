@@ -53,7 +53,7 @@ function init() {
 	});
 
 
-	loop = setInterval(draw, 1000);
+	loop = setInterval(draw, 500);
 	draw();
 }
 
