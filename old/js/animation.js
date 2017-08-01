@@ -1,19 +1,17 @@
 var canvas_list = [{
-	canvas: document.getElementById("animation_canvas_header"),
-	context: document.getElementById("animation_canvas_header").getContext("2d"),
-	points: []
-}];
+		canvas: document.getElementById("animation_canvas_header"),
+		context: document.getElementById("animation_canvas_header").getContext("2d"),
+		points: []
+	},
+	{
+		canvas: document.getElementById("animation_canvas_footer"),
+		context: document.getElementById("animation_canvas_footer").getContext("2d"),
+		points: []
+	}
+];
 
-/*
-, {
-	canvas: document.getElementById("animation_canvas_footer"),
-	context: document.getElementById("animation_canvas_footer").getContext("2d"),
-	points: []
-}
-*/
-
-var amount_points = 30;
-var distance = 30;
+var amount_points = 100;
+var distance = 70;
 
 var loop = null;
 
@@ -38,7 +36,7 @@ function init() {
 
 		for (var i = 0; i < amount_points; i++) {
 
-			var r = Math.floor(Math.random() * 4);
+			var r = Math.floor(Math.random() * 1.5);
 			var x = Math.floor(Math.random() * entry.canvas.width);
 			var y = Math.floor(Math.random() * entry.canvas.height);
 
@@ -54,8 +52,9 @@ function init() {
 
 	});
 
-	draw();
+
 	loop = setInterval(draw, 500);
+	draw();
 }
 
 function draw() {
@@ -86,13 +85,14 @@ function move(context, canvas, points) {
 			point.r = point.r + Math.floor(Math.random() * 1.5) * (Math.random() < 0.5 ? -1 : 1);
 		} while (point.r > 4 || point.r < 1);
 
+		context.beginPath();
+		context.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
+		context.fill();
+		context.stroke();
 	});
 }
 
 function connect(context, points) {
-
-	context.strokeStyle = "#ff6d00";
-
 	points.forEach(function (point) {
 
 		points.forEach(function (other) {
@@ -109,15 +109,6 @@ function connect(context, points) {
 			}
 
 		});
-
-	});
-
-	points.forEach(function (point) {
-
-		context.beginPath();
-		context.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
-		context.fill();
-		context.stroke();
 
 	});
 
