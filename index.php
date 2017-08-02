@@ -28,6 +28,8 @@
 			Your browser does not support canvas!
 		</canvas>
 
+		<img src="burger.png" alt="menu" class="icon" />
+
 		<div id="headline">
 			<a href="index.php" target="_self">
 				> su IT --blog
@@ -45,6 +47,44 @@
 
 		<div class="post">
 			<h1>Test article 1</h1>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+		</div>
+
+		<div class="post">
+			<h1>Test article 2</h1>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
+		</div>
+
+		<div class="post">
+			<h1>Test article 3</h1>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
 		</div>
 
 	</div>
