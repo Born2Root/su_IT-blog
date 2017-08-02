@@ -40,12 +40,24 @@
 
 	<div id="body">
 
-s
+		<div id="background">
+		</div>
+
+		<div class="post">
+			<h1>Test article 1</h1>
+		</div>
+
 	</div>
 
 	<div id="footer">
-
-
+		<canvas height="50" width="400" id="animation_canvas_footer">
+			Your browser does not support canvas!
+		</canvas>
+		<div id="disclaimer">
+            Disclaimer
+            <br/>
+            <br/> &copy; 2017
+        </div>
 	</div>
 
 	<script src="/js/animation.js"></script>

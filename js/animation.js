@@ -2,15 +2,11 @@ var canvas_list = [{
 	canvas: document.getElementById("animation_canvas_header"),
 	context: document.getElementById("animation_canvas_header").getContext("2d"),
 	points: []
-}];
-
-/*
-, {
+}, {
 	canvas: document.getElementById("animation_canvas_footer"),
 	context: document.getElementById("animation_canvas_footer").getContext("2d"),
 	points: []
-}
-*/
+}];
 
 var amount_points = 30;
 var distance = 30;
@@ -23,7 +19,7 @@ resize_canvas_animation();
 
 function resize_canvas_animation() {
 	canvas_list.forEach(function (entry) {
-		entry.canvas.width = window.innerWidth - 15;
+		entry.canvas.width = window.innerWidth;
 	});
 	init();
 }
