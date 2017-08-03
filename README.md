@@ -15,6 +15,7 @@ And maybe someone gets inspired or reuses our ideas :)
 - "ajax"
 - CSS3
 - PHP7
+- font awesome 4.7
 
 # timeline
 
@@ -23,7 +24,7 @@ date of idea: 21.05.2017
 first commit: 12.06.2017
 <br>
 new branch: 06.07.2017
+<br>
+redesign: 01.08.2017
 
 # To-DO:
-
-- redesign
