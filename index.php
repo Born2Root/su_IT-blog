@@ -48,45 +48,53 @@
 
 		<div class="post">
 			<h1>Test article 1</h1>
-			<br>
-			<br>
-			<i class="fa fa-tags" aria-hidden="true"></i>:
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-
+			<hr>
+			<p>
+				<i class="fa fa-tags" aria-hidden="true"></i>:
+				<i class="fa fa-html5" aria-hidden="true">HTML5</i>
+				<i class="fa fa-linux" aria-hidden="true">Linux</i>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</p>
 		</div>
 
 		<div class="post">
 			<h1>Test article 2</h1>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			
+			<hr>
+			<p>
+				<i class="fa fa-tags" aria-hidden="true"></i>:
+				<i class="fa fa-terminal" aria-hidden="true">Terminal</i>
+				<i class="fa fa-android" aria-hidden="true">Android</i>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</p>
 		</div>
 
 		<div class="post">
 			<h1>Test article 3</h1>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			
+			<hr>
+			<p>
+				<i class="fa fa-tags" aria-hidden="true"></i>:
+				<i class="fa fa-html5" aria-hidden="true">HTML5</i>
+				<i class="fa fa-linux" aria-hidden="true">Linux</i>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</p>
 		</div>
 
 	</div>
