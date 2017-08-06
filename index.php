@@ -46,22 +46,24 @@
 		<div id="background">
 		</div>
 
-		<div class="post">
-			<h1>Test article 1</h1>
-			<hr>
-			<p>
-				<i class="fa fa-tags" aria-hidden="true"></i>:
-				<i class="fa fa-html5" aria-hidden="true">HTML5</i>
-				<i class="fa fa-linux" aria-hidden="true">Linux</i>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-			</p>
-		</div>
+		<a href="script_to_rice_your_setup_1.html" target="_self">
+			<div class="post">
+				<h1>Test article 1</h1>
+				<hr>
+				<p>
+					<i class="fa fa-tags" aria-hidden="true"></i>:
+					<i class="fa fa-html5" aria-hidden="true">HTML5</i>
+					<i class="fa fa-linux" aria-hidden="true">Linux</i>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+				</p>
+			</div>
+		</a>
 
 		<div class="post">
 			<h1>Test article 2</h1>
