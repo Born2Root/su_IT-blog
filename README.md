@@ -1,13 +1,5 @@
 # su_it_blog
-source code for the su it --blog
-
-# what is the goal of this blog?
-
-In the first place our goal is not to get "followers" or fame or entertain people.<br>
-The idea is to create a place where we can put the things we made.
-<br>
-<br>
-And maybe someone gets inspired or reuses our ideas :)
+source code for the su IT --blog
 
 # what we are using:
 - HTML5
@@ -26,5 +18,10 @@ first commit: 12.06.2017
 new branch: 06.07.2017
 <br>
 redesign: 01.08.2017
+<br>
+100 commits: 06.08.2017
 
 # To-DO:
+
+- css design
+- write posts
