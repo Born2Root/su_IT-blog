@@ -20,6 +20,12 @@ resize_canvas_animation();
 function resize_canvas_animation() {
 	canvas_list.forEach(function (entry) {
 		entry.canvas.width = window.innerWidth;
+		if (screen.width < 768) {
+			entry.canvas.height = 50;
+		} else {
+			entry.canvas.height = 107;
+		}
+
 	});
 	init();
 }

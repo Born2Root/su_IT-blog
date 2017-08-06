@@ -34,8 +34,8 @@
 			<a href="index.php" target="_self">
 				> su IT --blog
 			</a>
-			<div style="display:none;">
-				<span id="subtitle">- we sudo everything</span>
+			<div id="subtitle">
+				<span id="console">- we sudo everything</span>
 				<span class="cursor">|</span> -
 			</div>
 		</div>
@@ -111,6 +111,7 @@
 	</div>
 
 	<script src="/js/animation.js"></script>
+	<script src="/js/cli_write.js"></script>
 
 </body>
 

@@ -52,6 +52,7 @@ body {
 #headline a {
 	text-decoration: none;
 	font-size: 2em;
+	font-weight: bold;
 	color: #ffffff;
 }
 
@@ -93,6 +94,11 @@ h1 {
 	padding: 3px 4px;
 }
 
+#subtitle {
+	display: none;
+	text-align: center;
+}
+
 #body .fa-tags {
 	background-color: unset;
 }
@@ -129,4 +135,49 @@ hr {
 	left: 0px;
 	right: 0px;
 	width: 90px;
+}
+
+.cursor {
+	-webkit-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#subtitle {
+		display: block;
+	}
+	#headline a {
+		font-size: 3em;
+	}
+	#burger {
+		display: none;
+	}
+	#headline {
+		width: 19em;
+		padding: 5px 10px;
+	}
 }
