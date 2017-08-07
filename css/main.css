@@ -71,6 +71,22 @@ body {
 	-webkit-box-shadow: 0px 0px 8px 0px rgba(255, 109, 0, 1);
 }
 
+.post_link {
+	/* nicht unterstrichen */
+	text-decoration: none;
+}
+
+.post_image {
+	/* mit scalieren */
+	width: 100%;
+	/* nicht groeser als 450px */
+	max-width: 450px;
+	/* immer untereinander bleiben */
+	display: block;
+	/* immer mittig */
+	margin: auto;
+}
+
 #article {
 	position: relative;
 	z-index: 10;
@@ -87,6 +103,12 @@ h1 {
 	text-align: center;
 	padding-top: 5px;
 	margin-bottom: 10px;
+	font-size: 1.7em;
+}
+
+h2 {
+	margin-left: 5%;
+	font-size: 1.4em;
 }
 
 #body .fa {
@@ -179,5 +201,9 @@ hr {
 	#headline {
 		width: 19em;
 		padding: 5px 10px;
+	}
+	#body {
+		margin-top: 140px;
+		margin-bottom: 140px;
 	}
 }

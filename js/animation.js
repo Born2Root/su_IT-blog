@@ -8,8 +8,8 @@ var canvas_list = [{
 	points: []
 }];
 
-var amount_points = 30;
-var distance = 30;
+var amount_points;
+var distance;
 
 var loop = null;
 
@@ -19,11 +19,15 @@ resize_canvas_animation();
 
 function resize_canvas_animation() {
 	canvas_list.forEach(function (entry) {
-		entry.canvas.width = window.innerWidth;
-		if (screen.width < 768) {
+		entry.canvas.width = document.body.scrollWidth;
+		if (document.body.scrollWidth <= 767) {
 			entry.canvas.height = 50;
+			amount_points = 30;
+			distance = 30;
 		} else {
 			entry.canvas.height = 107;
+			amount_points = 100;
+			distance = 60;
 		}
 
 	});

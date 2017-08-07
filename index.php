@@ -46,58 +46,50 @@
 		<div id="background">
 		</div>
 
-		<a href="script_to_rice_your_setup_1.html" target="_self">
+		<a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
 			<div class="post">
-				<h1>Test article 1</h1>
+				<h1>Script To Rice Your Setup Pt.1</h1>
+				<h2>Get a better looking system info by ricing screenfetch</h2>
 				<hr>
 				<p>
 					<i class="fa fa-tags" aria-hidden="true"></i>:
-					<i class="fa fa-html5" aria-hidden="true">HTML5</i>
+					<i class="fa fa-code" aria-hidden="true"></i>
 					<i class="fa fa-linux" aria-hidden="true">Linux</i>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
+					<i class="fa fa-terminal" aria-hidden="true">Terminal</i>
+					<img src="console.png" alt="console" class="post_image"/>
 				</p>
 			</div>
 		</a>
 
-		<div class="post">
-			<h1>Test article 2</h1>
-			<hr>
-			<p>
-				<i class="fa fa-tags" aria-hidden="true"></i>:
-				<i class="fa fa-terminal" aria-hidden="true">Terminal</i>
-				<i class="fa fa-android" aria-hidden="true">Android</i>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-			</p>
-		</div>
+		<a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
+			<div class="post">
+				<h1>Script To Rice Your Setup Pt.2</h1>
+				<h2>Get a better looking system info by ricing screenfetch</h2>
+				<hr>
+				<p>
+					<i class="fa fa-tags" aria-hidden="true"></i>:
+					<i class="fa fa-code" aria-hidden="true"></i>
+					<i class="fa fa-linux" aria-hidden="true">Linux</i>
+					<i class="fa fa-terminal" aria-hidden="true">Terminal</i>
+					<img src="console.png" alt="console" class="post_image"/>
+				</p>
+			</div>
+		</a>
 
-		<div class="post">
-			<h1>Test article 3</h1>
-			<hr>
-			<p>
-				<i class="fa fa-tags" aria-hidden="true"></i>:
-				<i class="fa fa-html5" aria-hidden="true">HTML5</i>
-				<i class="fa fa-linux" aria-hidden="true">Linux</i>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-			</p>
-		</div>
+		<a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
+			<div class="post">
+				<h1>Script To Rice Your Setup Pt.1</h1>
+				<h2>Get a better looking system info by ricing screenfetch</h2>
+				<hr>
+				<p>
+					<i class="fa fa-tags" aria-hidden="true"></i>:
+					<i class="fa fa-code" aria-hidden="true"></i>
+					<i class="fa fa-linux" aria-hidden="true">Linux</i>
+					<i class="fa fa-terminal" aria-hidden="true">Terminal</i>
+					<img src="console.png" alt="console" class="post_image"/>
+				</p>
+			</div>
+		</a>
 
 	</div>
 
