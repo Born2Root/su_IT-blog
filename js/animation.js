@@ -51,7 +51,10 @@ function init() {
 			entry.points.push({
 				x: x,
 				y: y,
-				r: r
+				r: r,
+				i: 0,
+				mx: 0,
+				my: 0
 			});
 		}
 
@@ -61,7 +64,7 @@ function init() {
 	});
 
 	draw();
-	loop = setInterval(draw, 500);
+	loop = setInterval(draw, 60);
 }
 
 function draw() {
@@ -80,17 +83,27 @@ function move(context, canvas, points) {
 
 	points.forEach(function (point) {
 
-		do {
-			point.x = point.x + (Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1));
-		} while (point.x > canvas.width + 5 || point.x < -5);
+		if (point.i > 9) {
+			do {
+				point.mx = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
+			} while (point.x + point.mx * 10 > canvas.width + 5 || point.x + point.mx * 10 < -5);
 
-		do {
-			point.y = point.y + (Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1));
-		} while (point.y > canvas.height + 5 || point.y < -5);
+			do {
+				point.my = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
+			} while (point.y + point.my * 10 > canvas.height + 5 || point.y + point.my * 10 < -5);
 
-		do {
-			point.r = point.r + Math.floor(Math.random() * 1.5) * (Math.random() < 0.5 ? -1 : 1);
-		} while (point.r > 4 || point.r < 1);
+			do {
+				point.r = point.r + Math.floor(Math.random() * 1.5) * (Math.random() < 0.5 ? -1 : 1);
+			} while (point.r > 4 || point.r < 1);
+
+			point.i = -1;
+		}
+
+		point.i += 1;
+
+		point.x = point.x + point.mx;
+
+		point.y = point.y + point.my;
 
 	});
 }
