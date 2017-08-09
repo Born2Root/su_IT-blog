@@ -30,10 +30,10 @@
 
 	<div id="header">
 
-		<canvas height="50" width="400" id="animation_canvas_header">
+		<canvas height="50" width="200" id="animation_canvas_header">
 		</canvas>
 
-		<i class="fa fa-bars" aria-hidden="true" id="burger"></i>
+		<i class="fa fa-bars" aria-hidden="true" id="burger" onclick="toggle_menu();"></i>
 
 		<div id="headline">
 			<a href="index.php" target="_self">
@@ -43,6 +43,41 @@
 				<span id="console">- we sudo everything</span>
 				<span class="cursor">|</span> -
 			</div>
+		</div>
+
+		<div id="menu">
+			<ul>
+				<li>
+					<a href="" target="_self">
+						Linux
+					</a>
+				</li>
+				<li>
+					<a href="" target="_self">
+						Blender
+					</a>
+				</li>
+				<li>
+					<a href="" target="_self">
+						Memes
+					</a>
+				</li>
+				<li>
+					<a href="" target="_self">
+						Pictures
+					</a>
+				</li>
+				<li>
+					<a href="" target="_self">
+						Scripts
+					</a>
+				</li>
+				<li>
+					<a href="" target="_self">
+						Various
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 
@@ -99,7 +134,7 @@
 	</div>
 
 	<div id="footer">
-		<canvas height="50" width="400" id="animation_canvas_footer">
+		<canvas height="50" width="200" id="animation_canvas_footer">
 		</canvas>
 		<div id="disclaimer">
             Disclaimer
@@ -109,6 +144,7 @@
 
 	<script src="/js/animation.js"></script>
 	<script src="/js/cli_write.js"></script>
+	<script src="/js/menu.js"></script>
 
 </body>
 
