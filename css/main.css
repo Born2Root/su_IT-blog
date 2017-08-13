@@ -6,6 +6,8 @@
 	background-color: #111111;
 	position: fixed;
 	z-index: 11;
+	box-shadow: #000000 0 7px 6px -6px;
+	-webkit-box-shadow: #000000 0 7px 6px -6px;
 }
 
 #burger {
@@ -219,6 +221,9 @@ hr {
 }
 
 @media only screen and (min-width: 768px) {
+	#header {
+		position: absolute;
+	}
 	#subtitle {
 		display: block;
 	}
@@ -245,5 +250,22 @@ hr {
 	}
 	#menu li {
 		display: inline;
+	}
+	.fixed-menu {
+		position: fixed;
+		top: 0px;
+		width: 100%;
+		margin: 0px !important;
+		padding: 15px;
+		background-color: #111111;
+		box-shadow: #000000 0 7px 6px -6px;
+		-webkit-box-shadow: #000000 0 7px 6px -6px;
+	}
+	#container {
+		width: 75%;
+		margin: auto;
+		padding: 10px;
+		position: relative;
+		background-color: rgba(1, 1, 1, 0.6);
 	}
 }

@@ -64,7 +64,7 @@ function init() {
 	});
 
 	draw();
-	loop = setInterval(draw, 60);
+	loop = setInterval(draw, 100);
 }
 
 function draw() {
