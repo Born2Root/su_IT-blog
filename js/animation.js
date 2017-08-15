@@ -27,7 +27,7 @@ function resize_canvas_animation() {
 		} else {
 			entry.canvas.height = 107;
 			amount_points = 100;
-			distance = 60;
+			distance = 70;
 		}
 
 	});

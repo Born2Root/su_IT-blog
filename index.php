@@ -17,6 +17,8 @@
 
 	<!-- main css -->
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<!-- mobile css -->
+	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/mobile.css">
 
 	<!-- favicon -->
 	<link rel="icon" type="image/png" href="" />
@@ -96,13 +98,40 @@
 					<h1>Script To Rice Your Setup Pt.1</h1>
 					<h2>Get a better looking system info by ricing screenfetch</h2>
 					<hr>
-					<p>
+					<div class="paragraph">
+
+						<span style="color: #6C6; font-size: 135px;">&#x2B22;</span>
+
+						<div class="hexagon">
+							HEXAGON
+							<div class="face1"></div>
+							<div class="face2"></div>
+						</div>
+
+
+						<div style="float: left; width: 400px;">
+							<div class="hex-row">
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+							</div>
+							<div class="hex-row even">
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+							</div>
+							<div class="hex-row">
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+							</div>
+						</div>
+
 						<i class="fa fa-tags" aria-hidden="true"></i>:
-						<i class="fa fa-code" aria-hidden="true"></i>
-						<i class="fa fa-linux" aria-hidden="true">Linux</i>
-						<i class="fa fa-terminal" aria-hidden="true">Terminal</i>
+						<i class="fa fa-code" aria-hidden="true"> Programming</i>
+						<i class="fa fa-linux" aria-hidden="true"> Linux</i>
+						<i class="fa fa-terminal" aria-hidden="true"> Terminal</i>
 						<img src="console.png" alt="console" class="post_image"/>
-					</p>
+					</div>
 				</div>
 			</a>
 

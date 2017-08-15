@@ -1,0 +1,57 @@
+#header {
+	position: absolute;
+}
+
+#subtitle {
+	display: block;
+}
+
+#headline a {
+	font-size: 2.5em;
+}
+
+#burger {
+	display: none;
+}
+
+#headline {
+	width: 20em;
+	padding: 5px 10px;
+}
+
+#body {
+	margin-top: 190px;
+	margin-bottom: 140px;
+}
+
+#menu {
+	display: block;
+	margin: 15px;
+}
+
+#menu a {
+	display: initial;
+}
+
+#menu li {
+	display: inline;
+}
+
+.fixed-menu {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	margin: 0px !important;
+	padding: 20px 0px;
+	background-color: #111111;
+	box-shadow: #000000 0 7px 6px -6px;
+	-webkit-box-shadow: #000000 0 7px 6px -6px;
+}
+
+#container {
+	width: 75%;
+	margin: auto;
+	padding: 10px;
+	position: relative;
+	background-color: rgba(1, 1, 1, 0.6);
+}
