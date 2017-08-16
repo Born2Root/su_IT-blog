@@ -18,7 +18,7 @@
 	<!-- main css -->
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
 	<!-- mobile css -->
-	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/mobile.css">
+	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
 	<!-- favicon -->
 	<link rel="icon" type="image/png" href="" />
@@ -100,36 +100,76 @@
 					<hr>
 					<div class="paragraph">
 
-						<span style="color: #6C6; font-size: 135px;">&#x2B22;</span>
-
-						<div class="hexagon">
-							HEXAGON
-							<div class="face1"></div>
-							<div class="face2"></div>
-						</div>
-
-
 						<div style="float: left; width: 400px;">
 							<div class="hex-row">
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
+								
+								<div class="hex">
+									<div class="span1">
+										<i class="fa fa-tags" aria-hidden="true"></i>
+									</div>
+									<div class="span2">
+										Tags:
+									</div>
+
+									<div class="top"></div>
+									<div class="middle"></div>
+									<div class="bottom"></div>
+									
+								</div>
+								<div class="hex">
+									<div class="span1">
+										<i class="fa fa-code" aria-hidden="true"></i>
+									</div>
+									<div class="span2">
+										Programming
+									</div>
+
+									<div class="top"></div>
+									<div class="middle"></div>
+									<div class="bottom"></div>
+								</div>
+								<div class="hex">
+									<div class="span1">
+										<i class="fa fa-linux" aria-hidden="true"></i>
+									</div>
+									<div class="span2">
+										Linux
+									</div>
+
+									<div class="top"></div>
+									<div class="middle"></div>
+									<div class="bottom"></div>
+								</div>
+
 							</div>
 							<div class="hex-row even">
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
-							</div>
-							<div class="hex-row">
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
-								<div class="hex"><div class="top"></div><div class="middle"></div><div class="bottom"></div></div>
-							</div>
-						</div>
+								<div class="hex">
+									<div class="span1">
+										<i class="fa fa-linux" aria-hidden="true"></i>
+									</div>
+									<div class="span2">
+										Linux
+									</div>
 
-						<i class="fa fa-tags" aria-hidden="true"></i>:
-						<i class="fa fa-code" aria-hidden="true"> Programming</i>
-						<i class="fa fa-linux" aria-hidden="true"> Linux</i>
-						<i class="fa fa-terminal" aria-hidden="true"> Terminal</i>
+									<div class="top"></div>
+									<div class="middle"></div>
+									<div class="bottom"></div>
+								</div>
+								<div class="hex">
+									<div class="span1">
+										<i class="fa fa-linux" aria-hidden="true"></i>
+									</div>
+									<div class="span2">
+										Linux
+									</div>
+
+									<div class="top"></div>
+									<div class="middle"></div>
+									<div class="bottom"></div>
+								</div>
+							</div>
+
+						</div>
 						<img src="console.png" alt="console" class="post_image"/>
 					</div>
 				</div>
