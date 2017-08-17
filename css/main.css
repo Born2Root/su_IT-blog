@@ -214,6 +214,12 @@ hr {
 
 /*  */
 
+.tags {
+	float: left;
+	margin-top: -35px;
+	height: 185px;
+}
+
 .hex {
 	float: left;
 	margin-left: 3px;
@@ -222,40 +228,43 @@ hr {
 
 .hex .top {
 	width: 0;
-	border-bottom: 30px solid #6C6;
-	border-left: 52px solid transparent;
-	border-right: 52px solid transparent;
+	border-bottom: 20px solid #000000;
+	border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
 }
 
 .hex .middle {
-	width: 104px;
-	height: 60px;
-	background: #6C6;
+	width: 70px;
+	height: 40px;
+	background: #000000;
 }
 
 .hex .bottom {
 	width: 0;
-	border-top: 30px solid #6C6;
-	border-left: 52px solid transparent;
-	border-right: 52px solid transparent;
+	border-top: 20px solid #000000;
+	border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
 }
 
 .hex-row {
 	clear: left;
+	height: 64px;
 }
 
 .hex-row.even {
-	margin-left: 53px;
+	margin-left: 37px;
 }
 
 .span1 {
 	top: 50px;
-	left: 40px;
+	left: 28px;
 	position: relative;
 }
 
 .span2 {
-	top: 67px;
+	top: 55px;
 	left: 10px;
+	width: 0px;
+	height: 20px;
 	position: relative;
 }
