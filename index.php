@@ -53,32 +53,32 @@
 		<div id="menu">
 			<ul>
 				<li>
-					<a href="" target="_self">
+					<a href="index.php?tag=linux" target="_self">
 						Linux
 					</a>
 				</li>
 				<li>
-					<a href="" target="_self">
+					<a href="index.php?tag=blender" target="_self">
 						Blender
 					</a>
 				</li>
 				<li>
-					<a href="" target="_self">
+					<a href="index.php?tag=memes" target="_self">
 						Memes
 					</a>
 				</li>
 				<li>
-					<a href="" target="_self">
+					<a href="index.php?tag=pictures" target="_self">
 						Pictures
 					</a>
 				</li>
 				<li>
-					<a href="" target="_self">
+					<a href="index.php?tag=scripts" target="_self">
 						Scripts
 					</a>
 				</li>
 				<li>
-					<a href="" target="_self">
+					<a href="index.php?tag=various" target="_self">
 						Various
 					</a>
 				</li>
@@ -93,187 +93,312 @@
 
 		<div id="container">
 
-			<a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
-				<div class="post">
-					<h1>Script To Rice Your Setup Pt.1</h1>
-					<h2>Get a better looking system info by ricing screenfetch</h2>
-					<hr>
-					<div class="paragraph">
+			<?php
 
-						<div class="tags">
-							<div class="hex-row">
-								
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-tags" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Tags:
-									</div>
+            $file = fopen("posts.txt", "r") or die("Unable to open file!");
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-									
-								</div>
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-code" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Programm<br>ing
-									</div>
+            $list = fread($file, filesize("posts.txt"));
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-linux" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Linux
-									</div>
+            fclose($file);
+            
+            $lines = explode("\n", $list);
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
+            if (empty($_GET["tag"]) == true) {
+                for ($i = 0; $i < count($lines); $i += 1) {
+                }
+            } else {
+                $tag = $_GET["tag"];
+                $found = false;
 
-							</div>
-							<div class="hex-row even">
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-clock-o" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Duration
-									</div>
+                for ($i = 2; $i < count($lines); $i += 5) {
+                    if (in_array($tag, explode(";", $lines[$i])) == true) {
+                        $found = true;
+                        $a = $lines[$i+2];
+                        $h1 = $lines[$i-2];
+                        $h2 = $lines[$i-1];
+                        $img = $lines[$i+1];
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-clock-o" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										10min
-									</div>
+                        echo <<<EOT
+            <a href="$a" target="_self" class="post_link">
+                <div class="post">
+                    <h1>$h1</h1>
+                    <h2>$h2</h2>
+                    <hr>
+                    <div class="paragraph">
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
-							</div>
+                        <div class="tags">
+                            <div class="hex-row">
+                                
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-tags" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Tags:
+                                    </div>
 
-						</div>
-						<img src="console.png" alt="console" class="post_image"/>
-					</div>
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                    
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-code" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Programm<br>ing
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-linux" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Linux
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+
+                            </div>
+                            <div class="hex-row even">
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Duration
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        10min
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <img src="$img" alt="$img" class="post_image"/>
+                    </div>
+                </div>
+            </a>
+EOT;
+                    }
+                }
+                if ($found == false) {
+                    echo <<<EOT
+			<div class="post">
+				<h1>I'm sorry :(</h1>
+				<hr/>
+				<div class="paragraph">
+					The is nothing to show under this tag, yet.
 				</div>
-			</a>
+			</div>
+EOT;
+                }
+            }
 
-			<a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
-				<div class="post">
-					<h1>Script To Rice Your Setup Pt.1</h1>
-					<h2>Get a better looking system info by ricing screenfetch</h2>
-					<hr>
-					<div class="paragraph">
+            ?>
 
-						<div class="tags">
-							<div class="hex-row">
-								
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-tags" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Tags:
-									</div>
+            <a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
+                <div class="post">
+                    <h1>Script To Rice Your Setup Pt.1</h1>
+                    <h2>Get a better looking system info by ricing screenfetch</h2>
+                    <hr/>
+                    <div class="paragraph">
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-									
-								</div>
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-code" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Programming
-									</div>
+                        <div class="tags">
+                            <div class="hex-row">
+                                
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-tags" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Tags:
+                                    </div>
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-linux" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Linux
-									</div>
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                    
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-code" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Programm<br>ing
+                                    </div>
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-linux" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Linux
+                                    </div>
 
-							</div>
-							<div class="hex-row even">
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-linux" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Linux
-									</div>
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
-								<div class="hex">
-									<div class="span1">
-										<i class="fa fa-linux" aria-hidden="true"></i>
-									</div>
-									<div class="span2">
-										Linux
-									</div>
+                            </div>
+                            <div class="hex-row even">
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Duration
+                                    </div>
 
-									<div class="top"></div>
-									<div class="middle"></div>
-									<div class="bottom"></div>
-								</div>
-							</div>
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        10min
+                                    </div>
 
-						</div>
-						<img src="console.png" alt="console" class="post_image"/>
-					</div>
-				</div>
-			</a>
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
 
-		</div>
+                        </div>
+                        <img src="console.png" alt="console" class="post_image"/>
+                    </div>
+                </div>
+            </a>
 
-	</div>
+            <a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
+                <div class="post">
+                    <h1>Script To Rice Your Setup Pt.1</h1>
+                    <h2>Get a better looking system info by ricing screenfetch</h2>
+                    <hr>
+                    <div class="paragraph">
 
-	<div id="footer">
-		<canvas height="50" width="200" id="animation_canvas_footer">
-		</canvas>
-		<div id="disclaimer">
+                        <div class="tags">
+                            <div class="hex-row">
+                                
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-tags" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Tags:
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                    
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-code" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Programming
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-linux" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Linux
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+
+                            </div>
+                            <div class="hex-row even">
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-linux" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Linux
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                                <div class="hex">
+                                    <div class="span1">
+                                        <i class="fa fa-linux" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="span2">
+                                        Linux
+                                    </div>
+
+                                    <div class="top"></div>
+                                    <div class="middle"></div>
+                                    <div class="bottom"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <img src="console.png" alt="console" class="post_image"/>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <canvas height="50" width="200" id="animation_canvas_footer">
+        </canvas>
+        <div id="disclaimer">
             Disclaimer
             <br/> &copy; 2017
         </div>
-	</div>
+    </div>
 
-	<script src="/js/animation.js"></script>
-	<script src="/js/cli_write.js"></script>
-	<script src="/js/menu.js"></script>
-	<script src="/js/scroll.js"></script>
+    <script src="/js/animation.js"></script>
+    <script src="/js/cli_write.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/scroll.js"></script>
 
 </body>
 
