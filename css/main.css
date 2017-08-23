@@ -96,7 +96,7 @@ pre {
 	z-index: 10;
 	background-color: #202020;
 	width: 90%;
-	margin: auto;
+	margin: 30px auto;
 	color: #ffffff;
 	box-shadow: 0px 0px 8px 0px rgba(255, 109, 0, 1);
 	-webkit-box-shadow: 0px 0px 8px 0px rgba(255, 109, 0, 1);
@@ -152,9 +152,6 @@ hr {
 	height: 5px;
 	background-color: #ff6d00;
 	border: 0;
-}
-
-.post hr {
 	width: 90%;
 }
 
