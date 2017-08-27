@@ -19,6 +19,14 @@
 	margin: 30px auto;
 }
 
+hr {
+	width: auto;
+}
+
+.tags {
+	height: 260px;
+}
+
 #article p {
 	width: 90%;
 	margin: auto;

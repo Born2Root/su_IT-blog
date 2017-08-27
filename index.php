@@ -120,86 +120,86 @@
 
                         echo <<<EOT
             <a href="$a" target="_self" class="post_link">
-                <div class="post">
+            <div class="post">
+                    <img src="$img" alt="$img" class="post_image"/>
+                    
+
                     <h1>$h1</h1>
                     <h2>$h2</h2>
-                    <hr>
-                    <div class="paragraph">
+                    <hr/>
 
-                        <div class="tags">
-                            <div class="hex-row">
+                    <div class="tags">
+                        <div class="hex-row">
+                            
+                            <div class="hex">
+                                <div class="span1">
+                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                </div>
+                                <div class="span2">
+                                    Tags:
+                                </div>
+
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
                                 
-                                <div class="hex">
-                                    <div class="span1">
-                                        <i class="fa fa-tags" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="span2">
-                                        Tags:
-                                    </div>
-
-                                    <div class="top"></div>
-                                    <div class="middle"></div>
-                                    <div class="bottom"></div>
-                                    
-                                </div>
-                                <div class="hex">
-                                    <div class="span1">
-                                        <i class="fa fa-code" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="span2">
-                                        Programm<br>ing
-                                    </div>
-
-                                    <div class="top"></div>
-                                    <div class="middle"></div>
-                                    <div class="bottom"></div>
-                                </div>
-                                <div class="hex">
-                                    <div class="span1">
-                                        <i class="fa fa-linux" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="span2">
-                                        Linux
-                                    </div>
-
-                                    <div class="top"></div>
-                                    <div class="middle"></div>
-                                    <div class="bottom"></div>
-                                </div>
-
                             </div>
-                            <div class="hex-row even">
-                                <div class="hex">
-                                    <div class="span1">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="span2">
-                                        Duration
-                                    </div>
-
-                                    <div class="top"></div>
-                                    <div class="middle"></div>
-                                    <div class="bottom"></div>
+                            <div class="hex">
+                                <div class="span1">
+                                    <i class="fa fa-code" aria-hidden="true"></i>
                                 </div>
-                                <div class="hex">
-                                    <div class="span1">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="span2">
-                                        10min
-                                    </div>
-
-                                    <div class="top"></div>
-                                    <div class="middle"></div>
-                                    <div class="bottom"></div>
+                                <div class="span2">
+                                    Programm<br>ing
                                 </div>
+
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </div>
+                            <div class="hex">
+                                <div class="span1">
+                                    <i class="fa fa-linux" aria-hidden="true"></i>
+                                </div>
+                                <div class="span2">
+                                    Linux
+                                </div>
+
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
                             </div>
 
                         </div>
-                        <img src="$img" alt="$img" class="post_image"/>
+                        <div class="hex-row even">
+                            <div class="hex">
+                                <div class="span1">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="span2">
+                                    Duration
+                                </div>
+
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </div>
+                            <div class="hex">
+                                <div class="span1">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="span2">
+                                    10min
+                                </div>
+
+                                <div class="top"></div>
+                                <div class="middle"></div>
+                                <div class="bottom"></div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-            </a>
+            </div>
+        </a>
 EOT;
                     }
                 }
@@ -220,10 +220,12 @@ EOT;
 
             <a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
                 <div class="post">
-                    <h1>Script To Rice Your Setup Pt.1</h1>
-                    <h2>Get a better looking system info by ricing screenfetch</h2>
-                    <hr/>
-                    <div class="paragraph">
+                        <img src="console.png" alt="console" class="post_image"/>
+                        
+
+                        <h1>Script To Rice Your Setup Pt.1</h1>
+                        <h2>Get a better looking system info by ricing screenfetch</h2>
+                        <hr/>
 
                         <div class="tags">
                             <div class="hex-row">
@@ -295,17 +297,17 @@ EOT;
                             </div>
 
                         </div>
-                        <img src="console.png" alt="console" class="post_image"/>
-                    </div>
                 </div>
             </a>
 
-            <a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
+            <a href="script_to_rice_your_setup_2.html" target="_self" class="post_link">
                 <div class="post">
-                    <h1>Script To Rice Your Setup Pt.1</h1>
-                    <h2>Get a better looking system info by ricing screenfetch</h2>
-                    <hr>
-                    <div class="paragraph">
+                        <img src="console.png" alt="console" class="post_image"/>
+                        
+
+                        <h1>Script To Rice Your Setup Pt.2</h1>
+                        <h2>Überschrift von Part 2</h2>
+                        <hr/>
 
                         <div class="tags">
                             <div class="hex-row">
@@ -328,7 +330,7 @@ EOT;
                                         <i class="fa fa-code" aria-hidden="true"></i>
                                     </div>
                                     <div class="span2">
-                                        Programming
+                                        Programm<br>ing
                                     </div>
 
                                     <div class="top"></div>
@@ -352,10 +354,10 @@ EOT;
                             <div class="hex-row even">
                                 <div class="hex">
                                     <div class="span1">
-                                        <i class="fa fa-linux" aria-hidden="true"></i>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     </div>
                                     <div class="span2">
-                                        Linux
+                                        Duration
                                     </div>
 
                                     <div class="top"></div>
@@ -364,10 +366,10 @@ EOT;
                                 </div>
                                 <div class="hex">
                                     <div class="span1">
-                                        <i class="fa fa-linux" aria-hidden="true"></i>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     </div>
                                     <div class="span2">
-                                        Linux
+                                        10min
                                     </div>
 
                                     <div class="top"></div>
@@ -377,8 +379,6 @@ EOT;
                             </div>
 
                         </div>
-                        <img src="console.png" alt="console" class="post_image"/>
-                    </div>
                 </div>
             </a>
 
