@@ -8,6 +8,7 @@
 	z-index: 11;
 	box-shadow: #000000 0 7px 6px -6px;
 	-webkit-box-shadow: #000000 0 7px 6px -6px;
+	width: 100%;
 }
 
 #burger {
@@ -112,14 +113,14 @@ pre {
 	text-decoration: none;
 }
 
-.post_image {
+.image {
 	/* mit scalieren */
 	width: 100%;
 	/* nicht groeser als 450px */
 	max-width: 450px;
 	/* immer untereinander bleiben */
 	display: block;
-	float: right;
+	margin: auto;
 }
 
 #article {
@@ -136,9 +137,8 @@ pre {
 
 h1 {
 	text-align: center;
-	padding-top: 5px;
-	margin-bottom: 10px;
 	font-size: 1.7em;
+	margin-top: 1.5em;
 	text-decoration: underline;
 }
 
@@ -159,13 +159,12 @@ hr {
 	width: 90%;
 }
 
-.paragraph {}
-
 #footer {
 	background: #111111;
 	position: absolute;
 	z-index: 10;
 	bottom: 0px;
+	width: 100%;
 }
 
 #disclaimer {
@@ -206,62 +205,4 @@ hr {
 	100% {
 		opacity: 1;
 	}
-}
-
-
-/*  */
-
-.tags {
-	float: left;
-	margin-top: -35px;
-	height: 185px;
-}
-
-.hex {
-	float: left;
-	margin-left: 3px;
-	margin-bottom: -63px;
-}
-
-.hex .top {
-	width: 0;
-	border-bottom: 20px solid #000000;
-	border-left: 35px solid transparent;
-	border-right: 35px solid transparent;
-}
-
-.hex .middle {
-	width: 70px;
-	height: 40px;
-	background: #000000;
-}
-
-.hex .bottom {
-	width: 0;
-	border-top: 20px solid #000000;
-	border-left: 35px solid transparent;
-	border-right: 35px solid transparent;
-}
-
-.hex-row {
-	clear: left;
-	height: 64px;
-}
-
-.hex-row.even {
-	margin-left: 37px;
-}
-
-.span1 {
-	top: 50px;
-	left: 28px;
-	position: relative;
-}
-
-.span2 {
-	top: 55px;
-	left: 10px;
-	width: 0px;
-	height: 20px;
-	position: relative;
 }
