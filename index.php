@@ -104,7 +104,25 @@
             $lines = explode("\n", $list);
 
             if (empty($_GET["tag"]) == true) {
-                for ($i = 0; $i < count($lines); $i += 1) {
+                for ($i = 2; $i < count($lines); $i += 5) {
+                    $a = $lines[$i+2];
+                    $h1 = $lines[$i-2];
+                    $h2 = $lines[$i-1];
+                    $img = $lines[$i+1];
+
+                    echo <<<EOT
+		<a href="$a" target="_self" class="post_link">
+		<div class="post">
+				<img src="$img" alt="$img" class="image post_image"/>
+				
+
+				<h1>$h1</h1>
+				<h2>$h2</h2>
+				<hr/>
+
+		</div>
+	</a>
+EOT;
                 }
             } else {
                 $tag = $_GET["tag"];
@@ -121,7 +139,7 @@
                         echo <<<EOT
             <a href="$a" target="_self" class="post_link">
             <div class="post">
-                    <img src="$img" alt="$img" class="post_image"/>
+                    <img src="$img" alt="$img" class="image post_image"/>
                     
 
                     <h1>$h1</h1>
@@ -148,18 +166,6 @@ EOT;
 
             ?>
 
-            <a href="script_to_rice_your_setup_1.html" target="_self" class="post_link">
-                <div class="post">
-                        <img src="console.png" alt="console" class="image post_image"/>
-                        
-
-                        <h1>Script To Rice Your Setup Pt.1</h1>
-                        <h2>Get a better looking system info by ricing screenfetch</h2>
-                        <hr/>
-
-                </div>
-            </a>
-
         </div>
 
     </div>
@@ -169,7 +175,7 @@ EOT;
         </canvas>
         <div id="disclaimer">
             Disclaimer
-            <br/> &copy; 2017
+            <br/> &copy; <?php echo date("Y"); ?>
         </div>
     </div>
 
