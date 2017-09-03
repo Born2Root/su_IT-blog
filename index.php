@@ -1,99 +1,118 @@
+<?php
+if (empty($_GET["tag"]) == true) {
+    $tag = null;
+} else {
+    $tag = $_GET["tag"];
+}
+?>
 <!doctype html>
 <html lang="en">
 
 <head>
 
-	<title>
-		Home | su it --blog
-	</title>
+    <title>
+        Home | su it --blog
+    </title>
 
-	<!-- meta -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="robots" content="index, follow" />
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="index, follow" />
 
-	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="/css/main.css" />
-	<!-- mobile css -->
-	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
+    <!-- main css -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <!-- mobile css -->
+    <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
-	<!-- favicon -->
-	<link rel="icon" type="image/png" href="" />
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="" />
 
-	<!-- font awesome -->
-	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css" />
 
 </head>
 
 <body>
 
-	<div id="header">
+    <div id="header">
 
-		<div id="banner" class="canvas">
+        <div id="banner" class="canvas">
 
             <canvas height="50" width="200" id="animation_canvas_header">
             </canvas>
 
-			<i class="fa fa-bars" aria-hidden="true" id="burger" onclick="toggle_menu();"></i>
+            <i class="fa fa-bars" aria-hidden="true" id="burger" onclick="toggle_menu();"></i>
 
-			<div id="headline">
-				<a href="index.php" target="_self">
-					> su IT --blog
-				</a>
-				<div id="subtitle">
-					<span id="console">- we sudo everything</span>
-					<span class="cursor">|</span> -
-				</div>
-			</div>
-		</div>
+            <div id="headline">
+                <a href="index.php" target="_self">
+                    > su IT --blog
+                </a>
+                <div id="subtitle">
+                    <span id="console">- we sudo everything</span>
+                    <span class="cursor">|</span> -
+                </div>
+            </div>
+        </div>
 
-		<div id="menu">
-			<ul>
-				<li>
-					<a href="index.php?tag=linux" target="_self">
-						Linux
-					</a>
-				</li>
-				<li>
-					<a href="index.php?tag=blender" target="_self">
-						Blender
-					</a>
-				</li>
-				<li>
-					<a href="index.php?tag=memes" target="_self">
-						Memes
-					</a>
-				</li>
-				<li>
-					<a href="index.php?tag=pictures" target="_self">
-						Pictures
-					</a>
-				</li>
-				<li>
-					<a href="index.php?tag=scripts" target="_self">
-						Scripts
-					</a>
-				</li>
-				<li>
-					<a href="index.php?tag=various" target="_self">
-						Various
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+        <div id="menu">
+            <ul>
+                <li>
+                    <a href="index.php?tag=linux" target="_self" <?php if ($tag == "linux") {
+                        echo 'class="active"';
+} ?>>
+                        Linux
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?tag=blender" target="_self" <?php if ($tag == "blender") {
+                        echo 'class="active"';
+} ?>>
+                        Blender
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?tag=memes" target="_self" <?php if ($tag == "memes") {
+                        echo 'class="active"';
+} ?>>
+                        Memes
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?tag=pictures" target="_self" <?php if ($tag == "pictures") {
+                        echo 'class="active"';
+} ?>>
+                        Pictures
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?tag=scripts" target="_self" <?php if ($tag == "scripts") {
+                        echo 'class="active"';
+} ?>>
+                        Scripts
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?tag=various" target="_self" <?php if ($tag == "various") {
+                        echo 'class="active"';
+} ?>>
+                        Various
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-	<div id="body">
+    <div id="body">
 
-		<div id="background">
-		</div>
+        <div id="background">
+        </div>
 
-		<div id="container">
+        <div id="container">
 
-			<?php
+            <?php
 
             $file = fopen("posts.txt", "r") or die("Unable to open file!");
 
@@ -103,7 +122,7 @@
             
             $lines = explode("\n", $list);
 
-            if (empty($_GET["tag"]) == true) {
+            if ($tag == null) {
                 for ($i = 2; $i < count($lines); $i += 5) {
                     $a = $lines[$i+2];
                     $h1 = $lines[$i-2];
@@ -125,7 +144,6 @@
 EOT;
                 }
             } else {
-                $tag = $_GET["tag"];
                 $found = false;
 
                 for ($i = 2; $i < count($lines); $i += 5) {
@@ -144,7 +162,10 @@ EOT;
 
                     <h1>$h1</h1>
                     <h2>$h2</h2>
-                    <hr/>
+					<hr/>
+					<img src="hexagon_linux.png" alt="hexagon_linux"/>
+					<img src="hexagon_linux.png" alt="hexagon_linux"/>
+					<img src="hexagon_linux.png" alt="hexagon_linux"/>
 
             </div>
         </a>
