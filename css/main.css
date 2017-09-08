@@ -214,3 +214,26 @@ hr {
 		opacity: 1;
 	}
 }
+
+
+/*  */
+
+.tag_img {
+	position: absolute;
+}
+
+.tag_text {
+	position: relative;
+	top: 55px;
+	left: 40px;
+}
+
+.tag_div {
+	display: inline-block;
+}
+
+.tag_div:nth-child(2n+0) {
+	position: relative;
+	top: 80px;
+	left: 2px;
+}

@@ -111,7 +111,6 @@ if (empty($_GET["tag"]) == true) {
         </div>
 
         <div id="container">
-
             <?php
 
             $file = fopen("posts.txt", "r") or die("Unable to open file!");
@@ -124,23 +123,35 @@ if (empty($_GET["tag"]) == true) {
 
             if ($tag == null) {
                 for ($i = 2; $i < count($lines); $i += 5) {
-                    $a = $lines[$i+2];
                     $h1 = $lines[$i-2];
                     $h2 = $lines[$i-1];
+                    $tags = explode(";", $lines[$i]);
                     $img = $lines[$i+1];
+                    $a = $lines[$i+2];
 
                     echo <<<EOT
-		<a href="$a" target="_self" class="post_link">
-		<div class="post">
-				<img src="$img" alt="$img" class="image post_image"/>
-				
+                
+            <a href="$a" target="_self" class="post_link">
+                <div class="post">
+                    <img src="$img" alt="$img" class="image post_image"/>
+                    <h1>$h1</h1>
+                    <h2>$h2</h2>
+                    <hr/>
+EOT;
+                    //tags
+                    foreach ($tags as $tag) {
+                        echo <<<EOT
 
-				<h1>$h1</h1>
-				<h2>$h2</h2>
-				<hr/>
+                    <div class="tag_div">
+                        <img src="hexagon.png" alt="tag_$tag" class="tag_img" />
+                        <div class="tag_text">$tag</div>
+                    </div>
+EOT;
+                    }
+                    echo <<<EOT
 
-		</div>
-	</a>
+                </div>
+            </a>
 EOT;
                 }
             } else {
@@ -149,10 +160,11 @@ EOT;
                 for ($i = 2; $i < count($lines); $i += 5) {
                     if (in_array($tag, explode(";", $lines[$i])) == true) {
                         $found = true;
-                        $a = $lines[$i+2];
                         $h1 = $lines[$i-2];
                         $h2 = $lines[$i-1];
+                        $tags = $lines[$i];
                         $img = $lines[$i+1];
+                        $a = $lines[$i+2];
 
                         echo <<<EOT
             <a href="$a" target="_self" class="post_link">
@@ -163,9 +175,6 @@ EOT;
                     <h1>$h1</h1>
                     <h2>$h2</h2>
 					<hr/>
-					<img src="hexagon_linux.png" alt="hexagon_linux"/>
-					<img src="hexagon_linux.png" alt="hexagon_linux"/>
-					<img src="hexagon_linux.png" alt="hexagon_linux"/>
 
             </div>
         </a>
