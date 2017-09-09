@@ -143,7 +143,7 @@ EOT;
                         echo <<<EOT
 
                     <div class="tag_div">
-                        <img src="hexagon.png" alt="tag_$tag" class="tag_img" />
+                        <img src="hexagon.png" alt="tag_" class="tag_img" />
                         <div class="tag_text">$tag</div>
                     </div>
 EOT;

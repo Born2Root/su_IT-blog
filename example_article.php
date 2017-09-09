@@ -146,6 +146,7 @@
 				<p>
 					It's automatically detecting your OS to display the logo and gets multiple system info's. Here a screenshot of how the normal output looks like on my system: Screenfetch or alternatives, like Archey, Screenfo or Neofetch, are pretty cool programs. But isn't it boring to always see the same logo, although all the logos out there look great?
 					<br/> For me, after seeing the (same) Arch logo for the third time I got a bit bored. So I came up with an idea.
+					<br/>
 					<br/> Therefore I wrote a little script to make my screenfetch look better or rather a bit different.
 					<br/> While going randomly through the man page of screenfetch, I noticed the -A Flag.
 				</p>
