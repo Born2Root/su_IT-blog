@@ -10,7 +10,7 @@ console.png
 script_to_rice_your_setup_2.html
 Script To Rice Your Setup Pt.3
 Get a better looking system info by ricing screenfetch
-scripts;memes;linux
+scripts;memes;linux;various;blender
 console.png
 script_to_rice_your_setup_3.html
 Script To Rice Your Setup Pt.4
