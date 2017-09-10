@@ -137,6 +137,7 @@ if (empty($_GET["tag"]) == true) {
                     <h1>$h1</h1>
                     <h2>$h2</h2>
                     <hr/>
+                    <div class="tags">
 EOT;
                     //tags
                     foreach ($tags as $tag) {
@@ -149,7 +150,7 @@ EOT;
 EOT;
                     }
                     echo <<<EOT
-
+                    </div>
                 </div>
             </a>
 EOT;

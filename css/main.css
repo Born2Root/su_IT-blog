@@ -107,9 +107,9 @@ pre {
 	background-color: #202020;
 	color: #ffffff;
 	margin: 30px auto;
-	overflow: hidden;
 	padding: 5px 10px;
 	position: relative;
+	overflow: hidden;
 	width: 90%;
 	z-index: 10;
 	box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
@@ -136,8 +136,7 @@ pre {
 	z-index: 10;
 	background-color: #202020;
 	color: #ffffff;
-	width: 100%;
-	margin: auto;
+	width: 98%;
 	padding: 1px 15px 15px 15px;
 	box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
 	-webkit-box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
@@ -148,10 +147,15 @@ pre {
 	line-height: 24px;
 }
 
+#article p:first-of-type::first-letter {
+	font-family: Georgia, serif;
+	font-size: 2.5em;
+}
+
 h1 {
 	text-align: center;
 	font-size: 1.7em;
-	margin-top: 1.5em;
+	margin-top: 0.5em;
 	text-decoration: underline;
 }
 
@@ -219,6 +223,10 @@ hr {
 	100% {
 		opacity: 1;
 	}
+}
+
+.tags {
+	height: 200px;
 }
 
 
