@@ -1,4 +1,3 @@
-we sudo everything
 1f u c4n r34d th1s u r34lly n33d t0 g37 l41d
 a clean house is the sign of a broken computer
 A TV can insult your intelligence, but nothing rubs it in like a computer
@@ -22,6 +21,7 @@ Computer programmers don't byte, they nibble a bit
 dd if=/dev/random of=/dev/sda
 Dip me in chocolate and throw me to the lesbians
 Disclaimer: Any errors in spelling, tact, or fact are transmission errors. 
+Disobey
 Enter any 11-digit prime number to continue
 Even extraordinary people, and I believe you are, are driven by human banalities
 Every bug you find is the last one
@@ -29,12 +29,13 @@ Expect No Mercy
 Failure is not an option — it comes bundled with the software
 Freedom is just another word for nothing left to loose
 Fuck society
+Give a man a mask and he will show you his true face
 Hacking is like sex. You get in, you get out, and hope that you didn’t leave something that can be traced back to you.
 have you tried turning it off and on again
 Hell is wallpapered with all your deleted selfies
 Hello friend. Hello friend? That's lame. Maybe I should give you a name
-Hey! It compiles! Ship it!
 Hey, it is your stuff right? Your numbers, your bits, you should be able to do anything you wish to do with it
+Hey! It compiles! Ship it!
 Hit any user to continue
 how about no
 How about we do some peer-to-peer sharing? Your domain or mine?
@@ -48,6 +49,7 @@ I typed "married" but it was auto-corrected to "martyred". Damn,smartphone has g
 I used to think love() was abstract, until you implemented it in MyHeart
 I want to play a game.
 I would like to change the world, but God doesn't give me the source code
+I'm not saying I am batman, I am just saying no one has ever seen me and batman in the same room together
 If all else fails, read the instructions
 If Bill Gates had a penny for every time I had to reboot my computer ...oh wait, he does
 If brute force doesn’t solve your problems, then you aren’t using enough
@@ -56,7 +58,6 @@ If Microsoft would make something that didn't suck, it would be a vacuum cleaner
 If You Can't Eat It Or Fuck It... Then Kill It!
 If you don't mind, I'm going to go dig a hole, sit in it and think for a while 
 If you were a browser, you'd be called FireFoxy
-I'm not saying I am batman, I am just saying no one has ever seen me and batman in the same room together
 In 10 seconds, your computer is going to explode. Don't look like a coward, run!
 In a world without fences and walls, who needs Gates and Windows?
 Is your name Wi-Fi? Because I'm feeling a connection
@@ -72,6 +73,7 @@ Lowering the hard disk heads does not increase the access time
 Maybe if we start telling people the brain is an app they will start using it
 mkfs.ext4 /dev/sda1
 Moving Forward is the only way to finish
+Mr Robot
 mv ~ /dev/null
 My daily Unix command list: unzip; strip; touch; finger; mount; fsck; more; yes; unmount; sleep.
 Never tell your problems to anyone...20% don't care and the other 80% are glad you have them...
@@ -86,6 +88,7 @@ Put your panties down, to grant me sudo access
 rm -rf /
 Roses are #FF0000, violets are #0000FF. All my base are belong to you.
 Scratch here ############## to reveal the password
+Sex:{ find; talk; grep; touch; unzip; mount; workbone; fsck; yes; gasp; fsck; yes; eject; makeclean; zip; done; exit}
 So if guns kill people, I guess pencils missspell word, cars drive drunk, and spoons make people fat
 So we make our own blog. With Blackjack and hookers
 Software is like sex: it's better when it's free.
@@ -106,7 +109,12 @@ This game is only for the girls: Sit on my lap and I'll tell your weight. Who wa
 This humor makes us unbearable for normal people!
 This website never has bugs. It just develops random features.
 Train Insane or remain the same
+we are anonymous
+we are legion
 We are what we are and what will be will be.
+we do not forget
+we do not forgive
+we sudo everything
 We're all living in each other's paranoia
 we're not anti-social, we're just not user friendly
 What do hackers like most? Hack & Slay Games
@@ -114,19 +122,12 @@ What do you call a Black Wizard? A Negromancer
 What was Forrest Gump's email password? "1forrest1"
 What's the difference between a hooker and a lawyer? A hooker will stop fucking you when your dead!
 When the past calls, let it go to voicemail. It has nothing new to say
+who wants to live forever
 Why? Because we can...
 Willyoupleasehelpmefixmykeyboard?Thespacebarisbroken! 
 wine (at) /home/till_you_get_drunk
-who wants to live forever
 You have security guidelines? We didn't noticed at all...
 You have the nicest syntax I've ever seen.
 You never finish a program, you just stop working on it
 You're never sure about anything unless there's something to be sure about
 You're not fat, you're just... easier to see
-Mr Robot
-Give a man a mask and he will show you his true face
-we are legion
-we do not forgive
-we do not forget
-we are anonymous
-Sex:{ find; talk; grep; touch; unzip; mount; workbone; fsck; yes; gasp; fsck; yes; eject; makeclean; zip; done; exit}

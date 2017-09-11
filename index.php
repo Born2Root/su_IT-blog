@@ -24,7 +24,7 @@ if (empty($_GET["tag"]) == true) {
 
     <!-- main css -->
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <!-- mobile css -->
+    <!-- desktop css -->
     <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
     <!-- favicon -->
@@ -144,7 +144,7 @@ EOT;
                         echo <<<EOT
 
                     <div class="tag_div">
-                        <img src="hexagon.png" alt="tag_" class="tag_img" />
+                        <img src="hexagon.png" alt="tag" class="tag_img" />
                         <div class="tag_text">$tag</div>
                     </div>
 EOT;

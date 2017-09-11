@@ -8,6 +8,7 @@ source code for the su IT --blog
 - CSS3
 - PHP7
 - font awesome 4.7
+- Highlight.js
 
 # timeline
 
@@ -23,5 +24,8 @@ redesign: 01.08.2017
 
 # To-DO:
 
-- css design
 - write posts
+- 404
+- impressum
+- search
+- 

@@ -17,7 +17,7 @@
 
 	<!-- main css -->
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
-	<!-- mobile css -->
+	<!-- desktop css -->
 	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
 	<!-- favicon -->
@@ -104,6 +104,33 @@
 
 				<h1>Scripts To Rice Your Setup</h1>
 				<h2>Get a better looking system info by ricing screenfetch</h2>
+
+				<div class="tags">
+					<div class="tag_div">
+						<img src="hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">Linux</div>
+					</div>
+					<div class="tag_div">
+						<img src="hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">Linux</div>
+					</div>
+					<div class="tag_div">
+						<img src="hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">Linux</div>
+					</div>
+					<div class="tag_div">
+						<img src="hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">Linux</div>
+					</div>
+					<div class="tag_div">
+						<img src="hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">Linux</div>
+					</div>
+					<div class="tag_div">
+						<img src="hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">Linux</div>
+					</div>
+				</div>
 
 				<hr/>
 
