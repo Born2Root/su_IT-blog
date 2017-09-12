@@ -13,14 +13,17 @@ var distance;
 
 var loop = null;
 
-window.addEventListener('resize', resize_canvas_animation, false);
+window.addEventListener('resize', init);
 
-resize_canvas_animation();
+init();
 
-function resize_canvas_animation() {
+function init() {
+
+	clearInterval(loop);
+
 	canvas_list.forEach(function (entry) {
 		entry.canvas.width = document.body.scrollWidth;
-		if (document.body.scrollWidth <= 767) {
+		if (entry.canvas.width <= 767) {
 			entry.canvas.height = 50;
 			amount_points = 30;
 			distance = 30;
@@ -29,16 +32,6 @@ function resize_canvas_animation() {
 			amount_points = 100;
 			distance = 70;
 		}
-
-	});
-	init();
-}
-
-function init() {
-
-	clearInterval(loop);
-
-	canvas_list.forEach(function (entry) {
 
 		entry.points = [];
 
@@ -60,7 +53,6 @@ function init() {
 
 		entry.context.strokeStyle = "#ffffff";
 		entry.context.fillStyle = "#ffffff";
-
 	});
 
 	draw();
@@ -69,14 +61,10 @@ function init() {
 
 function draw() {
 	canvas_list.forEach(function (entry) {
-		clear_screen(entry.context, entry.canvas);
+		entry.context.clearRect(0, 0, entry.canvas.width, entry.canvas.height);
 		move(entry.context, entry.canvas, entry.points);
 		connect(entry.context, entry.points);
 	});
-}
-
-function clear_screen(context, canvas) {
-	context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function move(context, canvas, points) {
@@ -104,7 +92,6 @@ function move(context, canvas, points) {
 		point.x = point.x + point.mx;
 
 		point.y = point.y + point.my;
-
 	});
 }
 
@@ -128,7 +115,6 @@ function connect(context, points) {
 			}
 
 		});
-
 	});
 
 	points.forEach(function (point) {
@@ -139,5 +125,4 @@ function connect(context, points) {
 		context.stroke();
 
 	});
-
 }

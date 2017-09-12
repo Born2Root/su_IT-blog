@@ -20,7 +20,6 @@ setTimeout(cli_write, 3000);
 var character = 0;
 var up = true;
 
-
 function cli_write() {
 
 	document.getElementById("console").innerHTML = "- " + lines[line].substr(0, character);
