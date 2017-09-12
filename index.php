@@ -163,22 +163,34 @@ EOT;
                         $found = true;
                         $h1 = $lines[$i-2];
                         $h2 = $lines[$i-1];
-                        $tags = $lines[$i];
+                        $tags = explode(";", $lines[$i]);
                         $img = $lines[$i+1];
                         $a = $lines[$i+2];
 
                         echo <<<EOT
-            <a href="$a" target="_self" class="post_link">
-            <div class="post">
-                    <img src="$img" alt="$img" class="image post_image"/>
-                    
-
-                    <h1>$h1</h1>
-                    <h2>$h2</h2>
-					<hr/>
-
-            </div>
-        </a>
+                        
+                    <a href="$a" target="_self" class="post_link">
+                        <div class="post">
+                            <img src="$img" alt="$img" class="image post_image"/>
+                            <h1>$h1</h1>
+                            <h2>$h2</h2>
+                            <hr/>
+                            <div class="tags">
+EOT;
+                            //tags
+                        foreach ($tags as $tag) {
+                            echo <<<EOT
+        
+                            <div class="tag_div">
+                                <img src="hexagon.png" alt="tag" class="tag_img" />
+                                <div class="tag_text">$tag</div>
+                            </div>
+EOT;
+                        }
+                            echo <<<EOT
+                            </div>
+                        </div>
+                    </a>
 EOT;
                     }
                 }
