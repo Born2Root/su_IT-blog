@@ -13,9 +13,9 @@ var distance;
 
 var loop = null;
 
-window.addEventListener('resize', init);
-
 init();
+window.removeEventListener("resize", init);
+window.addEventListener("resize", init);
 
 function init() {
 
@@ -71,14 +71,14 @@ function move(context, canvas, points) {
 
 	points.forEach(function (point) {
 
-		if (point.i > 9) {
+		if (point.i > 14) {
 			do {
 				point.mx = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
-			} while (point.x + point.mx * 10 > canvas.width + 5 || point.x + point.mx * 10 < -5);
+			} while (point.x + point.mx * 15 > canvas.width + 5 || point.x + point.mx * 15 < -5);
 
 			do {
 				point.my = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
-			} while (point.y + point.my * 10 > canvas.height + 5 || point.y + point.my * 10 < -5);
+			} while (point.y + point.my * 15 > canvas.height + 5 || point.y + point.my * 15 < -5);
 
 			do {
 				point.r = point.r + Math.floor(Math.random() * 1.5) * (Math.random() < 0.5 ? -1 : 1);
@@ -88,9 +88,7 @@ function move(context, canvas, points) {
 		}
 
 		point.i += 1;
-
 		point.x = point.x + point.mx;
-
 		point.y = point.y + point.my;
 	});
 }
@@ -106,7 +104,7 @@ function connect(context, points) {
 			var diff = Math.abs(other.x - point.x) + Math.abs(other.y - point.y);
 
 			if (diff < distance) {
-				context.lineWidth = diff / 55 + 0.1;
+				context.lineWidth = diff * 0.03 + 0.001;
 
 				context.beginPath();
 				context.moveTo(point.x, point.y);
