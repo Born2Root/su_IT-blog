@@ -25,7 +25,7 @@ function init() {
 		entry.canvas.width = document.body.scrollWidth;
 		if (entry.canvas.width <= 767) {
 			entry.canvas.height = 50;
-			amount_points = 30;
+			amount_points = 50;
 			distance = 30;
 		} else {
 			entry.canvas.height = 110;

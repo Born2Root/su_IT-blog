@@ -4,6 +4,37 @@ if (empty($_GET["tag"]) == true) {
 } else {
     $tag = $_GET["tag"];
 }
+
+function print_article($h1, $h2, $tags, $img, $a)
+{
+    echo <<<EOT
+
+            <a href="$a" target="_self" class="post_link">
+                <div class="post">
+                    <img src="$img" alt="$img" class="image post_image"/>
+                    <h1>$h1</h1>
+                    <h2>$h2</h2>
+                    <hr/>
+                    <div class="tags">
+EOT;
+    //tags
+    foreach ($tags as $tag) {
+        echo <<<EOT
+
+                        <div class="tag_div">
+                            <img src="hexagon.png" alt="tag" class="tag_img" />
+                            <div class="tag_text">$tag</div>
+                        </div>
+EOT;
+    }
+    echo <<<EOT
+
+                    </div>
+                </div>
+            </a>
+
+EOT;
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -81,13 +112,6 @@ if (empty($_GET["tag"]) == true) {
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?tag=pictures" target="_self" <?php if ($tag == "pictures") {
-                        echo 'class="active"';
-} ?>>
-                        Pictures
-                    </a>
-                </li>
-                <li>
                     <a href="index.php?tag=scripts" target="_self" <?php if ($tag == "scripts") {
                         echo 'class="active"';
 } ?>>
@@ -121,89 +145,15 @@ if (empty($_GET["tag"]) == true) {
             
             $lines = explode("\n", $list);
 
-            if ($tag == null) {
-                for ($i = 2; $i < count($lines); $i += 5) {
+            for ($i = 2; $i < count($lines); $i += 5) {
+                if ($tag == null || in_array($tag, explode(";", $lines[$i])) == true) {
                     $h1 = $lines[$i-2];
                     $h2 = $lines[$i-1];
                     $tags = explode(";", $lines[$i]);
-                    $img = $lines[$i+1];
-                    $a = $lines[$i+2];
+                    $img = "articles/".$lines[$i+1];
+                    $a = "articles/".$lines[$i+2];
 
-                    echo <<<EOT
-                
-            <a href="$a" target="_self" class="post_link">
-                <div class="post">
-                    <img src="$img" alt="$img" class="image post_image"/>
-                    <h1>$h1</h1>
-                    <h2>$h2</h2>
-                    <hr/>
-                    <div class="tags">
-EOT;
-                    //tags
-                    foreach ($tags as $tag) {
-                        echo <<<EOT
-
-                    <div class="tag_div">
-                        <img src="hexagon.png" alt="tag" class="tag_img" />
-                        <div class="tag_text">$tag</div>
-                    </div>
-EOT;
-                    }
-                    echo <<<EOT
-                    </div>
-                </div>
-            </a>
-EOT;
-                }
-            } else {
-                $found = false;
-
-                for ($i = 2; $i < count($lines); $i += 5) {
-                    if (in_array($tag, explode(";", $lines[$i])) == true) {
-                        $found = true;
-                        $h1 = $lines[$i-2];
-                        $h2 = $lines[$i-1];
-                        $tags = explode(";", $lines[$i]);
-                        $img = $lines[$i+1];
-                        $a = $lines[$i+2];
-
-                        echo <<<EOT
-                        
-                    <a href="$a" target="_self" class="post_link">
-                        <div class="post">
-                            <img src="$img" alt="$img" class="image post_image"/>
-                            <h1>$h1</h1>
-                            <h2>$h2</h2>
-                            <hr/>
-                            <div class="tags">
-EOT;
-                            //tags
-                        foreach ($tags as $tag) {
-                            echo <<<EOT
-        
-                            <div class="tag_div">
-                                <img src="hexagon.png" alt="tag" class="tag_img" />
-                                <div class="tag_text">$tag</div>
-                            </div>
-EOT;
-                        }
-                            echo <<<EOT
-                            </div>
-                        </div>
-                    </a>
-EOT;
-                    }
-                }
-                if ($found == false) {
-                    echo <<<EOT
-			<div class="post">
-				<h1>I'm sorry :(</h1>
-				<hr/>
-				<div class="paragraph">
-					The is nothing to show under this tag, yet.
-				</div>
-			</div>
-EOT;
+                    print_article($h1, $h2, $tags, $img, $a);
                 }
             }
 
@@ -219,6 +169,7 @@ EOT;
         <div id="disclaimer">
             Disclaimer
             <br/> &copy; <?php echo date("Y"); ?>
+            <a href="impressum.php" target="_blank" rel="noopener">impressum</a>
         </div>
     </div>
 
