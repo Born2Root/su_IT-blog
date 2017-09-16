@@ -6,7 +6,7 @@ script_to_rice_your_setup_1/script_to_rice_your_setup_1.html
 thereOhm
 DIY Theremin
 programming;linux;pi
-thereOHM/image000.jpg
+thereOHM/image001.png
 thereOHM/thereohm.html
 Script To Rice Your Setup Pt.2
 Get a better looking system info by ricing screenfetch
