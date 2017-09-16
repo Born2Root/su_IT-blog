@@ -2,7 +2,7 @@
 if (empty($_GET["tag"]) == true) {
     $tag = null;
 } else {
-    $tag = $_GET["tag"];
+    $tag = substr($_GET["tag"], 0, -1);
 }
 
 function print_article($h1, $h2, $tags, $img, $a)
@@ -34,6 +34,25 @@ EOT;
             </a>
 
 EOT;
+}
+
+function print_link($link)
+{
+    global $tag;
+    $text = "";
+    if ($tag == null) {
+        $text .= 'href="index.php?tag='.$link.';"';
+    } else {
+        if (in_array($link, explode(";", $tag)) == true) {
+            $text .= 'href="'.str_replace($link.";", "", "$_SERVER[REQUEST_URI]").'"';
+        } else {
+            $text .= 'href="'."$_SERVER[REQUEST_URI]".$link.';"';
+        }
+    }
+    if (in_array($link, explode(";", $tag)) == true) {
+        $text .= ' class="active"';
+    }
+    return $text;
 }
 ?>
 <!doctype html>
@@ -75,7 +94,7 @@ EOT;
             <canvas height="50" width="200" id="animation_canvas_header">
             </canvas>
 
-            <i class="fa fa-bars" aria-hidden="true" id="burger" onclick="toggle_menu();"></i>
+            <i class="fa fa-bars" aria-hidden="true" id="burger"></i>
 
             <div id="headline">
                 <a href="index.php" target="_self">
@@ -91,37 +110,27 @@ EOT;
         <div id="menu">
             <ul>
                 <li>
-                    <a href="index.php?tag=linux" target="_self" <?php if ($tag == "linux") {
-                        echo 'class="active"';
-} ?>>
+                    <a target="_self" <?php echo print_link("linux"); ?>>
                         Linux
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?tag=blender" target="_self" <?php if ($tag == "blender") {
-                        echo 'class="active"';
-} ?>>
+                    <a target="_self" <?php echo print_link("blender"); ?>>
                         Blender
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?tag=memes" target="_self" <?php if ($tag == "memes") {
-                        echo 'class="active"';
-} ?>>
+                    <a target="_self" <?php echo print_link("memes"); ?>>
                         Memes
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?tag=scripts" target="_self" <?php if ($tag == "scripts") {
-                        echo 'class="active"';
-} ?>>
+                    <a target="_self" <?php echo print_link("scripts"); ?>>
                         Scripts
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?tag=various" target="_self" <?php if ($tag == "various") {
-                        echo 'class="active"';
-} ?>>
+                    <a target="_self" <?php echo print_link("various"); ?>>
                         Various
                     </a>
                 </li>
