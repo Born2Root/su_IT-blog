@@ -1,11 +1,11 @@
 <?php
 if (empty($_GET["tag"]) == true) {
-    $tag = null;
+    $search_tags = null;
 } else {
-    $tag = substr($_GET["tag"], 0, -1);
+    $search_tags = substr($_GET["tag"], 0, -1);
 }
 
-function print_article($h1, $h2, $tags, $img, $a)
+function print_article($h1, $h2, $article_tags, $img, $a)
 {
     echo <<<EOT
 
@@ -18,12 +18,12 @@ function print_article($h1, $h2, $tags, $img, $a)
                     <div class="tags">
 EOT;
     //tags
-    foreach ($tags as $tag) {
+    foreach ($article_tags as $article_tag) {
         echo <<<EOT
 
                         <div class="tag_div">
                             <img src="hexagon.png" alt="tag" class="tag_img" />
-                            <div class="tag_text">$tag</div>
+                            <div class="tag_text">$article_tag</div>
                         </div>
 EOT;
     }
@@ -38,18 +38,18 @@ EOT;
 
 function print_link($link)
 {
-    global $tag;
+    global $search_tags;
     $text = "";
-    if ($tag == null) {
+    if ($search_tags == null) {
         $text .= 'href="index.php?tag='.$link.';"';
     } else {
-        if (in_array($link, explode(";", $tag)) == true) {
+        if (in_array($link, explode(";", $search_tags)) == true) {
             $text .= 'href="'.str_replace($link.";", "", "$_SERVER[REQUEST_URI]").'"';
         } else {
             $text .= 'href="'."$_SERVER[REQUEST_URI]".$link.';"';
         }
     }
-    if (in_array($link, explode(";", $tag)) == true) {
+    if (in_array($link, explode(";", $search_tags)) == true) {
         $text .= ' class="active"';
     }
     return $text;
@@ -147,22 +147,27 @@ function print_link($link)
             <?php
 
             $file = fopen("posts.txt", "r") or die("Unable to open file!");
-
             $list = fread($file, filesize("posts.txt"));
-
             fclose($file);
             
             $lines = explode("\n", $list);
 
             for ($i = 2; $i < count($lines); $i += 5) {
-                if ($tag == null || in_array($tag, explode(";", $lines[$i])) == true) {
+                $all_tags = true;
+                foreach (explode(";", $search_tags) as $element) {
+                    if (in_array($element, explode(";", $lines[$i])) == false) {
+                        $all_tags = false;
+                    }
+                }
+
+                if ($all_tags == true || $search_tags == null) {
                     $h1 = $lines[$i-2];
                     $h2 = $lines[$i-1];
-                    $tags = explode(";", $lines[$i]);
+                    $article_tags = explode(";", $lines[$i]);
                     $img = "articles/".$lines[$i+1];
                     $a = "articles/".$lines[$i+2];
-
-                    print_article($h1, $h2, $tags, $img, $a);
+    
+                    print_article($h1, $h2, $article_tags, $img, $a);
                 }
             }
 
