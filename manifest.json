@@ -1,0 +1,15 @@
+{
+  "short_name": "suIT",
+  "name": "suIt--blog",
+  "icons": [
+    {
+      "src": "launcher-icon-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "display": "browser",
+  "start_url": "index.php"
+}

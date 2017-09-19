@@ -80,6 +80,9 @@ function print_link($link)
     <!-- favicon -->
     <link rel="icon" type="image/png" href="" />
 
+    <!-- web app manifest -->
+    <link rel="manifest" href="/manifest.json">
+
     <!-- font awesome -->
     <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css" />
 
