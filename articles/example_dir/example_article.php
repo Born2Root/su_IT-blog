@@ -102,30 +102,30 @@
 
 				<div class="tags">
 					<div class="tag_div">
-						<img src="hexagon.png" alt="tag" class="tag_img" />
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">Linux</div>
 					</div>
 					<div class="tag_div">
-						<img src="hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">Linux</div>
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">programming</div>
 					</div>
 					<div class="tag_div">
-						<img src="hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">Linux</div>
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">blender</div>
 					</div>
 					<div class="tag_div">
-						<img src="hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">Linux</div>
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">test</div>
 					</div>
 					<div class="tag_div">
-						<img src="hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">Linux</div>
-					</div>
-					<div class="tag_div">
-						<img src="hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">Linux</div>
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<div class="tag_text">lulu</div>
 					</div>
 				</div>
+
+				<img src="console.png" alt="console" class="image" style="
+    float: right;
+" />
 
 				<hr/>
 

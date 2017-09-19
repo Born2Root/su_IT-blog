@@ -8,11 +8,11 @@ DIY Theremin
 programming;linux;pi
 thereOHM/image001.png
 thereOHM/thereohm.html
-Script To Rice Your Setup Pt.2
-Get a better looking system info by ricing screenfetch
-programming;blender;linux
-console.png
-script_to_rice_your_setup_2.html
+Example article
+Article with all elements of the website to design and look at them
+programming;blender;linux;various;memes
+/example_dir/console.png
+/example_dir/example_article.php
 Script To Rice Your Setup Pt.3
 Get a better looking system info by ricing screenfetch
 scripts;memes;linux;various;blender

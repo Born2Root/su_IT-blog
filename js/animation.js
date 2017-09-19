@@ -51,7 +51,6 @@ function init() {
 			});
 		}
 
-		entry.context.strokeStyle = "#ffffff";
 		entry.context.fillStyle = "#ffffff";
 	});
 
