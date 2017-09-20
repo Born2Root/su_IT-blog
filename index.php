@@ -65,7 +65,7 @@ function print_link($link)
     </title>
 
     <!-- meta -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -75,13 +75,13 @@ function print_link($link)
     <!-- main css -->
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <!-- desktop css -->
-    <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
+    <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css" />
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="" />
 
     <!-- web app manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- font awesome -->
     <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css" />
@@ -190,10 +190,10 @@ function print_link($link)
         </div>
     </div>
 
-    <script src="/js/animation.js"></script>
-    <script src="/js/cli_write.js"></script>
-    <script src="/js/menu.js"></script>
-    <script src="/js/scroll.js"></script>
+    <script src="/js/animation.js" async></script>
+    <script src="/js/cli_write.js" async></script>
+    <script src="/js/menu.js" async></script>
+    <script src="/js/scroll.js" async></script>
 
 </body>
 
