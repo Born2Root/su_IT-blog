@@ -69,6 +69,20 @@ body {
 pre {
 	white-space: pre-line;
 	line-height: 22px;
+	box-shadow: 0px 0px 4px 1px rgb(72, 72, 72);
+	-webkit-box-shadow: 0px 0px 4px 1px rgb(72, 72, 72);
+	counter-reset: line;
+	display: table;
+	width: 100%;
+}
+
+code {
+	counter-increment: line;
+	padding: 2px 0.5em !important;
+}
+
+code:before {
+	content: counter(line) ". ";
 }
 
 #background {
