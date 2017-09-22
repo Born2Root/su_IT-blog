@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <title>Excel Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung Am Beispiel einer Bibliotheks-/ Bücherlistenverwaltung</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <base target="_self">
+
+    <link rel="stylesheet" type="text/css" href="0excel.css">
+
+    <meta name="description" content="Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung" />
+    <meta name="keywords" lang="de" content="Excel, VBA, Combo-Box, Kombinationsfeld, Autotext, Autovervollständigung, Datenvalidierung, Büchersammlung, Verwaltung, Bibliothek" />
+    <meta name="keywords" lang="en-us" content="Excel, VBA, Combobox, Combo-Box, Autocomplete, Drop Down, Dropdown, Data Validation" />
+
+</head>
+
+<body>
+
+    <h1>Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung</h1>
+    <h2>- Am Beispiel einer Bibliotheks-/ Bücherlistenverwaltung -</h2>
+
+    <br> Voraussetzungen: <br><br>
+    <ul style="list-style-type:disc">
+        <li>Microsoft Excel ab Version 2007</li>
+        <li>Schwierigkeitsgrad: Mittel</li>
+        <li>Skills: VBA-Programmierung</li>
+        <li>Lese Zeit: 15 min</li>
+    </ul>
+
+    <br> Die im Excel-Standard enthaltene Autotextvervollständigung, während der Eingabe, ist auf eine maximale Anzahl von Zellen begrenzt. Als "Lösung" bietet Excel Drop-Down-Listen an. Aber diese sind optisch unansehnlich und funktionell begrenzt. Über
+    VBA-Programmierung kann man die Grundfunktionalität allerdings zu einem komfortablen Eingabe-Drop-Down-Menü inkl. Autotextvervollständigung aufbohren.
+
+    <h2>Einführung:</h2>
+    Im folgenden Artikel beschreibe ich, wie man eine komfortable Eingabe-Drop-Down-Liste inkl. Autotextvervollständigung und Datenvalidierung realisiert. Ergänzt wird das Ganze um die Möglichkeit der Werte-Vorfilterung und Pivot-Datenanalyse.<br> Als
+    plakatives Beispiel wird die Verwaltung einer Büchersammlung (Home Library) herangezogen. Der Code ist aber leicht auf beliebige andere Einsatzszenarien übertragbar. Vorrangig ist ein Einsatz dort vorteilhaft, wo große Datenmengen um manuelle Einträge
+    ergänzt oder einfach verwaltet werden sollen.<br>
+    <br> Grundlegende Funktionen des Bücher-Beispiels aus Anwendersicht sind:
+
+    <h3>1. Use Case: </h3>
+
+    Es soll ein neues Buch (ein neuer Datensatz) in die Liste eingetragen werden. Man weiß jedoch nicht, ob das Buch bereits vorhanden ist, d.h. man will sehen, welche Bücher von dem Autor bereits in der Sammlung enthalten sind. Die Eingabe soll möglichst
+    komfortabel und schnell erfolgen.
+    <img src="image002_Werteingabe.gif" alt="Abbildung 1: Werteingabe" style="width:900px;">
+
+    <br>
+    <ul>Klickanleitung:</ul>
+    <br>
+    <ul style="list-style-type:disc">
+        <li>Doppelklick ins <i>Autorenfeld</i>. Ein Drop-Down-Menü erscheint und man beginnt, den Autor einzutragen</li>
+        <li>Die Eingabe wird automatisch vervollständigt, wenn der Autor bereits vorhanden ist</li>
+        <li>Doppelklick ins <i>Titelfeld</i> erzeugt bei ausgewählter Option "Vorfilterung" eine Drop-Down-Liste, in der man alphabetisch alle bereits vorhandenen Bücher des Autors sieht. Ist das aktuelle Buch noch nicht vorhanden, trägt man es neu ein</li>
+        <li>Bei Option "keine Vorfilterung" werden alle vorhandenen Titel als Drop-Down-Liste angezeigt</li>
+        <li>Bei der Eingabe z.B. des Formats kann man direkt über ein Drop-Down-Menü das Buchformat auswählen, ohne Text eingeben zu müssen</li>
+        <li>Automatisch wird die Zeilennummerierung am Anfang der Zeile bei Eingabe neuer Werte erzeugt</li>
+    </ul>
+
+    <h3>2. Use Case:</h3>
+
+    Es sollen zum Beispiel alle Bücher eines Autors, oder alle Bücher eines Genres angezeigt werden.
+    <br>
+    <img src="image001_Filter.gif" alt="Abbildung 2: Filter" style="width:900px;">
+    <br>
+    <br>
+    <ul>Klickanleitung:</ul>
+    <br>
+    <ul style="list-style-type:disc">
+        <li>In das jeweilige Wertefeld klicken, nach dem man filtern möchte</li>
+        <li>Auf den Button <i>Filtern</i> klicken -> Das Ergebnis wird angezeigt</li>
+        <li>Die Filterung wird über den Button <i>Filter löschen</i> wieder aufgehoben</li>
+    </ul>
+
+    <h3>3. Use Case: </h3>
+    Es soll eine Analyse über alle Genres, Autoren usw. angezeigt werden.
+    <br>
+    <img src="image003_Analyse.gif" alt="Abbildung 2: Analyse" style="width:900px;">
+    <br>
+
+    <br>
+    <ul>Klickanleitung:</ul>
+    <br>
+    <ul style="list-style-type:disc">
+        <li>In den <i>Analyse</i>-Tabellenblättern können mittels Pivot-Tabellen die Daten gefiltert werden.</li>
+    </ul>
+
+    <h2>Technische Realisierung:</h2>
+
+    <br> Zur Umsetzung werden folgende Excel Funktionalitäten verwendet:<br><br>
+    <ul style="list-style-type:disc">
+        <li>Pivot-Tabellen</li>
+        <li>VBA-Programmierung</li>
+        <li>Combo-Boxen</li>
+        <li>Namensbereiche</li>
+        <li>Drop-Down-Datenvalidierungslisten (don't worry, das klingt kompliziert, ist aber nur ein Klick)</li>
+    </ul>
+
+    <br> Das Projekt ist grundlegend auf dem "Data Validation Combo-Box"<a href="http://www.contextures.com/xlDataVal10.html?_sm_byp=iVVsnvwVkkMvrWMQ"> Beispielcode</a> aufgebaut, welcher deutlich erweitert wurde. Zusammen werden wir innerhalb von drei
+    großen Schritten die fertige Tabelle erzeugen.
+
+    <h3>1. Autovervollständigung</h3>
+
+    <br> Zunächst einmal ist das Ziel eine dynamische Tabelle zu erzeugen. D.h. der Datenbereich soll sich dynamisch anpassen, wenn in der Quelldatei neue Werte hinzukommen (neue Bücher eingetragen werden). Das lässt sich über <i>Namensbereiche</i> realisieren.
+    Zum Anlegen wechselt man nach
+    <i>Formeln -> Namens-Manager -> Neu...</i>
+    <br>
+    <img src="image004_Namensmanager1.JPG" alt="Abbildung 3.1: Namens-Manager" style="width:400px;">
+    <br><br> und gibt in das Dialogfeld den Namen der Datenbank und in das Feld <i>bezieht sich auf</i> folgende Formel ein:
+    <br>
+    <img src="image004_Namensmanager.JPG" alt="Abbildung 3.2: Namens-Manager" style="width:400px;">
+    <br><br>
+    <TODO>=BEREICH.VERSCHIEBEN($A$3;;;ANZAHL2($A:$A);ANZAHL2($3:$3))</TODO>
+    <br> Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert
+    lauten:
+    <br>
+    <TODO>=BEREICH.VERSCHIEBEN($C$9;;;ANZAHL2($C:$C);ANZAHL2($9:$9))</TODO>
+    <br> Im konkreten Beispiel mit mehreren Tabellenblättern besteht ergänzend noch der Sonderfall, dass man das Tabellenblatt explizit angeben muss, damit der Bereich korrekt erzeugt wird. Die Formel lautet also:<br>
+    <TODO>=BEREICH.VERSCHIEBEN(Buecher!$A$3;;;ANZAHL2(Buecher!$A:$A);ANZAHL2(Buecher!$3:$3))</TODO>
+
+    Als nächsten Schritt wollen wir eine Autovervollständigung für das Autoren-Eingabefeld erstellen. Excel enthält bereits standardmäßig eine Autovervollständigung, allerdings nur für einige hundert Werte. Ziel ist aber eine Vervollständigung über eine unbegrenzte
+    Anzahl von Autoren. Dies kann über die Funktion <i>Datenvalidierung</i> erreicht werden. Jedoch würde eine solche Validierung über alle Autoren, auch alle doppelten Einträge enthalten. D.h. ist fünf mal Autor XY vorhanden, würde in der Autovervollständigungsliste
+    auch fünf mal dieser Autor angezeigt werden. Ein Trick um das zu verhindern, ist als Quelle der Datenvalidierung eine Tabelle zu verwenden, die jeden Autor nur ein einziges mal enthält. Am einfachsten lässt sich das über Pivot-Tabellen umsetzen. D.h.
+    wir werden eine Pivot-Tabelle der Autoren anlegen. Vorzugsweise in einem neuen Tabellenblatt, damit die Übersicht nicht verloren geht.
+
+    <i>Menü -> Einfügen -> Pivot-Tabelle</i> Als Name können wir hier gleich den gerade angelegten, dynamischen Datenbereich
+    <i>Data</i> verwenden. Die Tabelle soll in Zelle B4 des Datenblattes <i>Data</i> angelegt werden.
+    <br>
+    <img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" style="width:400px;">
+    <br> Anschließend im Pivot-Bericht das Feld <i>Autor</i> auswählen und schon haben wir eine Liste, in der jeder vorhandene Autor nur ein einziges mal auftaucht. Für die weiteren Schritte muss jetzt noch dynamisch ermittelt werden, wie viele Zeilen
+    die Tabelle der Autoren enthält. Dazu wird folgende Excel-Formel in Zelle B2 genutzt.
+    <br>
+    <TODO>=VERWEIS(2;1/(B5:B4000
+        <>"");ZEILE(B5:B4000))-1</TODO>
+    <br>
+
+    <br>
+    <img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" style="width:400px;">
+    <br><br> Um die nächsten Schritte zu vereinfachen, benötigen wir einen simpel anzusprechenden Datenbereich, der dynamisch den Inhalt der Pivot-Autoren-Tabelle abdeckt. Also nochmal rein in den Namens-Manager und den Bereich <i>sort_autor</i> angelegt.
+    Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
+    <br>
+    <TODO>=Data!$B$5:INDIREKT("Data!$B$"&Data!$B$2)</TODO>
+    <br>
+    <br>
+    <img src="image005_Pivot_Table-Listen.JPG" alt="Abbildung 4.2: Übersicht der " style="width:400px;">
+    <br> Nun legen wir die Datenvalidierung an. Dazu in die Haupttabelle wechseln und die komplette Spalte <i>Autor</i> (Spalte B) der Quelltabelle markieren. Denn wir wollen den Drop-Down ja nicht nur für eine, sondern für alle Zellen haben. Dann
+    <i>Menü -> Daten -> Datenüberprüfung</i>, Ziel ist eine Liste, mit Zellendropdown und als Quelle unsere sortierte Autorenliste. Außerdem eine Eingabemeldung, wenn eine passende Zelle ausgewählt wird.
+    <br>
+    <img src="image007_Datenueberpruefung.JPG" alt="Abbildung 6.1: Datenüberprüfung" style="width:400px;">
+    <br><br> Nachdem alles eingestellt ist, können wir zum Ersten mal testen. Ein Klick in eine leere Zelle der Autoren-Spalte, sollte eine scrollbare Drop-Down-Liste öffnen, die alle Autoren enthält.
+    <br> Ganz nett, aber noch nicht recht hilfreich. Denn es fehlt noch die automatische Filterung und Vervollständigung der Eingabe.
+    <br> Jetzt kommt VBA ins Spiel um folgendes Verhalten zu erreichen:
+    <br>
+    <ul style="list-style-type:disc">
+        <li>Ein Doppelklick in die Zelle öffnet den Drop-Down in einer Combo-Box </li>
+        <li>Fängt man an zu tippen, wird automatisch gesucht und eine Vervollständigung angeboten</li>
+    </ul>
+
+    <br> Zunächst müssen wir dafür eine Combo-Box erstellen. Dazu in das Entwicklermenü
+    <TODO>PopUp Info Fenster: Das Menü ist standardmäßig ausgeblendet und muss erst aktiviert werden. Dazu abhängig von der verwendeten Office Version auf die Microsoft Office-Schaltfläche klicken und dann auf <i>Excel-Optionen</i> gehen. Anschließend auf <i>Beliebt</i>        klicken, und das Kontrollkästchen <i>Registerkarte "Entwicklertools" im Menüband anzeigen</i> aktivieren.</TODO>
+    wechseln und ein ActiveX-Kombinationsfeld in einem beliebigen Bereich des Tabellenblattes aufziehen. Wo man es dabei platziert ist vollkommen egal. Denn es wird lediglich als Referenzelement genutzt, das später genau an der Stelle eingeblendet wird, wo
+    wir es möchten. <br>Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
+    <br>
+    <img src="image007_ComboBox.JPG" alt="Abbildung 6.2: Erstellen einer Combo-Box" style="width:400px;"><br><br> Die Drop-Down Combo-Box soll angezeigt werden, wenn doppelt in eine Zelle geklickt wird. Theoretisch ist auch ein anderes Verhalten möglich.
+    Zum Beispiel, dass die Box erscheint, wenn man eine Zelle auswählt, oder anfängt zu tippen. Nach einigen Tests habe ich aber für mich selbst festgestellt, das ein Doppelklick am angenehmsten ist. Also müssen wir für das Arbeitsblatt definieren, was
+    bei einem Doppelklick in einer Zelle geschehen soll. Dazu ein neues Unterprogramm anlegen und über die Schaltfläche im oberen Editorfenster das entsprechende Verhalten auswählen.
+    <br>
+    <img src="image007_Doppelklick.JPG" alt="Abbildung 6.3: Definieren der Doppelklick-Aktion" style="width:400px;"><br><br> Als nächstes kommt folgender VBA-Code in das neu angelegte Unterprogramm, in dem wir nun auf die bereits erstellte Combo-Box zugreifen.
+
+    <br>
+    <TODO>
+
+        Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean) Set xWs = Application.ActiveSheet Set dWs = ThisWorkbook.Worksheets("Data") 'Worksheet in dem die Pivot-Daten liegen Dim xStr As String Dim num_first_line, num_last_line,
+        num_prefilter_column As Integer On Error Resume Next 'Drop-Down Vervollständigungsfeld nur per Doppelklick in Zellen anzeigen, die auch über Datenüberprüfung als ' DropDown konfiguriert sind If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count
+        < 1 Then 'MsgBox "No Drop Down available"
+            'do nothing Else 'MsgBox "Drop Down in active Cell available"
+
+             Application.EnableEvents = False
+    
+                'Combobox zunächst leeren Set xCombox=x Ws.OLEObjects( "TempCombo") With xCombox .ListFillRange="" .LinkedCell="" .Visible=F alse End With If Target.Validation.Type=3 Then Cancel=T rue num_first_line=5 'erste Zeile in der im Datenblatt Data, die Daten stehen
+
+                    'use the unfiltered complete Title list num_last_line=d Ws.Cells(2, ActiveCell.Column) xStr=d Ws.Range(dWs.Cells(num_first_line, ActiveCell.Column), _ dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True) End If 'MsgBox xStr
+                    
+                    'ComboBox inkl. Titelliste aus Variable xStr anzeigen With xCombox .Visible=T rue .Left=T arget.Left .Top=T arget.Top .Width=T arget.Width + 15 .Height=T arget.Height + 5 .ListFillRange=x Str .LinkedCell=T arget.Address End With
+            xCombox.Activate Me.TempCombo.DropDown End If Application.EnableEvents=T rue End If End Sub '** Blendet bei einem Selection Change nur die Combo-Box aus
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+    Set xWs = Application.ActiveSheet
+    Set dWs = ThisWorkbook.Worksheets("Data")       'Worksheet in dem die Pivot-Daten liegen On Error GoTo errHandler If Target.Count> 1 Then GoTo exitHandler Set xCombox = xWs.OLEObjects("TempCombo") On Error Resume Next If xCombox.Visible = True Then With xCombox .Top = 10 .Left = 10 .Width = 0 .ListFillRange = "" .LinkedCell = "" .Visible = False .Value = "" End With End If
+            exitHandler: Application.EnableEvents = True Application.ScreenUpdating = True Exit Sub errHandler: Resume exitHandler End Sub
+    </TODO>
+
+    <br> Außerdem soll die Combo-Box ausgeblendet werden, wenn man die Zelle wechselt oder die Enter-, bzw. TAB-Taste drückt. Dazu ein neues Unterprogramm für das von uns angelegte Element <i>TempCombo</i> anlegen, und wie bereits beim vorherigen Sub,
+    über das obere Rechte Menü ein Aktivierungsverhalten auswählen. Dieses mal, nehmen wir <i>KeyDown</i>, also das drücken einer Taste. In VBA müssen wir jetzt nur noch definieren, dass der Code für <i>Enter</i>, sowie die <i>TAB-Taste</i> reagiert.
+    Dazu reicht eine Switch-Case Struktur aus, die den <i>KeyCode</i> der jeweiligen Taste abprüft. Für den Tabulator ist das z.B. KeyCode 9, für Enter KeyCode 13. Ein vollständige Liste aller KeyCodes findet man bei Bedarf im Internet.
+
+    <br>
+    <TODO>'** Hide Combo-Box and move to next cell on Enter and Tab Private Sub TempCombo_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer) Select Case KeyCode Case 9 Application.ActiveCell.Offset(0, 1).Activate Case 13 Application.ActiveCell.Offset(1,
+        0).Activate Case Else 'do nothing End Select End Sub</TODO>
+    <br>
+    <br> Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert! <br> Aber schade, denn momentan funktioniert es nur für die Autoren. Das ist jedoch gar kein Problem. Um das gleiche Verhalten für alle anderen Spalten
+    (Buchtitel, Genre, usw.) zu erhalten, muss die obige Prozedur mit anlegen von Pivot-Tabellen und Namensbereichen einfach wiederholt werden. Der VBA-Code ist universell und muss nicht angepasst werden.
+    <br><br> Ein ungewünschtes Verhalten würde man mit der aktuellen Lösung aber nach einiger Zeit feststellen. Denn neu eingegebene Daten werden unten an die Pivot-Tabelle rangehängt. Diese neuen Autoren tauchen dann in der Drop-Down-Liste nicht mehr
+    an der richtigen Stelle auf, weil die Pivot-Tabelle nicht mehr sauber alphabetisch sortiert ist. Blöd, aber mit VBA kein Problem. Mit zwei kleinen Funktionen, kann man erstens, alle Pivot-Tabellen aktualisieren (refreshen) und alle Pivot-Tabellen
+    alphabetisch sortieren.
+    <br> VBA-Alle Pivots aktualisieren:
+    <TODO>
+        Sub PivotTables_Refresh() ThisWorkbook.RefreshAll End Sub</TODO>
+    <br> In allen Pivots Werte alphabetisch sortieren:
+    <br>
+    <TODO>
+        Sub PivotTables_AutoSortAZAllFields() Dim ws As Worksheet Dim pt As PivotTable Dim pf As PivotField On Error Resume Next For Each ws In ActiveWorkbook.Worksheets For Each pt In ws.PivotTables For Each pf In pt.RowFields pf.AutoSort xlAscending, pf.SourceName
+        Next pf For Each pf In pt.ColumnFields pf.AutoSort xlAscending, pf.SourceName Next pf Next pt Next ws End Sub
+    </TODO>
+    <br>
+
+    <h3>2. Werte-Vorfilterung, sowie allg. Filterung nach Autor & Co.</h3>
+
+    Als nächstes Feature schauen wir uns die Werte-Vorfilterung an. Dahinter steckt nichts anderes, als folgender Wunsch. Man pflegt ein neues Buch ein und trägt hierfür als Erstes den <i>Autor</i> in das entsprechende Feld. Beim eintragen des <i>Titels</i>,
+    sollen nun automatisch alle Bücher angezeigt werden, die von dem jeweiligen Autor bereits vorhanden sind, z.B. um Doppeleinträge zu vermeiden. Auch diese Funktionalität kann über Pivot-Tabellen realisiert werden. Wir legen also wie bereits für die
+    andern Felder, eine neue Pivot-Tabelle an und geben ihr einen eindeutigen Namen (<i>Rechtsklick -> Pivot-Tabelle-Optionen</i>, Im Beispiel heißt die Tabelle <i>PivotTable_AutorFilter</i>).
+
+    <br>
+    <img src="image008_Vorfilterung.JPG" alt="Abbildung 8: Werte Vorfilterung" style="width:400px;">
+    <br><br> Per VBA erstellen wir nun die Regel, dass bei einem Klick ins Buch-Titelfeld der bereits eingegebene Autorenname als Filterwert der Pivot-Tabelle verwendet wird. Dazu müssen zunächst alle vorherigen Filter gelöscht werden
+    <br>
+    <TODO>PvtTbl.ClearAllFilters</TODO>.
+    <br> Anschließend können wir den neuen Filter setzen
+    <br>
+    <TODO>PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value</TODO>.
+    <br> Über das Kommando <i>xlCaptionContains</i> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B. <i>Mustermann, Max und Grisham, John</i> im Autorenfeld geführt werden.
+    Möchte man exakt nach den Autorennamen suchen, ist dies über die Option <i>xlCaptionEquals</i> möglich. In diesem Fall würden nur Bücher mit <i>Grisham, John</i> gefunden werden. Das Beispiel <i>Mustermann, Max und Grisham, John</i> würde nicht auftauchen.
+    <br> Die Länge der Ergebnisliste wird über den bereits bekannten Trick mit der Suche nach dem letzten Eintrag ermittelt.
+    <br>
+    <TODO>num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column)</TODO>
+    <br>
+
+    <TODO>'** Prefilter Option Dim PvtTbl As PivotTable 'Pivot Table for Prefilter Option Set PvtTbl = dWs.PivotTables("PivotTable_AutorFilter") ' Bei aktivierter Option werden vom aktuell eingegebenen Autor nur die bereits im Bestand vorhandenen ' Titel angezeigt.
+        Es erfolgt also eine Vorfilterung. Bei deaktivierter Funktion werden alle Titel im Bestand angezeigt 'Prefilter activated and Current cell is a Title Cell If (xWs.OptBtn_Prefilter.Value = True And ActiveCell.Column = 3) Then 'bestehende Filter
+        löschen PvtTbl.ClearAllFilters 'den content der aktuell ausgewählten Zelle als neuen Filterwert der Pivot-Tabelle nutzen PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column
+        - 1).Value num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column) If (num_last_line = 4) Then GoTo Unfiltered 'if author is new, hence there is no title content,
+        show the unfiltered list Else xStr = dWs.Range(dWs.Cells(num_first_line, num_prefilter_column), _ dWs.Cells(num_last_line, num_prefilter_column)).Address(, , , True) End If Else Unfiltered: 'use the unfiltered complete Title list num_last_line
+        = dWs.Cells(2, ActiveCell.Column) xStr = dWs.Range(dWs.Cells(num_first_line, ActiveCell.Column), _ dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True) End If</TODO>
+
+
+    <h3>3. Pivot-Tabellen Auswertung</h3>
+
+    Abschließend ist vielleicht noch eine statistische Auswertung über den gesamten Bestand interessant. <br>
+    <br> Zum Beispiel:<br>
+    <ul style="list-style-type:disc">
+        <li>wie viele Bücher gibt es in den einzelnen Genres</li>
+        <li>in welchen Sprachen sind Bücher vorhanden</li>
+        <li>welche Bücher gibt es von den einzelnen Autoren</li>
+        <li>... und alles was man sich sonst noch vorstellen kann</li>
+    </ul>
+
+    <br> Zu diesem Thema brauche ich nun eigentlich fast nichts mehr erklären. Denn wie schon mehrfach, kommen wieder einmal die Pivot-Tabellen zum Einsatz. Dazu können wir einfach in einem neuen Tabellenblatt beliebig viele Pivot-Tabellen mit unserer
+    Haupttabelle <i>Data</i> als Datenquelle anlegen. Über die zugehörigen Pivot-Charts können die Tabellen dann auch noch anschaulich visualisiert werden.
+
+    <br>
+    <img src="image009_Analyse.JPG" alt="Abbildung 9: Pivot Analyse" style="width:400px;">
+    <br><br>
+
+    <h2>FAZIT:</h2>
+    Mittels VBA und der exzessiven Nutzung von Pivot-Tabellen, kann die standard Excel-Funktionalität von Drop-Down-Listen und Autovervollständigung deutlich erweitert werden. So ist es möglich eine sehr komfortable, interaktive Umgebung zum Pflegen großer
+    Datenbanken anzulegen. Als Beispiel wurde die Verwaltung des Bücherbestands einer Heimbibliothek dargestellt. Die Techniken können aber ohne Aufwand für viele andere Zwecke angepasst werden.
+
+    <h2>Download</h2>
+    Wenn euch der Artikel gefallen habt, spendiert uns doch einen Kaffee! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content bereitstellen. https://ko-fi.com/ Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
+
+</body>
+
+</html>
