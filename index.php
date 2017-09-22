@@ -101,7 +101,7 @@ function print_link($link)
 
             <div id="headline">
                 <a href="index.php" target="_self">
-                    > su IT --blog
+                    $ su IT --blog
                 </a>
                 <div id="subtitle">
                     <span id="console">- we sudo everything</span>
