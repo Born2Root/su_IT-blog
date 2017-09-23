@@ -127,7 +127,7 @@
     float: right;
 " />
 
-				<hr/>
+				<hr>
 
 				<h1>
 					Introduction

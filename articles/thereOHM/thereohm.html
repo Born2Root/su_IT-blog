@@ -50,8 +50,8 @@
 
             <div id="headline">
                 <a href="/" target="_self">
-								> su IT --blog
-							</a>
+                    $ su IT --blog
+                </a>
                 <div id="subtitle">
                     <span id="console">- we sudo everything</span>
                     <span class="cursor">|</span> -
@@ -103,6 +103,11 @@
                 <h2>DIY Theremin</h2>
 
                 <div class="tags">
+
+                    <div class="tag_div">
+                        <img src="/hexagon.png" alt="tag" class="tag_img" />
+                        <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50 min</div>
+                    </div>
                     <div class="tag_div">
                         <img src="/hexagon.png" alt="tag" class="tag_img" />
                         <div class="tag_text">Linux</div>
@@ -125,22 +130,52 @@
                     </div>
                 </div>
 
-                <hr/>
+                <img src="image001.png" alt="console" class="image" style="
+                float: right;
+            " />
 
-                <br> Voraussetzungen: <br><br>
-                <ul>
-                    <li>Schwierigkeitsgrad: Fortgeschritten</li>
-                    <li>Skills: Pure Data Programmierung, Linux-Basics, Leiterplattenbestückung (Löten, etc.), Elektronikverständnis</li>
-                    <li>Lese Zeit: 50 min</li>
-                </ul>
+                <hr>
 
-                <h1>1. Introduction</h1>
+                <div id="pre">
 
-                <h2>1.1 Zielsetzung</h2>
+                    <h3>Voraussetzungen:</h3>
+                    <ul>
+                        <li>Schwierigkeitsgrad:
+                            <br>-> Fortgeschritten</li>
+                        <li>Skills:
+                            <ul>
+                                <li>Pure Data Programmierung</li>
+                                <li>Linux-Basics</li>
+                                <li>Leiterplattenbestückung (Löten, etc.)</li>
+                                <li>Elektronikverständnis</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+                    <h3>Overview:</h3>
+
+                    <ol>
+                        <li><a target="_self" href="#introduction">Introduction</a></li>
+                        <ol>
+                            <li>
+                                <a target="_self" href="#zielsetzung">Zielsetzung</a>
+                            </li>
+                            <li>
+                                <a target="_self" href="#allgemeines">Allgemeines</a>
+                            </li>
+                        </ol>
+                        <li><a target="_self" href="#systemüberblick">Systemüberblick ThereOHM</a></li>
+                    </ol>
+
+                </div>
+
+                <h1 id="introduction">Introduction</h1>
+
+                <h2 id="zielsetzung">Zielsetzung</h2>
                 <p>
                     Ziel des Projektes ist es, ein klassisches Theremin aufzubauen und dessen Klang beliebig zu verändern, so dass der Eindruck anderer Musikinstrumente entsteht.
-                    <br> Zur Realisierung dieser Aufgabe wird der Einplatinenrechner Raspberry Pi verwendet. Die verschiedenen Filtereinstellungen sollen durch variable Tastenkombinationen gesteuert werden können. Eine zusätzliche Anforderung ist ein
-                    vollständig modularer Aufbau, um sowohl einfachen Transport, sowie Austauschbarkeit der Komponenten zu gewährleisten. Es ergeben sich folgende Aufgaben für die Projektrealisierung:
+                    <br> Zur Realisierung dieser Aufgabe wird der Einplatinenrechner Raspberry Pi verwendet. Die verschiedenen Filtereinstellungen sollen durch variable Tastenkombinationen gesteuert werden können. Eine zusätzliche Anforderung ist ein vollständig modularer Aufbau, um sowohl einfachen Transport, sowie Austauschbarkeit der Komponenten zu gewährleisten. Es ergeben sich folgende Aufgaben für die Projektrealisierung:
                     <br>
                 </p>
                 <ul>
@@ -150,26 +185,21 @@
                     <li>4. Programmierung eines auf dem Raspberry Pi ausführbaren DSP Software</li>
                 </ul>
                 <p>
-                    <br> Es wurde als Vorbereitung ein Projektplan erstellt, der während des gesamten Projektes gepflegt wurde, um den aktuellen Projektstatus widerzuspiegeln. Dieser Projektplan, sowie eine genaue Kostenaufstellung inkl. Stückliste aller
-                    benötigten Bauteile ist im Anhang zu finden.
+                    <br> Es wurde als Vorbereitung ein Projektplan erstellt, der während des gesamten Projektes gepflegt wurde, um den aktuellen Projektstatus widerzuspiegeln. Dieser Projektplan, sowie eine genaue Kostenaufstellung inkl. Stückliste aller benötigten Bauteile ist im Anhang zu finden.
                 </p>
                 <TODO> als Hover Infotext bei Stompbox anzeigen (Als Stompbox wird i.d.R. ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann) </TODO>
 
 
-                <h2>1.2 Allgemeines</h2>
+                <h2 id="allgemeines">Allgemeines</h2>
 
-                <p>Bei einem Theremin, das auch als Ätherophon, Ätherwellengeige oder Thereminovox bekannt ist, handelt es sich um ein elektronisches Musikinstrument. Es ist eines der wenigen Instrumente, die der Musiker spielt ohne es zu berühren. Erfunden
-                    wurde das Theremin 1920 von dem russischen Physiker Lev Sergeevič Termen.
-                    <br> Ab 1927 ging Termen mit dem Theremin auf Welttournee und begeisterte mit seiner „Geistermusik“ das Publikum. Im Zuge dessen ließ sich Termen 1928 in New York nieder, patentierte das Instrument und nannte sich fortan Leon Theremin.
-                    Abbildung 1 zeigt Termen beim Musizieren mit einem seiner Instrumente.
+                <p>Bei einem Theremin, das auch als Ätherophon, Ätherwellengeige oder Thereminovox bekannt ist, handelt es sich um ein elektronisches Musikinstrument. Es ist eines der wenigen Instrumente, die der Musiker spielt ohne es zu berühren. Erfunden wurde das Theremin 1920 von dem russischen Physiker Lev Sergeevič Termen.
+                    <br> Ab 1927 ging Termen mit dem Theremin auf Welttournee und begeisterte mit seiner „Geistermusik“ das Publikum. Im Zuge dessen ließ sich Termen 1928 in New York nieder, patentierte das Instrument und nannte sich fortan Leon Theremin. Abbildung 1 zeigt Termen beim Musizieren mit einem seiner Instrumente.
 
                     <br>
                     <img src="image000.jpg" alt="Abbildung 1: Lev Termen mit seinem Musikinstrument" style="width:400px;">
                     <br> Abbildung 1: Lev Termen mit seinem Musikinstrument (Quelle: <a href="www.theremin.info">www.Theremin.info</a>)
                     <br>
-                    <br> Das Theremin wird durch den Abstand beider Hände zu zwei Antennen berührungsfrei gespielt, wobei eine Hand die Tonhöhe und die andere die Lautstärke verändert. Bei einem Standard-Theremin hat der Spieler keine optische oder haptische
-                    Rückmel- dung über seine Spielweise und muss allein auf sein Gehör vertrauen. Der Einflussbe- reich auf die Tonhöhe beträgt in der Regel etwa 40 bis 50 Zentimeter um die Antenne herum. Das bedeutet, dass auch der Arm und der Körper
-                    des Spielers den Ton beeinflussen können.
+                    <br> Das Theremin wird durch den Abstand beider Hände zu zwei Antennen berührungsfrei gespielt, wobei eine Hand die Tonhöhe und die andere die Lautstärke verändert. Bei einem Standard-Theremin hat der Spieler keine optische oder haptische Rückmel- dung über seine Spielweise und muss allein auf sein Gehör vertrauen. Der Einflussbe- reich auf die Tonhöhe beträgt in der Regel etwa 40 bis 50 Zentimeter um die Antenne herum. Das bedeutet, dass auch der Arm und der Körper des Spielers den Ton beeinflussen können.
                     <br> Ein Vorteil des Theremin ist die, theoretisch unendlich feine, Variation der erzeugten Töne, ohne dass z.B. ein Saitenwechsel wie bei einer Geige notwendig ist. Des Weiteren kann ein Ton beliebig lange gehalten werden.
                     <br> Der Klang des Theremin ist am ehesten mit dem einer Violine vergleichbar. Das Klangbild und die Klangvariationen sind allerdings ganz eigentümlich.
 
@@ -179,27 +209,23 @@
                 </p>
 
                 <hr/>
-                <h1>2. Systemüberblick ThereOHM</h1>
-                <h2>1.1 Allgemeines</h2>
+                <h1 id="systemüberblick">Systemüberblick ThereOHM</h1>
+                <h2>Allgemeines</h2>
 
                 Abbildung 2 zeigt den prinzipiellen Aufbau des ThereOHM Systems. Es besteht aus einem klassischen Theremin dessen Klang durch Annäherung an die Antennen verändert werden kann.
-                <br> Das Analogsignal wird über ein 3,5 mm Klinkenkabel mit einer am Raspberry Pi angeschlossen USB-Stereo-Soundkarte verbunden. Der ADC der Soundkarte wandelt dieses Analogsignal in ein Digitalsignal um, welches anschließend im Raspberry
-                verarbeitet wird. Dazu wird auf dem Pi ein Pure Data Programm ausgeführt, welches als Software-DSP fungiert. Die Art und Weise der Audioverarbeitung kann hardwareseitig über Schalter, bzw. softwareseitig über eine Benutzeroberfläche dynamisch
-                beeinflusst werden.
-                <br> Hardwareseitig wird hierfür eine Stompbox verwendet. Auf dieser sind mehrere Fußschal- ter angebracht, deren Schaltzustand über die General-Purpose-Input-Outputs (GPIOs) des Raspberry eingelesen werden kann. Softwareseitig geschieht
-                dies über die Maus oder Tastatur.
+                <br> Das Analogsignal wird über ein 3,5 mm Klinkenkabel mit einer am Raspberry Pi angeschlossen USB-Stereo-Soundkarte verbunden. Der ADC der Soundkarte wandelt dieses Analogsignal in ein Digitalsignal um, welches anschließend im Raspberry verarbeitet wird. Dazu wird auf dem Pi ein Pure Data Programm ausgeführt, welches als Software-DSP fungiert. Die Art und Weise der Audioverarbeitung kann hardwareseitig über Schalter, bzw. softwareseitig über eine Benutzeroberfläche dynamisch beeinflusst werden.
+                <br> Hardwareseitig wird hierfür eine Stompbox verwendet. Auf dieser sind mehrere Fußschal- ter angebracht, deren Schaltzustand über die General-Purpose-Input-Outputs (GPIOs) des Raspberry eingelesen werden kann. Softwareseitig geschieht dies über die Maus oder Tastatur.
                 <br> Nach erfolgreicher Verarbeitung durch Pure Data wird das fertige Audiosignal an den DAC der USB-Soundkarte übergeben und abschließend über extern angeschlossene Laut- sprecher ausgegeben.
 
                 <br>
                 <img src="image003.jpg" alt="Abbildung 2: ThereOHM Blockschaltbild" style="width:400px;">
-                <br> Abbildung 2: ThereOHM Blockschaltbild <br><br> Alternativ lässt sich der Raspberry durch einen Standard-PC ersetzen. Hierzu muss lediglich Pure Data auf dem Computer installiert werden. Die frei erhältliche Software ist sowohl für
-                Windows, MAC OS und Linux verfügbar. Eine Schnellstartanleitung für verschiedene Plattformen befindet sich in Anhang A
+                <br> Abbildung 2: ThereOHM Blockschaltbild <br><br> Alternativ lässt sich der Raspberry durch einen Standard-PC ersetzen. Hierzu muss lediglich Pure Data auf dem Computer installiert werden. Die frei erhältliche Software ist sowohl für Windows, MAC OS und Linux verfügbar. Eine Schnellstartanleitung für verschiedene Plattformen befindet sich in Anhang A
                 <TODO> Link zum Anhang </TODO>.
 
                 <hr/>
 
-                <h1>3. Theremin</h1>
-                <h2>3.1 Layout / Schaltplan Platine</h2>
+                <h1>Theremin</h1>
+                <h2>Layout / Schaltplan Platine</h2>
 
                 <img src="image004.png" alt="Abbildung 3: Bestückungsplan Theremin" style="width:400px;">
                 <br> Abbildung 3: Bestückungsplan Theremin<br>
@@ -210,42 +236,35 @@
                 <img src="image006.png" alt="Abbildung 5: Schaltplan Theremin" style="width:400px;">
                 <br> Abbildung 5: Schaltplan Theremin<br>
 
-                <h2>3.2 Funktionsweise</h2>
+                <h2>Funktionsweise</h2>
 
-                Die Schaltung des Theremin teilt sich in vier Funktionsblöcke auf. Den ersten Block bildet ein variabler Oszillator, zu dem je eine Antenne gehört. Er wird als Regler für die Laut- stärke bzw. Tonhöhe verwendet und ist für beide Aufgaben separat vorhanden.
-                Im zweiten Funktionsblock wird ein konstantes Referenzsignal erzeugt, das mit Hilfe eines Fre- quenzmixers (dritter Funktionsblock) gemischt wird. Es existieren wiederum zwei Schaltungseinheiten, eine für das Signal der Lautstärke und
-                eine für die Tonhöhe. Anschlie- ßend werden die Signale im vierten Funktionsblock gefiltert und in einer Endstufe verstärkt. Die Funktionsblöcke sind nachfolgend genauer erläutert.
+                Die Schaltung des Theremin teilt sich in vier Funktionsblöcke auf. Den ersten Block bildet ein variabler Oszillator, zu dem je eine Antenne gehört. Er wird als Regler für die Laut- stärke bzw. Tonhöhe verwendet und ist für beide Aufgaben separat vorhanden. Im zweiten Funktionsblock wird ein konstantes Referenzsignal erzeugt, das mit Hilfe eines Fre- quenzmixers (dritter Funktionsblock) gemischt wird. Es existieren wiederum zwei Schaltungseinheiten, eine für das Signal der Lautstärke und eine für die Tonhöhe. Anschlie- ßend werden die Signale im vierten Funktionsblock gefiltert und in einer Endstufe verstärkt. Die Funktionsblöcke sind nachfolgend genauer erläutert.
 
                 <br>
                 <img src="image007.png" alt="Abbildung 6: Funktionsblockschaltbild" style="width:400px;">
                 <br>Abbildung 6: Funktionsblockschaltbild<br>
 
 
-                <h3>3.2.1 Funktionsblock eins (variabler Oszillator)</h3>
+                <h3>Funktionsblock eins (variabler Oszillator)</h3>
 
-                Der doppelt vorhandene Funktionsblock bildet jeweils einen variablen Oszillator für die Regelung der Lautstärke, sowie der Tonhöhe. Die Antenne für die Lautstärkenregelung (Abbildung 7, Pad VOLUME) fungiert im ersten Schwingkreis als Kondensatorplatte.
-                Die Hand des ThereOHM-Spielers bildet die zweite Platte des Kondensators. Durch die Variation des Abstandes der Hand variiert ebenfalls der kapazitive Anteil des Schwingkreises. Der Oszillator für die Tonhöhe ist identisch aufgebaut.
-                <br> Die Schwingkreise haben jeweils eine Frequenz von ca. 450kHz bis 500kHz, abhängig von der Position der Hand. Die variablen Kondensatoren CT1 und CT2 sind für die Kalibrierung der beiden Schwingkreise zuständig. Der Abgleich muss jeweils
-                so durchgeführt werden, dass bei maximalem Abstand der Hand zur Antenne die Frequenz des variablen Oszillators mit der Frequenz des Referenzoszillators (Funktionsblock 2) übereinstimmt.
-                <br> Wird das ThereOHM ohne Raspberry Pi bzw. PC gespielt und ein Lautsprecher direkt mit den Audioausgängen der Platine verbunden, kann die Lautstärke nicht variiert werden. Dies rührt daher, dass ein Schwingkreis jeweils die Tonhöhe
-                eines Stereo-Audio-Kanals bestimmt und die Lautstärkeregelung ausschließlich von der Pure Data Software umge- setzt wird.
+                Der doppelt vorhandene Funktionsblock bildet jeweils einen variablen Oszillator für die Regelung der Lautstärke, sowie der Tonhöhe. Die Antenne für die Lautstärkenregelung (Abbildung 7, Pad VOLUME) fungiert im ersten Schwingkreis als Kondensatorplatte. Die Hand des ThereOHM-Spielers bildet die zweite Platte des Kondensators. Durch die Variation des Abstandes der Hand variiert ebenfalls der kapazitive Anteil des Schwingkreises. Der Oszillator für die Tonhöhe ist identisch aufgebaut.
+                <br> Die Schwingkreise haben jeweils eine Frequenz von ca. 450kHz bis 500kHz, abhängig von der Position der Hand. Die variablen Kondensatoren CT1 und CT2 sind für die Kalibrierung der beiden Schwingkreise zuständig. Der Abgleich muss jeweils so durchgeführt werden, dass bei maximalem Abstand der Hand zur Antenne die Frequenz des variablen Oszillators mit der Frequenz des Referenzoszillators (Funktionsblock 2) übereinstimmt.
+                <br> Wird das ThereOHM ohne Raspberry Pi bzw. PC gespielt und ein Lautsprecher direkt mit den Audioausgängen der Platine verbunden, kann die Lautstärke nicht variiert werden. Dies rührt daher, dass ein Schwingkreis jeweils die Tonhöhe eines Stereo-Audio-Kanals bestimmt und die Lautstärkeregelung ausschließlich von der Pure Data Software umge- setzt wird.
                 <br>
                 <img src="image008.png" alt="Abbildung 7: Variabler Oszillator" style="width:400px;">
                 <br>Abbildung 7: Variabler Oszillator <br>
 
-                <h3>3.2.2 Funktionsblock zwei (konstanter Oszillator)</h3>
+                <h3>Funktionsblock zwei (konstanter Oszillator)</h3>
                 In diesem Funktionsblock wird mit Hilfe eines Zählers (IC-4060D) die 8 MHz-Frequenz des Quarzes auf ein Sechzehntel heruntergeteilt. Diese Frequenz von 500 kHz bildet die konstante Referenzfrequenz, auf die die variablen Oszillatoren kalibriert werden.
                 <br>
                 <img src="image009.png" alt="Abbildung 8: Konstanter Oszillator" style="width:400px;">
                 <br>Abbildung 7: Variabler Oszillator <br>
 
 
-                <h3>3.2.3 Funktionsblock drei und vier (Mixer, Filter und Verstärkerendstufe)</h3>
+                <h3>Funktionsblock drei und vier (Mixer, Filter und Verstärkerendstufe)</h3>
 
-                Der Frequenzmixer des Theremin besteht aus einem XNOR-Gatter, an dessen Eingängen die Frequenzen des variablen und des konstanten Oszillators anliegen. Daraus ergibt sich am Ausgang ein Frequenzgemisch aus Summe und Differenz der beiden Signale. Im nachfolgenden
-                Teil der Schaltung werden die nicht hörbaren Anteile des Signals herausgefiltert und anschließend von der Endstufe verstärkt.
-                <br> Abbildung 9 zeigt die Eingänge des Frequenz-Mixers während sich die Hand des ThereOHM Spielers im Bereich der Antenne befindet. In diesem Fall unterscheiden sich die beiden Oszillatorfrequenzen. Der blaue Signalverlauf zeigt hierbei
-                die konstante Oszillatorfrequenz von 500 kHz und der rote die des variablen Oszillators (bei dieser Handposition 450 kHz).
+                Der Frequenzmixer des Theremin besteht aus einem XNOR-Gatter, an dessen Eingängen die Frequenzen des variablen und des konstanten Oszillators anliegen. Daraus ergibt sich am Ausgang ein Frequenzgemisch aus Summe und Differenz der beiden Signale. Im nachfolgenden Teil der Schaltung werden die nicht hörbaren Anteile des Signals herausgefiltert und anschließend von der Endstufe verstärkt.
+                <br> Abbildung 9 zeigt die Eingänge des Frequenz-Mixers während sich die Hand des ThereOHM Spielers im Bereich der Antenne befindet. In diesem Fall unterscheiden sich die beiden Oszillatorfrequenzen. Der blaue Signalverlauf zeigt hierbei die konstante Oszillatorfrequenz von 500 kHz und der rote die des variablen Oszillators (bei dieser Handposition 450 kHz).
 
                 <br>
                 <img src="image010.png" alt="Abbildung 9: Oszilloskop-Aufnahme der Mixer Eingänge" style="width:400px;">
@@ -254,30 +273,23 @@
                 <img src="image011.png" alt="Abbildung 10: Mixer, Filter und Verstärker" style="width:400px;">
                 <br>Abbildung 10: Mixer, Filter und Verstärker<br>
 
-                <hr/>
-                <h1>4. Raspberry Pi B+</h3>
-                    Der Raspberry Pi ist ein vollwertiger und preisgünstiger Einplatinenrechner, welcher entwickelt wurde um Neulingen den Einstieg in die Programmierung zu erleichtern. Er eignet sich aufgrund seiner vielen Schnittstellen hervorragend für technische Versuchsaufbauten
-                    und bietet mit unterschiedlichen Linux-Distributionen
+                <hr>
+                <h1>Raspberry Pi B+</h3>
+                    Der Raspberry Pi ist ein vollwertiger und preisgünstiger Einplatinenrechner, welcher entwickelt wurde um Neulingen den Einstieg in die Programmierung zu erleichtern. Er eignet sich aufgrund seiner vielen Schnittstellen hervorragend für technische Versuchsaufbauten und bietet mit unterschiedlichen Linux-Distributionen
                     <a href="  http://www.raspberrypi.org/
             "></a> verschiedenste Einsatzgebiete. Im Rahmen des Projektes wird er als Rechner mit Software-DSP, sowie zum Einlesen der Stompbox Fußschalter verwendet.
 
-                    <h2>4.1 Hardware</h2>
+                    <h2>Hardware</h2>
 
                     <img src="image012.jpg" alt="Abbildung 11: Aufbau Raspberry Pi B+" style="width:400px;">
-                    <br>Abbildung 11: Aufbau Raspberry Pi B+<br><br> Der verwendete Raspberry Pi B+ besitzt eine 40 Pin große Stiftleiste, welche mit 24 GPIOs, sowie diversen Masse- und Spannungspegeln belegt ist. Zusätzlich können über die Stiftleiste
-                    gängige Schnittstellen wie I2C, SPI und UART angesprochen werden. Mittels der GPIOs ist es möglich externe Signale einzulesen bzw. auszugeben. Um auf die GPIOs zuzugreifen kann beispielsweise die Programmbibliothek WiringPi verwendet
-                    werden. Diese bietet zahlreiche C-Bibliotheken, um die GPIOs gezielt mittels Bash- oder Software-Skripten anzusteuern bzw. auszulesen.
+                    <br>Abbildung 11: Aufbau Raspberry Pi B+<br><br> Der verwendete Raspberry Pi B+ besitzt eine 40 Pin große Stiftleiste, welche mit 24 GPIOs, sowie diversen Masse- und Spannungspegeln belegt ist. Zusätzlich können über die Stiftleiste gängige Schnittstellen wie I2C, SPI und UART angesprochen werden. Mittels der GPIOs ist es möglich externe Signale einzulesen bzw. auszugeben. Um auf die GPIOs zuzugreifen kann beispielsweise die Programmbibliothek WiringPi verwendet werden. Diese bietet zahlreiche C-Bibliotheken, um die GPIOs gezielt mittels Bash- oder Software-Skripten anzusteuern bzw. auszulesen.
                     <br>
                     <img src="image013.jpg" alt="Abbildung 12: Belegung 40 Pin Stiftleiste" style="width:400px;">
-                    <br>Abbildung 12: Belegung 40 Pin Stiftleiste<br><br> Versorgt wird der Raspberry Pi über einen Micro USB-Anschluss und ein zughöriges Netzteil (Input: 100-240V, 0.3A, 50/60Hz; Output: 5V, max. 2A). Für die bildgebende Ausgabe kann
-                    entweder ein LCD-Display über die DSI-Schnitt- stelle oder ein herkömmlicher Computermonitor über die HDMI-Schnittstelle angeschlos- sen werden.
-                    <br> Die Tonausgabe kann über den Composite-Ausgang (4-phasige Klinke, Video und Sound) oder HDMI-Ausgang erfolgen. Die entsprechenden Einstellungen müssen in der Systemkonfiguration vorgenommen werden. Da die Onboard-Soundkarte allerdings
-                    keinen Audioeingang besitzt, sowie eine relativ rauschbehaftete Audioausgabe, wurde auf eine externe USB-Soundkarte zurückgegriffen (Abbildung 13). Wie sich jedoch im weiteren Projektverlauf herausstellte, verfügen diese als „Stereo
-                    Soundkarten“ vertriebenen USB-Geräte zwar über eine Stereo Audioausgabe, allerdings nur über einen Mono Eingang. Exakte Erläuterungen hierzu, sowie Lösungsmöglichkeiten werden im Kapitel Fazit näher erläutert.
+                    <br>Abbildung 12: Belegung 40 Pin Stiftleiste<br><br> Versorgt wird der Raspberry Pi über einen Micro USB-Anschluss und ein zughöriges Netzteil (Input: 100-240V, 0.3A, 50/60Hz; Output: 5V, max. 2A). Für die bildgebende Ausgabe kann entweder ein LCD-Display über die DSI-Schnitt- stelle oder ein herkömmlicher Computermonitor über die HDMI-Schnittstelle angeschlos- sen werden.
+                    <br> Die Tonausgabe kann über den Composite-Ausgang (4-phasige Klinke, Video und Sound) oder HDMI-Ausgang erfolgen. Die entsprechenden Einstellungen müssen in der Systemkonfiguration vorgenommen werden. Da die Onboard-Soundkarte allerdings keinen Audioeingang besitzt, sowie eine relativ rauschbehaftete Audioausgabe, wurde auf eine externe USB-Soundkarte zurückgegriffen (Abbildung 13). Wie sich jedoch im weiteren Projektverlauf herausstellte, verfügen diese als „Stereo Soundkarten“ vertriebenen USB-Geräte zwar über eine Stereo Audioausgabe, allerdings nur über einen Mono Eingang. Exakte Erläuterungen hierzu, sowie Lösungsmöglichkeiten werden im Kapitel Fazit näher erläutert.
                     <br>
                     <img src="image014.png" alt="Abbildung 13: USB-Soundkarte SPEEDLINK Vigo" style="width:400px;">
-                    <br>Abbildung 13: USB-Soundkarte SPEEDLINK Vigo <br> Die restlichen USB-Ports werden für Tastatur, Maus, sowie für Anschluss eines Datenträ- gers genutzt. Über einen Ethernet-Anschluss ist der Raspberry netzwerkfähig. Somit kön- nen
-                    via Internet Softwarepakete installiert oder der Raspberry über eine Remoteverbin- dung ferngesteuert werden.
+                    <br>Abbildung 13: USB-Soundkarte SPEEDLINK Vigo <br> Die restlichen USB-Ports werden für Tastatur, Maus, sowie für Anschluss eines Datenträ- gers genutzt. Über einen Ethernet-Anschluss ist der Raspberry netzwerkfähig. Somit kön- nen via Internet Softwarepakete installiert oder der Raspberry über eine Remoteverbin- dung ferngesteuert werden.
                     <br> Zum Schutz des Raspberry Pi wurde er in ein spezielles Plastikgehäuse eingebaut. Dieses wurde in unserem Projekt zusätzlich als modulare Einheit in die Stompbox verbaut.
                     <br><br>
                     <b><u>Zusätzliches Zubehör:</u></b>
@@ -292,10 +304,9 @@
                         <li>Kühlkörper (benötigt wegen Übertaktung)</li>
                     </ul>
 
-                    <h3>4.1.1 Betriebssystem</h3>
+                    <h3>Betriebssystem</h3>
                     Um den Raspberry starten zu können, muss ein bootfähiges Betriebssystem auf der microSD Karte abgelegt werden.
-                    <br> Für den Raspberry stellt die Raspberry Foundation mehrere hierfür optimierte LINUX-Distributionen zur Verfügung. Sie können entweder also Komplettpaket (NOOBS), oder einzeln installiert werden. Bei NOOBs kann nach jedem Hochlauf
-                    des Raspberry entschieden werden, mit welcher Distribution man arbeiten möchte. Für die Projektarbeit wurde die abgespeckte Variante eines Debian-Betriebssystems namens Raspbian entschieden.
+                    <br> Für den Raspberry stellt die Raspberry Foundation mehrere hierfür optimierte LINUX-Distributionen zur Verfügung. Sie können entweder also Komplettpaket (NOOBS), oder einzeln installiert werden. Bei NOOBs kann nach jedem Hochlauf des Raspberry entschieden werden, mit welcher Distribution man arbeiten möchte. Für die Projektarbeit wurde die abgespeckte Variante eines Debian-Betriebssystems namens Raspbian entschieden.
                     <br> Die Installation/ Konfiguration ist wie nachfolgend beschrieben durchzuführen: Das aktuelle ISO-Image der Software Raspbian als ZIP-File herunterladen
                     <a href="http://www.raspberrypi.org/
             ">http://www.raspberrypi.org/</a> und entpacken. Um ein lauffähiges System zu erhalten muss das ISO-Image auf die microSD geladen werden. Hierfür kann in Windows beispielsweise das Tool <a href="http://sourceforge.net/projects/win32diskimager
@@ -303,46 +314,36 @@
 
                     <br><br>
                     <img src="image015.png" alt="Abbildung 14: Win32 Disk Imager Oberfläche" style="width:400px;">
-                    <br>Abbildung 14: Win32 Disk Imager Oberfläche<br><br> Mittels der Write Funktion wird das Image auf die microSD-Karte geschrieben. Nun die beschriebene microSD-Karte in den vorgesehenen Kartenslot des Raspberry einstecken. Nun kann
-                    nach Anschluss des Netzteils und der Peripherie der Raspberry mit dem Betriebssystem gestartet werden. Beim erstmaligen Start erscheint das Raspberry Pi Software Configuration Tool (Abbildung 15). In diesem können Sprache, Passwort,
-                    sowie Kamera- und Übertaktungseinstellungen eingestellt werden.
+                    <br>Abbildung 14: Win32 Disk Imager Oberfläche<br><br> Mittels der Write Funktion wird das Image auf die microSD-Karte geschrieben. Nun die beschriebene microSD-Karte in den vorgesehenen Kartenslot des Raspberry einstecken. Nun kann nach Anschluss des Netzteils und der Peripherie der Raspberry mit dem Betriebssystem gestartet werden. Beim erstmaligen Start erscheint das Raspberry Pi Software Configuration Tool (Abbildung 15). In diesem können Sprache, Passwort, sowie Kamera- und Übertaktungseinstellungen eingestellt werden.
                     <br><br>
                     <img src="image016.png" alt="Abbildung 15: Raspberry Configuration Tool" style="width:400px;">
-                    <br>Abbildung 15: Raspberry Configuration Tool<br><br> Als Benutzername wurde „pi“ mit dem Passwort „raspberry“ vergeben. Um die Rechenleistung des Raspberry zu steigern, wurde er übertaktet. Hierfür im Overclock-Menü den High-Modus
-                    auswählen (950 MHz ARM, 250MHz core, 450MHz DRAM).
-                    <br> Um von einem anderen Computer auf den Raspberry zugreifen zu können muss eine Remote-Verbindung hergestellt werden. Hierfür muss zuerst auf dem Raspberry ein SSH- Server installiert und gestartet werden. Dafür ist folgender Befehl
-                    auf einer Bash-Konsole auszuführen.
+                    <br>Abbildung 15: Raspberry Configuration Tool<br><br> Als Benutzername wurde „pi“ mit dem Passwort „raspberry“ vergeben. Um die Rechenleistung des Raspberry zu steigern, wurde er übertaktet. Hierfür im Overclock-Menü den High-Modus auswählen (950 MHz ARM, 250MHz core, 450MHz DRAM).
+                    <br> Um von einem anderen Computer auf den Raspberry zugreifen zu können muss eine Remote-Verbindung hergestellt werden. Hierfür muss zuerst auf dem Raspberry ein SSH- Server installiert und gestartet werden. Dafür ist folgender Befehl auf einer Bash-Konsole auszuführen.
 
                     <pre>
-                        <code>$sudo apt-get install xrdp</code>
-                    </pre> Der Hintergrunddienst für den Remote Desktop Zugriff wird danach automatisch gestartet. Beispielsweise kann man sich nun mit der in Windows integrierten Remotedesktopverbindung auf den Raspberry zugreifen.
-                    Dadurch läuft der Raspberry ressourcenschonender, da er keine graphische Oberfläche direkt am Bildschirm anzeigen muss.
+                        <code>sudo apt-get install xrdp</code>
+                    </pre> Der Hintergrunddienst für den Remote Desktop Zugriff wird danach automatisch gestartet. Beispielsweise kann man sich nun mit der in Windows integrierten Remotedesktopverbindung auf den Raspberry zugreifen. Dadurch läuft der Raspberry ressourcenschonender, da er keine graphische Oberfläche direkt am Bildschirm anzeigen muss.
 
-                    <h2>4.2 Installation von Zusatzsoftware</h2>
+                    <h2>Installation von Zusatzsoftware</h2>
                     Während des Projektes wurden mehrere Zusatzprogramme verwendet. Die Installation und Konfiguration dieser wird nachfolgend beschrieben.
-                    <h3>4.2.1 ALSA</h3>
-                    Zunächst wird <a href="http://www.alsa-project.org">ALSA (Advanced Linux Sound Architecture)</a> benötigt, was einen grundlegenden Baustein des Soundsystems unter Linux darstellt. Durch ALSA wird die Kommu- nikation mit der Soundkarte
-                    unter Linux ermöglicht. Zusätzlich bietet ALSA die Möglichkeit grundlegender Konfigurationen. Zur Installation muss folgender Befehl in einer Konsole ausgeführt werden.
+                    <h3>ALSA</h3>
+                    Zunächst wird <a href="http://www.alsa-project.org">ALSA (Advanced Linux Sound Architecture)</a> benötigt, was einen grundlegenden Baustein des Soundsystems unter Linux darstellt. Durch ALSA wird die Kommu- nikation mit der Soundkarte unter Linux ermöglicht. Zusätzlich bietet ALSA die Möglichkeit grundlegender Konfigurationen. Zur Installation muss folgender Befehl in einer Konsole ausgeführt werden.
                     <pre>
                         <code>$sudo apt-get install alsa-base alsa-utils</code>
                     </pre>
 
-                    <h3>4.2.2 WiringPi</h3>
+                    <h3>WiringPi</h3>
                     Um auf die GPIOs zugreifen zu können, wurde die Programmbibliohtek WiringPi verwendet. Diese kann über ein Git-Archiv wie folgt bezogen und installiert werden.
                     <pre>
                         <code>$sudo apt-get install git-core $git clone git://git.drogon.net/wiringPi $cd wiringPi $./build</code>
                     </pre>
 
-                    <h3>4.2.3 Pure Data (Pd)</h3>
+                    <h3>Pure Data (Pd)</h3>
                     Hier soll zunächst nur auf die Installation des Programmpaketes Pure Data eingegangen werden. Eine weitergehende Beschreibung von Pure Data folgt in Kapitel 6.
-                    <br> Pure Data setzt sich aus mehreren Versionen zusammen. Die Basis Version, auch bekannt unter der Bezeichnung „Vanilla“, enthält lediglich eine Zusammenstellung der grundlegendsten Funktionen. Über zahlreich verfügbare Bibliotheken
-                    kann der Funktionsumfang anschließend beliebig erweitert werden. Mit dem Paket „Pd-Extended“ kann eine fertige Zusammenstellung, installiert werden, die sowohl Vanilla, als auch einen Großteil der externen Programmbibliotheken enthält.
-                    Hierbei ist zu beachten, dass Neuerungen zuerst in der Vanilla Version durchgeführt werden. So kann es vorkommen, dass die Extended Version veraltete Bibliotheken enthält. Dies war der Grund, warum im Zuge des Projektes auf dem Raspberry
-                    ein schwerwiegender Fehler in Kombination von Pd-Extended und ALSA auftrat. Dieser Fehler war in der Vanilla Version bereits behoben und trat hier nicht auf. Deshalb wird mit folgendem Befehl zunächst Pd-Vanilla installiert
+                    <br> Pure Data setzt sich aus mehreren Versionen zusammen. Die Basis Version, auch bekannt unter der Bezeichnung „Vanilla“, enthält lediglich eine Zusammenstellung der grundlegendsten Funktionen. Über zahlreich verfügbare Bibliotheken kann der Funktionsumfang anschließend beliebig erweitert werden. Mit dem Paket „Pd-Extended“ kann eine fertige Zusammenstellung, installiert werden, die sowohl Vanilla, als auch einen Großteil der externen Programmbibliotheken enthält. Hierbei ist zu beachten, dass Neuerungen zuerst in der Vanilla Version durchgeführt werden. So kann es vorkommen, dass die Extended Version veraltete Bibliotheken enthält. Dies war der Grund, warum im Zuge des Projektes auf dem Raspberry ein schwerwiegender Fehler in Kombination von Pd-Extended und ALSA auftrat. Dieser Fehler war in der Vanilla Version bereits behoben und trat hier nicht auf. Deshalb wird mit folgendem Befehl zunächst Pd-Vanilla installiert
                     <pre>
-                        <code>$sudo apt-get install pd</code>
-                    </pre> Um Abhängigkeiten von externen Libraries zu vermindern, wurde versucht weitestgehend auf Extended-Bibliotheken zu verzichten. Dies war nicht komplett möglich, weshalb fehlenden Objekte händisch nachinstalliert
-                    wurden.
+                        <code>sudo apt-get install pd</code>
+                    </pre> Um Abhängigkeiten von externen Libraries zu vermindern, wurde versucht weitestgehend auf Extended-Bibliotheken zu verzichten. Dies war nicht komplett möglich, weshalb fehlenden Objekte händisch nachinstalliert wurden.
                     <br> Alle zusätzlich verwendeten Objekte sind in Tabelle 2 aufgelistet. Diese sind zudem für den Raspberry (ARM-Prozessor) kompiliert und auf der Daten CD abgelegt.
 
                     <table class="tableizer-table">
@@ -387,15 +388,12 @@
                             </tr>
                         </tbody>
                     </table>
-                    <b> Tabelle 2: Verwendete Extended-Objects </b>
+                    <b>Tabelle 2: Verwendete Extended-Objects</b>
 
-                    <h3>4.2.4 Installation des Synthesis ToolKit (STK) und Kompilierung von Synthese-Modellen</h3>
-                    Bei dem Synthesis ToolKit (STK) handelt es sich um ein Paket, das zahlreiche C++ Bibliotheken zur Audiosignalverarbeitung, sowie Algorithmen zur Klangsynthese bereitstellt. Darunter befinden sich Synthesis Modelle, die unter anderem Blasinstrumente wie
-                    Flöten, Trompeten, usw. modellieren.
-                    <br> Um die Bibliotheken auf dem Raspberry Pi nutzen zu können, müssen diese einmalig für den ARM-Prozessor kompiliert werden. Später können die Bibliotheken ohne großen Aufwand verwendet werden. Eine Schnellstartanleitung hierfür
-                    befindet sich in Anhang A. Alle während des Projektes kompilierten Bibliotheken befinden sich auf der beiliegenden Daten CD.
-                    <br> Für die Kompilierung muss zunächst STK, sowie zahlreiche weitere Softwarepakete händisch auf dem Raspberry installiert werden. Die dafür notwendigen Schritte werden nachfolgend aufgelistet: Installation der liba Laufzeitbibliothek
-                    für ALSA-Anwendungen.
+                    <h3>Installation des Synthesis ToolKit (STK) und Kompilierung von Synthese-Modellen</h3>
+                    Bei dem Synthesis ToolKit (STK) handelt es sich um ein Paket, das zahlreiche C++ Bibliotheken zur Audiosignalverarbeitung, sowie Algorithmen zur Klangsynthese bereitstellt. Darunter befinden sich Synthesis Modelle, die unter anderem Blasinstrumente wie Flöten, Trompeten, usw. modellieren.
+                    <br> Um die Bibliotheken auf dem Raspberry Pi nutzen zu können, müssen diese einmalig für den ARM-Prozessor kompiliert werden. Später können die Bibliotheken ohne großen Aufwand verwendet werden. Eine Schnellstartanleitung hierfür befindet sich in Anhang A. Alle während des Projektes kompilierten Bibliotheken befinden sich auf der beiliegenden Daten CD.
+                    <br> Für die Kompilierung muss zunächst STK, sowie zahlreiche weitere Softwarepakete händisch auf dem Raspberry installiert werden. Die dafür notwendigen Schritte werden nachfolgend aufgelistet: Installation der liba Laufzeitbibliothek für ALSA-Anwendungen.
                     <pre>
                         <code>sudo apt-get install libasound2-dev</code>
                     </pre>
@@ -406,16 +404,13 @@
                     </pre> ausführen. Danach in den "src" Ordner wechseln und
                     <pre>
                         <code>make</code>
-                    </pre> ausführen um die "libstk.a" Bibliothek zu erzeugen. <a href="http://sourceforge.net/projects/pure-data/files/pd-extended/0.43.4/Pd-extended_0.43.4-source.tar.bz2/download">Pd-extended Quellcode</a> herunterladen
-                    und entpacken (z.B. nach /home/pi/pdsource/) Download von <a href="http://www.scons.org/">SCons (Software Construction Tool)</a>, der als Installer für weitere Pakete verwendet wird und im entpackten Ordner mittels
+                    </pre> ausführen um die "libstk.a" Bibliothek zu erzeugen. <a href="http://sourceforge.net/projects/pure-data/files/pd-extended/0.43.4/Pd-extended_0.43.4-source.tar.bz2/download">Pd-extended Quellcode</a> herunterladen und entpacken (z.B. nach /home/pi/pdsource/) Download von <a href="http://www.scons.org/">SCons (Software Construction Tool)</a>, der als Installer für weitere Pakete verwendet wird und im entpackten Ordner mittels
                     <pre>
                         <code> $python setup.py install</code>
-                    </pre> installieren Download von <a href="http://sndobj.sourceforge.net/">SNDOBJ (Sound Object Library)</a>, die eine objektorientierte Audio-Processing Bibliothek zur Verfügung stellt. und im entpackten Ordner
-                    mittels
+                    </pre> installieren Download von <a href="http://sndobj.sourceforge.net/">SNDOBJ (Sound Object Library)</a>, die eine objektorientierte Audio-Processing Bibliothek zur Verfügung stellt. und im entpackten Ordner mittels
                     <pre>
                         <code> $scons </code>
-                    </pre> installieren. Anschließend wird die Anwendung flext installiert. Dabei handelt es sich um einen Multiplattform C++ Development Layer, der ein vereinheitlichtes Interface für die APIs von Pd, STK als auch
-                    Max zur Verfügung stellt. Der flext Quellcode kann mit Hilfe von Subversion (SVN) bezogen werden.
+                    </pre> installieren. Anschließend wird die Anwendung flext installiert. Dabei handelt es sich um einen Multiplattform C++ Development Layer, der ein vereinheitlichtes Interface für die APIs von Pd, STK als auch Max zur Verfügung stellt. Der flext Quellcode kann mit Hilfe von Subversion (SVN) bezogen werden.
                     <pre>
                         <code>sudo apt-get install subversion</code>
                     </pre> aktuelles SVN-Archiv von flext herunterladen
@@ -447,8 +442,7 @@
                     </pre> Dieser Vorgang dauert einige Zeit. Wenn die Kompilierung ohne Fehler durchlaufen wurde, kann die Installation gestartet werden.
                     <pre>
                         <code>$sudo bash build.sh pd gcc install</code>
-                    </pre> Nun ist flext vollständig installiert und kann verwendet werden. Um ein Synthese Modell aus dem STK in eine Pd Bibliothek zu übersetzen, muss das jeweilige Makefile an die aktuellen Installationspfade angepasst
-                    werden (siehe Pfadangaben der vorangegangenen Installationsschritte). Ist dies geschehen kann im Ordner des STK Objektes, dessen Kompilierung durchgeführt werden
+                    </pre> Nun ist flext vollständig installiert und kann verwendet werden. Um ein Synthese Modell aus dem STK in eine Pd Bibliothek zu übersetzen, muss das jeweilige Makefile an die aktuellen Installationspfade angepasst werden (siehe Pfadangaben der vorangegangenen Installationsschritte). Ist dies geschehen kann im Ordner des STK Objektes, dessen Kompilierung durchgeführt werden
                     <pre>
                         <code> $sudo /home/pi/flext/flext/build.sh pd gcc</code>
                     </pre> Im Anschluss wird das kompilierte STK Objekt als Pd Bibliothek installiert
@@ -458,30 +452,24 @@
 
 
                     <hr/>
-                    <h1>5. Stompbox</h1>
+                    <h1>Stompbox</h1>
 
                     <img src="image017.png" alt="Abbildung 16: Stompbox" style="width:400px;">
-                    <br>Abbildung 16: Stompbox <br> <br> Als Stompbox wird ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann. In der eigens für das Projekt gebauten Stompbox (Abbildung 16) ist der Raspberry Pi integriert. Er kann
-                    somit jederzeit problemlos entnommen werden. Weiterhin sind alle Schnittstellen des Raspberry Pi von außen zu erreichen. Der Deckel enthält zehn Wechselschalter, welche als Signalschalter dienen (Abbildung 17). Über ein 40 adriges
-                    Flachbandkabel sind Raspberry und Stompbox-Deckel mit einer Anschlussplatine (Abbildung 20) verbunden. Die Platine ist so aufgebaut, dass sich der Raspberry um die Spannungsversorgung und Ansteuerung der Platine kümmert. Nach Anschluss
-                    aller Flachbandkabel werden somit die Wechselschalter mit Spannung versorgt und die Schalterzustände können über die Pi-GPIOs eingelesen werden. Die Stompbox bietet zusätzlich an der Außenseite eine 5V Spannungsversorgung für den Anschluss
-                    des Theremins.
+                    <br>Abbildung 16: Stompbox <br> <br> Als Stompbox wird ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann. In der eigens für das Projekt gebauten Stompbox (Abbildung 16) ist der Raspberry Pi integriert. Er kann somit jederzeit problemlos entnommen werden. Weiterhin sind alle Schnittstellen des Raspberry Pi von außen zu erreichen. Der Deckel enthält zehn Wechselschalter, welche als Signalschalter dienen (Abbildung 17). Über ein 40 adriges Flachbandkabel sind Raspberry und Stompbox-Deckel mit einer Anschlussplatine (Abbildung 20) verbunden. Die Platine ist so aufgebaut, dass sich der Raspberry um die Spannungsversorgung und Ansteuerung der Platine kümmert. Nach Anschluss aller Flachbandkabel werden somit die Wechselschalter mit Spannung versorgt und die Schalterzustände können über die Pi-GPIOs eingelesen werden. Die Stompbox bietet zusätzlich an der Außenseite eine 5V Spannungsversorgung für den Anschluss des Theremins.
 
-                    <h2>5.1 Deckel mit Wechselschalter</h2>
+                    <h2>Deckel mit Wechselschalter</h2>
                     <img src="image018.jpg" alt="Abbildung 17: Stompbox Deckel" style="width:400px;">
                     <br>Abbildung 17: Stompbox Deckel<br><br>
                     <img src="image019.png" alt="Abbildung 18: Technische Zeichnung des Stompbox Deckels" style="width:400px;">
-                    <br>Abbildung 18: Technische Zeichnung des Stompbox Deckels<br><br> Auf der technischen Zeichnung in Abbildung 19) ist die Wechselschalternummerierung dargestellt. Die Schalter sind durch diese festen GPIOs zugewiesen. In Kapitel 5.2
-                    können Verdrahtung und Belegung eingesehen werden.
+                    <br>Abbildung 18: Technische Zeichnung des Stompbox Deckels<br><br> Auf der technischen Zeichnung in Abbildung 19) ist die Wechselschalternummerierung dargestellt. Die Schalter sind durch diese festen GPIOs zugewiesen. In Kapitel 5.2 können Verdrahtung und Belegung eingesehen werden.
                     <br>
                     <img src="image020.png" alt="Abbildung 19: Anschlussschematik eines Fußschalters" style="width:400px;">
-                    <br>Abbildung 19: Anschlussschematik eines Fußschalters<br><br> Der jeweilige Fußschalter ist mittig mit dem zugehörigen GPIO-Pin verbunden. Durch Drücken des Wechselschalters befinden sich entweder GND oder 3,3V am GPIO-Pin. Der Zustand
-                    kann zum Beispiel mit Hilfe eines WiringPi-Kommandos direkt über die Konsole ausgelesen werden.
+                    <br>Abbildung 19: Anschlussschematik eines Fußschalters<br><br> Der jeweilige Fußschalter ist mittig mit dem zugehörigen GPIO-Pin verbunden. Durch Drücken des Wechselschalters befinden sich entweder GND oder 3,3V am GPIO-Pin. Der Zustand kann zum Beispiel mit Hilfe eines WiringPi-Kommandos direkt über die Konsole ausgelesen werden.
                     <pre>
-                        <code>$gpio –g read WIRINGPI_PINNUMMER</code>
+                        <code>gpio –g read WIRINGPI_PINNUMMER</code>
                     </pre>
 
-                    <h2>5.2 Verdrahtung</h2>
+                    <h2>Verdrahtung</h2>
 
                     <b>Tabelle 3: Pinbelegung des Raspberry Anschlusssteckers </b>
 
@@ -997,7 +985,7 @@
                         </tbody>
                     </table>
 
-                    <h2>5.3 Anschlussplatine zwischen Stompbox und Raspberry Pi</h2>
+                    <h2>Anschlussplatine zwischen Stompbox und Raspberry Pi</h2>
                     <img src="image021.jpg" alt="Abbildung 20: Anschlussplatine von oben" style="width:400px;">
                     <br>Abbildung 20: Anschlussplatine von oben<br>
                     <img src="image022.jpg" alt="Abbildung 21: Anschlussplatine von unten" style="width:400px;">
@@ -1005,24 +993,18 @@
                     <img src="image023.png" alt="Abbildung 22: Verdrahtung Anschlussplatine" style="width:400px;">
                     <br>Abbildung 22: Verdrahtung Anschlussplatine<br>
 
-                    <hr/>
-                    <h1>6. Pure Data</h1>
-                    Pure Data, oder kurz Pd ist eine grafische echtzeitfähige Programmiersprache, die auf Audio-, Video- und Bildverarbeitung spezialisiert ist. Pd wurde ab 1996 von dem US-Amerikaner Miller Stuart Puckette als Open Source Projekt entwickelt und wird seither
-                    von einer großen Community gepflegt und erweitert.
-                    <br> <a href="http://puredata.info/">Pure Data</a> ist für alle gängigen Betriebssysteme, wie Mac OS, Windows und Linux verfügbar. Auf diesen fungiert es als ein Software Digital-Signal-Processor (DSP). Im Zuge der Verbreitung kostengünstiger
-                    Embedded-Systeme (Raspberry, Beagle Bone, usw.) wurde Pure Data speziell für die Verwendung auf diesen Einplatinenrechnern angepasst. Somit ist es möglich einen Raspberry Pi als DSP zu verwenden.
+                    <hr>
+                    <h1>Pure Data</h1>
+                    Pure Data, oder kurz Pd ist eine grafische echtzeitfähige Programmiersprache, die auf Audio-, Video- und Bildverarbeitung spezialisiert ist. Pd wurde ab 1996 von dem US-Amerikaner Miller Stuart Puckette als Open Source Projekt entwickelt und wird seither von einer großen Community gepflegt und erweitert.
+                    <br> <a href="http://puredata.info/">Pure Data</a> ist für alle gängigen Betriebssysteme, wie Mac OS, Windows und Linux verfügbar. Auf diesen fungiert es als ein Software Digital-Signal-Processor (DSP). Im Zuge der Verbreitung kostengünstiger Embedded-Systeme (Raspberry, Beagle Bone, usw.) wurde Pure Data speziell für die Verwendung auf diesen Einplatinenrechnern angepasst. Somit ist es möglich einen Raspberry Pi als DSP zu verwenden.
                     <br> Pd-Programme werden als Patch bezeichnet und beschreiben einen Datenfluss. Die Programmierung und Darstellung des Datenflussdiagramms erfolgt graphisch. Dabei entspricht der Programmcode gleichzeitig dem Bedieninterface.
-                    <br> Ein Patch besteht aus Objekten, die über Leitungen verbunden werden. Diesbezüglich unterscheidet Pure Data grob zwei Informationstypen. Dies sind zum einen periodische Signale, z.B. Audiostreams (gekennzeichnet durch dicke blaue
-                    Linien und eine [~] im Objektnamen), sowie sporadische Nachrichten (Messages), z.B. Daten-/ Zahlnachrichten (gekennzeichnet durch dünne schwarze Linien).
-                    <br> Durch Kombination verschiedener Objekte ist es möglich beliebig komplexe Operationen und Verarbeitungsschritte durchzuführen. Der Benutzer hat dabei die Möglichkeit über Schalter, Taster, Schieberegler sowie interaktive Zeichenflächen
-                    mit einem Patch zu interagieren.
+                    <br> Ein Patch besteht aus Objekten, die über Leitungen verbunden werden. Diesbezüglich unterscheidet Pure Data grob zwei Informationstypen. Dies sind zum einen periodische Signale, z.B. Audiostreams (gekennzeichnet durch dicke blaue Linien und eine [~] im Objektnamen), sowie sporadische Nachrichten (Messages), z.B. Daten-/ Zahlnachrichten (gekennzeichnet durch dünne schwarze Linien).
+                    <br> Durch Kombination verschiedener Objekte ist es möglich beliebig komplexe Operationen und Verarbeitungsschritte durchzuführen. Der Benutzer hat dabei die Möglichkeit über Schalter, Taster, Schieberegler sowie interaktive Zeichenflächen mit einem Patch zu interagieren.
                     <br>
 
-                    <h2>6.1 Ziel des ThereOHM Patch</h2>
-                    Ziel des Pd Programmes ist es, das ThereOHM spielbar und bedienbar zu machen. Hierzu wurde ein modulares Bedienkonzept entwickelt, aufgrund dessen das ThereOHM mit der speziell entworfenen Stompbox steuerbar ist. In diesem Fall sind weder ein Monitor
-                    noch andere externe Peripherien notwendig. Andererseits ist es auch möglich das ThereOHM ohne die Stompbox zu spielen. Dabei kann eine Tastatur oder eine Maus zur Bedienung verwendet werden.
-                    <br> Je nach verfügbarer Peripherie ist es möglich das ThereOHM ohne Raspberry Pi an einem Standard Computer mit wahlweise Linux-, Windows- oder Mac OS-Betriebssystem zu verwenden. Grundvoraussetzung ist lediglich eine installierte
-                    Version von Pure Data Extended.
+                    <h2>Ziel des ThereOHM Patch</h2>
+                    Ziel des Pd Programmes ist es, das ThereOHM spielbar und bedienbar zu machen. Hierzu wurde ein modulares Bedienkonzept entwickelt, aufgrund dessen das ThereOHM mit der speziell entworfenen Stompbox steuerbar ist. In diesem Fall sind weder ein Monitor noch andere externe Peripherien notwendig. Andererseits ist es auch möglich das ThereOHM ohne die Stompbox zu spielen. Dabei kann eine Tastatur oder eine Maus zur Bedienung verwendet werden.
+                    <br> Je nach verfügbarer Peripherie ist es möglich das ThereOHM ohne Raspberry Pi an einem Standard Computer mit wahlweise Linux-, Windows- oder Mac OS-Betriebssystem zu verwenden. Grundvoraussetzung ist lediglich eine installierte Version von Pure Data Extended.
                     <br> Zum anderen realisiert die Software, das eigentliche Ziel des Projektes, die angestrebte Klangvariation des Theremins. Diese Grundfunktionalität wurde um zusätzliche Funktionen erweitert.
                     <br>
                     <br> Hierzu zählen:
@@ -1035,93 +1017,68 @@
                     </ul>
                     <br> Des Weiteren soll die komplette Software in englischer Sprache gehalten werden, um sie der weltweiten Pd-Community, und dadurch auch anderen interessierten Musikern/ Bastlern, zur Verfügung zu stellen.
 
-                    <h2>6.2 Realisierung</h2>
+                    <h2>Realisierung</h2>
 
                     In Pure Data ist es möglich Unterprogramme anzulegen. Dies empfiehlt sich um modularen, wiederverwendbaren und übersichtlichen Code zu schreiben.
-                    <br> Pd bietet zwei Möglichkeiten Unterprogramme zu erstellen: Die erste sind so genannte Abstraktionen (eng. Abstractions). Es handelt sich hierbei um eigenständige Pd Patches, die als Unterprogramme in einem anderen Patch aufgerufen
-                    werden können. Abstractions sind vor allem bei Funktionen sinnvoll, die mehrfach wiederverwendet werden.
-                    <br> Während des Projektes wurde zur besseren Erkennbarkeit der Abstractions die Konvention eingeführt, alle diese Unterprogramme mit dem Namenskürzel "sub_NAME" zu benennen. sub dient hier als Anlehnung an die englische Übersetzung
-                    von "Unter-"Programm. Nicht zu verwechseln mit nachfolgend beschriebenen Subpatches
-                    <br> Eine andere Möglichkeit von Unterprogrammen sind Subpatches. Sie sind keine eigenständigen .pd Files, sondern Teil eines Elternpatches. Diese bestehen aus gruppiertem Code, um die Übersichtlichkeit im Hauptprogramm zu verbessern
-                    und zusammengehörige Funktionen sinnvoll zu bündeln. Erkennbar sind sie als Blöcke mit der Bezeichnung "pd NAME".
-                    <br> In der ThereOHM Pd Software werden verschiedene selbst programmierte Abstractions verwendet. Die wichtigsten werden anschließend ausführlich beschrieben. Der zugehörige Pd Programmcode kann auf der Daten CD im .pd Format, als
-                    auch abgedruckt als PDF Datei betrachtet werden.
+                    <br> Pd bietet zwei Möglichkeiten Unterprogramme zu erstellen: Die erste sind so genannte Abstraktionen (eng. Abstractions). Es handelt sich hierbei um eigenständige Pd Patches, die als Unterprogramme in einem anderen Patch aufgerufen werden können. Abstractions sind vor allem bei Funktionen sinnvoll, die mehrfach wiederverwendet werden.
+                    <br> Während des Projektes wurde zur besseren Erkennbarkeit der Abstractions die Konvention eingeführt, alle diese Unterprogramme mit dem Namenskürzel "sub_NAME" zu benennen. sub dient hier als Anlehnung an die englische Übersetzung von "Unter-"Programm. Nicht zu verwechseln mit nachfolgend beschriebenen Subpatches
+                    <br> Eine andere Möglichkeit von Unterprogrammen sind Subpatches. Sie sind keine eigenständigen .pd Files, sondern Teil eines Elternpatches. Diese bestehen aus gruppiertem Code, um die Übersichtlichkeit im Hauptprogramm zu verbessern und zusammengehörige Funktionen sinnvoll zu bündeln. Erkennbar sind sie als Blöcke mit der Bezeichnung "pd NAME".
+                    <br> In der ThereOHM Pd Software werden verschiedene selbst programmierte Abstractions verwendet. Die wichtigsten werden anschließend ausführlich beschrieben. Der zugehörige Pd Programmcode kann auf der Daten CD im .pd Format, als auch abgedruckt als PDF Datei betrachtet werden.
 
-                    <h3>6.2.1 Main</h3>
+                    <h3>Main</h3>
 
-                    Das ThereOHM Hauptprogramm befindet sich in der Datei Main.pd, deren Interface in Abbildung 23 dargestellt ist. Zunächst kann unter Start_Options mit Hilfe von Checkboxen die Konfiguration des Systems angegeben werden. Folgende Auswahlmöglichkeiten stehen
-                    zur Verfügung:
+                    Das ThereOHM Hauptprogramm befindet sich in der Datei Main.pd, deren Interface in Abbildung 23 dargestellt ist. Zunächst kann unter Start_Options mit Hilfe von Checkboxen die Konfiguration des Systems angegeben werden. Folgende Auswahlmöglichkeiten stehen zur Verfügung:
 
                     <ul>
-                        <li>Wird das ThereOHM auf einem Raspberry, oder einem Standard Computer mit Intel x86 bzw. x64 Prozessor betrieben? In diesem Fall werden zusätzliche Features freigeschaltet, für die eine höhere Rechenleistung benötigt wird. Beispielsweise
-                            wird in der Drum_Machine eine graphische Visualisierung der Abspielgeschwindigkeit dargestellt.</li>
-                        <li>Ist eine Computertastatur angeschlossen? Ist dies zutreffend werden Shortcuts aktiviert um die Software direkt per Kurzkom- mandos steuern zu können. Diese Shortcuts können vom Nutzer im Unterfenster pd shortcut_keys individuell
-                            definiert werden. Es befindet sich im rechten Teil des Hauptfensters unter der Kategorie Configuration & Info</li>
+                        <li>Wird das ThereOHM auf einem Raspberry, oder einem Standard Computer mit Intel x86 bzw. x64 Prozessor betrieben? In diesem Fall werden zusätzliche Features freigeschaltet, für die eine höhere Rechenleistung benötigt wird. Beispielsweise wird in der Drum_Machine eine graphische Visualisierung der Abspielgeschwindigkeit dargestellt.</li>
+                        <li>Ist eine Computertastatur angeschlossen? Ist dies zutreffend werden Shortcuts aktiviert um die Software direkt per Kurzkom- mandos steuern zu können. Diese Shortcuts können vom Nutzer im Unterfenster pd shortcut_keys individuell definiert werden. Es befindet sich im rechten Teil des Hauptfensters unter der Kategorie Configuration & Info</li>
                         <li>Ist eine Stompbox an das ThereOHM angeschlossen? Somit kann die Software über die Fußschalter der Box gesteuert werden.</li>
                     </ul>
 
                     Sind alle Einstellungen getroffen kann über pd Calibrate_Antennas die Empfindlichkeit der Lautstärke- und Tonhöhen-Antenne des ThereOHM kalibriert werden.
                     <br> Danach wird mit dem RUN Schalter das eigentliche Programm gestartet. Dieses liest über den Audioeingang Daten des Theremin ein, rechnet diese in MIDI-Werte
-                    <TODO> PopUp Info Feld: Musical Instrument Digital Interface (MIDI) ist ein standardisiertes Datenformat für den Austausch musi- kalischer Steuerinformationen </TODO> um und speist damit ein auswählbares Instrumentenmodell. Der erzeugte Klang
-                    wird direkt über den Audioausgang an extern angeschlossene Lautsprecher ausgegeben.
+                    <TODO> PopUp Info Feld: Musical Instrument Digital Interface (MIDI) ist ein standardisiertes Datenformat für den Austausch musi- kalischer Steuerinformationen </TODO> um und speist damit ein auswählbares Instrumentenmodell. Der erzeugte Klang wird direkt über den Audioausgang an extern angeschlossene Lautsprecher ausgegeben.
                     <br>
                     <img src="image024.png" alt="Abbildung 23: Haupt-Interface" style="width:400px;">
                     <br>Abbildung 23: Haupt-Interface<br>
 
-                    <h3>6.2.1 Calibrate Antennas</h3>
+                    <h3>Calibrate Antennas</h3>
 
-                    Die Kalibrierung der Antennen dient dazu, abhängig von Störgrößen in der Umgebung und den persönlichen Spielvorlieben, die Empfindlichkeitsbereiche der Antennen einzustellen. Es wird jeweils im Feld <i>Current_Value</i> der aktuell
-                    eingelesene Frequenzwert und im Feld <i>stored_value</i> der bereits abgespeicherte Defaultwert angezeigt.
-                    <br> Zunächst wird die Pitch Antenne kalibriert. Hierfür wird der Schalter <i>Near_Antenna</i> betä- tigt und anschließend die zugehörige Spielhand zur Antenne hinbewegt (ein Anstieg der Werte im Feld <i>Current_Value </i> sowie im
-                    Feld
+                    Die Kalibrierung der Antennen dient dazu, abhängig von Störgrößen in der Umgebung und den persönlichen Spielvorlieben, die Empfindlichkeitsbereiche der Antennen einzustellen. Es wird jeweils im Feld <i>Current_Value</i> der aktuell eingelesene Frequenzwert und im Feld <i>stored_value</i> der bereits abgespeicherte Defaultwert angezeigt.
+                    <br> Zunächst wird die Pitch Antenne kalibriert. Hierfür wird der Schalter <i>Near_Antenna</i> betä- tigt und anschließend die zugehörige Spielhand zur Antenne hinbewegt (ein Anstieg der Werte im Feld <i>Current_Value </i> sowie im Feld
                     <i>stored_value </i> ist zu beobachten). Ist man relativ nah an der Antenne (ohne sie zu berühren) wird der Schalter
                     <i>Near_Antenna </i> wieder deaktiviert und damit der aktuelle Wert abgespeichert.
-                    <br> Danach wird die Hand aus dem Antennenfeld herausbewegt und der dortige Wert über <i>Away_from_Antenna</i> abgespeichert. Der gleiche Vorgang kann anschließend für die Volume Antenne durchgeführt werden. Zum Abschluss des Kalibriervorgangs
-                    ist hier zusätzlich ein Klick auf <i>Reset_Autoscale</i> notwendig. Dieser Reset erhöht die Genauigkeit, indem er dafür sorgt, dass alle errechneten Zwischenwerte in den neu kalibrierten Grenzen liegen. Im Falle der Pitch Antenne ist
-                    im Kalibrierfenster kein Reset vorgesehen, da dieser bei der Auswahl der einzelnen Instrumente automatisch durchgeführt wird.
+                    <br> Danach wird die Hand aus dem Antennenfeld herausbewegt und der dortige Wert über <i>Away_from_Antenna</i> abgespeichert. Der gleiche Vorgang kann anschließend für die Volume Antenne durchgeführt werden. Zum Abschluss des Kalibriervorgangs ist hier zusätzlich ein Klick auf <i>Reset_Autoscale</i> notwendig. Dieser Reset erhöht die Genauigkeit, indem er dafür sorgt, dass alle errechneten Zwischenwerte in den neu kalibrierten Grenzen liegen. Im Falle der Pitch Antenne ist im Kalibrierfenster kein Reset vorgesehen, da dieser bei der Auswahl der einzelnen Instrumente automatisch durchgeführt wird.
                     <br>
                     <img src="image025.png" alt="Abbildung 24: Interface Antenna Calibration" style="width:400px;">
                     <br>Abbildung 24: Interface Antenna Calibration<br>
 
-                    <h3>6.2.2 Instrumentenauswahl</h3>
+                    <h3>Instrumentenauswahl</h3>
 
-                    Mit diesem Patch werden die verschiedenen Instrumente ausgewählt. Ein Klick auf die neben den Checkboxen stehenden Instrumentennamen öffnet jeweils ein Unterfenster, in dem spezifische klangverändernde Einstellungen vorgenommen werden können. Alle Einstellungen
-                    können separat variiert werden oder über Presetmodi gleichzeitig verändert werden. Dies ist exemplarisch in Abbildung 25 für die Violine dargestellt.
+                    Mit diesem Patch werden die verschiedenen Instrumente ausgewählt. Ein Klick auf die neben den Checkboxen stehenden Instrumentennamen öffnet jeweils ein Unterfenster, in dem spezifische klangverändernde Einstellungen vorgenommen werden können. Alle Einstellungen können separat variiert werden oder über Presetmodi gleichzeitig verändert werden. Dies ist exemplarisch in Abbildung 25 für die Violine dargestellt.
                     <br> Die Auswahl der einzelnen Instrumente kann sowohl über die Stompbox, als auch mit Maus oder Tastatur durchgeführt werden. Bei Auswahl durch die Schalter der Stompbox wird auf die Programmbibliothek WiringPi zurückgegriffen.
-                    <br> Für Pure Data gibt es dazu eine Bibliothek namens <a href="http://nyu-waverlylabs.org/rpi-gpio/">Pd-WiringPi</a>. Um eine direkte Um- schaltung der Instrumente sowohl beim Wechsel von High-auf-Low, als auch von Low- auf-High der
-                    GPIOs umzusetzen, wird die nachfolgend beschriebene GPIO-Einlese-rou- tine verwendet. Dadurch kann direkt, ohne Deaktivierung des vorher aktiven Instruments, der Modus umgeschaltet werden.
-                    <br> Über ein metro-Object wird in einem fest einstellbaren zeitlichen Abstand der Zustand der GPIOs eingelesen. Dieser wird jeweils mit dem vorherigen Zustand des Schalters, der in einem Puffer zwischengespeichert wird, verexodert
-                    und anschließend gewichtet. Ein route-Object übergibt das Ergebnis an die Auswahlleiste. Dadurch wird pro Schalterbetä- tigung ein kurzer Impuls generiert, der zum Umschalten der Instrumente führt. Der exakte aktuelle Zustand (High,
-                    bzw. Low) ist somit nicht relevant.
+                    <br> Für Pure Data gibt es dazu eine Bibliothek namens <a href="http://nyu-waverlylabs.org/rpi-gpio/">Pd-WiringPi</a>. Um eine direkte Um- schaltung der Instrumente sowohl beim Wechsel von High-auf-Low, als auch von Low- auf-High der GPIOs umzusetzen, wird die nachfolgend beschriebene GPIO-Einlese-rou- tine verwendet. Dadurch kann direkt, ohne Deaktivierung des vorher aktiven Instruments, der Modus umgeschaltet werden.
+                    <br> Über ein metro-Object wird in einem fest einstellbaren zeitlichen Abstand der Zustand der GPIOs eingelesen. Dieser wird jeweils mit dem vorherigen Zustand des Schalters, der in einem Puffer zwischengespeichert wird, verexodert und anschließend gewichtet. Ein route-Object übergibt das Ergebnis an die Auswahlleiste. Dadurch wird pro Schalterbetä- tigung ein kurzer Impuls generiert, der zum Umschalten der Instrumente führt. Der exakte aktuelle Zustand (High, bzw. Low) ist somit nicht relevant.
                     <br>
                     <img src="image026.png" alt="Abbildung 25: Interface Instrument Selection Violine" style="width:400px;">
                     <br>Abbildung 25: Interface Instrument Selection Violine<br>
 
-                    <h3>6.2.3 Gitarren Modell – Karplus Strong Algorithmus</h3>
+                    <h3>Gitarren Modell – Karplus Strong Algorithmus</h3>
 
-                    Um mit Pd künstlich einen Gitarrenklang zu generieren wurde auf den 1983 von Kevin Karplus und Alex Strong veröffentlichten gleichnamigen Algorithmus zurückgegriffen. Die- ser bildet ein Verfahren zur Klangsynthese ab, welches besonders geeignet ist um
-                    Sai- teninstrumente zu simulieren.
-                    <br> Der Algorithmus basiert auf einem rückgekoppelten <i>FIFO</i>-Pufferspeicher (First In First Out) in dessen Rückführzweig ein Filter eingesetzt ist (siehe Abbildung 26). Zu Beginn werden zufällige Samples in den Speicher geschrieben.
-                    Hierfür eignen sich besonders Geräusche mit dichtem Spektrum, z.B. weißes Rauschen. Wurde der Speicher befüllt wird das erste Sample aus dem Speicher ausgegeben. Dadurch wird eine Verzögerung um N- Samples (Pufferspeichergröße) erreicht.
-                    Die ausgegebenen Samples werden über einen Filter rückgekoppelt und gefiltert wieder vorne in den Speicher geschrieben. Dies wieder- holt sich mit einer definierbaren Rate die in <i>Beats Per Minute</i> (BPM) angegeben wird. Auf diesem
-                    Weg zirkulieren fortlaufend zufällige Geräusche im Kreislauf, die in jedem Durch- lauf einmal vom Filter modifiziert und ausgegeben werden.
-                    <br> Um die Abklingcharakteristik einer gezupften Saite zu simulieren, wird als Filter ein Tief- pass verwendet. Hochfrequente Signalkomponenten werden somit stärker bedämpft als niederfrequente. Über die Variation der Filterfrequenz
-                    kann das Nachschwingen der Saite beeinflusst und der Eindruck z.B. einer Akustikgitarre oder einer Griechischen Bouzouki erweckt werden (Im Programm als Cut_Off bezeichnet). Über eine variierbare Amplitudendämpfung (Im Programm als
-                    Decay bezeichnet) kann die Anschlagstärke bzw. ein bloßes Klopfen auf den Klangkörper simuliert werden. Nachfolgende Abbildung zeigt das Prinzip des Algorithmus.
+                    Um mit Pd künstlich einen Gitarrenklang zu generieren wurde auf den 1983 von Kevin Karplus und Alex Strong veröffentlichten gleichnamigen Algorithmus zurückgegriffen. Die- ser bildet ein Verfahren zur Klangsynthese ab, welches besonders geeignet ist um Sai- teninstrumente zu simulieren.
+                    <br> Der Algorithmus basiert auf einem rückgekoppelten <i>FIFO</i>-Pufferspeicher (First In First Out) in dessen Rückführzweig ein Filter eingesetzt ist (siehe Abbildung 26). Zu Beginn werden zufällige Samples in den Speicher geschrieben. Hierfür eignen sich besonders Geräusche mit dichtem Spektrum, z.B. weißes Rauschen. Wurde der Speicher befüllt wird das erste Sample aus dem Speicher ausgegeben. Dadurch wird eine Verzögerung um N- Samples (Pufferspeichergröße) erreicht. Die ausgegebenen Samples werden über einen Filter rückgekoppelt und gefiltert wieder vorne in den Speicher geschrieben. Dies wieder- holt sich mit einer definierbaren Rate die in <i>Beats Per Minute</i> (BPM) angegeben wird. Auf diesem Weg zirkulieren fortlaufend zufällige Geräusche im Kreislauf, die in jedem Durch- lauf einmal vom Filter modifiziert und ausgegeben werden.
+                    <br> Um die Abklingcharakteristik einer gezupften Saite zu simulieren, wird als Filter ein Tief- pass verwendet. Hochfrequente Signalkomponenten werden somit stärker bedämpft als niederfrequente. Über die Variation der Filterfrequenz kann das Nachschwingen der Saite beeinflusst und der Eindruck z.B. einer Akustikgitarre oder einer Griechischen Bouzouki erweckt werden (Im Programm als Cut_Off bezeichnet). Über eine variierbare Amplitudendämpfung (Im Programm als Decay bezeichnet) kann die Anschlagstärke bzw. ein bloßes Klopfen auf den Klangkörper simuliert werden. Nachfolgende Abbildung zeigt das Prinzip des Algorithmus.
                     <br>
                     <img src="image027.png" alt="Abbildung 26: Karplus-Strong-Algorithmus" style="width:400px">
-                    <br>Abbildung 26: Karplus-Strong-Algorithmus<br> Über die Pure Data Implementierung (Abbildung 27) können die oben erwähnten Parameter vom Nutzer beliebig eingestellt werden. Außerdem ist es möglich bereits vordefinierte Preset Werte
-                    per Klick zu laden.
+                    <br>Abbildung 26: Karplus-Strong-Algorithmus<br> Über die Pure Data Implementierung (Abbildung 27) können die oben erwähnten Parameter vom Nutzer beliebig eingestellt werden. Außerdem ist es möglich bereits vordefinierte Preset Werte per Klick zu laden.
                     <br>
                     <img src="image028.png" alt="Abbildung 27: Interface Gitarrenmodell" style="width:400px">
                     <br>Abbildung 27: Interface Gitarrenmodell<br>
 
-                    <h3>6.2.4 STK-Instrumente</h3>
+                    <h3>STK-Instrumente</h3>
 
-                    Für alle, zusätzlich zur Gitarre implementierten, Instrumente wurde auf das bereits in Kapitel 4.2.4 erwähnte Sound Synthesis Toolkit zurückgegriffen. Genau wie bei der Gitar- renimplementierung kann der Nutzer auch hier klangverändernde Zusatzeinstellungen
-                    vornehmen oder bereits vordefinierte Einstellungen laden.
-                    <br> Als besonders interessant zur Klangerzeugung mittels Theremin erwiesen sich nachfolgend aufgelistete STK-Klassen, welche auch alle fest implementiert wurden. Die Ein- zelimplementierungen werden an dieser Stelle nicht tiefgehender
-                    erläutert. Stattdessen wird auf die umfangreiche <a href="https://ccrma.stanford.edu/software/stk/classes.html">Dokumentation der C++ STK-Klassen</a> verwiesen.
+                    Für alle, zusätzlich zur Gitarre implementierten, Instrumente wurde auf das bereits in Kapitel 4.2.4 erwähnte Sound Synthesis Toolkit zurückgegriffen. Genau wie bei der Gitar- renimplementierung kann der Nutzer auch hier klangverändernde Zusatzeinstellungen vornehmen oder bereits vordefinierte Einstellungen laden.
+                    <br> Als besonders interessant zur Klangerzeugung mittels Theremin erwiesen sich nachfolgend aufgelistete STK-Klassen, welche auch alle fest implementiert wurden. Die Ein- zelimplementierungen werden an dieser Stelle nicht tiefgehender erläutert. Stattdessen wird auf die umfangreiche <a href="https://ccrma.stanford.edu/software/stk/classes.html">Dokumentation der C++ STK-Klassen</a> verwiesen.
 
                     <table class="tableizer-table">
                         <thead>
@@ -1152,7 +1109,7 @@
                     <b>Tabelle 5: Verwendete STK-Klassen </b>
 
 
-                    <h3>6.2.5 Drum Machine</h3>
+                    <h3>Drum Machine</h3>
                     Mit der <i>Step-Sequencer-Drum-Machine</i> kann wahlweise ein Hintergrundrhythmus erzeugt werden und mit dem Klang des Theremin kombiniert werden. Folgende Schlagzeugele- mente können ausgewählt werden:
                     <ul>
                         <li>BD = Bass Drum (große Trommel)</li>
@@ -1162,21 +1119,17 @@
                         <li>WB, CB = Cymbal (Becken)</li>
                     </ul>
 
-                    Das Interface der Drum Machine ist in Abbildung 28 dargestellt. Ein Kreuz in der Matrix steht hierbei für die Ausgabe des jeweiligen Geräusches zu einem festen Zeitpunkt. Die Geschwindigkeit, in welcher die Geräusche der Matrix spaltenweise wiedergegeben
-                    werden, kann frei durch das <i>Speed</i> Eingabefeld variiert werden. Zusätzlich sind für jedes Geräusch einzelne Parameter wie Lautstärke oder Geräuschlänge einstellbar.
+                    Das Interface der Drum Machine ist in Abbildung 28 dargestellt. Ein Kreuz in der Matrix steht hierbei für die Ausgabe des jeweiligen Geräusches zu einem festen Zeitpunkt. Die Geschwindigkeit, in welcher die Geräusche der Matrix spaltenweise wiedergegeben werden, kann frei durch das <i>Speed</i> Eingabefeld variiert werden. Zusätzlich sind für jedes Geräusch einzelne Parameter wie Lautstärke oder Geräuschlänge einstellbar.
                     <br> Mittels <i>Pattern-Manager</i> können die komponierten Rhythmen auf acht verschiedenen Speicherplätzen dauerhaft gesichert oder bereits bestehende Rhythmen wieder von diesen geladen werden.
                     <br> Um die vom Theremin gespielten Klänge in passender Lautstärke mit einem Beat zu un- terlegen, kann die Lautstärke der komponierten Rhythmen mittels <i>Volume</i> Regler angepasst werden.
                     <br>
                     <img src="image029.png" alt="Abbildung 28: Interface Drum Machine" style="width:400px;">
                     <br>Abbildung 28: Interface Drum Machine<br> Alle vorgestellten Geräusche werden zur Laufzeit generiert. Es werden also keine abgespeicherten mp3-Audiosamples abgespielt, wie es oft bei Step Sequencer üblich ist.
                     <br> Zur Generierung wird vor allem auf die in Pd nutzbaren Audiorampengeneratoren <i>(vline~)</i>, Oszillatoren
-                    <i>(osc~)</i>, sowie Standardfilter wie Bandpässe <i>(bp~)</i> oder Hochpässe <i>(hp~)</i>zu- rückgegriffen. Da die Codeteile sich stark unterscheiden, aber im Umfang recht überschaubar sind, soll an dieser Stelle auf eine weitere
-                    Erläuterung aller Einzelelemente verzichtet werden. Stattdessen kann bei Interesse der Programmcode auf der Daten-CD ein- gesehen werden. Dieser steht als PDF-Dokument zur Verfügung. Zur Betrachtung ist somit kein installiertes Pure
-                    Data notwendig.
+                    <i>(osc~)</i>, sowie Standardfilter wie Bandpässe <i>(bp~)</i> oder Hochpässe <i>(hp~)</i>zu- rückgegriffen. Da die Codeteile sich stark unterscheiden, aber im Umfang recht überschaubar sind, soll an dieser Stelle auf eine weitere Erläuterung aller Einzelelemente verzichtet werden. Stattdessen kann bei Interesse der Programmcode auf der Daten-CD ein- gesehen werden. Dieser steht als PDF-Dokument zur Verfügung. Zur Betrachtung ist somit kein installiertes Pure Data notwendig.
 
-                    <h3>6.2.6 Background Sound Player</h3>
-                    Zusätzlich zur Drum Machine ist ein Audioplayer implementiert. Mit diesem ist es möglich lokal gespeicherte Audiodateien als Hintergrundsound abzuspielen. Diese Funktion kann beispielsweise verwendet werden um bekannte Musikstücke mit dem Theremin zu
-                    beglei- ten. Eine andere Anwendungsmöglichkeit besteht darin ein und denselben Song iterativ mit unterschiedlichen Theremin Grundeinstellungen zu ergänzen.
+                    <h3>Background Sound Player</h3>
+                    Zusätzlich zur Drum Machine ist ein Audioplayer implementiert. Mit diesem ist es möglich lokal gespeicherte Audiodateien als Hintergrundsound abzuspielen. Diese Funktion kann beispielsweise verwendet werden um bekannte Musikstücke mit dem Theremin zu beglei- ten. Eine andere Anwendungsmöglichkeit besteht darin ein und denselben Song iterativ mit unterschiedlichen Theremin Grundeinstellungen zu ergänzen.
                     <br> Eine lokal gespeicherte Audiodatei kann über den Button <i>Open File</i> geöffnet werden. Die Betätigung des
                     <i>Start</i> Knopfes spielt diese Datei mit einstellbarer Lautstärke ab. Der rote
                     <i>Stop/Pause</i> Button hält den Abspielvorgang an und kann durch den gelben <i>Resume</i> Knopf fortgesetzt werden.
@@ -1184,57 +1137,46 @@
                     <img src="image030.png" alt="Abbildung 29: Interface Background-Sound Player" style="width:400px;">
                     <br>Abbildung 29: Interface Background-Sound Player<br>
 
-                    <h3>6.2.7 mp3 Record</h3>
+                    <h3>mp3 Record</h3>
 
                     Mittels der <i>mp3 Record</i> Funktion ist es möglich die gespielte Musik direkt als mp3 lokal abzuspeichern.
-                    <br> Zunächst werden über vordefinierte Werte ein Pfad zum Abspeichern der mp3 Aufnah- men, sowie ein Dateiname angelegt. Diese können über die Eingabefelder vom Benutzer jederzeit editiert werden. Betätigt der Anwender den <i>Start Recording</i>                    Button, wird ein mp3 File unter dem angegebenen Pfad erzeugt, anschließend geöffnet und von der Funktion
-                    <i>mp3_write</i> beschrieben. Die Aufnahme erfolgt standardmäßig mit einer Samplerate von 44100 Samples pro Sekunde, 128 Bit und Joint Stereo in mittlerer Qualität. Während des Aufnahmevorgangs kann über das Anzeigefeld Bytes Recorded
-                    die bereits abgespeicherte Größe des mp3 Files verfolgt werden. Der Aufnahmevorgang kann über den Button <i>Stop Recording</i> beendet werden.
-                    <br> Wird danach erneut ein Aufnahmevorgang gestartet, wird die Aufnahme automatisch an das bereits erzeugte Audiofile angehängt. Soll ein neues eigenständiges Audiofile erzeugt werden, muss ein neuer Dateiname im dafür vorgesehenen
-                    Feld eingetragen werden.
+                    <br> Zunächst werden über vordefinierte Werte ein Pfad zum Abspeichern der mp3 Aufnah- men, sowie ein Dateiname angelegt. Diese können über die Eingabefelder vom Benutzer jederzeit editiert werden. Betätigt der Anwender den <i>Start Recording</i> Button, wird ein mp3 File unter dem angegebenen Pfad erzeugt, anschließend geöffnet und von der Funktion
+                    <i>mp3_write</i> beschrieben. Die Aufnahme erfolgt standardmäßig mit einer Samplerate von 44100 Samples pro Sekunde, 128 Bit und Joint Stereo in mittlerer Qualität. Während des Aufnahmevorgangs kann über das Anzeigefeld Bytes Recorded die bereits abgespeicherte Größe des mp3 Files verfolgt werden. Der Aufnahmevorgang kann über den Button <i>Stop Recording</i> beendet werden.
+                    <br> Wird danach erneut ein Aufnahmevorgang gestartet, wird die Aufnahme automatisch an das bereits erzeugte Audiofile angehängt. Soll ein neues eigenständiges Audiofile erzeugt werden, muss ein neuer Dateiname im dafür vorgesehenen Feld eingetragen werden.
                     <br>
                     <img src="image031.png" alt="Abbildung 30: Interface mp3 Recorder" style="width:400px;">
                     <br>Abbildung 30: Interface mp3 Recorder<br>
 
-                    <h3>6.2.8 mp3 Webradio Stream</h3>
+                    <h3>mp3 Webradio Stream</h3>
 
                     Um die auf dem ThereOHM gespielte Musik mit anderen Menschen zu teilen, gibt es zudem die Möglichkeit live, in Form eines Webradios zu streamen. Der Anbieter myradiostream.com bietet die Möglichkeit kostenlos einen Shoutcast Server
                     <TODO>PopUp Info: SHOUTcast ist ein Freeware Streaming Server der Firma Nullsoft für Audio/TV-Streams </TODO> zu betreiben und privat Webradio auszustrahlen
-                    <a href="http://myradiostream.com/thereohm"></a>. Im Pd-Patch werden dafür zunächst alle notwendigen Default Daten eingestellt. Dazu gehören die Adresse und der Port des Webradioservers. Außerdem muss ein Passwort und der Servertyp ausgewählt werden (im Fall von myradiostream
-                    ist dies Shoutcast). Über den Button Start Streaming verbindet sich Pure Data mit dem Streaming Server und überträgt anschließend den Stream im mp3-Format. Ob aktuell ein Stream gesendet wird ist durch ein Aktivitätskreuz im Feld Status
-                    dargestellt. Der Streaming Vorgang kann über den Button Stop Streaming anschließend wieder beendet werden.
+                    <a href="http://myradiostream.com/thereohm"></a>. Im Pd-Patch werden dafür zunächst alle notwendigen Default Daten eingestellt. Dazu gehören die Adresse und der Port des Webradioservers. Außerdem muss ein Passwort und der Servertyp ausgewählt werden (im Fall von myradiostream ist dies Shoutcast). Über den Button Start Streaming verbindet sich Pure Data mit dem Streaming Server und überträgt anschließend den Stream im mp3-Format. Ob aktuell ein Stream gesendet wird ist durch ein Aktivitätskreuz im Feld Status dargestellt. Der Streaming Vorgang kann über den Button Stop Streaming anschließend wieder beendet werden.
                     <br>
                     <img src="image032.png" alt="Abbildung 31: Interface mp3 Streamer" style="width:400px;">
                     <br>Abbildung 31: Interface mp3 Streamer<br>
 
-                    <hr/>
-                    <h1>7. Weiterer Ausblick</h1>
+                    <hr>
+                    <h1>Weiterer Ausblick</h1>
 
-                    Zum Abgabezeitpunkt lief die Implementierung auf dem Raspberry nicht flüssig. Als Grund hierfür ist zunächst die zu geringe Prozessorleistung des Raspberry zu nennen. Dieses Problem kann durch Übertaktung und zusätzliche Kühlkörper eingedämmt werden.
-                    Durchgängig flüssige Nutzung aller implementierten Funktionen, z.B. des Webradiostreams ist allerdings trotzdem nicht möglich. Als rechenleistungsstärkere Alternativen zur Raspberry Plattform bieten sich der
+                    Zum Abgabezeitpunkt lief die Implementierung auf dem Raspberry nicht flüssig. Als Grund hierfür ist zunächst die zu geringe Prozessorleistung des Raspberry zu nennen. Dieses Problem kann durch Übertaktung und zusätzliche Kühlkörper eingedämmt werden. Durchgängig flüssige Nutzung aller implementierten Funktionen, z.B. des Webradiostreams ist allerdings trotzdem nicht möglich. Als rechenleistungsstärkere Alternativen zur Raspberry Plattform bieten sich der
                     <a href="http://www.bananapi.org">Banana Pi</a> sowie der <a href="http://beagleboard.org/bone">Beagle Bone</a> an.
-                    <br> Ferner stellte sich die verwendete USB-Soundkarte, die als Stereo Soundkarte vertrieben wird, als Problem heraus. Diese USB-Geräte besitzen zwar einen Stereo Ausgang, allerdings nur einen Mono Eingang. Für das ThereOHM werden
-                    aber zwangsläufig zwei Stereo Eingänge benötigt, um die Werte der beiden Antennen zu erfassen. Als Alternative zu der Miniatur-USB-Soundkarten könnte eine größere externe Soundkarte verwendet werden, z.B. die „C-Media CM106 USB 2.0
-                    mit 7.1 Lautsprecher SPDIF Ausgang“. Diese ist jedoch nur in Amerika verfügbar und konnte aufgrund der langen Lieferzeiten nicht mehr bestellt werden. Außerdem ist es möglich ein externes USB-Mini-Mischpult zu verwenden, z.B. „BEHRINGER
-                    XENYX 302USB“. In diesem Zusammenhang ist zu beachten, dass auch viele Laptops lediglich einen Mono Audioeingang besitzen!
+                    <br> Ferner stellte sich die verwendete USB-Soundkarte, die als Stereo Soundkarte vertrieben wird, als Problem heraus. Diese USB-Geräte besitzen zwar einen Stereo Ausgang, allerdings nur einen Mono Eingang. Für das ThereOHM werden aber zwangsläufig zwei Stereo Eingänge benötigt, um die Werte der beiden Antennen zu erfassen. Als Alternative zu der Miniatur-USB-Soundkarten könnte eine größere externe Soundkarte verwendet werden, z.B. die „C-Media CM106 USB 2.0 mit 7.1 Lautsprecher SPDIF Ausgang“. Diese ist jedoch nur in Amerika verfügbar und konnte aufgrund der langen Lieferzeiten nicht mehr bestellt werden. Außerdem ist es möglich ein externes USB-Mini-Mischpult zu verwenden, z.B. „BEHRINGER XENYX 302USB“. In diesem Zusammenhang ist zu beachten, dass auch viele Laptops lediglich einen Mono Audioeingang besitzen!
                     <br> Zudem ergeben sich neben der Auswahl einer anderen Embedded Plattform und Verwendung einer externen Soundkarte mit Stereo Eingang folgende weitere Optimierungsansätze:
                     <ul>
                         <li>Test anderer Antennenformen, um linearere Frequenzänderung zu erreichen</li>
                         <li>Kompilierung der STK-Bibliotheken für 64 Bit Betriebssysteme (bisher nur Beta Version verfügbar)</li>
                     </ul>
 
-                    <hr/>
-                    <h1>8. Conclusion</h1>
+                    <hr>
+                    <h1>Conclusion</h1>
 
                     Abschließend lässt sich festhalten, dass die gesteckten Projektziele nahezu vollständig umgesetzt werden konnten.
                     <br> Ein klassisches Theremin wurde erfolgreich aufgebaut und in Betrieb genommen. Die angestrebte Klangvariation ist mittels Pure Data vollständig realisiert.
-                    <br> Pd erwies sich als effizientes Werkzeug um komplexe Funktionalitäten umzusetzen und eine graphische Bedienoberfläche hierfür zu gestalten. Für eventuelle Folgeprojekte ist Pure Data weiterzuempfehlen. Vor allem, da aufgrund einer
-                    steilen Lernkurve bereits nach relativ kurzer Einarbeitungszeit umfangreiche Funktionen realisiert werden können. Lediglich die Kompilierung externer Bibliotheken ist sehr zeit- und arbeitsaufwendig.
-                    <br> Der Raspberry Pi B+ ist eine interessante und gut dokumentierte Arbeitsplattform, allerdings ist seine Rechenleistung für aufwendigere Vorhaben zu niedrig. Als bessere Alter- nativen bieten sich die neue Version des Raspberry
-                    Pi 2 B, der Banana Pi oder der Beagle Bone an.
+                    <br> Pd erwies sich als effizientes Werkzeug um komplexe Funktionalitäten umzusetzen und eine graphische Bedienoberfläche hierfür zu gestalten. Für eventuelle Folgeprojekte ist Pure Data weiterzuempfehlen. Vor allem, da aufgrund einer steilen Lernkurve bereits nach relativ kurzer Einarbeitungszeit umfangreiche Funktionen realisiert werden können. Lediglich die Kompilierung externer Bibliotheken ist sehr zeit- und arbeitsaufwendig.
+                    <br> Der Raspberry Pi B+ ist eine interessante und gut dokumentierte Arbeitsplattform, allerdings ist seine Rechenleistung für aufwendigere Vorhaben zu niedrig. Als bessere Alter- nativen bieten sich die neue Version des Raspberry Pi 2 B, der Banana Pi oder der Beagle Bone an.
                     <br> Es lässt sich sagen, dass es sich bei dem ThereOHM um ein sehr interessantes Projekt handelte, dass zum einen sehr viel Spaß machte, aber auch fachlich viele neue Einblicke vermittelte.
-                    <br> Garant dafür war vor allem die ausgewogene Mischung zwischen Hardware und Software. So wurden zum einen Platinen entworfen, bestückt und in Betrieb genommen, sowie zwei Gehäuse gefertigt. Zum anderen wurde viel Zeit mit der Programmierung
-                    von Pure Data, sowie der Linux Administrierung und Programmierung verbracht. Die kompetente Betreuung sowie Unterstützung sorgte für einen erfolgreichen Verlauf des Projektes.
+                    <br> Garant dafür war vor allem die ausgewogene Mischung zwischen Hardware und Software. So wurden zum einen Platinen entworfen, bestückt und in Betrieb genommen, sowie zwei Gehäuse gefertigt. Zum anderen wurde viel Zeit mit der Programmierung von Pure Data, sowie der Linux Administrierung und Programmierung verbracht. Die kompetente Betreuung sowie Unterstützung sorgte für einen erfolgreichen Verlauf des Projektes.
 
 
                     <h2>Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
@@ -1242,14 +1184,13 @@
 
                     If you want to execute the ThereOHM Pd-Patch, please assure that the following conditions concur to your system configuration. Otherwise the Patch will not work properly.
 
-                    <h2>1. x86- vs. x64- vs. ARM-Processor Architecture</h2> The Patch uses STK-Libraries, which are currently not native supported for all operating systems. If you’re using an x86 (32Bit) Windows or Linux architecture or a Raspberry Pi you’re
-                    fine because all libraries are attached precompiled. If you’re using an x64 (64Bit) system architecture you have compile the libraries on your own. Be aware that this could take some time ;-)
+                    <h2>x86- vs. x64- vs. ARM-Processor Architecture</h2> The Patch uses STK-Libraries, which are currently not native supported for all operating systems. If you’re using an x86 (32Bit) Windows or Linux architecture or a Raspberry Pi you’re fine because all libraries are attached precompiled. If you’re using an x64 (64Bit) system architecture you have compile the libraries on your own. Be aware that this could take some time ;-)
 
-                    <h2>2. Windows Operating System</h2>
+                    <h2>Windows Operating System</h2>
                     If you’re using a Windows operating system please download Pd-Extended following the instructions on the webpage:
                     <a href="http://puredata.info/downloads/pd-extended">http://puredata.info/downloads/pd-extended</a>
 
-                    <h2>3. Linux Operating System</h2>
+                    <h2>Linux Operating System</h2>
                     If you’re using a Linux operating system, please install the following packages to assure that Pure Data works fine.
                     <ul>
                         <li>Installation of Pd-Extended via thrid party repository:</li>
@@ -1268,8 +1209,7 @@
 
                     <pre>
                         <code>$sudo apt-get install libasound2-dev</code>
-                    </pre> Otherwise STK will throw an error that it can't configure Some of the STK-Libraries need special raw audio files. These files are automati- cally installed if you are using a new operating system and a new
-                    Pd-extended version. If you’re not running the latest versions, please check preventively if there are rawfiles located in the folder /usr/share/stk/rawwaves If you don't have a /usr/share/stk directory, you'll need to create it:
+                    </pre> Otherwise STK will throw an error that it can't configure Some of the STK-Libraries need special raw audio files. These files are automati- cally installed if you are using a new operating system and a new Pd-extended version. If you’re not running the latest versions, please check preventively if there are rawfiles located in the folder /usr/share/stk/rawwaves If you don't have a /usr/share/stk directory, you'll need to create it:
 
                     <pre>
                         <code>$sudo mkdir /usr/share/stk</code>
@@ -1283,10 +1223,9 @@
                         <code>$sudo chmod -R 777 ./MAIN</code>
                     </pre>
 
-                    <h2>4. Raspberry Platform</h2>
+                    <h2>Raspberry Platform</h2>
 
-                    If you’re using a Raspberry Pi please follow the steps mentioned under 3. In addition to this you should start Pd always in sudo mode. Otherwise Pure Data would not work properly. Additionally you can use the prepared Bash-Script to startup. This script
-                    is located in the ThereOHM Patch folder. Its name is “Startup_Raspberry.sh”
+                    If you’re using a Raspberry Pi please follow the steps mentioned under 3. In addition to this you should start Pd always in sudo mode. Otherwise Pure Data would not work properly. Additionally you can use the prepared Bash-Script to startup. This script is located in the ThereOHM Patch folder. Its name is “Startup_Raspberry.sh”
 
                     <h2>Anhang B - Verwendete Software</h2>
 
@@ -1402,8 +1341,7 @@
                     <h2>Anhang C - Kostenaufschlüsselung</h2>
                     <p>
                         Während des Projektes fielen diverse Kosten für Material & Bauteile an. Eine genaue Aufschlüsselung der Einzelkosten, die zu einem Gesamtpreis des Projektes in Höhe von
-                        <u><b>195 €</b></u> führten sind in nachfolgender Tabelle zusammengestellt. Es ist zu beachten, dass die Kosten zweier prototypisch erstellter Platinen mitverrechnet wurden. Einige Bausteine waren zudem nicht als Einzelteile, sondern
-                        nur in größeren Stückzahlen erhältlich. Der Nachbau des endgültigen Theremin würde somit deutlich günstiger ausfallen.
+                        <u><b>195 €</b></u> führten sind in nachfolgender Tabelle zusammengestellt. Es ist zu beachten, dass die Kosten zweier prototypisch erstellter Platinen mitverrechnet wurden. Einige Bausteine waren zudem nicht als Einzelteile, sondern nur in größeren Stückzahlen erhältlich. Der Nachbau des endgültigen Theremin würde somit deutlich günstiger ausfallen.
                     </p>
                     <table class="tableizer-table">
                         <b>Tabelle 1: Kostenaufschlüsselungen</b>
@@ -1743,7 +1681,7 @@
                     </table>
 
 
-                    <hr/>
+                    <hr>
                     <h2>Anhang D - Zeit- und Aufgabenplan</h2>
 
                     <table class="tableizer-table">
