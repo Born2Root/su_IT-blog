@@ -4,7 +4,7 @@
 <head>
 
 	<title>
-		Scripts To Rice Your Setup Pt.1 | su it --blog
+		Example Title | su it --blog
 	</title>
 
 	<!-- meta -->
@@ -48,7 +48,7 @@
 
             <div id="headline">
                 <a href="/" target="_self">
-                    > su IT --blog
+                    $ su IT --blog
                 </a>
                 <div id="subtitle">
                     <span id="console">- we sudo everything</span>
@@ -97,10 +97,14 @@
 
 			<div id="article">
 
-				<h1>Scripts To Rice Your Setup</h1>
-				<h2>Get a better looking system info by ricing screenfetch</h2>
+				<h1>Headline 1</h1>
+				<h2>Headline 2</h2>
 
 				<div class="tags">
+					<div class="tag_div">
+                        <img src="/hexagon.png" alt="tag" class="tag_img" />
+                        <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50 min</div>
+                    </div>
 					<div class="tag_div">
 						<img src="/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">Linux</div>
@@ -129,6 +133,40 @@
 
 				<hr>
 
+				<div id="pre">
+
+                    <h3>Voraussetzungen:</h3>
+                    <ul>
+                        <li>Schwierigkeitsgrad:
+                            <br>-> Fortgeschritten</li>
+                        <li>Skills:
+                            <ul>
+                                <li>Pure Data Programmierung</li>
+                                <li>Linux-Basics</li>
+                                <li>Leiterplattenbestückung (Löten, etc.)</li>
+                                <li>Elektronikverständnis</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+                    <h3>Overview:</h3>
+
+                    <ol>
+                        <li><a target="_self" href="#introduction">Introduction</a></li>
+                        <ol>
+                            <li>
+                                <a target="_self" href="#zielsetzung">Zielsetzung</a>
+                            </li>
+                            <li>
+                                <a target="_self" href="#allgemeines">Allgemeines</a>
+                            </li>
+                        </ol>
+                        <li><a target="_self" href="#systemüberblick">Systemüberblick ThereOHM</a></li>
+                    </ol>
+
+                </div>
+
 				<h1>
 					Introduction
 				</h1>
@@ -136,8 +174,12 @@
 				<p>
 					So in the progress of installing my Arch and ricing it, I also installed screenfetch.
 					<br/> Screenfetch is a small program to get
-					<br/>
-					<i>"one of those nifty terminal theme information + ASCII distribution logos you see in everyone's screenshots nowadays."</i>
+					<fieldset class="quote">
+						<legend>
+							<i class="fa fa-quote-left" aria-hidden="true"></i>
+						</legend>
+						Example quote; link can be added afterwards if needed.
+					</fieldset>
 				</p>
 
 				<p>
@@ -174,9 +216,12 @@
 				</p>
 
 				<p>
-					<i>
+					<fieldset class="quote">
+						<legend>
+							<i class="fa fa-quote-left" aria-hidden="true"></i>
+						</legend>
 						-A 'DISTRO' Here you can specify the distribution art that you want displayed. This is for when you want your distro detected but want to display a different logo.
-					</i>
+					</fieldset>
 				</p>
 
 				<p>

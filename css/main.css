@@ -11,6 +11,14 @@
 	width: 100%;
 }
 
+.quote {
+	background-color: #484848;
+	padding: 20px;
+	margin: 20px;
+	font-size: 1.125em;
+	font-style: italic;
+}
+
 #burger {
 	position: absolute;
 	color: #ff6d00;
