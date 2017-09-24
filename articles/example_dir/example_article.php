@@ -102,28 +102,24 @@
 
 				<div class="tags">
 					<div class="tag_div">
-                        <img src="/hexagon.png" alt="tag" class="tag_img" />
+                        <img src="/hexagon1.png" alt="tag" class="tag_img" />
                         <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50 min</div>
                     </div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<img src="/hexagon1.png" alt="tag" class="tag_img" />
 						<div class="tag_text">Linux</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<img src="/hexagon1.png" alt="tag" class="tag_img" />
 						<div class="tag_text">programming</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">blender</div>
+						<img src="/hexagon1.png" alt="tag" class="tag_img" />
+						<div class="tag_text">lululululululu</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">test</div>
-					</div>
-					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
-						<div class="tag_text">lulu</div>
+						<img src="/hexagon1.png" alt="tag" class="tag_img" />
+						<div class="tag_text">programming</div>
 					</div>
 				</div>
 

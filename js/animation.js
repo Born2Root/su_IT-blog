@@ -51,7 +51,7 @@ function init() {
 			});
 		}
 
-		entry.context.fillStyle = "#ffffff";
+		entry.context.fillStyle = "#484848";
 	});
 
 	draw();

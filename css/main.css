@@ -282,8 +282,9 @@ hr {
 
 .tag_text {
 	position: relative;
-	bottom: 95px;
+	bottom: 62px;
 	text-align: center;
+	font-size: 1.25em;
 }
 
 .tag_div {
@@ -295,9 +296,10 @@ hr {
 
 .tag_div:nth-child(2n+0) {
 	display: inline-grid;
-	top: 64px;
+	top: 32px;
+	left: -40px;
 }
 
 .tag_div:not(:first-child) {
-	margin-left: -82px;
+	margin-left: -61px;
 }
