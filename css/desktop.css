@@ -96,3 +96,30 @@ pre {
 #logo {
 	height: 80%;
 }
+
+.tags {
+	padding-bottom: 10px;
+}
+
+.tag_img {
+	width: 160px;
+}
+
+.tag_text {
+	font-size: 1.25em;
+}
+
+.tag_div:not(:first-child) {
+	margin-left: -61px;
+}
+
+.tag_div:nth-child(2n+0) {
+	display: inline-grid;
+	top: 32px;
+	left: -40px;
+}
+
+.tag_div {
+	margin: 0px -25px;
+	top: -15px;
+}
