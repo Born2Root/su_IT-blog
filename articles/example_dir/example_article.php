@@ -90,6 +90,8 @@
 
 	<div id="body">
 
+		<i class="fa fa-arrow-left" aria-hidden="true" id="back"> Back</i>
+
 		<div id="background">
 		</div>
 
@@ -102,23 +104,23 @@
 
 				<div class="tags">
 					<div class="tag_div">
-                        <img src="/hexagon1.png" alt="tag" class="tag_img" />
+                        <img src="/hexagon.png" alt="tag" class="tag_img" />
                         <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50 min</div>
                     </div>
 					<div class="tag_div">
-						<img src="/hexagon1.png" alt="tag" class="tag_img" />
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">Linux</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon1.png" alt="tag" class="tag_img" />
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">programming</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon1.png" alt="tag" class="tag_img" />
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">lululululululu</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon1.png" alt="tag" class="tag_img" />
+						<img src="/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">programming</div>
 					</div>
 				</div>
@@ -170,9 +172,27 @@
 				<p>
 					So in the progress of installing my Arch and ricing it, I also installed screenfetch.
 					<br/> Screenfetch is a small program to get
-					<fieldset class="quote">
+					<fieldset class="quote box">
 						<legend>
 							<i class="fa fa-quote-left" aria-hidden="true"></i>
+						</legend>
+						Example quote; link can be added afterwards if needed.
+					</fieldset>
+					<fieldset class="warning box">
+						<legend>
+							<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+						</legend>
+						Example quote; link can be added afterwards if needed.
+					</fieldset>
+					<fieldset class="exclamation box">
+						<legend>
+							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+						</legend>
+						Example quote; link can be added afterwards if needed.
+					</fieldset>
+					<fieldset class="info box">
+						<legend>
+							<i class="fa fa-info-circle" aria-hidden="true"></i>
 						</legend>
 						Example quote; link can be added afterwards if needed.
 					</fieldset>

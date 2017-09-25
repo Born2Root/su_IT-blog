@@ -108,6 +108,8 @@ function print_link($link)
                     <span class="cursor">|</span> -
                 </div>
             </div>
+
+            <img alt="logo" src="logo_v2.png" id="logo" />
         </div>
 
         <div id="menu">
