@@ -1,6 +1,6 @@
 Script To Rice Your Setup Pt.1
 Get a better looking system info by ricing screenfetch
-programming;blender;linux;<i class="fa fa-linux" aria-hidden="true"></i>
+programming;blender;linux
 script_to_rice_your_setup_1/console.png
 script_to_rice_your_setup_1/script_to_rice_your_setup_1.html
 thereOhm

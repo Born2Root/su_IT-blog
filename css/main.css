@@ -210,6 +210,7 @@ h1 {
 
 #article h1 {
 	display: inherit;
+	margin-left: 0px;
 }
 
 #article h2 {
@@ -337,7 +338,7 @@ hr {
 
 #logo {
 	position: absolute;
-	right: 0px;
-	top: 0px;
-	height: 100%;
+	right: 10px;
+	top: 5px;
+	height: 45px;
 }

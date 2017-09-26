@@ -78,7 +78,7 @@ function print_link($link)
     <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css" />
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
 
     <!-- web app manifest -->
     <link rel="manifest" href="/manifest.json" />
@@ -109,7 +109,7 @@ function print_link($link)
                 </div>
             </div>
 
-            <img alt="logo" src="logo_v2.png" id="logo" />
+            <img alt="logo" src="/logo/logo_1.png" id="logo" />
         </div>
 
         <div id="menu">

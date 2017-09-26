@@ -94,7 +94,8 @@ pre {
 }
 
 #logo {
-	height: 80%;
+	height: 100px;
+	top: 10px;
 }
 
 .tags {
