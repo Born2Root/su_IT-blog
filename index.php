@@ -22,7 +22,7 @@ EOT;
         echo <<<EOT
 
                         <div class="tag_div">
-                            <img src="hexagon.png" alt="tag" class="tag_img" />
+                            <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
                             <div class="tag_text">$article_tag</div>
                         </div>
 EOT;
@@ -65,26 +65,26 @@ function print_link($link)
     </title>
 
     <!-- meta -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow">
 
     <!-- main css -->
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <!-- desktop css -->
-    <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css" />
+    <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="/icon/favicon.ico">
 
     <!-- web app manifest -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/manifest.json">
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
 
 </head>
 

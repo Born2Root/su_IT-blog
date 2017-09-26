@@ -53,8 +53,12 @@ h1 {
 	margin-bottom: 140px;
 }
 
+.box {
+	margin: 20px;
+}
+
 pre {
-	margin: 10px 0px;
+	margin: 20px;
 }
 
 #menu {

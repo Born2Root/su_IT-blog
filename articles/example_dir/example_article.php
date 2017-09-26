@@ -9,26 +9,26 @@
 
 	<!-- meta -->
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="index, follow">
 
 	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<!-- desktop css -->
 	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
 	<!-- favicon -->
-	<link rel="icon" type="image/png" href="" />
+	<link rel="icon" type="image/png" href="/icon/favicon.ico">
 
 	<!-- font awesome -->
-	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<!-- highlight.js -->
 	<link rel="stylesheet" href="/styles/atelier-forest-dark.css">
-	<script src="/highlight.pack.js"></script>
+	<script src="/css/highlight.pack.js"></script>
 	<script>
 		hljs.initHighlightingOnLoad();
 	</script>
@@ -104,23 +104,23 @@
 
 				<div class="tags">
 					<div class="tag_div">
-                        <img src="/hexagon.png" alt="tag" class="tag_img" />
+                        <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
                         <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50 min</div>
                     </div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">Linux</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">programming</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">lululululululu</div>
 					</div>
 					<div class="tag_div">
-						<img src="/hexagon.png" alt="tag" class="tag_img" />
+						<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
 						<div class="tag_text">programming</div>
 					</div>
 				</div>
@@ -178,24 +178,6 @@
 						</legend>
 						Example quote; link can be added afterwards if needed.
 					</fieldset>
-					<fieldset class="warning box">
-						<legend>
-							<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-						</legend>
-						Example quote; link can be added afterwards if needed.
-					</fieldset>
-					<fieldset class="exclamation box">
-						<legend>
-							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-						</legend>
-						Example quote; link can be added afterwards if needed.
-					</fieldset>
-					<fieldset class="info box">
-						<legend>
-							<i class="fa fa-info-circle" aria-hidden="true"></i>
-						</legend>
-						Example quote; link can be added afterwards if needed.
-					</fieldset>
 				</p>
 
 				<p>
@@ -206,6 +188,10 @@
 				<h2>
 					Requirements
 				</h2>
+
+				<p>
+					Here is a list of what you will need
+				</p>
 
 				<ul>
 					<li>
@@ -219,40 +205,22 @@
 					</li>
 				</ul>
 
+				<p>
+					sldkfhjkds lksdfjkldsjf k dskljf lkds flkdsjf klsdj fklds
+					kldsjf  
+					<fieldset class="exclamation box">
+						<legend>
+							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+						</legend>
+						Example quote; link can be added afterwards if needed.
+					</fieldset>
+					sdflpks sdkf ölds f
+					kldsjf 
+				</p>
+
 				<h1>
 					Content
 				</h1>
-
-				<p>
-					It's automatically detecting your OS to display the logo and gets multiple system info's. Here a screenshot of how the normal output looks like on my system: Screenfetch or alternatives, like Archey, Screenfo or Neofetch, are pretty cool programs. But isn't it boring to always see the same logo, although all the logos out there look great?
-					<br/> For me, after seeing the (same) Arch logo for the third time I got a bit bored. So I came up with an idea.
-					<br/>
-					<br/> Therefore I wrote a little script to make my screenfetch look better or rather a bit different.
-					<br/> While going randomly through the man page of screenfetch, I noticed the -A Flag.
-				</p>
-
-				<p>
-					<fieldset class="quote">
-						<legend>
-							<i class="fa fa-quote-left" aria-hidden="true"></i>
-						</legend>
-						-A 'DISTRO' Here you can specify the distribution art that you want displayed. This is for when you want your distro detected but want to display a different logo.
-					</fieldset>
-				</p>
-
-				<p>
-					So it's possible to show the logo of another OS by giving the according name.
-					<br/> Because I don't know all distributes available and covert by screenfetch, I opened the source code and looked through it.
-					<br/> I tried them all and wrote them into an array.
-					<br/> And then I noticed that the man page names them all. I don't know how I could over see this.
-					<br/> But you still can't just copy the list. But I tried them all 70 of them and came up with this usable list.
-				</p>
-
-				<pre>
-					<code class="bash">os=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
-					</code>
-				</pre>
-
 
 				<p>
 					And now a random index to make things fun and different every time we call it.
@@ -268,8 +236,26 @@
 				</pre>
 
 				<p>
+					<fieldset class="tldr box">
+						<legend>
+							<i class="fa fa-list-ul" aria-hidden="true"></i>
+						</legend>
+						tl;dr
+						<br>
+						short summary
+					</fieldset>
+				
+				</p>
+
+				<p>
 					It just calls screenfetch with one string of our array with the random index.
 					<br/> The -w Flag ("-w Wrap long lines.") just to fit all information on a normal terminal window.
+					<fieldset class="info box">
+						<legend>
+							<i class="fa fa-info-circle" aria-hidden="true"></i>
+						</legend>
+						Example quote; link can be added afterwards if needed.
+					</fieldset>
 				</p>
 
 				<h1>
@@ -279,6 +265,12 @@
 				<p>
 					And that's all you have to do. Now you can enjoy all the beautiful logos available. And every time a different one.
 					<br/> I choose to put the code into my .bashrc so on every console I open, this code will be executed, but you also could make an alias which calls an bash script file with this code inside.
+					<fieldset class="warning box">
+						<legend>
+							<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+						</legend>
+						Example quote; link can be added afterwards if needed.
+					</fieldset>
 				</p>
 
 				<img src="console.png" alt="console" class="image" />
