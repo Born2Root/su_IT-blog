@@ -49,7 +49,7 @@
 #pre {
 	background-color: #484848;
 	margin: auto;
-	padding: 0.5em 2em;
+	padding: 0.5em 0.5em;
 }
 
 #pre hr {
@@ -346,6 +346,7 @@ hr {
 #logo {
 	position: absolute;
 	right: 10px;
-	top: 5px;
-	height: 45px;
+	top: 0px;
+	height: 55px;
+	z-index: 23;
 }

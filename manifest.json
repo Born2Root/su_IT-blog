@@ -5,15 +5,21 @@
   "lang": "en",
   "background_color": "#111111",
   "theme_color": "#111111",
-  "display": "browser",
+  "display": "standalone",
   "orientation": "any",
   "start_url": "index.php",
   "icons": [{
-    "src": "/icon/icon.png",
+    "src": "/icon/favicon_64.ico",
+    "sizes": "64x64"
+  }, {
+    "src": "/icon/favicon_128.ico",
+    "sizes": "128x128"
+  }, {
+    "src": "/icon/favicon_144.png",
     "type": "image/png",
     "sizes": "144x144"
   }, {
-    "src": "/icon/favicon.ico",
-    "sizes": "64x64"
+    "src": "/icon/favicon_256.ico",
+    "sizes": "256x256"
   }]
 }

@@ -21,7 +21,7 @@
 	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
 	<!-- favicon -->
-	<link rel="icon" type="image/png" href="/icon/favicon.ico">
+	<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
 
 	<!-- font awesome -->
 	<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -54,7 +54,11 @@
                     <span id="console">- we sudo everything</span>
                     <span class="cursor">|</span> -
                 </div>
-            </div>
+			</div>
+			
+			<a target="_self" href="/">
+                <img alt="logo" src="/logo/logo_1.png" id="logo">
+            </a>
         </div>
 
 		<div id="menu">
@@ -151,15 +155,17 @@
                     <h3>Overview:</h3>
 
                     <ol>
-                        <li><a target="_self" href="#introduction">Introduction</a></li>
-                        <ol>
-                            <li>
-                                <a target="_self" href="#zielsetzung">Zielsetzung</a>
-                            </li>
-                            <li>
-                                <a target="_self" href="#allgemeines">Allgemeines</a>
-                            </li>
-                        </ol>
+						<li><a target="_self" href="#introduction">Introduction</a></li>
+						<li>
+							<ol>
+								<li>
+									<a target="_self" href="#zielsetzung">Zielsetzung</a>
+								</li>
+								<li>
+									<a target="_self" href="#allgemeines">Allgemeines</a>
+								</li>
+							</ol>
+						</li>
                         <li><a target="_self" href="#systemüberblick">Systemüberblick ThereOHM</a></li>
                     </ol>
 
@@ -172,13 +178,13 @@
 				<p>
 					So in the progress of installing my Arch and ricing it, I also installed screenfetch.
 					<br/> Screenfetch is a small program to get
-					<fieldset class="quote box">
-						<legend>
-							<i class="fa fa-quote-left" aria-hidden="true"></i>
-						</legend>
-						Example quote; link can be added afterwards if needed.
-					</fieldset>
 				</p>
+				<fieldset class="quote box">
+					<legend>
+						<i class="fa fa-quote-left" aria-hidden="true"></i>
+					</legend>
+					Example quote; link can be added afterwards if needed.
+				</fieldset>
 
 				<p>
 					So you are using a script for GNU Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch. But don't you get bored to see the same distribution logo all the time?
@@ -208,12 +214,15 @@
 				<p>
 					sldkfhjkds lksdfjkldsjf k dskljf lkds flkdsjf klsdj fklds
 					kldsjf  
-					<fieldset class="exclamation box">
-						<legend>
-							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-						</legend>
-						Example quote; link can be added afterwards if needed.
-					</fieldset>
+					
+				</p>
+				<fieldset class="exclamation box">
+					<legend>
+						<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+					</legend>
+					Example quote; link can be added afterwards if needed.
+				</fieldset>
+				<p>
 					sdflpks sdkf ölds f
 					kldsjf 
 				</p>
@@ -235,28 +244,26 @@
 					</code>
 				</pre>
 
-				<p>
-					<fieldset class="tldr box">
-						<legend>
-							<i class="fa fa-list-ul" aria-hidden="true"></i>
-						</legend>
-						tl;dr
-						<br>
-						short summary
-					</fieldset>
-				
-				</p>
+				<fieldset class="tldr box">
+					<legend>
+						<i class="fa fa-list-ul" aria-hidden="true"></i>
+					</legend>
+					tl;dr
+					<br>
+					short summary
+				</fieldset>
 
 				<p>
 					It just calls screenfetch with one string of our array with the random index.
 					<br/> The -w Flag ("-w Wrap long lines.") just to fit all information on a normal terminal window.
-					<fieldset class="info box">
-						<legend>
-							<i class="fa fa-info-circle" aria-hidden="true"></i>
-						</legend>
-						Example quote; link can be added afterwards if needed.
-					</fieldset>
 				</p>
+
+				<fieldset class="info box">
+					<legend>
+						<i class="fa fa-info-circle" aria-hidden="true"></i>
+					</legend>
+					Example quote; link can be added afterwards if needed.
+				</fieldset>
 
 				<h1>
 					Conclusion
@@ -265,13 +272,13 @@
 				<p>
 					And that's all you have to do. Now you can enjoy all the beautiful logos available. And every time a different one.
 					<br/> I choose to put the code into my .bashrc so on every console I open, this code will be executed, but you also could make an alias which calls an bash script file with this code inside.
-					<fieldset class="warning box">
-						<legend>
-							<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-						</legend>
-						Example quote; link can be added afterwards if needed.
-					</fieldset>
 				</p>
+				<fieldset class="warning box">
+					<legend>
+						<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+					</legend>
+					Example quote; link can be added afterwards if needed.
+				</fieldset>
 
 				<img src="console.png" alt="console" class="image" />
 
