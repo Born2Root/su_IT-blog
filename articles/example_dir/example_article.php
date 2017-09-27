@@ -39,7 +39,7 @@
 
 	<div id="header">
 
-	<div id="banner" class="canvas">
+		<div id="banner" class="canvas">
 
             <canvas height="50" width="200" id="animation_canvas_header">
             </canvas>
@@ -94,7 +94,15 @@
 
 	<div id="body">
 
-		<i class="fa fa-arrow-left" aria-hidden="true" id="back"> Back</i>
+		<div id="nav">
+			<div id="top">
+				<i class="fa fa-arrow-up" aria-hidden="true"></i> Top
+			</div>
+			
+			<div id="back">
+				<i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+			</div>
+		</div>
 
 		<div id="background">
 		</div>
@@ -303,10 +311,11 @@
 		</div>
 	</div>
 
-	<script src="/js/animation.js"></script>
-	<script src="/js/cli_write.js"></script>
-	<script src="/js/menu.js"></script>
-	<script src="/js/scroll.js"></script>
+	<script src="/js/animation.js" async></script>
+	<script src="/js/cli_write.js" async></script>
+	<script src="/js/menu.js" async></script>
+	<script src="/js/nav.js" async></script>
+	<script src="/js/scroll.js" async></script>
 
 </body>
 

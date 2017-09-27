@@ -32,6 +32,10 @@ h1 {
 	margin: 30px auto;
 }
 
+.post {
+	padding: 15px;
+}
+
 .post hr {
 	width: auto;
 }
