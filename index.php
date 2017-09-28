@@ -14,7 +14,7 @@ function print_article($h1, $h2, $article_tags, $img, $a)
                     <img src="$img" alt="$img" class="image post_image"/>
                     <h1>$h1</h1>
                     <h2>$h2</h2>
-                    <hr/>
+                    <hr>
                     <div class="tags">
 EOT;
     //tags
@@ -189,7 +189,7 @@ function print_link($link)
         </canvas>
         <div id="disclaimer">
             Disclaimer
-            <br/> &copy; <?php echo date("Y"); ?>
+            <br> &copy; <?php echo date("Y"); ?>
             <a href="impressum.php" target="_blank" rel="noopener">impressum</a>
         </div>
     </div>

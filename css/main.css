@@ -332,16 +332,6 @@ hr {
 	margin-top: -20px;
 }
 
-#nav {
-	position: fixed;
-	border: 2px solid #111111;
-	right: 0px;
-	bottom: 0px;
-	z-index: 20;
-	background-color: #484848;
-	color: #ffffff;
-}
-
 #logo {
 	position: absolute;
 	right: 10px;
@@ -350,8 +340,25 @@ hr {
 	z-index: 23;
 }
 
-#nav div {
+.nav div {
 	padding: 10px 15px;
+}
+
+.nav {
+	position: fixed;
+	border: 2px solid #111111;
+	bottom: 0px;
+	z-index: 20;
+	background-color: #484848;
+	color: #ffffff;
+}
+
+#nav_right {
+	right: 0px;
+}
+
+#nav_left {
+	left: 0px;
 }
 
 #top:hover {
@@ -396,4 +403,21 @@ hr {
 	60% {
 		transform: translateX(-5px);
 	}
+}
+
+#coffee {
+	transition: color 0.5s, background-color 0.5s;
+}
+
+#coffee:hover {
+	color: #583416;
+	background-color: #ffffff;
+}
+
+#book {
+	transition: font-size 0.5s;
+}
+
+#book:hover {
+	font-size: 1.25em;
 }

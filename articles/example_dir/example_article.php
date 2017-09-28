@@ -94,13 +94,27 @@
 
 	<div id="body">
 
-		<div id="nav">
+		<div id="nav_right" class="nav">
 			<div id="top">
 				<i class="fa fa-arrow-up" aria-hidden="true"></i> Top
 			</div>
 			
 			<div id="back">
 				<i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+			</div>
+		</div>
+
+		<div id="nav_left" class="nav">
+			<div id="coffee">
+				<a target="_blank" rel="noopener" href="/about_us.html#coffee">
+					<i class="fa fa-coffee" aria-hidden="true"></i> Buy us a coffee
+				</a>
+			</div>
+			
+			<div id="book">
+				<a target="_blank" rel="noopener" href="/about_us.html#book">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i> Book us
+				</a>
 			</div>
 		</div>
 
@@ -137,9 +151,7 @@
 					</div>
 				</div>
 
-				<img src="console.png" alt="console" class="image" style="
-    float: right;
-" />
+				<img src="console.png" alt="console" class="image">
 
 				<hr>
 
@@ -185,7 +197,7 @@
 
 				<p>
 					So in the progress of installing my Arch and ricing it, I also installed screenfetch.
-					<br/> Screenfetch is a small program to get
+					<br> Screenfetch is a small program to get
 				</p>
 				<fieldset class="quote box">
 					<legend>
@@ -196,7 +208,7 @@
 
 				<p>
 					So you are using a script for GNU Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch. But don't you get bored to see the same distribution logo all the time?
-					<br/> In this article, I'll show a very little bash script with a (much) impact.
+					<br> In this article, I'll show a very little bash script with a (much) impact.
 				</p>
 
 				<h2>
@@ -263,7 +275,7 @@
 
 				<p>
 					It just calls screenfetch with one string of our array with the random index.
-					<br/> The -w Flag ("-w Wrap long lines.") just to fit all information on a normal terminal window.
+					<br> The -w Flag ("-w Wrap long lines.") just to fit all information on a normal terminal window.
 				</p>
 
 				<fieldset class="info box">
@@ -293,10 +305,10 @@
 				<hr>
 
 				<p>
-					If you liked this article buy us a coffee! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site. https://ko-fi.com/ As small thanks you will get a full file download.
-						<br>
-						<br>
-					Wenn euch der Artikel gefallen habt, spendiert uns doch einen Kaffee! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content kostenlos und werbefrei bereitstellen. https://ko-fi.com/ Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
+					If you liked this article <a target="_blank" rel="noopener" href="/about_us.html#coffee">buy us a coffee</a>! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site. https://ko-fi.com/ As small thanks you will get a full file download.
+					<br>
+					<br>
+					Wenn euch der Artikel gefallen habt, <a target="_blank" rel="noopener" href="/about_us.html#coffee">spendiert uns doch einen Kaffee</a>! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content kostenlos und werbefrei bereitstellen. https://ko-fi.com/ Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
 				</p>
 
 			</div>
@@ -310,7 +322,7 @@
 		</canvas>
 		<div id="disclaimer">
 			Disclaimer
-			<br/> &copy; 2017
+			<br> &copy; 2017
 		</div>
 	</div>
 
