@@ -279,7 +279,7 @@
 
 				<p>
 					And that's all you have to do. Now you can enjoy all the beautiful logos available. And every time a different one.
-					<br/> I choose to put the code into my .bashrc so on every console I open, this code will be executed, but you also could make an alias which calls an bash script file with this code inside.
+					<br> I choose to put the code into my .bashrc so on every console I open, this code will be executed, but you also could make an alias which calls an bash script file with this code inside.
 				</p>
 				<fieldset class="warning box">
 					<legend>
@@ -288,13 +288,16 @@
 					Example quote; link can be added afterwards if needed.
 				</fieldset>
 
-				<img src="console.png" alt="console" class="image" />
+				<img src="console.png" alt="console" class="image">
 
-				<hr/>
+				<hr>
 
-				<h2>
-					[footer]
-				</h2>
+				<p>
+					If you liked this article buy us a coffee! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site. https://ko-fi.com/ As small thanks you will get a full file download.
+						<br>
+						<br>
+					Wenn euch der Artikel gefallen habt, spendiert uns doch einen Kaffee! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content kostenlos und werbefrei bereitstellen. https://ko-fi.com/ Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
+				</p>
 
 			</div>
 
