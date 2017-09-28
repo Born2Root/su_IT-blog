@@ -12,4 +12,4 @@ Example article
 Article with all elements of the website to design and look at them
 programming;blender;linux;various;memes
 example_dir/console.png
-example_dir/example_article.php
+example_dir/example_article.html

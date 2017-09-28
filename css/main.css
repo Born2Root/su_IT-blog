@@ -56,6 +56,13 @@
 	width: 100%;
 }
 
+@font-face {
+	font-family: 'hack_font';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Hack'), url('/css/hack_font/hack_reg.woff2') format('woff2'), url('/css/hack_font/hack_reg.woff') format('woff'), url('/css/hack_font/hack_reg.ttf') format('truetype');
+}
+
 body {
 	/* kein Rand */
 	margin: 0px;
@@ -63,7 +70,7 @@ body {
 	width: 100%;
 	/* footer unten bei bottom: 0px; */
 	min-height: 100%;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1.125rem;
 	counter-reset: headline1;
 }
@@ -116,6 +123,7 @@ pre {
 code {
 	counter-increment: line;
 	padding: 2px 0.5em !important;
+	font-family: hack_font;
 }
 
 code:before {
@@ -204,15 +212,20 @@ code:before {
 	font-size: 2.5em;
 }
 
+#body_article {
+	counter-reset: headline2;
+	counter-reset: headline3;
+}
+
 h1 {
 	text-align: center;
-	font-size: 1.7em;
+	font-size: 1.8em;
 	margin-top: 0.5em;
 	text-decoration: underline;
-	counter-reset: headline2;
 	display: flex;
 	min-width: 300px;
 	margin-left: 8%;
+	font-family: hack_font;
 }
 
 #article h1 {
@@ -220,29 +233,40 @@ h1 {
 	margin-left: 0px;
 }
 
-#article h2 {
-	display: inherit;
-}
-
-h1:not(:first-of-type)::before {
+#body_article h1::before {
 	counter-increment: headline1;
 	content: counter(headline1) ". ";
 }
 
 h2 {
 	margin-left: 5%;
-	font-size: 1.4em;
-	counter-reset: headline3;
+	font-size: 1.3em;
 	display: flex;
 	min-width: 300px;
+	font-family: hack_font;
 }
 
-h2:not(:first-of-type)::before {
+#article h2 {
+	display: inherit;
+	margin-left: 0px;
+	text-align: center;
+}
+
+#body_article h2::before {
 	counter-increment: headline2;
 	content: counter(headline1) "." counter(headline2) " ";
 }
 
-h3:not(:first-of-type)::before {
+h3 {
+	font-family: hack_font;
+	margin-left: 5%;
+}
+
+#pre h3 {
+	margin-left: 0px;
+}
+
+#body_article h3::before {
 	counter-increment: headline3;
 	content: counter(headline1) "." counter(headline2) "." counter(headline3) " ";
 }
@@ -250,6 +274,7 @@ h3:not(:first-of-type)::before {
 #subtitle {
 	display: none;
 	text-align: center;
+	font-family: hack_font;
 }
 
 hr {
@@ -259,13 +284,8 @@ hr {
 	width: 90%;
 }
 
-#footer {
-	background: #111111;
-	position: absolute;
-	z-index: 10;
-	bottom: 0px;
-	/* if no javascript */
-	width: 100%;
+#body_article li:nth-child(even) {
+	color: #ff6d00;
 }
 
 #disclaimer {
