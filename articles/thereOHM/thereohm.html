@@ -20,8 +20,6 @@
     <!-- desktop css -->
     <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
-    <link rel="stylesheet" type="text/css" href="thereohm.css">
-
     <!-- favicon -->
     <link rel="icon" type="image/png" href="/icon/favicon_64.ico">
 
@@ -112,14 +110,14 @@
         <div id="nav_left" class="nav">
             <div id="coffee">
                 <a target="_blank" rel="noopener" href="/about_us.html#coffee">
-                            <i class="fa fa-coffee" aria-hidden="true"></i> Buy us a coffee
-                        </a>
+                    <i class="fa fa-coffee" aria-hidden="true"></i> Buy us a coffee
+                </a>
             </div>
 
             <div id="book">
                 <a target="_blank" rel="noopener" href="/about_us.html#book">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Book us
-                        </a>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Book us
+                </a>
             </div>
         </div>
 
@@ -131,14 +129,14 @@
             <div id="article">
 
                 <div>
-                    <h1>thereOhm</h1>
-                    <h2>DIY Theremin</h2>
+                    <h1>thereOhm - DIY Raspberry Pi Theremin</h1>
+                    <h2>Projektarbeit über Bau eines Theremin</h2>
 
                     <div class="tags">
 
                         <div class="tag_div">
                             <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-                            <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50 min</div>
+                            <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50min read</div>
                         </div>
                         <div class="tag_div">
                             <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
@@ -168,7 +166,9 @@
 
                     <div id="pre">
 
-                        <h3>Voraussetzungen:</h3>
+                        <h3>
+                            Voraussetzungen:
+                        </h3>
                         <ul>
                             <li>
                                 Schwierigkeitsgrad:
@@ -176,22 +176,29 @@
                             </li>
                             <li>Skills:
                                 <ul>
-                                    <li>Pure Data Programmierung</li>
-                                    <li>Linux-Basics</li>
-                                    <li>Leiterplattenbestückung (Löten, etc.)</li>
-                                    <li>Elektronikverständnis</li>
+                                    <li>
+                                        Pure Data Programmierung
+                                    </li>
+                                    <li>
+                                        Linux-Basics
+                                    </li>
+                                    <li>
+                                        Leiterplattenbestückung (Löten, etc.)
+                                    </li>
+                                    <li>
+                                        Elektronikverständnis
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
 
                         <hr>
+
                         <h3>Overview:</h3>
 
                         <ol>
                             <li>
                                 <a target="_self" href="#introduction">Introduction</a>
-                            </li>
-                            <li>
                                 <ol>
                                     <li>
                                         <a target="_self" href="#zielsetzung">Zielsetzung</a>
@@ -203,6 +210,45 @@
                             </li>
                             <li>
                                 <a target="_self" href="#systemüberblick">Systemüberblick ThereOHM</a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#allgemeines">Allgemeines</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#theremin">Theremin</a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#layout">Layout / Schaltplan Platine</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#funktionsweise">Funktionsweise</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#raspberry">Raspberry Pi B+</a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#hardware">Hardware</a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#installation">Installation von Zusatzsoftware</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#stompbox">Stompbox</a>
+                            </li>
+                            <li>
+                                <a target="_self" href="#puredata">Pure Data</a>
+                            </li>
+                            <li>
+                                <a target="_self" href="#weitererausblick">Weiterer Ausblick</a>
+                            </li>
+                            <li>
+                                <a target="_self" href="#conclusion">Conclusion</a>
                             </li>
                         </ol>
 
@@ -251,7 +297,7 @@
 
                     <hr>
                     <h1 id="systemüberblick">Systemüberblick ThereOHM</h1>
-                    <h2>Allgemeines</h2>
+                    <h2 id="allgemeines">Allgemeines</h2>
 
                     Abbildung 2 zeigt den prinzipiellen Aufbau des ThereOHM Systems. Es besteht aus einem klassischen Theremin dessen Klang durch Annäherung an die Antennen verändert werden kann.
                     <br> Das Analogsignal wird über ein 3,5 mm Klinkenkabel mit einer am Raspberry Pi angeschlossen USB-Stereo-Soundkarte verbunden. Der ADC der Soundkarte wandelt dieses Analogsignal in ein Digitalsignal um, welches anschließend im Raspberry verarbeitet wird. Dazu wird auf dem Pi ein Pure Data Programm ausgeführt, welches als Software-DSP fungiert. Die Art und Weise der Audioverarbeitung kann hardwareseitig über Schalter, bzw. softwareseitig über eine Benutzeroberfläche dynamisch beeinflusst werden.
@@ -265,8 +311,8 @@
 
                     <hr>
 
-                    <h1>Theremin</h1>
-                    <h2>Layout / Schaltplan Platine</h2>
+                    <h1 id="theremin">Theremin</h1>
+                    <h2 id="layout">Layout / Schaltplan Platine</h2>
 
                     <img src="image004.png" alt="Abbildung 3: Bestückungsplan Theremin" style="width:400px;">
                     <br> Abbildung 3: Bestückungsplan Theremin<br>
@@ -277,7 +323,7 @@
                     <img src="image006.png" alt="Abbildung 5: Schaltplan Theremin" style="width:400px;">
                     <br> Abbildung 5: Schaltplan Theremin<br>
 
-                    <h2>Funktionsweise</h2>
+                    <h2 id="funktionsweise">Funktionsweise</h2>
 
                     Die Schaltung des Theremin teilt sich in vier Funktionsblöcke auf. Den ersten Block bildet ein variabler Oszillator, zu dem je eine Antenne gehört. Er wird als Regler für die Laut- stärke bzw. Tonhöhe verwendet und ist für beide Aufgaben separat vorhanden. Im zweiten Funktionsblock wird ein konstantes Referenzsignal erzeugt, das mit Hilfe eines Fre- quenzmixers (dritter Funktionsblock) gemischt wird. Es existieren wiederum zwei Schaltungseinheiten, eine für das Signal der Lautstärke und eine für die Tonhöhe. Anschlie- ßend werden die Signale im vierten Funktionsblock gefiltert und in einer Endstufe verstärkt. Die Funktionsblöcke sind nachfolgend genauer erläutert.
 
@@ -315,12 +361,12 @@
                     <br>Abbildung 10: Mixer, Filter und Verstärker<br>
 
                     <hr>
-                    <h1>Raspberry Pi B+</h3>
+                    <h1 id="raspberry">Raspberry Pi B+</h3>
                         Der Raspberry Pi ist ein vollwertiger und preisgünstiger Einplatinenrechner, welcher entwickelt wurde um Neulingen den Einstieg in die Programmierung zu erleichtern. Er eignet sich aufgrund seiner vielen Schnittstellen hervorragend für technische Versuchsaufbauten und bietet mit unterschiedlichen Linux-Distributionen
                         <a href="  http://www.raspberrypi.org/
                                     "></a> verschiedenste Einsatzgebiete. Im Rahmen des Projektes wird er als Rechner mit Software-DSP, sowie zum Einlesen der Stompbox Fußschalter verwendet.
 
-                        <h2>Hardware</h2>
+                        <h2 id="hardware">Hardware</h2>
 
                         <img src="image012.jpg" alt="Abbildung 11: Aufbau Raspberry Pi B+" style="width:400px;">
                         <br>Abbildung 11: Aufbau Raspberry Pi B+<br><br> Der verwendete Raspberry Pi B+ besitzt eine 40 Pin große Stiftleiste, welche mit 24 GPIOs, sowie diversen Masse- und Spannungspegeln belegt ist. Zusätzlich können über die Stiftleiste gängige Schnittstellen wie I2C, SPI und UART angesprochen werden. Mittels der GPIOs ist es möglich externe Signale einzulesen bzw. auszugeben. Um auf die GPIOs zuzugreifen kann beispielsweise die Programmbibliothek WiringPi verwendet werden. Diese bietet zahlreiche C-Bibliotheken, um die GPIOs gezielt mittels Bash- oder Software-Skripten anzusteuern bzw. auszulesen.
@@ -335,14 +381,30 @@
                         <br><br>
                         <b><u>Zusätzliches Zubehör:</u></b>
                         <ul>
-                            <li>Raspberry Pi Gehäuse</li>
-                            <li>USB-Maus</li>
-                            <li>USB-Tastatur</li>
-                            <li>HDMI-DVI Kabel, Monitorkabel</li>
-                            <li>Ethernet Kabel, Netzwerk</li>
-                            <li>SD-Karte für Betriebssystem, (microSD 16 GB, Class 10)</li>
-                            <li>Verbindungskabel GPIOs mit Anschlussplatine (40 poliges Flachbandkabel)</li>
-                            <li>Kühlkörper (benötigt wegen Übertaktung)</li>
+                            <li>
+                                Raspberry Pi Gehäuse
+                            </li>
+                            <li>
+                                USB-Maus
+                            </li>
+                            <li>
+                                USB-Tastatur
+                            </li>
+                            <li>
+                                HDMI-DVI Kabel, Monitorkabel
+                            </li>
+                            <li>
+                                Ethernet Kabel, Netzwerk
+                            </li>
+                            <li>
+                                SD-Karte für Betriebssystem, (microSD 16 GB, Class 10)
+                            </li>
+                            <li>
+                                Verbindungskabel GPIOs mit Anschlussplatine (40 poliges Flachbandkabel)
+                            </li>
+                            <li>
+                                Kühlkörper (benötigt wegen Übertaktung)
+                            </li>
                         </ul>
 
                         <h3>Betriebssystem</h3>
@@ -365,7 +427,7 @@
                                                 <code>sudo apt-get install xrdp</code>
                                             </pre> Der Hintergrunddienst für den Remote Desktop Zugriff wird danach automatisch gestartet. Beispielsweise kann man sich nun mit der in Windows integrierten Remotedesktopverbindung auf den Raspberry zugreifen. Dadurch läuft der Raspberry ressourcenschonender, da er keine graphische Oberfläche direkt am Bildschirm anzeigen muss.
 
-                        <h2>Installation von Zusatzsoftware</h2>
+                        <h2 id="installation">Installation von Zusatzsoftware</h2>
                         Während des Projektes wurden mehrere Zusatzprogramme verwendet. Die Installation und Konfiguration dieser wird nachfolgend beschrieben.
                         <h3>ALSA</h3>
                         Zunächst wird <a href="http://www.alsa-project.org">ALSA (Advanced Linux Sound Architecture)</a> benötigt, was einen grundlegenden Baustein des Soundsystems unter Linux darstellt. Durch ALSA wird die Kommu- nikation mit der Soundkarte unter Linux ermöglicht. Zusätzlich bietet ALSA die Möglichkeit grundlegender Konfigurationen. Zur Installation muss folgender Befehl in einer Konsole ausgeführt werden.
@@ -493,7 +555,7 @@
 
 
                         <hr>
-                        <h1>Stompbox</h1>
+                        <h1 id="stompbox">Stompbox</h1>
 
                         <img src="image017.png" alt="Abbildung 16: Stompbox" style="width:400px;">
                         <br>Abbildung 16: Stompbox <br> <br> Als Stompbox wird ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann. In der eigens für das Projekt gebauten Stompbox (Abbildung 16) ist der Raspberry Pi integriert. Er kann somit jederzeit problemlos entnommen werden. Weiterhin sind alle Schnittstellen des Raspberry Pi von außen zu erreichen. Der Deckel enthält zehn Wechselschalter, welche als Signalschalter dienen (Abbildung 17). Über ein 40 adriges Flachbandkabel sind Raspberry und Stompbox-Deckel mit einer Anschlussplatine (Abbildung 20) verbunden. Die Platine ist so aufgebaut, dass sich der Raspberry um die Spannungsversorgung und Ansteuerung der Platine kümmert. Nach Anschluss aller Flachbandkabel werden somit die Wechselschalter mit Spannung versorgt und die Schalterzustände können über die Pi-GPIOs eingelesen werden. Die Stompbox bietet zusätzlich an der Außenseite eine 5V Spannungsversorgung für den Anschluss des Theremins.
@@ -1035,7 +1097,7 @@
                         <br>Abbildung 22: Verdrahtung Anschlussplatine<br>
 
                         <hr>
-                        <h1>Pure Data</h1>
+                        <h1 id="puredata">Pure Data</h1>
                         Pure Data, oder kurz Pd ist eine grafische echtzeitfähige Programmiersprache, die auf Audio-, Video- und Bildverarbeitung spezialisiert ist. Pd wurde ab 1996 von dem US-Amerikaner Miller Stuart Puckette als Open Source Projekt entwickelt und wird seither von einer großen Community gepflegt und erweitert.
                         <br> <a href="http://puredata.info/">Pure Data</a> ist für alle gängigen Betriebssysteme, wie Mac OS, Windows und Linux verfügbar. Auf diesen fungiert es als ein Software Digital-Signal-Processor (DSP). Im Zuge der Verbreitung kostengünstiger Embedded-Systeme (Raspberry, Beagle Bone, usw.) wurde Pure Data speziell für die Verwendung auf diesen Einplatinenrechnern angepasst. Somit ist es möglich einen Raspberry Pi als DSP zu verwenden.
                         <br> Pd-Programme werden als Patch bezeichnet und beschreiben einen Datenfluss. Die Programmierung und Darstellung des Datenflussdiagramms erfolgt graphisch. Dabei entspricht der Programmcode gleichzeitig dem Bedieninterface.
@@ -1205,7 +1267,7 @@
                         <br>Abbildung 31: Interface mp3 Streamer<br>
 
                         <hr>
-                        <h1>Weiterer Ausblick</h1>
+                        <h1 id="weitererausblick">Weiterer Ausblick</h1>
 
                         Zum Abgabezeitpunkt lief die Implementierung auf dem Raspberry nicht flüssig. Als Grund hierfür ist zunächst die zu geringe Prozessorleistung des Raspberry zu nennen. Dieses Problem kann durch Übertaktung und zusätzliche Kühlkörper eingedämmt werden. Durchgängig flüssige Nutzung aller implementierten Funktionen, z.B. des Webradiostreams ist allerdings trotzdem nicht möglich. Als rechenleistungsstärkere Alternativen zur Raspberry Plattform bieten sich der
                         <a href="http://www.bananapi.org">Banana Pi</a> sowie der <a href="http://beagleboard.org/bone">Beagle Bone</a> an.
@@ -1221,7 +1283,7 @@
                         </ul>
 
                         <hr>
-                        <h1>Conclusion</h1>
+                        <h1 id="conclusion">Conclusion</h1>
 
                         Abschließend lässt sich festhalten, dass die gesteckten Projektziele nahezu vollständig umgesetzt werden konnten.
                         <br> Ein klassisches Theremin wurde erfolgreich aufgebaut und in Betrieb genommen. Die angestrebte Klangvariation ist mittels Pure Data vollständig realisiert.
