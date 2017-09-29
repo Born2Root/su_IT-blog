@@ -147,6 +147,20 @@ function print_link($link)
 
     <div id="body">
 
+        <div id="nav_left" class="nav">
+            <div id="coffee">
+                <a target="_blank" rel="noopener" href="/about_us.html#coffee">
+                    <i class="fa fa-coffee" aria-hidden="true"></i> Buy us a coffee
+                </a>
+            </div>
+
+            <div id="book">
+                <a target="_blank" rel="noopener" href="/about_us.html#book">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Book us
+                </a>
+            </div>
+        </div>
+
         <div id="background">
         </div>
 

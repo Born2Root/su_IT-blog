@@ -70,7 +70,7 @@ body {
 	width: 100%;
 	/* footer unten bei bottom: 0px; */
 	min-height: 100%;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1.125rem;
 	counter-reset: headline1;
 }
@@ -118,6 +118,8 @@ pre {
 	-webkit-box-shadow: 0px 0px 4px 1px #484848;
 	counter-reset: line;
 	display: table;
+	width: 100%;
+	margin: 20px 0px;
 }
 
 code {
@@ -126,8 +128,14 @@ code {
 	font-family: hack_font;
 }
 
-code:before {
+code:not(.command):before {
+	color: #000000;
 	content: counter(line) ". ";
+}
+
+.command:before {
+	color: #000000;
+	content: "$ ";
 }
 
 #background {
@@ -288,18 +296,6 @@ hr {
 	color: #ff6d00;
 }
 
-#disclaimer {
-	background: #111111;
-	bottom: 10px;
-	color: #ffffff;
-	left: 0px;
-	margin: auto;
-	position: absolute;
-	right: 0px;
-	width: 90px;
-	text-align: center;
-}
-
 .cursor {
 	-webkit-animation: blink 0.7s infinite;
 	animation: blink 0.7s infinite;
@@ -440,4 +436,24 @@ hr {
 
 #book:hover {
 	font-size: 1.25em;
+}
+
+#disclaimer {
+	background: #111111;
+	bottom: 10px;
+	color: #ffffff;
+	left: 0px;
+	margin: auto;
+	position: absolute;
+	right: 0px;
+	width: 90px;
+	text-align: center;
+}
+
+#footer {
+	background: #111111;
+	position: absolute;
+	z-index: 10;
+	bottom: 0px;
+	width: 100%;
 }
