@@ -1,15 +1,15 @@
-Script To Rice Your Setup Pt.1
-Get a better looking system info by ricing screenfetch
-programming;blender;linux
-script_to_rice_your_setup_1/console.png
-script_to_rice_your_setup_1/script_to_rice_your_setup_1.html
-thereOhm
-DIY Theremin
-programming;linux;pi
-thereOHM/image001.png
-thereOHM/thereohm.html
 Example article
 Article with all elements of the website to design and look at them
 programming;blender;linux;various;memes
 example_dir/console.png
 example_dir/example_article.html
+thereOhm - DIY Raspberry Pi Theremin
+Projektarbeit über Bau eines Theremin
+programming;linux;pi
+thereOHM/image001.png
+thereOHM/thereohm.html
+Script To Rice Your Setup Pt.1
+Get a better looking system info by ricing screenfetch
+programming;blender;linux
+script_to_rice_your_setup_1/console.png
+script_to_rice_your_setup_1/script_to_rice_your_setup_1.html

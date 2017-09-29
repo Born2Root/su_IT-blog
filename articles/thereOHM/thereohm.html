@@ -204,7 +204,7 @@
                                         <a target="_self" href="#zielsetzung">Zielsetzung</a>
                                     </li>
                                     <li>
-                                        <a target="_self" href="#allgemeines">Allgemeines</a>
+                                        <a target="_self" href="#allgemeines1">Allgemeines 1</a>
                                     </li>
                                 </ol>
                             </li>
@@ -212,7 +212,7 @@
                                 <a target="_self" href="#systemüberblick">Systemüberblick ThereOHM</a>
                                 <ol>
                                     <li>
-                                        <a target="_self" href="#allgemeines">Allgemeines</a>
+                                        <a target="_self" href="#allgemeines2">Allgemeines 2</a>
                                     </li>
                                 </ol>
                             </li>
@@ -239,16 +239,93 @@
                                 </ol>
                             </li>
                             <li>
-                                <a target="_self" href="#stompbox">Stompbox</a>
+                                <a target="_self" href="#stompbox">
+                                    Stompbox
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#wechselschalter">
+                                            Deckel mit Wechselschalter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#verdrahtung">
+                                            Verdrahtung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#anschlussplatine">
+                                            Anschlussplatine zwischen Stompbox und Raspberry Pi
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#ziel">
+                                            Ziel des ThereOHM Patch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#realisierung">
+                                            Realisierung
+                                        </a>
+                                    </li>
+                                </ol>
                             </li>
                             <li>
-                                <a target="_self" href="#puredata">Pure Data</a>
+                                <a target="_self" href="#puredata">
+                                    Pure Data
+                                </a>
                             </li>
                             <li>
-                                <a target="_self" href="#weitererausblick">Weiterer Ausblick</a>
+                                <a target="_self" href="#weitererausblick">
+                                    Weiterer Ausblick
+                                </a>
                             </li>
                             <li>
-                                <a target="_self" href="#conclusion">Conclusion</a>
+                                <a target="_self" href="#conclusion">
+                                    Conclusion
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#anhanga">
+                                            Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#x86">
+                                            x86- vs. x64- vs. ARM-Processor Architecture
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#windows">
+                                            Windows Operating System
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#linux">
+                                            GNU/Linux Operating System
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#raspberry">
+                                            Raspberry Platform
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#anhangb">
+                                            Anhang B - Verwendete Software
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#anhangc">
+                                            Anhang C - Kostenaufschlüsselung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#anhangd">
+                                            Anhang D - Zeit- und Aufgabenplan
+                                        </a>
+                                    </li>
+                                </ol>
                             </li>
                         </ol>
 
@@ -257,19 +334,31 @@
                 </div>
 
                 <div id="body_article">
-                    <h1 id="introduction">Introduction</h1>
+                    <h1 id="introduction">
+                        Introduction
+                    </h1>
 
-                    <h2 id="zielsetzung">Zielsetzung</h2>
+                    <h2 id="zielsetzung">
+                        Zielsetzung
+                    </h2>
                     <p>
                         Ziel des Projektes ist es, ein klassisches Theremin aufzubauen und dessen Klang beliebig zu verändern, so dass der Eindruck anderer Musikinstrumente entsteht.
                         <br> Zur Realisierung dieser Aufgabe wird der Einplatinenrechner Raspberry Pi verwendet. Die verschiedenen Filtereinstellungen sollen durch variable Tastenkombinationen gesteuert werden können. Eine zusätzliche Anforderung ist ein vollständig modularer Aufbau, um sowohl einfachen Transport, sowie Austauschbarkeit der Komponenten zu gewährleisten. Es ergeben sich folgende Aufgaben für die Projektrealisierung:
                         <br>
                     </p>
                     <ul>
-                        <li>1. Aufbau eines klassischen Theremin inklusive Gehäuse</li>
-                        <li>2. Aufbau einer Stompbox als interaktive Bedienerschnittstelle</li>
-                        <li>3. Installation und Konfiguration des Raspberry Pi</li>
-                        <li>4. Programmierung eines auf dem Raspberry Pi ausführbaren DSP Software</li>
+                        <li>
+                            1. Aufbau eines klassischen Theremin inklusive Gehäuse
+                        </li>
+                        <li>
+                            2. Aufbau einer Stompbox als interaktive Bedienerschnittstelle
+                        </li>
+                        <li>
+                            3. Installation und Konfiguration des Raspberry Pi
+                        </li>
+                        <li>
+                            4. Programmierung eines auf dem Raspberry Pi ausführbaren DSP Software
+                        </li>
                     </ul>
                     <p>
                         <br> Es wurde als Vorbereitung ein Projektplan erstellt, der während des gesamten Projektes gepflegt wurde, um den aktuellen Projektstatus widerzuspiegeln. Dieser Projektplan, sowie eine genaue Kostenaufstellung inkl. Stückliste aller benötigten Bauteile ist im Anhang zu finden.
@@ -277,27 +366,29 @@
                     <TODO> als Hover Infotext bei Stompbox anzeigen (Als Stompbox wird i.d.R. ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann) </TODO>
 
 
-                    <h2 id="allgemeines">Allgemeines</h2>
+                    <h2 id="allgemeines1">
+                        Allgemeines 1
+                    </h2>
 
                     <p>Bei einem Theremin, das auch als Ätherophon, Ätherwellengeige oder Thereminovox bekannt ist, handelt es sich um ein elektronisches Musikinstrument. Es ist eines der wenigen Instrumente, die der Musiker spielt ohne es zu berühren. Erfunden wurde das Theremin 1920 von dem russischen Physiker Lev Sergeevič Termen.
                         <br> Ab 1927 ging Termen mit dem Theremin auf Welttournee und begeisterte mit seiner „Geistermusik“ das Publikum. Im Zuge dessen ließ sich Termen 1928 in New York nieder, patentierte das Instrument und nannte sich fortan Leon Theremin. Abbildung 1 zeigt Termen beim Musizieren mit einem seiner Instrumente.
 
                         <br>
                         <img src="image000.jpg" alt="Abbildung 1: Lev Termen mit seinem Musikinstrument" style="width:400px;">
-                        <br> Abbildung 1: Lev Termen mit seinem Musikinstrument (Quelle: <a href="www.theremin.info">www.Theremin.info</a>)
+                        <br> Abbildung 1: Lev Termen mit seinem Musikinstrument (Quelle: <a href="www.theremin.info" target="_blank" rel="noopener">www.Theremin.info</a>)
                         <br>
                         <br> Das Theremin wird durch den Abstand beider Hände zu zwei Antennen berührungsfrei gespielt, wobei eine Hand die Tonhöhe und die andere die Lautstärke verändert. Bei einem Standard-Theremin hat der Spieler keine optische oder haptische Rückmel- dung über seine Spielweise und muss allein auf sein Gehör vertrauen. Der Einflussbe- reich auf die Tonhöhe beträgt in der Regel etwa 40 bis 50 Zentimeter um die Antenne herum. Das bedeutet, dass auch der Arm und der Körper des Spielers den Ton beeinflussen können.
                         <br> Ein Vorteil des Theremin ist die, theoretisch unendlich feine, Variation der erzeugten Töne, ohne dass z.B. ein Saitenwechsel wie bei einer Geige notwendig ist. Des Weiteren kann ein Ton beliebig lange gehalten werden.
                         <br> Der Klang des Theremin ist am ehesten mit dem einer Violine vergleichbar. Das Klangbild und die Klangvariationen sind allerdings ganz eigentümlich.
 
                         <TODO> Youtube Player einbinden </TODO>
-                        <a href="https://www.youtube.com/watch?v=w5qf9O6c20o">Hörprobe: Leon Theremin mit einem seiner Instrumente</a>
+                        <a href="https://www.youtube.com/watch?v=w5qf9O6c20o" target="_blank" rel="noopener">Hörprobe: Leon Theremin mit einem seiner Instrumente</a>
                         <br> Aus diesem Grund entstand die Idee diesen besonderen Klang auf elektronischem Weg derart zu verändern, dass der Eindruck eines komplett anderen Instruments (z.B. einer Gitarre) entsteht.
                     </p>
 
                     <hr>
                     <h1 id="systemüberblick">Systemüberblick ThereOHM</h1>
-                    <h2 id="allgemeines">Allgemeines</h2>
+                    <h2 id="allgemeines2">Allgemeines 2</h2>
 
                     Abbildung 2 zeigt den prinzipiellen Aufbau des ThereOHM Systems. Es besteht aus einem klassischen Theremin dessen Klang durch Annäherung an die Antennen verändert werden kann.
                     <br> Das Analogsignal wird über ein 3,5 mm Klinkenkabel mit einer am Raspberry Pi angeschlossen USB-Stereo-Soundkarte verbunden. Der ADC der Soundkarte wandelt dieses Analogsignal in ein Digitalsignal um, welches anschließend im Raspberry verarbeitet wird. Dazu wird auf dem Pi ein Pure Data Programm ausgeführt, welches als Software-DSP fungiert. Die Art und Weise der Audioverarbeitung kann hardwareseitig über Schalter, bzw. softwareseitig über eine Benutzeroberfläche dynamisch beeinflusst werden.
@@ -363,10 +454,11 @@
                     <hr>
                     <h1 id="raspberry">Raspberry Pi B+</h3>
                         Der Raspberry Pi ist ein vollwertiger und preisgünstiger Einplatinenrechner, welcher entwickelt wurde um Neulingen den Einstieg in die Programmierung zu erleichtern. Er eignet sich aufgrund seiner vielen Schnittstellen hervorragend für technische Versuchsaufbauten und bietet mit unterschiedlichen Linux-Distributionen
-                        <a href="  http://www.raspberrypi.org/
-                                    "></a> verschiedenste Einsatzgebiete. Im Rahmen des Projektes wird er als Rechner mit Software-DSP, sowie zum Einlesen der Stompbox Fußschalter verwendet.
+                        <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">Link?!</a> verschiedenste Einsatzgebiete. Im Rahmen des Projektes wird er als Rechner mit Software-DSP, sowie zum Einlesen der Stompbox Fußschalter verwendet.
 
-                        <h2 id="hardware">Hardware</h2>
+                        <h2 id="hardware">
+                            Hardware
+                        </h2>
 
                         <img src="image012.jpg" alt="Abbildung 11: Aufbau Raspberry Pi B+" style="width:400px;">
                         <br>Abbildung 11: Aufbau Raspberry Pi B+<br><br> Der verwendete Raspberry Pi B+ besitzt eine 40 Pin große Stiftleiste, welche mit 24 GPIOs, sowie diversen Masse- und Spannungspegeln belegt ist. Zusätzlich können über die Stiftleiste gängige Schnittstellen wie I2C, SPI und UART angesprochen werden. Mittels der GPIOs ist es möglich externe Signale einzulesen bzw. auszugeben. Um auf die GPIOs zuzugreifen kann beispielsweise die Programmbibliothek WiringPi verwendet werden. Diese bietet zahlreiche C-Bibliotheken, um die GPIOs gezielt mittels Bash- oder Software-Skripten anzusteuern bzw. auszulesen.
@@ -411,9 +503,7 @@
                         Um den Raspberry starten zu können, muss ein bootfähiges Betriebssystem auf der microSD Karte abgelegt werden.
                         <br> Für den Raspberry stellt die Raspberry Foundation mehrere hierfür optimierte LINUX-Distributionen zur Verfügung. Sie können entweder also Komplettpaket (NOOBS), oder einzeln installiert werden. Bei NOOBs kann nach jedem Hochlauf des Raspberry entschieden werden, mit welcher Distribution man arbeiten möchte. Für die Projektarbeit wurde die abgespeckte Variante eines Debian-Betriebssystems namens Raspbian entschieden.
                         <br> Die Installation/ Konfiguration ist wie nachfolgend beschrieben durchzuführen: Das aktuelle ISO-Image der Software Raspbian als ZIP-File herunterladen
-                        <a href="http://www.raspberrypi.org/
-                                    ">http://www.raspberrypi.org/</a> und entpacken. Um ein lauffähiges System zu erhalten muss das ISO-Image auf die microSD geladen werden. Hierfür kann in Windows beispielsweise das Tool <a href="http://sourceforge.net/projects/win32diskimager
-                                    ">Win32 Disk Imager</a> verwendet werden.
+                        <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">http://www.raspberrypi.org/</a> und entpacken. Um ein lauffähiges System zu erhalten muss das ISO-Image auf die microSD geladen werden. Hierfür kann in Windows beispielsweise das Tool <a href="http://sourceforge.net/projects/win32diskimager" target="_blank" rel="noopener">Win32 Disk Imager</a> verwendet werden.
 
                         <br><br>
                         <img src="image015.png" alt="Abbildung 14: Win32 Disk Imager Oberfläche" style="width:400px;">
@@ -424,29 +514,34 @@
                         <br> Um von einem anderen Computer auf den Raspberry zugreifen zu können muss eine Remote-Verbindung hergestellt werden. Hierfür muss zuerst auf dem Raspberry ein SSH- Server installiert und gestartet werden. Dafür ist folgender Befehl auf einer Bash-Konsole auszuführen.
 
                         <pre>
-                                                <code>sudo apt-get install xrdp</code>
-                                            </pre> Der Hintergrunddienst für den Remote Desktop Zugriff wird danach automatisch gestartet. Beispielsweise kann man sich nun mit der in Windows integrierten Remotedesktopverbindung auf den Raspberry zugreifen. Dadurch läuft der Raspberry ressourcenschonender, da er keine graphische Oberfläche direkt am Bildschirm anzeigen muss.
+                            <code class="command">sudo apt-get install xrdp</code>
+                        </pre> Der Hintergrunddienst für den Remote Desktop Zugriff wird danach automatisch gestartet. Beispielsweise kann man sich nun mit der in Windows integrierten Remotedesktopverbindung auf den Raspberry zugreifen. Dadurch läuft der Raspberry ressourcenschonender, da er keine graphische Oberfläche direkt am Bildschirm anzeigen muss.
 
-                        <h2 id="installation">Installation von Zusatzsoftware</h2>
+                        <h2 id="installation">
+                            Installation von Zusatzsoftware
+                        </h2>
                         Während des Projektes wurden mehrere Zusatzprogramme verwendet. Die Installation und Konfiguration dieser wird nachfolgend beschrieben.
                         <h3>ALSA</h3>
-                        Zunächst wird <a href="http://www.alsa-project.org">ALSA (Advanced Linux Sound Architecture)</a> benötigt, was einen grundlegenden Baustein des Soundsystems unter Linux darstellt. Durch ALSA wird die Kommu- nikation mit der Soundkarte unter Linux ermöglicht. Zusätzlich bietet ALSA die Möglichkeit grundlegender Konfigurationen. Zur Installation muss folgender Befehl in einer Konsole ausgeführt werden.
+                        Zunächst wird <a href="http://www.alsa-project.org" target="_blank" rel="noopener">ALSA (Advanced Linux Sound Architecture)</a> benötigt, was einen grundlegenden Baustein des Soundsystems unter Linux darstellt. Durch ALSA wird die Kommu- nikation mit der Soundkarte unter Linux ermöglicht. Zusätzlich bietet ALSA die Möglichkeit grundlegender Konfigurationen. Zur Installation muss folgender Befehl in einer Konsole ausgeführt werden.
                         <pre>
-                                                <code>$sudo apt-get install alsa-base alsa-utils</code>
-                                            </pre>
+                            <code class="command">sudo apt-get install alsa-base alsa-utils</code>
+                        </pre>
 
                         <h3>WiringPi</h3>
                         Um auf die GPIOs zugreifen zu können, wurde die Programmbibliohtek WiringPi verwendet. Diese kann über ein Git-Archiv wie folgt bezogen und installiert werden.
                         <pre>
-                                                <code>$sudo apt-get install git-core $git clone git://git.drogon.net/wiringPi $cd wiringPi $./build</code>
-                                            </pre>
+                            <code class="command">sudo apt-get install git-core</code>
+                            <code class="command">git clone git://git.drogon.net/wiringPi </code>
+                            <code class="command">cd wiringPi</code>
+                            <code class="command">./build</code>
+                        </pre>
 
                         <h3>Pure Data (Pd)</h3>
                         Hier soll zunächst nur auf die Installation des Programmpaketes Pure Data eingegangen werden. Eine weitergehende Beschreibung von Pure Data folgt in Kapitel 6.
                         <br> Pure Data setzt sich aus mehreren Versionen zusammen. Die Basis Version, auch bekannt unter der Bezeichnung „Vanilla“, enthält lediglich eine Zusammenstellung der grundlegendsten Funktionen. Über zahlreich verfügbare Bibliotheken kann der Funktionsumfang anschließend beliebig erweitert werden. Mit dem Paket „Pd-Extended“ kann eine fertige Zusammenstellung, installiert werden, die sowohl Vanilla, als auch einen Großteil der externen Programmbibliotheken enthält. Hierbei ist zu beachten, dass Neuerungen zuerst in der Vanilla Version durchgeführt werden. So kann es vorkommen, dass die Extended Version veraltete Bibliotheken enthält. Dies war der Grund, warum im Zuge des Projektes auf dem Raspberry ein schwerwiegender Fehler in Kombination von Pd-Extended und ALSA auftrat. Dieser Fehler war in der Vanilla Version bereits behoben und trat hier nicht auf. Deshalb wird mit folgendem Befehl zunächst Pd-Vanilla installiert
                         <pre>
-                                                <code>sudo apt-get install pd</code>
-                                            </pre> Um Abhängigkeiten von externen Libraries zu vermindern, wurde versucht weitestgehend auf Extended-Bibliotheken zu verzichten. Dies war nicht komplett möglich, weshalb fehlenden Objekte händisch nachinstalliert wurden.
+                            <code class="command">sudo apt-get install pd</code>
+                        </pre> Um Abhängigkeiten von externen Libraries zu vermindern, wurde versucht weitestgehend auf Extended-Bibliotheken zu verzichten. Dies war nicht komplett möglich, weshalb fehlenden Objekte händisch nachinstalliert wurden.
                         <br> Alle zusätzlich verwendeten Objekte sind in Tabelle 2 aufgelistet. Diese sind zudem für den Raspberry (ARM-Prozessor) kompiliert und auf der Daten CD abgelegt.
 
                         <table class="tableizer-table">
@@ -498,69 +593,71 @@
                         <br> Um die Bibliotheken auf dem Raspberry Pi nutzen zu können, müssen diese einmalig für den ARM-Prozessor kompiliert werden. Später können die Bibliotheken ohne großen Aufwand verwendet werden. Eine Schnellstartanleitung hierfür befindet sich in Anhang A. Alle während des Projektes kompilierten Bibliotheken befinden sich auf der beiliegenden Daten CD.
                         <br> Für die Kompilierung muss zunächst STK, sowie zahlreiche weitere Softwarepakete händisch auf dem Raspberry installiert werden. Die dafür notwendigen Schritte werden nachfolgend aufgelistet: Installation der liba Laufzeitbibliothek für ALSA-Anwendungen.
                         <pre>
-                                                <code>sudo apt-get install libasound2-dev</code>
-                                            </pre>
+                            <code class="command">sudo apt-get install libasound2-dev</code>
+                        </pre>
 
-                        <a href="https://ccrma.stanford.edu/software/stk/download.html">STK-Quellcode</a> herunterladen und entpacken. Im diesem Ordner den Befehl
+                        <a href="https://ccrma.stanford.edu/software/stk/download.html" target="_blank" rel="noopener">STK-Quellcode</a> herunterladen und entpacken. Im diesem Ordner den Befehl
                         <pre>
-                                                <code>./configure</code>
-                                            </pre> ausführen. Danach in den "src" Ordner wechseln und
+                            <code class="command">./configure</code>
+                        </pre> ausführen. Danach in den "src" Ordner wechseln und
                         <pre>
-                                                <code>make</code>
-                                            </pre> ausführen um die "libstk.a" Bibliothek zu erzeugen. <a href="http://sourceforge.net/projects/pure-data/files/pd-extended/0.43.4/Pd-extended_0.43.4-source.tar.bz2/download">Pd-extended Quellcode</a> herunterladen und entpacken (z.B. nach /home/pi/pdsource/) Download von <a href="http://www.scons.org/">SCons (Software Construction Tool)</a>, der als Installer für weitere Pakete verwendet wird und im entpackten Ordner mittels
+                            <code class="command">make</code>
+                        </pre> ausführen um die "libstk.a" Bibliothek zu erzeugen.
+                        <a href="http://sourceforge.net/projects/pure-data/files/pd-extended/0.43.4/Pd-extended_0.43.4-source.tar.bz2/download" target="_blank" rel="noopener">Pd-extended Quellcode</a> herunterladen und entpacken (z.B. nach /home/pi/pdsource/) Download von <a href="http://www.scons.org/" target="_blank" rel="noopener">SCons (Software Construction Tool)</a>, der als Installer für weitere Pakete verwendet wird und im entpackten Ordner mittels
                         <pre>
-                                                <code> $python setup.py install</code>
-                                            </pre> installieren Download von <a href="http://sndobj.sourceforge.net/">SNDOBJ (Sound Object Library)</a>, die eine objektorientierte Audio-Processing Bibliothek zur Verfügung stellt. und im entpackten Ordner mittels
+                            <code class="command">python setup.py install</code>
+                        </pre> installieren Download von <a href="http://sndobj.sourceforge.net/" target="_blank" rel="noopener">SNDOBJ (Sound Object Library)</a>, die eine objektorientierte Audio-Processing Bibliothek zur Verfügung stellt. und im entpackten Ordner mittels
                         <pre>
-                                                <code> $scons </code>
-                                            </pre> installieren. Anschließend wird die Anwendung flext installiert. Dabei handelt es sich um einen Multiplattform C++ Development Layer, der ein vereinheitlichtes Interface für die APIs von Pd, STK als auch Max zur Verfügung stellt. Der flext Quellcode kann mit Hilfe von Subversion (SVN) bezogen werden.
+                            <code class="command">scons</code>
+                        </pre> installieren. Anschließend wird die Anwendung flext installiert. Dabei handelt es sich um einen Multiplattform C++ Development Layer, der ein vereinheitlichtes Interface für die APIs von Pd, STK als auch Max zur Verfügung stellt. Der flext Quellcode kann mit Hilfe von Subversion (SVN) bezogen werden.
                         <pre>
-                                                <code>sudo apt-get install subversion</code>
-                                            </pre> aktuelles SVN-Archiv von flext herunterladen
+                            <code class="command">sudo apt-get install subversion</code>
+                        </pre> aktuelles SVN-Archiv von flext herunterladen
                         <pre>
-                                                <code>sudo svn co https://svn.grrrr.org/ext/trunk/flext flext</code>
-                                            </pre> Im heruntergeladenen flext Ordner den Kompilierungsvorgang durchführen.
+                            <code class="command">sudo svn co https://svn.grrrr.org/ext/trunk/flext flext</code>
+                        </pre> Im heruntergeladenen flext Ordner den Kompilierungsvorgang durchführen.
                         <pre>
-                                                <code>sudo bash build.sh pd gcc</code>
-                                            </pre> Dies erzeugt eine Konfigurationsdatei im Unterordner /buildsys, die editiert werden muss:
+                            <code class="command">sudo bash build.sh pd gcc</code>
+                        </pre> Dies erzeugt eine Konfigurationsdatei im Unterordner /buildsys, die editiert werden muss:
                         <pre>
-                                                <code>sudo vim ./buildsys/config-lnx-pd-gcc.txt</code>
-                                            </pre> Die nachfolgenden Konfigurationseinstellungen sollten abgeglichen werden:
+                            <code class="command">sudo vim ./buildsys/config-lnx-pd-gcc.txt</code>
+                        </pre> Die nachfolgenden Konfigurationseinstellungen sollten abgeglichen werden:
                         <pre>
-                                                <code>
-                                                01 # where is the PD source package? 02 # (this should point to the main folder, which has a "src" (PD Vanilla) or "include" (PD extended) subfolder) 03 PDPATH=/home/pi/pdsource/pd 04 05 ############################################################### 06 07 # prefix for flext installation 08 # headers are in $(FLEXTPREFIX)/include/flext 09 # libraries are in $(FLEXTPREFIX)/lib 10 # build system is in $(FLEXTPREFIX)/lib/flext 11 12 FLEXTPREFIX=/usr/local 13 14 ############################################################### 15 16 # where should the external be built? 17 OUTPATH=pd-linux 18 19 # where should the external be installed? 20 INSTPATH=/usr/lib/pd-extended/extra 21 22 ############################################################### 23 24 # STK (synthesis tool kit) support 25 # http://ccrma.stanford.edu/software/stk 26 27 # where to find the STK header files (e.g. stk.h) 28 STK_INC=/home/pi/stk/stk-4.5.0/include 29 30 # where to find the STK library (normally libstk.a) 31 # (comment out STK_LIB if you don't use STK) 32 STK_LIB=/home/pi/stk/stk-4.5.0/src/libstk.a 33 34 ############################################################### 35 36 # SndObj support 37 # http://music.nuim.ie//musictec/SndObj 38 39 # where to find the SndObj header files (e.g. sndobj.h) 40 #SNDOBJ_INC=/usr/include/SndObj 41 42 # where to find the SndObj library (normally libsndobj.a) 43 # (comment out STK_LIB if you don't use SndObj) 44 #SNDOBJ_LIB=/usr/local/lib/libsndobj.a 45 46 #SNDOBJ_LIB=/usr/lib/arm-linux-gnueabihf/libsndobj.so 47 48 ############################################################### 49 50 # make flags (e.g. use multiprocessor) 51 #MFLAGS=-j 2 52 53 # user defined compiler flags 54 # (check if they match your system!) 55 #UFLAGS=-msse -mfpmath=sse -ffast-math 56 # don't overload new and delete operators 57 UFLAGS+=-DFLEXT_USE_CMEM 58 59 # user defined optimization flags 60 # (check if they match your system!) 61 OFLAGS=-O3 62 # optimizations for Pentium 4 63 #OFLAGS+=-march=pentium4
-                        
-                                                </code>
-                                            </pre> Danach muss eine erneute Kompilierung durchgeführt werden
-
-                        <pre>
-                                                <code> $sudo bash build.sh pd gcc</code>
-                                            </pre> Dadurch wird eine weitere Konfigurationsdatei "config.txt" im Unterordner ./flext erzeugt. In dieser muss folgender Code auskommentiert werden
+                            <code class="command">01 # where is the PD source package? 02 # (this should point to the main folder, which has a "src" (PD Vanilla) or "include" (PD extended) subfolder) 03 PDPATH=/home/pi/pdsource/pd 04 05 ############################################################### 06 07 # prefix for flext installation 08 # headers are in $(FLEXTPREFIX)/include/flext 09 # libraries are in $(FLEXTPREFIX)/lib 10 # build system is in $(FLEXTPREFIX)/lib/flext 11 12 FLEXTPREFIX=/usr/local 13 14 ############################################################### 15 16 # where should the external be built? 17 OUTPATH=pd-linux 18 19 # where should the external be installed? 20 INSTPATH=/usr/lib/pd-extended/extra 21 22 ############################################################### 23 24 # STK (synthesis tool kit) support 25 # http://ccrma.stanford.edu/software/stk 26 27 # where to find the STK header files (e.g. stk.h) 28 STK_INC=/home/pi/stk/stk-4.5.0/include 29 30 # where to find the STK library (normally libstk.a) 31 # (comment out STK_LIB if you don't use STK) 32 STK_LIB=/home/pi/stk/stk-4.5.0/src/libstk.a 33 34 ############################################################### 35 36 # SndObj support 37 # http://music.nuim.ie//musictec/SndObj 38 39 # where to find the SndObj header files (e.g. sndobj.h) 40 #SNDOBJ_INC=/usr/include/SndObj 41 42 # where to find the SndObj library (normally libsndobj.a) 43 # (comment out STK_LIB if you don't use SndObj) 44 #SNDOBJ_LIB=/usr/local/lib/libsndobj.a 45 46 #SNDOBJ_LIB=/usr/lib/arm-linux-gnueabihf/libsndobj.so 47 48 ############################################################### 49 50 # make flags (e.g. use multiprocessor) 51 #MFLAGS=-j 2 52 53 # user defined compiler flags 54 # (check if they match your system!) 55 #UFLAGS=-msse -mfpmath=sse -ffast-math 56 # don't overload new and delete operators 57 UFLAGS+=-DFLEXT_USE_CMEM 58 59 # user defined optimization flags 60 # (check if they match your system!) 61 OFLAGS=-O3 62 # optimizations for Pentium 4 63 #OFLAGS+=-march=pentium4
+                            </code>
+                        </pre> Danach muss eine erneute Kompilierung durchgeführt werden
 
                         <pre>
-                                                <code>01 # comment out to inhibit SIMD (Altivec/SSE) usage 02 #SIMD=1</code>
-                                            </pre> Anschließend nochmals kompilieren
-                        <pre>
-                                                <code>$sudo bash build.sh pd gcc</code>
-                                            </pre> Dieser Vorgang dauert einige Zeit. Wenn die Kompilierung ohne Fehler durchlaufen wurde, kann die Installation gestartet werden.
-                        <pre>
-                                                <code>$sudo bash build.sh pd gcc install</code>
-                                            </pre> Nun ist flext vollständig installiert und kann verwendet werden. Um ein Synthese Modell aus dem STK in eine Pd Bibliothek zu übersetzen, muss das jeweilige Makefile an die aktuellen Installationspfade angepasst werden (siehe Pfadangaben der vorangegangenen Installationsschritte). Ist dies geschehen kann im Ordner des STK Objektes, dessen Kompilierung durchgeführt werden
-                        <pre>
-                                                <code> $sudo /home/pi/flext/flext/build.sh pd gcc</code>
-                                            </pre> Im Anschluss wird das kompilierte STK Objekt als Pd Bibliothek installiert
-                        <pre>
-                                                <code> $sudo /home/pi/flext/flext/build.sh pd gcc install</code>
-                                            </pre> Nun kann die Bibliothek in Pure Data verwendet werden. Alle während der Projektarbeit kompilierten Libraries sind auf der Daten CD abgelegt.
+                            <code class="command"> $sudo bash build.sh pd gcc</code>
+                        </pre> Dadurch wird eine weitere Konfigurationsdatei "config.txt" im Unterordner ./flext erzeugt. In dieser muss folgender Code auskommentiert werden
 
+                        <pre>
+                            <code class="command">01 # comment out to inhibit SIMD (Altivec/SSE) usage 02 #SIMD=1</code>
+                        </pre> Anschließend nochmals kompilieren
+                        <pre>
+                            <code class="command">sudo bash build.sh pd gcc</code>
+                        </pre> Dieser Vorgang dauert einige Zeit. Wenn die Kompilierung ohne Fehler durchlaufen wurde, kann die Installation gestartet werden.
+                        <pre>
+                            <code class="command">sudo bash build.sh pd gcc install</code>
+                        </pre> Nun ist flext vollständig installiert und kann verwendet werden. Um ein Synthese Modell aus dem STK in eine Pd Bibliothek zu übersetzen, muss das jeweilige Makefile an die aktuellen Installationspfade angepasst werden (siehe Pfadangaben der vorangegangenen Installationsschritte). Ist dies geschehen kann im Ordner des STK Objektes, dessen Kompilierung durchgeführt werden
+                        <pre>
+                            <code class="command">sudo /home/pi/flext/flext/build.sh pd gcc</code>
+                        </pre> Im Anschluss wird das kompilierte STK Objekt als Pd Bibliothek installiert
+                        <pre>
+                            <code class="command">sudo /home/pi/flext/flext/build.sh pd gcc install</code>
+                        </pre> Nun kann die Bibliothek in Pure Data verwendet werden. Alle während der Projektarbeit kompilierten Libraries sind auf der Daten CD abgelegt.
 
                         <hr>
-                        <h1 id="stompbox">Stompbox</h1>
+                        <h1 id="stompbox">
+                            Stompbox
+                        </h1>
 
                         <img src="image017.png" alt="Abbildung 16: Stompbox" style="width:400px;">
                         <br>Abbildung 16: Stompbox <br> <br> Als Stompbox wird ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann. In der eigens für das Projekt gebauten Stompbox (Abbildung 16) ist der Raspberry Pi integriert. Er kann somit jederzeit problemlos entnommen werden. Weiterhin sind alle Schnittstellen des Raspberry Pi von außen zu erreichen. Der Deckel enthält zehn Wechselschalter, welche als Signalschalter dienen (Abbildung 17). Über ein 40 adriges Flachbandkabel sind Raspberry und Stompbox-Deckel mit einer Anschlussplatine (Abbildung 20) verbunden. Die Platine ist so aufgebaut, dass sich der Raspberry um die Spannungsversorgung und Ansteuerung der Platine kümmert. Nach Anschluss aller Flachbandkabel werden somit die Wechselschalter mit Spannung versorgt und die Schalterzustände können über die Pi-GPIOs eingelesen werden. Die Stompbox bietet zusätzlich an der Außenseite eine 5V Spannungsversorgung für den Anschluss des Theremins.
 
-                        <h2>Deckel mit Wechselschalter</h2>
+                        <h2 id="wechselschalter">
+                            Deckel mit Wechselschalter
+                        </h2>
                         <img src="image018.jpg" alt="Abbildung 17: Stompbox Deckel" style="width:400px;">
                         <br>Abbildung 17: Stompbox Deckel<br><br>
                         <img src="image019.png" alt="Abbildung 18: Technische Zeichnung des Stompbox Deckels" style="width:400px;">
@@ -569,14 +666,16 @@
                         <img src="image020.png" alt="Abbildung 19: Anschlussschematik eines Fußschalters" style="width:400px;">
                         <br>Abbildung 19: Anschlussschematik eines Fußschalters<br><br> Der jeweilige Fußschalter ist mittig mit dem zugehörigen GPIO-Pin verbunden. Durch Drücken des Wechselschalters befinden sich entweder GND oder 3,3V am GPIO-Pin. Der Zustand kann zum Beispiel mit Hilfe eines WiringPi-Kommandos direkt über die Konsole ausgelesen werden.
                         <pre>
-                                                <code>gpio –g read WIRINGPI_PINNUMMER</code>
-                                            </pre>
+                            <code class="command">gpio –g read WIRINGPI_PINNUMMER</code>
+                        </pre>
 
-                        <h2>Verdrahtung</h2>
+                        <h2 id="verdrahtung">
+                            Verdrahtung
+                        </h2>
 
                         <b>Tabelle 3: Pinbelegung des Raspberry Anschlusssteckers </b>
 
-                        <table class="tableizer-table">
+                        <table>
                             <thead>
                                 <tr class="tableizer-firstrow">
                                     <th>WiringPi</th>
@@ -808,7 +907,7 @@
 
                         <b>Tabelle 4: Pinbelegung des Stompbox Anschlusssteckers </b>
 
-                        <table class="tableizer-table">
+                        <table>
                             <thead>
                                 <tr class="tableizer-firstrow">
                                     <th>Pin Rasp</th>
@@ -1088,7 +1187,9 @@
                             </tbody>
                         </table>
 
-                        <h2>Anschlussplatine zwischen Stompbox und Raspberry Pi</h2>
+                        <h2 id="anschlussplatine">
+                            Anschlussplatine zwischen Stompbox und Raspberry Pi
+                        </h2>
                         <img src="image021.jpg" alt="Abbildung 20: Anschlussplatine von oben" style="width:400px;">
                         <br>Abbildung 20: Anschlussplatine von oben<br>
                         <img src="image022.jpg" alt="Abbildung 21: Anschlussplatine von unten" style="width:400px;">
@@ -1097,30 +1198,43 @@
                         <br>Abbildung 22: Verdrahtung Anschlussplatine<br>
 
                         <hr>
-                        <h1 id="puredata">Pure Data</h1>
+                        <h1 id="puredata">
+                            Pure Data
+                        </h1>
                         Pure Data, oder kurz Pd ist eine grafische echtzeitfähige Programmiersprache, die auf Audio-, Video- und Bildverarbeitung spezialisiert ist. Pd wurde ab 1996 von dem US-Amerikaner Miller Stuart Puckette als Open Source Projekt entwickelt und wird seither von einer großen Community gepflegt und erweitert.
-                        <br> <a href="http://puredata.info/">Pure Data</a> ist für alle gängigen Betriebssysteme, wie Mac OS, Windows und Linux verfügbar. Auf diesen fungiert es als ein Software Digital-Signal-Processor (DSP). Im Zuge der Verbreitung kostengünstiger Embedded-Systeme (Raspberry, Beagle Bone, usw.) wurde Pure Data speziell für die Verwendung auf diesen Einplatinenrechnern angepasst. Somit ist es möglich einen Raspberry Pi als DSP zu verwenden.
+                        <br> <a href="http://puredata.info/" target="_blank" rel="noopener">Pure Data</a> ist für alle gängigen Betriebssysteme, wie Mac OS, Windows und Linux verfügbar. Auf diesen fungiert es als ein Software Digital-Signal-Processor (DSP). Im Zuge der Verbreitung kostengünstiger Embedded-Systeme (Raspberry, Beagle Bone, usw.) wurde Pure Data speziell für die Verwendung auf diesen Einplatinenrechnern angepasst. Somit ist es möglich einen Raspberry Pi als DSP zu verwenden.
                         <br> Pd-Programme werden als Patch bezeichnet und beschreiben einen Datenfluss. Die Programmierung und Darstellung des Datenflussdiagramms erfolgt graphisch. Dabei entspricht der Programmcode gleichzeitig dem Bedieninterface.
                         <br> Ein Patch besteht aus Objekten, die über Leitungen verbunden werden. Diesbezüglich unterscheidet Pure Data grob zwei Informationstypen. Dies sind zum einen periodische Signale, z.B. Audiostreams (gekennzeichnet durch dicke blaue Linien und eine [~] im Objektnamen), sowie sporadische Nachrichten (Messages), z.B. Daten-/ Zahlnachrichten (gekennzeichnet durch dünne schwarze Linien).
                         <br> Durch Kombination verschiedener Objekte ist es möglich beliebig komplexe Operationen und Verarbeitungsschritte durchzuführen. Der Benutzer hat dabei die Möglichkeit über Schalter, Taster, Schieberegler sowie interaktive Zeichenflächen mit einem Patch zu interagieren.
                         <br>
 
-                        <h2>Ziel des ThereOHM Patch</h2>
+                        <h2 id="ziel">
+                            Ziel des ThereOHM Patch
+                        </h2>
                         Ziel des Pd Programmes ist es, das ThereOHM spielbar und bedienbar zu machen. Hierzu wurde ein modulares Bedienkonzept entwickelt, aufgrund dessen das ThereOHM mit der speziell entworfenen Stompbox steuerbar ist. In diesem Fall sind weder ein Monitor noch andere externe Peripherien notwendig. Andererseits ist es auch möglich das ThereOHM ohne die Stompbox zu spielen. Dabei kann eine Tastatur oder eine Maus zur Bedienung verwendet werden.
                         <br> Je nach verfügbarer Peripherie ist es möglich das ThereOHM ohne Raspberry Pi an einem Standard Computer mit wahlweise Linux-, Windows- oder Mac OS-Betriebssystem zu verwenden. Grundvoraussetzung ist lediglich eine installierte Version von Pure Data Extended.
                         <br> Zum anderen realisiert die Software, das eigentliche Ziel des Projektes, die angestrebte Klangvariation des Theremins. Diese Grundfunktionalität wurde um zusätzliche Funktionen erweitert.
                         <br>
                         <br> Hierzu zählen:
                         <ul>
-                            <li>eine Step-Sequencer-Drum-Machine, um einen Hintergrundrhythmus zu erzeugen</li>
-                            <li>ein Audio-Player um lokal gespeicherte Songs als Hintergrundmusik abzuspielen</li>
-                            <li>eine mp3-Aufnahme Funktion, um die gespielte Musik direkt abzuspeichern</li>
-                            <li>ein Webradio Streamer, um die gespielte Musik live über das Internet mit anderen zu teilen
+                            <li>
+                                eine Step-Sequencer-Drum-Machine, um einen Hintergrundrhythmus zu erzeugen
+                            </li>
+                            <li>
+                                ein Audio-Player um lokal gespeicherte Songs als Hintergrundmusik abzuspielen
+                            </li>
+                            <li>
+                                eine mp3-Aufnahme Funktion, um die gespielte Musik direkt abzuspeichern
+                            </li>
+                            <li>
+                                ein Webradio Streamer, um die gespielte Musik live über das Internet mit anderen zu teilen
                             </li>
                         </ul>
                         <br> Des Weiteren soll die komplette Software in englischer Sprache gehalten werden, um sie der weltweiten Pd-Community, und dadurch auch anderen interessierten Musikern/ Bastlern, zur Verfügung zu stellen.
 
-                        <h2>Realisierung</h2>
+                        <h2 id="realisierung">
+                            Realisierung
+                        </h2>
 
                         In Pure Data ist es möglich Unterprogramme anzulegen. Dies empfiehlt sich um modularen, wiederverwendbaren und übersichtlichen Code zu schreiben.
                         <br> Pd bietet zwei Möglichkeiten Unterprogramme zu erstellen: Die erste sind so genannte Abstraktionen (eng. Abstractions). Es handelt sich hierbei um eigenständige Pd Patches, die als Unterprogramme in einem anderen Patch aufgerufen werden können. Abstractions sind vor allem bei Funktionen sinnvoll, die mehrfach wiederverwendet werden.
@@ -1128,7 +1242,9 @@
                         <br> Eine andere Möglichkeit von Unterprogrammen sind Subpatches. Sie sind keine eigenständigen .pd Files, sondern Teil eines Elternpatches. Diese bestehen aus gruppiertem Code, um die Übersichtlichkeit im Hauptprogramm zu verbessern und zusammengehörige Funktionen sinnvoll zu bündeln. Erkennbar sind sie als Blöcke mit der Bezeichnung "pd NAME".
                         <br> In der ThereOHM Pd Software werden verschiedene selbst programmierte Abstractions verwendet. Die wichtigsten werden anschließend ausführlich beschrieben. Der zugehörige Pd Programmcode kann auf der Daten CD im .pd Format, als auch abgedruckt als PDF Datei betrachtet werden.
 
-                        <h3>Main</h3>
+                        <h3>
+                            Main
+                        </h3>
 
                         Das ThereOHM Hauptprogramm befindet sich in der Datei Main.pd, deren Interface in Abbildung 23 dargestellt ist. Zunächst kann unter Start_Options mit Hilfe von Checkboxen die Konfiguration des Systems angegeben werden. Folgende Auswahlmöglichkeiten stehen zur Verfügung:
 
@@ -1152,7 +1268,9 @@
                         <img src="image024.png" alt="Abbildung 23: Haupt-Interface" style="width:400px;">
                         <br>Abbildung 23: Haupt-Interface<br>
 
-                        <h3>Calibrate Antennas</h3>
+                        <h3>
+                            Calibrate Antennas
+                        </h3>
 
                         Die Kalibrierung der Antennen dient dazu, abhängig von Störgrößen in der Umgebung und den persönlichen Spielvorlieben, die Empfindlichkeitsbereiche der Antennen einzustellen. Es wird jeweils im Feld <i>Current_Value</i> der aktuell eingelesene Frequenzwert und im Feld <i>stored_value</i> der bereits abgespeicherte Defaultwert angezeigt.
                         <br> Zunächst wird die Pitch Antenne kalibriert. Hierfür wird der Schalter <i>Near_Antenna</i> betä- tigt und anschließend die zugehörige Spielhand zur Antenne hinbewegt (ein Anstieg der Werte im Feld <i>Current_Value </i> sowie im Feld
@@ -1163,17 +1281,21 @@
                         <img src="image025.png" alt="Abbildung 24: Interface Antenna Calibration" style="width:400px;">
                         <br>Abbildung 24: Interface Antenna Calibration<br>
 
-                        <h3>Instrumentenauswahl</h3>
+                        <h3>
+                            Instrumentenauswahl
+                        </h3>
 
                         Mit diesem Patch werden die verschiedenen Instrumente ausgewählt. Ein Klick auf die neben den Checkboxen stehenden Instrumentennamen öffnet jeweils ein Unterfenster, in dem spezifische klangverändernde Einstellungen vorgenommen werden können. Alle Einstellungen können separat variiert werden oder über Presetmodi gleichzeitig verändert werden. Dies ist exemplarisch in Abbildung 25 für die Violine dargestellt.
                         <br> Die Auswahl der einzelnen Instrumente kann sowohl über die Stompbox, als auch mit Maus oder Tastatur durchgeführt werden. Bei Auswahl durch die Schalter der Stompbox wird auf die Programmbibliothek WiringPi zurückgegriffen.
-                        <br> Für Pure Data gibt es dazu eine Bibliothek namens <a href="http://nyu-waverlylabs.org/rpi-gpio/">Pd-WiringPi</a>. Um eine direkte Um- schaltung der Instrumente sowohl beim Wechsel von High-auf-Low, als auch von Low- auf-High der GPIOs umzusetzen, wird die nachfolgend beschriebene GPIO-Einlese-rou- tine verwendet. Dadurch kann direkt, ohne Deaktivierung des vorher aktiven Instruments, der Modus umgeschaltet werden.
+                        <br> Für Pure Data gibt es dazu eine Bibliothek namens <a href="http://nyu-waverlylabs.org/rpi-gpio/" target="_blank" rel="noopener">Pd-WiringPi</a>. Um eine direkte Um- schaltung der Instrumente sowohl beim Wechsel von High-auf-Low, als auch von Low- auf-High der GPIOs umzusetzen, wird die nachfolgend beschriebene GPIO-Einlese-rou- tine verwendet. Dadurch kann direkt, ohne Deaktivierung des vorher aktiven Instruments, der Modus umgeschaltet werden.
                         <br> Über ein metro-Object wird in einem fest einstellbaren zeitlichen Abstand der Zustand der GPIOs eingelesen. Dieser wird jeweils mit dem vorherigen Zustand des Schalters, der in einem Puffer zwischengespeichert wird, verexodert und anschließend gewichtet. Ein route-Object übergibt das Ergebnis an die Auswahlleiste. Dadurch wird pro Schalterbetä- tigung ein kurzer Impuls generiert, der zum Umschalten der Instrumente führt. Der exakte aktuelle Zustand (High, bzw. Low) ist somit nicht relevant.
                         <br>
                         <img src="image026.png" alt="Abbildung 25: Interface Instrument Selection Violine" style="width:400px;">
                         <br>Abbildung 25: Interface Instrument Selection Violine<br>
 
-                        <h3>Gitarren Modell – Karplus Strong Algorithmus</h3>
+                        <h3>
+                            Gitarren Modell – Karplus Strong Algorithmus
+                        </h3>
 
                         Um mit Pd künstlich einen Gitarrenklang zu generieren wurde auf den 1983 von Kevin Karplus und Alex Strong veröffentlichten gleichnamigen Algorithmus zurückgegriffen. Die- ser bildet ein Verfahren zur Klangsynthese ab, welches besonders geeignet ist um Sai- teninstrumente zu simulieren.
                         <br> Der Algorithmus basiert auf einem rückgekoppelten <i>FIFO</i>-Pufferspeicher (First In First Out) in dessen Rückführzweig ein Filter eingesetzt ist (siehe Abbildung 26). Zu Beginn werden zufällige Samples in den Speicher geschrieben. Hierfür eignen sich besonders Geräusche mit dichtem Spektrum, z.B. weißes Rauschen. Wurde der Speicher befüllt wird das erste Sample aus dem Speicher ausgegeben. Dadurch wird eine Verzögerung um N- Samples (Pufferspeichergröße) erreicht. Die ausgegebenen Samples werden über einen Filter rückgekoppelt und gefiltert wieder vorne in den Speicher geschrieben. Dies wieder- holt sich mit einer definierbaren Rate die in <i>Beats Per Minute</i> (BPM) angegeben wird. Auf diesem Weg zirkulieren fortlaufend zufällige Geräusche im Kreislauf, die in jedem Durch- lauf einmal vom Filter modifiziert und ausgegeben werden.
@@ -1185,12 +1307,14 @@
                         <img src="image028.png" alt="Abbildung 27: Interface Gitarrenmodell" style="width:400px">
                         <br>Abbildung 27: Interface Gitarrenmodell<br>
 
-                        <h3>STK-Instrumente</h3>
+                        <h3>
+                            STK-Instrumente
+                        </h3>
 
                         Für alle, zusätzlich zur Gitarre implementierten, Instrumente wurde auf das bereits in Kapitel 4.2.4 erwähnte Sound Synthesis Toolkit zurückgegriffen. Genau wie bei der Gitar- renimplementierung kann der Nutzer auch hier klangverändernde Zusatzeinstellungen vornehmen oder bereits vordefinierte Einstellungen laden.
-                        <br> Als besonders interessant zur Klangerzeugung mittels Theremin erwiesen sich nachfolgend aufgelistete STK-Klassen, welche auch alle fest implementiert wurden. Die Ein- zelimplementierungen werden an dieser Stelle nicht tiefgehender erläutert. Stattdessen wird auf die umfangreiche <a href="https://ccrma.stanford.edu/software/stk/classes.html">Dokumentation der C++ STK-Klassen</a> verwiesen.
+                        <br> Als besonders interessant zur Klangerzeugung mittels Theremin erwiesen sich nachfolgend aufgelistete STK-Klassen, welche auch alle fest implementiert wurden. Die Ein- zelimplementierungen werden an dieser Stelle nicht tiefgehender erläutert. Stattdessen wird auf die umfangreiche <a href="https://ccrma.stanford.edu/software/stk/classes.html" target="_blank" rel="noopener">Dokumentation der C++ STK-Klassen</a> verwiesen.
 
-                        <table class="tableizer-table">
+                        <table>
                             <thead>
                                 <tr class="tableizer-firstrow">
                                     <th>STK-Klassenname</th>
@@ -1219,14 +1343,26 @@
                         <b>Tabelle 5: Verwendete STK-Klassen </b>
 
 
-                        <h3>Drum Machine</h3>
+                        <h3>
+                            Drum Machine
+                        </h3>
                         Mit der <i>Step-Sequencer-Drum-Machine</i> kann wahlweise ein Hintergrundrhythmus erzeugt werden und mit dem Klang des Theremin kombiniert werden. Folgende Schlagzeugele- mente können ausgewählt werden:
                         <ul>
-                            <li>BD = Bass Drum (große Trommel)</li>
-                            <li>SD = Snare Drum (kleine Trommel)</li>
-                            <li>HH = Hi-Hat geschlossen (Ständerbecken)</li>
-                            <li>OH = Hi-Hat offen (Ständerbecken)</li>
-                            <li>WB, CB = Cymbal (Becken)</li>
+                            <li>
+                                BD = Bass Drum (große Trommel)
+                            </li>
+                            <li>
+                                SD = Snare Drum (kleine Trommel)
+                            </li>
+                            <li>
+                                HH = Hi-Hat geschlossen (Ständerbecken)
+                            </li>
+                            <li>
+                                OH = Hi-Hat offen (Ständerbecken)
+                            </li>
+                            <li>
+                                WB, CB = Cymbal (Becken)
+                            </li>
                         </ul>
 
                         Das Interface der Drum Machine ist in Abbildung 28 dargestellt. Ein Kreuz in der Matrix steht hierbei für die Ausgabe des jeweiligen Geräusches zu einem festen Zeitpunkt. Die Geschwindigkeit, in welcher die Geräusche der Matrix spaltenweise wiedergegeben werden, kann frei durch das <i>Speed</i> Eingabefeld variiert werden. Zusätzlich sind für jedes Geräusch einzelne Parameter wie Lautstärke oder Geräuschlänge einstellbar.
@@ -1238,7 +1374,9 @@
                         <br> Zur Generierung wird vor allem auf die in Pd nutzbaren Audiorampengeneratoren <i>(vline~)</i>, Oszillatoren
                         <i>(osc~)</i>, sowie Standardfilter wie Bandpässe <i>(bp~)</i> oder Hochpässe <i>(hp~)</i>zu- rückgegriffen. Da die Codeteile sich stark unterscheiden, aber im Umfang recht überschaubar sind, soll an dieser Stelle auf eine weitere Erläuterung aller Einzelelemente verzichtet werden. Stattdessen kann bei Interesse der Programmcode auf der Daten-CD ein- gesehen werden. Dieser steht als PDF-Dokument zur Verfügung. Zur Betrachtung ist somit kein installiertes Pure Data notwendig.
 
-                        <h3>Background Sound Player</h3>
+                        <h3>
+                            Background Sound Player
+                        </h3>
                         Zusätzlich zur Drum Machine ist ein Audioplayer implementiert. Mit diesem ist es möglich lokal gespeicherte Audiodateien als Hintergrundsound abzuspielen. Diese Funktion kann beispielsweise verwendet werden um bekannte Musikstücke mit dem Theremin zu beglei- ten. Eine andere Anwendungsmöglichkeit besteht darin ein und denselben Song iterativ mit unterschiedlichen Theremin Grundeinstellungen zu ergänzen.
                         <br> Eine lokal gespeicherte Audiodatei kann über den Button <i>Open File</i> geöffnet werden. Die Betätigung des
                         <i>Start</i> Knopfes spielt diese Datei mit einstellbarer Lautstärke ab. Der rote
@@ -1247,7 +1385,9 @@
                         <img src="image030.png" alt="Abbildung 29: Interface Background-Sound Player" style="width:400px;">
                         <br>Abbildung 29: Interface Background-Sound Player<br>
 
-                        <h3>mp3 Record</h3>
+                        <h3>
+                            mp3 Record
+                        </h3>
 
                         Mittels der <i>mp3 Record</i> Funktion ist es möglich die gespielte Musik direkt als mp3 lokal abzuspeichern.
                         <br> Zunächst werden über vordefinierte Werte ein Pfad zum Abspeichern der mp3 Aufnah- men, sowie ein Dateiname angelegt. Diese können über die Eingabefelder vom Benutzer jederzeit editiert werden. Betätigt der Anwender den <i>Start Recording</i> Button, wird ein mp3 File unter dem angegebenen Pfad erzeugt, anschließend geöffnet und von der Funktion
@@ -1257,20 +1397,24 @@
                         <img src="image031.png" alt="Abbildung 30: Interface mp3 Recorder" style="width:400px;">
                         <br>Abbildung 30: Interface mp3 Recorder<br>
 
-                        <h3>mp3 Webradio Stream</h3>
+                        <h3>
+                            mp3 Webradio Stream
+                        </h3>
 
                         Um die auf dem ThereOHM gespielte Musik mit anderen Menschen zu teilen, gibt es zudem die Möglichkeit live, in Form eines Webradios zu streamen. Der Anbieter myradiostream.com bietet die Möglichkeit kostenlos einen Shoutcast Server
                         <TODO>PopUp Info: SHOUTcast ist ein Freeware Streaming Server der Firma Nullsoft für Audio/TV-Streams </TODO> zu betreiben und privat Webradio auszustrahlen
-                        <a href="http://myradiostream.com/thereohm"></a>. Im Pd-Patch werden dafür zunächst alle notwendigen Default Daten eingestellt. Dazu gehören die Adresse und der Port des Webradioservers. Außerdem muss ein Passwort und der Servertyp ausgewählt werden (im Fall von myradiostream ist dies Shoutcast). Über den Button Start Streaming verbindet sich Pure Data mit dem Streaming Server und überträgt anschließend den Stream im mp3-Format. Ob aktuell ein Stream gesendet wird ist durch ein Aktivitätskreuz im Feld Status dargestellt. Der Streaming Vorgang kann über den Button Stop Streaming anschließend wieder beendet werden.
+                        <a href="http://myradiostream.com/thereohm" target="_blank" rel="noopener">Link?!</a>. Im Pd-Patch werden dafür zunächst alle notwendigen Default Daten eingestellt. Dazu gehören die Adresse und der Port des Webradioservers. Außerdem muss ein Passwort und der Servertyp ausgewählt werden (im Fall von myradiostream ist dies Shoutcast). Über den Button Start Streaming verbindet sich Pure Data mit dem Streaming Server und überträgt anschließend den Stream im mp3-Format. Ob aktuell ein Stream gesendet wird ist durch ein Aktivitätskreuz im Feld Status dargestellt. Der Streaming Vorgang kann über den Button Stop Streaming anschließend wieder beendet werden.
                         <br>
                         <img src="image032.png" alt="Abbildung 31: Interface mp3 Streamer" style="width:400px;">
                         <br>Abbildung 31: Interface mp3 Streamer<br>
 
                         <hr>
-                        <h1 id="weitererausblick">Weiterer Ausblick</h1>
+                        <h1 id="weitererausblick">
+                            Weiterer Ausblick
+                        </h1>
 
                         Zum Abgabezeitpunkt lief die Implementierung auf dem Raspberry nicht flüssig. Als Grund hierfür ist zunächst die zu geringe Prozessorleistung des Raspberry zu nennen. Dieses Problem kann durch Übertaktung und zusätzliche Kühlkörper eingedämmt werden. Durchgängig flüssige Nutzung aller implementierten Funktionen, z.B. des Webradiostreams ist allerdings trotzdem nicht möglich. Als rechenleistungsstärkere Alternativen zur Raspberry Plattform bieten sich der
-                        <a href="http://www.bananapi.org">Banana Pi</a> sowie der <a href="http://beagleboard.org/bone">Beagle Bone</a> an.
+                        <a href="http://www.bananapi.org" target="_blank" rel="noopener">Banana Pi</a> sowie der <a href="http://beagleboard.org/bone" target="_blank" rel="noopener">Beagle Bone</a> an.
                         <br> Ferner stellte sich die verwendete USB-Soundkarte, die als Stereo Soundkarte vertrieben wird, als Problem heraus. Diese USB-Geräte besitzen zwar einen Stereo Ausgang, allerdings nur einen Mono Eingang. Für das ThereOHM werden aber zwangsläufig zwei Stereo Eingänge benötigt, um die Werte der beiden Antennen zu erfassen. Als Alternative zu der Miniatur-USB-Soundkarten könnte eine größere externe Soundkarte verwendet werden, z.B. die „C-Media CM106 USB 2.0 mit 7.1 Lautsprecher SPDIF Ausgang“. Diese ist jedoch nur in Amerika verfügbar und konnte aufgrund der langen Lieferzeiten nicht mehr bestellt werden. Außerdem ist es möglich ein externes USB-Mini-Mischpult zu verwenden, z.B. „BEHRINGER XENYX 302USB“. In diesem Zusammenhang ist zu beachten, dass auch viele Laptops lediglich einen Mono Audioeingang besitzen!
                         <br> Zudem ergeben sich neben der Auswahl einer anderen Embedded Plattform und Verwendung einer externen Soundkarte mit Stereo Eingang folgende weitere Optimierungsansätze:
                         <ul>
@@ -1283,7 +1427,9 @@
                         </ul>
 
                         <hr>
-                        <h1 id="conclusion">Conclusion</h1>
+                        <h1 id="conclusion">
+                            Conclusion
+                        </h1>
 
                         Abschließend lässt sich festhalten, dass die gesteckten Projektziele nahezu vollständig umgesetzt werden konnten.
                         <br> Ein klassisches Theremin wurde erfolgreich aufgebaut und in Betrieb genommen. Die angestrebte Klangvariation ist mittels Pure Data vollständig realisiert.
@@ -1293,60 +1439,80 @@
                         <br> Garant dafür war vor allem die ausgewogene Mischung zwischen Hardware und Software. So wurden zum einen Platinen entworfen, bestückt und in Betrieb genommen, sowie zwei Gehäuse gefertigt. Zum anderen wurde viel Zeit mit der Programmierung von Pure Data, sowie der Linux Administrierung und Programmierung verbracht. Die kompetente Betreuung sowie Unterstützung sorgte für einen erfolgreichen Verlauf des Projektes.
 
 
-                        <h2>Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
+                        <h2 id="anhanga">
+                            Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
                         </h2>
 
                         If you want to execute the ThereOHM Pd-Patch, please assure that the following conditions concur to your system configuration. Otherwise the Patch will not work properly.
 
-                        <h2>x86- vs. x64- vs. ARM-Processor Architecture</h2> The Patch uses STK-Libraries, which are currently not native supported for all operating systems. If you’re using an x86 (32Bit) Windows or Linux architecture or a Raspberry Pi you’re fine because all libraries are attached precompiled. If you’re using an x64 (64Bit) system architecture you have compile the libraries on your own. Be aware that this could take some time ;-)
+                        <h2 id="x86">
+                            x86- vs. x64- vs. ARM-Processor Architecture
+                        </h2> The Patch uses STK-Libraries, which are currently not native supported for all operating systems. If you’re using an x86 (32Bit) Windows or Linux architecture or a Raspberry Pi you’re fine because all libraries are attached precompiled. If you’re using an x64 (64Bit) system architecture you have compile the libraries on your own. Be aware that this could take some time ;-)
 
-                        <h2>Windows Operating System</h2>
+                        <h2 id="windows">
+                            Windows Operating System
+                        </h2>
                         If you’re using a Windows operating system please download Pd-Extended following the instructions on the webpage:
-                        <a href="http://puredata.info/downloads/pd-extended">http://puredata.info/downloads/pd-extended</a>
+                        <a href="http://puredata.info/downloads/pd-extended" target="_blank" rel="noopener">http://puredata.info/downloads/pd-extended</a>
 
-                        <h2>Linux Operating System</h2>
+                        <h2 id="linux">
+                            GNU/Linux Operating System
+                        </h2>
                         If you’re using a Linux operating system, please install the following packages to assure that Pure Data works fine.
                         <ul>
-                            <li>Installation of Pd-Extended via thrid party repository:</li>
+                            <li>
+                                Installation of Pd-Extended via thrid party repository:
+                            </li>
                         </ul>
 
                         <pre>
-                                                <code>$sudo add-apt-repository "deb http://apt.puredata.info/re- leases `lsb_release -c | awk '{print $2}'` main" $sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 9f0fe587374bbe81 $sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key D63D3D09C39F5EEB $sudo apt-get update $sudo apt-get install pd-extended</code>
-                                            </pre>
+                            <code class="command">sudo add-apt-repository "deb http://apt.puredata.info/re- leases `lsb_release -c | awk '{print $2}'` main"</code>
+                            <code class="command">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 9f0fe587374bbe81</code>
+                            <code class="command">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key D63D3D09C39F5EEB</code>
+                            <code class="command">sudo apt-get update</code>
+                            <code class="command">sudo apt-get install pd-extended</code>
+                        </pre>
 
                         <ul>
-                            <li>Installation of further packages:</li>
+                            <li>
+                                Installation of further packages:
+                            </li>
                         </ul>
                         <pre>
-                                                <code>$sudo apt-get install g++ $sudo apt-get install csound</code>
-                                            </pre> Otherwise STK will throw the error "libstk.so.0: cannot open shared object file: No such file or directory"
+                            <code class="command">sudo apt-get install g++</code>
+                            <code class="command">sudo apt-get install csound</code>
+                        </pre> Otherwise STK will throw the error "libstk.so.0: cannot open shared object file: No such file or directory"
 
                         <pre>
-                                                <code>$sudo apt-get install libasound2-dev</code>
-                                            </pre> Otherwise STK will throw an error that it can't configure Some of the STK-Libraries need special raw audio files. These files are automati- cally installed if you are using a new operating system and a new Pd-extended version. If you’re not running the latest versions, please check preventively if there are rawfiles located in the folder /usr/share/stk/rawwaves If you don't have a /usr/share/stk directory, you'll need to create it:
+                            <code class="command">sudo apt-get install libasound2-dev</code>
+                        </pre> Otherwise STK will throw an error that it can't configure Some of the STK-Libraries need special raw audio files. These files are automati- cally installed if you are using a new operating system and a new Pd-extended version. If you’re not running the latest versions, please check preventively if there are rawfiles located in the folder /usr/share/stk/rawwaves If you don't have a /usr/share/stk directory, you'll need to create it:
 
                         <pre>
-                                                <code>$sudo mkdir /usr/share/stk</code>
-                                            </pre> Download the binary raws corresponding to your operating system on the CCRMA- Website, or find them attached to the ThereOHM files for x86 architecture:
-                        <a href="https://ccrma.stanford.edu/wiki/Stk2pd">https://ccrma.stanford.edu/wiki/Stk2pd</a>
-                        <a href="https://ccrma.stanford.edu/wiki/Stk2pd444">https://ccrma.stanford.edu/wiki/Stk2pd444</a> After downloading and uncompressing navigate to the directory and copy the raw- waves to /usr/share/stk by typing from the terminal:
+                            <code class="command">sudo mkdir /usr/share/stk</code>
+                        </pre> Download the binary raws corresponding to your operating system on the CCRMA- Website, or find them attached to the ThereOHM files for x86 architecture:
+                        <a href="https://ccrma.stanford.edu/wiki/Stk2pd" target="_blank" rel="noopener">https://ccrma.stanford.edu/wiki/Stk2pd</a>
+                        <a href="https://ccrma.stanford.edu/wiki/Stk2pd444" target="_blank" rel="noopener">https://ccrma.stanford.edu/wiki/Stk2pd444</a>. After downloading and uncompressing navigate to the directory and copy the raw- waves to /usr/share/stk by typing from the terminal:
                         <pre>
-                                                <code>$sudo cp -r rawwaves /usr/share/stk/rawwaves</code>
-                                            </pre> Now your system is ready to go! To launch the Patch you only need to give the _linux files in the folder read and write access privileges. To save typing effort give all files full access
+                            <code class="command">sudo cp -r rawwaves /usr/share/stk/rawwaves</code>
+                        </pre> Now your system is ready to go! To launch the Patch you only need to give the _linux files in the folder read and write access privileges. To save typing effort give all files full access
                         <pre>
-                                                <code>$sudo chmod -R 777 ./MAIN</code>
-                                            </pre>
+                            <code class="command">sudo chmod -R 777 ./MAIN</code>
+                        </pre>
 
-                        <h2>Raspberry Platform</h2>
+                        <h2 id="raspberry">
+                            Raspberry Platform
+                        </h2>
 
                         If you’re using a Raspberry Pi please follow the steps mentioned under 3. In addition to this you should start Pd always in sudo mode. Otherwise Pure Data would not work properly. Additionally you can use the prepared Bash-Script to startup. This script is located in the ThereOHM Patch folder. Its name is “Startup_Raspberry.sh”
 
-                        <h2>Anhang B - Verwendete Software</h2>
+                        <h2 id="anhangb">
+                            Anhang B - Verwendete Software
+                        </h2>
 
 
-                        <table class="tableizer-table">
+                        <table>
                             <thead>
-                                <tr class="tableizer-firstrow">
+                                <tr>
                                     <th>Software</th>
                                     <th>&nbsp;</th>
                                     <th>Anwendungsgebiet</th>
@@ -1452,15 +1618,17 @@
                         </table>
 
                         <hr>
-                        <h2>Anhang C - Kostenaufschlüsselung</h2>
+                        <h2 id="anhangc">
+                            Anhang C - Kostenaufschlüsselung
+                        </h2>
                         <p>
                             Während des Projektes fielen diverse Kosten für Material & Bauteile an. Eine genaue Aufschlüsselung der Einzelkosten, die zu einem Gesamtpreis des Projektes in Höhe von
                             <u><b>195 €</b></u> führten sind in nachfolgender Tabelle zusammengestellt. Es ist zu beachten, dass die Kosten zweier prototypisch erstellter Platinen mitverrechnet wurden. Einige Bausteine waren zudem nicht als Einzelteile, sondern nur in größeren Stückzahlen erhältlich. Der Nachbau des endgültigen Theremin würde somit deutlich günstiger ausfallen.
                         </p>
-                        <table class="tableizer-table">
+                        <table>
                             <b>Tabelle 1: Kostenaufschlüsselungen</b>
                             <thead>
-                                <tr class="tableizer-firstrow">
+                                <tr>
                                     <th> </th>
                                     <th>Bauteil</th>
                                     <th>Gesamtpreis</th>
@@ -1796,11 +1964,13 @@
 
 
                         <hr>
-                        <h2>Anhang D - Zeit- und Aufgabenplan</h2>
+                        <h2 id="anhangd">
+                            Anhang D - Zeit- und Aufgabenplan
+                        </h2>
 
-                        <table class="tableizer-table">
+                        <table>
                             <thead>
-                                <tr class="tableizer-firstrow">
+                                <tr>
                                     <th>Projektbereich</th>
                                     <th>Aufgabe</th>
                                     <th>Startdatum</th>
@@ -2092,6 +2262,7 @@
                 </div>
 
                 <div>
+                    <hr>
                     <h2>
                         [footer]
                     </h2>
