@@ -56,6 +56,16 @@
 	width: 100%;
 }
 
+#pre ol {
+	counter-reset: overview;
+	list-style-type: none;
+}
+
+#pre li::before {
+	counter-increment: overview;
+	content: counters(overview, ".") " ";
+}
+
 @font-face {
 	font-family: 'hack_font';
 	font-style: normal;
@@ -290,7 +300,7 @@ hr {
 }
 
 #body_article li:nth-child(even) {
-	color: #ff6d00;
+	color: #999999;
 }
 
 .cursor {
@@ -453,4 +463,37 @@ hr {
 	z-index: 10;
 	bottom: 0px;
 	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 20px 0px;
+	border: 5px solid #000000;
+}
+
+td {
+	border: 3px solid #000000;
+	padding: 8px;
+}
+
+tr:nth-child(odd) {
+	background-color: #555555;
+}
+
+tr:nth-child(even) {
+	background-color: #333333;
+}
+
+tr:hover {
+	background-color: #111111;
+}
+
+th {
+	background-color: #000000;
+	padding: 8px;
+}
+
+tfoot {
+	font-weight: bold;
 }
