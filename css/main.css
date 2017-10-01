@@ -265,6 +265,7 @@ h2 {
 	margin-left: 0px;
 	text-align: center;
 	counter-reset: headline3;
+	text-decoration: underline;
 }
 
 #body_article h2::before {
@@ -477,6 +478,10 @@ td {
 	padding: 8px;
 }
 
+tr {
+	transition: background-color 1s;
+}
+
 tr:nth-child(odd) {
 	background-color: #555555;
 }
@@ -486,7 +491,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-	background-color: #111111;
+	background-color: #0a0a0a;
 }
 
 th {
@@ -496,4 +501,22 @@ th {
 
 tfoot {
 	font-weight: bold;
+}
+
+.image_box {
+	background-color: #555555;
+	padding: 5px;
+	max-width: 450px;
+	margin: 20px auto;
+	box-shadow: #111111 0px 5px 20px 4px;
+	-webkit-box-shadow: #111111 0px 5px 20px 4px;
+}
+
+.image_box img {
+	width: 100%;
+}
+
+.image_text {
+	text-align: center;
+	padding: 10px 20px;
 }

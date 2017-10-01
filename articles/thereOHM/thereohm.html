@@ -478,7 +478,7 @@
                         </li>
                     </ul>
                     <p>
-                        <br> Es wurde als Vorbereitung ein Projektplan erstellt, der während des gesamten Projektes gepflegt wurde, um den aktuellen Projektstatus widerzuspiegeln. Dieser Projektplan, sowie eine genaue Kostenaufstellung inkl. Stückliste aller benötigten Bauteile ist im Anhang zu finden.
+                        Es wurde als Vorbereitung ein Projektplan erstellt, der während des gesamten Projektes gepflegt wurde, um den aktuellen Projektstatus widerzuspiegeln. Dieser Projektplan, sowie eine genaue Kostenaufstellung inkl. Stückliste aller benötigten Bauteile ist im Anhang zu finden.
                     </p>
                     <TODO> als Hover Infotext bei Stompbox anzeigen (Als Stompbox wird i.d.R. ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann) </TODO>
 
@@ -487,19 +487,27 @@
                         Allgemeines 1
                     </h2>
 
-                    <p>Bei einem Theremin, das auch als Ätherophon, Ätherwellengeige oder Thereminovox bekannt ist, handelt es sich um ein elektronisches Musikinstrument. Es ist eines der wenigen Instrumente, die der Musiker spielt ohne es zu berühren. Erfunden wurde das Theremin 1920 von dem russischen Physiker Lev Sergeevič Termen.
+                    <p>
+                        Bei einem Theremin, das auch als Ätherophon, Ätherwellengeige oder Thereminovox bekannt ist, handelt es sich um ein elektronisches Musikinstrument. Es ist eines der wenigen Instrumente, die der Musiker spielt ohne es zu berühren. Erfunden wurde das Theremin 1920 von dem russischen Physiker Lev Sergeevič Termen.
                         <br> Ab 1927 ging Termen mit dem Theremin auf Welttournee und begeisterte mit seiner „Geistermusik“ das Publikum. Im Zuge dessen ließ sich Termen 1928 in New York nieder, patentierte das Instrument und nannte sich fortan Leon Theremin. Abbildung 1 zeigt Termen beim Musizieren mit einem seiner Instrumente.
 
-                        <br>
-                        <img src="image000.jpg" alt="Abbildung 1: Lev Termen mit seinem Musikinstrument" style="width:400px;">
-                        <br> Abbildung 1: Lev Termen mit seinem Musikinstrument (Quelle: <a href="www.theremin.info" target="_blank" rel="noopener">www.Theremin.info</a>)
-                        <br>
-                        <br> Das Theremin wird durch den Abstand beider Hände zu zwei Antennen berührungsfrei gespielt, wobei eine Hand die Tonhöhe und die andere die Lautstärke verändert. Bei einem Standard-Theremin hat der Spieler keine optische oder haptische Rückmel- dung über seine Spielweise und muss allein auf sein Gehör vertrauen. Der Einflussbe- reich auf die Tonhöhe beträgt in der Regel etwa 40 bis 50 Zentimeter um die Antenne herum. Das bedeutet, dass auch der Arm und der Körper des Spielers den Ton beeinflussen können.
+                        <div class="image_box">
+                            <img src="image000.jpg" alt="Abbildung 1: Lev Termen mit seinem Musikinstrument">
+                            <div class="image_text">
+                                Abbildung 1: Lev Termen mit seinem Musikinstrument (Quelle: <a href="http://www.theremin.info" target="_blank" rel="noopener">
+                                        www.Theremin.info
+                                    </a>)
+                            </div>
+                        </div>
+
+                        Das Theremin wird durch den Abstand beider Hände zu zwei Antennen berührungsfrei gespielt, wobei eine Hand die Tonhöhe und die andere die Lautstärke verändert. Bei einem Standard-Theremin hat der Spieler keine optische oder haptische Rückmel- dung über seine Spielweise und muss allein auf sein Gehör vertrauen. Der Einflussbe- reich auf die Tonhöhe beträgt in der Regel etwa 40 bis 50 Zentimeter um die Antenne herum. Das bedeutet, dass auch der Arm und der Körper des Spielers den Ton beeinflussen können.
                         <br> Ein Vorteil des Theremin ist die, theoretisch unendlich feine, Variation der erzeugten Töne, ohne dass z.B. ein Saitenwechsel wie bei einer Geige notwendig ist. Des Weiteren kann ein Ton beliebig lange gehalten werden.
                         <br> Der Klang des Theremin ist am ehesten mit dem einer Violine vergleichbar. Das Klangbild und die Klangvariationen sind allerdings ganz eigentümlich.
 
                         <TODO> Youtube Player einbinden </TODO>
-                        <a href="https://www.youtube.com/watch?v=w5qf9O6c20o" target="_blank" rel="noopener">Hörprobe: Leon Theremin mit einem seiner Instrumente</a>
+                        <a href="https://www.youtube.com/watch?v=w5qf9O6c20o" target="_blank" rel="noopener">
+                            Hörprobe: Leon Theremin mit einem seiner Instrumente
+                        </a>
                         <br> Aus diesem Grund entstand die Idee diesen besonderen Klang auf elektronischem Weg derart zu verändern, dass der Eindruck eines komplett anderen Instruments (z.B. einer Gitarre) entsteht.
                     </p>
 
@@ -512,24 +520,41 @@
                     <br> Hardwareseitig wird hierfür eine Stompbox verwendet. Auf dieser sind mehrere Fußschal- ter angebracht, deren Schaltzustand über die General-Purpose-Input-Outputs (GPIOs) des Raspberry eingelesen werden kann. Softwareseitig geschieht dies über die Maus oder Tastatur.
                     <br> Nach erfolgreicher Verarbeitung durch Pure Data wird das fertige Audiosignal an den DAC der USB-Soundkarte übergeben und abschließend über extern angeschlossene Laut- sprecher ausgegeben.
 
-                    <br>
-                    <img src="image003.jpg" alt="Abbildung 2: ThereOHM Blockschaltbild" style="width:400px;">
-                    <br> Abbildung 2: ThereOHM Blockschaltbild <br><br> Alternativ lässt sich der Raspberry durch einen Standard-PC ersetzen. Hierzu muss lediglich Pure Data auf dem Computer installiert werden. Die frei erhältliche Software ist sowohl für Windows, MAC OS und Linux verfügbar. Eine Schnellstartanleitung für verschiedene Plattformen befindet sich in Anhang A
-                    <TODO> Link zum Anhang </TODO>.
+                    <div class="image_box">
+                        <img src="image003.jpg" alt="Abbildung 2: ThereOHM Blockschaltbild">
+                        <div class="image_text">
+                            Abbildung 2: ThereOHM Blockschaltbild
+                        </div>
+                    </div>
+                    Alternativ lässt sich der Raspberry durch einen Standard-PC ersetzen. Hierzu muss lediglich Pure Data auf dem Computer installiert werden. Die frei erhältliche Software ist sowohl für Windows, MAC OS und Linux verfügbar. Eine Schnellstartanleitung für verschiedene Plattformen befindet sich in <a target="_self" href="#anhanga">
+                        Anhang A
+                    </a>.
 
                     <hr>
 
                     <h1 id="theremin">Theremin</h1>
                     <h2 id="layout">Layout / Schaltplan Platine</h2>
 
-                    <img src="image004.png" alt="Abbildung 3: Bestückungsplan Theremin" style="width:400px;">
-                    <br> Abbildung 3: Bestückungsplan Theremin<br>
+                    <div class="image_box">
+                        <img src="image004.png" alt="Abbildung 3: Bestückungsplan Theremin">
+                        <div class="image_text">
+                            Abbildung 3: Bestückungsplan Theremin
+                        </div>
+                    </div>
 
-                    <img src="image005.png" alt="Abbildung 4: Layout Theremin" style="width:400px;">
-                    <br> Abbildung 4: Layout Theremin<br>
+                    <div class="image_box">
+                        <img src="image005.png" alt="Abbildung 4: Layout Theremin">
+                        <div class="image_text">
+                            Abbildung 4: Layout Theremin
+                        </div>
+                    </div>
 
-                    <img src="image006.png" alt="Abbildung 5: Schaltplan Theremin" style="width:400px;">
-                    <br> Abbildung 5: Schaltplan Theremin<br>
+                    <div class="image_box">
+                        <img src="image006.png" alt="Abbildung 5: Schaltplan Theremin">
+                        <div class="image_text">
+                            Abbildung 5: Schaltplan Theremin
+                        </div>
+                    </div>
 
                     <h2 id="funktionsweise">
                         Funktionsweise
@@ -537,10 +562,12 @@
 
                     Die Schaltung des Theremin teilt sich in vier Funktionsblöcke auf. Den ersten Block bildet ein variabler Oszillator, zu dem je eine Antenne gehört. Er wird als Regler für die Laut- stärke bzw. Tonhöhe verwendet und ist für beide Aufgaben separat vorhanden. Im zweiten Funktionsblock wird ein konstantes Referenzsignal erzeugt, das mit Hilfe eines Fre- quenzmixers (dritter Funktionsblock) gemischt wird. Es existieren wiederum zwei Schaltungseinheiten, eine für das Signal der Lautstärke und eine für die Tonhöhe. Anschlie- ßend werden die Signale im vierten Funktionsblock gefiltert und in einer Endstufe verstärkt. Die Funktionsblöcke sind nachfolgend genauer erläutert.
 
-                    <br>
-                    <img src="image007.png" alt="Abbildung 6: Funktionsblockschaltbild" style="width:400px;">
-                    <br>Abbildung 6: Funktionsblockschaltbild<br>
-
+                    <div class="image_box">
+                        <img src="image007.png" alt="Abbildung 6: Funktionsblockschaltbild">
+                        <div class="image_text">
+                            Abbildung 6: Funktionsblockschaltbild
+                        </div>
+                    </div>
 
                     <h3 id="funktionsblockeins">
                         Funktionsblock eins (variabler Oszillator)
@@ -549,18 +576,25 @@
                     Der doppelt vorhandene Funktionsblock bildet jeweils einen variablen Oszillator für die Regelung der Lautstärke, sowie der Tonhöhe. Die Antenne für die Lautstärkenregelung (Abbildung 7, Pad VOLUME) fungiert im ersten Schwingkreis als Kondensatorplatte. Die Hand des ThereOHM-Spielers bildet die zweite Platte des Kondensators. Durch die Variation des Abstandes der Hand variiert ebenfalls der kapazitive Anteil des Schwingkreises. Der Oszillator für die Tonhöhe ist identisch aufgebaut.
                     <br> Die Schwingkreise haben jeweils eine Frequenz von ca. 450kHz bis 500kHz, abhängig von der Position der Hand. Die variablen Kondensatoren CT1 und CT2 sind für die Kalibrierung der beiden Schwingkreise zuständig. Der Abgleich muss jeweils so durchgeführt werden, dass bei maximalem Abstand der Hand zur Antenne die Frequenz des variablen Oszillators mit der Frequenz des Referenzoszillators (Funktionsblock 2) übereinstimmt.
                     <br> Wird das ThereOHM ohne Raspberry Pi bzw. PC gespielt und ein Lautsprecher direkt mit den Audioausgängen der Platine verbunden, kann die Lautstärke nicht variiert werden. Dies rührt daher, dass ein Schwingkreis jeweils die Tonhöhe eines Stereo-Audio-Kanals bestimmt und die Lautstärkeregelung ausschließlich von der Pure Data Software umge- setzt wird.
-                    <br>
-                    <img src="image008.png" alt="Abbildung 7: Variabler Oszillator" style="width:400px;">
-                    <br>Abbildung 7: Variabler Oszillator <br>
+
+                    <div class="image_box">
+                        <img src="image008.png" alt="Abbildung 7: Variabler Oszillator">
+                        <div class="image_text">
+                            Abbildung 7: Variabler Oszillator
+                        </div>
+                    </div>
 
                     <h3 id="funktionsblockzwei">
                         Funktionsblock zwei (konstanter Oszillator)
                     </h3>
                     In diesem Funktionsblock wird mit Hilfe eines Zählers (IC-4060D) die 8 MHz-Frequenz des Quarzes auf ein Sechzehntel heruntergeteilt. Diese Frequenz von 500 kHz bildet die konstante Referenzfrequenz, auf die die variablen Oszillatoren kalibriert werden.
-                    <br>
-                    <img src="image009.png" alt="Abbildung 8: Konstanter Oszillator" style="width:400px;">
-                    <br>Abbildung 7: Variabler Oszillator <br>
 
+                    <div class="image_box">
+                        <img src="image009.png" alt="Abbildung 8: Konstanter Oszillator">
+                        <div class="image_text">
+                            Abbildung 8: Konstanter Oszillator
+                        </div>
+                    </div>
 
                     <h3 id="funktionsblockdrei">
                         Funktionsblock drei und vier (Mixer, Filter und Verstärkerendstufe)
@@ -569,12 +603,19 @@
                     Der Frequenzmixer des Theremin besteht aus einem XNOR-Gatter, an dessen Eingängen die Frequenzen des variablen und des konstanten Oszillators anliegen. Daraus ergibt sich am Ausgang ein Frequenzgemisch aus Summe und Differenz der beiden Signale. Im nachfolgenden Teil der Schaltung werden die nicht hörbaren Anteile des Signals herausgefiltert und anschließend von der Endstufe verstärkt.
                     <br> Abbildung 9 zeigt die Eingänge des Frequenz-Mixers während sich die Hand des ThereOHM Spielers im Bereich der Antenne befindet. In diesem Fall unterscheiden sich die beiden Oszillatorfrequenzen. Der blaue Signalverlauf zeigt hierbei die konstante Oszillatorfrequenz von 500 kHz und der rote die des variablen Oszillators (bei dieser Handposition 450 kHz).
 
-                    <br>
-                    <img src="image010.png" alt="Abbildung 9: Oszilloskop-Aufnahme der Mixer Eingänge" style="width:400px;">
-                    <br>Abbildung 9: Oszilloskop-Aufnahme der Mixer Eingänge
-                    <br>
-                    <img src="image011.png" alt="Abbildung 10: Mixer, Filter und Verstärker" style="width:400px;">
-                    <br>Abbildung 10: Mixer, Filter und Verstärker<br>
+                    <div class="image_box">
+                        <img src="image010.png" alt="Abbildung 9: Oszilloskop-Aufnahme der Mixer Eingänge">
+                        <div class="image_text">
+                            Abbildung 9: Oszilloskop-Aufnahme der Mixer Eingänge
+                        </div>
+                    </div>
+
+                    <div class="image_box">
+                        <img src="image011.png" alt="Abbildung 10: Mixer, Filter und Verstärker">
+                        <div class="image_text">
+                            Abbildung 10: Mixer, Filter und Verstärker
+                        </div>
+                    </div>
 
                     <hr>
                     <h1 id="raspberry">
@@ -589,15 +630,33 @@
                         Hardware
                     </h2>
 
-                    <img src="image012.jpg" alt="Abbildung 11: Aufbau Raspberry Pi B+" style="width:400px;">
-                    <br>Abbildung 11: Aufbau Raspberry Pi B+<br><br> Der verwendete Raspberry Pi B+ besitzt eine 40 Pin große Stiftleiste, welche mit 24 GPIOs, sowie diversen Masse- und Spannungspegeln belegt ist. Zusätzlich können über die Stiftleiste gängige Schnittstellen wie I2C, SPI und UART angesprochen werden. Mittels der GPIOs ist es möglich externe Signale einzulesen bzw. auszugeben. Um auf die GPIOs zuzugreifen kann beispielsweise die Programmbibliothek WiringPi verwendet werden. Diese bietet zahlreiche C-Bibliotheken, um die GPIOs gezielt mittels Bash- oder Software-Skripten anzusteuern bzw. auszulesen.
-                    <br>
-                    <img src="image013.jpg" alt="Abbildung 12: Belegung 40 Pin Stiftleiste" style="width:400px;">
-                    <br>Abbildung 12: Belegung 40 Pin Stiftleiste<br><br> Versorgt wird der Raspberry Pi über einen Micro USB-Anschluss und ein zughöriges Netzteil (Input: 100-240V, 0.3A, 50/60Hz; Output: 5V, max. 2A). Für die bildgebende Ausgabe kann entweder ein LCD-Display über die DSI-Schnitt- stelle oder ein herkömmlicher Computermonitor über die HDMI-Schnittstelle angeschlos- sen werden.
+                    <div class="image_box">
+                        <img src="image012.jpg" alt="Abbildung 11: Aufbau Raspberry Pi B+">
+                        <div class="image_text">
+                            Abbildung 11: Aufbau Raspberry Pi B+
+                        </div>
+                    </div>
+
+                    Der verwendete Raspberry Pi B+ besitzt eine 40 Pin große Stiftleiste, welche mit 24 GPIOs, sowie diversen Masse- und Spannungspegeln belegt ist. Zusätzlich können über die Stiftleiste gängige Schnittstellen wie I2C, SPI und UART angesprochen werden. Mittels der GPIOs ist es möglich externe Signale einzulesen bzw. auszugeben. Um auf die GPIOs zuzugreifen kann beispielsweise die Programmbibliothek WiringPi verwendet werden. Diese bietet zahlreiche C-Bibliotheken, um die GPIOs gezielt mittels Bash- oder Software-Skripten anzusteuern bzw. auszulesen.
+
+                    <div class="image_box">
+                        <img src="image013.jpg" alt="Abbildung 12: Belegung 40 Pin Stiftleiste">
+                        <div class="image_text">
+                            Abbildung 12: Belegung 40 Pin Stiftleiste
+                        </div>
+                    </div>
+
+                    Versorgt wird der Raspberry Pi über einen Micro USB-Anschluss und ein zughöriges Netzteil (Input: 100-240V, 0.3A, 50/60Hz; Output: 5V, max. 2A). Für die bildgebende Ausgabe kann entweder ein LCD-Display über die DSI-Schnitt- stelle oder ein herkömmlicher Computermonitor über die HDMI-Schnittstelle angeschlos- sen werden.
                     <br> Die Tonausgabe kann über den Composite-Ausgang (4-phasige Klinke, Video und Sound) oder HDMI-Ausgang erfolgen. Die entsprechenden Einstellungen müssen in der Systemkonfiguration vorgenommen werden. Da die Onboard-Soundkarte allerdings keinen Audioeingang besitzt, sowie eine relativ rauschbehaftete Audioausgabe, wurde auf eine externe USB-Soundkarte zurückgegriffen (Abbildung 13). Wie sich jedoch im weiteren Projektverlauf herausstellte, verfügen diese als „Stereo Soundkarten“ vertriebenen USB-Geräte zwar über eine Stereo Audioausgabe, allerdings nur über einen Mono Eingang. Exakte Erläuterungen hierzu, sowie Lösungsmöglichkeiten werden im Kapitel Fazit näher erläutert.
-                    <br>
-                    <img src="image014.png" alt="Abbildung 13: USB-Soundkarte SPEEDLINK Vigo" style="width:400px;">
-                    <br>Abbildung 13: USB-Soundkarte SPEEDLINK Vigo <br> Die restlichen USB-Ports werden für Tastatur, Maus, sowie für Anschluss eines Datenträ- gers genutzt. Über einen Ethernet-Anschluss ist der Raspberry netzwerkfähig. Somit kön- nen via Internet Softwarepakete installiert oder der Raspberry über eine Remoteverbin- dung ferngesteuert werden.
+
+                    <div class="image_box">
+                        <img src="image014.png" alt="Abbildung 13: USB-Soundkarte SPEEDLINK Vigo">
+                        <div class="image_text">
+                            Abbildung 13: USB-Soundkarte SPEEDLINK Vigo
+                        </div>
+                    </div>
+
+                    Die restlichen USB-Ports werden für Tastatur, Maus, sowie für Anschluss eines Datenträ- gers genutzt. Über einen Ethernet-Anschluss ist der Raspberry netzwerkfähig. Somit kön- nen via Internet Softwarepakete installiert oder der Raspberry über eine Remoteverbin- dung ferngesteuert werden.
                     <br> Zum Schutz des Raspberry Pi wurde er in ein spezielles Plastikgehäuse eingebaut. Dieses wurde in unserem Projekt zusätzlich als modulare Einheit in die Stompbox verbaut.
                     <br><br>
                     <b><u>Zusätzliches Zubehör:</u></b>
@@ -640,12 +699,23 @@
                         Win32 Disk Imager
                     </a> verwendet werden.
 
-                    <br><br>
-                    <img src="image015.png" alt="Abbildung 14: Win32 Disk Imager Oberfläche" style="width:400px;">
-                    <br>Abbildung 14: Win32 Disk Imager Oberfläche<br><br> Mittels der Write Funktion wird das Image auf die microSD-Karte geschrieben. Nun die beschriebene microSD-Karte in den vorgesehenen Kartenslot des Raspberry einstecken. Nun kann nach Anschluss des Netzteils und der Peripherie der Raspberry mit dem Betriebssystem gestartet werden. Beim erstmaligen Start erscheint das Raspberry Pi Software Configuration Tool (Abbildung 15). In diesem können Sprache, Passwort, sowie Kamera- und Übertaktungseinstellungen eingestellt werden.
-                    <br><br>
-                    <img src="image016.png" alt="Abbildung 15: Raspberry Configuration Tool" style="width:400px;">
-                    <br>Abbildung 15: Raspberry Configuration Tool<br><br> Als Benutzername wurde „pi“ mit dem Passwort „raspberry“ vergeben. Um die Rechenleistung des Raspberry zu steigern, wurde er übertaktet. Hierfür im Overclock-Menü den High-Modus auswählen (950 MHz ARM, 250MHz core, 450MHz DRAM).
+                    <div class="image_box">
+                        <img src="image015.png" alt="Abbildung 14: Win32 Disk Imager Oberfläche">
+                        <div class="image_text">
+                            Abbildung 14: Win32 Disk Imager Oberfläche
+                        </div>
+                    </div>
+
+                    Mittels der Write Funktion wird das Image auf die microSD-Karte geschrieben. Nun die beschriebene microSD-Karte in den vorgesehenen Kartenslot des Raspberry einstecken. Nun kann nach Anschluss des Netzteils und der Peripherie der Raspberry mit dem Betriebssystem gestartet werden. Beim erstmaligen Start erscheint das Raspberry Pi Software Configuration Tool (Abbildung 15). In diesem können Sprache, Passwort, sowie Kamera- und Übertaktungseinstellungen eingestellt werden.
+
+                    <div class="image_box">
+                        <img src="image016.png" alt="Abbildung 15: Raspberry Configuration Tool">
+                        <div class="image_text">
+                            Abbildung 15: Raspberry Configuration Tool
+                        </div>
+                    </div>
+
+                    Als Benutzername wurde „pi“ mit dem Passwort „raspberry“ vergeben. Um die Rechenleistung des Raspberry zu steigern, wurde er übertaktet. Hierfür im Overclock-Menü den High-Modus auswählen (950 MHz ARM, 250MHz core, 450MHz DRAM).
                     <br> Um von einem anderen Computer auf den Raspberry zugreifen zu können muss eine Remote-Verbindung hergestellt werden. Hierfür muss zuerst auf dem Raspberry ein SSH- Server installiert und gestartet werden. Dafür ist folgender Befehl auf einer Bash-Konsole auszuführen.
 
                     <pre>
@@ -655,8 +725,13 @@
                     <h2 id="installation">
                         Installation von Zusatzsoftware
                     </h2>
+
                     Während des Projektes wurden mehrere Zusatzprogramme verwendet. Die Installation und Konfiguration dieser wird nachfolgend beschrieben.
-                    <h3 id="alsa">ALSA</h3>
+
+                    <h3 id="alsa">
+                        ALSA
+                    </h3>
+
                     Zunächst wird <a href="http://www.alsa-project.org" target="_blank" rel="noopener">
                         ALSA (Advanced Linux Sound Architecture)
                     </a> benötigt, was einen grundlegenden Baustein des Soundsystems unter Linux darstellt. Durch ALSA wird die Kommu- nikation mit der Soundkarte unter Linux ermöglicht. Zusätzlich bietet ALSA die Möglichkeit grundlegender Konfigurationen. Zur Installation muss folgender Befehl in einer Konsole ausgeführt werden.
@@ -667,6 +742,7 @@
                     <h3 id="wiringpi">
                         WiringPi
                     </h3>
+
                     Um auf die GPIOs zugreifen zu können, wurde die Programmbibliohtek WiringPi verwendet. Diese kann über ein Git-Archiv wie folgt bezogen und installiert werden.
                     <pre>
                         <code class="command">sudo apt-get install git-core</code>
@@ -678,6 +754,7 @@
                     <h3 id="puredatapd">
                         Pure Data (Pd)
                     </h3>
+
                     Hier soll zunächst nur auf die Installation des Programmpaketes Pure Data eingegangen werden. Eine weitergehende Beschreibung von Pure Data folgt in Kapitel 6.
                     <br> Pure Data setzt sich aus mehreren Versionen zusammen. Die Basis Version, auch bekannt unter der Bezeichnung „Vanilla“, enthält lediglich eine Zusammenstellung der grundlegendsten Funktionen. Über zahlreich verfügbare Bibliotheken kann der Funktionsumfang anschließend beliebig erweitert werden. Mit dem Paket „Pd-Extended“ kann eine fertige Zusammenstellung, installiert werden, die sowohl Vanilla, als auch einen Großteil der externen Programmbibliotheken enthält. Hierbei ist zu beachten, dass Neuerungen zuerst in der Vanilla Version durchgeführt werden. So kann es vorkommen, dass die Extended Version veraltete Bibliotheken enthält. Dies war der Grund, warum im Zuge des Projektes auf dem Raspberry ein schwerwiegender Fehler in Kombination von Pd-Extended und ALSA auftrat. Dieser Fehler war in der Vanilla Version bereits behoben und trat hier nicht auf. Deshalb wird mit folgendem Befehl zunächst Pd-Vanilla installiert
                     <pre>
@@ -732,6 +809,7 @@
                     <h3 id="installationsynthesis">
                         Installation des Synthesis ToolKit (STK) und Kompilierung von Synthese-Modellen
                     </h3>
+
                     Bei dem Synthesis ToolKit (STK) handelt es sich um ein Paket, das zahlreiche C++ Bibliotheken zur Audiosignalverarbeitung, sowie Algorithmen zur Klangsynthese bereitstellt. Darunter befinden sich Synthesis Modelle, die unter anderem Blasinstrumente wie Flöten, Trompeten, usw. modellieren.
                     <br> Um die Bibliotheken auf dem Raspberry Pi nutzen zu können, müssen diese einmalig für den ARM-Prozessor kompiliert werden. Später können die Bibliotheken ohne großen Aufwand verwendet werden. Eine Schnellstartanleitung hierfür befindet sich in Anhang A. Alle während des Projektes kompilierten Bibliotheken befinden sich auf der beiliegenden Daten CD.
                     <br> Für die Kompilierung muss zunächst STK, sowie zahlreiche weitere Softwarepakete händisch auf dem Raspberry installiert werden. Die dafür notwendigen Schritte werden nachfolgend aufgelistet: Installation der liba Laufzeitbibliothek für ALSA-Anwendungen.
@@ -798,23 +876,48 @@
                     </pre> Nun kann die Bibliothek in Pure Data verwendet werden. Alle während der Projektarbeit kompilierten Libraries sind auf der Daten CD abgelegt.
 
                     <hr>
+
                     <h1 id="stompbox">
                         Stompbox
                     </h1>
 
-                    <img src="image017.png" alt="Abbildung 16: Stompbox" style="width:400px;">
-                    <br>Abbildung 16: Stompbox<br><br> Als Stompbox wird ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann. In der eigens für das Projekt gebauten Stompbox (Abbildung 16) ist der Raspberry Pi integriert. Er kann somit jederzeit problemlos entnommen werden. Weiterhin sind alle Schnittstellen des Raspberry Pi von außen zu erreichen. Der Deckel enthält zehn Wechselschalter, welche als Signalschalter dienen (Abbildung 17). Über ein 40 adriges Flachbandkabel sind Raspberry und Stompbox-Deckel mit einer Anschlussplatine (Abbildung 20) verbunden. Die Platine ist so aufgebaut, dass sich der Raspberry um die Spannungsversorgung und Ansteuerung der Platine kümmert. Nach Anschluss aller Flachbandkabel werden somit die Wechselschalter mit Spannung versorgt und die Schalterzustände können über die Pi-GPIOs eingelesen werden. Die Stompbox bietet zusätzlich an der Außenseite eine 5V Spannungsversorgung für den Anschluss des Theremins.
+                    <div class="image_box">
+                        <img src="image017.png" alt="Abbildung 16: Stompbox">
+                        <div class="image_text">
+                            Abbildung 16: Stompbox
+                        </div>
+                    </div>
+
+                    Als Stompbox wird ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann. In der eigens für das Projekt gebauten Stompbox (Abbildung 16) ist der Raspberry Pi integriert. Er kann somit jederzeit problemlos entnommen werden. Weiterhin sind alle Schnittstellen des Raspberry Pi von außen zu erreichen. Der Deckel enthält zehn Wechselschalter, welche als Signalschalter dienen (Abbildung 17). Über ein 40 adriges Flachbandkabel sind Raspberry und Stompbox-Deckel mit einer Anschlussplatine (Abbildung 20) verbunden. Die Platine ist so aufgebaut, dass sich der Raspberry um die Spannungsversorgung und Ansteuerung der Platine kümmert. Nach Anschluss aller Flachbandkabel werden somit die Wechselschalter mit Spannung versorgt und die Schalterzustände können über die Pi-GPIOs eingelesen werden. Die Stompbox bietet zusätzlich an der Außenseite eine 5V Spannungsversorgung für den Anschluss des Theremins.
 
                     <h2 id="wechselschalter">
                         Deckel mit Wechselschalter
                     </h2>
-                    <img src="image018.jpg" alt="Abbildung 17: Stompbox Deckel" style="width:400px;">
-                    <br>Abbildung 17: Stompbox Deckel<br><br>
-                    <img src="image019.png" alt="Abbildung 18: Technische Zeichnung des Stompbox Deckels" style="width:400px;">
-                    <br>Abbildung 18: Technische Zeichnung des Stompbox Deckels<br><br> Auf der technischen Zeichnung in Abbildung 19) ist die Wechselschalternummerierung dargestellt. Die Schalter sind durch diese festen GPIOs zugewiesen. In Kapitel 5.2 können Verdrahtung und Belegung eingesehen werden.
-                    <br>
-                    <img src="image020.png" alt="Abbildung 19: Anschlussschematik eines Fußschalters" style="width:400px;">
-                    <br>Abbildung 19: Anschlussschematik eines Fußschalters<br><br> Der jeweilige Fußschalter ist mittig mit dem zugehörigen GPIO-Pin verbunden. Durch Drücken des Wechselschalters befinden sich entweder GND oder 3,3V am GPIO-Pin. Der Zustand kann zum Beispiel mit Hilfe eines WiringPi-Kommandos direkt über die Konsole ausgelesen werden.
+
+                    <div class="image_box">
+                        <img src="image018.jpg" alt="Abbildung 17: Stompbox Deckel">
+                        <div class="image_text">
+                            Abbildung 17: Stompbox Deckel
+                        </div>
+                    </div>
+
+                    <div class="image_box">
+                        <img src="image019.png" alt="Abbildung 18: Technische Zeichnung des Stompbox Deckels">
+                        <div class="image_text">
+                            Abbildung 18: Technische Zeichnung des Stompbox Deckels
+                        </div>
+                    </div>
+
+                    Auf der technischen Zeichnung in Abbildung 19) ist die Wechselschalternummerierung dargestellt. Die Schalter sind durch diese festen GPIOs zugewiesen. In Kapitel 5.2 können Verdrahtung und Belegung eingesehen werden.
+
+                    <div class="image_box">
+                        <img src="image020.png" alt="Abbildung 19: Anschlussschematik eines Fußschalters">
+                        <div class="image_text">
+                            Abbildung 19: Anschlussschematik eines Fußschalters
+                        </div>
+                    </div>
+
+                    Der jeweilige Fußschalter ist mittig mit dem zugehörigen GPIO-Pin verbunden. Durch Drücken des Wechselschalters befinden sich entweder GND oder 3,3V am GPIO-Pin. Der Zustand kann zum Beispiel mit Hilfe eines WiringPi-Kommandos direkt über die Konsole ausgelesen werden.
                     <pre>
                         <code class="command">gpio –g read WIRINGPI_PINNUMMER</code>
                     </pre>
@@ -1264,17 +1367,32 @@
                     <h2 id="anschlussplatine">
                         Anschlussplatine zwischen Stompbox und Raspberry Pi
                     </h2>
-                    <img src="image021.jpg" alt="Abbildung 20: Anschlussplatine von oben" style="width:400px;">
-                    <br>Abbildung 20: Anschlussplatine von oben<br>
-                    <img src="image022.jpg" alt="Abbildung 21: Anschlussplatine von unten" style="width:400px;">
-                    <br>Abbildung 21: Anschlussplatine von unten<br>
-                    <img src="image023.png" alt="Abbildung 22: Verdrahtung Anschlussplatine" style="width:400px;">
-                    <br>Abbildung 22: Verdrahtung Anschlussplatine<br>
+
+                    <div class="image_box">
+                        <img src="image021.jpg" alt="Abbildung 20: Anschlussplatine von oben">
+                        <div class="image_text">
+                            Abbildung 20: Anschlussplatine von oben
+                        </div>
+                    </div>
+                    <div class="image_box">
+                        <img src="image022.jpg" alt="Abbildung 21: Anschlussplatine von unten">
+                        <div class="image_text">
+                            Abbildung 21: Anschlussplatine von unten
+                        </div>
+                    </div>
+                    <div class="image_box">
+                        <img src="image023.png" alt="Abbildung 22: Verdrahtung Anschlussplatine">
+                        <div class="image_text">
+                            Abbildung 22: Verdrahtung Anschlussplatine
+                        </div>
+                    </div>
 
                     <hr>
+
                     <h1 id="puredata">
                         Pure Data
                     </h1>
+
                     Pure Data, oder kurz Pd ist eine grafische echtzeitfähige Programmiersprache, die auf Audio-, Video- und Bildverarbeitung spezialisiert ist. Pd wurde ab 1996 von dem US-Amerikaner Miller Stuart Puckette als Open Source Projekt entwickelt und wird seither von einer großen Community gepflegt und erweitert.
                     <br><a href="http://puredata.info/" target="_blank" rel="noopener">
                         Pure Data
