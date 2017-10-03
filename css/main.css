@@ -97,6 +97,11 @@ body {
 	margin: 0px;
 }
 
+ol,
+ul {
+	line-height: 24px;
+}
+
 #menu a {
 	padding: 10px;
 	margin: 10px;
