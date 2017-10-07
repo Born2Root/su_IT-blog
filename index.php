@@ -74,6 +74,8 @@ function print_link($link)
 
     <!-- main css -->
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- mobile css -->
+    <link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.css">
     <!-- desktop css -->
     <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 

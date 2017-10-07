@@ -45,7 +45,7 @@ h1 {
 }
 
 #article p {
-	margin: auto;
+	/* margin: auto; warum? macht abstände nach oben und unten kapput */
 }
 
 #headline {

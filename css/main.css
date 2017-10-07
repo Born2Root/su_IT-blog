@@ -4,7 +4,6 @@
 
 #header {
 	background-color: #111111;
-	position: fixed;
 	z-index: 11;
 	box-shadow: #000000 0 7px 6px -6px;
 	-webkit-box-shadow: #000000 0 7px 6px -6px;
@@ -13,7 +12,6 @@
 
 .box {
 	padding: 20px;
-	margin: 20px 0px;
 	font-size: 1.125em;
 	font-style: italic;
 }
@@ -38,18 +36,9 @@
 	background-color: #00b700;
 }
 
-#burger {
-	position: absolute;
-	color: #ff6d00;
-	font-size: 3em;
-	top: 3px;
-	left: 10px;
-}
-
 #pre {
 	background-color: #484848;
 	margin: auto;
-	padding: 0.5em 0.5em;
 }
 
 #pre hr {
@@ -61,7 +50,7 @@
 	list-style-type: none;
 }
 
-#pre li::before {
+#pre ol li::before {
 	counter-increment: overview;
 	content: counters(overview, ".") " ";
 }
@@ -86,7 +75,6 @@ body {
 }
 
 #menu {
-	display: none;
 	color: #ffffff;
 	text-align: center;
 }
@@ -121,11 +109,6 @@ ul {
 	background-color: #ff6d00 !important;
 }
 
-#body {
-	margin-top: 75px;
-	margin-bottom: 75px;
-}
-
 pre {
 	white-space: pre-line;
 	line-height: 22px;
@@ -133,8 +116,6 @@ pre {
 	-webkit-box-shadow: 0px 0px 4px 1px #484848;
 	counter-reset: line;
 	display: table;
-	width: 100%;
-	margin: 20px 0px;
 }
 
 code {
@@ -167,16 +148,26 @@ code:not(.command):before {
 	background: #111111;
 	top: 10px;
 	margin: auto;
-	width: 13em;
 	left: 0px;
 	right: 0px;
 	color: #ffffff;
 	text-align: center;
 }
 
+a:not(.post_link) {
+	/* not in posts overview*/
+	text-decoration: none;
+	color: #FF9355;
+	transition: color 0.5s;
+}
+
+a:not(.post_link):hover {
+	text-decoration: underline;
+	color: #082CE0;
+}
+
 #headline a {
 	text-decoration: none;
-	font-size: 2em;
 	font-weight: bold;
 	color: #ffffff;
 }
@@ -189,7 +180,6 @@ code:not(.command):before {
 	background-color: #202020;
 	color: #ffffff;
 	margin: 30px auto;
-	padding: 5px;
 	position: relative;
 	overflow: hidden;
 	width: 90%;
@@ -219,7 +209,6 @@ code:not(.command):before {
 	z-index: 10;
 	background-color: #202020;
 	color: #ffffff;
-	width: 98%;
 	padding: 1px 5% 15px 5%;
 	box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
 	-webkit-box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
@@ -238,7 +227,6 @@ code:not(.command):before {
 h1 {
 	text-align: center;
 	font-size: 1.8em;
-	margin-top: 0.5em;
 	text-decoration: underline;
 	display: flex;
 	min-width: 300px;
@@ -293,7 +281,6 @@ h3 {
 }
 
 #subtitle {
-	display: none;
 	text-align: center;
 	font-family: hack_font;
 }
@@ -307,6 +294,7 @@ hr {
 
 #body_article li:nth-child(even) {
 	color: #999999;
+	/* ol und ul als box mit anderen color? */
 }
 
 .cursor {
@@ -345,10 +333,6 @@ hr {
 	margin-left: 25px;
 }
 
-.tag_img {
-	width: 140px;
-}
-
 .tag_text {
 	position: relative;
 	bottom: 62px;
@@ -364,8 +348,6 @@ hr {
 #logo {
 	position: absolute;
 	right: 10px;
-	top: 0px;
-	height: 55px;
 	z-index: 23;
 }
 
@@ -375,11 +357,13 @@ hr {
 
 .nav {
 	position: fixed;
-	border: 2px solid #111111;
 	bottom: 0px;
 	z-index: 20;
 	background-color: #484848;
 	color: #ffffff;
+	cursor: pointer;
+	box-shadow: 0px 0px 13px 0px #000000;
+	-webkit-box-shadow: 0px 0px 13px 0px #000000;
 }
 
 #nav_right {
@@ -434,14 +418,14 @@ hr {
 	}
 }
 
+
+/*
 #coffee {
-	transition: color 0.5s, background-color 0.5s;
+	transition: ;
 }
 
-#coffee:hover {
-	color: #583416;
-	background-color: #ffffff;
-}
+#coffee:hover {}
+
 
 #book {
 	transition: font-size 0.5s;
@@ -450,10 +434,10 @@ hr {
 #book:hover {
 	font-size: 1.25em;
 }
+*/
 
 #disclaimer {
 	background: #111111;
-	bottom: 10px;
 	color: #ffffff;
 	left: 0px;
 	margin: auto;
