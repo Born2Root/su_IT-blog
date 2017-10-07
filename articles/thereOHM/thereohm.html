@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="de">
 
 <head>
 
@@ -431,17 +431,12 @@
                                     </li>
                                     <li>
                                         <a target="_self" href="#anhangb">
-                                            Anhang B - Verwendete Software
+                                            Anhang B - Kostenaufschlüsselung
                                         </a>
                                     </li>
                                     <li>
                                         <a target="_self" href="#anhangc">
-                                            Anhang C - Kostenaufschlüsselung
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a target="_self" href="#anhangd">
-                                            Anhang D - Zeit- und Aufgabenplan
+                                            Anhang C - Zeit- und Aufgabenplan
                                         </a>
                                     </li>
                                 </ol>
@@ -464,7 +459,7 @@
 
                     <p>
                         Ziel des Projektes ist es, ein klassisches Theremin aufzubauen und dessen Klang beliebig zu verändern, so dass der Eindruck anderer Musikinstrumente entsteht.
-                        <br> Zur Realisierung dieser Aufgabe wird der Einplatinenrechner Raspberry Pi verwendet. Die verschiedenen Filtereinstellungen sollen durch variable Tastenkombinationen gesteuert werden können. Eine zusätzliche Anforderung ist ein vollständig modularer Aufbau, um sowohl einfachen Transport, sowie Austauschbarkeit der Komponenten zu gewährleisten. Es ergeben sich folgende Aufgaben für die Projektrealisierung:
+                        <br>Zur Realisierung dieser Aufgabe wird der Einplatinenrechner Raspberry Pi verwendet. Die verschiedenen Filtereinstellungen sollen durch variable Tastenkombinationen gesteuert werden können. Eine zusätzliche Anforderung ist ein vollständig modularer Aufbau, um sowohl einfachen Transport, sowie Austauschbarkeit der Komponenten zu gewährleisten. Es ergeben sich folgende Aufgaben für die Projektrealisierung:
                     </p>
 
                     <ul>
@@ -951,7 +946,68 @@
                         Die nachfolgenden Konfigurationseinstellungen sollten abgeglichen werden:
                     </p>
                     <pre>
-                        <code class="command">01 # where is the PD source package? 02 # (this should point to the main folder, which has a "src" (PD Vanilla) or "include" (PD extended) subfolder) 03 PDPATH=/home/pi/pdsource/pd 04 05 ############################################################### 06 07 # prefix for flext installation 08 # headers are in $(FLEXTPREFIX)/include/flext 09 # libraries are in $(FLEXTPREFIX)/lib 10 # build system is in $(FLEXTPREFIX)/lib/flext 11 12 FLEXTPREFIX=/usr/local 13 14 ############################################################### 15 16 # where should the external be built? 17 OUTPATH=pd-linux 18 19 # where should the external be installed? 20 INSTPATH=/usr/lib/pd-extended/extra 21 22 ############################################################### 23 24 # STK (synthesis tool kit) support 25 # http://ccrma.stanford.edu/software/stk 26 27 # where to find the STK header files (e.g. stk.h) 28 STK_INC=/home/pi/stk/stk-4.5.0/include 29 30 # where to find the STK library (normally libstk.a) 31 # (comment out STK_LIB if you don't use STK) 32 STK_LIB=/home/pi/stk/stk-4.5.0/src/libstk.a 33 34 ############################################################### 35 36 # SndObj support 37 # http://music.nuim.ie//musictec/SndObj 38 39 # where to find the SndObj header files (e.g. sndobj.h) 40 #SNDOBJ_INC=/usr/include/SndObj 41 42 # where to find the SndObj library (normally libsndobj.a) 43 # (comment out STK_LIB if you don't use SndObj) 44 #SNDOBJ_LIB=/usr/local/lib/libsndobj.a 45 46 #SNDOBJ_LIB=/usr/lib/arm-linux-gnueabihf/libsndobj.so 47 48 ############################################################### 49 50 # make flags (e.g. use multiprocessor) 51 #MFLAGS=-j 2 52 53 # user defined compiler flags 54 # (check if they match your system!) 55 #UFLAGS=-msse -mfpmath=sse -ffast-math 56 # don't overload new and delete operators 57 UFLAGS+=-DFLEXT_USE_CMEM 58 59 # user defined optimization flags 60 # (check if they match your system!) 61 OFLAGS=-O3 62 # optimizations for Pentium 4 63 #OFLAGS+=-march=pentium4</code>
+                        <code># where is the PD source package?</code>
+                        <code># (this should point to the main folder, which has a "src" (PD Vanilla) or "include" (PD extended) subfolder)</code>
+                        <code>PDPATH=/home/pi/pdsource/pd</code>
+                        <code></code>
+                        <code>###############################################################</code>
+                        <code></code>
+                        <code># prefix for flext installation</code>
+                        <code># headers are in $(FLEXTPREFIX)/include/flext</code>
+                        <code># libraries are in $(FLEXTPREFIX)/lib 10 # build system is in $(FLEXTPREFIX)/lib/flext</code>
+                        <code></code>
+                        <code>FLEXTPREFIX=/usr/local</code>
+                        <code></code>
+                        <code>###############################################################</code>
+                        <code></code>
+                        <code># where should the external be built?</code>
+                        <code>OUTPATH=pd-linux</code>
+                        <code></code>
+                        <code># where should the external be installed?</code>
+                        <code>INSTPATH=/usr/lib/pd-extended/extra</code>
+                        <code></code>
+                        <code>###############################################################</code>
+                        <code></code>
+                        <code># STK (synthesis tool kit) support</code>
+                        <code># http://ccrma.stanford.edu/software/stk</code>
+                        <code></code>
+                        <code># where to find the STK header files (e.g. stk.h)</code>
+                        <code>STK_INC=/home/pi/stk/stk-4.5.0/include</code>
+                        <code></code>
+                        <code># where to find the STK library (normally libstk.a)</code>
+                        <code># (comment out STK_LIB if you don't use STK)</code>
+                        <code>STK_LIB=/home/pi/stk/stk-4.5.0/src/libstk.a</code>
+                        <code></code>
+                        <code>###############################################################</code>
+                        <code></code>
+                        <code># SndObj support</code>
+                        <code># http://music.nuim.ie//musictec/SndObj</code>
+                        <code></code>
+                        <code># where to find the SndObj header files (e.g. sndobj.h)</code>
+                        <code>#SNDOBJ_INC=/usr/include/SndObj</code>
+                        <code></code>
+                        <code># where to find the SndObj library (normally libsndobj.a)</code>
+                        <code># (comment out STK_LIB if you don't use SndObj)</code>
+                        <code>#SNDOBJ_LIB=/usr/local/lib/libsndobj.a</code>
+                        <code></code>
+                        <code>#SNDOBJ_LIB=/usr/lib/arm-linux-gnueabihf/libsndobj.so</code>
+                        <code></code>
+                        <code>###############################################################</code>
+                        <code></code>
+                        <code># make flags (e.g. use multiprocessor)</code>
+                        <code>#MFLAGS=-j 2</code>
+                        <code></code>
+                        <code># user defined compiler flags</code>
+                        <code># (check if they match your system!)</code>
+                        <code>#UFLAGS=-msse -mfpmath=sse -ffast-math</code>
+                        <code># don't overload new and delete operators</code>
+                        <code>UFLAGS+=-DFLEXT_USE_CMEM</code>
+                        <code></code>
+                        <code># user defined optimization flags</code>
+                        <code># (check if they match your system!)</code>
+                        <code>OFLAGS=-O3</code>
+                        <code># optimizations for Pentium 4</code>
+                        <code>#OFLAGS+=-march=pentium4</code>
                     </pre>
 
                     <p>
@@ -959,7 +1015,7 @@
                     </p>
 
                     <pre>
-                        <code class="command"> $sudo bash build.sh pd gcc</code>
+                        <code class="command">sudo bash build.sh pd gcc</code>
                     </pre>
 
                     <p>
@@ -967,7 +1023,8 @@
                     </p>
 
                     <pre>
-                        <code class="command">01 # comment out to inhibit SIMD (Altivec/SSE) usage 02 #SIMD=1</code>
+                        <code># comment out to inhibit SIMD (Altivec/SSE) usage</code>
+                        <code>#SIMD=1</code>
                     </pre>
 
                     <p>
@@ -1723,7 +1780,7 @@
                     </h3>
 
                     <p>
-                        Mit der <i>Step-Sequencer-Drum-Machine</i> kann wahlweise ein Hintergrundrhythmus erzeugt werden und mit dem Klang des Theremin kombiniert werden. Folgende Schlagzeugele- mente können ausgewählt werden:
+                        Mit der <i>Step-Sequencer-Drum-Machine</i> kann wahlweise ein Hintergrundrhythmus erzeugt werden und mit dem Klang des Theremin kombiniert werden. Folgende Schlagzeugelemente können ausgewählt werden:
                     </p>
                     <ul>
                         <li>
@@ -1952,76 +2009,10 @@
                         If you’re using a Raspberry Pi please follow the steps mentioned under 3. In addition to this you should start Pd always in sudo mode. Otherwise Pure Data would not work properly. Additionally you can use the prepared Bash-Script to startup. This script is located in the ThereOHM Patch folder. Its name is “Startup_Raspberry.sh”.
                     </p>
 
-                    <h2 id="anhangb">
-                        Anhang B - Verwendete Software
-                    </h2>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Software</th>
-                                <th>Anwendungsgebiet</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="2">Projektplanung:</td>
-                            </tr>
-                            <tr>
-                                <td>Zoho Project</td>
-                                <td>Projekt Planung</td>
-                            </tr>
-                            <tr>
-                                <td>Box.com</td>
-                                <td>Multifunktionelle Dateiverwaltung</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Dokumentation:</td>
-                            </tr>
-                            <tr>
-                                <td>Microsoft Office 2013</td>
-                                <td>Projektbericht</td>
-                            </tr>
-                            <tr>
-                                <td>Techsmith Snagit 12</td>
-                                <td>Screenshot </td>
-                            </tr>
-                            <tr>
-                                <td>Gimp 2.8</td>
-                                <td>Bildbearbeitung</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Schaltplanlayout:</td>
-                            </tr>
-                            <tr>
-                                <td>EAGLE V7.1.0</td>
-                                <td>Leiterplattendesign</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">CAD:</td>
-                            </tr>
-                            <tr>
-                                <td>LibreCAD 2.0.6</td>
-                                <td>Technische Zeichnungen</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Programmierung:</td>
-                            </tr>
-                            <tr>
-                                <td>Win 32 Imager</td>
-                                <td>Raspberry Betriebssystem Konfiguration </td>
-                            </tr>
-                            <tr>
-                                <td>Pure Data</td>
-                                <td>Software DSP</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
                     <hr>
 
-                    <h2 id="anhangc">
-                        Anhang C - Kostenaufschlüsselung
+                    <h2 id="anhangb">
+                        Anhang B - Kostenaufschlüsselung
                     </h2>
 
                     <p>
@@ -2041,271 +2032,226 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="5">RS</td>
-                            </tr>
-                            <tr>
-                                <td>13.08.2014</td>
+                                <td rowspan="19">RS-Components<br>13.08.2014</td>
                                 <td>Raspberry Pi B+</td>
                                 <td> 26,05 €</td>
                                 <td>1</td>
                                 <td>811-1284</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Kabel HDMI / DVI-D 2m</td>
                                 <td> 12,68 €</td>
                                 <td>1</td>
                                 <td>742-4349</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Micro USB Power Supply Adapt-er,5V,2A</td>
                                 <td> 7,19 €</td>
                                 <td>1</td>
                                 <td>765-3311</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Verbatim SD-Karte 16GB SDHC</td>
                                 <td> 14,01 €</td>
                                 <td>1</td>
                                 <td>750-4795</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Raspberry Pi B+ Case, Clear</td>
                                 <td> 6,14 €</td>
                                 <td>1</td>
                                 <td> 819-3658</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Drahtbrücken für Lochrasterplatinen</td>
                                 <td> 10,68 €</td>
                                 <td>3</td>
                                 <td>791-6454</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Binärzähler 4060</td>
                                 <td> 1,76 €</td>
                                 <td>6</td>
                                 <td>177-6708</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Inverter</td>
                                 <td> 0,46 €</td>
                                 <td>2</td>
                                 <td>355-8978</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>4fach XNOR</td>
                                 <td> 6,72 €</td>
                                 <td>20</td>
                                 <td>483-7941</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>OPV Quad</td>
                                 <td> 2,32 €</td>
                                 <td>4</td>
                                 <td>857-935</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>12 Bit D/A Wandler</td>
                                 <td> 3,50 €</td>
                                 <td>2</td>
                                 <td>402-803</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>TL072</td>
                                 <td> 1,01 €</td>
                                 <td>2</td>
                                 <td>661-0054</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Quarz 7,37MHz</td>
                                 <td> 2,32 €</td>
                                 <td>5</td>
                                 <td>672-0331</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Quarz 8MHz</td>
                                 <td> 2,27 €</td>
                                 <td>5</td>
                                 <td>672-0340</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Quarz 16MHz</td>
                                 <td> 2,32 €</td>
                                 <td>5</td>
                                 <td>672-0365</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>LED Grün</td>
                                 <td> 0,15 €</td>
                                 <td>1</td>
                                 <td>815-4221</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>LED Gelb</td>
                                 <td> 0,09 €</td>
                                 <td>1</td>
                                 <td>692-0950</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>C Poti</td>
                                 <td> 2,90 €</td>
                                 <td>4</td>
                                 <td>832-419</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>L 1000uH</td>
                                 <td> 1,04 €</td>
                                 <td>4</td>
                                 <td>763-3222</td>
                             </tr>
                             <tr>
-                                <td colspan="5">Amazon</td>
-                            </tr>
-                            <tr>
-                                <td>13.08.2014</td>
+                                <td rowspan="2">Amazon<br>13.08.2014</td>
                                 <td>Soundkarte 3D USB</td>
                                 <td> 10,00 €</td>
                                 <td>1</td>
                                 <td> </td>
                             </tr>
                             <tr>
-                                <td>05.11.2014</td>
                                 <td>Soundkarte Speedlink Vigo USB</td>
                                 <td> 14,49 €</td>
                                 <td>1</td>
                                 <td> </td>
                             </tr>
                             <tr>
-                                <td colspan="5">Conrad </td>
-                            </tr>
-                            <tr>
-                                <td>20.10.2014</td>
+                                <td rowspan="3">Conrad<br>20.10.2014</td>
                                 <td>Phase-Locked-Loop-Schaltung,HEF4046BT</td>
                                 <td>3,16 €</td>
                                 <td>4</td>
                                 <td>143693 - 62 </td>
                             </tr>
                             <tr>
-                                <td>12.12.2014</td>
                                 <td>DVB-T Antenne</td>
                                 <td>6,39 €</td>
                                 <td>1</td>
                                 <td>941788</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Koaxialadapter Kupplung/Kupplung</td>
                                 <td>3,78 €</td>
                                 <td>2</td>
                                 <td>290067</td>
                             </tr>
                             <tr>
-                                <td colspan="5">Reichelt</td>
-                            </tr>
-                            <tr>
-                                <td>09.11.2014</td>
+                                <td rowspan="13">Reichelt<br>09.11.2014</td>
                                 <td>Klinkenbuchse 3,5 mm</td>
                                 <td> 0,54 €</td>
                                 <td>2</td>
                                 <td>EBS 35</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Antenne </td>
                                 <td> 4,30 €</td>
                                 <td>1</td>
                                 <td>DVB-T ZA ST 02</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>IEC Stecker</td>
                                 <td> 0,80 €</td>
                                 <td>2</td>
                                 <td>CS-1</td>
                             </tr>
                             <tr>
-                                <td>10.11.2014</td>
                                 <td>Gehäuse für Stompbox</td>
                                 <td> 18,50 €</td>
                                 <td>1</td>
                                 <td>BOPLA ET-238</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Gehäuse für Theremin</td>
                                 <td> 4,50 €</td>
                                 <td>1</td>
                                 <td>1591CFLBK</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Druckschalter/Wechselschalter</td>
                                 <td> 18,50 €</td>
                                 <td>10</td>
                                 <td>FS 35</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Pfostenbuchse 40 polig</td>
                                 <td> 0,76 €</td>
                                 <td>4</td>
                                 <td>PFL 40</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Buchse für 5 V Spannungsversorgung</td>
                                 <td> 0,24 €</td>
                                 <td>1</td>
                                 <td>HEBW 21</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Stecker für 5V Versorgung Theremin</td>
                                 <td> 1,95 €</td>
                                 <td>1</td>
                                 <td>DELOCK 65422</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Stiftleiste 2x20 polig</td>
                                 <td> 0,66 €</td>
                                 <td>1</td>
                                 <td>MPE 087-2-040</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Buchse für 5 V Spannungsversorgung</td>
                                 <td> 0,48 €</td>
                                 <td>2</td>
                                 <td>HEBW 21</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Stecker für 5V Versorgung Theremin</td>
                                 <td> 1,95 €</td>
                                 <td>1</td>
                                 <td>DELOCK 65422</td>
                             </tr>
                             <tr>
-                                <td> </td>
                                 <td>Klinkenbuchse 3,5 mm rund</td>
                                 <td> 0,82 €</td>
                                 <td>1</td>
@@ -2326,8 +2272,8 @@
 
                     <hr>
 
-                    <h2 id="anhangd">
-                        Anhang D - Zeit- und Aufgabenplan
+                    <h2 id="anhangc">
+                        Anhang C - Zeit- und Aufgabenplan
                     </h2>
 
                     <table>
@@ -2341,280 +2287,229 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="4">Allgemeine</td>
-                            </tr>
-                            <tr>
-                                <td>Aufgaben</td>
+                                <td rowspan="8">Allgemeine Aufgaben</td>
                                 <td>Projektlaufwerk mit Datenablage einrichten (www.Box.com)</td>
                                 <td>30.09.14</td>
                                 <td>30.09.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Projektplanungsseite einrichten (www.zoho.com)</td>
                                 <td>01.10.14</td>
                                 <td>01.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Notwendige Software installieren (EALGE; Box.com Client, usw.)</td>
                                 <td>01.10.14</td>
                                 <td>01.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>To-Do-Liste schreiben</td>
                                 <td>29.09.14</td>
                                 <td>28.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Projektplanung</td>
                                 <td>29.09.14</td>
                                 <td>10.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Projektplan erstellen und fortwährend aktualisieren (zoho.com)</td>
                                 <td>01.10.14</td>
                                 <td>15.02.15</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Projektdokumentation schreiben</td>
                                 <td>03.12.14</td>
                                 <td>15.02.15</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Poster zum Projekt erstellen</td>
                                 <td>14.02.15</td>
                                 <td>15.02.15</td>
                             </tr>
                             <tr>
-                                <td colspan="4">Stompbox</td>
-                            </tr>
-                            <tr>
-                                <td>Bauen</td>
+                                <td rowspan="4">Stompbox<br>Bauen</td>
                                 <td>Bauteile organisieren</td>
                                 <td>06.11.14</td>
                                 <td>06.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Gehäuse für Stompbox bauen</td>
                                 <td>23.11.14</td>
                                 <td>05.12.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Stompbox mit Raspberry verbinden</td>
                                 <td>05.12.14</td>
                                 <td>09.12.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Steuerplatine für Fußschalter löten</td>
                                 <td>23.11.14</td>
                                 <td>05.12.14</td>
                             </tr>
                             <tr>
-                                <td colspan="4">Theremin</td>
-                            </tr>
-                            <tr>
-                                <td>Bauen</td>
+                                <td rowspan="13">Theremin<br>Bauen</td>
                                 <td>RC-Theremin Leiterplatte bestücken</td>
                                 <td>30.09.14</td>
                                 <td>13.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>RC-Theremin in Betrieb nehmen/testen</td>
                                 <td>10.10.14</td>
                                 <td>10.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Durchführen von Schaltungsänderung</td>
                                 <td>17.10.14</td>
                                 <td>24.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Theremin Schaltungsanalyse</td>
                                 <td>13.10.14</td>
                                 <td>28.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Schaltplaneingabe in EAGLE</td>
                                 <td>17.10.14</td>
                                 <td>24.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Layout Erstellung in EAGLE</td>
                                 <td>17.11.14</td>
                                 <td>24.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Leiterplatte ätzen & bestücken</td>
                                 <td>24.11.14</td>
                                 <td>05.12.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Leiterplatte in Betrieb nehmen</td>
                                 <td>05.12.14</td>
                                 <td>05.12.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Organisieren, anschließen und testen der Pitch-/ Volumenantenne</td>
                                 <td>23.11.14</td>
                                 <td>05.12.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Leiterplatte im eingebauten Zustand testen</td>
                                 <td>23.11.14</td>
                                 <td>24.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Layout Anpassung an Boxgröße, sowie Optimierung der Anordnung der Antennen auf der Leiterplatte</td>
                                 <td>24.11.14</td>
                                 <td>29.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Revisionsleiterplatte ätzen & bestücken</td>
                                 <td>29.11.14</td>
                                 <td>04.12.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Revisionsleiterplatte in Betrieb nehmen und testen</td>
                                 <td>06.12.14</td>
                                 <td>08.12.14</td>
                             </tr>
                             <tr>
-                                <td colspan="4">Raspberry</td>
-                            </tr>
-                            <tr>
-                                <td>konfigurieren</td>
+                                <td rowspan="8">Raspberry konfigurieren</td>
                                 <td>Raspbian installieren & Systemupdate durchführen</td>
                                 <td>29.09.14</td>
                                 <td>29.09.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Erstkonfiguration (SSH, Tastaturlayout, SD-Karten Partitionserwei-terung)</td>
                                 <td>29.09.14</td>
                                 <td>29.09.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Wiring-Pi installieren</td>
                                 <td>29.09.14</td>
                                 <td>29.09.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Pd & Pd-Extended installieren</td>
                                 <td>29.09.14</td>
                                 <td>29.09.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Projektlaufwerk (Box.com) nativ einhängen</td>
                                 <td>01.10.14</td>
                                 <td>01.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>STK Bundle und Libraries konfigurieren und installieren</td>
                                 <td>24.10.14</td>
                                 <td>10.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Anpassen der STK Makefiles</td>
                                 <td>09.11.14</td>
                                 <td>11.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>STK-Externals separat für Raspberry Architektur kompilieren</td>
                                 <td>09.11.14</td>
                                 <td>15.11.14</td>
                             </tr>
                             <tr>
-                                <td>Pure Data Programmierung</td>
+                                <td rowspan="8">Pure Data Programmierung</td>
                                 <td>Einarbeitung in die Pure Data Programmierung</td>
                                 <td>08.10.14</td>
                                 <td>28.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Einarbeitung in die Programmierung von Pd-Externals</td>
                                 <td>08.10.14</td>
                                 <td>08.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Pd-Wiring PI konfigurieren (GPIO)</td>
                                 <td>08.10.14</td>
                                 <td>08.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Implementieren des Karplus-Strong-Algorithmus zur Gitarrensyn-these</td>
                                 <td>20.10.14</td>
                                 <td>26.10.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Implementieren & testen verschiedener STK Instrumentenmodelle</td>
                                 <td>15.11.14</td>
                                 <td>27.11.14</td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td>Programmieren der Unterfunktionen:</td>
+                                <td>Programmieren der Unterfunktionen:
+                                    <ul>
+                                        <li>
+                                            Instrumentenauswahl
+                                        </li>
+                                        <li>
+                                            Step-Sequencer-Drum-Machine
+                                        </li>
+                                        <li>
+                                            Lokaler mp3 Recorder
+                                        </li>
+                                        <li>
+                                            mp3 Webradio Streamer
+                                        </li>
+                                        <li>
+                                            Background Sound Player
+                                        </li>
+                                    </ul>
+                                </td>
                                 <td>05.11.14</td>
                                 <td>30.01.14</td>
                             </tr>
-
                             <tr>
-                                <td></td>
-                                <td colspan="3">- Instrumentenauswahl</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="3">- Step-Sequencer-Drum-Machine</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="3">- Lokaler mp3 Recorder</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="3">- mp3 Webradio Streamer</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="3">- Background Sound Player</td>
-                            </tr>
-                            <tr>
-                                <td></td>
                                 <td>Programmieren des PD Gesamtbedienerinterfaces</td>
                                 <td>12.12.14</td>
                                 <td>19.12.14</td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <td>Audiomodellumschaltung mittels Stompbox via Pd-Wiring Pi realisieren</td>
                                 <td>12.12.14</td>
                                 <td>19.12.14</td>

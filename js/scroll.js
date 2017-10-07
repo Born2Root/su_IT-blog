@@ -14,7 +14,7 @@ window.onscroll = function () {
 			menu.className = "";
 
 			logo.style.position = "absolute";
-			logo.style.height = "100px";
+			logo.style.height = "150px";
 			logo.style.top = "10px";
 		}
 	}
