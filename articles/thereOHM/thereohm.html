@@ -131,8 +131,9 @@
             <div id="article" class="test">
 
                 <div>
-                    <h1>thereOhm - DIY Raspberry Pi Theremin</h1>
-                    <h2>Projektarbeit über Bau eines Theremin</h2>
+                    <h1>ThereOHM - DIY Raspberry Pi Theremin</h1>
+                    <h2>Aufbau eines Theremin mit Klangvariation
+realisiert durch einen Raspberry Pi als Software-DSP</h2>
 
                     <div class="tags">
 
@@ -173,8 +174,7 @@
                         </h3>
                         <ul>
                             <li>
-                                Schwierigkeitsgrad:
-                                <br>-> Fortgeschritten
+                                Schwierigkeitsgrad: Fortgeschritten
                             </li>
                             <li>Skills:
                                 <ul>
@@ -193,10 +193,44 @@
                                 </ul>
                             </li>
                         </ul>
+<hr>
+						
+						<h3>Kurzbeschreibung</h3>
+						
+						<p>	In dem Projekt ThereOHM geht es um den Bau eines klassischen Theremin und Variation dessen Klangs durch den Einsatz eines
+auf dem Raspberry Pi laufenden Pure Data Software-DSP. Der Hardware-Aufbau sieht folgerndermaßen aus:</p>
 
+                    <div class="image_box">
+                        <img src="image002.jpg" alt="Abbildung 0: Hardware-Aufbau">
+                        <div class="image_text">
+                            Abbildung 0: Hardware-Aufbau
+                        </div>
+                    </div>
+<p>
+Mit Hilfe der USB-Soundkarte werden die vom Theremin erzeugten Signale eingelesen und von der Software
+verarbeitet. Das Ergebnis wird über einen Lautsprecher ausgegeben. Mittels der Stompbox können verschiedene Soundeffekte zugeschaltet werden (Wechsel des Instrumentenmodells etc.).
+			<br/><br/>
+<b>Softwarerealisierung:</b>			
+				<br/>	
+Die DSP-Software kann wahlweise auf einem Raspberry Pi oder einem Standard-PC bzw. Laptop verwendet werden.	
+<br/><br/>
+<ul>
+	<li>Die Software ist mit der grafischen Programmiersprache
+Pure Data umgesetzt</li>
+	<li>Das Programm kann per Benutzeroberfläche oder Stompbox
+gesteuert werden</li>
+	<li>Die Instrumentenklangsynthese kann frei variiert werden</li>
+	<li>Es wurden verschiedene Instrumente fest implementiert:
+ U. a. Gitarre, Violine, Xylophon und Hammond Orgel</li>
+	<li>Abspielen von Liedern als Hintergrundbegleitung möglich</li>
+	<li>Hintergrundrhythmus mittels integrierter Drum-Machine erzeugbar</li>
+	<li>Musikstücke können im mp3-Format aufgenommen werden</li>
+	<li>Ausstrahlung von Webradio, über einen integrierten Streamer möglich</li>
+</ul>
+</p>			
                         <hr>
 
-                        <h3>Overview:</h3>
+                        <h3>Inhalt:</h3>
 
                         <ol>
                             <li>
@@ -452,9 +486,9 @@
                     <h1 id="introduction">
                         Introduction
                     </h1>
-
+					
                     <h2 id="zielsetzung">
-                        Zielsetzung
+                        Zielsetzung des Projektes
                     </h2>
 
                     <p>
@@ -546,6 +580,8 @@
 
                     <h1 id="theremin">Theremin</h1>
                     <h2 id="layout">Layout / Schaltplan Platine</h2>
+					
+				<p>	Der Schaltplan, sowie das Leiterplattenlayout wurden mit der Freeware Layoutingsoftware     EAGLE erstellt. Nachfolgend sind die finalen Versionen von Schaltplan, sowie Leiterplattenlayout abgebildet.</p>
 
                     <div class="image_box">
                         <img src="image004.png" alt="Abbildung 3: Bestückungsplan Theremin">
@@ -577,7 +613,7 @@
                     </p>
 
                     <div class="image_box">
-                        <img src="image007.png" alt="Abbildung 6: Funktionsblockschaltbild">
+                        <img src="image007.jpg" alt="Abbildung 6: Funktionsblockschaltbild">
                         <div class="image_text">
                             Abbildung 6: Funktionsblockschaltbild
                         </div>
@@ -645,9 +681,9 @@
                     </h1>
 
                     <p>
-                        Der Raspberry Pi ist ein vollwertiger und preisgünstiger Einplatinenrechner, welcher entwickelt wurde um Neulingen den Einstieg in die Programmierung zu erleichtern. Er eignet sich aufgrund seiner vielen Schnittstellen hervorragend für technische Versuchsaufbauten und bietet mit unterschiedlichen Linux-Distributionen
+                        Der Raspberry Pi ist ein vollwertiger und preisgünstiger Einplatinenrechner, welcher entwickelt wurde um Neulingen den Einstieg in die Programmierung zu erleichtern. Er eignet sich aufgrund seiner vielen Schnittstellen hervorragend für technische Versuchsaufbauten und bietet mit unterschiedlichen 
                         <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">
-                            Link?!
+                            Linux-Distributionen
                         </a> verschiedenste Einsatzgebiete. Im Rahmen des Projektes wird er als Rechner mit Software-DSP, sowie zum Einlesen der Stompbox Fußschalter verwendet.
                     </p>
 
