@@ -28,9 +28,9 @@ redesign: 01.08.2017
 - 404
 - impressum
 - search
-- links anzeigen ob sie _blank oder _self [nur eventuell]
-- Überschriften mit link versetzen zum Link erstellen zum Teilen [nur eventuell]
-- https://www.w3schools.com/cssref/sel_target.asp inpage links, ziel kurz leuchten lassen; vielleicht orange
-- Landing page; auf größe von Transparent grauen
+- [nur eventuell] links anzeigen ob sie _blank oder _self
+- [nur eventuell] Überschriften mit link versetzen zum Link erstellen zum Teilen
+- [done] https://www.w3schools.com/cssref/sel_target.asp inpage links, ziel kurz leuchten lassen; vielleicht orange
+- Landing page; auf größe von Transparenterbox grau machen
 - post_images in rahmen einfassen und gleich groß machen
 - evtl. alternativen Cursor verwenden anstatt der Klickhand

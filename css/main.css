@@ -10,6 +10,31 @@
 	width: 100%;
 }
 
+:target {
+	animation: mark 1.5s;
+	-webkit-animation: mark 1.5s;
+}
+
+@keyframes mark {
+	0%,
+	100% {
+		background-color: #202020;
+	}
+	50% {
+		background-color: #ff6d00;
+	}
+}
+
+@-webkit-keyframes mark {
+	0%,
+	100% {
+		background-color: #202020;
+	}
+	50% {
+		background-color: #ff6d00;
+	}
+}
+
 .box {
 	padding: 20px;
 	font-size: 1.125em;
