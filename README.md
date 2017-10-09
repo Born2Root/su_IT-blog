@@ -33,3 +33,4 @@ redesign: 01.08.2017
 - https://www.w3schools.com/cssref/sel_target.asp inpage links, ziel kurz leuchten lassen; vielleicht orange
 - Landing page; auf größe von Transparent grauen
 - post_images in rahmen einfassen und gleich groß machen
+- evtl. alternativen Cursor verwenden anstatt der Klickhand
