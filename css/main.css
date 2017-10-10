@@ -10,7 +10,8 @@
 	width: 100%;
 }
 
-:target {
+:target,
+.mark {
 	animation: mark 1.5s;
 	-webkit-animation: mark 1.5s;
 }
