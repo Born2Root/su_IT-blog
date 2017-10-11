@@ -130,11 +130,16 @@
             <div id="article">
 
                 <div>
-                    <h1>ThereOHM - DIY Raspberry Pi Theremin</h1>
-                    <h2>Bau eines Theremin mit Klangvariation realisiert durch einen Raspberry Pi als Software-DSP</h2>
+                    <h1>
+                        ThereOHM - DIY Raspberry Pi Theremin
+                    </h1>
+                    <h2>
+                        Bau eines Theremin mit Klangvariation realisiert mit einem Raspberry Pi
+                    </h2>
 
-                    <div class="tags">
+                    <h3>Kurzbeschreibung</h3>
 
+                    <div id="tags_article">
                         <div class="tag_div">
                             <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
                             <div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50min read</div>
@@ -161,9 +166,44 @@
                         </div>
                     </div>
 
-                    <img src="image001.png" alt="logo" class="image">
+                    <img src="image001.png" alt="logo" id="first_image">
 
-                    <hr>
+                    <p>
+                        In dem Projekt ThereOHM geht es um den Bau eines klassischen Theremin und Variation dessen Klangs durch den Einsatz eines einem Raspberry Pi laufenden Pure Data Ditalem Signalverarbeiters.
+                        <br> Mit Hilfe einer USB-Soundkarte werden die vom Theremin erzeugten Signale eingelesen und von der Software verarbeitet. Mittels einer Stompbox können verschiedene Soundeffekte zugeschaltet werden (Wechsel des Instrumentenmodells etc.).
+                    </p>
+                    <h4>
+                        Softwarerealisierung:
+                    </h4>
+                    <p>
+                        Die DSP-Software kann wahlweise auf einem Raspberry Pi oder einem Desktop bzw. Laptop verwendet werden.
+                    </p>
+                    <ul>
+                        <li>
+                            Die Software ist mit der grafischen Programmiersprache Pure Data umgesetzt
+                        </li>
+                        <li>
+                            Das Programm kann per Benutzeroberfläche oder Stompbox gesteuert werden
+                        </li>
+                        <li>
+                            Die Instrumentenklangsynthese kann frei variiert werden
+                        </li>
+                        <li>
+                            Es wurden verschiedene Instrumente fest implementiert: U. a. Gitarre, Violine, Xylophon und Hammond Orgel
+                        </li>
+                        <li>
+                            Abspielen von Liedern als Hintergrundbegleitung möglich
+                        </li>
+                        <li>
+                            Hintergrundrhythmus mittels integrierter Drum-Machine erzeugbar
+                        </li>
+                        <li>
+                            Musikstücke können im mp3-Format aufgenommen werden
+                        </li>
+                        <li>
+                            Ausstrahlung von Webradio, über einen integrierten Streamer möglich
+                        </li>
+                    </ul>
 
                     <div id="pre">
 
@@ -191,53 +231,6 @@
                                 </ul>
                             </li>
                         </ul>
-                        <hr>
-
-                        <h3>Kurzbeschreibung</h3>
-
-                        <p>
-                            In dem Projekt ThereOHM geht es um den Bau eines klassischen Theremin und Variation dessen Klangs durch den Einsatz eines auf dem Raspberry Pi laufenden Pure Data Software-DSP. Der Hardware-Aufbau sieht folgerndermaßen aus:
-                        </p>
-
-                        <div class="image_box">
-                            <img src="image002.JPG" alt="Abbildung 0: Hardware-Aufbau">
-                            <div class="image_text">
-                                Abbildung 0: Hardware-Aufbau
-                            </div>
-                        </div>
-                        <p>
-                            Mit Hilfe der USB-Soundkarte werden die vom Theremin erzeugten Signale eingelesen und von der Software verarbeitet. Das Ergebnis wird über einen Lautsprecher ausgegeben. Mittels der Stompbox können verschiedene Soundeffekte zugeschaltet werden (Wechsel des Instrumentenmodells etc.).
-                        </p>
-                        <h4>Softwarerealisierung:</h4>
-                        <p>
-                            Die DSP-Software kann wahlweise auf einem Raspberry Pi oder einem Standard-PC bzw. Laptop verwendet werden.
-                            <ul>
-                                <li>
-                                    Die Software ist mit der grafischen Programmiersprache Pure Data umgesetzt
-                                </li>
-                                <li>
-                                    Das Programm kann per Benutzeroberfläche oder Stompbox gesteuert werden
-                                </li>
-                                <li>
-                                    Die Instrumentenklangsynthese kann frei variiert werden
-                                </li>
-                                <li>
-                                    Es wurden verschiedene Instrumente fest implementiert: U. a. Gitarre, Violine, Xylophon und Hammond Orgel
-                                </li>
-                                <li>
-                                    Abspielen von Liedern als Hintergrundbegleitung möglich
-                                </li>
-                                <li>
-                                    Hintergrundrhythmus mittels integrierter Drum-Machine erzeugbar
-                                </li>
-                                <li>
-                                    Musikstücke können im mp3-Format aufgenommen werden
-                                </li>
-                                <li>
-                                    Ausstrahlung von Webradio, über einen integrierten Streamer möglich
-                                </li>
-                            </ul>
-                        </p>
 
                         <hr>
 
@@ -506,6 +499,13 @@
                         Ziel des Projektes ist es, ein klassisches Theremin aufzubauen und dessen Klang beliebig zu verändern, so dass der Eindruck anderer Musikinstrumente entsteht.
                         <br>Zur Realisierung dieser Aufgabe wird der Einplatinenrechner Raspberry Pi verwendet. Die verschiedenen Filtereinstellungen sollen durch variable Tastenkombinationen gesteuert werden können. Eine zusätzliche Anforderung ist ein vollständig modularer Aufbau, um sowohl einfachen Transport, sowie Austauschbarkeit der Komponenten zu gewährleisten. Es ergeben sich folgende Aufgaben für die Projektrealisierung:
                     </p>
+
+                    <div class="image_box">
+                        <img src="image002.JPG" alt="Abbildung 0: Hardware-Aufbau">
+                        <div class="image_text">
+                            Abbildung 0: Hardware-Aufbau
+                        </div>
+                    </div>
 
                     <ul>
                         <li>
@@ -2591,7 +2591,8 @@
 
     <script src="/js/animation.js" async></script>
     <script src="/js/cli_write.js" async></script>
-    <script src="/js/nav.js" async></script>
+    <script src="/js/main_nav.js" async></script>
+    <script src="/js/additional_nav.js" async></script>
     <script src="/js/scroll.js" async></script>
 
 </body>

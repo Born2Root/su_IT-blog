@@ -112,7 +112,7 @@ function print_link($link)
             </div>
 
             <a target="_self" href="index.php">
-                <img alt="logo" src="/logo/logo_1.png" id="logo">
+                <img alt="logo" src="logo/logo_1.png" id="logo">
             </a>
         </div>
 
@@ -149,6 +149,12 @@ function print_link($link)
 
     <div id="body">
 
+        <div id="nav_right" class="nav">
+            <div id="top">
+                <i class="fa fa-arrow-up" aria-hidden="true"></i> Top
+            </div>
+        </div>
+
         <div id="nav_left" class="nav">
             <div id="coffee">
                 <a target="_blank" rel="noopener" href="/about_us.html#coffee">
@@ -172,7 +178,7 @@ function print_link($link)
             $file = fopen("posts.txt", "r") or die("Unable to open file!");
             $list = fread($file, filesize("posts.txt"));
             fclose($file);
-            
+
             $lines = explode("\n", $list);
 
             for ($i = 2; $i < count($lines); $i += 5) {
@@ -189,7 +195,7 @@ function print_link($link)
                     $article_tags = explode(";", $lines[$i]);
                     $img = "articles/".$lines[$i+1];
                     $a = "articles/".$lines[$i+2];
-    
+
                     print_article($h1, $h2, $article_tags, $img, $a);
                 }
             }
@@ -212,7 +218,7 @@ function print_link($link)
 
     <script src="/js/animation.js" async></script>
     <script src="/js/cli_write.js" async></script>
-    <script src="/js/menu.js" async></script>
+    <script src="/js/main_nav.js" async></script>
     <script src="/js/scroll.js" async></script>
 
 </body>
