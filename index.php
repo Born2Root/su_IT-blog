@@ -172,6 +172,41 @@ function print_link($link)
         <div id="background">
         </div>
 
+        <div id="welcome">
+            <h1>
+                Welcome to this site, where you can find <i>Made to measure</i> content
+            </h1>
+            <p>
+                It is great to see that you found this page :D
+                <br>If you are interested in any computer tech topic, you can find something here.
+                <br>
+                Here are some of the topics we covered the most:
+            </p>
+            <ul>
+                <li>
+                    Linux
+                </li>
+                <li>
+                    Scripting
+                </li>
+                <li>
+                    Animations
+                </li>
+                <li>
+                    LED projects
+                </li>
+                <li>
+                    Memes
+                </li>
+                <li>
+                    Pictures
+                </li>
+                <li>
+                    ...
+                </li>
+            </ul>
+        </div>
+
         <div id="container">
             <?php
 
