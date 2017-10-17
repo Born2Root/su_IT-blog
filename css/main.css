@@ -196,7 +196,6 @@ code:not(.command):before {
 }
 
 a:not(.post_link) {
-	/* not in posts overview*/
 	text-decoration: none;
 	color: #ff9355;
 	transition: color 0.5s;
@@ -279,17 +278,24 @@ a:not(.post_link):hover {
 	font-size: 2.5em;
 }
 
+.link {
+	float: right;
+	color: #333333;
+	transition: color 0.5s;
+}
+
+.link:hover {
+	color: #ff3300;
+}
+
 h1 {
 	text-align: center;
-	font-size: 1.8em;
 	text-decoration: underline;
 	min-width: 300px;
 	font-family: hack_font;
 }
 
 #article h1 {
-	display: inherit;
-	margin-left: 0px;
 	counter-reset: headline2;
 }
 
@@ -491,24 +497,6 @@ hr {
 		transform: translateX(-5px);
 	}
 }
-
-
-/*
-#coffee {
-	transition: ;
-}
-
-#coffee:hover {}
-
-
-#book {
-	transition: font-size 0.5s;
-}
-
-#book:hover {
-	font-size: 1.25em;
-}
-*/
 
 #disclaimer {
 	background: #111111;
