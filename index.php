@@ -176,7 +176,10 @@ function print_link($link)
             <h1>
                 Welcome to this site, where you can find <i>Made to measure</i> content
             </h1>
-            <p>
+            <img class="image" alt="logos" src=<?php
+                echo '"logo/logo_'.rand(1, 19).'.png"';
+            ?>>
+            <p id="welcome_text">
                 It is great to see that you found this page :D
                 <br>If you are interested in any computer tech topic, you can find something here.
                 <br>

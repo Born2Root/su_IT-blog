@@ -7,7 +7,7 @@
 }
 
 #headline a {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 #pre {
@@ -27,6 +27,10 @@ h1 {
 	font-size: 1.8em;
 }
 
+.nav div {
+	padding: 5px 10px;
+}
+
 #article {
 	width: 98%;
 }
@@ -36,7 +40,7 @@ h1 {
 }
 
 #headline {
-	width: 13em;
+	width: 12em;
 }
 
 #body {

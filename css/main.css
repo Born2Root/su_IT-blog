@@ -124,11 +124,6 @@ ul {
 	line-height: 24px;
 }
 
-#body_article ol,
-#body_article ul {
-	border-left: 5px solid #ff6d00;
-}
-
 #menu a {
 	padding: 10px;
 	margin: 10px;
@@ -151,8 +146,8 @@ ul {
 pre {
 	white-space: pre-line;
 	line-height: 22px;
-	box-shadow: 0px 0px 4px 1px #484848;
-	-webkit-box-shadow: 0px 0px 4px 1px #484848;
+	box-shadow: 0px 0px 11px 2px #000000a8;
+	-webkit-box-shadow: 0px 0px 11px 2px #000000a8;
 	counter-reset: line;
 	display: table;
 	border-left: 5px solid #ff6d00;
@@ -168,6 +163,10 @@ code {
 code:not(.command):before {
 	color: #ffffff;
 	content: counter(line) ". ";
+}
+
+code:nth-child(even) {
+	background-color: #333333;
 }
 
 .command:before {
@@ -237,6 +236,11 @@ a:not(.post_link):hover {
 	text-decoration: none;
 }
 
+#welcome_text {
+	display: flex;
+	min-width: 300px;
+}
+
 .image {
 	width: 100%;
 	/* mit scalieren */
@@ -246,16 +250,8 @@ a:not(.post_link):hover {
 	/* immer untereinander bleiben */
 	display: block;
 	margin: auto;
-}
-
-#first_image {
-	width: 100%;
-	/* mit scalieren */
-	max-height: 395px;
-	/* nicht groeser als 450px */
-	max-width: 450px;
-	display: block;
-	margin: auto;
+	/* float für index image das es nach rechts geht; bisher keine probleme mit in image class sein; sonst auslagern*/
+	float: right;
 }
 
 #article {
@@ -353,7 +349,6 @@ hr {
 
 #body_article li:nth-child(even) {
 	color: #999999;
-	/* ol und ul als box mit anderen color? */
 }
 
 .cursor {
@@ -429,10 +424,6 @@ hr {
 	position: absolute;
 	right: 10px;
 	z-index: 23;
-}
-
-.nav div {
-	padding: 10px 15px;
 }
 
 .nav {
