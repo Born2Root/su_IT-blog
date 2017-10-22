@@ -254,6 +254,10 @@ a:not(.post_link):hover {
 	float: right;
 }
 
+.post_image {
+	background-color: #111111;
+}
+
 #article {
 	position: relative;
 	z-index: 10;
