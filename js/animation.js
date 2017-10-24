@@ -11,18 +11,13 @@ var canvas_list = [{
 var amount_points;
 var distance;
 
-var loop = null;
-
 init();
-window.removeEventListener("resize", init);
 window.addEventListener("resize", init);
+requestAnimationFrame(draw);
 
 function init() {
-
-	clearInterval(loop);
-
 	canvas_list.forEach(function (entry) {
-		entry.canvas.width = document.body.scrollWidth;
+		entry.canvas.width = window.innerWidth;
 		if (entry.canvas.width <= 767) {
 			entry.canvas.height = 50;
 			amount_points = 50;
@@ -33,29 +28,22 @@ function init() {
 			distance = 70;
 		}
 
+		entry.context.fillStyle = "#484848";
+		entry.context.strokeStyle = "#ff6d00";
 		entry.points = [];
 
-		for (var i = 0; i < amount_points; i++) {
-
-			var r = Math.floor(Math.random() * 4);
-			var x = Math.floor(Math.random() * entry.canvas.width);
-			var y = Math.floor(Math.random() * entry.canvas.height);
+		for (var t = 0; t < amount_points; t++) {
 
 			entry.points.push({
-				x: x,
-				y: y,
-				r: r,
-				i: 0,
+				x: Math.floor(Math.random() * entry.canvas.width),
+				y: Math.floor(Math.random() * entry.canvas.height),
+				r: Math.floor(Math.random() * 4),
+				i: Math.floor(Math.random() * 8),
 				mx: 0,
 				my: 0
 			});
 		}
-
-		entry.context.fillStyle = "#484848";
 	});
-
-	draw();
-	loop = setInterval(draw, 100);
 }
 
 function draw() {
@@ -64,6 +52,7 @@ function draw() {
 		move(entry.context, entry.canvas, entry.points);
 		connect(entry.context, entry.points);
 	});
+	requestAnimationFrame(draw);
 }
 
 function move(context, canvas, points) {
@@ -94,10 +83,7 @@ function move(context, canvas, points) {
 
 function connect(context, points) {
 
-	context.strokeStyle = "#ff6d00";
-
 	points.forEach(function (point) {
-
 		points.forEach(function (other) {
 
 			var diff = Math.abs(other.x - point.x) + Math.abs(other.y - point.y);
@@ -115,7 +101,6 @@ function connect(context, points) {
 	});
 
 	points.forEach(function (point) {
-
 		context.beginPath();
 		context.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
 		context.fill();

@@ -7,21 +7,20 @@ document.getElementById("back").onclick = function () {
 function onpage_link(event, link) {
 	event.preventDefault();
 
-	var target = document.getElementById(link.href.substring(link.href.lastIndexOf("#") + 1));
-	//console.log(link.href.substring(link.href.lastIndexOf("#") + 1));
+	var path = link.href;
+	var target = document.getElementById(path.substring(path.lastIndexOf("#") + 1));
+
+	//console.log(path.substring(path.lastIndexOf("#") + 1));
 	target.scrollIntoView({
 		behavior: "smooth",
 		block: "center"
 	});
-
-	var path = link.href;
 	window.history.pushState({
 		path: path
 	}, path, path);
 
 	target.className = "mark";
-
 	setTimeout(function () {
 		target.className = "";
-	}, 2000);
+	}, 1500);
 }

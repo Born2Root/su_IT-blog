@@ -12,6 +12,7 @@
 
 .canvas {
 	height: 110px;
+	overflow: hidden;
 }
 
 #pre {

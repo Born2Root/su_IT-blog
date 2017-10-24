@@ -28,6 +28,6 @@ redesign: 01.08.2017
 - 404
 - impressum
 - search
-- [nur eventuell] links anzeigen ob sie _blank oder _selfW
+- [nur eventuell] links anzeigen ob sie _blank oder _self
 - evtl. alternativen Cursor verwenden anstatt der Klickhand
 - eastereggs verstecken

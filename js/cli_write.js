@@ -1,4 +1,3 @@
-//ajax
 var lines = "";
 var line = 0;
 
@@ -8,7 +7,6 @@ xhttp.onreadystatechange = function () {
 
 		lines = this.responseText.split("\n");
 		line = Math.floor(Math.random() * lines.length);
-
 	}
 };
 xhttp.open("GET", "/lines.txt", true);
