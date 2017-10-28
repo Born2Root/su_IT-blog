@@ -1,5 +1,7 @@
 #header {
 	position: fixed;
+	box-shadow: #000000 0px 3px 10px 0px;
+	-webkit-box-shadow: #000000 0px 3px 10px 0px;
 }
 
 #subtitle {
@@ -15,11 +17,10 @@
 }
 
 #burger {
-	/* vielleicht in main zurueck */
 	position: absolute;
 	color: #ff6d00;
 	font-size: 3em;
-	top: 3px;
+	top: 0px;
 	left: 10px;
 }
 
@@ -41,6 +42,7 @@ h1 {
 
 #headline {
 	width: 12em;
+	padding: 9px;
 }
 
 #body {
@@ -67,6 +69,7 @@ pre {
 
 #logo {
 	top: 0px;
+	right: 0px;
 	height: 55px;
 }
 

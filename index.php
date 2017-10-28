@@ -174,7 +174,7 @@ function print_link($link)
 
         <div id="welcome">
             <h1>
-                Welcome to this site, where you can find <i>Made to measure</i> content
+                Hey there, looking for <u>Made to measure</u> content?
             </h1>
             <img class="image" alt="logos" src=<?php
                 echo '"logo/logo_'.rand(1, 19).'.png"';

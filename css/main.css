@@ -5,8 +5,6 @@
 #header {
 	background-color: #111111;
 	z-index: 11;
-	box-shadow: #000000 0 7px 6px -6px;
-	-webkit-box-shadow: #000000 0 7px 6px -6px;
 	width: 100%;
 }
 
@@ -133,6 +131,7 @@ ul {
 	display: block;
 	font-weight: bold;
 	text-shadow: 4px 5px 2px #000000;
+	border-radius: 5px;
 }
 
 #menu a:hover {
@@ -185,8 +184,8 @@ code:nth-child(even) {
 
 #headline {
 	position: absolute;
-	background: #111111;
-	top: 10px;
+	background: rgba(27, 27, 27, 0.75);
+	top: 3px;
 	margin: auto;
 	left: 0px;
 	right: 0px;
@@ -250,12 +249,12 @@ a:not(.post_link):hover {
 	/* immer untereinander bleiben */
 	display: block;
 	margin: auto;
-	/* float für index image das es nach rechts geht; bisher keine probleme mit in image class sein; sonst auslagern*/
 	float: right;
 }
 
 .post_image {
 	background-color: #111111;
+	border-radius: 5px;
 }
 
 #article {
@@ -290,7 +289,6 @@ a:not(.post_link):hover {
 
 h1 {
 	text-align: center;
-	text-decoration: underline;
 	min-width: 300px;
 	font-family: hack_font;
 }
@@ -340,7 +338,6 @@ h3 {
 }
 
 #subtitle {
-	text-align: center;
 	font-family: hack_font;
 }
 
@@ -386,9 +383,10 @@ hr {
 }
 
 #welcome {
-	background-color: #484848;
+	background-color: rgba(255, 255, 255, 0.6);
 	position: relative;
 	padding: 10px;
+	border-radius: 10px;
 }
 
 #right_box {
@@ -565,6 +563,8 @@ tfoot td {
 
 .image_box img {
 	width: 100%;
+	box-shadow: #111111 0px 4px 2px -2px;
+	-webkit-box-shadow: #111111 0px 4px 2px -2px;
 }
 
 .image_text {

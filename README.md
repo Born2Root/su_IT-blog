@@ -33,3 +33,4 @@ redesign: 01.08.2017
 - eastereggs verstecken
 - open graph meta tags hinzufügen?!
 - webp medien einbinden
+- !!!artikel liste und "header" von artikel mit media query fixen!!!

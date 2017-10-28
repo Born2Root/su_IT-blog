@@ -39,5 +39,5 @@ function cli_write() {
 		}
 	}
 
-	setTimeout(cli_write, 100);
+	setTimeout(cli_write, 175);
 }

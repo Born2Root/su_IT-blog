@@ -1,11 +1,11 @@
 window.onscroll = function () {
 
-	if (document.body.scrollWidth > 767) {
+	if (window.innerWidth > 767) {
 		var menu = document.getElementById("menu");
 		var logo = document.getElementById("logo");
 
 		if (window.pageYOffset > document.getElementById("banner").clientHeight) {
-			menu.className = "fixed-menu";
+			menu.className = "fixed_menu";
 
 			logo.style.position = "fixed";
 			logo.style.height = "60px";

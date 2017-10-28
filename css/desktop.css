@@ -49,11 +49,14 @@
 
 .post_image {
 	margin-top: 36px;
+	margin-left: 15px;
 }
 
 #headline {
 	width: 25em;
 	padding: 5px 10px;
+	height: auto;
+	min-height: 104px;
 }
 
 #body {
@@ -83,15 +86,15 @@ pre {
 	display: inline;
 }
 
-.fixed-menu {
+.fixed_menu {
 	position: fixed;
 	top: 0px;
 	width: 100%;
 	margin: 0px !important;
 	padding: 20px 0px;
 	background-color: #111111;
-	box-shadow: #000000 0 7px 6px -6px;
-	-webkit-box-shadow: #000000 0 7px 6px -6px;
+	box-shadow: #000000 0px 3px 6px 0px;
+	-webkit-box-shadow: #000000 0px 3px 6px 0px;
 }
 
 #container {
