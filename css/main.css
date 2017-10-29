@@ -72,6 +72,7 @@
 #pre ol {
 	counter-reset: overview;
 	list-style-type: none;
+	padding-left: 30px;
 }
 
 #pre ol li {
@@ -80,6 +81,10 @@
 
 #pre li li {
 	margin: 0px;
+}
+
+#console {
+	margin-right: -7px;
 }
 
 #pre ol li::before {
@@ -231,13 +236,7 @@ a:not(.post_link):hover {
 }
 
 .post_link {
-	/* nicht unterstrichen */
 	text-decoration: none;
-}
-
-#welcome_text {
-	display: flex;
-	min-width: 300px;
 }
 
 .image {
@@ -249,7 +248,6 @@ a:not(.post_link):hover {
 	/* immer untereinander bleiben */
 	display: block;
 	margin: auto;
-	float: right;
 }
 
 .post_image {
@@ -289,7 +287,6 @@ a:not(.post_link):hover {
 
 h1 {
 	text-align: center;
-	min-width: 300px;
 	font-family: hack_font;
 }
 
@@ -305,8 +302,6 @@ h1 {
 h2 {
 	margin-left: 5%;
 	font-size: 1.3em;
-	display: flex;
-	min-width: 300px;
 	font-family: hack_font;
 }
 
@@ -355,7 +350,7 @@ hr {
 .cursor {
 	animation: blink 0.7s infinite;
 	-webkit-animation: blink 0.7s infinite;
-	margin-left: -14px;
+	margin-left: -7px;
 }
 
 @keyframes blink {
@@ -385,22 +380,30 @@ hr {
 #welcome {
 	background-color: rgba(255, 255, 255, 0.6);
 	position: relative;
-	padding: 10px;
+	padding: 10px 20px 10px 50px;
 	border-radius: 10px;
+	font-size: 1.2em;
+}
+
+#welcome h1 {
+	font-size: 1.8em;
+}
+
+#welcome img {
+	width: 500px;
+	float: right;
 }
 
 #right_box {
-	float: right;
 	border-left: 5px solid #ff6d00;
 	margin: 10px;
 	padding: 10px;
 }
 
 #tags_article {
+	text-align: center;
 	padding-top: 15px;
-	margin-left: 25px;
 	margin-bottom: 10px;
-	margin-right: -15px;
 }
 
 .tags {
@@ -492,7 +495,7 @@ hr {
 }
 
 #disclaimer {
-	background: #111111;
+	background: rgba(27, 27, 27, 0.75);
 	color: #ffffff;
 	left: 0px;
 	margin: auto;

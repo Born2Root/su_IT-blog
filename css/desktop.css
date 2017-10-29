@@ -16,8 +16,7 @@
 }
 
 #pre {
-	width: 90%;
-	padding: 0.5em 2em;
+	padding: 0.5em 1em;
 }
 
 #burger {
@@ -39,6 +38,10 @@
 	margin: 30px auto;
 }
 
+#article p {
+	display: inline-block;
+}
+
 .post {
 	padding: 15px;
 }
@@ -49,7 +52,6 @@
 
 .post_image {
 	margin-top: 36px;
-	margin-left: 15px;
 }
 
 #headline {
@@ -141,7 +143,37 @@ pre {
 	left: -40px;
 }
 
+.image {
+	float: none;
+}
+
 .tag_div {
 	margin: 0px -25px;
 	top: -15px;
+}
+
+@media screen and (min-width: 1400px) {
+	#pre {
+		width: 90%;
+		padding: 0.5em 2em;
+	}
+	#pre ol {
+		padding-left: 40px;
+	}
+	#article p {
+		display: block;
+	}
+	#right_box {
+		float: right;
+	}
+	.image {
+		float: right;
+	}
+	#tags_article {
+		margin-left: 25px;
+		margin-right: -15px;
+	}
+	.post_image {
+		margin-left: 15px;
+	}
 }

@@ -173,30 +173,39 @@ function print_link($link)
         </div>
 
         <div id="welcome">
-            <h1>
-                Hey there, looking for <u>Made to measure</u> content?
-            </h1>
-            <img class="image" alt="logos" src=<?php
+            <img alt="logos" src=<?php
                 echo '"logo/logo_'.rand(1, 19).'.png"';
             ?>>
-            <p id="welcome_text">
+
+            <h1>
+                Hey there, <br>looking for Made to measure content?
+            </h1>
+
+            <p>
                 It is great to see that you found this page :D
                 <br>If you are interested in any computer tech topic, you can find something here.
                 <br>
                 Here are some of the topics we covered the most:
             </p>
+
             <ul>
                 <li>
-                    Linux
+                    Linux <i class="fa fa-linux" aria-hidden="true"></i>
                 </li>
                 <li>
-                    Scripting
+                    Webdesign <i class="fa fa-css3" aria-hidden="true"></i>
+                </li>
+                <li>
+                    Websites <i class="fa fa-html5" aria-hidden="true"></i>
+                </li>
+                <li>
+                    Scripting <i class="fa fa-code" aria-hidden="true"></i>
                 </li>
                 <li>
                     Animations
                 </li>
                 <li>
-                    LED projects
+                    LED projects <i class="fa fa-microchip" aria-hidden="true"></i>
                 </li>
                 <li>
                     Memes
@@ -205,7 +214,9 @@ function print_link($link)
                     Pictures
                 </li>
                 <li>
-                    ...
+                    <a href="about_us.html" target="_blank" rel="noopener">
+                        Read more...
+                    </a>
                 </li>
             </ul>
         </div>

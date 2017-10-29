@@ -86,17 +86,17 @@ Power belongs to those who take it
 Programming is like sex, one mistake and you have to support for a lifetime
 Put your panties down, to grant me sudo access
 rm -rf /
-Roses are #FF0000, violets are #0000FF. All my base are belong to you
+Roses are #FF0000, violets are #0000FF. All my base belong to you
 Scratch here ############## to reveal the password
 Sex:{ find; talk; grep; touch; unzip; mount; workbone; fsck; yes; gasp; fsck; yes; eject; makeclean; zip; done; exit}
 So if guns kill people, I guess pencils misspell word, cars drive drunk, and spoons make people fat
 So we make our own Blog. With Blackjack and hookers
 Software is like sex: it's better when it's free
-sudo apt-get Beer <WHERE> "temp" = "COLD"
-sudo apt-get more jokes
+SELECT Beer FROM fridge WHERE temp = "COLD";
+sudo apt-get more_jokes
 sudo make coffee
 suIT up your life
-suIT? Because we are legen... wait a minute dary
+suIT? Because we are legen... wait for it ...dary
 test
 That's the real shit!
 The border is just another line to cross
@@ -127,7 +127,7 @@ What's the difference between a hooker and a lawyer? A hooker will stop fucking 
 When the past calls, let it go to voicemail. It has nothing new to say
 Who wants to live forever
 Why? Because we can...
-Willyoupleasehelpmefixmykeyboard?Thespacebarisbroken! 
+Willyoupleasehelpmefixmykeyboard?Thespacebarisbroken!
 wine (at) /home/till_you_get_drunk
 You have security guidelines? We didn't noticed at all...
 You have the nicest syntax I've ever seen
