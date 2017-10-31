@@ -38,3 +38,10 @@ redesign: 01.08.2017
 - open graph meta tags hinzufügen?!
 - webp medien einbinden
 - !!!artikel liste und "header" von artikel mit media query fixen!!!
+- inline quote
+- shortcuts, filesname, call name inline box
+
+- Screenfetch:
+	- gif zum zeigen der varianten
+	- requirements in pre box
+	- headline link image

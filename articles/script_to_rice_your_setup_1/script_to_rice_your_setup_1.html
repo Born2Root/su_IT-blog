@@ -133,8 +133,12 @@
 
 				<div>
 
-					<h1>Scripts To Rice Your Setup</h1>
-					<h2>Get a better looking system info by ricing screenfetch</h2>
+					<h1>
+						Script To Rice Your Linux Terminal
+					</h1>
+					<h2>
+						Get neat distro logos to system infos on console launch
+					</h2>
 
 					<div class="tags">
 						<div class="tag_div">
@@ -168,8 +172,7 @@
 					</h1>
 
 					<p>
-						So in the progress of installing my Arch and ricing it, I also installed screenfetch.
-						<br> Screenfetch is a small program to get
+						On launch of my terminal, I don't want a blank window. So I installed screenfetch, which is
 					</p>
 
 					<fieldset class="quote box">
@@ -180,17 +183,20 @@
 					</fieldset>
 
 					<p>
-						So you are using a script for GNU Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch. But don't you get bored to see the same distribution logo all the time?
-						<br> In this article, I'll show a very little bash script with a (much) impact.
+						And I put a call to it in my <i>.bashrc</i>.
+						<br>But there is still the problem that it looks the same on every start. Same logo. Same colors.
+						<br>So you are using a script for GNU Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch.
+						<br>If you get bored too this article, will show you a way to change displayed distribution logo & colors on every use.
 					</p>
 
 					<h2>
 						Requirements
+						<TODO>In pre box rein</TODO>
 					</h2>
 
 					<ul>
 						<li>
-							screenfetch, archey, screenfo, neofetch, or similar
+							screenfetch, archey, screenfo, neofetch or similar
 						</li>
 						<li>
 							bash basics
@@ -205,10 +211,8 @@
 					</h1>
 
 					<p>
-						It's automatically detecting your OS to display the logo and gets multiple system info's. Here a screenshot of how the normal output looks like on my system: Screenfetch or alternatives, like Archey, Screenfo or Neofetch, are pretty cool programs. But isn't it boring to always see the same logo, although all the logos out there look great?
-						<br> For me, after seeing the (same) Arch logo for the third time I got a bit bored. So I came up with an idea.
-						<br> Therefore I wrote a little script to make my screenfetch look better or rather a bit different.
-						<br> While going randomly through the man page of screenfetch, I noticed the -A Flag.
+						Programs like screenfetch automatically detect your distro to display the logo and multiple system info's. That's the reason, you are always getting the same logo and with that the same text color.
+						<br> While going randomly through the man page of screenfetch, I noticed the <i>-A</i> Flag.
 					</p>
 
 					<fieldset class="quote box">
@@ -219,35 +223,32 @@
 					</fieldset>
 
 					<p>
-						So it's possible to show the logo of another OS by giving the according name.
-						<br> Because I don't know all distributes available and covert by screenfetch, I opened the source code and looked through it.
-						<br> I tried them all and wrote them into an array.
-						<br> And then I noticed that the man page names them all. I don't know how I could over see this.
-						<br> But you still can't just copy the list. But I tried them all 70 of them and came up with this usable list.
+						So it's possible to show the logo of another distro by giving the according name.
+						<br> Because I don't know all distributions supported by screenfetch, I opened the source code and looked through it.
+						<br> I tried all I found and wrote them into an array.
+						<br> Afterwards I noticed, that the man page names them all. I don't know how I could oversee this.
+						<br> But you still couldn't just copy the list. But I tried all 70 of them and came up with this usable list.
 					</p>
 
 					<pre>
-					<code class="bash">os=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
+					<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
 					</code>
 				</pre>
 
 
 					<p>
-						And now a random index to make things fun and different every time we call it.
+						And now we simply add a random index, to make things fun and different every time we call it. Then we can feed screenfetch with one item of our array at the random index.
 					</p>
 
 					<pre>
 					<code class="bash">RAND=$[ $RANDOM % 70]</code>
-					<code class="bash">
-os=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
-</code>
-					<code class="bash">screenfetch -A ${os[$RAND]} -w
+					<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")</code>
+					<code class="bash">screenfetch -A ${distro[$RAND]} -w
 					</code>
 				</pre>
 
 					<p>
-						It just calls screenfetch with one string of our array with the random index.
-						<br> The -w Flag ("-w Wrap long lines.") just to fit all information on a normal terminal window.
+						Note: The -w Flag ("-w Wrap long lines.") is just there to fit all information on a normal terminal window.
 					</p>
 
 					<h1>
@@ -255,8 +256,9 @@ os=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs
 					</h1>
 
 					<p>
-						And that's all you have to do. Now you can enjoy all the beautiful logos available. And every time a different one.
-						<br> I choose to put the code into my .bashrc so on every console I open, this code will be executed, but you also could make an alias which calls an bash script file with this code inside.
+						And that's all you have to do. Now you can enjoy all the beautiful logos available. And everytime a different one (or at least one of the 70).
+						<br> And mentioned, you just have to put this code into your .bashrc (or equivalent). So when you launch a new instance, this code will be executed.
+						<br> But you could also make an alias which calls an bash script file with this code inside. Just remember to give the absolute path of screenfetch so you don't create and infinite loop.
 					</p>
 
 					<img src="console.png" alt="console" class="image">
@@ -265,7 +267,9 @@ os=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs
 				<div>
 					<hr>
 					<h2>
-						[footer]
+						You want more tips for making your system look and feel better, then <a target="_self" href="">click here</a> for the next part.
+						<br> Otherwise, think about...
+						<br>[footer]
 					</h2>
 				</div>
 			</div>
