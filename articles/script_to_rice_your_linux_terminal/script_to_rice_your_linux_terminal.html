@@ -34,11 +34,6 @@
 	<!-- highlight.js -->
 	<link rel="stylesheet" href="/styles/atelier-forest-dark.css">
 
-	<script src="/css/highlight.pack.js"></script>
-	<script>
-		hljs.initHighlightingOnLoad();
-	</script>
-
 </head>
 
 <body>
@@ -140,35 +135,74 @@
 						Get neat distro logos to system infos on console launch
 					</h2>
 
-					<div class="tags">
-						<div class="tag_div">
-							<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-							<div class="tag_text">Linux</div>
+					<div>
+						<div id="tags_article">
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text"><i class="fa fa-clock-o" aria-hidden="true"></i> 50min read</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">Linux</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">programming</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">Software</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">Hardware</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">PI</div>
+							</div>
 						</div>
-						<div class="tag_div">
-							<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-							<div class="tag_text">programming</div>
-						</div>
-						<div class="tag_div">
-							<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-							<div class="tag_text">blender</div>
-						</div>
-						<div class="tag_div">
-							<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-							<div class="tag_text">test</div>
-						</div>
-						<div class="tag_div">
-							<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-							<div class="tag_text">lulu</div>
-						</div>
+
+						<img src="console.png" alt="logo" class="image">
 					</div>
 
-					<hr>
+					<div id="pre">
+
+						<h3>
+							Requirements:
+						</h3>
+						<ul>
+							<li>
+								Difficulty: Easy
+							</li>
+
+							<li>
+								Needs:
+								<ul>
+									<li>
+										screenfetch, archey, screenfo, neofetch or similar
+									</li>
+									<li>
+										bash basics
+									</li>
+									<li>
+										that's it, you are good to go :)
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+
+					</div>
+
 				</div>
 
 				<div id="body_article">
-					<h1>
+					<h1 id="introduction">
 						Introduction
+						<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+							<i class="fa fa-link link" aria-hidden="true"></i>
+						</a>
 					</h1>
 
 					<p>
@@ -189,25 +223,11 @@
 						<br>If you get bored too this article, will show you a way to change displayed distribution logo & colors on every use.
 					</p>
 
-					<h2>
-						Requirements
-						<TODO>In pre box rein</TODO>
-					</h2>
-
-					<ul>
-						<li>
-							screenfetch, archey, screenfo, neofetch or similar
-						</li>
-						<li>
-							bash basics
-						</li>
-						<li>
-							that's it, you are good to go :)
-						</li>
-					</ul>
-
-					<h1>
+					<h1 id="content">
 						Content
+						<a target="_self" href="#content" onclick="onpage_link(event, this);">
+							<i class="fa fa-link link" aria-hidden="true"></i>
+						</a>
 					</h1>
 
 					<p>
@@ -231,9 +251,9 @@
 					</p>
 
 					<pre>
-					<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
-					</code>
-				</pre>
+						<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
+						</code>
+					</pre>
 
 
 					<p>
@@ -241,18 +261,20 @@
 					</p>
 
 					<pre>
-					<code class="bash">RAND=$[ $RANDOM % 70]</code>
-					<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")</code>
-					<code class="bash">screenfetch -A ${distro[$RAND]} -w
-					</code>
-				</pre>
+						<code class="bash">RAND=$[ $RANDOM % 70]</code>
+						<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")</code>
+						<code class="bash">screenfetch -A ${distro[$RAND]} -w</code>
+					</pre>
 
 					<p>
 						Note: The -w Flag ("-w Wrap long lines.") is just there to fit all information on a normal terminal window.
 					</p>
 
-					<h1>
+					<h1 id="conclusion">
 						Conclusion
+						<a target="_self" href="#conclusion" onclick="onpage_link(event, this);">
+							<i class="fa fa-link link" aria-hidden="true"></i>
+						</a>
 					</h1>
 
 					<p>
@@ -264,6 +286,7 @@
 					<img src="console.png" alt="console" class="image">
 
 				</div>
+
 				<div>
 					<hr>
 					<h2>
@@ -292,6 +315,10 @@
 	<script src="/js/main_nav.js" async></script>
 	<script src="/js/additional_nav.js" async></script>
 	<script src="/js/scroll.js" async></script>
+	<script src="/css/highlight.pack.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
 
 </body>
 

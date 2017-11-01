@@ -43,5 +43,3 @@ redesign: 01.08.2017
 
 - Screenfetch:
 	- gif zum zeigen der varianten
-	- requirements in pre box
-	- headline link image

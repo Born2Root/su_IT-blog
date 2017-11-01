@@ -3,13 +3,13 @@ Article with all elements of the website to design and look at them
 programming;blender;linux;various;memes
 example_dir/console.png
 example_dir/example_article.html
-thereOhm - DIY Raspberry Pi Theremin
-Projektarbeit über Bau eines Theremin
+ThereOHM - DIY Theremin
+Klangvariierendes Theremin via Software DSP
 programming;linux;pi
 thereOHM/image001.png
 thereOHM/thereohm.html
-Script To Rice Your Setup Pt.1
-Get a better looking system info by ricing screenfetch
+Script To Rice Your Linux Terminal
+Get neat distro logos to system infos on console launch
 programming;blender;linux
-script_to_rice_your_setup_1/console.png
-script_to_rice_your_setup_1/script_to_rice_your_setup_1.html
+script_to_rice_your_linux_terminal/console.png
+script_to_rice_your_linux_terminal/script_to_rice_your_linux_terminal.html
