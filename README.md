@@ -21,6 +21,8 @@ new branch: 06.07.2017
 redesign: 01.08.2017
 <br>
 100 commits: 06.08.2017
+<br>
+200 commits: 31.10.2017
 
 # To-DO:
 
@@ -33,7 +35,7 @@ redesign: 01.08.2017
 - meme page
 - [nur eventuell] search
 - [nur eventuell] links anzeigen ob sie _blank oder _self
-- evtl. alternativen Cursor verwenden anstatt der Klickhand
+-  [nur eventuell] alternativer Cursor verwenden anstatt der Klickhand, eigene Scrollleiste
 - eastereggs verstecken
 - open graph meta tags hinzufügen?!
 - webp medien einbinden
