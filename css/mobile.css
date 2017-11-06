@@ -16,11 +16,28 @@
 	padding: 0.5em 0.5em;
 }
 
+#welcome img {
+	width: 300px;
+}
+
+#welcome {
+	padding: 10px;
+}
+
+#welcome h1 {
+	font-size: 1.6em;
+}
+
+.image {
+	max-height: 350px;
+	max-width: 400px;
+}
+
 #burger {
 	position: absolute;
 	color: #ff6d00;
 	font-size: 3em;
-	top: 0px;
+	top: 1px;
 	left: 10px;
 }
 
@@ -75,4 +92,16 @@ pre {
 
 .tag_img {
 	width: 140px;
+}
+
+.tags {
+	padding-top: 35px;
+}
+
+.tag_div {
+	margin-top: -40px;
+}
+
+.tag_text {
+	bottom: 56px;
 }

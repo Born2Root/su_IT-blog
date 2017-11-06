@@ -242,9 +242,6 @@ a:not(.post_link):hover {
 .image {
 	width: 100%;
 	/* mit scalieren */
-	max-height: 395px;
-	/* nicht groeser als 450px */
-	max-width: 450px;
 	/* immer untereinander bleiben */
 	display: block;
 	margin: auto;
@@ -380,18 +377,19 @@ hr {
 #welcome {
 	background-color: rgba(255, 255, 255, 0.6);
 	position: relative;
-	padding: 10px 20px 10px 50px;
 	border-radius: 10px;
 	font-size: 1.2em;
 }
 
 #welcome h1 {
 	font-size: 1.8em;
+	min-width: 250px;
+	display: flex;
 }
 
 #welcome img {
-	width: 500px;
 	float: right;
+	position: relative;
 }
 
 #right_box {
@@ -408,21 +406,18 @@ hr {
 
 .tags {
 	text-align: center;
-	padding-top: 15px;
-	padding-right: 28px;
-	margin-left: 25px;
+	/* margin-left: 25px; same*/
+	/* padding-right: 28px, falls vielleicht für mobil */
 }
 
 .tag_text {
 	position: relative;
-	bottom: 62px;
 	text-align: center;
 }
 
 .tag_div {
 	display: inline-block;
 	position: relative;
-	margin-top: -20px;
 }
 
 #logo {

@@ -108,6 +108,7 @@ pre {
 #welcome {
 	width: 75%;
 	margin: auto;
+	padding: 10px 20px 10px 50px;
 }
 
 #disclaimer {
@@ -121,6 +122,7 @@ pre {
 
 .tags {
 	padding-bottom: 10px;
+	padding-top: 15px;
 }
 
 .tag_img {
@@ -129,6 +131,7 @@ pre {
 
 .tag_text {
 	font-size: 1.25em;
+	bottom: 62px;
 }
 
 .tag_div:not(:first-child) {
@@ -143,11 +146,18 @@ pre {
 
 .image {
 	float: none;
+	max-height: 395px;
+	max-width: 450px;
 }
 
 .tag_div {
 	margin: 0px -25px;
 	top: -15px;
+}
+
+#welcome img {
+	width: 400px;
+	margin-top: 7.5%;
 }
 
 @media screen and (min-width: 1400px) {
@@ -173,5 +183,8 @@ pre {
 	}
 	.post_image {
 		margin-left: 15px;
+	}
+	#welcome img {
+		width: 500px;
 	}
 }
