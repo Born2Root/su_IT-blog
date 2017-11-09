@@ -406,8 +406,6 @@ hr {
 
 .tags {
 	text-align: center;
-	/* margin-left: 25px; same*/
-	/* padding-right: 28px, falls vielleicht für mobil */
 }
 
 .tag_text {
@@ -424,6 +422,12 @@ hr {
 	position: absolute;
 	right: 10px;
 	z-index: 23;
+}
+
+#footer_article {
+	background-color: #004D40;
+	padding: 10px 15px;
+	box-shadow: inset 0px 0px 14px 3px black;
 }
 
 .nav {
