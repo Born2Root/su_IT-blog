@@ -8,7 +8,7 @@ window.onscroll = function () {
 			menu.className = "fixed_menu";
 
 			logo.style.position = "fixed";
-			logo.style.height = "60px";
+			logo.style.height = "64px";
 			logo.style.top = "0px";
 		} else {
 			menu.className = "";

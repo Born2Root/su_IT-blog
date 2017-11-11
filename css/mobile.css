@@ -18,6 +18,9 @@
 
 #welcome img {
 	width: 300px;
+	margin: auto;
+	display: block;
+	float: none;
 }
 
 #welcome {
@@ -26,6 +29,7 @@
 
 #welcome h1 {
 	font-size: 1.6em;
+	margin: 5px auto;
 }
 
 .image {
@@ -81,7 +85,8 @@ pre {
 }
 
 #disclaimer {
-	bottom: 10px;
+	bottom: 0px;
+	height: 100%;
 }
 
 #logo {
@@ -96,6 +101,7 @@ pre {
 
 .tags {
 	padding-top: 35px;
+	margin-bottom: -20px;
 }
 
 .tag_div {

@@ -27,10 +27,6 @@
 	padding: 10px 15px;
 }
 
-.post_link h1 {
-	margin-top: 1em;
-}
-
 #article {
 	width: 90%;
 	margin: 30px auto;
@@ -46,10 +42,6 @@
 
 .post hr {
 	width: auto;
-}
-
-.post_image {
-	margin-top: 36px;
 }
 
 #headline {
@@ -157,7 +149,7 @@ pre {
 
 #welcome img {
 	width: 400px;
-	margin-top: 7.5%;
+	margin-top: 26px;
 }
 
 @media screen and (min-width: 1400px) {
@@ -183,8 +175,10 @@ pre {
 	}
 	.post_image {
 		margin-left: 15px;
+		margin-top: 24px;
 	}
 	#welcome img {
 		width: 500px;
+		margin-top: 7.5%;
 	}
 }

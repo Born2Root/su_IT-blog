@@ -497,10 +497,10 @@ hr {
 	background: rgba(27, 27, 27, 0.75);
 	color: #ffffff;
 	left: 0px;
+	right: 0px;
 	margin: auto;
 	position: absolute;
-	right: 0px;
-	width: 90px;
+	width: 50%;
 	text-align: center;
 }
 

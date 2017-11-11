@@ -27,7 +27,7 @@ redesign: 01.08.2017
 # To-DO:
 ## wichtig:
 
-- !!!artikel liste und "header" von artikel mit media query fixen!!!
+- !!!"header" von artikel mit media query fixen!!!
 - write posts
 - impressum
 - about us
