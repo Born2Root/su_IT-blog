@@ -170,7 +170,7 @@ code:not(.command):before {
 }
 
 code:nth-child(even) {
-	background-color: #333333;
+	background-color: #1e1e1e;
 }
 
 .command:before {
@@ -340,8 +340,25 @@ hr {
 	width: 90%;
 }
 
+
+/*
+#body_article li:nth-child(odd) {
+	color: #db907e;
+}
+
 #body_article li:nth-child(even) {
-	color: #999999;
+	color: #ddab9e;
+}
+*/
+
+#body_article li::before {
+	content: "\f0a4";
+	color: #ff6d00;
+	/* falls hand icon nicht gut aussieht oder funktioniert*/
+}
+
+#body_article li {
+	list-style-type: none;
 }
 
 .cursor {
@@ -545,8 +562,9 @@ td[rowspan] {
 }
 
 th {
-	background-color: #000000;
+	background-color: #050505;
 	padding: 8px;
+	border: 3px solid black;
 }
 
 tfoot td {

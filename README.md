@@ -27,14 +27,14 @@ redesign: 01.08.2017
 # To-DO:
 ## wichtig:
 
-- !!!"header" von artikel mit media query fixen!!!
-- write posts
 - impressum
 - about us
-- statistics
 - image galery
 - meme page
+- write posts
+- statistics
 - webp medien einbinden
+- !!!"header" von artikel mit media query fixen!!!
 
 ## zukunft:
 
