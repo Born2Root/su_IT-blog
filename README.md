@@ -23,6 +23,8 @@ redesign: 01.08.2017
 100 commits: 06.08.2017
 <br>
 200 commits: 31.10.2017
+<br>
+domain suit-blog.net goes live: 16.11.2017
 
 # To-DO:
 ## wichtig:
