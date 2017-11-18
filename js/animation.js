@@ -11,11 +11,13 @@ var canvas_list = [{
 var amount_points;
 var distance;
 
-/*
 init();
 window.addEventListener("resize", init);
-requestAnimationFrame(draw);
-*/
+//requestAnimationFrame(draw);
+
+//punkte sammeln sich, da wenn an rand kommt x und y neu gesetzt werden
+//zu schnell
+//zu viel resourcen
 
 function init() {
 	canvas_list.forEach(function (entry) {
@@ -23,42 +25,36 @@ function init() {
 		if (entry.canvas.width <= 767) {
 			entry.canvas.height = 50;
 			amount_points = 50;
-			distance = 50;
+			distance = 30;
 		} else {
 			entry.canvas.height = 110;
-			amount_points = 90;
-			distance = 90;
+			amount_points = 100;
+			distance = 70;
 		}
 
 		entry.context.fillStyle = "#484848";
 		entry.context.strokeStyle = "#ff6d00";
-		entry.context.lineWidth = 0.1;
 		entry.points = [];
 
 		for (var i = 0; i < amount_points; i++) {
 
 			entry.points.push({
-				x: Math.round(Math.random() * (entry.canvas.width - 10)) + 5,
-				y: Math.round(Math.random() * (entry.canvas.height - 10)) + 5,
-				r: Math.round(Math.random() * 4),
+				x: Math.floor(Math.random() * (entry.canvas.width - 10)) + 5,
+				y: Math.floor(Math.random() * (entry.canvas.height - 10)) + 5,
+				r: Math.floor(Math.random() * 4),
 				mx: 0,
-				my: 0,
-				others: []
+				my: 0
 			});
-
-			for (var t = 0; t < 1; t++) {
-				entry.points[i].others.push(Math.round(Math.random() * (amount_points - 1)));
-			}
 
 			var new_mx;
 			do {
-				new_mx = Math.random() * (Math.random() < 0.5 ? -1 : 1);
+				new_mx = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
 			} while (entry.points[i].x + entry.points[i].mx > entry.canvas.width || entry.points[i].x + entry.points[i].mx < 0);
 			entry.points[i].mx = new_mx;
 
 			var new_my;
 			do {
-				new_my = Math.random() * (Math.random() < 0.5 ? -1 : 1);
+				new_my = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
 			} while (entry.points[i].x + entry.points[i].mx > entry.canvas.width || entry.points[i].x + entry.points[i].mx < 0);
 			entry.points[i].my = new_my;
 		}
@@ -83,13 +79,13 @@ function move(context, canvas, points) {
 
 		if (point.x + point.mx > canvas.width || point.x + point.mx < 0) {
 			do {
-				point.mx = Math.random() * (Math.random() < 0.5 ? -1 : 1);
+				point.mx = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
 			} while (point.x + point.mx > canvas.width || point.x + point.mx < 0);
 		}
 
 		if (point.y + point.my > canvas.height || point.y + point.my < 0) {
 			do {
-				point.my = Math.random() * (Math.random() < 0.5 ? -1 : 1);
+				point.my = Math.floor(Math.random() * 5) * (Math.random() < 0.5 ? -1 : 1);
 			} while (point.y + point.my > canvas.height || point.y + point.my < 0);
 		}
 
@@ -100,11 +96,19 @@ function connect(context, points) {
 
 	points.forEach(function (point) {
 
-		point.others.forEach(function (other) {
-			context.beginPath();
-			context.moveTo(point.x, point.y);
-			context.lineTo(points[other].x, points[other].y);
-			context.stroke();
+		points.forEach(function (other) {
+
+			var diff = Math.abs(other.x - point.x) + Math.abs(other.y - point.y);
+
+			if (diff < distance) {
+				context.lineWidth = diff * 0.03 + 0.001;
+
+				context.beginPath();
+				context.moveTo(point.x, point.y);
+				context.lineTo(other.x, other.y);
+				context.stroke();
+			}
+
 		});
 
 	});
@@ -158,10 +162,10 @@ function init() {
 		for (var t = 0; t < amount_points; t++) {
 
 			entry.points.push({
-				x: Math.round(Math.random() * entry.canvas.width),
-				y: Math.round(Math.random() * entry.canvas.height),
-				r: Math.round(Math.random() * 4),
-				i: Math.round(Math.random() * 180),
+				x: Math.floor(Math.random() * entry.canvas.width),
+				y: Math.floor(Math.random() * entry.canvas.height),
+				r: Math.floor(Math.random() * 4),
+				i: Math.floor(Math.random() * 180),
 				mx: 0,
 				my: 0
 			});
@@ -190,15 +194,15 @@ function move(context, canvas, points) {
 			if (point.i > 180) {
 
 				do {
-					point.mx = Math.round(Math.random() * step_size) * (Math.random() < 0.5 ? -1 : 1);
+					point.mx = Math.floor(Math.random() * step_size) * (Math.random() < 0.5 ? -1 : 1);
 				} while (point.x + point.mx * moves > canvas.width + step_size || point.x + point.mx * moves < -step_size);
 
 				do {
-					point.my = Math.round(Math.random() * step_size) * (Math.random() < 0.5 ? -1 : 1);
+					point.my = Math.floor(Math.random() * step_size) * (Math.random() < 0.5 ? -1 : 1);
 				} while (point.y + point.my * moves > canvas.height + step_size || point.y + point.my * moves < -step_size);
 
 				do {
-					point.r = point.r + Math.round(Math.random() * 1.5) * (Math.random() < 0.5 ? -1 : 1);
+					point.r = point.r + Math.floor(Math.random() * 1.5) * (Math.random() < 0.5 ? -1 : 1);
 				} while (point.r > 4 || point.r < 1);
 
 				point.i = -1;
