@@ -2,6 +2,7 @@
 - javascript console log
 - cli_write
 - easteregg.html
+- in background image irgendwo, das man es nur sieht wenn an zb nen widescreen bildschirm hat
 
 
 
@@ -34,7 +35,7 @@ heres the mouse that ate the code...
   __QQ
  (_)_">
  _)
- 
+
  and the bigger rat
 	.--.
    (\_/)/  _ \
@@ -44,7 +45,7 @@ heres the mouse that ate the code...
 
 
 Thats all birdy shit
-          __ 
+          __
          <- )
          /( \
          \_\_>
@@ -58,7 +59,7 @@ Thats all birdy shit
 I don't claim, that I'm Batman. But nobody ever saw me and Batman in the same room... just saying
          _   ,_,   _
         / `'=) (='` \
-       /.-.-.\ /.-.-.\ 
+       /.-.-.\ /.-.-.\
        `      "      `
 
 the only solution is, to blast all this crab up with some dynamite
@@ -86,7 +87,7 @@ thats the key position, to understand what I've done
  |..Code TRUCK.II..… ||'|";, ___.
  |_..._...___   ===|=||_|__|..., ] -
  "(@)'(@)"""''"**|(@)(@)*****''(@)
- 
+
 
 If a women sees this code, she'll get horny ass fuck, and directly strip off...
 
@@ -136,13 +137,13 @@ Maybe some Heroin would help to understand what I've coded here
 
 
 
-#Christmas tree initializer  
-    toConnect = []  
-    toRead =   [  ]  
-    toWrite = [    ]   
-    primes = [      ]  
-    responses = {}  
-    remaining = {}  
+#Christmas tree initializer
+    toConnect = []
+    toRead =   [  ]
+    toWrite = [    ]
+    primes = [      ]
+    responses = {}
+    remaining = {}
 
  ## Safety pig has arrived!
   text = h(text)
@@ -152,7 +153,7 @@ Maybe some Heroin would help to understand what I've coded here
   ##    )         \            '.
   ##   / _    _    |             \
   ##  |  a    a    /              |
-  ##  \   .-.                     ;  
+  ##  \   .-.                     ;
   ##   '-('' ).-'       ,'       ;
   ##      '-;           |      .'
   ##         \           \    /
@@ -160,19 +161,19 @@ Maybe some Heroin would help to understand what I've coded here
   ##         | |  |  ``/  /`  /
   ##        /,_|  |   /,_/   /
   ##           /,_/      '`-'
-  ## 
+  ##
 
 
 Fuck Society
-....................../´¯/) 
-....................,/¯../ 
-.................../..../ 
-............./´¯/'...'/´¯¯`·¸ 
-........../'/.../..../......./¨¯\ 
-........('(...´...´.... ¯~/'...') 
-.........\.................'...../ 
-..........''...\.......... _.·´ 
-............\..............( 
+....................../´¯/)
+....................,/¯../
+.................../..../
+............./´¯/'...'/´¯¯`·¸
+........../'/.../..../......./¨¯\
+........('(...´...´.... ¯~/'...')
+.........\.................'...../
+..........''...\.......... _.·´
+............\..............(
 ..............\.............\...
 
 Repeat
@@ -183,16 +184,16 @@ Until (JesusChristsReturn) //Not sure that this will happen
 
 THE FOLLOWING SENSLESS QUOTE IS PROVIDED THORUGH THE COURTESY OF THE AUTHORS
 
-// 
+//
 // Dear maintainer:
-// 
+//
 // Once you are done trying to 'optimize' this routine,
 // and have realized what a terrible mistake that was,
 // please increment the following counter as a warning
 // to the next guy:
-// 
+//
 // total_hours_wasted_here = 42
-// 
+//
 
 
 /*
@@ -202,8 +203,8 @@ THE FOLLOWING SENSLESS QUOTE IS PROVIDED THORUGH THE COURTESY OF THE AUTHORS
  * night cursing the moment you thought youd be clever
  * enough to "optimize" the code below.
  * Now close this file and go play with something else.
- */ 
-	
+ */
+
 
 Exception up = new Exception("Something is really wrong.");
 throw up;  //ha ha
@@ -217,12 +218,12 @@ throw up;  //ha ha
 
 // sometimes I believe compiler ignores all my comments
 
-// I am not sure if we need this, but too scared to delete. 
+// I am not sure if we need this, but too scared to delete.
 
 // I am not responsible of this code. They made me write it, against my will
 
-// I dedicate all this code, all my work, to my wife, Darlene, who will 
-// have to support me and our three children and the dog once it gets 
+// I dedicate all this code, all my work, to my wife, Darlene, who will
+// have to support me and our three children and the dog once it gets
 // released into the public.
 
 // no comments for you it was hard to write so it should be hard to read
@@ -237,12 +238,12 @@ throw up;  //ha ha
 
 //This code sucks, you know it and I know it. Move on and call me an idiot later.
 
-// If this comment is removed the program will blow up 
+// If this comment is removed the program will blow up
 
-//Dear future me. Please forgive me. 
-//I can't even begin to express how sorry I am.  
+//Dear future me. Please forgive me.
+//I can't even begin to express how sorry I am.
 
-//I am not sure why this works but it fixes the problem. 
+//I am not sure why this works but it fixes the problem.
 
 // If this code works, it was written by Paul DiLascia. If not, I don't know who wrote it
 
@@ -259,30 +260,30 @@ throw up;  //ha ha
 
 
 #define TRUE FALSE	//Happy debugging suckers
-	
+
 #define NULL (::rand() % 2)	//Happy debugging suckers
 
 return 1; # returns 1
 
-// Replaces with spaces the braces in cases where braces in places cause stasis 
+// Replaces with spaces the braces in cases where braces in places cause stasis
    $str = str_replace(array("\{","\}")," ",$str);
 
 
 
 Catch (Exception e) {
  //who cares?
-} 
+}
 
 
 long john; // silver
-long long ago; // in a galaxy far far away 
+long long ago; // in a galaxy far far away
 double penetration; // ouch
 
 options.BatchSize = 300; //Madness? THIS IS SPARTA!
 
 
 virgin = 0;     /* you're not a virgin anymore, sweety */
-	
+
 
 // Always returns true.
 public boolean isAvailable() {
@@ -303,6 +304,6 @@ font-size: 0px;
 
 
 
-// To understand recursion, see the bottom of this file 
+// To understand recursion, see the bottom of this file
 
 // To understand recursion, see the top of this file
