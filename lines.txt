@@ -29,10 +29,11 @@ Failure is not an option — it comes bundled with the software
 Freedom is just another word for nothing left to loose
 Fuck society
 Give a man a mask and he will show you his true face
-Cracking is like sex. You get in, you get out, and hope that you didn't leave something that can be traced back to you
+Hacking is like sex. You get in, you get out, and hope that you didn't leave something that can be traced back to you
 Have you tried turning it off and on again
 Hell is wallpapered with all your deleted selfies
 Hello friend. Hello friend? That's lame. Maybe I should give you a name
+Hey, it is your stuff right? Your numbers, your bits, you should be able to do anything you wish to do with it
 Hey! It compiles! Ship it!
 Hit any user to continue
 How about no
@@ -53,9 +54,6 @@ I'm not saying I am Batman, I am just saying no one has ever seen me and Batman 
 If Bill Gates had a penny for every time I had to reboot my computer... oh wait, he does
 If brute force doesn't solve your problems, then you aren't using enough
 If everything else fails, read the instructions
-If guns kill people, I guess cars drive drunk
-If guns kill people, I guess pencils misspell word
-If guns kill people, I guess spoons make people fat
 If it doesn't challenge you, it doesn't change you.
 If Microsoft would make something that didn't suck, it would be a vacuum cleaner
 If you can't eat it or fuck it... then kill it!
@@ -69,8 +67,8 @@ Java is to JavaScript, what Car is to Carpet
 Keep honking. I'm reloading
 Knowledge is power - sharing knowledge is freedom
 Last night I layed in bed looking up at the stars in the sky and I thought to myself, where the heck is the ceiling
-Life sucks, but the graphics are awesome!
-Lift your skirt, to grant me root access
+Life sucks, but the graphic is awesome!
+Lift your skirt, to grant me sudo access
 Lowering the hard disk heads does not increase the access time
 Maybe if we start telling people the brain is an app they will start using it
 mkfs.ext4 /dev/sda1
@@ -90,10 +88,11 @@ Put your panties down, to grant me sudo access
 rm -rf /
 Roses are #FF0000, violets are #0000FF. All my base belong to you
 Scratch here ############## to reveal the password
-SELECT Beer FROM fridge WHERE temp = "COLD";
 Sex:{ find; talk; grep; touch; unzip; mount; workbone; fsck; yes; gasp; fsck; yes; eject; makeclean; zip; done; exit}
+So if guns kill people, I guess pencils misspell word, cars drive drunk, and spoons make people fat
 So we make our own Blog. With Blackjack and hookers
 Software is like sex: it's better when it's free
+SELECT Beer FROM fridge WHERE temp = "COLD";
 sudo apt-get more_jokes
 sudo make coffee
 suIT up your life
