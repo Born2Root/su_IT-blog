@@ -196,6 +196,7 @@ code:nth-child(even) {
 	right: 0px;
 	color: #ffffff;
 	text-align: center;
+	border-radius: 3px;
 }
 
 a:not(.post_link) {
@@ -392,7 +393,7 @@ hr {
 }
 
 #welcome {
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.8);
 	position: relative;
 	border-radius: 10px;
 	font-size: 1.2em;
@@ -437,7 +438,7 @@ hr {
 
 #logo {
 	position: absolute;
-	right: 10px;
+	right: 5px;
 	z-index: 23;
 }
 

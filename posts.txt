@@ -1,15 +1,10 @@
-Example article
-Article with all elements of the website to design and look at them
-programming;blender;linux;various;memes
-example_dir/console.png
-example_dir/example_article.html
 ThereOHM - DIY Theremin
 Klangvariierendes Theremin via Software DSP
-programming;linux;pi
+raspberry;linux;programming
 thereOHM/image001.png
 thereOHM/thereohm.html
 Script To Rice Your Linux Terminal
 Get neat distro logos to system infos on console launch
-programming;blender;linux
+programming;linux;scripts
 script_to_rice_your_linux_terminal/console.png
 script_to_rice_your_linux_terminal/script_to_rice_your_linux_terminal.html
