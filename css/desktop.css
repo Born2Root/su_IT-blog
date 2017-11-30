@@ -126,6 +126,14 @@ pre {
 	width: 160px;
 }
 
+.post_image {
+	transition: transform 0.5s;
+}
+
+.post_image:hover {
+	transform: scale(1.05, 1.05);
+}
+
 .tag_text {
 	font-size: 1.25em;
 	bottom: 62px;

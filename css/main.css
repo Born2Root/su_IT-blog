@@ -164,6 +164,26 @@ code {
 	font-family: hack_font;
 }
 
+#buisnesscard {
+	background-color: #ffffff;
+	color: #000000;
+	width: 331px;
+	height: 200px;
+	position: relative;
+	box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.62);
+}
+
+#buisnesscard img {
+	margin: 10px;
+	width: 100px;
+}
+
+#buisnesscard div {
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+}
+
 code:not(.command):before {
 	color: #ffffff;
 	content: counter(line) ". ";
