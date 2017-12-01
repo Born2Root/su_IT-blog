@@ -61,7 +61,7 @@ function print_link($link)
 <head>
 
 	<title>
-		Homepage, overview | su IT --blog | suit-blog.net
+		su IT --blog Homepage, overview | suit-blog.net
 	</title>
 
 	<!-- meta -->
@@ -271,7 +271,7 @@ EOT;
 		<div id="disclaimer">
 			There is nothing more to discover down here
 			<br> &copy; <?php echo date("Y"); ?>
-			<a href="/impressum.php" target="_blank" rel="noopener">impressum</a>
+			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a>
 		</div>
 	</div>
 
