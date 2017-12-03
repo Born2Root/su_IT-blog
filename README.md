@@ -40,7 +40,6 @@ domain suit-blog.net goes live: 16.11.2017
 
 ## zukunft:
 
-- image grow hover in overview?
 - 404
 - [nur eventuell] search
 - [nur eventuell] links anzeigen ob sie _blank oder _self

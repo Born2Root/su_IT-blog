@@ -118,16 +118,32 @@
 		<div id="background">
 		</div>
 
-		<div id="galery_container" style="padding: 30px">
-			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="450" viewBox="0 0 600 450">
-
-				<image width="600" height="450" x="-300" y="-225" xlink:href="/images/IMG_3222.JPG" />
-				<!-- svg width und height setzten html bild größe -->
-				<!-- image width/height gibt scale faktor an. == svg width kein scale -->
-				<!-- x/y um hälfte von with verschieben um mittig zu sein -->
-				<!-- width/height muss im verhältnis des originals sein; svg hoch oder quer format -->
-			</svg>
+		<div id="galery_container" style="padding: 20px 10px; overflow: hidden;">
+			<div class="img" style="background-image:url('/images/IMG_3222.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3225.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3345.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3238.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3508.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3807.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3817.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3902.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3794.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3913.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3885.JPG');"></div>
+			<div class="img" style="background-image:url('/images/IMG_3941.JPG');"></div>
 		</div>
+		<style>
+			.img {
+				position: relative;
+				display: inline-block;
+				width: 400px;
+				height: 400px;
+				background-position: 70% 50%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				overflow: auto;
+			}
+		</style>
 
 	</div>
 
