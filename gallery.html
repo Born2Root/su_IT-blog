@@ -118,30 +118,112 @@
 		<div id="background">
 		</div>
 
-		<div id="galery_container" style="padding: 20px 10px; overflow: hidden;">
-			<div class="img" style="background-image:url('/images/IMG_3222.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3225.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3345.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3238.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3508.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3807.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3817.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3902.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3794.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3913.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3885.JPG');"></div>
-			<div class="img" style="background-image:url('/images/IMG_3941.JPG');"></div>
+		<!-- https://www.w3schools.com/howto/howto_css_modal_images.asp -->
+
+		<div id="gallery_container">
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3222.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3225.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3345.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3238.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3508.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3807.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3817.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3902.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3794.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3913.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3885.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/IMG_3941.JPG');"></div>
 		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+			<!-- Modal Content (The Image) -->
+			<img class="modal-content" id="bigview">
+
+		</div>
+
+		<script>
+			var modal = document.getElementById('myModal');
+
+			modal.onclick = function () {
+				this.style.display = "none";
+			}
+
+			function show(img) {
+				// Get the modal
+				var modalImg = document.getElementById("bigview");
+				var source = window.getComputedStyle(img, false).backgroundImage.slice(5, -2);
+				modal.style.display = "block";
+				modalImg.src = source;
+			}
+		</script>
+
 		<style>
-			.img {
-				position: relative;
-				display: inline-block;
-				width: 400px;
-				height: 400px;
-				background-position: 70% 50%;
-				background-repeat: no-repeat;
-				background-size: cover;
+			/* The Modal (background) */
+
+			.modal {
+				display: none;
+				/* Hidden by default */
+				position: fixed;
+				/* Stay in place */
+				z-index: 32;
+				/* Sit on top */
+				padding-top: 100px;
+				/* Location of the box */
+				left: 0;
+				top: 0;
+				width: 100%;
+				/* Full width */
+				height: 100%;
+				/* Full height */
 				overflow: auto;
+				/* Enable scroll if needed */
+				background-color: rgba(0, 0, 0, 0.9);
+				/* Black w/ opacity */
+			}
+			/* Modal Content (Image) */
+
+			.modal-content {
+				margin: auto;
+				display: block;
+				max-width: 767px;
+				max-height: 100%;
+			}
+			/* Add Animation - Zoom in the Modal */
+
+			.modal-content {
+				-webkit-animation-name: zoom;
+				-webkit-animation-duration: 0.6s;
+				animation-name: zoom;
+				animation-duration: 0.6s;
+			}
+
+			@-webkit-keyframes zoom {
+				from {
+					-webkit-transform: scale(0)
+				}
+				to {
+					-webkit-transform: scale(1)
+				}
+			}
+
+			@keyframes zoom {
+				from {
+					transform: scale(0)
+				}
+				to {
+					transform: scale(1)
+				}
+			}
+			/* 100% Image Width on Smaller Screens */
+
+			@media only screen and (max-width: 767px) {
+				.modal-content {
+					width: 100%;
+					max-height: unset;
+					overflow: auto;
+				}
 			}
 		</style>
 

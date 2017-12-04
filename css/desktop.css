@@ -97,11 +97,6 @@ pre {
 	background-color: rgba(1, 1, 1, 0.6);
 }
 
-#galery_container {
-	position: relative;
-	background-color: rgba(1, 1, 1, 0.6);
-}
-
 #welcome {
 	width: 75%;
 	margin: auto;
@@ -127,7 +122,7 @@ pre {
 }
 
 .post_image {
-	transition: transform 0.5s;
+	transition: 0.5s;
 }
 
 .post_image:hover {
