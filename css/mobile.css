@@ -49,6 +49,14 @@ h1 {
 	font-size: 1.6em;
 }
 
+.modal-content {
+	max-width: 100%;
+}
+
+.nav {
+	opacity: 0.75;
+}
+
 .nav div {
 	padding: 5px 10px;
 }
@@ -64,6 +72,7 @@ h1 {
 #headline {
 	width: 12em;
 	padding: 9px;
+	margin-left: 65px;
 }
 
 #body {
@@ -87,6 +96,7 @@ pre {
 #disclaimer {
 	bottom: 0px;
 	height: 100%;
+	width: 60%;
 }
 
 #logo {
