@@ -32,6 +32,7 @@ Added first Subdomain Site with Bootstrap "Ed Miles - Book Promotion": 07.12.201
 ## wichtig:
 
 - cross browser
+- todos in thereohm article
 - impressum
 - about us
 - image galery

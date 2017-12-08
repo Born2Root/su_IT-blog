@@ -61,7 +61,7 @@ function print_link($link)
 <head>
 
 	<title>
-		su IT --blog Homepage, overview | suit-blog.net
+		su IT --blog main page | suit-blog.net
 	</title>
 
 	<!-- meta -->
@@ -69,7 +69,6 @@ function print_link($link)
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="This is the homepage of the su IT --blog. Here, you can find various information technology, programming and technical topics | suit-blog.net">
 	<meta name="keywords" content="linux, raspberry, blog, articles, website, suit, sudo, it, scripts, bash, programming, terminal, diy">
-	<!--meta name="author" content=""-->
 	<meta name="robots" content="index, follow">
 
 	<!-- main css -->
