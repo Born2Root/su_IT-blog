@@ -175,7 +175,7 @@ code {
 
 #buisnesscard img {
 	margin: 10px;
-	width: 100px;
+	width: 130px;
 }
 
 #buisnesscard div {
@@ -616,8 +616,6 @@ tfoot td {
 
 .image_box img {
 	width: 100%;
-	box-shadow: #111111 0px 4px 2px -2px;
-	-webkit-box-shadow: #111111 0px 4px 2px -2px;
 }
 
 .image_text {

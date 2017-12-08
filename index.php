@@ -138,6 +138,11 @@ function print_link($link)
 					</a>
 				</li>
 				<li>
+					<a target="_self" href="gallery.html">
+						Gallery
+					</a>
+				</li>
+				<li>
 					<a target="_self" <?=print_link("various")?>>
 						Various
 					</a>
