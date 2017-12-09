@@ -7,7 +7,7 @@ source code for the su IT --blog
 - "ajax"
 - CSS3
 - PHP7
-- font awesome 4.7
+- font awesome 5.0
 - Highlight.js
 
 # timeline
@@ -32,13 +32,10 @@ Added first Subdomain Site with Bootstrap "Ed Miles - Book Promotion": 07.12.201
 ## wichtig:
 
 - cross browser
-- impressum
 - about us
-- image gallery
 - meme page
 - write posts
 - statistics
-- !!!"header" von artikel mit media query fixen!!!
 
 ## zukunft:
 

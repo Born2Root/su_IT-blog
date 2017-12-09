@@ -11,13 +11,12 @@ function print_article($h1, $h2, $article_tags, $img, $a)
 
 			<a href="$a" target="_self" class="post_link">
 				<div class="post">
-					<img src="$img" alt="$img" class="image post_image"/>
+					<img src="$img" alt="$img" class="image post_image image_right"/>
 					<h1>$h1</h1>
 					<h2>$h2</h2>
 					<hr>
 					<div class="tags">
 EOT;
-	//tags
 	foreach ($article_tags as $article_tag) {
 		echo <<<EOT
 
@@ -85,7 +84,7 @@ function print_link($link)
 	<link rel="manifest" href="/manifest.json">
 
 	<!-- font awesome -->
-	<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="/css/fontawesome-all.min.css" rel="stylesheet">
 
 </head>
 
@@ -98,7 +97,7 @@ function print_link($link)
 			<canvas height="50" width="200" id="animation_canvas_header">
 			</canvas>
 
-			<i class="fa fa-bars" aria-hidden="true" id="burger"></i>
+			<i class="fa fa-bars" id="burger"></i>
 
 			<div id="headline">
 				<a href="index.php" target="_self">
@@ -155,20 +154,20 @@ function print_link($link)
 
 		<div id="nav_right" class="nav">
 			<div id="top">
-				<i class="fa fa-arrow-up" aria-hidden="true"></i> Top
+				<i class="fa fa-arrow-up"></i> Top
 			</div>
 		</div>
 
 		<div id="nav_left" class="nav">
 			<div id="coffee">
 				<a target="_blank" rel="noopener" href="/about_us.html#coffee">
-					<i class="fa fa-coffee" aria-hidden="true"></i> Buy us a coffee
+					<i class="fa fa-coffee"></i> Buy us a coffee
 				</a>
 			</div>
 
 			<div id="book">
 				<a target="_blank" rel="noopener" href="/about_us.html#book">
-					<i class="fa fa-shopping-cart" aria-hidden="true"></i> Book us
+					<i class="fa fa-shopping-cart"></i> Book us
 				</a>
 			</div>
 		</div>
@@ -200,28 +199,28 @@ function print_link($link)
 
 		<ul>
 			<li>
-				<i class="fa fa-linux" aria-hidden="true"></i> Linux
+				<i class="fa fa-linux"></i> Linux
 			</li>
 			<li>
-				<i class="fa fa-css3" aria-hidden="true"></i> Web design
+				<i class="fa fa-css3"></i> Web design
 			</li>
 			<li>
-				<i class="fa fa-html5" aria-hidden="true"></i> Websites
+				<i class="fa fa-html5"></i> Websites
 			</li>
 			<li>
-				<i class="fa fa-code" aria-hidden="true"></i> Scripting
+				<i class="fa fa-code"></i> Scripting
 			</li>
 			<li>
-				<i class="fa fa-microchip" aria-hidden="true"></i> Hardware projects
+				<i class="fas fa-microchip"></i> Hardware projects
+			</li>
+			<li>
+				<i class="fas fa-images"></i> Pictures
 			</li>
 			<li>
 				Animations
 			</li>
 			<li>
 				Memes
-			</li>
-			<li>
-				Pictures
 			</li>
 			<li>
 				<a href="about_us.html" target="_blank" rel="noopener">
@@ -274,8 +273,8 @@ EOT;
 		</canvas>
 		<div id="disclaimer">
 			There is nothing more to discover down here
-			<br> &copy; <?php echo date("Y"); ?>
-			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a>
+			<br> <i class="fas fa-closed-captioning"></i> 2017
+			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> | <a href="/about_us.html" target="_blank" rel="noopener">about us</a>
 		</div>
 	</div>
 

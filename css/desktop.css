@@ -171,10 +171,10 @@ pre {
 	#article p {
 		display: block;
 	}
-	#right_box {
+	.right_box {
 		float: right;
 	}
-	.image {
+	.image_right {
 		float: right;
 	}
 	#tags_article {
