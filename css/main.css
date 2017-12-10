@@ -165,12 +165,13 @@ code {
 }
 
 #buisnesscard {
-	background-color: #ffffff;
-	color: #000000;
 	max-width: 340px;
 	height: 200px;
 	position: relative;
+	background-color: #ffffff;
+	color: #000000;
 	box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.62);
+	margin: auto;
 }
 
 #buisnesscard img {

@@ -23,3 +23,79 @@ Sprüche:
 	Der Anzug unter den Tech-Blogs
 	Suit up for this article
 	Massgechneiderter Content
+
+<br> Überblick Skills:
+<br>
+<br> Webprogrammierung:
+<ul>
+	<li>AJAX</li>
+	<li>CSS</li>
+	<li>HTML</li>
+	<li>JavaScript</li>
+	<li>PHP</li>
+	<li>SQL</li>
+	<li>XML</li>
+</ul>
+
+Sonstige Programmiersprachen:
+<ul>
+	<li>Assembler</li>
+	<li>AutoHotkey</li>
+	<li>Bash/ Batch</li>
+	<li>C/ C++</li>
+	<li>Matlab/ Simulink</li>
+	<li>Pure Data Extended (Pd)</li>
+	<li>Python</li>
+	<li>VBA for Office</li>
+</ul>
+
+
+Design & Medien:
+<ul>
+	<li>Animation</li>
+	<li>Flash Design</li>
+	<li>Graphic Design</li>
+	<li>Logo Design</li>
+	<li>Webdesign</li>
+</ul>
+
+Writing:
+<ul>
+	<li>Article Writing</li>
+	<li>Creative Writing</li>
+	<li>Web Content</li>
+</ul>
+
+Tools:
+<ul>
+	<li>Adobe Creative Suite (Photoshop, Illustrator, After Effects, Animate)</li>
+	<li>Blender</li>
+	<li>Microsoft Office (Excel, PowerPoint, Word)</li>
+	<li>Gimp</li>
+	<li>Inkscape</li>
+</ul>
+
+
+Automatisierung:
+<ul>
+	<li>TIA-Portal</li>
+	<li>STEP7 (SCL-, AWL-, FUP-Programmierung)</li>
+	<li>WinCC</li>
+	<li>NI-LabVIEW</li>
+</ul>
+
+
+Schaltungsentwurf:
+<ul>
+	<li>EAGLE </li>
+	<li>OrCAD PSpice</li>
+	<li>LT-Spice</li>
+	<li>NI-Multisim</li>
+</ul>
+
+Sprachen & Übersetzung:
+<ul>
+	<li>Deutsch (Muttersprache)</li>
+	<li>Englisch (verhandlungssicher in Wort und Schrift)</li>
+	<li>Spanisch (fließend)</li>
+</ul>
