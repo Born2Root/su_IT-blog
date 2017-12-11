@@ -189,4 +189,7 @@ pre {
 		width: 500px;
 		margin-top: 7.5%;
 	}
+	.modal-content {
+		max-width: 950px;
+	}
 }

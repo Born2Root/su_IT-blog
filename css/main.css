@@ -655,9 +655,9 @@ tfoot td {
 
 .modal-content {
 	max-height: 100%;
-	margin: auto;
 	max-width: 767px;
 	position: absolute;
+	margin: auto;
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
