@@ -161,13 +161,13 @@ function print_link($link)
 		<div id="nav_left" class="nav">
 			<div>
 				<a target="_blank" rel="noopener" href="/about_us.html#mate">
-					<i class="fa fa-coffee"></i> Buy Us A Club-Mate
+					<i class="fa fa-coffee fa-fw"></i> Buy Us A Club-Mate
 				</a>
 			</div>
 
 			<div>
 				<a target="_blank" rel="noopener" href="/about_us.html#book">
-					<i class="fa fa-shopping-cart"></i> Book Us
+					<i class="fa fa-shopping-cart fa-fw"></i> Book Us
 				</a>
 			</div>
 		</div>
@@ -199,22 +199,22 @@ function print_link($link)
 
 		<ul>
 			<li>
-				<i class="fa fa-linux"></i> Linux
+				<i class="fa fa-linux fa-fw"></i> Linux
 			</li>
 			<li>
-				<i class="fa fa-css3"></i> Web design
+				<i class="fa fa-css3 fa-fw"></i> Web design
 			</li>
 			<li>
-				<i class="fa fa-html5"></i> Websites
+				<i class="fa fa-html5 fa-fw"></i> Websites
 			</li>
 			<li>
-				<i class="fa fa-code"></i> Scripting
+				<i class="fa fa-code fa-fw"></i> Scripting
 			</li>
 			<li>
-				<i class="fas fa-microchip"></i> Hardware projects
+				<i class="fas fa-microchip fa-fw"></i> Hardware projects
 			</li>
 			<li>
-				<i class="fas fa-images"></i> Pictures
+				<i class="fas fa-images fa-fw"></i> Pictures
 			</li>
 			<li>
 				Animations
