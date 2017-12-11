@@ -39,7 +39,8 @@
 
 		<div id="banner" class="canvas">
 
-			<canvas height="50" width="200" id="animation_canvas_header"></canvas>
+			<canvas height="50" width="200" id="animation_canvas_header">
+			</canvas>
 
 			<i class="fa fa-bars" id="burger"></i>
 
@@ -66,18 +67,23 @@
 					</a>
 				</li>
 				<li>
-					<a href="/index.php?tag=blender;" target="_self">
-						Blender
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=memes;" target="_self">
-						Memes
-					</a>
-				</li>
-				<li>
 					<a href="/index.php?tag=scripts;" target="_self">
 						Scripts
+					</a>
+				</li>
+				<li>
+					<a href="/index.php?tag=raspberry;" target="_self">
+						Raspberry Pi
+					</a>
+				</li>
+				<li>
+					<a href="/index.php?tag=programming;" target="_self">
+						Programming
+					</a>
+				</li>
+				<li>
+					<a href="/gallery.html" target="_self" class="active">
+						Gallery
 					</a>
 				</li>
 				<li>
@@ -119,14 +125,14 @@
 		</div>
 
 		<div id="gallery_container">
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3429.JPG');"></div>
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3802.JPG');"></div>
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3807.JPG');"></div>
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3817.JPG');"></div>
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3819.JPG');"></div>
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3869.JPG');"></div>
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3913.JPG');"></div>
-			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3941.JPG');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3429.jpg');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3802.jpg');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3807.jpg');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3817.jpg');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3819.jpg');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3869.jpg');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3913.jpg');"></div>
+			<div onclick="show(this)" style="background-image:url('/images/f_IMG_3941.jpg');"></div>
 
 		</div>
 
@@ -135,21 +141,6 @@
 			<img class="modal-content" id="bigview">
 
 		</div>
-
-		<script>
-			var modal = document.getElementById('myModal');
-
-			modal.onclick = function () {
-				this.style.display = "none";
-			}
-
-			function show(img) {
-				var modalImg = document.getElementById("bigview");
-				var source = window.getComputedStyle(img, false).backgroundImage.slice(5, -2);
-				modal.style.display = "block";
-				modalImg.src = source;
-			}
-		</script>
 
 	</div>
 
@@ -170,6 +161,7 @@
 	<script src="/js/main_nav.js" async></script>
 	<script src="/js/additional_nav.js" async></script>
 	<script src="/js/scroll.js" async></script>
+	<script src="/js/imageview.js" async></script>
 
 </body>
 
