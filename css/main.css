@@ -653,7 +653,7 @@ tfoot td {
 	background-color: rgba(0, 0, 0, 0.9);
 }
 
-.modal-content {
+.modalcontent {
 	max-height: 100%;
 	max-width: 767px;
 	position: absolute;

@@ -1,4 +1,4 @@
-var modal = document.getElementById('myModal');
+var modal = document.getElementById("blur_bg");
 
 modal.onclick = function () {
 	this.style.display = "none";

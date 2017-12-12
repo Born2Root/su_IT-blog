@@ -193,6 +193,10 @@ function print_link($link)
 			It is great to see that you found this page :D
 			<br>If you are interested in any computer tech topic, you can find something here.
 			<br>On this blog, we are showing of, some of the things we done. And hopefully we can inspire you.
+		</p>
+
+		<p>
+			With <b>su IT --blog</b> we hope to provide super user level articles about various topics in the information technology genre on this blog.
 			<br>
 			Here are some of the topics we will cover soon:
 		</p>
@@ -261,7 +265,6 @@ EOT;
 					print_article($h1, $h2, $article_tags, $img, $a);
 				}
 			}
-
 			?>
 
 		</div>
