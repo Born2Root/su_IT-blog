@@ -97,7 +97,7 @@ function print_link($link)
 			<canvas height="50" width="200" id="animation_canvas_header">
 			</canvas>
 
-			<i class="fa fa-bars" id="burger"></i>
+			<i class="fas fa-bars fa-fw" id="burger"></i>
 
 			<div id="headline">
 				<a href="index.php" target="_self">
@@ -154,20 +154,20 @@ function print_link($link)
 
 		<div id="nav_right" class="nav">
 			<div id="top">
-				<i class="fa fa-arrow-up"></i> Top
+				<i class="fas fa-arrow-up fa-fw"></i> Top
 			</div>
 		</div>
 
 		<div id="nav_left" class="nav">
 			<div>
 				<a target="_blank" rel="noopener" href="/about_us.html#mate">
-					<i class="fa fa-coffee fa-fw"></i> Buy Us A Club-Mate
+					<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
 				</a>
 			</div>
 
 			<div>
 				<a target="_blank" rel="noopener" href="/about_us.html#book">
-					<i class="fa fa-shopping-cart fa-fw"></i> Book Us
+					<i class="fas fa-shopping-cart fa-fw"></i> Book Us
 				</a>
 			</div>
 		</div>
@@ -203,16 +203,16 @@ function print_link($link)
 
 		<ul>
 			<li>
-				<i class="fa fa-linux fa-fw"></i> Linux
+				<i class="fab fa-linux fa-fw"></i> Linux
 			</li>
 			<li>
-				<i class="fa fa-css3 fa-fw"></i> Web design
+				<i class="fab fa-css3 fa-fw"></i> Web design
 			</li>
 			<li>
-				<i class="fa fa-html5 fa-fw"></i> Websites
+				<i class="fab fa-html5 fa-fw"></i> Websites
 			</li>
 			<li>
-				<i class="fa fa-code fa-fw"></i> Scripting
+				<i class="fas fa-code fa-fw"></i> Scripting
 			</li>
 			<li>
 				<i class="fas fa-microchip fa-fw"></i> Hardware projects
