@@ -25,6 +25,14 @@ Sprüche:
 	Massgechneiderter Content
 
 
+<h1>
+	Meme Pictures
+</h1>
+<p>
+	We do not own the rights to the source pictures. We collected them from the web and used them for our Memes. If you, by any chance, own the rights for any of these elements and do not want that they are available on our page, please let us know and your concerned elements will be removed.
+</p>
+
+
 <br> Sie wissen genau was Sie wollen und wie Ihr Projekt umgesetzt werden soll? Ihnen fehlen nur die Programmierer oder Sie sind noch in der groben Planung Ihres Projekts und benötigen schon hier fachmännische Unterstützung? Dann Sind Sie bei uns genau richtig. Wir sind spezialisiert auf die Entwicklung und Betreuung von individuellen Lösungen für unsere Kunden. Ganz gleich ob Sie ein neues Projekt starten oder Unterstützung bei der Umsetzung/ Wartung eines Projektes benötigen, wir können Ihnen bei jedem Schritt Ihrer Projektrealisierung zur Seite stehen und Sie fachmännisch unterstützen. Der Fokus liegt jederzeit darin, gemeinsam mit Ihnen eine maßgeschneiderte Lösung für Ihr Vorhaben zu entwickeln.
 				<br>
 				<br> Sie sind sich nicht sicher ob wir die richtigen für Sie sind? Lassen Sie sich von uns in einem Gespräch überzeugen.
