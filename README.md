@@ -26,7 +26,9 @@ redesign: 01.08.2017
 <br>
 domain suit-blog.net goes live: 16.11.2017
 <br>
-Added first Subdomain Site with Bootstrap "Ed Miles - Book Promotion": 07.12.2017
+prepared first subdomain "Ed Miles - Book Promotion": 07.12.2017
+<br>
+suit-blog.net finally online: 13.12.2017
 
 # To-DO:
 ## wichtig:
