@@ -61,7 +61,6 @@
 }
 
 pre {
-	width: 90%;
 	margin: 20px auto;
 }
 
@@ -161,6 +160,9 @@ pre {
 }
 
 @media screen and (min-width: 1400px) {
+	pre {
+		width: 90%;
+	}
 	#pre {
 		width: 90%;
 		padding: 0.5em 2em;

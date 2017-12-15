@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /lines.txt
 Disallow: /posts.txt
-Disallow: /googleb9e4b4cc715322b7.html
 Disallow: /manifest.json

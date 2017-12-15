@@ -1,56 +1,477 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="de">
 
 <head>
 
-    <title>Excel Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung Am Beispiel einer Bibliotheks-/ Bücherlistenverwaltung</title>
+    <title>
+        thereOHM | su IT --blog | suit-blog.net
+    </title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <base target="_self">
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung | suit-blog.net">
+    <meta name="keywords" content="excel, vba, combo-box, kombinationsfeld, autotext, autovervollständigung, datenvalidierung, büchersammlung, verwaltung, bibliothek, programming, suit, sudo, blog, diy">
+    <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" type="text/css" href="0excel.css">
+    <!-- main css -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- mobile css -->
+    <link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.css">
+    <!-- desktop css -->
+    <link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
 
-    <meta name="description" content="Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung" />
-    <meta name="keywords" lang="de" content="Excel, VBA, Combo-Box, Kombinationsfeld, Autotext, Autovervollständigung, Datenvalidierung, Büchersammlung, Verwaltung, Bibliothek" />
-    <meta name="keywords" lang="en-us" content="Excel, VBA, Combobox, Combo-Box, Autocomplete, Drop Down, Dropdown, Data Validation" />
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="/icon/favicon_64.ico">
+
+    <!-- web app manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- font awesome -->
+    <link href="/css/fontawesome-all.min.css" rel="stylesheet">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="/styles/atelier-forest-dark.css">
 
 </head>
 
 <body>
 
-    <h1>Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung</h1>
-    <h2>- Am Beispiel einer Bibliotheks-/ Bücherlistenverwaltung -</h2>
+    <div id="header">
 
-    <br> Voraussetzungen: <br><br>
-    <ul style="list-style-type:disc">
-        <li>Microsoft Excel ab Version 2007</li>
-        <li>Schwierigkeitsgrad: Mittel</li>
-        <li>Skills: VBA-Programmierung</li>
-        <li>Lese Zeit: 15 min</li>
-    </ul>
+        <div id="banner" class="canvas">
 
-    <br> Die im Excel-Standard enthaltene Autotextvervollständigung, während der Eingabe, ist auf eine maximale Anzahl von Zellen begrenzt. Als "Lösung" bietet Excel Drop-Down-Listen an. Aber diese sind optisch unansehnlich und funktionell begrenzt. Über
-    VBA-Programmierung kann man die Grundfunktionalität allerdings zu einem komfortablen Eingabe-Drop-Down-Menü inkl. Autotextvervollständigung aufbohren.
+            <canvas height="50" width="200" id="animation_canvas_header"></canvas>
 
-    <h2>Einführung:</h2>
-    Im folgenden Artikel beschreibe ich, wie man eine komfortable Eingabe-Drop-Down-Liste inkl. Autotextvervollständigung und Datenvalidierung realisiert. Ergänzt wird das Ganze um die Möglichkeit der Werte-Vorfilterung und Pivot-Datenanalyse.<br> Als
-    plakatives Beispiel wird die Verwaltung einer Büchersammlung (Home Library) herangezogen. Der Code ist aber leicht auf beliebige andere Einsatzszenarien übertragbar. Vorrangig ist ein Einsatz dort vorteilhaft, wo große Datenmengen um manuelle Einträge
-    ergänzt oder einfach verwaltet werden sollen.<br>
+            <i class="fas fa-bars fa-fw" id="burger"></i>
+
+            <div id="headline">
+                <a href="/" target="_self">
+                    $ su IT --blog
+                </a>
+                <div id="subtitle">
+                    <span id="console">- we sudo everything</span>
+                    <span class="cursor">|</span> -
+                </div>
+            </div>
+
+            <a target="_self" href="/">
+                <img alt="logo" src="/logo/logo_1.png" id="logo">
+            </a>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li>
+                    <a href="/index.php?tag=linux;" target="_self">
+                        Linux
+                    </a>
+                </li>
+                <li>
+                    <a href="/index.php?tag=scripts;" target="_self">
+                        Scripts
+                    </a>
+                </li>
+                <li>
+                    <a href="/index.php?tag=raspberry;" target="_self">
+                        Raspberry Pi
+                    </a>
+                </li>
+                <li>
+                    <a href="/index.php?tag=programming;" target="_self">
+                        Programming
+                    </a>
+                </li>
+                <li>
+                    <a href="/gallery.html" target="_self">
+                        Gallery
+                    </a>
+                </li>
+                <li>
+                    <a href="/index.php?tag=various;" target="_self">
+                        Various
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="body">
+
+        <div id="nav_right" class="nav">
+            <div id="top">
+                <i class="fas fa-arrow-up fa-fw"></i> Top
+            </div>
+
+            <div id="back">
+                <i class="fas fa-arrow-left fa-fw"></i> Back
+            </div>
+        </div>
+
+        <div id="nav_left" class="nav">
+            <div>
+                <a target="_blank" rel="noopener" href="/about_us.html#mate">
+                    <i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
+                </a>
+            </div>
+
+            <div>
+                <a target="_blank" rel="noopener" href="/about_us.html#book">
+                    <i class="fas fa-shopping-cart fa-fw"></i> Book Us
+                </a>
+            </div>
+        </div>
+
+        <div id="background">
+        </div>
+
+        <div id="container">
+
+            <div id="article">
+
+                <div>
+
+                    <h1>
+                        Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung
+                    </h1>
+                    <h2>
+                        Am Beispiel einer Bibliotheks-/Bücher-listenverwaltung
+                    </h2>
+
+                    <div id="box" class="right_box">
+                        <div id="tags_article">
+                            <div class="tag_div">
+                                <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+                                <div class="tag_text">
+                                    <i class="fas fa-clock"></i> 15min read</div>
+                            </div>
+                            <div class="tag_div">
+                                <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+                                <div class="tag_text">linux</div>
+                            </div>
+                            <div class="tag_div">
+                                <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+                                <div class="tag_text">programming</div>
+                            </div>
+                            <div class="tag_div">
+                                <img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+                                <div class="tag_text">raspberry</div>
+                            </div>
+                        </div>
+
+                        <img src="image001.png" alt="logo" class="image">
+                    </div>
+
+                    <h3>Kurzbeschreibung</h3>
+
+                    <p>
+                        Die im Excel-Standard enthaltene Autotextvervollständigung, während der Eingabe, ist auf eine maximale Anzahl von Zellen begrenzt. Als "Lösung" bietet Excel Drop-Down-Listen an. Aber diese sind optisch unansehnlich und funktionell begrenzt. Über VBA-Programmierung kann man die Grundfunktionalität allerdings zu einem komfortablen Eingabe-Drop-Down-Menü inkl. Autotextvervollständigung aufbohren.
+                    </p>
+                    <p>
+                        Im folgenden Artikel beschreibe ich, wie man eine komfortable Eingabe-Drop-Down-Liste inkl. Autotextvervollständigung und Datenvalidierung realisiert. Ergänzt wird das Ganze um die Möglichkeit der Werte-Vorfilterung und Pivot-Datenanalyse.
+                        <br> Als plakatives Beispiel wird die Verwaltung einer Büchersammlung (Home Library) herangezogen. Der Code ist aber leicht auf beliebige andere Einsatzszenarien übertragbar. Vorrangig ist ein Einsatz dort vorteilhaft, wo große Datenmengen um manuelle Einträge ergänzt oder einfach verwaltet werden sollen.
+                    </p>
+
+                    <div id="pre">
+
+                        <h3>
+                            Voraussetzungen:
+                        </h3>
+                        <ul>
+                            <li>
+                                Schwierigkeitsgrad: Fortgeschritten
+                            </li>
+                            <li>Skills:
+                                <ul>
+                                    <li>
+                                        Microsoft Excel ab Version 2007
+                                    </li>
+                                    <li>
+                                        VBA-Programmierung
+                                    </li>
+                                    <li>
+                                        Leiterplattenbestückung (Löten, etc.)
+                                    </li>
+                                    <li>
+                                        Elektronikverständnis
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <hr>
+
+                        <h3>Inhalt:</h3>
+
+                        <ol>
+                            <li>
+                                <a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+                                    Introduction
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#zielsetzung" onclick="onpage_link(event, this);">
+                                            Zielsetzung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#allgemeines1" onclick="onpage_link(event, this);">
+                                            Allgemeines 1
+                                        </a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#systemüberblick" onclick="onpage_link(event, this);">
+                                    Systemüberblick ThereOHM
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#allgemeines2" onclick="onpage_link(event, this);">
+                                            Allgemeines 2
+                                        </a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#theremin" onclick="onpage_link(event, this);">
+                                    Theremin
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#layout" onclick="onpage_link(event, this);">
+                                            Layout / Schaltplan Platine
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#funktionsweise" onclick="onpage_link(event, this);">
+                                            Funktionsweise
+                                        </a>
+                                        <ol>
+                                            <li>
+                                                <a target="_self" href="#funktionsblockeins" onclick="onpage_link(event, this);">
+                                                    Funktionsblock eins (variabler Oszillator)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#funktionsblockzwei" onclick="onpage_link(event, this);">
+                                                    Funktionsblock zwei (konstanter Oszillator)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#funktionsblockdrei" onclick="onpage_link(event, this);">
+                                                    Funktionsblock drei und vier (Mixer, Filter und Verstärkerendstufe)
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#raspberry" onclick="onpage_link(event, this);">
+                                    Raspberry Pi B+
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#hardware" onclick="onpage_link(event, this);">
+                                            Hardware
+                                        </a>
+                                        <ol>
+                                            <li>
+                                                <a target="_self" href="#betriebssystem" onclick="onpage_link(event, this);">
+                                                    Betriebssystem
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#installation" onclick="onpage_link(event, this);">
+                                            Installation von Zusatzsoftware
+                                        </a>
+                                        <ol>
+                                            <li>
+                                                <a target="_self" href="#alsa" onclick="onpage_link(event, this);">
+                                                    ALSA
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#wiringpi" onclick="onpage_link(event, this);">
+                                                    WiringPi
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#puredatapd" onclick="onpage_link(event, this);">
+                                                    Pure Data (Pd)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#installationsynthesis" onclick="onpage_link(event, this);">
+                                                    Installation des Synthesis ToolKit (STK) und Kompilierung von Synthese-Modellen
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#stompbox" onclick="onpage_link(event, this);">
+                                    Stompbox
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#wechselschalter" onclick="onpage_link(event, this);">
+                                            Deckel mit Wechselschalter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#verdrahtung" onclick="onpage_link(event, this);">
+                                            Verdrahtung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#anschlussplatine" onclick="onpage_link(event, this);">
+                                            Anschlussplatine zwischen Stompbox und Raspberry Pi
+                                        </a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#puredata" onclick="onpage_link(event, this);">
+                                    Pure Data
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#ziel" onclick="onpage_link(event, this);">
+                                            Ziel des ThereOHM Patch
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#realisierung" onclick="onpage_link(event, this);">
+                                            Realisierung
+                                        </a>
+                                        <ol>
+                                            <li>
+                                                <a target="_self" href="#main" onclick="onpage_link(event, this);">
+                                                    Main
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#calibrateantennas" onclick="onpage_link(event, this);">
+                                                    Calibrate Antennas
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#instrumentenauswahl" onclick="onpage_link(event, this);">
+                                                    Instrumentenauswahl
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#gitarrenmodell" onclick="onpage_link(event, this);">
+                                                    Gitarren Modell – Karplus Strong Algorithmus
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#stk-instrumente" onclick="onpage_link(event, this);">
+                                                    STK-Instrumente
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#drum" onclick="onpage_link(event, this);">
+                                                    Drum Machine
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#backgroundsound" onclick="onpage_link(event, this);">
+                                                    Background Sound Player
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#mp3" onclick="onpage_link(event, this);">
+                                                    mp3 Record
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_self" href="#webradio" onclick="onpage_link(event, this);">
+                                                    mp3 Webradio Stream
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a target="_self" href="#weitererausblick" onclick="onpage_link(event, this);">
+                                    Weiterer Ausblick
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_self" href="#conclusion" onclick="onpage_link(event, this);">
+                                    Conclusion
+                                </a>
+                                <ol>
+                                    <li>
+                                        <a target="_self" href="#anhanga" onclick="onpage_link(event, this);">
+                                            Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#x86" onclick="onpage_link(event, this);">
+                                            x86- vs. x64- vs. ARM-Processor Architecture
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#windows" onclick="onpage_link(event, this);">
+                                            Windows Operating System
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#linux" onclick="onpage_link(event, this);">
+                                            GNU/Linux Operating System
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#raspberryplatform" onclick="onpage_link(event, this);">
+                                            Raspberry Platform
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#anhangb" onclick="onpage_link(event, this);">
+                                            Anhang B - Kostenaufschlüsselung
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" href="#anhangc" onclick="onpage_link(event, this);">
+                                            Anhang C - Zeit- und Aufgabenplan
+                                        </a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+
+                    </div>
+
+                </div>
+
+                <div id="body_article">
+
+                    <!--
+
     <br> Grundlegende Funktionen des Bücher-Beispiels aus Anwendersicht sind:
 
     <h3>1. Use Case: </h3>
 
-    Es soll ein neues Buch (ein neuer Datensatz) in die Liste eingetragen werden. Man weiß jedoch nicht, ob das Buch bereits vorhanden ist, d.h. man will sehen, welche Bücher von dem Autor bereits in der Sammlung enthalten sind. Die Eingabe soll möglichst
-    komfortabel und schnell erfolgen.
+    Es soll ein neues Buch (ein neuer Datensatz) in die Liste eingetragen werden. Man weiß jedoch nicht, ob das Buch bereits vorhanden ist, d.h. man will sehen, welche Bücher von dem Autor bereits in der Sammlung enthalten sind. Die Eingabe soll möglichst komfortabel und schnell erfolgen.
     <img src="image002_Werteingabe.gif" alt="Abbildung 1: Werteingabe" style="width:900px;">
 
     <br>
     <ul>Klickanleitung:</ul>
     <br>
     <ul style="list-style-type:disc">
-        <li>Doppelklick ins <i>Autorenfeld</i>. Ein Drop-Down-Menü erscheint und man beginnt, den Autor einzutragen</li>
+        <li>Doppelklick ins
+            <i>Autorenfeld</i>. Ein Drop-Down-Menü erscheint und man beginnt, den Autor einzutragen</li>
         <li>Die Eingabe wird automatisch vervollständigt, wenn der Autor bereits vorhanden ist</li>
-        <li>Doppelklick ins <i>Titelfeld</i> erzeugt bei ausgewählter Option "Vorfilterung" eine Drop-Down-Liste, in der man alphabetisch alle bereits vorhandenen Bücher des Autors sieht. Ist das aktuelle Buch noch nicht vorhanden, trägt man es neu ein</li>
+        <li>Doppelklick ins
+            <i>Titelfeld</i> erzeugt bei ausgewählter Option "Vorfilterung" eine Drop-Down-Liste, in der man alphabetisch alle bereits vorhandenen Bücher des Autors sieht. Ist das aktuelle Buch noch nicht vorhanden, trägt man es neu ein</li>
         <li>Bei Option "keine Vorfilterung" werden alle vorhandenen Titel als Drop-Down-Liste angezeigt</li>
         <li>Bei der Eingabe z.B. des Formats kann man direkt über ein Drop-Down-Menü das Buchformat auswählen, ohne Text eingeben zu müssen</li>
         <li>Automatisch wird die Zeilennummerierung am Anfang der Zeile bei Eingabe neuer Werte erzeugt</li>
@@ -67,8 +488,10 @@
     <br>
     <ul style="list-style-type:disc">
         <li>In das jeweilige Wertefeld klicken, nach dem man filtern möchte</li>
-        <li>Auf den Button <i>Filtern</i> klicken -> Das Ergebnis wird angezeigt</li>
-        <li>Die Filterung wird über den Button <i>Filter löschen</i> wieder aufgehoben</li>
+        <li>Auf den Button
+            <i>Filtern</i> klicken -> Das Ergebnis wird angezeigt</li>
+        <li>Die Filterung wird über den Button
+            <i>Filter löschen</i> wieder aufgehoben</li>
     </ul>
 
     <h3>3. Use Case: </h3>
@@ -81,12 +504,15 @@
     <ul>Klickanleitung:</ul>
     <br>
     <ul style="list-style-type:disc">
-        <li>In den <i>Analyse</i>-Tabellenblättern können mittels Pivot-Tabellen die Daten gefiltert werden.</li>
+        <li>In den
+            <i>Analyse</i>-Tabellenblättern können mittels Pivot-Tabellen die Daten gefiltert werden.</li>
     </ul>
 
     <h2>Technische Realisierung:</h2>
 
-    <br> Zur Umsetzung werden folgende Excel Funktionalitäten verwendet:<br><br>
+    <br> Zur Umsetzung werden folgende Excel Funktionalitäten verwendet:
+    <br>
+    <br>
     <ul style="list-style-type:disc">
         <li>Pivot-Tabellen</li>
         <li>VBA-Programmierung</li>
@@ -95,39 +521,41 @@
         <li>Drop-Down-Datenvalidierungslisten (don't worry, das klingt kompliziert, ist aber nur ein Klick)</li>
     </ul>
 
-    <br> Das Projekt ist grundlegend auf dem "Data Validation Combo-Box"<a href="http://www.contextures.com/xlDataVal10.html?_sm_byp=iVVsnvwVkkMvrWMQ"> Beispielcode</a> aufgebaut, welcher deutlich erweitert wurde. Zusammen werden wir innerhalb von drei
-    großen Schritten die fertige Tabelle erzeugen.
+    <br> Das Projekt ist grundlegend auf dem "Data Validation Combo-Box"
+    <a href="http://www.contextures.com/xlDataVal10.html?_sm_byp=iVVsnvwVkkMvrWMQ"> Beispielcode</a> aufgebaut, welcher deutlich erweitert wurde. Zusammen werden wir innerhalb von drei großen Schritten die fertige Tabelle erzeugen.
 
     <h3>1. Autovervollständigung</h3>
 
-    <br> Zunächst einmal ist das Ziel eine dynamische Tabelle zu erzeugen. D.h. der Datenbereich soll sich dynamisch anpassen, wenn in der Quelldatei neue Werte hinzukommen (neue Bücher eingetragen werden). Das lässt sich über <i>Namensbereiche</i> realisieren.
-    Zum Anlegen wechselt man nach
+    <br> Zunächst einmal ist das Ziel eine dynamische Tabelle zu erzeugen. D.h. der Datenbereich soll sich dynamisch anpassen, wenn in der Quelldatei neue Werte hinzukommen (neue Bücher eingetragen werden). Das lässt sich über
+    <i>Namensbereiche</i> realisieren. Zum Anlegen wechselt man nach
     <i>Formeln -> Namens-Manager -> Neu...</i>
     <br>
     <img src="image004_Namensmanager1.JPG" alt="Abbildung 3.1: Namens-Manager" style="width:400px;">
-    <br><br> und gibt in das Dialogfeld den Namen der Datenbank und in das Feld <i>bezieht sich auf</i> folgende Formel ein:
+    <br>
+    <br> und gibt in das Dialogfeld den Namen der Datenbank und in das Feld
+    <i>bezieht sich auf</i> folgende Formel ein:
     <br>
     <img src="image004_Namensmanager.JPG" alt="Abbildung 3.2: Namens-Manager" style="width:400px;">
-    <br><br>
+    <br>
+    <br>
     <TODO>=BEREICH.VERSCHIEBEN($A$3;;;ANZAHL2($A:$A);ANZAHL2($3:$3))</TODO>
-    <br> Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert
-    lauten:
+    <br> Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert lauten:
     <br>
     <TODO>=BEREICH.VERSCHIEBEN($C$9;;;ANZAHL2($C:$C);ANZAHL2($9:$9))</TODO>
-    <br> Im konkreten Beispiel mit mehreren Tabellenblättern besteht ergänzend noch der Sonderfall, dass man das Tabellenblatt explizit angeben muss, damit der Bereich korrekt erzeugt wird. Die Formel lautet also:<br>
+    <br> Im konkreten Beispiel mit mehreren Tabellenblättern besteht ergänzend noch der Sonderfall, dass man das Tabellenblatt explizit angeben muss, damit der Bereich korrekt erzeugt wird. Die Formel lautet also:
+    <br>
     <TODO>=BEREICH.VERSCHIEBEN(Buecher!$A$3;;;ANZAHL2(Buecher!$A:$A);ANZAHL2(Buecher!$3:$3))</TODO>
 
-    Als nächsten Schritt wollen wir eine Autovervollständigung für das Autoren-Eingabefeld erstellen. Excel enthält bereits standardmäßig eine Autovervollständigung, allerdings nur für einige hundert Werte. Ziel ist aber eine Vervollständigung über eine unbegrenzte
-    Anzahl von Autoren. Dies kann über die Funktion <i>Datenvalidierung</i> erreicht werden. Jedoch würde eine solche Validierung über alle Autoren, auch alle doppelten Einträge enthalten. D.h. ist fünf mal Autor XY vorhanden, würde in der Autovervollständigungsliste
-    auch fünf mal dieser Autor angezeigt werden. Ein Trick um das zu verhindern, ist als Quelle der Datenvalidierung eine Tabelle zu verwenden, die jeden Autor nur ein einziges mal enthält. Am einfachsten lässt sich das über Pivot-Tabellen umsetzen. D.h.
-    wir werden eine Pivot-Tabelle der Autoren anlegen. Vorzugsweise in einem neuen Tabellenblatt, damit die Übersicht nicht verloren geht.
+    Als nächsten Schritt wollen wir eine Autovervollständigung für das Autoren-Eingabefeld erstellen. Excel enthält bereits standardmäßig eine Autovervollständigung, allerdings nur für einige hundert Werte. Ziel ist aber eine Vervollständigung über eine unbegrenzte Anzahl von Autoren. Dies kann über die Funktion
+    <i>Datenvalidierung</i> erreicht werden. Jedoch würde eine solche Validierung über alle Autoren, auch alle doppelten Einträge enthalten. D.h. ist fünf mal Autor XY vorhanden, würde in der Autovervollständigungsliste auch fünf mal dieser Autor angezeigt werden. Ein Trick um das zu verhindern, ist als Quelle der Datenvalidierung eine Tabelle zu verwenden, die jeden Autor nur ein einziges mal enthält. Am einfachsten lässt sich das über Pivot-Tabellen umsetzen. D.h. wir werden eine Pivot-Tabelle der Autoren anlegen. Vorzugsweise in einem neuen Tabellenblatt, damit die Übersicht nicht verloren geht.
 
     <i>Menü -> Einfügen -> Pivot-Tabelle</i> Als Name können wir hier gleich den gerade angelegten, dynamischen Datenbereich
-    <i>Data</i> verwenden. Die Tabelle soll in Zelle B4 des Datenblattes <i>Data</i> angelegt werden.
+    <i>Data</i> verwenden. Die Tabelle soll in Zelle B4 des Datenblattes
+    <i>Data</i> angelegt werden.
     <br>
     <img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" style="width:400px;">
-    <br> Anschließend im Pivot-Bericht das Feld <i>Autor</i> auswählen und schon haben wir eine Liste, in der jeder vorhandene Autor nur ein einziges mal auftaucht. Für die weiteren Schritte muss jetzt noch dynamisch ermittelt werden, wie viele Zeilen
-    die Tabelle der Autoren enthält. Dazu wird folgende Excel-Formel in Zelle B2 genutzt.
+    <br> Anschließend im Pivot-Bericht das Feld
+    <i>Autor</i> auswählen und schon haben wir eine Liste, in der jeder vorhandene Autor nur ein einziges mal auftaucht. Für die weiteren Schritte muss jetzt noch dynamisch ermittelt werden, wie viele Zeilen die Tabelle der Autoren enthält. Dazu wird folgende Excel-Formel in Zelle B2 genutzt.
     <br>
     <TODO>=VERWEIS(2;1/(B5:B4000
         <>"");ZEILE(B5:B4000))-1</TODO>
@@ -135,18 +563,21 @@
 
     <br>
     <img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" style="width:400px;">
-    <br><br> Um die nächsten Schritte zu vereinfachen, benötigen wir einen simpel anzusprechenden Datenbereich, der dynamisch den Inhalt der Pivot-Autoren-Tabelle abdeckt. Also nochmal rein in den Namens-Manager und den Bereich <i>sort_autor</i> angelegt.
-    Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
+    <br>
+    <br> Um die nächsten Schritte zu vereinfachen, benötigen wir einen simpel anzusprechenden Datenbereich, der dynamisch den Inhalt der Pivot-Autoren-Tabelle abdeckt. Also nochmal rein in den Namens-Manager und den Bereich
+    <i>sort_autor</i> angelegt. Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
     <br>
     <TODO>=Data!$B$5:INDIREKT("Data!$B$"&Data!$B$2)</TODO>
     <br>
     <br>
     <img src="image005_Pivot_Table-Listen.JPG" alt="Abbildung 4.2: Übersicht der " style="width:400px;">
-    <br> Nun legen wir die Datenvalidierung an. Dazu in die Haupttabelle wechseln und die komplette Spalte <i>Autor</i> (Spalte B) der Quelltabelle markieren. Denn wir wollen den Drop-Down ja nicht nur für eine, sondern für alle Zellen haben. Dann
+    <br> Nun legen wir die Datenvalidierung an. Dazu in die Haupttabelle wechseln und die komplette Spalte
+    <i>Autor</i> (Spalte B) der Quelltabelle markieren. Denn wir wollen den Drop-Down ja nicht nur für eine, sondern für alle Zellen haben. Dann
     <i>Menü -> Daten -> Datenüberprüfung</i>, Ziel ist eine Liste, mit Zellendropdown und als Quelle unsere sortierte Autorenliste. Außerdem eine Eingabemeldung, wenn eine passende Zelle ausgewählt wird.
     <br>
     <img src="image007_Datenueberpruefung.JPG" alt="Abbildung 6.1: Datenüberprüfung" style="width:400px;">
-    <br><br> Nachdem alles eingestellt ist, können wir zum Ersten mal testen. Ein Klick in eine leere Zelle der Autoren-Spalte, sollte eine scrollbare Drop-Down-Liste öffnen, die alle Autoren enthält.
+    <br>
+    <br> Nachdem alles eingestellt ist, können wir zum Ersten mal testen. Ein Klick in eine leere Zelle der Autoren-Spalte, sollte eine scrollbare Drop-Down-Liste öffnen, die alle Autoren enthält.
     <br> Ganz nett, aber noch nicht recht hilfreich. Denn es fehlt noch die automatische Filterung und Vervollständigung der Eingabe.
     <br> Jetzt kommt VBA ins Spiel um folgendes Verhalten zu erreichen:
     <br>
@@ -156,95 +587,101 @@
     </ul>
 
     <br> Zunächst müssen wir dafür eine Combo-Box erstellen. Dazu in das Entwicklermenü
-    <TODO>PopUp Info Fenster: Das Menü ist standardmäßig ausgeblendet und muss erst aktiviert werden. Dazu abhängig von der verwendeten Office Version auf die Microsoft Office-Schaltfläche klicken und dann auf <i>Excel-Optionen</i> gehen. Anschließend auf <i>Beliebt</i>        klicken, und das Kontrollkästchen <i>Registerkarte "Entwicklertools" im Menüband anzeigen</i> aktivieren.</TODO>
-    wechseln und ein ActiveX-Kombinationsfeld in einem beliebigen Bereich des Tabellenblattes aufziehen. Wo man es dabei platziert ist vollkommen egal. Denn es wird lediglich als Referenzelement genutzt, das später genau an der Stelle eingeblendet wird, wo
-    wir es möchten. <br>Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
+    <TODO>PopUp Info Fenster: Das Menü ist standardmäßig ausgeblendet und muss erst aktiviert werden. Dazu abhängig von der verwendeten Office Version auf die Microsoft Office-Schaltfläche klicken und dann auf
+        <i>Excel-Optionen</i> gehen. Anschließend auf
+        <i>Beliebt</i> klicken, und das Kontrollkästchen
+        <i>Registerkarte "Entwicklertools" im Menüband anzeigen</i> aktivieren.</TODO>
+    wechseln und ein ActiveX-Kombinationsfeld in einem beliebigen Bereich des Tabellenblattes aufziehen. Wo man es dabei platziert ist vollkommen egal. Denn es wird lediglich als Referenzelement genutzt, das später genau an der Stelle eingeblendet wird, wo wir es möchten.
+    <br>Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
     <br>
-    <img src="image007_ComboBox.JPG" alt="Abbildung 6.2: Erstellen einer Combo-Box" style="width:400px;"><br><br> Die Drop-Down Combo-Box soll angezeigt werden, wenn doppelt in eine Zelle geklickt wird. Theoretisch ist auch ein anderes Verhalten möglich.
-    Zum Beispiel, dass die Box erscheint, wenn man eine Zelle auswählt, oder anfängt zu tippen. Nach einigen Tests habe ich aber für mich selbst festgestellt, das ein Doppelklick am angenehmsten ist. Also müssen wir für das Arbeitsblatt definieren, was
-    bei einem Doppelklick in einer Zelle geschehen soll. Dazu ein neues Unterprogramm anlegen und über die Schaltfläche im oberen Editorfenster das entsprechende Verhalten auswählen.
+    <img src="image007_ComboBox.JPG" alt="Abbildung 6.2: Erstellen einer Combo-Box" style="width:400px;">
     <br>
-    <img src="image007_Doppelklick.JPG" alt="Abbildung 6.3: Definieren der Doppelklick-Aktion" style="width:400px;"><br><br> Als nächstes kommt folgender VBA-Code in das neu angelegte Unterprogramm, in dem wir nun auf die bereits erstellte Combo-Box zugreifen.
+    <br> Die Drop-Down Combo-Box soll angezeigt werden, wenn doppelt in eine Zelle geklickt wird. Theoretisch ist auch ein anderes Verhalten möglich. Zum Beispiel, dass die Box erscheint, wenn man eine Zelle auswählt, oder anfängt zu tippen. Nach einigen Tests habe ich aber für mich selbst festgestellt, das ein Doppelklick am angenehmsten ist. Also müssen wir für das Arbeitsblatt definieren, was bei einem Doppelklick in einer Zelle geschehen soll. Dazu ein neues Unterprogramm anlegen und über die Schaltfläche im oberen Editorfenster das entsprechende Verhalten auswählen.
+    <br>
+    <img src="image007_Doppelklick.JPG" alt="Abbildung 6.3: Definieren der Doppelklick-Aktion" style="width:400px;">
+    <br>
+    <br> Als nächstes kommt folgender VBA-Code in das neu angelegte Unterprogramm, in dem wir nun auf die bereits erstellte Combo-Box zugreifen.
 
     <br>
     <TODO>
 
-        Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean) Set xWs = Application.ActiveSheet Set dWs = ThisWorkbook.Worksheets("Data") 'Worksheet in dem die Pivot-Daten liegen Dim xStr As String Dim num_first_line, num_last_line,
-        num_prefilter_column As Integer On Error Resume Next 'Drop-Down Vervollständigungsfeld nur per Doppelklick in Zellen anzeigen, die auch über Datenüberprüfung als ' DropDown konfiguriert sind If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count
+        Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean) Set xWs = Application.ActiveSheet Set dWs = ThisWorkbook.Worksheets("Data") 'Worksheet in dem die Pivot-Daten liegen Dim xStr As String Dim num_first_line, num_last_line, num_prefilter_column As Integer On Error Resume Next 'Drop-Down Vervollständigungsfeld nur per Doppelklick in Zellen anzeigen, die auch über Datenüberprüfung als ' DropDown konfiguriert sind If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count
         < 1 Then 'MsgBox "No Drop Down available"
             'do nothing Else 'MsgBox "Drop Down in active Cell available"
 
              Application.EnableEvents = False
-    
+
                 'Combobox zunächst leeren Set xCombox=x Ws.OLEObjects( "TempCombo") With xCombox .ListFillRange="" .LinkedCell="" .Visible=F alse End With If Target.Validation.Type=3 Then Cancel=T rue num_first_line=5 'erste Zeile in der im Datenblatt Data, die Daten stehen
 
                     'use the unfiltered complete Title list num_last_line=d Ws.Cells(2, ActiveCell.Column) xStr=d Ws.Range(dWs.Cells(num_first_line, ActiveCell.Column), _ dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True) End If 'MsgBox xStr
-                    
-                    'ComboBox inkl. Titelliste aus Variable xStr anzeigen With xCombox .Visible=T rue .Left=T arget.Left .Top=T arget.Top .Width=T arget.Width + 15 .Height=T arget.Height + 5 .ListFillRange=x Str .LinkedCell=T arget.Address End With
-            xCombox.Activate Me.TempCombo.DropDown End If Application.EnableEvents=T rue End If End Sub '** Blendet bei einem Selection Change nur die Combo-Box aus
+
+                    'ComboBox inkl. Titelliste aus Variable xStr anzeigen With xCombox .Visible=T rue .Left=T arget.Left .Top=T arget.Top .Width=T arget.Width + 15 .Height=T arget.Height + 5 .ListFillRange=x Str .LinkedCell=T arget.Address End With xCombox.Activate Me.TempCombo.DropDown End If Application.EnableEvents=T rue End If End Sub '** Blendet bei einem Selection Change nur die Combo-Box aus
 Private Sub Worksheet_SelectionChange(ByVal Target As Range)
     Set xWs = Application.ActiveSheet
-    Set dWs = ThisWorkbook.Worksheets("Data")       'Worksheet in dem die Pivot-Daten liegen On Error GoTo errHandler If Target.Count> 1 Then GoTo exitHandler Set xCombox = xWs.OLEObjects("TempCombo") On Error Resume Next If xCombox.Visible = True Then With xCombox .Top = 10 .Left = 10 .Width = 0 .ListFillRange = "" .LinkedCell = "" .Visible = False .Value = "" End With End If
-            exitHandler: Application.EnableEvents = True Application.ScreenUpdating = True Exit Sub errHandler: Resume exitHandler End Sub
+    Set dWs = ThisWorkbook.Worksheets("Data")       'Worksheet in dem die Pivot-Daten liegen On Error GoTo errHandler If Target.Count> 1 Then GoTo exitHandler Set xCombox = xWs.OLEObjects("TempCombo") On Error Resume Next If xCombox.Visible = True Then With xCombox .Top = 10 .Left = 10 .Width = 0 .ListFillRange = "" .LinkedCell = "" .Visible = False .Value = "" End With End If exitHandler: Application.EnableEvents = True Application.ScreenUpdating = True Exit Sub errHandler: Resume exitHandler End Sub
     </TODO>
 
-    <br> Außerdem soll die Combo-Box ausgeblendet werden, wenn man die Zelle wechselt oder die Enter-, bzw. TAB-Taste drückt. Dazu ein neues Unterprogramm für das von uns angelegte Element <i>TempCombo</i> anlegen, und wie bereits beim vorherigen Sub,
-    über das obere Rechte Menü ein Aktivierungsverhalten auswählen. Dieses mal, nehmen wir <i>KeyDown</i>, also das drücken einer Taste. In VBA müssen wir jetzt nur noch definieren, dass der Code für <i>Enter</i>, sowie die <i>TAB-Taste</i> reagiert.
-    Dazu reicht eine Switch-Case Struktur aus, die den <i>KeyCode</i> der jeweiligen Taste abprüft. Für den Tabulator ist das z.B. KeyCode 9, für Enter KeyCode 13. Ein vollständige Liste aller KeyCodes findet man bei Bedarf im Internet.
+    <br> Außerdem soll die Combo-Box ausgeblendet werden, wenn man die Zelle wechselt oder die Enter-, bzw. TAB-Taste drückt. Dazu ein neues Unterprogramm für das von uns angelegte Element
+    <i>TempCombo</i> anlegen, und wie bereits beim vorherigen Sub, über das obere Rechte Menü ein Aktivierungsverhalten auswählen. Dieses mal, nehmen wir
+    <i>KeyDown</i>, also das drücken einer Taste. In VBA müssen wir jetzt nur noch definieren, dass der Code für
+    <i>Enter</i>, sowie die
+    <i>TAB-Taste</i> reagiert. Dazu reicht eine Switch-Case Struktur aus, die den
+    <i>KeyCode</i> der jeweiligen Taste abprüft. Für den Tabulator ist das z.B. KeyCode 9, für Enter KeyCode 13. Ein vollständige Liste aller KeyCodes findet man bei Bedarf im Internet.
 
     <br>
-    <TODO>'** Hide Combo-Box and move to next cell on Enter and Tab Private Sub TempCombo_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer) Select Case KeyCode Case 9 Application.ActiveCell.Offset(0, 1).Activate Case 13 Application.ActiveCell.Offset(1,
-        0).Activate Case Else 'do nothing End Select End Sub</TODO>
+    <TODO>'** Hide Combo-Box and move to next cell on Enter and Tab Private Sub TempCombo_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer) Select Case KeyCode Case 9 Application.ActiveCell.Offset(0, 1).Activate Case 13 Application.ActiveCell.Offset(1, 0).Activate Case Else 'do nothing End Select End Sub</TODO>
     <br>
-    <br> Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert! <br> Aber schade, denn momentan funktioniert es nur für die Autoren. Das ist jedoch gar kein Problem. Um das gleiche Verhalten für alle anderen Spalten
-    (Buchtitel, Genre, usw.) zu erhalten, muss die obige Prozedur mit anlegen von Pivot-Tabellen und Namensbereichen einfach wiederholt werden. Der VBA-Code ist universell und muss nicht angepasst werden.
-    <br><br> Ein ungewünschtes Verhalten würde man mit der aktuellen Lösung aber nach einiger Zeit feststellen. Denn neu eingegebene Daten werden unten an die Pivot-Tabelle rangehängt. Diese neuen Autoren tauchen dann in der Drop-Down-Liste nicht mehr
-    an der richtigen Stelle auf, weil die Pivot-Tabelle nicht mehr sauber alphabetisch sortiert ist. Blöd, aber mit VBA kein Problem. Mit zwei kleinen Funktionen, kann man erstens, alle Pivot-Tabellen aktualisieren (refreshen) und alle Pivot-Tabellen
-    alphabetisch sortieren.
+    <br> Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert!
+    <br> Aber schade, denn momentan funktioniert es nur für die Autoren. Das ist jedoch gar kein Problem. Um das gleiche Verhalten für alle anderen Spalten (Buchtitel, Genre, usw.) zu erhalten, muss die obige Prozedur mit anlegen von Pivot-Tabellen und Namensbereichen einfach wiederholt werden. Der VBA-Code ist universell und muss nicht angepasst werden.
+    <br>
+    <br> Ein ungewünschtes Verhalten würde man mit der aktuellen Lösung aber nach einiger Zeit feststellen. Denn neu eingegebene Daten werden unten an die Pivot-Tabelle rangehängt. Diese neuen Autoren tauchen dann in der Drop-Down-Liste nicht mehr an der richtigen Stelle auf, weil die Pivot-Tabelle nicht mehr sauber alphabetisch sortiert ist. Blöd, aber mit VBA kein Problem. Mit zwei kleinen Funktionen, kann man erstens, alle Pivot-Tabellen aktualisieren (refreshen) und alle Pivot-Tabellen alphabetisch sortieren.
     <br> VBA-Alle Pivots aktualisieren:
     <TODO>
         Sub PivotTables_Refresh() ThisWorkbook.RefreshAll End Sub</TODO>
     <br> In allen Pivots Werte alphabetisch sortieren:
     <br>
     <TODO>
-        Sub PivotTables_AutoSortAZAllFields() Dim ws As Worksheet Dim pt As PivotTable Dim pf As PivotField On Error Resume Next For Each ws In ActiveWorkbook.Worksheets For Each pt In ws.PivotTables For Each pf In pt.RowFields pf.AutoSort xlAscending, pf.SourceName
-        Next pf For Each pf In pt.ColumnFields pf.AutoSort xlAscending, pf.SourceName Next pf Next pt Next ws End Sub
+        Sub PivotTables_AutoSortAZAllFields() Dim ws As Worksheet Dim pt As PivotTable Dim pf As PivotField On Error Resume Next For Each ws In ActiveWorkbook.Worksheets For Each pt In ws.PivotTables For Each pf In pt.RowFields pf.AutoSort xlAscending, pf.SourceName Next pf For Each pf In pt.ColumnFields pf.AutoSort xlAscending, pf.SourceName Next pf Next pt Next ws End Sub
     </TODO>
     <br>
 
     <h3>2. Werte-Vorfilterung, sowie allg. Filterung nach Autor & Co.</h3>
 
-    Als nächstes Feature schauen wir uns die Werte-Vorfilterung an. Dahinter steckt nichts anderes, als folgender Wunsch. Man pflegt ein neues Buch ein und trägt hierfür als Erstes den <i>Autor</i> in das entsprechende Feld. Beim eintragen des <i>Titels</i>,
-    sollen nun automatisch alle Bücher angezeigt werden, die von dem jeweiligen Autor bereits vorhanden sind, z.B. um Doppeleinträge zu vermeiden. Auch diese Funktionalität kann über Pivot-Tabellen realisiert werden. Wir legen also wie bereits für die
-    andern Felder, eine neue Pivot-Tabelle an und geben ihr einen eindeutigen Namen (<i>Rechtsklick -> Pivot-Tabelle-Optionen</i>, Im Beispiel heißt die Tabelle <i>PivotTable_AutorFilter</i>).
+    Als nächstes Feature schauen wir uns die Werte-Vorfilterung an. Dahinter steckt nichts anderes, als folgender Wunsch. Man pflegt ein neues Buch ein und trägt hierfür als Erstes den
+    <i>Autor</i> in das entsprechende Feld. Beim eintragen des
+    <i>Titels</i>, sollen nun automatisch alle Bücher angezeigt werden, die von dem jeweiligen Autor bereits vorhanden sind, z.B. um Doppeleinträge zu vermeiden. Auch diese Funktionalität kann über Pivot-Tabellen realisiert werden. Wir legen also wie bereits für die andern Felder, eine neue Pivot-Tabelle an und geben ihr einen eindeutigen Namen (
+    <i>Rechtsklick -> Pivot-Tabelle-Optionen</i>, Im Beispiel heißt die Tabelle
+    <i>PivotTable_AutorFilter</i>).
 
     <br>
     <img src="image008_Vorfilterung.JPG" alt="Abbildung 8: Werte Vorfilterung" style="width:400px;">
-    <br><br> Per VBA erstellen wir nun die Regel, dass bei einem Klick ins Buch-Titelfeld der bereits eingegebene Autorenname als Filterwert der Pivot-Tabelle verwendet wird. Dazu müssen zunächst alle vorherigen Filter gelöscht werden
+    <br>
+    <br> Per VBA erstellen wir nun die Regel, dass bei einem Klick ins Buch-Titelfeld der bereits eingegebene Autorenname als Filterwert der Pivot-Tabelle verwendet wird. Dazu müssen zunächst alle vorherigen Filter gelöscht werden
     <br>
     <TODO>PvtTbl.ClearAllFilters</TODO>.
     <br> Anschließend können wir den neuen Filter setzen
     <br>
     <TODO>PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value</TODO>.
-    <br> Über das Kommando <i>xlCaptionContains</i> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B. <i>Mustermann, Max und Grisham, John</i> im Autorenfeld geführt werden.
-    Möchte man exakt nach den Autorennamen suchen, ist dies über die Option <i>xlCaptionEquals</i> möglich. In diesem Fall würden nur Bücher mit <i>Grisham, John</i> gefunden werden. Das Beispiel <i>Mustermann, Max und Grisham, John</i> würde nicht auftauchen.
+    <br> Über das Kommando
+    <i>xlCaptionContains</i> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B.
+    <i>Mustermann, Max und Grisham, John</i> im Autorenfeld geführt werden. Möchte man exakt nach den Autorennamen suchen, ist dies über die Option
+    <i>xlCaptionEquals</i> möglich. In diesem Fall würden nur Bücher mit
+    <i>Grisham, John</i> gefunden werden. Das Beispiel
+    <i>Mustermann, Max und Grisham, John</i> würde nicht auftauchen.
     <br> Die Länge der Ergebnisliste wird über den bereits bekannten Trick mit der Suche nach dem letzten Eintrag ermittelt.
     <br>
     <TODO>num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column)</TODO>
     <br>
 
-    <TODO>'** Prefilter Option Dim PvtTbl As PivotTable 'Pivot Table for Prefilter Option Set PvtTbl = dWs.PivotTables("PivotTable_AutorFilter") ' Bei aktivierter Option werden vom aktuell eingegebenen Autor nur die bereits im Bestand vorhandenen ' Titel angezeigt.
-        Es erfolgt also eine Vorfilterung. Bei deaktivierter Funktion werden alle Titel im Bestand angezeigt 'Prefilter activated and Current cell is a Title Cell If (xWs.OptBtn_Prefilter.Value = True And ActiveCell.Column = 3) Then 'bestehende Filter
-        löschen PvtTbl.ClearAllFilters 'den content der aktuell ausgewählten Zelle als neuen Filterwert der Pivot-Tabelle nutzen PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column
-        - 1).Value num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column) If (num_last_line = 4) Then GoTo Unfiltered 'if author is new, hence there is no title content,
-        show the unfiltered list Else xStr = dWs.Range(dWs.Cells(num_first_line, num_prefilter_column), _ dWs.Cells(num_last_line, num_prefilter_column)).Address(, , , True) End If Else Unfiltered: 'use the unfiltered complete Title list num_last_line
-        = dWs.Cells(2, ActiveCell.Column) xStr = dWs.Range(dWs.Cells(num_first_line, ActiveCell.Column), _ dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True) End If</TODO>
+    <TODO>'** Prefilter Option Dim PvtTbl As PivotTable 'Pivot Table for Prefilter Option Set PvtTbl = dWs.PivotTables("PivotTable_AutorFilter") ' Bei aktivierter Option werden vom aktuell eingegebenen Autor nur die bereits im Bestand vorhandenen ' Titel angezeigt. Es erfolgt also eine Vorfilterung. Bei deaktivierter Funktion werden alle Titel im Bestand angezeigt 'Prefilter activated and Current cell is a Title Cell If (xWs.OptBtn_Prefilter.Value = True And ActiveCell.Column = 3) Then 'bestehende Filter löschen PvtTbl.ClearAllFilters 'den content der aktuell ausgewählten Zelle als neuen Filterwert der Pivot-Tabelle nutzen PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column) If (num_last_line = 4) Then GoTo Unfiltered 'if author is new, hence there is no title content, show the unfiltered list Else xStr = dWs.Range(dWs.Cells(num_first_line, num_prefilter_column), _ dWs.Cells(num_last_line, num_prefilter_column)).Address(, , , True) End If Else Unfiltered: 'use the unfiltered complete Title list num_last_line = dWs.Cells(2, ActiveCell.Column) xStr = dWs.Range(dWs.Cells(num_first_line, ActiveCell.Column), _ dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True) End If</TODO>
 
 
     <h3>3. Pivot-Tabellen Auswertung</h3>
 
-    Abschließend ist vielleicht noch eine statistische Auswertung über den gesamten Bestand interessant. <br>
-    <br> Zum Beispiel:<br>
+    Abschließend ist vielleicht noch eine statistische Auswertung über den gesamten Bestand interessant.
+    <br>
+    <br> Zum Beispiel:
+    <br>
     <ul style="list-style-type:disc">
         <li>wie viele Bücher gibt es in den einzelnen Genres</li>
         <li>in welchen Sprachen sind Bücher vorhanden</li>
@@ -252,19 +689,1921 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
         <li>... und alles was man sich sonst noch vorstellen kann</li>
     </ul>
 
-    <br> Zu diesem Thema brauche ich nun eigentlich fast nichts mehr erklären. Denn wie schon mehrfach, kommen wieder einmal die Pivot-Tabellen zum Einsatz. Dazu können wir einfach in einem neuen Tabellenblatt beliebig viele Pivot-Tabellen mit unserer
-    Haupttabelle <i>Data</i> als Datenquelle anlegen. Über die zugehörigen Pivot-Charts können die Tabellen dann auch noch anschaulich visualisiert werden.
+    <br> Zu diesem Thema brauche ich nun eigentlich fast nichts mehr erklären. Denn wie schon mehrfach, kommen wieder einmal die Pivot-Tabellen zum Einsatz. Dazu können wir einfach in einem neuen Tabellenblatt beliebig viele Pivot-Tabellen mit unserer Haupttabelle
+    <i>Data</i> als Datenquelle anlegen. Über die zugehörigen Pivot-Charts können die Tabellen dann auch noch anschaulich visualisiert werden.
 
     <br>
     <img src="image009_Analyse.JPG" alt="Abbildung 9: Pivot Analyse" style="width:400px;">
-    <br><br>
+    <br>
+    <br>
 
     <h2>FAZIT:</h2>
-    Mittels VBA und der exzessiven Nutzung von Pivot-Tabellen, kann die standard Excel-Funktionalität von Drop-Down-Listen und Autovervollständigung deutlich erweitert werden. So ist es möglich eine sehr komfortable, interaktive Umgebung zum Pflegen großer
-    Datenbanken anzulegen. Als Beispiel wurde die Verwaltung des Bücherbestands einer Heimbibliothek dargestellt. Die Techniken können aber ohne Aufwand für viele andere Zwecke angepasst werden.
+    Mittels VBA und der exzessiven Nutzung von Pivot-Tabellen, kann die standard Excel-Funktionalität von Drop-Down-Listen und Autovervollständigung deutlich erweitert werden. So ist es möglich eine sehr komfortable, interaktive Umgebung zum Pflegen großer Datenbanken anzulegen. Als Beispiel wurde die Verwaltung des Bücherbestands einer Heimbibliothek dargestellt. Die Techniken können aber ohne Aufwand für viele andere Zwecke angepasst werden.
 
-    <h2>Download</h2>
-    Wenn euch der Artikel gefallen habt, spendiert uns doch einen Kaffee! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content bereitstellen. https://ko-fi.com/ Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
+                    -->
+
+                    <h1 id="introduction">
+                        Introduction
+                        <a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <h2 id="zielsetzung">
+                        Zielsetzung des Projektes
+                        <a target="_self" href="#zielsetzung" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Ziel des Projektes ist es, ein klassisches Theremin aufzubauen und dessen Klang beliebig zu verändern, so dass der Eindruck anderer Musikinstrumente entsteht.
+                        <br>Zur Realisierung dieser Aufgabe wird der Einplatinenrechner Raspberry Pi verwendet. Die verschiedenen Filtereinstellungen sollen durch variable Tastenkombinationen gesteuert werden können. Eine zusätzliche Anforderung ist ein vollständig modularer Aufbau, um sowohl einfachen Transport, sowie Austauschbarkeit der Komponenten zu gewährleisten. Es ergeben sich folgende Aufgaben für die Projektrealisierung:
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image002.JPG" alt="Abbildung 0: Hardware-Aufbau">
+                        <div class="image_text">
+                            Abbildung 0: Hardware-Aufbau
+                        </div>
+                    </div>
+
+                    <ol>
+                        <li>
+                            Aufbau eines klassischen Theremin inklusive Gehäuse
+                        </li>
+                        <li>
+                            Aufbau einer
+                            <abbr title="Als Stompbox wird i.d.R. ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann">Stompbox</abbr> als interaktive Bedienerschnittstelle
+                        </li>
+                        <li>
+                            Installation und Konfiguration des Raspberry Pi
+                        </li>
+                        <li>
+                            Programmierung eines auf dem Raspberry Pi ausführbaren DSP Software
+                        </li>
+                    </ol>
+                    <p>
+                        Es wurde als Vorbereitung ein Projektplan erstellt, der während des gesamten Projektes gepflegt wurde, um den aktuellen Projektstatus widerzuspiegeln. Dieser Projektplan, sowie eine genaue Kostenaufstellung inkl. Stückliste aller benötigten Bauteile ist im Anhang zu finden.
+                    </p>
+
+                    <h2 id="allgemeines1">
+                        Allgemeines 1
+                        <a target="_self" href="#allgemeines1" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Bei einem Theremin, das auch als Ätherophon, Ätherwellengeige oder Thereminovox bekannt ist, handelt es sich um ein elektronisches Musikinstrument. Es ist eines der wenigen Instrumente, die der Musiker spielt ohne es zu berühren. Erfunden wurde das Theremin 1920 von dem russischen Physiker Lev Sergeevič Termen.
+                        <br> Ab 1927 ging Termen mit dem Theremin auf Welttournee und begeisterte mit seiner „Geistermusik“ das Publikum. Im Zuge dessen ließ sich Termen 1928 in New York nieder, patentierte das Instrument und nannte sich fortan Leon Theremin. Abbildung 1 zeigt Termen beim Musizieren mit einem seiner Instrumente.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image000.jpg" alt="Abbildung 1: Lev Termen mit seinem Musikinstrument">
+                        <div class="image_text">
+                            Abbildung 1: Lev Termen mit seinem Musikinstrument (Quelle:
+                            <a href="http://www.theremin.info" target="_blank" rel="noopener">www.Theremin.info</a>)
+                        </div>
+                    </div>
+
+                    <p>
+                        Das Theremin wird durch den Abstand beider Hände zu zwei Antennen berührungsfrei gespielt, wobei eine Hand die Tonhöhe und die andere die Lautstärke verändert. Bei einem Standard-Theremin hat der Spieler keine optische oder haptische Rückmel- dung über seine Spielweise und muss allein auf sein Gehör vertrauen. Der Einflussbe- reich auf die Tonhöhe beträgt in der Regel etwa 40 bis 50 Zentimeter um die Antenne herum. Das bedeutet, dass auch der Arm und der Körper des Spielers den Ton beeinflussen können.
+                        <br> Ein Vorteil des Theremin ist die, theoretisch unendlich feine, Variation der erzeugten Töne, ohne dass z.B. ein Saitenwechsel wie bei einer Geige notwendig ist. Des Weiteren kann ein Ton beliebig lange gehalten werden.
+                        <br> Der Klang des Theremin ist am ehesten mit dem einer Violine vergleichbar. Das Klangbild und die Klangvariationen sind allerdings ganz eigentümlich.
+                    </p>
+
+                    <div class="image_box">
+                        <iframe title="youtube embeded" width="440" height="315" src="https://www.youtube-nocookie.com/embed/w5qf9O6c20o?rel=0&amp;start=13" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen>https://www.youtube.com/watch?time_continue=13&v=w5qf9O6c20o</iframe>
+                        <div class="image_text">
+                            Hörprobe: Leon Theremin mit einem seiner Instrumente
+                        </div>
+                    </div>
+
+                    <p>
+                        Aus diesem Grund entstand die Idee diesen besonderen Klang auf elektronischem Weg derart zu verändern, dass der Eindruck eines komplett anderen Instruments (z.B. einer Gitarre) entsteht.
+                    </p>
+
+                    <hr>
+
+                    <h1 id="systemüberblick">
+                        Systemüberblick ThereOHM
+                        <a target="_self" href="#systemüberblick" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <h2 id="allgemeines2">
+                        Allgemeines 2
+                        <a target="_self" href="#allgemeines2" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Abbildung 2 zeigt den prinzipiellen Aufbau des ThereOHM Systems. Es besteht aus einem klassischen Theremin dessen Klang durch Annäherung an die Antennen verändert werden kann.
+                        <br> Das Analogsignal wird über ein 3,5 mm Klinkenkabel mit einer am Raspberry Pi angeschlossen USB-Stereo-Soundkarte verbunden. Der ADC der Soundkarte wandelt dieses Analogsignal in ein Digitalsignal um, welches anschließend im Raspberry verarbeitet wird. Dazu wird auf dem Pi ein Pure Data Programm ausgeführt, welches als Software-DSP fungiert. Die Art und Weise der Audioverarbeitung kann hardwareseitig über Schalter, bzw. softwareseitig über eine Benutzeroberfläche dynamisch beeinflusst werden.
+                        <br> Hardwareseitig wird hierfür eine Stompbox verwendet. Auf dieser sind mehrere Fußschal- ter angebracht, deren Schaltzustand über die General-Purpose-Input-Outputs (GPIOs) des Raspberry eingelesen werden kann. Softwareseitig geschieht dies über die Maus oder Tastatur.
+                        <br> Nach erfolgreicher Verarbeitung durch Pure Data wird das fertige Audiosignal an den DAC der USB-Soundkarte übergeben und abschließend über extern angeschlossene Laut- sprecher ausgegeben.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image003.jpg" alt="Abbildung 2: ThereOHM Blockschaltbild">
+                        <div class="image_text">
+                            Abbildung 2: ThereOHM Blockschaltbild
+                        </div>
+                    </div>
+
+                    <p>
+                        Alternativ lässt sich der Raspberry durch einen Standard-PC ersetzen. Hierzu muss lediglich Pure Data auf dem Computer installiert werden. Die frei erhältliche Software ist sowohl für Windows, MAC OS und Linux verfügbar. Eine Schnellstartanleitung für verschiedene Plattformen befindet sich in
+                        <a target="_self" href="#anhanga">Anhang A</a>.
+                    </p>
+
+                    <hr>
+
+                    <h1 id="theremin">
+                        Theremin
+                        <a target="_self" href="#theremin" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <h2 id="layout">
+                        Layout / Schaltplan Platine
+                        <a target="_self" href="#layout" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Der Schaltplan, sowie das Leiterplattenlayout wurden mit der Freeware Layoutingsoftware EAGLE erstellt. Nachfolgend sind die finalen Versionen von Schaltplan, sowie Leiterplattenlayout abgebildet.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image004.png" alt="Abbildung 3: Bestückungsplan Theremin">
+                        <div class="image_text">
+                            Abbildung 3: Bestückungsplan Theremin
+                        </div>
+                    </div>
+
+                    <div class="image_box">
+                        <img src="image005.jpg" alt="Abbildung 4: Layout Theremin">
+                        <div class="image_text">
+                            Abbildung 4: Layout Theremin
+                        </div>
+                    </div>
+
+                    <div class="image_box">
+                        <img src="image006.png" alt="Abbildung 5: Schaltplan Theremin">
+                        <div class="image_text">
+                            Abbildung 5: Schaltplan Theremin
+                        </div>
+                    </div>
+
+                    <h2 id="funktionsweise">
+                        Funktionsweise
+                        <a target="_self" href="#funktionsweise" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Die Schaltung des Theremin teilt sich in vier Funktionsblöcke auf. Den ersten Block bildet ein variabler Oszillator, zu dem je eine Antenne gehört. Er wird als Regler für die Laut- stärke bzw. Tonhöhe verwendet und ist für beide Aufgaben separat vorhanden. Im zweiten Funktionsblock wird ein konstantes Referenzsignal erzeugt, das mit Hilfe eines Fre- quenzmixers (dritter Funktionsblock) gemischt wird. Es existieren wiederum zwei Schaltungseinheiten, eine für das Signal der Lautstärke und eine für die Tonhöhe. Anschlie- ßend werden die Signale im vierten Funktionsblock gefiltert und in einer Endstufe verstärkt. Die Funktionsblöcke sind nachfolgend genauer erläutert.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image007.JPG" alt="Abbildung 6: Funktionsblockschaltbild">
+                        <div class="image_text">
+                            Abbildung 6: Funktionsblockschaltbild
+                        </div>
+                    </div>
+
+                    <h3 id="funktionsblockeins">
+                        Funktionsblock eins (variabler Oszillator)
+                        <a target="_self" href="#funktionsblockeins" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Der doppelt vorhandene Funktionsblock bildet jeweils einen variablen Oszillator für die Regelung der Lautstärke, sowie der Tonhöhe. Die Antenne für die Lautstärkenregelung (Abbildung 7, Pad VOLUME) fungiert im ersten Schwingkreis als Kondensatorplatte. Die Hand des ThereOHM-Spielers bildet die zweite Platte des Kondensators. Durch die Variation des Abstandes der Hand variiert ebenfalls der kapazitive Anteil des Schwingkreises. Der Oszillator für die Tonhöhe ist identisch aufgebaut.
+                        <br> Die Schwingkreise haben jeweils eine Frequenz von ca. 450kHz bis 500kHz, abhängig von der Position der Hand. Die variablen Kondensatoren CT1 und CT2 sind für die Kalibrierung der beiden Schwingkreise zuständig. Der Abgleich muss jeweils so durchgeführt werden, dass bei maximalem Abstand der Hand zur Antenne die Frequenz des variablen Oszillators mit der Frequenz des Referenzoszillators (Funktionsblock 2) übereinstimmt.
+                        <br> Wird das ThereOHM ohne Raspberry Pi bzw. PC gespielt und ein Lautsprecher direkt mit den Audioausgängen der Platine verbunden, kann die Lautstärke nicht variiert werden. Dies rührt daher, dass ein Schwingkreis jeweils die Tonhöhe eines Stereo-Audio-Kanals bestimmt und die Lautstärkeregelung ausschließlich von der Pure Data Software umge- setzt wird.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image008.png" alt="Abbildung 7: Variabler Oszillator">
+                        <div class="image_text">
+                            Abbildung 7: Variabler Oszillator
+                        </div>
+                    </div>
+
+                    <h3 id="funktionsblockzwei">
+                        Funktionsblock zwei (konstanter Oszillator)
+                        <a target="_self" href="#funktionsblockzwei" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        In diesem Funktionsblock wird mit Hilfe eines Zählers (IC-4060D) die 8 MHz-Frequenz des Quarzes auf ein Sechzehntel heruntergeteilt. Diese Frequenz von 500 kHz bildet die konstante Referenzfrequenz, auf die die variablen Oszillatoren kalibriert werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image009.png" alt="Abbildung 8: Konstanter Oszillator">
+                        <div class="image_text">
+                            Abbildung 8: Konstanter Oszillator
+                        </div>
+                    </div>
+
+                    <h3 id="funktionsblockdrei">
+                        Funktionsblock drei und vier (Mixer, Filter und Verstärkerendstufe)
+                        <a target="_self" href="#funktionsblockdrei" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Der Frequenzmixer des Theremin besteht aus einem XNOR-Gatter, an dessen Eingängen die Frequenzen des variablen und des konstanten Oszillators anliegen. Daraus ergibt sich am Ausgang ein Frequenzgemisch aus Summe und Differenz der beiden Signale. Im nachfolgenden Teil der Schaltung werden die nicht hörbaren Anteile des Signals herausgefiltert und anschließend von der Endstufe verstärkt.
+                        <br> Abbildung 9 zeigt die Eingänge des Frequenz-Mixers während sich die Hand des ThereOHM Spielers im Bereich der Antenne befindet. In diesem Fall unterscheiden sich die beiden Oszillatorfrequenzen. Der blaue Signalverlauf zeigt hierbei die konstante Oszillatorfrequenz von 500 kHz und der rote die des variablen Oszillators (bei dieser Handposition 450 kHz).
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image010.png" alt="Abbildung 9: Oszilloskop-Aufnahme der Mixer Eingänge">
+                        <div class="image_text">
+                            Abbildung 9: Oszilloskop-Aufnahme der Mixer Eingänge
+                        </div>
+                    </div>
+
+                    <div class="image_box">
+                        <img src="image011.png" alt="Abbildung 10: Mixer, Filter und Verstärker">
+                        <div class="image_text">
+                            Abbildung 10: Mixer, Filter und Verstärker
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h1 id="raspberry">
+                        Raspberry Pi B+
+                        <a target="_self" href="#raspberry" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <p>
+                        Der Raspberry Pi ist ein vollwertiger und preisgünstiger Einplatinenrechner, welcher entwickelt wurde um Neulingen den Einstieg in die Programmierung zu erleichtern. Er eignet sich aufgrund seiner vielen Schnittstellen hervorragend für technische Versuchsaufbauten und bietet mit unterschiedlichen
+                        <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">
+                            Linux-Distributionen
+                        </a> verschiedenste Einsatzgebiete. Im Rahmen des Projektes wird er als Rechner mit Software-DSP, sowie zum Einlesen der Stompbox Fußschalter verwendet.
+                    </p>
+
+                    <h2 id="hardware">
+                        Hardware
+                        <a target="_self" href="#hardware" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <div class="image_box">
+                        <img src="image012.jpg" alt="Abbildung 11: Aufbau Raspberry Pi B+">
+                        <div class="image_text">
+                            Abbildung 11: Aufbau Raspberry Pi B+
+                        </div>
+                    </div>
+
+                    <p>
+                        Der verwendete Raspberry Pi B+ besitzt eine 40 Pin große Stiftleiste, welche mit 24 GPIOs, sowie diversen Masse- und Spannungspegeln belegt ist. Zusätzlich können über die Stiftleiste gängige Schnittstellen wie I2C, SPI und UART angesprochen werden. Mittels der GPIOs ist es möglich externe Signale einzulesen bzw. auszugeben. Um auf die GPIOs zuzugreifen kann beispielsweise die Programmbibliothek WiringPi verwendet werden. Diese bietet zahlreiche C-Bibliotheken, um die GPIOs gezielt mittels Bash- oder Software-Skripten anzusteuern bzw. auszulesen.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image013.jpg" alt="Abbildung 12: Belegung 40 Pin Stiftleiste">
+                        <div class="image_text">
+                            Abbildung 12: Belegung 40 Pin Stiftleiste
+                        </div>
+                    </div>
+
+                    <p>
+                        Versorgt wird der Raspberry Pi über einen Micro USB-Anschluss und ein zughöriges Netzteil (Input: 100-240V, 0.3A, 50/60Hz; Output: 5V, max. 2A). Für die bildgebende Ausgabe kann entweder ein LCD-Display über die DSI-Schnitt- stelle oder ein herkömmlicher Computermonitor über die HDMI-Schnittstelle angeschlos- sen werden.
+                        <br> Die Tonausgabe kann über den Composite-Ausgang (4-phasige Klinke, Video und Sound) oder HDMI-Ausgang erfolgen. Die entsprechenden Einstellungen müssen in der Systemkonfiguration vorgenommen werden. Da die Onboard-Soundkarte allerdings keinen Audioeingang besitzt, sowie eine relativ rauschbehaftete Audioausgabe, wurde auf eine externe USB-Soundkarte zurückgegriffen (Abbildung 13). Wie sich jedoch im weiteren Projektverlauf herausstellte, verfügen diese als „Stereo Soundkarten“ vertriebenen USB-Geräte zwar über eine Stereo Audioausgabe, allerdings nur über einen Mono Eingang. Exakte Erläuterungen hierzu, sowie Lösungsmöglichkeiten werden im Kapitel Fazit näher erläutert.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image014.png" alt="Abbildung 13: USB-Soundkarte SPEEDLINK Vigo">
+                        <div class="image_text">
+                            Abbildung 13: USB-Soundkarte SPEEDLINK Vigo
+                        </div>
+                    </div>
+
+                    <p>
+                        Die restlichen USB-Ports werden für Tastatur, Maus, sowie für Anschluss eines Datenträ- gers genutzt. Über einen Ethernet-Anschluss ist der Raspberry netzwerkfähig. Somit kön- nen via Internet Softwarepakete installiert oder der Raspberry über eine Remoteverbin- dung ferngesteuert werden.
+                        <br> Zum Schutz des Raspberry Pi wurde er in ein spezielles Plastikgehäuse eingebaut. Dieses wurde in unserem Projekt zusätzlich als modulare Einheit in die Stompbox verbaut.
+                        <br>
+                        <br>
+                        <b>
+                            <u>Zusätzliches Zubehör:</u>
+                        </b>
+                    </p>
+                    <ul>
+                        <li>
+                            Raspberry Pi Gehäuse
+                        </li>
+                        <li>
+                            USB-Maus
+                        </li>
+                        <li>
+                            USB-Tastatur
+                        </li>
+                        <li>
+                            HDMI-DVI Kabel, Monitorkabel
+                        </li>
+                        <li>
+                            Ethernet Kabel, Netzwerk
+                        </li>
+                        <li>
+                            SD-Karte für Betriebssystem, (microSD 16 GB, Class 10)
+                        </li>
+                        <li>
+                            Verbindungskabel GPIOs mit Anschlussplatine (40 poliges Flachbandkabel)
+                        </li>
+                        <li>
+                            Kühlkörper (benötigt wegen Übertaktung)
+                        </li>
+                    </ul>
+
+                    <h3 id="betriebssystem">
+                        Betriebssystem
+                        <a target="_self" href="#betriebssystem" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Um den Raspberry starten zu können, muss ein bootfähiges Betriebssystem auf der microSD Karte abgelegt werden.
+                        <br> Für den Raspberry stellt die Raspberry Foundation mehrere hierfür optimierte LINUX-Distributionen zur Verfügung. Sie können entweder also Komplettpaket (NOOBS), oder einzeln installiert werden. Bei NOOBs kann nach jedem Hochlauf des Raspberry entschieden werden, mit welcher Distribution man arbeiten möchte. Für die Projektarbeit wurde die abgespeckte Variante eines Debian-Betriebssystems namens Raspbian entschieden.
+                        <br> Die Installation/ Konfiguration ist wie nachfolgend beschrieben durchzuführen: Das aktuelle ISO-Image der Software Raspbian als ZIP-File herunterladen
+                        <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">
+                            http://www.raspberrypi.org/
+                        </a> und entpacken. Um ein lauffähiges System zu erhalten muss das ISO-Image auf die microSD geladen werden. Hierfür kann in Windows beispielsweise das Tool
+                        <a href="http://sourceforge.net/projects/win32diskimager" target="_blank" rel="noopener">
+                            Win32 Disk Imager
+                        </a> verwendet werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image015.png" alt="Abbildung 14: Win32 Disk Imager Oberfläche">
+                        <div class="image_text">
+                            Abbildung 14: Win32 Disk Imager Oberfläche
+                        </div>
+                    </div>
+
+                    <p>
+                        Mittels der Write Funktion wird das Image auf die microSD-Karte geschrieben. Nun die beschriebene microSD-Karte in den vorgesehenen Kartenslot des Raspberry einstecken. Nun kann nach Anschluss des Netzteils und der Peripherie der Raspberry mit dem Betriebssystem gestartet werden. Beim erstmaligen Start erscheint das Raspberry Pi Software Configuration Tool (Abbildung 15). In diesem können Sprache, Passwort, sowie Kamera- und Übertaktungseinstellungen eingestellt werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image016.png" alt="Abbildung 15: Raspberry Configuration Tool">
+                        <div class="image_text">
+                            Abbildung 15: Raspberry Configuration Tool
+                        </div>
+                    </div>
+
+                    <p>
+                        Als Benutzername wurde „pi“ mit dem Passwort „raspberry“ vergeben. Um die Rechenleistung des Raspberry zu steigern, wurde er übertaktet. Hierfür im Overclock-Menü den High-Modus auswählen (950 MHz ARM, 250MHz core, 450MHz DRAM).
+                        <br> Um von einem anderen Computer auf den Raspberry zugreifen zu können muss eine Remote-Verbindung hergestellt werden. Hierfür muss zuerst auf dem Raspberry ein SSH- Server installiert und gestartet werden. Dafür ist folgender Befehl auf einer Bash-Konsole auszuführen.
+                    </p>
+
+                    <pre>
+						<code class="command">sudo apt-get install xrdp</code>
+					</pre>
+
+                    <p>
+                        Der Hintergrunddienst für den Remote Desktop Zugriff wird danach automatisch gestartet. Beispielsweise kann man sich nun mit der in Windows integrierten Remotedesktopverbindung auf den Raspberry zugreifen. Dadurch läuft der Raspberry ressourcenschonender, da er keine graphische Oberfläche direkt am Bildschirm anzeigen muss.
+                    </p>
+
+                    <h2 id="installation">
+                        Installation von Zusatzsoftware
+                        <a target="_self" href="#installation" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Während des Projektes wurden mehrere Zusatzprogramme verwendet. Die Installation und Konfiguration dieser wird nachfolgend beschrieben.
+                    </p>
+
+                    <h3 id="alsa">
+                        ALSA
+                        <a target="_self" href="#alsa" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Zunächst wird
+                        <a href="http://www.alsa-project.org" target="_blank" rel="noopener">
+                            ALSA (Advanced Linux Sound Architecture)
+                        </a> benötigt, was einen grundlegenden Baustein des Soundsystems unter Linux darstellt. Durch ALSA wird die Kommu- nikation mit der Soundkarte unter Linux ermöglicht. Zusätzlich bietet ALSA die Möglichkeit grundlegender Konfigurationen. Zur Installation muss folgender Befehl in einer Konsole ausgeführt werden.
+                    </p>
+
+                    <pre>
+						<code class="command">sudo apt-get install alsa-base alsa-utils</code>
+					</pre>
+
+                    <h3 id="wiringpi">
+                        WiringPi
+                        <a target="_self" href="#wiringpi" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Um auf die GPIOs zugreifen zu können, wurde die Programmbibliohtek WiringPi verwendet. Diese kann über ein Git-Archiv wie folgt bezogen und installiert werden.
+                    </p>
+                    <pre>
+						<code class="command">sudo apt-get install git-core</code>
+						<code class="command">git clone git://git.drogon.net/wiringPi </code>
+						<code class="command">cd wiringPi</code>
+						<code class="command">./build</code>
+					</pre>
+
+                    <h3 id="puredatapd">
+                        Pure Data (Pd)
+                        <a target="_self" href="#puredatapd" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Hier soll zunächst nur auf die Installation des Programmpaketes Pure Data eingegangen werden. Eine weitergehende Beschreibung von Pure Data folgt in Kapitel 6.
+                        <br> Pure Data setzt sich aus mehreren Versionen zusammen. Die Basis Version, auch bekannt unter der Bezeichnung „Vanilla“, enthält lediglich eine Zusammenstellung der grundlegendsten Funktionen. Über zahlreich verfügbare Bibliotheken kann der Funktionsumfang anschließend beliebig erweitert werden. Mit dem Paket „Pd-Extended“ kann eine fertige Zusammenstellung, installiert werden, die sowohl Vanilla, als auch einen Großteil der externen Programmbibliotheken enthält. Hierbei ist zu beachten, dass Neuerungen zuerst in der Vanilla Version durchgeführt werden. So kann es vorkommen, dass die Extended Version veraltete Bibliotheken enthält. Dies war der Grund, warum im Zuge des Projektes auf dem Raspberry ein schwerwiegender Fehler in Kombination von Pd-Extended und ALSA auftrat. Dieser Fehler war in der Vanilla Version bereits behoben und trat hier nicht auf. Deshalb wird mit folgendem Befehl zunächst Pd-Vanilla installiert
+                    </p>
+                    <pre>
+						<code class="command">sudo apt-get install pd</code>
+					</pre>
+                    <p>
+                        Um Abhängigkeiten von externen Libraries zu vermindern, wurde versucht weitestgehend auf Extended-Bibliotheken zu verzichten. Dies war nicht komplett möglich, weshalb fehlenden Objekte händisch nachinstalliert wurden.
+                        <br> Alle zusätzlich verwendeten Objekte sind in Tabelle 2 aufgelistet. Diese sind zudem für den Raspberry (ARM-Prozessor) kompiliert und auf der Daten CD abgelegt.
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Library</th>
+                                <th>Object</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>creb</td>
+                                <td>Count</td>
+                            </tr>
+                            <tr>
+                                <td>mapping</td>
+                                <td>Autoscale</td>
+                            </tr>
+                            <tr>
+                                <td>flatgui</td>
+                                <td>Knob</td>
+                            </tr>
+                            <tr>
+                                <td>pddp</td>
+                                <td>Pddplink</td>
+                            </tr>
+                            <tr>
+                                <td>unauthorized</td>
+                                <td>mp3cast~</td>
+                            </tr>
+                            <tr>
+                                <td>unauthorized</td>
+                                <td>mp3write~</td>
+                            </tr>
+                            <tr>
+                                <td>zexy</td>
+                                <td>Makesymbol</td>
+                            </tr>
+                            <tr>
+                                <td>zexy</td>
+                                <td>z~ </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <b>Tabelle 2: Verwendete Extended-Objects</b>
+
+                    <h3 id="installationsynthesis">
+                        Installation des Synthesis ToolKit (STK) und Kompilierung von Synthese-Modellen
+                        <a target="_self" href="#installationsynthesis" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Bei dem Synthesis ToolKit (STK) handelt es sich um ein Paket, das zahlreiche C++ Bibliotheken zur Audiosignalverarbeitung, sowie Algorithmen zur Klangsynthese bereitstellt. Darunter befinden sich Synthesis Modelle, die unter anderem Blasinstrumente wie Flöten, Trompeten, usw. modellieren.
+                        <br> Um die Bibliotheken auf dem Raspberry Pi nutzen zu können, müssen diese einmalig für den ARM-Prozessor kompiliert werden. Später können die Bibliotheken ohne großen Aufwand verwendet werden. Eine Schnellstartanleitung hierfür befindet sich in Anhang A. Alle während des Projektes kompilierten Bibliotheken befinden sich auf der beiliegenden Daten CD.
+                        <br> Für die Kompilierung muss zunächst STK, sowie zahlreiche weitere Softwarepakete händisch auf dem Raspberry installiert werden. Die dafür notwendigen Schritte werden nachfolgend aufgelistet: Installation der liba Laufzeitbibliothek für ALSA-Anwendungen.
+                    </p>
+                    <pre>
+						<code class="command">sudo apt-get install libasound2-dev</code>
+					</pre>
+
+                    <p>
+                        <a href="https://ccrma.stanford.edu/software/stk/download.html" target="_blank" rel="noopener">
+                            STK-Quellcode
+                        </a> herunterladen und entpacken. Im diesem Ordner den Befehl
+                    </p>
+
+                    <pre>
+						<code class="command">./configure</code>
+					</pre>
+
+                    <p>
+                        ausführen. Danach in den "src" Ordner wechseln und
+                    </p>
+
+                    <pre>
+						<code class="command">make</code>
+					</pre>
+
+                    <p>
+                        ausführen um die "libstk.a" Bibliothek zu erzeugen.
+                        <a href="http://sourceforge.net/projects/pure-data/files/pd-extended/0.43.4/Pd-extended_0.43.4-source.tar.bz2/download" target="_blank" rel="noopener">
+                            Pd-extended Quellcode
+                        </a> herunterladen und entpacken (z.B. nach /home/pi/pdsource/) Download von
+                        <a href="http://www.scons.org/" target="_blank" rel="noopener">
+                            SCons (Software Construction Tool)
+                        </a>, der als Installer für weitere Pakete verwendet wird und im entpackten Ordner mittels
+                    </p>
+
+                    <pre>
+						<code class="command">python setup.py install</code>
+					</pre>
+
+                    <p>
+                        installieren Download von
+                        <a href="http://sndobj.sourceforge.net/" target="_blank" rel="noopener">
+                            SNDOBJ (Sound Object Library)
+                        </a>, die eine objektorientierte Audio-Processing Bibliothek zur Verfügung stellt. und im entpackten Ordner mittels
+                    </p>
+
+                    <pre>
+						<code class="command">scons</code>
+					</pre>
+
+                    <p>
+                        installieren. Anschließend wird die Anwendung flext installiert. Dabei handelt es sich um einen Multiplattform C++ Development Layer, der ein vereinheitlichtes Interface für die APIs von Pd, STK als auch Max zur Verfügung stellt. Der flext Quellcode kann mit Hilfe von Subversion (SVN) bezogen werden.
+                    </p>
+
+                    <pre>
+						<code class="command">sudo apt-get install subversion</code>
+					</pre>
+                    <p>
+                        aktuelles SVN-Archiv von flext herunterladen
+                    </p>
+
+                    <pre>
+						<code class="command">sudo svn co https://svn.grrrr.org/ext/trunk/flext flext</code>
+					</pre>
+
+                    <p>
+                        Im heruntergeladenen flext Ordner den Kompilierungsvorgang durchführen.
+                    </p>
+
+                    <pre>
+						<code class="command">sudo bash build.sh pd gcc</code>
+					</pre>
+                    <p>
+                        Dies erzeugt eine Konfigurationsdatei im Unterordner /buildsys, die editiert werden muss:
+                    </p>
+                    <pre>
+						<code class="command">sudo vim ./buildsys/config-lnx-pd-gcc.txt</code>
+					</pre>
+                    <p>
+                        Die nachfolgenden Konfigurationseinstellungen sollten abgeglichen werden:
+                    </p>
+                    <pre>
+						<code># where is the PD source package?</code>
+						<code># (this should point to the main folder, which has a "src" (PD Vanilla) or "include" (PD extended) subfolder)</code>
+						<code>PDPATH=/home/pi/pdsource/pd</code>
+						<code></code>
+						<code>###############################################################</code>
+						<code></code>
+						<code># prefix for flext installation</code>
+						<code># headers are in $(FLEXTPREFIX)/include/flext</code>
+						<code># libraries are in $(FLEXTPREFIX)/lib</code>
+						<code># build system is in $(FLEXTPREFIX)/lib/flext</code>
+						<code>FLEXTPREFIX=/usr/local</code>
+						<code></code>
+						<code>###############################################################</code>
+						<code></code>
+						<code># where should the external be built?</code>
+						<code>OUTPATH=pd-linux</code>
+						<code></code>
+						<code># where should the external be installed?</code>
+						<code>INSTPATH=/usr/lib/pd-extended/extra</code>
+						<code></code>
+						<code>###############################################################</code>
+						<code></code>
+						<code># STK (synthesis tool kit) support</code>
+						<code># http://ccrma.stanford.edu/software/stk</code>
+						<code></code>
+						<code># where to find the STK header files (e.g. stk.h)</code>
+						<code>STK_INC=/home/pi/stk/stk-4.5.0/include</code>
+						<code></code>
+						<code># where to find the STK library (normally libstk.a)</code>
+						<code># (comment out STK_LIB if you don't use STK)</code>
+						<code>STK_LIB=/home/pi/stk/stk-4.5.0/src/libstk.a</code>
+						<code></code>
+						<code>###############################################################</code>
+						<code></code>
+						<code># SndObj support</code>
+						<code># http://music.nuim.ie//musictec/SndObj</code>
+						<code></code>
+						<code># where to find the SndObj header files (e.g. sndobj.h)</code>
+						<code>#SNDOBJ_INC=/usr/include/SndObj</code>
+						<code></code>
+						<code># where to find the SndObj library (normally libsndobj.a)</code>
+						<code># (comment out STK_LIB if you don't use SndObj)</code>
+						<code>#SNDOBJ_LIB=/usr/local/lib/libsndobj.a</code>
+						<code></code>
+						<code>#SNDOBJ_LIB=/usr/lib/arm-linux-gnueabihf/libsndobj.so</code>
+						<code></code>
+						<code>###############################################################</code>
+						<code></code>
+						<code># make flags (e.g. use multiprocessor)</code>
+						<code>#MFLAGS=-j 2</code>
+						<code></code>
+						<code># user defined compiler flags</code>
+						<code># (check if they match your system!)</code>
+						<code>#UFLAGS=-msse -mfpmath=sse -ffast-math</code>
+						<code># don't overload new and delete operators</code>
+						<code>UFLAGS+=-DFLEXT_USE_CMEM</code>
+						<code></code>
+						<code># user defined optimization flags</code>
+						<code># (check if they match your system!)</code>
+						<code>OFLAGS=-O3</code>
+						<code># optimizations for Pentium 4</code>
+						<code>#OFLAGS+=-march=pentium4</code>
+					</pre>
+
+                    <p>
+                        Danach muss eine erneute Kompilierung durchgeführt werden
+                    </p>
+
+                    <pre>
+						<code class="command">sudo bash build.sh pd gcc</code>
+					</pre>
+
+                    <p>
+                        Dadurch wird eine weitere Konfigurationsdatei "config.txt" im Unterordner ./flext erzeugt. In dieser muss folgender Code auskommentiert werden
+                    </p>
+
+                    <pre>
+						<code># comment out to inhibit SIMD (Altivec/SSE) usage</code>
+						<code>#SIMD=1</code>
+					</pre>
+
+                    <p>
+                        Anschließend nochmals kompilieren
+                    </p>
+
+                    <pre>
+						<code class="command">sudo bash build.sh pd gcc</code>
+					</pre>
+
+                    <p>
+                        Dieser Vorgang dauert einige Zeit. Wenn die Kompilierung ohne Fehler durchlaufen wurde, kann die Installation gestartet werden.
+                    </p>
+
+                    <pre>
+						<code class="command">sudo bash build.sh pd gcc install</code>
+					</pre>
+                    <p>
+                        Nun ist flext vollständig installiert und kann verwendet werden. Um ein Synthese Modell aus dem STK in eine Pd Bibliothek zu übersetzen, muss das jeweilige Makefile an die aktuellen Installationspfade angepasst werden (siehe Pfadangaben der vorangegangenen Installationsschritte). Ist dies geschehen kann im Ordner des STK Objektes, dessen Kompilierung durchgeführt werden
+                    </p>
+
+                    <pre>
+						<code class="command">sudo /home/pi/flext/flext/build.sh pd gcc</code>
+					</pre>
+                    <p>
+                        Im Anschluss wird das kompilierte STK Objekt als Pd Bibliothek installiert
+                    </p>
+                    <pre>
+						<code class="command">sudo /home/pi/flext/flext/build.sh pd gcc install</code>
+					</pre>
+                    <p>
+                        Nun kann die Bibliothek in Pure Data verwendet werden. Alle während der Projektarbeit kompilierten Libraries sind auf der Daten CD abgelegt.
+                    </p>
+
+                    <hr>
+
+                    <h1 id="stompbox">
+                        Stompbox
+                        <a target="_self" href="#stompbox" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <div class="image_box">
+                        <img src="image017.jpg" alt="Abbildung 16: Stompbox">
+                        <div class="image_text">
+                            Abbildung 16: Stompbox
+                        </div>
+                    </div>
+
+                    <p>
+                        Als Stompbox wird ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann. In der eigens für das Projekt gebauten Stompbox (Abbildung 16) ist der Raspberry Pi integriert. Er kann somit jederzeit problemlos entnommen werden. Weiterhin sind alle Schnittstellen des Raspberry Pi von außen zu erreichen. Der Deckel enthält zehn Wechselschalter, welche als Signalschalter dienen (Abbildung 17). Über ein 40 adriges Flachbandkabel sind Raspberry und Stompbox-Deckel mit einer Anschlussplatine (Abbildung 20) verbunden. Die Platine ist so aufgebaut, dass sich der Raspberry um die Spannungsversorgung und Ansteuerung der Platine kümmert. Nach Anschluss aller Flachbandkabel werden somit die Wechselschalter mit Spannung versorgt und die Schalterzustände können über die Pi-GPIOs eingelesen werden. Die Stompbox bietet zusätzlich an der Außenseite eine 5V Spannungsversorgung für den Anschluss des Theremins.
+                    </p>
+
+                    <h2 id="wechselschalter">
+                        Deckel mit Wechselschalter
+                        <a target="_self" href="#wechselschalter" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <div class="image_box">
+                        <img src="image018.jpg" alt="Abbildung 17: Stompbox Deckel">
+                        <div class="image_text">
+                            Abbildung 17: Stompbox Deckel
+                        </div>
+                    </div>
+
+                    <div class="image_box">
+                        <img src="image019.png" alt="Abbildung 18: Technische Zeichnung des Stompbox Deckels">
+                        <div class="image_text">
+                            Abbildung 18: Technische Zeichnung des Stompbox Deckels
+                        </div>
+                    </div>
+
+                    <p>
+                        Auf der technischen Zeichnung in Abbildung 19) ist die Wechselschalternummerierung dargestellt. Die Schalter sind durch diese festen GPIOs zugewiesen. In Kapitel 5.2 können Verdrahtung und Belegung eingesehen werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image020.png" alt="Abbildung 19: Anschlussschematik eines Fußschalters">
+                        <div class="image_text">
+                            Abbildung 19: Anschlussschematik eines Fußschalters
+                        </div>
+                    </div>
+
+                    <p>
+                        Der jeweilige Fußschalter ist mittig mit dem zugehörigen GPIO-Pin verbunden. Durch Drücken des Wechselschalters befinden sich entweder GND oder 3,3V am GPIO-Pin. Der Zustand kann zum Beispiel mit Hilfe eines WiringPi-Kommandos direkt über die Konsole ausgelesen werden.
+                    </p>
+
+                    <pre>
+						<code class="command">gpio –g read WIRINGPI_PINNUMMER</code>
+					</pre>
+
+                    <h2 id="verdrahtung">
+                        Verdrahtung
+                        <a target="_self" href="#verdrahtung" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <b> </b>
+                    <div class="image_box">
+                        <img src="image020_1.JPG" alt="Tabelle 3: Pinbelegung des Raspberry Anschlusssteckers">
+                        <div class="image_text">
+                            Tabelle 3: Pinbelegung des Raspberry Anschlusssteckers
+                        </div>
+                    </div>
+
+                    <div class="image_box">
+                        <img src="image020_2.JPG" alt="Tabelle 4: Pinbelegung des Stompbox Anschlusssteckers">
+                        <div class="image_text">
+                            Tabelle 4: Pinbelegung des Stompbox Anschlusssteckers
+                        </div>
+                    </div>
+
+
+
+
+                    <h2 id="anschlussplatine">
+                        Anschlussplatine zwischen Stompbox und Raspberry Pi
+                        <a target="_self" href="#anschlussplatine" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <div class="image_box">
+                        <img src="image021.jpg" alt="Abbildung 20: Anschlussplatine von oben">
+                        <div class="image_text">
+                            Abbildung 20: Anschlussplatine von oben
+                        </div>
+                    </div>
+                    <div class="image_box">
+                        <img src="image022.jpg" alt="Abbildung 21: Anschlussplatine von unten">
+                        <div class="image_text">
+                            Abbildung 21: Anschlussplatine von unten
+                        </div>
+                    </div>
+                    <div class="image_box">
+                        <img src="image023.png" alt="Abbildung 22: Verdrahtung Anschlussplatine">
+                        <div class="image_text">
+                            Abbildung 22: Verdrahtung Anschlussplatine
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h1 id="puredata">
+                        Pure Data
+                        <a target="_self" href="#puredata" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <p>
+                        Pure Data, oder kurz Pd ist eine grafische echtzeitfähige Programmiersprache, die auf Audio-, Video- und Bildverarbeitung spezialisiert ist. Pd wurde ab 1996 von dem US-Amerikaner Miller Stuart Puckette als Open Source Projekt entwickelt und wird seither von einer großen Community gepflegt und erweitert.
+                        <br>
+                        <a href="http://puredata.info/" target="_blank" rel="noopener">
+                            Pure Data
+                        </a> ist für alle gängigen Betriebssysteme, wie Mac OS, Windows und Linux verfügbar. Auf diesen fungiert es als ein Software Digital-Signal-Processor (DSP). Im Zuge der Verbreitung kostengünstiger Embedded-Systeme (Raspberry, Beagle Bone, usw.) wurde Pure Data speziell für die Verwendung auf diesen Einplatinenrechnern angepasst. Somit ist es möglich einen Raspberry Pi als DSP zu verwenden.
+                        <br>Pd-Programme werden als Patch bezeichnet und beschreiben einen Datenfluss. Die Programmierung und Darstellung des Datenflussdiagramms erfolgt graphisch. Dabei entspricht der Programmcode gleichzeitig dem Bedieninterface.
+                        <br>Ein Patch besteht aus Objekten, die über Leitungen verbunden werden. Diesbezüglich unterscheidet Pure Data grob zwei Informationstypen. Dies sind zum einen periodische Signale, z.B. Audiostreams (gekennzeichnet durch dicke blaue Linien und eine [~] im Objektnamen), sowie sporadische Nachrichten (Messages), z.B. Daten-/ Zahlnachrichten (gekennzeichnet durch dünne schwarze Linien).
+                        <br>Durch Kombination verschiedener Objekte ist es möglich beliebig komplexe Operationen und Verarbeitungsschritte durchzuführen. Der Benutzer hat dabei die Möglichkeit über Schalter, Taster, Schieberegler sowie interaktive Zeichenflächen mit einem Patch zu interagieren.
+                    </p>
+
+                    <h2 id="ziel">
+                        Ziel des ThereOHM Patch
+                        <a target="_self" href="#ziel" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Ziel des Pd Programmes ist es, das ThereOHM spielbar und bedienbar zu machen. Hierzu wurde ein modulares Bedienkonzept entwickelt, aufgrund dessen das ThereOHM mit der speziell entworfenen Stompbox steuerbar ist. In diesem Fall sind weder ein Monitor noch andere externe Peripherien notwendig. Andererseits ist es auch möglich das ThereOHM ohne die Stompbox zu spielen. Dabei kann eine Tastatur oder eine Maus zur Bedienung verwendet werden.
+                        <br>Je nach verfügbarer Peripherie ist es möglich das ThereOHM ohne Raspberry Pi an einem Standard Computer mit wahlweise Linux-, Windows- oder Mac OS-Betriebssystem zu verwenden. Grundvoraussetzung ist lediglich eine installierte Version von Pure Data Extended.
+                        <br>Zum anderen realisiert die Software, das eigentliche Ziel des Projektes, die angestrebte Klangvariation des Theremins. Diese Grundfunktionalität wurde um zusätzliche Funktionen erweitert.
+                    </p>
+                    <br>Hierzu zählen:
+                    <ul>
+                        <li>
+                            eine Step-Sequencer-Drum-Machine, um einen Hintergrundrhythmus zu erzeugen
+                        </li>
+                        <li>
+                            ein Audio-Player um lokal gespeicherte Songs als Hintergrundmusik abzuspielen
+                        </li>
+                        <li>
+                            eine mp3-Aufnahme Funktion, um die gespielte Musik direkt abzuspeichern
+                        </li>
+                        <li>
+                            ein Webradio Streamer, um die gespielte Musik live über das Internet mit anderen zu teilen
+                        </li>
+                    </ul>
+                    <p>
+                        Des Weiteren soll die komplette Software in englischer Sprache gehalten werden, um sie der weltweiten Pd-Community, und dadurch auch anderen interessierten Musikern/ Bastlern, zur Verfügung zu stellen.
+                    </p>
+
+                    <h2 id="realisierung">
+                        Realisierung
+                        <a target="_self" href="#realisierung" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        In Pure Data ist es möglich Unterprogramme anzulegen. Dies empfiehlt sich um modularen, wiederverwendbaren und übersichtlichen Code zu schreiben.
+                        <br>Pd bietet zwei Möglichkeiten Unterprogramme zu erstellen: Die erste sind so genannte Abstraktionen (eng. Abstractions). Es handelt sich hierbei um eigenständige Pd Patches, die als Unterprogramme in einem anderen Patch aufgerufen werden können. Abstractions sind vor allem bei Funktionen sinnvoll, die mehrfach wiederverwendet werden.
+                        <br>Während des Projektes wurde zur besseren Erkennbarkeit der Abstractions die Konvention eingeführt, alle diese Unterprogramme mit dem Namenskürzel "sub_NAME" zu benennen. sub dient hier als Anlehnung an die englische Übersetzung von "Unter-"Programm. Nicht zu verwechseln mit nachfolgend beschriebenen Subpatches
+                        <br>Eine andere Möglichkeit von Unterprogrammen sind Subpatches. Sie sind keine eigenständigen .pd Files, sondern Teil eines Elternpatches. Diese bestehen aus gruppiertem Code, um die Übersichtlichkeit im Hauptprogramm zu verbessern und zusammengehörige Funktionen sinnvoll zu bündeln. Erkennbar sind sie als Blöcke mit der Bezeichnung "pd NAME".
+                        <br>In der ThereOHM Pd Software werden verschiedene selbst programmierte Abstractions verwendet. Die wichtigsten werden anschließend ausführlich beschrieben. Der zugehörige Pd Programmcode kann auf der Daten CD im .pd Format, als auch abgedruckt als PDF Datei betrachtet werden.
+                    </p>
+
+                    <h3 id="main">
+                        Main
+                        <a target="_self" href="#main" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Das ThereOHM Hauptprogramm befindet sich in der Datei Main.pd, deren Interface in Abbildung 23 dargestellt ist. Zunächst kann unter Start_Options mit Hilfe von Checkboxen die Konfiguration des Systems angegeben werden. Folgende Auswahlmöglichkeiten stehen zur Verfügung:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Wird das ThereOHM auf einem Raspberry, oder einem Standard Computer mit Intel x86 bzw. x64 Prozessor betrieben? In diesem Fall werden zusätzliche Features freigeschaltet, für die eine höhere Rechenleistung benötigt wird. Beispielsweise wird in der Drum_Machine eine graphische Visualisierung der Abspielgeschwindigkeit dargestellt.
+                        </li>
+                        <li>
+                            Ist eine Computertastatur angeschlossen? Ist dies zutreffend werden Shortcuts aktiviert um die Software direkt per Kurzkom- mandos steuern zu können. Diese Shortcuts können vom Nutzer im Unterfenster pd shortcut_keys individuell definiert werden. Es befindet sich im rechten Teil des Hauptfensters unter der Kategorie Configuration & Info
+                        </li>
+                        <li>
+                            Ist eine Stompbox an das ThereOHM angeschlossen? Somit kann die Software über die Fußschalter der Box gesteuert werden.
+
+                        </li>
+                    </ul>
+
+                    <p>
+                        Sind alle Einstellungen getroffen kann über pd Calibrate_Antennas die Empfindlichkeit der Lautstärke- und Tonhöhen-Antenne des ThereOHM kalibriert werden.
+                        <br>Danach wird mit dem RUN Schalter das eigentliche Programm gestartet. Dieses liest über den Audioeingang Daten des Theremin ein, rechnet diese in
+                        <abbr title="Musical Instrument Digital Interface, ist ein standardisiertes Datenformat für den Austausch musikalischer Steuerinformationen">MIDI-Werte</abbr> um und speist damit ein auswählbares Instrumentenmodell. Der erzeugte Klang wird direkt über den Audioausgang an extern angeschlossene Lautsprecher ausgegeben.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image024.png" alt="Abbildung 23: Haupt-Interface">
+                        <div class="image_text">
+                            Abbildung 23: Haupt-Interface
+                        </div>
+                    </div>
+
+                    <h3 id="calibrateantennas">
+                        Calibrate Antennas
+                        <a target="_self" href="#calibrateantennas" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Die Kalibrierung der Antennen dient dazu, abhängig von Störgrößen in der Umgebung und den persönlichen Spielvorlieben, die Empfindlichkeitsbereiche der Antennen einzustellen. Es wird jeweils im Feld
+                        <i>Current_Value</i> der aktuell eingelesene Frequenzwert und im Feld
+                        <i>stored_value</i> der bereits abgespeicherte Defaultwert angezeigt.
+                        <br> Zunächst wird die Pitch Antenne kalibriert. Hierfür wird der Schalter
+                        <i>Near_Antenna</i> betä- tigt und anschließend die zugehörige Spielhand zur Antenne hinbewegt (ein Anstieg der Werte im Feld
+                        <i>Current_Value </i> sowie im Feld
+                        <i>stored_value </i> ist zu beobachten). Ist man relativ nah an der Antenne (ohne sie zu berühren) wird der Schalter
+                        <i>Near_Antenna </i> wieder deaktiviert und damit der aktuelle Wert abgespeichert.
+                        <br> Danach wird die Hand aus dem Antennenfeld herausbewegt und der dortige Wert über
+                        <i>Away_from_Antenna</i> abgespeichert. Der gleiche Vorgang kann anschließend für die Volume Antenne durchgeführt werden. Zum Abschluss des Kalibriervorgangs ist hier zusätzlich ein Klick auf
+                        <i>Reset_Autoscale</i> notwendig. Dieser Reset erhöht die Genauigkeit, indem er dafür sorgt, dass alle errechneten Zwischenwerte in den neu kalibrierten Grenzen liegen. Im Falle der Pitch Antenne ist im Kalibrierfenster kein Reset vorgesehen, da dieser bei der Auswahl der einzelnen Instrumente automatisch durchgeführt wird.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image025.png" alt="Abbildung 24: Interface Antenna Calibration">
+                        <div class="image_text">
+                            Abbildung 24: Interface Antenna Calibration
+                        </div>
+                    </div>
+
+                    <h3 id="instrumentenauswahl">
+                        Instrumentenauswahl
+                        <a target="_self" href="#instrumentenauswahl" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Mit diesem Patch werden die verschiedenen Instrumente ausgewählt. Ein Klick auf die neben den Checkboxen stehenden Instrumentennamen öffnet jeweils ein Unterfenster, in dem spezifische klangverändernde Einstellungen vorgenommen werden können. Alle Einstellungen können separat variiert werden oder über Presetmodi gleichzeitig verändert werden. Dies ist exemplarisch in Abbildung 25 für die Violine dargestellt.
+                        <br> Die Auswahl der einzelnen Instrumente kann sowohl über die Stompbox, als auch mit Maus oder Tastatur durchgeführt werden. Bei Auswahl durch die Schalter der Stompbox wird auf die Programmbibliothek WiringPi zurückgegriffen.
+                        <br> Für Pure Data gibt es dazu eine Bibliothek namens
+                        <a href="http://nyu-waverlylabs.org/rpi-gpio/" target="_blank" rel="noopener">
+                            Pd-WiringPi
+                        </a>. Um eine direkte Um- schaltung der Instrumente sowohl beim Wechsel von High-auf-Low, als auch von Low- auf-High der GPIOs umzusetzen, wird die nachfolgend beschriebene GPIO-Einlese-rou- tine verwendet. Dadurch kann direkt, ohne Deaktivierung des vorher aktiven Instruments, der Modus umgeschaltet werden.
+                        <br> Über ein metro-Object wird in einem fest einstellbaren zeitlichen Abstand der Zustand der GPIOs eingelesen. Dieser wird jeweils mit dem vorherigen Zustand des Schalters, der in einem Puffer zwischengespeichert wird, verexodert und anschließend gewichtet. Ein route-Object übergibt das Ergebnis an die Auswahlleiste. Dadurch wird pro Schalterbetä- tigung ein kurzer Impuls generiert, der zum Umschalten der Instrumente führt. Der exakte aktuelle Zustand (High, bzw. Low) ist somit nicht relevant.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image026.png" alt="Abbildung 25: Interface Instrument Selection Violine">
+                        <div class="image_text">
+                            Abbildung 25: Interface Instrument Selection Violine
+                        </div>
+                    </div>
+
+                    <h3 id="gitarrenmodell">
+                        Gitarren Modell – Karplus Strong Algorithmus
+                        <a target="_self" href="#gitarrenmodell" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Um mit Pd künstlich einen Gitarrenklang zu generieren wurde auf den 1983 von Kevin Karplus und Alex Strong veröffentlichten gleichnamigen Algorithmus zurückgegriffen. Die- ser bildet ein Verfahren zur Klangsynthese ab, welches besonders geeignet ist um Sai- teninstrumente zu simulieren.
+                        <br> Der Algorithmus basiert auf einem rückgekoppelten
+                        <i>FIFO</i>-Pufferspeicher (First In First Out) in dessen Rückführzweig ein Filter eingesetzt ist (siehe Abbildung 26). Zu Beginn werden zufällige Samples in den Speicher geschrieben. Hierfür eignen sich besonders Geräusche mit dichtem Spektrum, z.B. weißes Rauschen. Wurde der Speicher befüllt wird das erste Sample aus dem Speicher ausgegeben. Dadurch wird eine Verzögerung um N- Samples (Pufferspeichergröße) erreicht. Die ausgegebenen Samples werden über einen Filter rückgekoppelt und gefiltert wieder vorne in den Speicher geschrieben. Dies wieder- holt sich mit einer definierbaren Rate die in
+                        <i>Beats Per Minute</i> (BPM) angegeben wird. Auf diesem Weg zirkulieren fortlaufend zufällige Geräusche im Kreislauf, die in jedem Durch- lauf einmal vom Filter modifiziert und ausgegeben werden.
+                        <br> Um die Abklingcharakteristik einer gezupften Saite zu simulieren, wird als Filter ein Tief- pass verwendet. Hochfrequente Signalkomponenten werden somit stärker bedämpft als niederfrequente. Über die Variation der Filterfrequenz kann das Nachschwingen der Saite beeinflusst und der Eindruck z.B. einer Akustikgitarre oder einer Griechischen Bouzouki erweckt werden (Im Programm als Cut_Off bezeichnet). Über eine variierbare Amplitudendämpfung (Im Programm als Decay bezeichnet) kann die Anschlagstärke bzw. ein bloßes Klopfen auf den Klangkörper simuliert werden. Nachfolgende Abbildung zeigt das Prinzip des Algorithmus.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image027.png" alt="Abbildung 26: Karplus-Strong-Algorithmus">
+                        <div class="image_text">
+                            Abbildung 26: Karplus-Strong-Algorithmus
+                        </div>
+                    </div>
+
+                    <p>
+                        Über die Pure Data Implementierung (Abbildung 27) können die oben erwähnten Parameter vom Nutzer beliebig eingestellt werden. Außerdem ist es möglich bereits vordefinierte Preset Werte per Klick zu laden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image028.png" alt="Abbildung 27: Interface Gitarrenmodell">
+                        <div class="image_text">
+                            Abbildung 27: Interface Gitarrenmodell
+                        </div>
+                    </div>
+
+                    <h3 id="stk-instrumente">
+                        STK-Instrumente
+                        <a target="_self" href="#stk-instrumente" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Für alle, zusätzlich zur Gitarre implementierten, Instrumente wurde auf das bereits in Kapitel 4.2.4 erwähnte Sound Synthesis Toolkit zurückgegriffen. Genau wie bei der Gitar- renimplementierung kann der Nutzer auch hier klangverändernde Zusatzeinstellungen vornehmen oder bereits vordefinierte Einstellungen laden.
+                        <br> Als besonders interessant zur Klangerzeugung mittels Theremin erwiesen sich nachfolgend aufgelistete STK-Klassen, welche auch alle fest implementiert wurden. Die Ein- zelimplementierungen werden an dieser Stelle nicht tiefgehender erläutert. Stattdessen wird auf die umfangreiche
+                        <a href="https://ccrma.stanford.edu/software/stk/classes.html" target="_blank" rel="noopener">
+                            Dokumentation der C++ STK-Klassen
+                        </a> verwiesen.
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STK-Klassenname</th>
+                                <th>Instrument</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BeeThree</td>
+                                <td>Hammond Orgel</td>
+                            </tr>
+                            <tr>
+                                <td>Bowed</td>
+                                <td>Violine/ Geige</td>
+                            </tr>
+                            <tr>
+                                <td>HevyMetl</td>
+                                <td>FM-Synthesizer mit großer Klangbreite</td>
+                            </tr>
+                            <tr>
+                                <td>ModalBar</td>
+                                <td>Xylophon</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <b>Tabelle 5: Verwendete STK-Klassen </b>
+
+
+                    <h3 id="drum">
+                        Drum Machine
+                        <a target="_self" href="#drum" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Mit der
+                        <i>Step-Sequencer-Drum-Machine</i> kann wahlweise ein Hintergrundrhythmus erzeugt werden und mit dem Klang des Theremin kombiniert werden. Folgende Schlagzeugelemente können ausgewählt werden:
+                    </p>
+                    <ul>
+                        <li>
+                            BD = Bass Drum (große Trommel)
+                        </li>
+                        <li>
+                            SD = Snare Drum (kleine Trommel)
+                        </li>
+                        <li>
+                            HH = Hi-Hat geschlossen (Ständerbecken)
+                        </li>
+                        <li>
+                            OH = Hi-Hat offen (Ständerbecken)
+                        </li>
+                        <li>
+                            WB, CB = Cymbal (Becken)
+                        </li>
+                    </ul>
+
+                    <p>
+                        Das Interface der Drum Machine ist in Abbildung 28 dargestellt. Ein Kreuz in der Matrix steht hierbei für die Ausgabe des jeweiligen Geräusches zu einem festen Zeitpunkt. Die Geschwindigkeit, in welcher die Geräusche der Matrix spaltenweise wiedergegeben werden, kann frei durch das
+                        <i>Speed</i> Eingabefeld variiert werden. Zusätzlich sind für jedes Geräusch einzelne Parameter wie Lautstärke oder Geräuschlänge einstellbar.
+                        <br> Mittels
+                        <i>Pattern-Manager</i> können die komponierten Rhythmen auf acht verschiedenen Speicherplätzen dauerhaft gesichert oder bereits bestehende Rhythmen wieder von diesen geladen werden.
+                        <br> Um die vom Theremin gespielten Klänge in passender Lautstärke mit einem Beat zu un- terlegen, kann die Lautstärke der komponierten Rhythmen mittels
+                        <i>Volume</i> Regler angepasst werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image029.png" alt="Abbildung 28: Interface Drum Machine">
+                        <div class="image_text">
+                            Abbildung 28: Interface Drum Machine
+                        </div>
+                    </div>
+
+                    <p>
+                        Alle vorgestellten Geräusche werden zur Laufzeit generiert. Es werden also keine abgespeicherten mp3-Audiosamples abgespielt, wie es oft bei Step Sequencer üblich ist.
+                        <br> Zur Generierung wird vor allem auf die in Pd nutzbaren Audiorampengeneratoren
+                        <i>(vline~)</i>, Oszillatoren
+                        <i>(osc~)</i>, sowie Standardfilter wie Bandpässe
+                        <i>(bp~)</i> oder Hochpässe
+                        <i>(hp~)</i>zu- rückgegriffen. Da die Codeteile sich stark unterscheiden, aber im Umfang recht überschaubar sind, soll an dieser Stelle auf eine weitere Erläuterung aller Einzelelemente verzichtet werden. Stattdessen kann bei Interesse der Programmcode auf der Daten-CD ein- gesehen werden. Dieser steht als PDF-Dokument zur Verfügung. Zur Betrachtung ist somit kein installiertes Pure Data notwendig.
+                    </p>
+
+                    <h3 id="backgroundsound">
+                        Background Sound Player
+                        <a target="_self" href="#backgroundsound" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Zusätzlich zur Drum Machine ist ein Audioplayer implementiert. Mit diesem ist es möglich lokal gespeicherte Audiodateien als Hintergrundsound abzuspielen. Diese Funktion kann beispielsweise verwendet werden um bekannte Musikstücke mit dem Theremin zu beglei- ten. Eine andere Anwendungsmöglichkeit besteht darin ein und denselben Song iterativ mit unterschiedlichen Theremin Grundeinstellungen zu ergänzen.
+                        <br> Eine lokal gespeicherte Audiodatei kann über den Button
+                        <i>Open File</i> geöffnet werden. Die Betätigung des
+                        <i>Start</i> Knopfes spielt diese Datei mit einstellbarer Lautstärke ab. Der rote
+                        <i>Stop/Pause</i> Button hält den Abspielvorgang an und kann durch den gelben
+                        <i>Resume</i> Knopf fortgesetzt werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image030.png" alt="Abbildung 29: Interface Background-Sound Player">
+                        <div class="image_text">
+                            Abbildung 29: Interface Background-Sound Player
+                        </div>
+                    </div>
+
+                    <h3 id="mp3">
+                        mp3 Record
+                        <a target="_self" href="#mp3" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Mittels der
+                        <i>mp3 Record</i> Funktion ist es möglich die gespielte Musik direkt als mp3 lokal abzuspeichern.
+                        <br> Zunächst werden über vordefinierte Werte ein Pfad zum Abspeichern der mp3 Aufnah- men, sowie ein Dateiname angelegt. Diese können über die Eingabefelder vom Benutzer jederzeit editiert werden. Betätigt der Anwender den
+                        <i>Start Recording</i> Button, wird ein mp3 File unter dem angegebenen Pfad erzeugt, anschließend geöffnet und von der Funktion
+                        <i>mp3_write</i> beschrieben. Die Aufnahme erfolgt standardmäßig mit einer Samplerate von 44100 Samples pro Sekunde, 128 Bit und Joint Stereo in mittlerer Qualität. Während des Aufnahmevorgangs kann über das Anzeigefeld Bytes Recorded die bereits abgespeicherte Größe des mp3 Files verfolgt werden. Der Aufnahmevorgang kann über den Button
+                        <i>Stop Recording</i> beendet werden.
+                        <br> Wird danach erneut ein Aufnahmevorgang gestartet, wird die Aufnahme automatisch an das bereits erzeugte Audiofile angehängt. Soll ein neues eigenständiges Audiofile erzeugt werden, muss ein neuer Dateiname im dafür vorgesehenen Feld eingetragen werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image031.png" alt="Abbildung 30: Interface mp3 Recorder">
+                        <div class="image_text">
+                            Abbildung 30: Interface mp3 Recorder
+                        </div>
+                    </div>
+
+                    <h3 id="webradio">
+                        mp3 Webradio Stream
+                        <a target="_self" href="#webradio" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h3>
+
+                    <p>
+                        Um die auf dem ThereOHM gespielte Musik mit anderen Menschen zu teilen, gibt es zudem die Möglichkeit live, in Form eines Webradios zu streamen. Der Anbieter myradiostream.com bietet die Möglichkeit kostenlos einen
+                        <abbr title="Shoutcast ist ein Freeware Streaming Server der Firma Nullsoft für Audio/TV-Streams">Shoutcast Server</abbr> zu betreiben und privat Webradio auszustrahlen. Im Pd-Patch werden dafür zunächst alle notwendigen Default Daten eingestellt. Dazu gehören die Adresse und der Port des Webradioservers. Außerdem muss ein Passwort und der Servertyp ausgewählt werden (im Fall von myradiostream ist dies Shoutcast). Über den Button Start Streaming verbindet sich Pure Data mit dem Streaming Server und überträgt anschließend den Stream im mp3-Format. Ob aktuell ein Stream gesendet wird ist durch ein Aktivitätskreuz im Feld Status dargestellt. Der Streaming Vorgang kann über den Button Stop Streaming anschließend wieder beendet werden.
+                    </p>
+
+                    <div class="image_box">
+                        <img src="image032.png" alt="Abbildung 31: Interface mp3 Streamer">
+                        <div class="image_text">
+                            Abbildung 31: Interface mp3 Streamer
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h1 id="weitererausblick">
+                        Weiterer Ausblick
+                        <a target="_self" href="#weitererausblick" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <p>
+                        Zum Abgabezeitpunkt lief die Implementierung auf dem Raspberry nicht flüssig. Als Grund hierfür ist zunächst die zu geringe Prozessorleistung des Raspberry zu nennen. Dieses Problem kann durch Übertaktung und zusätzliche Kühlkörper eingedämmt werden. Durchgängig flüssige Nutzung aller implementierten Funktionen, z.B. des Webradiostreams ist allerdings trotzdem nicht möglich. Als rechenleistungsstärkere Alternativen zur Raspberry Plattform bieten sich der
+                        <a href="http://www.bananapi.org" target="_blank" rel="noopener">
+                            Banana Pi
+                        </a> sowie der
+                        <a href="http://beagleboard.org/bone" target="_blank" rel="noopener">
+                            Beagle Bone
+                        </a> an.
+                        <br> Ferner stellte sich die verwendete USB-Soundkarte, die als Stereo Soundkarte vertrieben wird, als Problem heraus. Diese USB-Geräte besitzen zwar einen Stereo Ausgang, allerdings nur einen Mono Eingang. Für das ThereOHM werden aber zwangsläufig zwei Stereo Eingänge benötigt, um die Werte der beiden Antennen zu erfassen. Als Alternative zu der Miniatur-USB-Soundkarten könnte eine größere externe Soundkarte verwendet werden, z.B. die „C-Media CM106 USB 2.0 mit 7.1 Lautsprecher SPDIF Ausgang“. Diese ist jedoch nur in Amerika verfügbar und konnte aufgrund der langen Lieferzeiten nicht mehr bestellt werden. Außerdem ist es möglich ein externes USB-Mini-Mischpult zu verwenden, z.B. „BEHRINGER XENYX 302USB“. In diesem Zusammenhang ist zu beachten, dass auch viele Laptops lediglich einen Mono Audioeingang besitzen!
+                        <br> Zudem ergeben sich neben der Auswahl einer anderen Embedded Plattform und Verwendung einer externen Soundkarte mit Stereo Eingang folgende weitere Optimierungsansätze:
+                    </p>
+                    <ul>
+                        <li>
+                            Test anderer Antennenformen, um linearere Frequenzänderung zu erreichen
+                        </li>
+                        <li>
+                            Kompilierung der STK-Bibliotheken für 64 Bit Betriebssysteme (bisher nur Beta Version verfügbar)
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h1 id="conclusion">
+                        Conclusion
+                        <a target="_self" href="#conclusion" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h1>
+
+                    <p>
+                        Abschließend lässt sich festhalten, dass die gesteckten Projektziele nahezu vollständig umgesetzt werden konnten.
+                        <br> Ein klassisches Theremin wurde erfolgreich aufgebaut und in Betrieb genommen. Die angestrebte Klangvariation ist mittels Pure Data vollständig realisiert.
+                        <br> Pd erwies sich als effizientes Werkzeug um komplexe Funktionalitäten umzusetzen und eine graphische Bedienoberfläche hierfür zu gestalten. Für eventuelle Folgeprojekte ist Pure Data weiterzuempfehlen. Vor allem, da aufgrund einer steilen Lernkurve bereits nach relativ kurzer Einarbeitungszeit umfangreiche Funktionen realisiert werden können. Lediglich die Kompilierung externer Bibliotheken ist sehr zeit- und arbeitsaufwendig.
+                        <br> Der Raspberry Pi B+ ist eine interessante und gut dokumentierte Arbeitsplattform, allerdings ist seine Rechenleistung für aufwendigere Vorhaben zu niedrig. Als bessere Alter- nativen bieten sich die neue Version des Raspberry Pi 2 B, der Banana Pi oder der Beagle Bone an.
+                        <br> Es lässt sich sagen, dass es sich bei dem ThereOHM um ein sehr interessantes Projekt handelte, dass zum einen sehr viel Spaß machte, aber auch fachlich viele neue Einblicke vermittelte.
+                        <br> Garant dafür war vor allem die ausgewogene Mischung zwischen Hardware und Software. So wurden zum einen Platinen entworfen, bestückt und in Betrieb genommen, sowie zwei Gehäuse gefertigt. Zum anderen wurde viel Zeit mit der Programmierung von Pure Data, sowie der Linux Administrierung und Programmierung verbracht. Die kompetente Betreuung sowie Unterstützung sorgte für einen erfolgreichen Verlauf des Projektes.
+                    </p>
+
+                    <h2 id="anhanga">
+                        Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
+                        <a target="_self" href="#anhanga" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        If you want to execute the ThereOHM Pd-Patch, please assure that the following conditions concur to your system configuration. Otherwise the Patch will not work properly.
+                    </p>
+
+                    <h2 id="x86">
+                        x86- vs. x64- vs. ARM-Processor Architecture
+                        <a target="_self" href="#x86" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        The Patch uses STK-Libraries, which are currently not native supported for all operating systems. If you’re using an x86 (32Bit) Windows or Linux architecture or a Raspberry Pi you’re fine because all libraries are attached precompiled. If you’re using an x64 (64Bit) system architecture you have compile the libraries on your own. Be aware that this could take some time ;-)
+                    </p>
+
+                    <h2 id="windows">
+                        Windows Operating System
+                        <a target="_self" href="#windows" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        If you’re using a Windows operating system please download Pd-Extended following the instructions on the webpage:
+                        <a href="http://puredata.info/downloads/pd-extended" target="_blank" rel="noopener">
+                            http://puredata.info/downloads/pd-extended
+                        </a>
+                    </p>
+
+                    <h2 id="linux">
+                        GNU/Linux Operating System
+                        <a target="_self" href="#linux" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        If you’re using a Linux operating system, please install the following packages to assure that Pure Data works fine.
+                    </p>
+                    <ul>
+                        <li>
+                            Installation of Pd-Extended via thrid party repository:
+                            <pre>
+								<code class="command">sudo add-apt-repository "deb http://apt.puredata.info/re- leases `lsb_release -c | awk '{print $2}'` main"</code>
+								<code class="command">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 9f0fe587374bbe81</code>
+								<code class="command">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key D63D3D09C39F5EEB</code>
+								<code class="command">sudo apt-get update</code>
+								<code class="command">sudo apt-get install pd-extended</code>
+							</pre>
+                        </li>
+                        <li>
+                            Installation of further packages:
+                            <pre>
+								<code class="command">sudo apt-get install g++</code>
+								<code class="command">sudo apt-get install csound</code>
+							</pre>
+                        </li>
+                    </ul>
+                    <p>
+                        Otherwise STK will throw the error "libstk.so.0: cannot open shared object file: No such file or directory"
+                    </p>
+
+                    <pre>
+						<code class="command">sudo apt-get install libasound2-dev</code>
+					</pre>
+
+                    <p>
+                        Otherwise STK will throw an error that it can't configure Some of the STK-Libraries need special raw audio files. These files are automati- cally installed if you are using a new operating system and a new Pd-extended version. If you’re not running the latest versions, please check preventively if there are rawfiles located in the folder /usr/share/stk/rawwaves If you don't have a /usr/share/stk directory, you'll need to create it:
+                    </p>
+
+                    <pre>
+						<code class="command">sudo mkdir /usr/share/stk</code>
+					</pre>
+                    <p>
+                        Download the binary raws corresponding to your operating system on the CCRMA- Website, or find them attached to the ThereOHM files for x86 architecture:
+                        <a href="https://ccrma.stanford.edu/wiki/Stk2pd" target="_blank" rel="noopener">
+                            link 1
+                        </a>
+                        <a href="https://ccrma.stanford.edu/wiki/Stk2pd444" target="_blank" rel="noopener">link 2</a>. After downloading and uncompressing navigate to the directory and copy the raw- waves to /usr/share/stk by typing from the terminal:
+                    </p>
+                    <pre>
+						<code class="command">sudo cp -r rawwaves /usr/share/stk/rawwaves</code>
+					</pre>
+                    <p>
+                        Now your system is ready to go! To launch the Patch you only need to give the _linux files in the folder read and write access privileges. To save typing effort give all files full access
+                    </p>
+                    <pre>
+						<code class="command">sudo chmod -R 777 ./MAIN</code>
+					</pre>
+
+                    <h2 id="raspberryplatform">
+                        Raspberry Platform
+                        <a target="_self" href="#raspberryplatform" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        If you’re using a Raspberry Pi please follow the steps mentioned under 3. In addition to this you should start Pd always in sudo mode. Otherwise Pure Data would not work properly. Additionally you can use the prepared Bash-Script to startup. This script is located in the ThereOHM Patch folder. Its name is “Startup_Raspberry.sh”.
+                    </p>
+
+                    <hr>
+
+                    <h2 id="anhangb">
+                        Anhang B - Kostenaufschlüsselung
+                        <a target="_self" href="#anhangb" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <p>
+                        Während des Projektes fielen diverse Kosten für Material & Bauteile an. Eine genaue Aufschlüsselung der Einzelkosten, die zu einem Gesamtpreis des Projektes in Höhe von
+                        <u>
+                            <b>195 €</b>
+                        </u> führten sind in nachfolgender Tabelle zusammengestellt. Es ist zu beachten, dass die Kosten zweier prototypisch erstellter Platinen mitverrechnet wurden. Einige Bausteine waren zudem nicht als Einzelteile, sondern nur in größeren Stückzahlen erhältlich. Der Nachbau des endgültigen Theremin würde somit deutlich günstiger ausfallen.
+                    </p>
+                    <b>Tabelle 1: Kostenaufschlüsselungen</b>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quelle</th>
+                                <th>Bauteil</th>
+                                <th>Gesamtpreis</th>
+                                <th>Anzahl</th>
+                                <th>Bestell Nr.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="19">RS-Components
+                                    <br>13.08.2014</td>
+                                <td>Raspberry Pi B+</td>
+                                <td> 26,05 €</td>
+                                <td>1</td>
+                                <td>811-1284</td>
+                            </tr>
+                            <tr>
+                                <td>Kabel HDMI / DVI-D 2m</td>
+                                <td> 12,68 €</td>
+                                <td>1</td>
+                                <td>742-4349</td>
+                            </tr>
+                            <tr>
+                                <td>Micro USB Power Supply Adapt-er,5V,2A</td>
+                                <td> 7,19 €</td>
+                                <td>1</td>
+                                <td>765-3311</td>
+                            </tr>
+                            <tr>
+                                <td>Verbatim SD-Karte 16GB SDHC</td>
+                                <td> 14,01 €</td>
+                                <td>1</td>
+                                <td>750-4795</td>
+                            </tr>
+                            <tr>
+                                <td>Raspberry Pi B+ Case, Clear</td>
+                                <td> 6,14 €</td>
+                                <td>1</td>
+                                <td> 819-3658</td>
+                            </tr>
+                            <tr>
+                                <td>Drahtbrücken für Lochrasterplatinen</td>
+                                <td> 10,68 €</td>
+                                <td>3</td>
+                                <td>791-6454</td>
+                            </tr>
+                            <tr>
+                                <td>Binärzähler 4060</td>
+                                <td> 1,76 €</td>
+                                <td>6</td>
+                                <td>177-6708</td>
+                            </tr>
+                            <tr>
+                                <td>Inverter</td>
+                                <td> 0,46 €</td>
+                                <td>2</td>
+                                <td>355-8978</td>
+                            </tr>
+                            <tr>
+                                <td>4fach XNOR</td>
+                                <td> 6,72 €</td>
+                                <td>20</td>
+                                <td>483-7941</td>
+                            </tr>
+                            <tr>
+                                <td>OPV Quad</td>
+                                <td> 2,32 €</td>
+                                <td>4</td>
+                                <td>857-935</td>
+                            </tr>
+                            <tr>
+                                <td>12 Bit D/A Wandler</td>
+                                <td> 3,50 €</td>
+                                <td>2</td>
+                                <td>402-803</td>
+                            </tr>
+                            <tr>
+                                <td>TL072</td>
+                                <td> 1,01 €</td>
+                                <td>2</td>
+                                <td>661-0054</td>
+                            </tr>
+                            <tr>
+                                <td>Quarz 7,37MHz</td>
+                                <td> 2,32 €</td>
+                                <td>5</td>
+                                <td>672-0331</td>
+                            </tr>
+                            <tr>
+                                <td>Quarz 8MHz</td>
+                                <td> 2,27 €</td>
+                                <td>5</td>
+                                <td>672-0340</td>
+                            </tr>
+                            <tr>
+                                <td>Quarz 16MHz</td>
+                                <td> 2,32 €</td>
+                                <td>5</td>
+                                <td>672-0365</td>
+                            </tr>
+                            <tr>
+                                <td>LED Grün</td>
+                                <td> 0,15 €</td>
+                                <td>1</td>
+                                <td>815-4221</td>
+                            </tr>
+                            <tr>
+                                <td>LED Gelb</td>
+                                <td> 0,09 €</td>
+                                <td>1</td>
+                                <td>692-0950</td>
+                            </tr>
+                            <tr>
+                                <td>C Poti</td>
+                                <td> 2,90 €</td>
+                                <td>4</td>
+                                <td>832-419</td>
+                            </tr>
+                            <tr>
+                                <td>L 1000uH</td>
+                                <td> 1,04 €</td>
+                                <td>4</td>
+                                <td>763-3222</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Amazon
+                                    <br>13.08.2014
+                                </td>
+                                <td>Soundkarte 3D USB</td>
+                                <td> 10,00 €</td>
+                                <td>1</td>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <td>Soundkarte Speedlink Vigo USB</td>
+                                <td> 14,49 €</td>
+                                <td>1</td>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Conrad
+                                    <br>20.10.2014
+                                </td>
+                                <td>Phase-Locked-Loop-Schaltung,HEF4046BT</td>
+                                <td>3,16 €</td>
+                                <td>4</td>
+                                <td>143693 - 62 </td>
+                            </tr>
+                            <tr>
+                                <td>DVB-T Antenne</td>
+                                <td>6,39 €</td>
+                                <td>1</td>
+                                <td>941788</td>
+                            </tr>
+                            <tr>
+                                <td>Koaxialadapter Kupplung/Kupplung</td>
+                                <td>3,78 €</td>
+                                <td>2</td>
+                                <td>290067</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="13">Reichelt
+                                    <br>09.11.2014</td>
+                                <td>Klinkenbuchse 3,5 mm</td>
+                                <td> 0,54 €</td>
+                                <td>2</td>
+                                <td>EBS 35</td>
+                            </tr>
+                            <tr>
+                                <td>Antenne </td>
+                                <td> 4,30 €</td>
+                                <td>1</td>
+                                <td>DVB-T ZA ST 02</td>
+                            </tr>
+                            <tr>
+                                <td>IEC Stecker</td>
+                                <td> 0,80 €</td>
+                                <td>2</td>
+                                <td>CS-1</td>
+                            </tr>
+                            <tr>
+                                <td>Gehäuse für Stompbox</td>
+                                <td> 18,50 €</td>
+                                <td>1</td>
+                                <td>BOPLA ET-238</td>
+                            </tr>
+                            <tr>
+                                <td>Gehäuse für Theremin</td>
+                                <td> 4,50 €</td>
+                                <td>1</td>
+                                <td>1591CFLBK</td>
+                            </tr>
+                            <tr>
+                                <td>Druckschalter/Wechselschalter</td>
+                                <td> 18,50 €</td>
+                                <td>10</td>
+                                <td>FS 35</td>
+                            </tr>
+                            <tr>
+                                <td>Pfostenbuchse 40 polig</td>
+                                <td> 0,76 €</td>
+                                <td>4</td>
+                                <td>PFL 40</td>
+                            </tr>
+                            <tr>
+                                <td>Buchse für 5 V Spannungsversorgung</td>
+                                <td> 0,24 €</td>
+                                <td>1</td>
+                                <td>HEBW 21</td>
+                            </tr>
+                            <tr>
+                                <td>Stecker für 5V Versorgung Theremin</td>
+                                <td> 1,95 €</td>
+                                <td>1</td>
+                                <td>DELOCK 65422</td>
+                            </tr>
+                            <tr>
+                                <td>Stiftleiste 2x20 polig</td>
+                                <td> 0,66 €</td>
+                                <td>1</td>
+                                <td>MPE 087-2-040</td>
+                            </tr>
+                            <tr>
+                                <td>Buchse für 5 V Spannungsversorgung</td>
+                                <td> 0,48 €</td>
+                                <td>2</td>
+                                <td>HEBW 21</td>
+                            </tr>
+                            <tr>
+                                <td>Stecker für 5V Versorgung Theremin</td>
+                                <td> 1,95 €</td>
+                                <td>1</td>
+                                <td>DELOCK 65422</td>
+                            </tr>
+                            <tr>
+                                <td>Klinkenbuchse 3,5 mm rund</td>
+                                <td> 0,82 €</td>
+                                <td>1</td>
+                                <td>LUM KLB 4</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td>Gesamtkosten:</td>
+                                <td> 195,44 €</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+                    <hr>
+
+                    <h2 id="anhangc">
+                        Anhang C - Zeit- und Aufgabenplan
+                        <a target="_self" href="#anhangc" onclick="onpage_link(event, this);">
+                            <i class="fas fa-link fa-fw link"></i>
+                        </a>
+                    </h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Projektbereich</th>
+                                <th>Aufgabe</th>
+                                <th>Startdatum</th>
+                                <th>Enddatum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="8">Allgemeine Aufgaben</td>
+                                <td>Projektlaufwerk mit Datenablage einrichten (www.Box.com)</td>
+                                <td>30.09.14</td>
+                                <td>30.09.14</td>
+                            </tr>
+                            <tr>
+                                <td>Projektplanungsseite einrichten (www.zoho.com)</td>
+                                <td>01.10.14</td>
+                                <td>01.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Notwendige Software installieren (EALGE; Box.com Client, usw.)</td>
+                                <td>01.10.14</td>
+                                <td>01.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>To-Do-Liste schreiben</td>
+                                <td>29.09.14</td>
+                                <td>28.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Projektplanung</td>
+                                <td>29.09.14</td>
+                                <td>10.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Projektplan erstellen und fortwährend aktualisieren (zoho.com)</td>
+                                <td>01.10.14</td>
+                                <td>15.02.15</td>
+                            </tr>
+                            <tr>
+                                <td>Projektdokumentation schreiben</td>
+                                <td>03.12.14</td>
+                                <td>15.02.15</td>
+                            </tr>
+                            <tr>
+                                <td>Poster zum Projekt erstellen</td>
+                                <td>14.02.15</td>
+                                <td>15.02.15</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">Stompbox
+                                    <br>Bauen</td>
+                                <td>Bauteile organisieren</td>
+                                <td>06.11.14</td>
+                                <td>06.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>Gehäuse für Stompbox bauen</td>
+                                <td>23.11.14</td>
+                                <td>05.12.14</td>
+                            </tr>
+                            <tr>
+                                <td>Stompbox mit Raspberry verbinden</td>
+                                <td>05.12.14</td>
+                                <td>09.12.14</td>
+                            </tr>
+                            <tr>
+                                <td>Steuerplatine für Fußschalter löten</td>
+                                <td>23.11.14</td>
+                                <td>05.12.14</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="13">Theremin
+                                    <br>Bauen</td>
+                                <td>RC-Theremin Leiterplatte bestücken</td>
+                                <td>30.09.14</td>
+                                <td>13.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>RC-Theremin in Betrieb nehmen/testen</td>
+                                <td>10.10.14</td>
+                                <td>10.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Durchführen von Schaltungsänderung</td>
+                                <td>17.10.14</td>
+                                <td>24.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Theremin Schaltungsanalyse</td>
+                                <td>13.10.14</td>
+                                <td>28.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Schaltplaneingabe in EAGLE</td>
+                                <td>17.10.14</td>
+                                <td>24.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Layout Erstellung in EAGLE</td>
+                                <td>17.11.14</td>
+                                <td>24.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>Leiterplatte ätzen & bestücken</td>
+                                <td>24.11.14</td>
+                                <td>05.12.14</td>
+                            </tr>
+                            <tr>
+                                <td>Leiterplatte in Betrieb nehmen</td>
+                                <td>05.12.14</td>
+                                <td>05.12.14</td>
+                            </tr>
+                            <tr>
+                                <td>Organisieren, anschließen und testen der Pitch-/ Volumenantenne</td>
+                                <td>23.11.14</td>
+                                <td>05.12.14</td>
+                            </tr>
+                            <tr>
+                                <td>Leiterplatte im eingebauten Zustand testen</td>
+                                <td>23.11.14</td>
+                                <td>24.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>Layout Anpassung an Boxgröße, sowie Optimierung der Anordnung der Antennen auf der Leiterplatte</td>
+                                <td>24.11.14</td>
+                                <td>29.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>Revisionsleiterplatte ätzen & bestücken</td>
+                                <td>29.11.14</td>
+                                <td>04.12.14</td>
+                            </tr>
+                            <tr>
+                                <td>Revisionsleiterplatte in Betrieb nehmen und testen</td>
+                                <td>06.12.14</td>
+                                <td>08.12.14</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="8">Raspberry konfigurieren</td>
+                                <td>Raspbian installieren & Systemupdate durchführen</td>
+                                <td>29.09.14</td>
+                                <td>29.09.14</td>
+                            </tr>
+                            <tr>
+                                <td>Erstkonfiguration (SSH, Tastaturlayout, SD-Karten Partitionserwei-terung)</td>
+                                <td>29.09.14</td>
+                                <td>29.09.14</td>
+                            </tr>
+                            <tr>
+                                <td>Wiring-Pi installieren</td>
+                                <td>29.09.14</td>
+                                <td>29.09.14</td>
+                            </tr>
+                            <tr>
+                                <td>Pd & Pd-Extended installieren</td>
+                                <td>29.09.14</td>
+                                <td>29.09.14</td>
+                            </tr>
+                            <tr>
+                                <td>Projektlaufwerk (Box.com) nativ einhängen</td>
+                                <td>01.10.14</td>
+                                <td>01.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>STK Bundle und Libraries konfigurieren und installieren</td>
+                                <td>24.10.14</td>
+                                <td>10.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>Anpassen der STK Makefiles</td>
+                                <td>09.11.14</td>
+                                <td>11.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>STK-Externals separat für Raspberry Architektur kompilieren</td>
+                                <td>09.11.14</td>
+                                <td>15.11.14</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="8">Pure Data Programmierung</td>
+                                <td>Einarbeitung in die Pure Data Programmierung</td>
+                                <td>08.10.14</td>
+                                <td>28.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>Einarbeitung in die Programmierung von Pd-Externals</td>
+                                <td>08.10.14</td>
+                                <td>08.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Pd-Wiring PI konfigurieren (GPIO)</td>
+                                <td>08.10.14</td>
+                                <td>08.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Implementieren des Karplus-Strong-Algorithmus zur Gitarrensyn-these</td>
+                                <td>20.10.14</td>
+                                <td>26.10.14</td>
+                            </tr>
+                            <tr>
+                                <td>Implementieren & testen verschiedener STK Instrumentenmodelle</td>
+                                <td>15.11.14</td>
+                                <td>27.11.14</td>
+                            </tr>
+                            <tr>
+                                <td>Programmieren der Unterfunktionen:
+                                    <ul>
+                                        <li>
+                                            Instrumentenauswahl
+                                        </li>
+                                        <li>
+                                            Step-Sequencer-Drum-Machine
+                                        </li>
+                                        <li>
+                                            Lokaler mp3 Recorder
+                                        </li>
+                                        <li>
+                                            mp3 Webradio Streamer
+                                        </li>
+                                        <li>
+                                            Background Sound Player
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>05.11.14</td>
+                                <td>30.01.14</td>
+                            </tr>
+                            <tr>
+                                <td>Programmieren des PD Gesamtbedienerinterfaces</td>
+                                <td>12.12.14</td>
+                                <td>19.12.14</td>
+                            </tr>
+                            <tr>
+                                <td>Audiomodellumschaltung mittels Stompbox via Pd-Wiring Pi realisieren</td>
+                                <td>12.12.14</td>
+                                <td>19.12.14</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr>
+                </div>
+
+                <div id="footer_article">
+                    <p>
+                        Hier sind ein paar Artikel mit ähnlichen Tools, Techniken und Mechaniken: [später hier articel verlinken]
+                    </p>
+                    <p>
+                        Haben wir dein Interesse geweckt für noch mehr, oder willst du einfach so über das Thema reden, oder hast du sogar Vorschläge zu dem Artikel?
+                        <br>Kontaktier uns einfach, wir sind immer offen für Kritik :)
+                    </p>
+                    <h4>Wir freuen uns von dir zu hören und wir antworten immer</h4>
+                    <div id="buisnesscard">
+                        <img alt="logo" src="/logo/logo_1.png">
+
+                        <div>
+                            <b>su IT --blog</b>
+                            <br>
+                            <i class="fas fa-envelope fa-fw"></i>
+                            <a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
+
+                            <br>
+
+                            <i class="fab fa-telegram fa-fw"></i>
+                            <a href="https://t.me/suitblog" target="_blank" rel="noopener">
+                                @suitblog
+                            </a>
+                        </div>
+                    </div>
+                    <p>
+                        Grammatik Fehler? Technischer Fehler? Oder nicht mehr aktuelle Informationen?
+                        <br>Falls dieser Atikel irgend eine Art von Update oder Vervollständigung braucht, bitte lasse es uns wissen.
+                    </p>
+                    <p>
+                        Wenn euch der Artikel gefallen hat,
+                        <a target="_blank" rel="noopener" href="/about_us.html#mate">
+                            spendiert uns doch einen Kaffee</a>! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content kostenlos und werbefrei bereitstellen. Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
+                    </p>
+                    <h3>Vielen Dank fürs lesen!</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="footer" class="canvas">
+        <canvas height="50" width="200" id="animation_canvas_footer">
+        </canvas>
+        <div id="disclaimer">
+            There is nothing more to discover down here ¯\_(ツ)_/¯
+            <br>
+            <i class="fas fa-closed-captioning"></i> 2017
+            <a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
+            <a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+        </div>
+    </div>
+
+    <script src="/js/animation.js" async></script>
+    <script src="/js/cli_write.js" async></script>
+    <script src="/js/main_nav.js" async></script>
+    <script src="/js/additional_nav.js" async></script>
+    <script src="/js/scroll.js" async></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 
 </body>
 
