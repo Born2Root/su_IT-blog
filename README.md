@@ -44,7 +44,7 @@ suit-blog.net finally online: 13.12.2017
 - 404
 - [nur eventuell] search
 - [nur eventuell] links anzeigen ob sie _blank oder _self
-- [nur eventuell] alternativer Cursor verwenden anstatt der Klickhand, eigene Scrollleiste
+- [nur eventuell] alternativer Cursor verwenden anstatt der Klickhand
 - eastereggs verstecken
 - open graph meta tags hinzufügen?!
 - inline quote
