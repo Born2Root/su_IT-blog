@@ -365,13 +365,12 @@ hr {
 	width: 90%;
 }
 
-#body_article li::before {
-	content: "\f0a4";
+.fa-li {
 	color: #ff6d00;
 }
 
 #body_article li {
-	list-style-type: none;
+	margin: 5px 0px;
 }
 
 .cursor {

@@ -501,21 +501,33 @@
 						</div>
 					</div>
 
-					<ol>
+					<ul class="fa-ul">
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Aufbau eines klassischen Theremin inklusive Gehäuse
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Aufbau einer
 							<abbr title="Als Stompbox wird i.d.R. ein Effektgerät bezeichnet, das mittels Fußschaltern betätigt werden kann">Stompbox</abbr> als interaktive Bedienerschnittstelle
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Installation und Konfiguration des Raspberry Pi
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Programmierung eines auf dem Raspberry Pi ausführbaren DSP Software
 						</li>
-					</ol>
+					</ul>
 					<p>
 						Es wurde als Vorbereitung ein Projektplan erstellt, der während des gesamten Projektes gepflegt wurde, um den aktuellen Projektstatus widerzuspiegeln. Dieser Projektplan, sowie eine genaue Kostenaufstellung inkl. Stückliste aller benötigten Bauteile ist im Anhang zu finden.
 					</p>
@@ -775,29 +787,53 @@
 							<u>Zusätzliches Zubehör:</u>
 						</b>
 					</p>
-					<ul>
+					<ul class="fa-ul">
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Raspberry Pi Gehäuse
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							USB-Maus
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							USB-Tastatur
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							HDMI-DVI Kabel, Monitorkabel
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Ethernet Kabel, Netzwerk
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							SD-Karte für Betriebssystem, (microSD 16 GB, Class 10)
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Verbindungskabel GPIOs mit Anschlussplatine (40 poliges Flachbandkabel)
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Kühlkörper (benötigt wegen Übertaktung)
 						</li>
 					</ul>
@@ -1233,9 +1269,6 @@
 						</div>
 					</div>
 
-
-
-
 					<h2 id="anschlussplatine">
 						Anschlussplatine zwischen Stompbox und Raspberry Pi
 						<a target="_self" href="#anschlussplatine" onclick="onpage_link(event, this);">
@@ -1293,17 +1326,29 @@
 						<br>Zum anderen realisiert die Software, das eigentliche Ziel des Projektes, die angestrebte Klangvariation des Theremins. Diese Grundfunktionalität wurde um zusätzliche Funktionen erweitert.
 					</p>
 					<br>Hierzu zählen:
-					<ul>
+					<ul class="fa-ul">
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							eine Step-Sequencer-Drum-Machine, um einen Hintergrundrhythmus zu erzeugen
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							ein Audio-Player um lokal gespeicherte Songs als Hintergrundmusik abzuspielen
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							eine mp3-Aufnahme Funktion, um die gespielte Musik direkt abzuspeichern
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							ein Webradio Streamer, um die gespielte Musik live über das Internet mit anderen zu teilen
 						</li>
 					</ul>
@@ -1337,16 +1382,24 @@
 						Das ThereOHM Hauptprogramm befindet sich in der Datei Main.pd, deren Interface in Abbildung 23 dargestellt ist. Zunächst kann unter Start_Options mit Hilfe von Checkboxen die Konfiguration des Systems angegeben werden. Folgende Auswahlmöglichkeiten stehen zur Verfügung:
 					</p>
 
-					<ul>
+					<ul class="fa-ul">
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Wird das ThereOHM auf einem Raspberry, oder einem Standard Computer mit Intel x86 bzw. x64 Prozessor betrieben? In diesem Fall werden zusätzliche Features freigeschaltet, für die eine höhere Rechenleistung benötigt wird. Beispielsweise wird in der Drum_Machine eine graphische Visualisierung der Abspielgeschwindigkeit dargestellt.
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Ist eine Computertastatur angeschlossen? Ist dies zutreffend werden Shortcuts aktiviert um die Software direkt per Kurzkom- mandos steuern zu können. Diese Shortcuts können vom Nutzer im Unterfenster pd shortcut_keys individuell definiert werden. Es befindet sich im rechten Teil des Hauptfensters unter der Kategorie Configuration & Info
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Ist eine Stompbox an das ThereOHM angeschlossen? Somit kann die Software über die Fußschalter der Box gesteuert werden.
-
 						</li>
 					</ul>
 
@@ -1499,20 +1552,36 @@
 						Mit der
 						<i>Step-Sequencer-Drum-Machine</i> kann wahlweise ein Hintergrundrhythmus erzeugt werden und mit dem Klang des Theremin kombiniert werden. Folgende Schlagzeugelemente können ausgewählt werden:
 					</p>
-					<ul>
+
+					<ul class="fa-ul">
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							BD = Bass Drum (große Trommel)
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							SD = Snare Drum (kleine Trommel)
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							HH = Hi-Hat geschlossen (Ständerbecken)
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							OH = Hi-Hat offen (Ständerbecken)
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							WB, CB = Cymbal (Becken)
 						</li>
 					</ul>
@@ -1624,11 +1693,18 @@
 						<br> Ferner stellte sich die verwendete USB-Soundkarte, die als Stereo Soundkarte vertrieben wird, als Problem heraus. Diese USB-Geräte besitzen zwar einen Stereo Ausgang, allerdings nur einen Mono Eingang. Für das ThereOHM werden aber zwangsläufig zwei Stereo Eingänge benötigt, um die Werte der beiden Antennen zu erfassen. Als Alternative zu der Miniatur-USB-Soundkarten könnte eine größere externe Soundkarte verwendet werden, z.B. die „C-Media CM106 USB 2.0 mit 7.1 Lautsprecher SPDIF Ausgang“. Diese ist jedoch nur in Amerika verfügbar und konnte aufgrund der langen Lieferzeiten nicht mehr bestellt werden. Außerdem ist es möglich ein externes USB-Mini-Mischpult zu verwenden, z.B. „BEHRINGER XENYX 302USB“. In diesem Zusammenhang ist zu beachten, dass auch viele Laptops lediglich einen Mono Audioeingang besitzen!
 						<br> Zudem ergeben sich neben der Auswahl einer anderen Embedded Plattform und Verwendung einer externen Soundkarte mit Stereo Eingang folgende weitere Optimierungsansätze:
 					</p>
-					<ul>
+
+					<ul class="fa-ul">
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Test anderer Antennenformen, um linearere Frequenzänderung zu erreichen
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Kompilierung der STK-Bibliotheken für 64 Bit Betriebssysteme (bisher nur Beta Version verfügbar)
 						</li>
 					</ul>
@@ -1695,8 +1771,12 @@
 					<p>
 						If you’re using a Linux operating system, please install the following packages to assure that Pure Data works fine.
 					</p>
-					<ul>
+
+					<ul class="fa-ul">
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Installation of Pd-Extended via thrid party repository:
 							<pre>
 								<code class="command">sudo add-apt-repository "deb http://apt.puredata.info/re- leases `lsb_release -c | awk '{print $2}'` main"</code>
@@ -1707,6 +1787,9 @@
 							</pre>
 						</li>
 						<li>
+							<span class="fa-li">
+								<i class="fas fa-hand-point-right"></i>
+							</span>
 							Installation of further packages:
 							<pre>
 								<code class="command">sudo apt-get install g++</code>
@@ -2245,20 +2328,35 @@
 							</tr>
 							<tr>
 								<td>Programmieren der Unterfunktionen:
-									<ul>
+									<ul class="fa-ul">
 										<li>
+											<span class="fa-li">
+												<i class="fas fa-hand-point-right"></i>
+											</span>
 											Instrumentenauswahl
 										</li>
 										<li>
+											<span class="fa-li">
+												<i class="fas fa-hand-point-right"></i>
+											</span>
 											Step-Sequencer-Drum-Machine
 										</li>
 										<li>
+											<span class="fa-li">
+												<i class="fas fa-hand-point-right"></i>
+											</span>
 											Lokaler mp3 Recorder
 										</li>
 										<li>
+											<span class="fa-li">
+												<i class="fas fa-hand-point-right"></i>
+											</span>
 											mp3 Webradio Streamer
 										</li>
 										<li>
+											<span class="fa-li">
+												<i class="fas fa-hand-point-right"></i>
+											</span>
 											Background Sound Player
 										</li>
 									</ul>

@@ -221,7 +221,7 @@ function print_link($link)
 				<i class="fas fa-images fa-fw"></i> Pictures
 			</li>
 			<li>
-				Animations
+				<i class="fas fa-spinner fa-spin fa-fw"></i> Animations
 			</li>
 			<li>
 				Memes
