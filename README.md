@@ -1,5 +1,6 @@
 # su_it_blog
 source code for the su IT --blog
+http://suit-blog.net
 
 # what we are using:
 - HTML5
