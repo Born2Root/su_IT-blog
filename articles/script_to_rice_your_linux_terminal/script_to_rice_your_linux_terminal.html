@@ -271,7 +271,7 @@
 					</p>
 
 					<div class="image_box">
-						<img src="console.png" alt="console">
+						<img src="console.png" alt="console" onclick="show(this)">
 					</div>
 
 					<h1 id="conclusion">
@@ -287,6 +287,11 @@
 						<br> But you could also make an alias which calls an bash script file with this code inside. Just remember to give the absolute path of screenfetch so you don't create and infinite loop.
 					</p>
 
+					<div id="blur_bg" class="modal">
+						<img class="modalcontent" id="bigview" alt="bigview" src=".">
+					</div>
+
+					<hr>
 				</div>
 
 				<div id="footer_article">
@@ -347,6 +352,7 @@
 	<script src="/js/main_nav.js" async></script>
 	<script src="/js/additional_nav.js" async></script>
 	<script src="/js/scroll.js" async></script>
+	<script src="/js/imageview.js" async></script>
 	<script src="/js/highlight.pack.js"></script>
 	<script>
 		hljs.initHighlightingOnLoad();
