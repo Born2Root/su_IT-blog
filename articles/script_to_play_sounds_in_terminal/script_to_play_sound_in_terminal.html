@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<title>
+		Script To Play Sound In Your Terminal | Part 2 of how to rice your setup | su IT --blog | suit-blog.net
+	</title>
+
+	<!-- meta -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="HOW-TO on playing sounds in linux on certain events | suit-blog.net">
+	<meta name="keywords" content="linux, blog, suit, sudo, it, scripts, bash, programming, terminal, console, diy, sound, mplayer, vlc">
+	<meta name="robots" content="index, follow">
+
+	<!-- main css -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<!-- mobile css -->
+	<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.css">
+	<!-- desktop css -->
+	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
+
+	<!-- favicon -->
+	<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
+
+	<!-- web app manifest -->
+	<link rel="manifest" href="/manifest.json">
+
+	<!-- font awesome -->
+	<link href="/css/fontawesome-all.min.css" rel="stylesheet">
+
+	<!-- highlight.js -->
+	<link rel="stylesheet" href="/styles/atelier-forest-dark.css">
+
+</head>
+
+<body>
+
+	<div id="header">
+
+		<div id="banner" class="canvas">
+
+			<canvas height="50" width="200" id="animation_canvas_header">
+			</canvas>
+
+			<i class="fas fa-bars fa-fw" id="burger"></i>
+
+			<div id="headline">
+				<a href="/" target="_self">
+					$ su IT --blog
+				</a>
+				<div id="subtitle">
+					<span id="console">- we sudo everything</span>
+					<span class="cursor">|</span> -
+				</div>
+			</div>
+
+			<a target="_self" href="/">
+				<img alt="logo" src="/logo/logo_1.png" id="logo">
+			</a>
+		</div>
+
+		<div id="menu">
+			<ul>
+				<li>
+					<a href="/index.php?tag=linux;" target="_self">
+						Linux
+					</a>
+				</li>
+				<li>
+					<a href="/index.php?tag=scripts;" target="_self">
+						Scripts
+					</a>
+				</li>
+				<li>
+					<a href="/index.php?tag=raspberry;" target="_self">
+						Raspberry Pi
+					</a>
+				</li>
+				<li>
+					<a href="/index.php?tag=programming;" target="_self">
+						Programming
+					</a>
+				</li>
+				<li>
+					<a href="/gallery.html" target="_self">
+						Gallery
+					</a>
+				</li>
+				<li>
+					<a href="/index.php?tag=various;" target="_self">
+						Various
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div id="body">
+
+		<div id="nav_right" class="nav">
+			<div id="top">
+				<i class="fas fa-arrow-up fa-fw"></i> Top
+			</div>
+
+			<div id="back">
+				<i class="fas fa-arrow-left fa-fw"></i> Back
+			</div>
+		</div>
+
+		<div id="nav_left" class="nav">
+			<div>
+				<a target="_blank" rel="noopener" href="/about_us.html#mate">
+					<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
+				</a>
+			</div>
+
+			<div>
+				<a target="_blank" rel="noopener" href="/about_us.html#book">
+					<i class="fas fa-shopping-cart fa-fw"></i> Book Us
+				</a>
+			</div>
+		</div>
+
+		<div id="background">
+		</div>
+
+		<div id="container">
+
+			<div id="article">
+
+				<div>
+
+					<h1>
+						Script To Play Sound In Your Terminal
+					</h1>
+					<h2>
+						Let your terminal play sounds on certain events
+					</h2>
+
+					<div id="box">
+						<div id="tags_article">
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">
+									<i class="fas fa-clock"></i> 5min read</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">linux</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">programming</div>
+							</div>
+							<div class="tag_div">
+								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+								<div class="tag_text">scripts</div>
+							</div>
+						</div>
+
+						<img src="console.png" alt="logo" class="image">
+					</div>
+
+					<div id="pre">
+
+						<h3>
+							Requirements:
+						</h3>
+						<ul>
+							<li>
+								Difficulty: Easy
+							</li>
+
+							<li>
+								Needs:
+								<ul>
+									<li>
+										mplayer, vlc or similar
+									</li>
+									<li>
+										bash basics
+									</li>
+									<li>
+										linux basics
+									</li>
+									<li>
+										some short sound files
+									</li>
+									<li>
+										that's it, you are good to go :)
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+				<div id="body_article">
+					<h1 id="introduction">
+						Introduction
+						<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+							<i class="fas fa-link fa-fw link"></i>
+						</a>
+					</h1>
+
+					<!--
+Audio feedback for linux
+
+Let your PC speak to you
+
+(linux, scripting, tutorial, rice, shell, advanced)
+
+## Introduction
+
+Hey *,
+After my <a href=""https://0x00sec.org/t/scripts-to-rice-your-setup-pt-1"" target=""_blank"">last part</a> where we played with screenfetch to pimp the console, this time we are working with sound...
+
+## Background
+
+I had the idea for this script already years ago. Some time after playing through the Portal game series.
+Back then I was mainly using Windows.
+
+I really like the sounds the turrets are making.
+<img src='//0x00sec.s3.amazonaws.com/original/2X/6/6bd7655b081f783a1a477db25a924e4893113ceb.jpg'>
+
+So I wondered why not use those sounds somewhere else?
+Maybe let my PC play them for me at certain events? There surely is a time where it fits.
+
+But first I needed the sounds, so I googled and found a <a href="https://theportalwiki.com/wiki/Turret_voice_lines" target="_blank">wiki page</a> which provides all the sound files of the turrets. And even better I found a forum with a <a href="https://www.fileplanet.com/219751/210000/fileinfo/Portal-2---Turret-Sound-Pack" href="_blank">zip</a> with all sounds included. So we don't have to download them individually, yay :D
+
+### First Implementation
+So, under Windows, it was obvious to open up the controls and just change the sounds to the ones I just downloaded and extracted. And we are done.
+
+Now some years later, I came up with this idea again. But this time while using Linux. The problem: in most distros are no default sounds or even a control panel for it, especially not in Arch, which is what I am running. So I had to find a different solution. Something custom.
+My solution: we simply script it ourself
+
+
+I installed mplayer, although every other via console usable player should be right. (I switched and I am now using cvlc, the console version of the vlc player. Works like charm.)
+
+<info>
+If you are using vlc like I am now, just type "cvlc --play-and-exit" instead of "mplayer" in every file we will create.
+</info>
+
+Then I looked through the sounds available and picked the ones, I want to use. And I renamed them, so I could access them easily via bash.
+And then I wrote myself a (very) little bash script:
+
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 20 ]
+mplayer /home/lukas/scripts/error/error_$RAND.wav >/dev/null 2>&1 &
+```
+
+So what did we just type?
+The `shebang` of course, to say with what we want to run our program.
+Then to make things random and not the same every time, a random number in range of the amount of available files.
+
+And then I call `mplayer` (or whatever you want to use; for me now `cvlc`; see aboth) with the file name according to the use case, so in this case for error sounds. Every file with the format error_*.wav will be played. Which sounds you use doesn't matter. You can use the portal sounds like I did, then you will hear something like "ahou", "ohh", "please stop" or "critical error". But if you have the sound files of any other videogame or similar you can use them as well. (Maybe you like the sounds of cl4p-tp from Borderlands more. They can also be downloaded)
+
+And then I redirect the terminal output to `/dev/null` to not get it in my console every time the script is called. This would be very annoying. And would make it hard to read what you were doing.
+And we want this all to run in the background. So we can continue while our sound is being played and we don't have to wait. Therefore we put an `&` at the end so bash will run it ""parallel"" in the background.
+
+<hr>
+So my events when a sound should be played:
+<ul>
+	<li>on start up</li>
+	<li>before shutdown</li>
+	<li>on error in terminal</li>
+	<li>while <i>find</i>/<i>locate</i></li>
+	<li>while <i>pacman</i></li>
+	<li>while <i>whoami</i></li>
+	<li>before lockscreen (if you got one)</li>
+</ul>
+
+The principal of the scripts and the call of them is not every time the same.
+
+So I guess we start easy with the lock screen. Although not all of you will have one. But I got one, and I am using i3lock.
+So for me I got a script which works with some images and gives them then to i3lock and make a fancy looking lock screen.
+I did not came up with this code, I just modified it and riced it a bit and used it.
+
+```
+#!/bin/bash
+
+/home/lukas/scripts/screensaver.sh
+
+RAND1=$[ $RANDOM % 9 ]
+RAND2=-1;
+while [ $RAND1 -eq $RAND2 ] || [ $RAND2 -eq -1 ];
+do
+	RAND2=$[ $RANDOM % 9 ]
+done
+
+ICON1=/home/lukas/scripts/logos/asset$RAND1.png
+ICON2=/home/lukas/scripts/logos/asset$RAND2.png
+
+TMPBG=/tmp/screen.png
+scrot /tmp/screen.png
+
+convert $TMPBG -blur 5x10 -quality 01 $TMPBG
+
+convert $TMPBG $ICON1 -geometry +705+290 -quality 01 -composite -matte $TMPBG
+convert $TMPBG $ICON2 -geometry +2300+260 -quality 01 -composite -matte $TMPBG
+
+i3lock -u -i $TMPBG
+rm /tmp/screen.png
+```
+
+and notice the call of our script at the beginning:
+
+`/home/lukas/scripts/screensaver.sh`
+
+We don't want to wait for the sound to finish playing, it is already taking long enough to lock the screen.
+And the screensaver.sh looks like this:
+
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 4 ]
+mplayer /home/lukas/scripts/screensaver/screensaver_$RAND.wav >/dev/null 2>&1 &
+```
+
+The matching files have to be called `screensaver_[index].wav` or the code has to be change accordingly. So has the number of sounds available where we make our random number.
+
+<hr/>
+
+### Next up our error sound script.
+The code looks almost the same.
+
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 20 ]
+mplayer /home/lukas/scripts/error/error_$RAND.wav >/dev/null 2>&1 &
+```
+
+But now to the call.
+<img src=""//0x00sec.s3.amazonaws.com/original/2X/e/ee70217135f118b2748c3ec018a58db7862f3b73.png"" width=""690"" height=""388"">
+
+As you see, my prompt is making a little smiley `[^_^]`. And that's because of my configuration of my `.bashrc` where I set my prompt according to the success of a command. If I get a positive response `^_^` in green (<small>it isn't possible to make anything in color with the markdown, is there?</small>), on a failure `0_0` in red.
+(disclaimer: also this code is not created by me, I also just used it for my rice)
+
+The code for this looks like this:
+`PS1='$(if [[ $? == 0 ]]; then echo ""\n┌[\e[0;32m^_^""; else echo ""\n┌[\e[1;31m0_0""; fi)\e[0m]-[\h]-[\e[0;32;49m\w\[\e[0m]\n└>'`
+But you might already can guess where this is going.
+
+So this is the code to set the PS1 alias the prompt. And then after echoing 0_0, we simply call our script to make a matching sound:
+
+`PS1='$(if [[ $? == 0 ]]; then echo ""\n┌[\e[0;32m^_^""; else echo ""\n┌[\e[1;31m0_0""; /home/lukas/scripts/error.sh & fi)\e[0m]-[\h]-[\e[0;32;49m\w\[\e[0m] \n└>'`
+
+And like this, every time we enter a command the PS1 gets set and we are right there. We will get back to the .bashrc later.
+
+<hr/>
+### startup
+
+Now, startup should be really easy. And I took the easiest way available. I used the XFCE <i>session and startup</i> tool, which either is pre-installed with XFCE or comes with the utils package. So if you use a different desktop environment you can go for their program doing this kind of stuff. An other option would be to create a .desktop file by hand or create a daemon or a service which calls our script on startup. Be sure to active the daemon so it will work.
+I'm not going into each option, there are tutorials which tell you how to set this up.
+
+That's how XFCE makes it:
+`Greet.desktop`
+```
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Greet
+Comment=
+Exec=/home/lukas/scripts/startup.sh
+OnlyShowIn=XFCE;
+StartupNotify=false
+Terminal=false
+Hidden=false
+```
+`startup.sh`:
+
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 10 ]
+mplayer /home/lukas/scripts/startup/startup_$RAND.wav >/dev/null 2>&1 &
+```
+
+<hr/>
+### shutdown
+But now for the shutdown sound, we need to create a service. All other possibilities that I tried didn't work.
+Either did the system already hang out my drive or the sound drivers aren't working anymore, or the system does not wait for the sound to finish playing. That was probably the hardest sound to get playing.
+
+
+systemctl daemon-reload
+
+
+But I got it working now, and it's really awesome.
+
+Laying in `/etc/systemd/system/shutdown.service`:
+```
+[Unit]
+Description=Shutdown Sound
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/true
+ExecStop=/home/lukas/scripts/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`shutdown.sh`:
+
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 16 ]
+mplayer /home/lukas/scripts/shutdown/shutdown_$RAND.wav >/dev/null 2>&1
+```
+<br/>
+!!!Pay attention that we don't want to put an `&` at the end, because then GNU Linux won't wait with shutting down until the sound is completely played!!!
+
+Then enable and start the service with:
+systemctl start shutdown.service
+<br/>
+<hr/>
+Now the rest and they all work the same way.
+We got our scripts:
+
+#### install/pacman
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 2 ]
+mplayer /home/lukas/scripts/install/install_$RAND.wav >/dev/null 2>&1 &
+```
+
+#### whoami
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 3 ]
+mplayer /home/lukas/scripts/whoami/whoami_$RAND.wav >/dev/null 2>&1 &
+```
+
+#### locate/find
+```
+#!/bin/bash
+
+RAND=$[ $RANDOM % 2 ]
+mplayer /home/lukas/scripts/locate/locate_$RAND.wav >/dev/null 2>&1 &
+```
+<br/>
+And we write us an alias function in our `.bashrc` or wherever you have your aliases.
+
+```
+#sound
+whoami_sound(){
+	/home/lukas/scripts/whoami.sh
+	/usr/bin/whoami
+}
+alias whoami=whoami_sound
+locate_sound(){
+	/home/lukas/scripts/locate.sh
+	/usr/bin/locate ""$@""
+}
+alias ""locate""=locate_sound
+find_sound(){
+	/home/lukas/scripts/locate.sh
+	/usr/bin/find ""$@""
+}
+alias ""find""=find_sound
+install_sound(){
+	/home/lukas/scripts/install.sh
+	sudo /usr/bin/pacman ""$@""
+}
+alias pacman=install_sound
+```
+
+Every time we call for example whoami, we instead call our function which calls our script and then the command we were calling in the first place. But important, don't just write the command down, write the full path. Otherwise we create and endless loop, because apparently this counts as normal call.
+On command which take parameters we have to give them to our real call too.
+
+-
+
+# Conclusions
+
+So that's it. You may want to add a flag to regulate the volume or the output device.
+I was thinking about making it a real program, like Iron Mans J.A.R.V.I.S for example, but I haven't had an idea about how I can get all those different events into a single program. Maybe you got a idea and leave a hint in the comments.
+
+I really hope you liked it, and stay tuned there will another part following.
+	-->
+
+					<div id="blur_bg" class="modal">
+						<img class="modalcontent" id="bigview" alt="bigview" src=".">
+					</div>
+
+					<hr>
+				</div>
+
+				<div id="footer_article">
+					<p>
+						Did we make you interessted in this topic for even more or do you want to talk about it or do you have any suggestions or improvments?
+						<br>Just tell us, we are always open for critique :)
+					</p>
+					<h4>We love to hear from you and we always reply</h4>
+					<div id="buisnesscard">
+						<img alt="logo" src="/logo/logo_1.png">
+
+						<div>
+							<b>su IT --blog</b>
+							<br>
+							<i class="fas fa-envelope fa-fw"></i>
+							<a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
+
+							<br>
+
+							<i class="fab fa-telegram fa-fw"></i>
+							<a href="https://t.me/suitblog" target="_blank" rel="noopener">@suitblog</a>
+						</div>
+					</div>
+					<p>
+						Grammatical errors? Technical errors? Or outdated information?
+						<br>If this article needs any kind of updates or completion, please let us know.
+					</p>
+					<p>
+						If you liked this article
+						<a target="_blank" rel="noopener" href="/about_us.html#mate">Buy Us A Club-Mate</a>! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site.
+					</p>
+					<h3>
+						Thank You for reading!
+					</h3>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="footer" class="canvas">
+		<canvas height="50" width="200" id="animation_canvas_footer">
+		</canvas>
+		<div id="disclaimer">
+			There is nothing more to discover down here ¯\_(ツ)_/¯
+			<br>
+			<i class="fas fa-closed-captioning"></i> 2017
+			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
+			<a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+		</div>
+	</div>
+
+	<script src="/js/animation.js" async></script>
+	<script src="/js/cli_write.js" async></script>
+	<script src="/js/main_nav.js" async></script>
+	<script src="/js/additional_nav.js" async></script>
+	<script src="/js/scroll.js" async></script>
+	<script src="/js/imageview.js" async></script>
+	<script src="/js/highlight.pack.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+
+</body>
+
+</html>

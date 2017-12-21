@@ -507,15 +507,27 @@
                         </div>
                     </div>
 
-                    <p>
-                        <TODO>=BEREICH.VERSCHIEBEN($A$3;;;ANZAHL2($A:$A);ANZAHL2($3:$3))</TODO>
-                        <br> Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert lauten:
-                        <br>
-                        <TODO>=BEREICH.VERSCHIEBEN($C$9;;;ANZAHL2($C:$C);ANZAHL2($9:$9))</TODO>
-                        <br> Im konkreten Beispiel mit mehreren Tabellenblättern besteht ergänzend noch der Sonderfall, dass man das Tabellenblatt explizit angeben muss, damit der Bereich korrekt erzeugt wird. Die Formel lautet also:
-                        <br>
-                        <TODO>=BEREICH.VERSCHIEBEN(Buecher!$A$3;;;ANZAHL2(Buecher!$A:$A);ANZAHL2(Buecher!$3:$3))</TODO>
+                    <pre>
+                        <code class="VBScript">=BEREICH.VERSCHIEBEN($A$3;;;ANZAHL2($A:$A);ANZAHL2($3:$3))</code>
+                    </pre>
 
+                    <p>
+                        Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert lauten:
+                    </p>
+
+                    <pre>
+                        <code class="VBScript">=BEREICH.VERSCHIEBEN($C$9;;;ANZAHL2($C:$C);ANZAHL2($9:$9))</code>
+                    </pre>
+
+                    <p>
+                        Im konkreten Beispiel mit mehreren Tabellenblättern besteht ergänzend noch der Sonderfall, dass man das Tabellenblatt explizit angeben muss, damit der Bereich korrekt erzeugt wird. Die Formel lautet also:
+                    </p>
+
+                    <pre>
+                        <code class="VBScript">=BEREICH.VERSCHIEBEN(Buecher!$A$3;;;ANZAHL2(Buecher!$A:$A);ANZAHL2(Buecher!$3:$3))</code>
+                    </pre>
+
+                    <p>
                         Als nächsten Schritt wollen wir eine Autovervollständigung für das Autoren-Eingabefeld erstellen. Excel enthält bereits standardmäßig eine Autovervollständigung, allerdings nur für einige hundert Werte. Ziel ist aber eine Vervollständigung über eine unbegrenzte Anzahl von Autoren. Dies kann über die Funktion
                         <i>Datenvalidierung</i> erreicht werden. Jedoch würde eine solche Validierung über alle Autoren, auch alle doppelten Einträge enthalten. D.h. ist fünf mal Autor XY vorhanden, würde in der Autovervollständigungsliste auch fünf mal dieser Autor angezeigt werden. Ein Trick um das zu verhindern, ist als Quelle der Datenvalidierung eine Tabelle zu verwenden, die jeden Autor nur ein einziges mal enthält. Am einfachsten lässt sich das über Pivot-Tabellen umsetzen. D.h. wir werden eine Pivot-Tabelle der Autoren anlegen. Vorzugsweise in einem neuen Tabellenblatt, damit die Übersicht nicht verloren geht.
 
@@ -534,10 +546,11 @@
                     <p>
                         Anschließend im Pivot-Bericht das Feld
                         <i>Autor</i> auswählen und schon haben wir eine Liste, in der jeder vorhandene Autor nur ein einziges mal auftaucht. Für die weiteren Schritte muss jetzt noch dynamisch ermittelt werden, wie viele Zeilen die Tabelle der Autoren enthält. Dazu wird folgende Excel-Formel in Zelle B2 genutzt.
-                        <br>
-                        <TODO>=VERWEIS(2;1/(B5:B4000
-                            <>"");ZEILE(B5:B4000))-1</TODO>
                     </p>
+
+                    <pre>
+                        <code class="VBScript">=VERWEIS(2;1/(B5:B4000<>"");ZEILE(B5:B4000))-1</code>
+                    </pre>
 
                     <div class="image_box">
                         <img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" onclick="show(this)">
@@ -549,9 +562,11 @@
                     <p>
                         Um die nächsten Schritte zu vereinfachen, benötigen wir einen simpel anzusprechenden Datenbereich, der dynamisch den Inhalt der Pivot-Autoren-Tabelle abdeckt. Also nochmal rein in den Namens-Manager und den Bereich
                         <i>sort_autor</i> angelegt. Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
-                        <br>
-                        <TODO>=Data!$B$5:INDIREKT("Data!$B$"&Data!$B$2)</TODO>
                     </p>
+
+                    <pre>
+                        <code class="VBScript">=Data!$B$5:INDIREKT("Data!$B$"&Data!$B$2)</code>
+                    </pre>
 
                     <div class="image_box">
                         <img src="image005_Pivot_Table-Listen.JPG" alt="Abbildung 4.2: Übersicht der" onclick="show(this)">
@@ -595,13 +610,21 @@
                     </ul>
 
                     <p>
-                        Zunächst müssen wir dafür eine Combo-Box erstellen. Dazu in das Entwicklermenü
-                        <TODO>PopUp Info Fenster: Das Menü ist standardmäßig ausgeblendet und muss erst aktiviert werden. Dazu abhängig von der verwendeten Office Version auf die Microsoft Office-Schaltfläche klicken und dann auf
-                            <i>Excel-Optionen</i> gehen. Anschließend auf
-                            <i>Beliebt</i> klicken, und das Kontrollkästchen
-                            <i>Registerkarte "Entwicklertools" im Menüband anzeigen</i> aktivieren.</TODO>
-                        wechseln und ein ActiveX-Kombinationsfeld in einem beliebigen Bereich des Tabellenblattes aufziehen. Wo man es dabei platziert ist vollkommen egal. Denn es wird lediglich als Referenzelement genutzt, das später genau an der Stelle eingeblendet wird, wo wir es möchten.
-                        <br>Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
+                        Zunächst müssen wir dafür eine Combo-Box erstellen. Dazu in das Entwicklermenü wechseln und ein ActiveX-Kombinationsfeld in einem beliebigen Bereich des Tabellenblattes aufziehen. Wo man es dabei platziert ist vollkommen egal. Denn es wird lediglich als Referenzelement genutzt, das später genau an der Stelle eingeblendet wird, wo wir es möchten.
+                    </p>
+
+                    <fieldset class="info box">
+                        <legend>
+                            <i class="fas fa-info-circle fa-fw"></i>
+                        </legend>
+                        Das Menü ist standardmäßig ausgeblendet und muss erst aktiviert werden. Dazu abhängig von der verwendeten Office Version auf die Microsoft Office-Schaltfläche klicken und dann auf
+                        <b>Excel-Optionen</b> gehen. Anschließend auf
+                        <b>Beliebt</b> klicken, und das Kontrollkästchen
+                        <b>Registerkarte "Entwicklertools" im Menüband anzeigen</b> aktivieren.
+                    </fieldset>
+
+                    <p>
+                        Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
                     </p>
 
                     <div class="image_box">
@@ -624,12 +647,11 @@
 
                     <p>
                         Als nächstes kommt folgender VBA-Code in das neu angelegte Unterprogramm, in dem wir nun auf die bereits erstellte Combo-Box zugreifen.
+                    </p>
 
-                        <br>
-                        <TODO>
-
-                            Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean) Set xWs = Application.ActiveSheet Set dWs = ThisWorkbook.Worksheets("Data") 'Worksheet in dem die Pivot-Daten liegen Dim xStr As String Dim num_first_line, num_last_line, num_prefilter_column As Integer On Error Resume Next 'Drop-Down Vervollständigungsfeld nur per Doppelklick in Zellen anzeigen, die auch über Datenüberprüfung als ' DropDown konfiguriert sind If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count
-                            < 1 Then 'MsgBox "No Drop Down available"
+                    <pre>
+                        <code class="VBScript">Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean) Set xWs = Application.ActiveSheet Set dWs = ThisWorkbook.Worksheets("Data") 'Worksheet in dem die Pivot-Daten liegen Dim xStr As String Dim num_first_line, num_last_line, num_prefilter_column As Integer On Error Resume Next 'Drop-Down Vervollständigungsfeld nur per Doppelklick in Zellen anzeigen, die auch über Datenüberprüfung als ' DropDown konfiguriert sind If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count
+                        < 1 Then 'MsgBox "No Drop Down available"
                                         'do nothing Else 'MsgBox "Drop Down in active Cell available"
 
                                          Application.EnableEvents = False
@@ -641,32 +663,43 @@
                                                 'ComboBox inkl. Titelliste aus Variable xStr anzeigen With xCombox .Visible=T rue .Left=T arget.Left .Top=T arget.Top .Width=T arget.Width + 15 .Height=T arget.Height + 5 .ListFillRange=x Str .LinkedCell=T arget.Address End With xCombox.Activate Me.TempCombo.DropDown End If Application.EnableEvents=T rue End If End Sub '** Blendet bei einem Selection Change nur die Combo-Box aus
                             Private Sub Worksheet_SelectionChange(ByVal Target As Range)
                                 Set xWs = Application.ActiveSheet
-                                Set dWs = ThisWorkbook.Worksheets("Data")       'Worksheet in dem die Pivot-Daten liegen On Error GoTo errHandler If Target.Count> 1 Then GoTo exitHandler Set xCombox = xWs.OLEObjects("TempCombo") On Error Resume Next If xCombox.Visible = True Then With xCombox .Top = 10 .Left = 10 .Width = 0 .ListFillRange = "" .LinkedCell = "" .Visible = False .Value = "" End With End If exitHandler: Application.EnableEvents = True Application.ScreenUpdating = True Exit Sub errHandler: Resume exitHandler End Sub
-                        </TODO>
+                                Set dWs = ThisWorkbook.Worksheets("Data")       'Worksheet in dem die Pivot-Daten liegen On Error GoTo errHandler If Target.Count> 1 Then GoTo exitHandler Set xCombox = xWs.OLEObjects("TempCombo") On Error Resume Next If xCombox.Visible = True Then With xCombox .Top = 10 .Left = 10 .Width = 0 .ListFillRange = "" .LinkedCell = "" .Visible = False .Value = "" End With End If exitHandler: Application.EnableEvents = True Application.ScreenUpdating = True Exit Sub errHandler: Resume exitHandler End Sub</code>
+                    </pre>
 
-                        <br> Außerdem soll die Combo-Box ausgeblendet werden, wenn man die Zelle wechselt oder die Enter-, bzw. TAB-Taste drückt. Dazu ein neues Unterprogramm für das von uns angelegte Element
+                    <p>
+                        Außerdem soll die Combo-Box ausgeblendet werden, wenn man die Zelle wechselt oder die Enter-, bzw. TAB-Taste drückt. Dazu ein neues Unterprogramm für das von uns angelegte Element
                         <i>TempCombo</i> anlegen, und wie bereits beim vorherigen Sub, über das obere Rechte Menü ein Aktivierungsverhalten auswählen. Dieses mal, nehmen wir
                         <i>KeyDown</i>, also das drücken einer Taste. In VBA müssen wir jetzt nur noch definieren, dass der Code für
                         <i>Enter</i>, sowie die
                         <i>TAB-Taste</i> reagiert. Dazu reicht eine Switch-Case Struktur aus, die den
                         <i>KeyCode</i> der jeweiligen Taste abprüft. Für den Tabulator ist das z.B. KeyCode 9, für Enter KeyCode 13. Ein vollständige Liste aller KeyCodes findet man bei Bedarf im Internet.
 
-                        <br>
-                        <TODO>'** Hide Combo-Box and move to next cell on Enter and Tab Private Sub TempCombo_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer) Select Case KeyCode Case 9 Application.ActiveCell.Offset(0, 1).Activate Case 13 Application.ActiveCell.Offset(1, 0).Activate Case Else 'do nothing End Select End Sub</TODO>
-                        <br>
-                        <br> Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert!
+                    </p>
+
+
+                    <pre>
+                        <code class="VBScript">'** Hide Combo-Box and move to next cell on Enter and Tab Private Sub TempCombo_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer) Select Case KeyCode Case 9 Application.ActiveCell.Offset(0, 1).Activate Case 13 Application.ActiveCell.Offset(1, 0).Activate Case Else 'do nothing End Select End Sub</code>
+                    </pre>
+
+                    <p>
+                        Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert!
                         <br> Aber schade, denn momentan funktioniert es nur für die Autoren. Das ist jedoch gar kein Problem. Um das gleiche Verhalten für alle anderen Spalten (Buchtitel, Genre, usw.) zu erhalten, muss die obige Prozedur mit anlegen von Pivot-Tabellen und Namensbereichen einfach wiederholt werden. Der VBA-Code ist universell und muss nicht angepasst werden.
                         <br>
                         <br> Ein ungewünschtes Verhalten würde man mit der aktuellen Lösung aber nach einiger Zeit feststellen. Denn neu eingegebene Daten werden unten an die Pivot-Tabelle rangehängt. Diese neuen Autoren tauchen dann in der Drop-Down-Liste nicht mehr an der richtigen Stelle auf, weil die Pivot-Tabelle nicht mehr sauber alphabetisch sortiert ist. Blöd, aber mit VBA kein Problem. Mit zwei kleinen Funktionen, kann man erstens, alle Pivot-Tabellen aktualisieren (refreshen) und alle Pivot-Tabellen alphabetisch sortieren.
                         <br> VBA-Alle Pivots aktualisieren:
-                        <TODO>
-                            Sub PivotTables_Refresh() ThisWorkbook.RefreshAll End Sub</TODO>
-                        <br> In allen Pivots Werte alphabetisch sortieren:
-                        <br>
-                        <TODO>
-                            Sub PivotTables_AutoSortAZAllFields() Dim ws As Worksheet Dim pt As PivotTable Dim pf As PivotField On Error Resume Next For Each ws In ActiveWorkbook.Worksheets For Each pt In ws.PivotTables For Each pf In pt.RowFields pf.AutoSort xlAscending, pf.SourceName Next pf For Each pf In pt.ColumnFields pf.AutoSort xlAscending, pf.SourceName Next pf Next pt Next ws End Sub
-                        </TODO>
                     </p>
+
+                    <pre>
+                        <code class="VBScript">Sub PivotTables_Refresh() ThisWorkbook.RefreshAll End Sub</code>
+                    </pre>
+
+                    <p>
+                        In allen Pivots Werte alphabetisch sortieren:
+                    </p>
+
+                    <pre>
+                        <code class="VBScript">Sub PivotTables_AutoSortAZAllFields() Dim ws As Worksheet Dim pt As PivotTable Dim pf As PivotField On Error Resume Next For Each ws In ActiveWorkbook.Worksheets For Each pt In ws.PivotTables For Each pf In pt.RowFields pf.AutoSort xlAscending, pf.SourceName Next pf For Each pf In pt.ColumnFields pf.AutoSort xlAscending, pf.SourceName Next pf Next pt Next ws End Sub</code>
+                    </pre>
 
                     <h2 id="wertevorfilterung">
                         Werte-Vorfilterung, sowie allg. Filterung nach Autor & Co.
@@ -692,11 +725,21 @@
 
                     <p>
                         Per VBA erstellen wir nun die Regel, dass bei einem Klick ins Buch-Titelfeld der bereits eingegebene Autorenname als Filterwert der Pivot-Tabelle verwendet wird. Dazu müssen zunächst alle vorherigen Filter gelöscht werden
-                        <br>
-                        <TODO>PvtTbl.ClearAllFilters</TODO>.
+                    </p>
+
+                    <pre>
+                        <code class="VBScript">PvtTbl.ClearAllFilters</code>
+                    </pre>
+
+                    <p>
                         <br> Anschließend können wir den neuen Filter setzen
-                        <br>
-                        <TODO>PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value</TODO>.
+                    </p>
+
+                    <pre>
+                        <code class="VBScript">PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value</code>
+                    </pre>
+
+                    <p>
                         <br> Über das Kommando
                         <i>xlCaptionContains</i> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B.
                         <i>Mustermann, Max und Grisham, John</i> im Autorenfeld geführt werden. Möchte man exakt nach den Autorennamen suchen, ist dies über die Option
@@ -704,13 +747,15 @@
                         <i>Grisham, John</i> gefunden werden. Das Beispiel
                         <i>Mustermann, Max und Grisham, John</i> würde nicht auftauchen.
                         <br> Die Länge der Ergebnisliste wird über den bereits bekannten Trick mit der Suche nach dem letzten Eintrag ermittelt.
-                        <br>
-                        <TODO>num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column)</TODO>
-                        <br>
-
-                        <TODO>'** Prefilter Option Dim PvtTbl As PivotTable 'Pivot Table for Prefilter Option Set PvtTbl = dWs.PivotTables("PivotTable_AutorFilter") ' Bei aktivierter Option werden vom aktuell eingegebenen Autor nur die bereits im Bestand vorhandenen ' Titel angezeigt. Es erfolgt also eine Vorfilterung. Bei deaktivierter Funktion werden alle Titel im Bestand angezeigt 'Prefilter activated and Current cell is a Title Cell If (xWs.OptBtn_Prefilter.Value = True And ActiveCell.Column = 3) Then 'bestehende Filter löschen PvtTbl.ClearAllFilters 'den content der aktuell ausgewählten Zelle als neuen Filterwert der Pivot-Tabelle nutzen PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column) If (num_last_line = 4) Then GoTo Unfiltered 'if author is new, hence there is no title content, show the unfiltered list Else xStr = dWs.Range(dWs.Cells(num_first_line, num_prefilter_column), _ dWs.Cells(num_last_line, num_prefilter_column)).Address(, , , True) End If Else Unfiltered: 'use the unfiltered complete Title list num_last_line = dWs.Cells(2, ActiveCell.Column) xStr = dWs.Range(dWs.Cells(num_first_line, ActiveCell.Column), _ dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True) End If</TODO>
                     </p>
 
+                    <pre>
+                        <code class="VBScript">num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column)</code>
+                    </pre>
+
+                    <pre>
+                        <code class="VBScript">'** Prefilter Option Dim PvtTbl As PivotTable 'Pivot Table for Prefilter Option Set PvtTbl = dWs.PivotTables("PivotTable_AutorFilter") ' Bei aktivierter Option werden vom aktuell eingegebenen Autor nur die bereits im Bestand vorhandenen ' Titel angezeigt. Es erfolgt also eine Vorfilterung. Bei deaktivierter Funktion werden alle Titel im Bestand angezeigt 'Prefilter activated and Current cell is a Title Cell If (xWs.OptBtn_Prefilter.Value = True And ActiveCell.Column = 3) Then 'bestehende Filter löschen PvtTbl.ClearAllFilters 'den content der aktuell ausgewählten Zelle als neuen Filterwert der Pivot-Tabelle nutzen PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O num_last_line = dWs.Cells(2, num_prefilter_column) If (num_last_line = 4) Then GoTo Unfiltered 'if author is new, hence there is no title content, show the unfiltered list Else xStr = dWs.Range(dWs.Cells(num_first_line, num_prefilter_column), _ dWs.Cells(num_last_line, num_prefilter_column)).Address(, , , True) End If Else Unfiltered: 'use the unfiltered complete Title list num_last_line = dWs.Cells(2, ActiveCell.Column) xStr = dWs.Range(dWs.Cells(num_first_line, ActiveCell.Column), _ dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True) End If</code>
+                    </pre>
 
                     <h2 id="pivottabellen">
                         Pivot-Tabellen Auswertung
