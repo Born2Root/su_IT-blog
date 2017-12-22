@@ -96,7 +96,7 @@
 	font-family: 'hack_font';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Hack'), url('/css/hack_font/hack_reg.woff2') format('woff2'), url('/css/hack_font/hack_reg.woff') format('woff'), url('/css/hack_font/hack_reg.ttf') format('truetype');
+	src: local('Hack'), url('/webfonts/hack_font/hack_reg.woff2') format('woff2'), url('/webfonts/hack_font/hack_reg.woff') format('woff'), url('/webfonts/hack_font/hack_reg.ttf') format('truetype');
 }
 
 body {

@@ -71,11 +71,11 @@ function print_link($link)
 	<meta name="robots" content="index, follow">
 
 	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
 	<!-- mobile css -->
-	<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.css">
+	<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.min.css">
 	<!-- desktop css -->
-	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.css">
+	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.min.css">
 
 	<!-- favicon -->
 	<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
