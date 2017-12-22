@@ -84,7 +84,7 @@ function print_link($link)
 	<link rel="manifest" href="/manifest.json">
 
 	<!-- font awesome -->
-	<link href="/css/fontawesome-all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/fontawesome-all.min.css">
 
 </head>
 
@@ -281,10 +281,10 @@ EOT;
 		</div>
 	</div>
 
-	<script src="/js/animation.js" async></script>
-	<script src="/js/cli_write.js" async></script>
-	<script src="/js/main_nav.js" async></script>
-	<script src="/js/scroll.js" async></script>
+	<script src="/js/animation.min.js" async></script>
+	<script src="/js/cli_write.min.js" async></script>
+	<script src="/js/main_nav.min.js" async></script>
+	<script src="/js/scroll.min.js" async></script>
 
 </body>
 
