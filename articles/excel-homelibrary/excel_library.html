@@ -1,678 +1,678 @@
 ﻿<!doctype html>
 <html lang="de">
 
-<head>
+	<head>
 
-	<title>
-		Excel Homelibrary | su IT --blog | suit-blog.net
-	</title>
+		<title>
+			Excel Homelibrary | su IT --blog | suit-blog.net
+		</title>
 
-	<!-- meta -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung | suit-blog.net">
-	<meta name="keywords" content="excel, vba, combo-box, kombinationsfeld, autotext, autovervollständigung, datenvalidierung, büchersammlung, verwaltung, bibliothek, programming, suit, sudo, blog, diy">
-	<meta name="robots" content="index, follow">
+		<!-- meta -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung | suit-blog.net">
+		<meta name="keywords" content="excel, vba, combo-box, kombinationsfeld, autotext, autovervollständigung, datenvalidierung, büchersammlung, verwaltung, bibliothek, programming, suit, sudo, blog, diy">
+		<meta name="robots" content="index, follow">
 
-	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
-	<!-- mobile css -->
-	<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.min.css">
-	<!-- desktop css -->
-	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.min.css">
+		<!-- main css -->
+		<link rel="stylesheet" type="text/css" href="/css/main.min.css">
+		<!-- mobile css -->
+		<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.min.css">
+		<!-- desktop css -->
+		<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.min.css">
 
-	<!-- favicon -->
-	<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
+		<!-- favicon -->
+		<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
 
-	<!-- web app manifest -->
-	<link rel="manifest" href="/manifest.json">
+		<!-- web app manifest -->
+		<link rel="manifest" href="/manifest.json">
 
-	<!-- font awesome -->
-	<link rel="stylesheet" href="/css/fontawesome-all.min.css">
+		<!-- font awesome -->
+		<link rel="stylesheet" href="/css/fontawesome-all.min.css">
 
-	<!-- highlight.js -->
-	<link rel="stylesheet" href="/styles/atelier-forest-dark.min.css">
+		<!-- highlight.js -->
+		<link rel="stylesheet" href="/styles/atelier-forest-dark.min.css">
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<div id="header">
+		<div id="header">
 
-		<div id="banner" class="canvas">
+			<div id="banner" class="canvas">
 
-			<canvas height="50" width="200" id="animation_canvas_header"></canvas>
+				<canvas height="50" width="200" id="animation_canvas_header"></canvas>
 
-			<i class="fas fa-bars fa-fw" id="burger"></i>
+				<i class="fas fa-bars fa-fw" id="burger"></i>
 
-			<div id="headline">
-				<a href="/" target="_self">
-					$ su IT --blog
+				<div id="headline">
+					<a href="/" target="_self">
+						$ su IT --blog
+					</a>
+					<div id="subtitle">
+						<span id="console">- we sudo everything</span>
+						<span class="cursor">|</span> -
+					</div>
+				</div>
+
+				<a target="_self" href="/">
+					<img alt="logo" src="/logo/logo_1.png" id="logo">
 				</a>
-				<div id="subtitle">
-					<span id="console">- we sudo everything</span>
-					<span class="cursor">|</span> -
+			</div>
+
+			<div id="menu">
+				<ul>
+					<li>
+						<a href="/index.php?tag=linux;" target="_self">
+							Linux
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=scripts;" target="_self">
+							Scripts
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=raspberry;" target="_self">
+							Raspberry Pi
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=programming;" target="_self">
+							Programming
+						</a>
+					</li>
+					<li>
+						<a href="/gallery.html" target="_self">
+							Gallery
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=various;" target="_self">
+							Various
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="body">
+
+			<div id="nav_right" class="nav">
+				<div id="top">
+					<i class="fas fa-arrow-up fa-fw"></i> Top
+				</div>
+
+				<div id="back">
+					<i class="fas fa-arrow-left fa-fw"></i> Back
 				</div>
 			</div>
 
-			<a target="_self" href="/">
-				<img alt="logo" src="/logo/logo_1.png" id="logo">
-			</a>
-		</div>
-
-		<div id="menu">
-			<ul>
-				<li>
-					<a href="/index.php?tag=linux;" target="_self">
-						Linux
+			<div id="nav_left" class="nav">
+				<div>
+					<a target="_blank" rel="noopener" href="/about_us.html#mate">
+						<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
 					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=scripts;" target="_self">
-						Scripts
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=raspberry;" target="_self">
-						Raspberry Pi
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=programming;" target="_self">
-						Programming
-					</a>
-				</li>
-				<li>
-					<a href="/gallery.html" target="_self">
-						Gallery
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=various;" target="_self">
-						Various
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-
-	<div id="body">
-
-		<div id="nav_right" class="nav">
-			<div id="top">
-				<i class="fas fa-arrow-up fa-fw"></i> Top
-			</div>
-
-			<div id="back">
-				<i class="fas fa-arrow-left fa-fw"></i> Back
-			</div>
-		</div>
-
-		<div id="nav_left" class="nav">
-			<div>
-				<a target="_blank" rel="noopener" href="/about_us.html#mate">
-					<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
-				</a>
-			</div>
-
-			<div>
-				<a target="_blank" rel="noopener" href="/about_us.html#book">
-					<i class="fas fa-shopping-cart fa-fw"></i> Book Us
-				</a>
-			</div>
-		</div>
-
-		<div id="background">
-		</div>
-
-		<div id="container">
-
-			<div id="article">
+				</div>
 
 				<div>
+					<a target="_blank" rel="noopener" href="/about_us.html#book">
+						<i class="fas fa-shopping-cart fa-fw"></i> Book Us
+					</a>
+				</div>
+			</div>
 
-					<h1>
-						Excel VBA Datenvalidierung und Autovervollständigung
-					</h1>
-					<h2>
-						Am Beispiel einer Bibliotheks-/Bücher-listenverwaltung
-					</h2>
+			<div id="background">
+			</div>
 
-					<div id="box" class="right_box">
-						<div id="tags_article">
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">
-									<i class="fas fa-clock"></i> 15min read</div>
+			<div id="container">
+
+				<div id="article">
+
+					<div>
+
+						<h1>
+							Excel VBA Datenvalidierung und Autovervollständigung
+						</h1>
+						<h2>
+							Am Beispiel einer Bibliotheks-/Bücher-listenverwaltung
+						</h2>
+
+						<div id="box" class="right_box">
+							<div id="tags_article">
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">
+										<i class="fas fa-clock"></i> 15min read</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">linux</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">programming</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">raspberry</div>
+								</div>
 							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">linux</div>
-							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">programming</div>
-							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">raspberry</div>
+
+							<img src="image002_Werteingabe.gif" alt="logo" class="image">
+						</div>
+
+						<h3>Kurzbeschreibung</h3>
+
+						<p>
+							Die im Excel-Standard enthaltene Autotextvervollständigung, während der Eingabe, ist auf eine maximale Anzahl von Zellen begrenzt. Als "Lösung" bietet Excel Drop-Down-Listen an. Aber diese sind optisch unansehnlich und funktionell begrenzt. Über VBA-Programmierung kann man die Grundfunktionalität allerdings zu einem komfortablen Eingabe-Drop-Down-Menü inkl. Autotextvervollständigung aufbohren.
+						</p>
+						<p>
+							Im folgenden Artikel beschreibe ich, wie man eine komfortable Eingabe-Drop-Down-Liste inkl. Autotextvervollständigung und Datenvalidierung realisiert. Ergänzt wird das Ganze um die Möglichkeit der Werte-Vorfilterung und Pivot-Datenanalyse.
+						</p>
+
+						<div id="pre">
+
+							<h3>
+								Voraussetzungen:
+							</h3>
+							<ul>
+								<li>
+									Schwierigkeitsgrad: Fortgeschritten
+								</li>
+								<li>Skills:
+									<ul>
+										<li>
+											Microsoft Excel ab Version 2007
+										</li>
+										<li>
+											VBA-Programmierung
+										</li>
+										<li>
+											Leiterplattenbestückung (Löten, etc.)
+										</li>
+										<li>
+											Elektronikverständnis
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+							<hr>
+
+							<h3>Inhalt:</h3>
+
+							<ol>
+								<li>
+									<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+										Introduction
+									</a>
+									<ol>
+										<li>
+											<a target="_self" href="#usecases" onclick="onpage_link(event, this);">
+												Use Cases
+											</a>
+											<ol>
+												<li>
+													<a target="_self" href="#usecase1" onclick="onpage_link(event, this);">
+														Use Case 1:
+													</a>
+												</li>
+												<li>
+													<a target="_self" href="#usecase2" onclick="onpage_link(event, this);">
+														Use Case 2:
+													</a>
+												</li>
+												<li>
+													<a target="_self" href="#usecase3" onclick="onpage_link(event, this);">
+														Use Case 3:
+													</a>
+												</li>
+											</ol>
+										</li>
+									</ol>
+								</li>
+								<li>
+									<a target="_self" href="#technischerealisierung" onclick="onpage_link(event, this);">
+										Technische Realisierung
+									</a>
+									<ol>
+										<li>
+											<a target="_self" href="#autovervollstaendigung" onclick="onpage_link(event, this);">
+												Autovervollständigung
+											</a>
+										</li>
+										<li>
+											<a target="_self" href="#wertevorfilterung" onclick="onpage_link(event, this);">
+												Werte-Vorfilterung, sowie allg. Filterung nach Autor & Co.
+											</a>
+										</li>
+										<li>
+											<a target="_self" href="#pivottabellen" onclick="onpage_link(event, this);">
+												Pivot-Tabellen Auswertung
+											</a>
+										</li>
+									</ol>
+								</li>
+								<li>
+									<a target="_self" href="#fazit" onclick="onpage_link(event, this);">
+										Fazit
+									</a>
+								</li>
+							</ol>
+
+						</div>
+
+					</div>
+
+					<div id="body_article">
+
+						<h1 id="introduction">
+							Introduction
+							<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
+
+						<p>
+							Als plakatives Beispiel wird die Verwaltung einer Büchersammlung (Home Library) herangezogen. Der Code ist aber leicht auf beliebige andere Einsatzszenarien übertragbar. Vorrangig ist ein Einsatz dort vorteilhaft, wo große Datenmengen um manuelle Einträge ergänzt oder einfach verwaltet werden sollen.
+							<br>Grundlegende Funktionen des Bücher-Beispiels aus Anwendersicht sind:
+						</p>
+
+
+						<h2 id="usecases">
+							Use Cases
+							<a target="_self" href="#usecases" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
+
+						<h3 id="usecase1">
+							Use Case 1:
+							<a target="_self" href="#usecase1" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h3>
+
+						<p>
+							Es soll ein neues Buch (ein neuer Datensatz) in die Liste eingetragen werden. Man weiß jedoch nicht, ob das Buch bereits vorhanden ist, d.h. man will sehen, welche Bücher von dem Autor bereits in der Sammlung enthalten sind. Die Eingabe soll möglichst komfortabel und schnell erfolgen.
+						</p>
+
+						<div class="image_box">
+							<img src="image002_Werteingabe.gif" alt="Abbildung 1: Werteingabe" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 1: Werteingabe
 							</div>
 						</div>
 
-						<img src="image002_Werteingabe.gif" alt="logo" class="image">
-					</div>
-
-					<h3>Kurzbeschreibung</h3>
-
-					<p>
-						Die im Excel-Standard enthaltene Autotextvervollständigung, während der Eingabe, ist auf eine maximale Anzahl von Zellen begrenzt. Als "Lösung" bietet Excel Drop-Down-Listen an. Aber diese sind optisch unansehnlich und funktionell begrenzt. Über VBA-Programmierung kann man die Grundfunktionalität allerdings zu einem komfortablen Eingabe-Drop-Down-Menü inkl. Autotextvervollständigung aufbohren.
-					</p>
-					<p>
-						Im folgenden Artikel beschreibe ich, wie man eine komfortable Eingabe-Drop-Down-Liste inkl. Autotextvervollständigung und Datenvalidierung realisiert. Ergänzt wird das Ganze um die Möglichkeit der Werte-Vorfilterung und Pivot-Datenanalyse.
-					</p>
-
-					<div id="pre">
-
-						<h3>
-							Voraussetzungen:
-						</h3>
-						<ul>
+						<p>
+							Klickanleitung:
+						</p>
+						<ul class="fa-ul">
 							<li>
-								Schwierigkeitsgrad: Fortgeschritten
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Doppelklick ins
+								<i>Autorenfeld</i>. Ein Drop-Down-Menü erscheint und man beginnt, den Autor einzutragen
 							</li>
-							<li>Skills:
-								<ul>
-									<li>
-										Microsoft Excel ab Version 2007
-									</li>
-									<li>
-										VBA-Programmierung
-									</li>
-									<li>
-										Leiterplattenbestückung (Löten, etc.)
-									</li>
-									<li>
-										Elektronikverständnis
-									</li>
-								</ul>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Die Eingabe wird automatisch vervollständigt, wenn der Autor bereits vorhanden ist
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Doppelklick ins
+								<i>Titelfeld</i> erzeugt bei ausgewählter Option "Vorfilterung" eine Drop-Down-Liste, in der man alphabetisch alle bereits vorhandenen Bücher des Autors sieht. Ist das aktuelle Buch noch nicht vorhanden, trägt man es neu ein
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Bei Option "keine Vorfilterung" werden alle vorhandenen Titel als Drop-Down-Liste angezeigt
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Bei der Eingabe z.B. des Formats kann man direkt über ein Drop-Down-Menü das Buchformat auswählen, ohne Text eingeben zu müssen
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Automatisch wird die Zeilennummerierung am Anfang der Zeile bei Eingabe neuer Werte erzeugt
 							</li>
 						</ul>
 
-						<hr>
+						<h3 id="usecase2">
+							Use Case 2:
+							<a target="_self" href="#usecase2" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h3>
 
-						<h3>Inhalt:</h3>
+						<p>
+							Es sollen zum Beispiel alle Bücher eines Autors, oder alle Bücher eines Genres angezeigt werden.
+						</p>
 
-						<ol>
+						<div class="image_box">
+							<img src="image001_Filter.gif" alt="Abbildung 2: Filter" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 2: Filter
+							</div>
+						</div>
+
+						<p>
+							Klickanleitung:
+						</p>
+
+						<ul class="fa-ul">
 							<li>
-								<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
-									Introduction
-								</a>
-								<ol>
-									<li>
-										<a target="_self" href="#usecases" onclick="onpage_link(event, this);">
-											Use Cases
-										</a>
-										<ol>
-											<li>
-												<a target="_self" href="#usecase1" onclick="onpage_link(event, this);">
-													Use Case 1:
-												</a>
-											</li>
-											<li>
-												<a target="_self" href="#usecase2" onclick="onpage_link(event, this);">
-													Use Case 2:
-												</a>
-											</li>
-											<li>
-												<a target="_self" href="#usecase3" onclick="onpage_link(event, this);">
-													Use Case 3:
-												</a>
-											</li>
-										</ol>
-									</li>
-								</ol>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								In das jeweilige Wertefeld klicken, nach dem man filtern möchte
 							</li>
 							<li>
-								<a target="_self" href="#technischerealisierung" onclick="onpage_link(event, this);">
-									Technische Realisierung
-								</a>
-								<ol>
-									<li>
-										<a target="_self" href="#autovervollstaendigung" onclick="onpage_link(event, this);">
-											Autovervollständigung
-										</a>
-									</li>
-									<li>
-										<a target="_self" href="#wertevorfilterung" onclick="onpage_link(event, this);">
-											Werte-Vorfilterung, sowie allg. Filterung nach Autor & Co.
-										</a>
-									</li>
-									<li>
-										<a target="_self" href="#pivottabellen" onclick="onpage_link(event, this);">
-											Pivot-Tabellen Auswertung
-										</a>
-									</li>
-								</ol>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Auf den Button
+								<i>Filtern</i> klicken -> Das Ergebnis wird angezeigt
 							</li>
 							<li>
-								<a target="_self" href="#fazit" onclick="onpage_link(event, this);">
-									Fazit
-								</a>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Die Filterung wird über den Button
+								<i>Filter löschen</i> wieder aufgehoben
 							</li>
-						</ol>
+						</ul>
 
-					</div>
+						<h3 id="usecase3">
+							Use Case 3:
+							<a target="_self" href="#usecase3" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h3>
 
-				</div>
+						<p>
+							Es soll eine Analyse über alle Genres, Autoren usw. angezeigt werden.
+						</p>
 
-				<div id="body_article">
-
-					<h1 id="introduction">
-						Introduction
-						<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h1>
-
-					<p>
-						Als plakatives Beispiel wird die Verwaltung einer Büchersammlung (Home Library) herangezogen. Der Code ist aber leicht auf beliebige andere Einsatzszenarien übertragbar. Vorrangig ist ein Einsatz dort vorteilhaft, wo große Datenmengen um manuelle Einträge ergänzt oder einfach verwaltet werden sollen.
-						<br>Grundlegende Funktionen des Bücher-Beispiels aus Anwendersicht sind:
-					</p>
-
-
-					<h2 id="usecases">
-						Use Cases
-						<a target="_self" href="#usecases" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h2>
-
-					<h3 id="usecase1">
-						Use Case 1:
-						<a target="_self" href="#usecase1" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h3>
-
-					<p>
-						Es soll ein neues Buch (ein neuer Datensatz) in die Liste eingetragen werden. Man weiß jedoch nicht, ob das Buch bereits vorhanden ist, d.h. man will sehen, welche Bücher von dem Autor bereits in der Sammlung enthalten sind. Die Eingabe soll möglichst komfortabel und schnell erfolgen.
-					</p>
-
-					<div class="image_box">
-						<img src="image002_Werteingabe.gif" alt="Abbildung 1: Werteingabe" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 1: Werteingabe
+						<div class="image_box">
+							<img src="image003_Analyse.gif" alt="Abbildung 3: Analyse" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 3: Analyse
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Klickanleitung:
-					</p>
-					<ul class="fa-ul">
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Doppelklick ins
-							<i>Autorenfeld</i>. Ein Drop-Down-Menü erscheint und man beginnt, den Autor einzutragen
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Die Eingabe wird automatisch vervollständigt, wenn der Autor bereits vorhanden ist
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Doppelklick ins
-							<i>Titelfeld</i> erzeugt bei ausgewählter Option "Vorfilterung" eine Drop-Down-Liste, in der man alphabetisch alle bereits vorhandenen Bücher des Autors sieht. Ist das aktuelle Buch noch nicht vorhanden, trägt man es neu ein
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Bei Option "keine Vorfilterung" werden alle vorhandenen Titel als Drop-Down-Liste angezeigt
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Bei der Eingabe z.B. des Formats kann man direkt über ein Drop-Down-Menü das Buchformat auswählen, ohne Text eingeben zu müssen
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Automatisch wird die Zeilennummerierung am Anfang der Zeile bei Eingabe neuer Werte erzeugt
-						</li>
-					</ul>
+						<p>
+							Klickanleitung:
+						</p>
 
-					<h3 id="usecase2">
-						Use Case 2:
-						<a target="_self" href="#usecase2" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h3>
+						<ul class="fa-ul">
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								In den
+								<i>Analyse</i>-Tabellenblättern können mittels Pivot-Tabellen die Daten gefiltert werden.
+							</li>
+						</ul>
 
-					<p>
-						Es sollen zum Beispiel alle Bücher eines Autors, oder alle Bücher eines Genres angezeigt werden.
-					</p>
+						<h1 id="technischerealisierung">
+							Technische Realisierung
+							<a target="_self" href="#technischerealisierung" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
 
-					<div class="image_box">
-						<img src="image001_Filter.gif" alt="Abbildung 2: Filter" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 2: Filter
+						<p>
+							Zur Umsetzung werden folgende Excel Funktionalitäten verwendet:
+						</p>
+
+						<ul class="fa-ul">
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Pivot-Tabellen
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								VBA-Programmierung
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Combo-Boxen
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Namensbereiche
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Drop-Down-Datenvalidierungslisten (don't worry, das klingt kompliziert, ist aber nur ein Klick)
+							</li>
+						</ul>
+
+						<p>
+							Das Projekt ist grundlegend auf dem "Data Validation Combo-Box"
+							<a href="http://www.contextures.com/xlDataVal10.html?_sm_byp=iVVsnvwVkkMvrWMQ" target="_blank" rel="noopener">Beispielcode</a> aufgebaut, welcher deutlich erweitert wurde. Zusammen werden wir innerhalb von drei großen Schritten die fertige Tabelle erzeugen.
+						</p>
+
+						<h2 id="autovervollstaendigung">
+							Autovervollständigung
+							<a target="_self" href="#autovervollstaendigung" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
+
+						<p>
+							Zunächst einmal ist das Ziel eine dynamische Tabelle zu erzeugen. D.h. der Datenbereich soll sich dynamisch anpassen, wenn in der Quelldatei neue Werte hinzukommen (neue Bücher eingetragen werden). Das lässt sich über
+							<i>Namensbereiche</i> realisieren. Zum Anlegen wechselt man nach
+							<i>Formeln -> Namens-Manager -> Neu...</i>
+						</p>
+
+						<div class="image_box">
+							<img src="image004_Namensmanager1.JPG" alt="Abbildung 3.1: Namens-Manager" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 3.1: Namens-Manager
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Klickanleitung:
-					</p>
+						<p>
+							und gibt in das Dialogfeld den Namen der Datenbank und in das Feld
+							<i>bezieht sich auf</i> folgende Formel ein:
+						</p>
 
-					<ul class="fa-ul">
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							In das jeweilige Wertefeld klicken, nach dem man filtern möchte
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Auf den Button
-							<i>Filtern</i> klicken -> Das Ergebnis wird angezeigt
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Die Filterung wird über den Button
-							<i>Filter löschen</i> wieder aufgehoben
-						</li>
-					</ul>
-
-					<h3 id="usecase3">
-						Use Case 3:
-						<a target="_self" href="#usecase3" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h3>
-
-					<p>
-						Es soll eine Analyse über alle Genres, Autoren usw. angezeigt werden.
-					</p>
-
-					<div class="image_box">
-						<img src="image003_Analyse.gif" alt="Abbildung 3: Analyse" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 3: Analyse
+						<div class="image_box">
+							<img src="image004_Namensmanager.JPG" alt="Abbildung 3.2: Namens-Manager" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 3.2: Namens-Manager
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Klickanleitung:
-					</p>
-
-					<ul class="fa-ul">
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							In den
-							<i>Analyse</i>-Tabellenblättern können mittels Pivot-Tabellen die Daten gefiltert werden.
-						</li>
-					</ul>
-
-					<h1 id="technischerealisierung">
-						Technische Realisierung
-						<a target="_self" href="#technischerealisierung" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h1>
-
-					<p>
-						Zur Umsetzung werden folgende Excel Funktionalitäten verwendet:
-					</p>
-
-					<ul class="fa-ul">
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Pivot-Tabellen
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							VBA-Programmierung
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Combo-Boxen
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Namensbereiche
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Drop-Down-Datenvalidierungslisten (don't worry, das klingt kompliziert, ist aber nur ein Klick)
-						</li>
-					</ul>
-
-					<p>
-						Das Projekt ist grundlegend auf dem "Data Validation Combo-Box"
-						<a href="http://www.contextures.com/xlDataVal10.html?_sm_byp=iVVsnvwVkkMvrWMQ" target="_blank" rel="noopener">Beispielcode</a> aufgebaut, welcher deutlich erweitert wurde. Zusammen werden wir innerhalb von drei großen Schritten die fertige Tabelle erzeugen.
-					</p>
-
-					<h2 id="autovervollstaendigung">
-						Autovervollständigung
-						<a target="_self" href="#autovervollstaendigung" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h2>
-
-					<p>
-						Zunächst einmal ist das Ziel eine dynamische Tabelle zu erzeugen. D.h. der Datenbereich soll sich dynamisch anpassen, wenn in der Quelldatei neue Werte hinzukommen (neue Bücher eingetragen werden). Das lässt sich über
-						<i>Namensbereiche</i> realisieren. Zum Anlegen wechselt man nach
-						<i>Formeln -> Namens-Manager -> Neu...</i>
-					</p>
-
-					<div class="image_box">
-						<img src="image004_Namensmanager1.JPG" alt="Abbildung 3.1: Namens-Manager" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 3.1: Namens-Manager
-						</div>
-					</div>
-
-					<p>
-						und gibt in das Dialogfeld den Namen der Datenbank und in das Feld
-						<i>bezieht sich auf</i> folgende Formel ein:
-					</p>
-
-					<div class="image_box">
-						<img src="image004_Namensmanager.JPG" alt="Abbildung 3.2: Namens-Manager" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 3.2: Namens-Manager
-						</div>
-					</div>
-
-					<pre>
+						<pre>
 						<code class="VBScript">=BEREICH.VERSCHIEBEN($A$3;;;ANZAHL2($A:$A);ANZAHL2($3:$3))</code>
 					</pre>
 
-					<p>
-						Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert lauten:
-					</p>
+						<p>
+							Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert lauten:
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">=BEREICH.VERSCHIEBEN($C$9;;;ANZAHL2($C:$C);ANZAHL2($9:$9))</code>
 					</pre>
 
-					<p>
-						Im konkreten Beispiel mit mehreren Tabellenblättern besteht ergänzend noch der Sonderfall, dass man das Tabellenblatt explizit angeben muss, damit der Bereich korrekt erzeugt wird. Die Formel lautet also:
-					</p>
+						<p>
+							Im konkreten Beispiel mit mehreren Tabellenblättern besteht ergänzend noch der Sonderfall, dass man das Tabellenblatt explizit angeben muss, damit der Bereich korrekt erzeugt wird. Die Formel lautet also:
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">=BEREICH.VERSCHIEBEN(Buecher!$A$3;;;ANZAHL2(Buecher!$A:$A);ANZAHL2(Buecher!$3:$3))</code>
 					</pre>
 
-					<p>
-						Als nächsten Schritt wollen wir eine Autovervollständigung für das Autoren-Eingabefeld erstellen. Excel enthält bereits standardmäßig eine Autovervollständigung, allerdings nur für einige hundert Werte. Ziel ist aber eine Vervollständigung über eine unbegrenzte Anzahl von Autoren. Dies kann über die Funktion
-						<i>Datenvalidierung</i> erreicht werden. Jedoch würde eine solche Validierung über alle Autoren, auch alle doppelten Einträge enthalten. D.h. ist fünf mal Autor XY vorhanden, würde in der Autovervollständigungsliste auch fünf mal dieser Autor angezeigt werden. Ein Trick um das zu verhindern, ist als Quelle der Datenvalidierung eine Tabelle zu verwenden, die jeden Autor nur ein einziges mal enthält. Am einfachsten lässt sich das über Pivot-Tabellen umsetzen. D.h. wir werden eine Pivot-Tabelle der Autoren anlegen. Vorzugsweise in einem neuen Tabellenblatt, damit die Übersicht nicht verloren geht.
+						<p>
+							Als nächsten Schritt wollen wir eine Autovervollständigung für das Autoren-Eingabefeld erstellen. Excel enthält bereits standardmäßig eine Autovervollständigung, allerdings nur für einige hundert Werte. Ziel ist aber eine Vervollständigung über eine unbegrenzte Anzahl von Autoren. Dies kann über die Funktion
+							<i>Datenvalidierung</i> erreicht werden. Jedoch würde eine solche Validierung über alle Autoren, auch alle doppelten Einträge enthalten. D.h. ist fünf mal Autor XY vorhanden, würde in der Autovervollständigungsliste auch fünf mal dieser Autor angezeigt werden. Ein Trick um das zu verhindern, ist als Quelle der Datenvalidierung eine Tabelle zu verwenden, die jeden Autor nur ein einziges mal enthält. Am einfachsten lässt sich das über Pivot-Tabellen umsetzen. D.h. wir werden eine Pivot-Tabelle der Autoren anlegen. Vorzugsweise in einem neuen Tabellenblatt, damit die Übersicht nicht verloren geht.
 
-						<i>Menü -> Einfügen -> Pivot-Tabelle</i> Als Name können wir hier gleich den gerade angelegten, dynamischen Datenbereich
-						<i>Data</i> verwenden. Die Tabelle soll in Zelle B4 des Datenblattes
-						<i>Data</i> angelegt werden.
-					</p>
+							<i>Menü -> Einfügen -> Pivot-Tabelle</i> Als Name können wir hier gleich den gerade angelegten, dynamischen Datenbereich
+							<i>Data</i> verwenden. Die Tabelle soll in Zelle B4 des Datenblattes
+							<i>Data</i> angelegt werden.
+						</p>
 
-					<div class="image_box">
-						<img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 4: Pivot-Tabelle erstellen
+						<div class="image_box">
+							<img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 4: Pivot-Tabelle erstellen
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Anschließend im Pivot-Bericht das Feld
-						<i>Autor</i> auswählen und schon haben wir eine Liste, in der jeder vorhandene Autor nur ein einziges mal auftaucht. Für die weiteren Schritte muss jetzt noch dynamisch ermittelt werden, wie viele Zeilen die Tabelle der Autoren enthält. Dazu wird folgende Excel-Formel in Zelle B2 genutzt.
-					</p>
+						<p>
+							Anschließend im Pivot-Bericht das Feld
+							<i>Autor</i> auswählen und schon haben wir eine Liste, in der jeder vorhandene Autor nur ein einziges mal auftaucht. Für die weiteren Schritte muss jetzt noch dynamisch ermittelt werden, wie viele Zeilen die Tabelle der Autoren enthält. Dazu wird folgende Excel-Formel in Zelle B2 genutzt.
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">=VERWEIS(2;1/(B5:B4000<>"");ZEILE(B5:B4000))-1</code>
 					</pre>
 
-					<div class="image_box">
-						<img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 4: Pivot-Tabelle erstellen
+						<div class="image_box">
+							<img src="image005_Pivot_Table.JPG" alt="Abbildung 4: Pivot-Tabelle erstellen" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 4: Pivot-Tabelle erstellen
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Um die nächsten Schritte zu vereinfachen, benötigen wir einen simpel anzusprechenden Datenbereich, der dynamisch den Inhalt der Pivot-Autoren-Tabelle abdeckt. Also nochmal rein in den Namens-Manager und den Bereich
-						<i>sort_autor</i> angelegt. Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
-					</p>
+						<p>
+							Um die nächsten Schritte zu vereinfachen, benötigen wir einen simpel anzusprechenden Datenbereich, der dynamisch den Inhalt der Pivot-Autoren-Tabelle abdeckt. Also nochmal rein in den Namens-Manager und den Bereich
+							<i>sort_autor</i> angelegt. Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">=Data!$B$5:INDIREKT("Data!$B$"&Data!$B$2)</code>
 					</pre>
 
-					<div class="image_box">
-						<img src="image005_Pivot_Table-Listen.JPG" alt="Abbildung 4.2: Übersicht der" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 4.2: Übersicht der
+						<div class="image_box">
+							<img src="image005_Pivot_Table-Listen.JPG" alt="Abbildung 4.2: Übersicht der" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 4.2: Übersicht der
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Nun legen wir die Datenvalidierung an. Dazu in die Haupttabelle wechseln und die komplette Spalte
-						<i>Autor</i> (Spalte B) der Quelltabelle markieren. Denn wir wollen den Drop-Down ja nicht nur für eine, sondern für alle Zellen haben. Dann
-						<i>Menü -> Daten -> Datenüberprüfung</i>, Ziel ist eine Liste, mit Zellendropdown und als Quelle unsere sortierte Autorenliste. Außerdem eine Eingabemeldung, wenn eine passende Zelle ausgewählt wird.
-					</p>
+						<p>
+							Nun legen wir die Datenvalidierung an. Dazu in die Haupttabelle wechseln und die komplette Spalte
+							<i>Autor</i> (Spalte B) der Quelltabelle markieren. Denn wir wollen den Drop-Down ja nicht nur für eine, sondern für alle Zellen haben. Dann
+							<i>Menü -> Daten -> Datenüberprüfung</i>, Ziel ist eine Liste, mit Zellendropdown und als Quelle unsere sortierte Autorenliste. Außerdem eine Eingabemeldung, wenn eine passende Zelle ausgewählt wird.
+						</p>
 
-					<div class="image_box">
-						<img src="image007_Datenueberpruefung.JPG" alt="Abbildung 6.1: Datenüberprüfung" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 6.1: Datenüberprüfung
+						<div class="image_box">
+							<img src="image007_Datenueberpruefung.JPG" alt="Abbildung 6.1: Datenüberprüfung" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 6.1: Datenüberprüfung
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Nachdem alles eingestellt ist, können wir zum Ersten mal testen. Ein Klick in eine leere Zelle der Autoren-Spalte, sollte eine scrollbare Drop-Down-Liste öffnen, die alle Autoren enthält.
-						<br> Ganz nett, aber noch nicht recht hilfreich. Denn es fehlt noch die automatische Filterung und Vervollständigung der Eingabe.
-						<br> Jetzt kommt VBA ins Spiel um folgendes Verhalten zu erreichen:
-					</p>
+						<p>
+							Nachdem alles eingestellt ist, können wir zum Ersten mal testen. Ein Klick in eine leere Zelle der Autoren-Spalte, sollte eine scrollbare Drop-Down-Liste öffnen, die alle Autoren enthält.
+							<br> Ganz nett, aber noch nicht recht hilfreich. Denn es fehlt noch die automatische Filterung und Vervollständigung der Eingabe.
+							<br> Jetzt kommt VBA ins Spiel um folgendes Verhalten zu erreichen:
+						</p>
 
-					<ul class="fa-ul">
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Ein Doppelklick in die Zelle öffnet den Drop-Down in einer Combo-Box
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							Fängt man an zu tippen, wird automatisch gesucht und eine Vervollständigung angeboten
-						</li>
-					</ul>
+						<ul class="fa-ul">
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Ein Doppelklick in die Zelle öffnet den Drop-Down in einer Combo-Box
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								Fängt man an zu tippen, wird automatisch gesucht und eine Vervollständigung angeboten
+							</li>
+						</ul>
 
-					<p>
-						Zunächst müssen wir dafür eine Combo-Box erstellen. Dazu in das Entwicklermenü wechseln und ein ActiveX-Kombinationsfeld in einem beliebigen Bereich des Tabellenblattes aufziehen. Wo man es dabei platziert ist vollkommen egal. Denn es wird lediglich als Referenzelement genutzt, das später genau an der Stelle eingeblendet wird, wo wir es möchten.
-					</p>
+						<p>
+							Zunächst müssen wir dafür eine Combo-Box erstellen. Dazu in das Entwicklermenü wechseln und ein ActiveX-Kombinationsfeld in einem beliebigen Bereich des Tabellenblattes aufziehen. Wo man es dabei platziert ist vollkommen egal. Denn es wird lediglich als Referenzelement genutzt, das später genau an der Stelle eingeblendet wird, wo wir es möchten.
+						</p>
 
-					<fieldset class="info box">
-						<legend>
-							<i class="fas fa-info-circle fa-fw"></i>
-						</legend>
-						Das Menü ist standardmäßig ausgeblendet und muss erst aktiviert werden. Dazu abhängig von der verwendeten Office Version auf die Microsoft Office-Schaltfläche klicken und dann auf
-						<b>Excel-Optionen</b> gehen. Anschließend auf
-						<b>Beliebt</b> klicken, und das Kontrollkästchen
-						<b>Registerkarte "Entwicklertools" im Menüband anzeigen</b> aktivieren.
-					</fieldset>
+						<fieldset class="info box">
+							<legend>
+								<i class="fas fa-info-circle fa-fw"></i>
+							</legend>
+							Das Menü ist standardmäßig ausgeblendet und muss erst aktiviert werden. Dazu abhängig von der verwendeten Office Version auf die Microsoft Office-Schaltfläche klicken und dann auf
+							<b>Excel-Optionen</b> gehen. Anschließend auf
+							<b>Beliebt</b> klicken, und das Kontrollkästchen
+							<b>Registerkarte "Entwicklertools" im Menüband anzeigen</b> aktivieren.
+						</fieldset>
 
-					<p>
-						Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
-					</p>
+						<p>
+							Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
+						</p>
 
-					<div class="image_box">
-						<img src="image007_ComboBox.JPG" alt="Abbildung 6.2: Erstellen einer Combo-Box" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 6.2: Erstellen einer Combo-Box
+						<div class="image_box">
+							<img src="image007_ComboBox.JPG" alt="Abbildung 6.2: Erstellen einer Combo-Box" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 6.2: Erstellen einer Combo-Box
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Die Drop-Down Combo-Box soll angezeigt werden, wenn doppelt in eine Zelle geklickt wird. Theoretisch ist auch ein anderes Verhalten möglich. Zum Beispiel, dass die Box erscheint, wenn man eine Zelle auswählt, oder anfängt zu tippen. Nach einigen Tests habe ich aber für mich selbst festgestellt, das ein Doppelklick am angenehmsten ist. Also müssen wir für das Arbeitsblatt definieren, was bei einem Doppelklick in einer Zelle geschehen soll. Dazu ein neues Unterprogramm anlegen und über die Schaltfläche im oberen Editorfenster das entsprechende Verhalten auswählen.
-					</p>
+						<p>
+							Die Drop-Down Combo-Box soll angezeigt werden, wenn doppelt in eine Zelle geklickt wird. Theoretisch ist auch ein anderes Verhalten möglich. Zum Beispiel, dass die Box erscheint, wenn man eine Zelle auswählt, oder anfängt zu tippen. Nach einigen Tests habe ich aber für mich selbst festgestellt, das ein Doppelklick am angenehmsten ist. Also müssen wir für das Arbeitsblatt definieren, was bei einem Doppelklick in einer Zelle geschehen soll. Dazu ein neues Unterprogramm anlegen und über die Schaltfläche im oberen Editorfenster das entsprechende Verhalten auswählen.
+						</p>
 
-					<div class="image_box">
-						<img src="image007_Doppelklick.JPG" alt="Abbildung 6.3: Definieren der Doppelklick-Aktion" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 6.3: Definieren der Doppelklick-Aktion
+						<div class="image_box">
+							<img src="image007_Doppelklick.JPG" alt="Abbildung 6.3: Definieren der Doppelklick-Aktion" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 6.3: Definieren der Doppelklick-Aktion
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Als nächstes kommt folgender VBA-Code in das neu angelegte Unterprogramm, in dem wir nun auf die bereits erstellte Combo-Box zugreifen.
-					</p>
+						<p>
+							Als nächstes kommt folgender VBA-Code in das neu angelegte Unterprogramm, in dem wir nun auf die bereits erstellte Combo-Box zugreifen.
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">'** Bei einem Doppelklick in eine Zelle die Autovervollständigende DropDown List anzeigen</code>
 						<code class="VBScript">Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean)</code>
 						<code class="VBScript">    Set xWs = Application.ActiveSheet</code>
 						<code class="VBScript">    Set dWs = ThisWorkbook.Worksheets("Data")       'Worksheet in dem die Pivot-Daten liegen</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">    Dim xStr As String</code>
 						<code class="VBScript">    Dim num_first_line As Integer</code>
 						<code class="VBScript">    Dim num_last_line As Integer</code>
 						<code class="VBScript">    Dim num_prefilter_column As Integer</code>
 						<code class="VBScript">    Dim PvtTbl As PivotTable        'Pivot Table for Prefilter Option</code>
 						<code class="VBScript">    Set PvtTbl = dWs.PivotTables("PivotTable_AutorFilter")</code>
-						<code class="VBScript">        </code>
+						<code></code>
 						<code class="VBScript">    On Error Resume Next</code>
-						<code class="VBScript">        </code>
+						<code></code>
 						<code class="VBScript">        'Drop-Down Vervollständigungsfeld nur per Doppelklick in Zellen anzeigen, die auch über Datenüberprüfung als DropDown konfiguriert sind</code>
 						<code class="VBScript">        If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count < 1 Then</code>
 						<code class="VBScript">            'MsgBox "No Drop Down available"</code>
 						<code class="VBScript">            'do nothing</code>
 						<code class="VBScript">        Else</code>
 						<code class="VBScript">            'MsgBox "Drop Down in active Cell available"</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">             Application.EnableEvents = False</code>
-						<code class="VBScript">    </code>
+						<code></code>
 						<code class="VBScript">                'Combobox zunächst leeren</code>
 						<code class="VBScript">                Set xCombox = xWs.OLEObjects("TempCombo")</code>
 						<code class="VBScript">                With xCombox</code>
@@ -680,18 +680,18 @@
 						<code class="VBScript">                    .LinkedCell = ""</code>
 						<code class="VBScript">                    .Visible = False</code>
 						<code class="VBScript">                End With</code>
-						<code class="VBScript">                </code>
+						<code></code>
 						<code class="VBScript">                If Target.Validation.Type = 3 Then</code>
 						<code class="VBScript">                    Cancel = True</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">                    num_first_line = 5  'erste Zeile in der im Datenblatt Data, die Daten stehen</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">Unfiltered:</code>
 						<code class="VBScript">                        'use the unfiltered complete Title list</code>
 						<code class="VBScript">                        num_last_line = dWs.Cells(2, ActiveCell.Column)</code>
 						<code class="VBScript">                        xStr = dWs.Range(dWs.Cells(num_first_line, ActiveCell.Column), _</code>
 						<code class="VBScript">                            dWs.Cells(num_last_line, ActiveCell.Column)).Address(, , , True)</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">                'MsgBox xStr</code>
 						<code class="VBScript">                   'ComboBox inkl. Titelliste aus Variable xStr anzeigen</code>
 						<code class="VBScript">                    With xCombox</code>
@@ -708,18 +708,18 @@
 						<code class="VBScript">                End If</code>
 						<code class="VBScript">                Application.EnableEvents = True</code>
 						<code class="VBScript">        End If</code>
-						<code class="VBScript">       </code>
+						<code></code>
 						<code class="VBScript">End Sub</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">'** Blendet bei einem Selection Change nur die Combo Box aus</code>
 						<code class="VBScript">Private Sub Worksheet_SelectionChange(ByVal Target As Range)</code>
 						<code class="VBScript">    Set xWs = Application.ActiveSheet</code>
 						<code class="VBScript">    Set dWs = ThisWorkbook.Worksheets("Data")       'Worksheet in dem die Pivot-Daten liegen</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">    On Error GoTo errHandler</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">    If Target.Count > 1 Then GoTo exitHandler</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">    Set xCombox = xWs.OLEObjects("TempCombo")</code>
 						<code class="VBScript">    On Error Resume Next</code>
 						<code class="VBScript">    If xCombox.Visible = True Then</code>
@@ -740,22 +740,22 @@
 						<code class="VBScript">  Exit Sub</code>
 						<code class="VBScript">errHandler:</code>
 						<code class="VBScript">  Resume exitHandler</code>
-						<code class="VBScript">    </code>
+						<code></code>
 						<code class="VBScript">End Sub</code>
 					</pre>
 
-					<p>
-						Außerdem soll die Combo-Box ausgeblendet werden, wenn man die Zelle wechselt oder die Enter-, bzw. TAB-Taste drückt. Dazu ein neues Unterprogramm für das von uns angelegte Element
-						<i>TempCombo</i> anlegen, und wie bereits beim vorherigen Sub, über das obere Rechte Menü ein Aktivierungsverhalten auswählen. Dieses mal, nehmen wir
-						<i>KeyDown</i>, also das drücken einer Taste. In VBA müssen wir jetzt nur noch definieren, dass der Code für
-						<i>Enter</i>, sowie die
-						<i>TAB-Taste</i> reagiert. Dazu reicht eine Switch-Case Struktur aus, die den
-						<i>KeyCode</i> der jeweiligen Taste abprüft. Für den Tabulator ist das z.B. KeyCode 9, für Enter KeyCode 13. Ein vollständige Liste aller KeyCodes findet man bei Bedarf im Internet.
+						<p>
+							Außerdem soll die Combo-Box ausgeblendet werden, wenn man die Zelle wechselt oder die Enter-, bzw. TAB-Taste drückt. Dazu ein neues Unterprogramm für das von uns angelegte Element
+							<i>TempCombo</i> anlegen, und wie bereits beim vorherigen Sub, über das obere Rechte Menü ein Aktivierungsverhalten auswählen. Dieses mal, nehmen wir
+							<i>KeyDown</i>, also das drücken einer Taste. In VBA müssen wir jetzt nur noch definieren, dass der Code für
+							<i>Enter</i>, sowie die
+							<i>TAB-Taste</i> reagiert. Dazu reicht eine Switch-Case Struktur aus, die den
+							<i>KeyCode</i> der jeweiligen Taste abprüft. Für den Tabulator ist das z.B. KeyCode 9, für Enter KeyCode 13. Ein vollständige Liste aller KeyCodes findet man bei Bedarf im Internet.
 
-					</p>
+						</p>
 
 
-					<pre>
+						<pre>
 						<code class="VBScript">'** Hide combo box and move to next cell on Enter and Tab</code>
 						<code class="VBScript">Private Sub TempCombo_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)</code>
 						<code class="VBScript">    Select Case KeyCode</code>
@@ -769,23 +769,23 @@
 						<code class="VBScript">End Sub</code>
 					</pre>
 
-					<p>
-						Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert!
-						<br> Aber schade, denn momentan funktioniert es nur für die Autoren. Das ist jedoch gar kein Problem. Um das gleiche Verhalten für alle anderen Spalten (Buchtitel, Genre, usw.) zu erhalten, muss die obige Prozedur mit anlegen von Pivot-Tabellen und Namensbereichen einfach wiederholt werden. Der VBA-Code ist universell und muss nicht angepasst werden.
-						<br>
-						<br> Ein ungewünschtes Verhalten würde man mit der aktuellen Lösung aber nach einiger Zeit feststellen. Denn neu eingegebene Daten werden unten an die Pivot-Tabelle rangehängt. Diese neuen Autoren tauchen dann in der Drop-Down-Liste nicht mehr an der richtigen Stelle auf, weil die Pivot-Tabelle nicht mehr sauber alphabetisch sortiert ist. Blöd, aber mit VBA kein Problem. Mit zwei kleinen Funktionen, kann man erstens, alle Pivot-Tabellen aktualisieren (refreshen) und alle Pivot-Tabellen alphabetisch sortieren.
-						<br> VBA-Alle Pivots aktualisieren:
-					</p>
+						<p>
+							Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert!
+							<br> Aber schade, denn momentan funktioniert es nur für die Autoren. Das ist jedoch gar kein Problem. Um das gleiche Verhalten für alle anderen Spalten (Buchtitel, Genre, usw.) zu erhalten, muss die obige Prozedur mit anlegen von Pivot-Tabellen und Namensbereichen einfach wiederholt werden. Der VBA-Code ist universell und muss nicht angepasst werden.
+							<br>
+							<br> Ein ungewünschtes Verhalten würde man mit der aktuellen Lösung aber nach einiger Zeit feststellen. Denn neu eingegebene Daten werden unten an die Pivot-Tabelle rangehängt. Diese neuen Autoren tauchen dann in der Drop-Down-Liste nicht mehr an der richtigen Stelle auf, weil die Pivot-Tabelle nicht mehr sauber alphabetisch sortiert ist. Blöd, aber mit VBA kein Problem. Mit zwei kleinen Funktionen, kann man erstens, alle Pivot-Tabellen aktualisieren (refreshen) und alle Pivot-Tabellen alphabetisch sortieren.
+							<br> VBA-Alle Pivots aktualisieren:
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">Sub PivotTables_Refresh() ThisWorkbook.RefreshAll End Sub</code>
 					</pre>
 
-					<p>
-						In allen Pivots Werte alphabetisch sortieren:
-					</p>
+						<p>
+							In allen Pivots Werte alphabetisch sortieren:
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">Sub PivotTables_AutoSortAZAllFields()</code>
 						<code class="VBScript">    Dim ws As Worksheet</code>
 						<code class="VBScript">    Dim pt As PivotTable</code>
@@ -805,65 +805,65 @@
 						<code class="VBScript">End Sub</code>
 					</pre>
 
-					<h2 id="wertevorfilterung">
-						Werte-Vorfilterung, sowie allg. Filterung nach Autor & Co.
-						<a target="_self" href="#wertevorfilterung" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h2>
+						<h2 id="wertevorfilterung">
+							Werte-Vorfilterung, sowie allg. Filterung nach Autor & Co.
+							<a target="_self" href="#wertevorfilterung" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
 
-					<p>
-						Als nächstes Feature schauen wir uns die Werte-Vorfilterung an. Dahinter steckt nichts anderes, als folgender Wunsch. Man pflegt ein neues Buch ein und trägt hierfür als Erstes den
-						<i>Autor</i> in das entsprechende Feld. Beim eintragen des
-						<i>Titels</i>, sollen nun automatisch alle Bücher angezeigt werden, die von dem jeweiligen Autor bereits vorhanden sind, z.B. um Doppeleinträge zu vermeiden. Auch diese Funktionalität kann über Pivot-Tabellen realisiert werden. Wir legen also wie bereits für die andern Felder, eine neue Pivot-Tabelle an und geben ihr einen eindeutigen Namen (
-						<i>Rechtsklick -> Pivot-Tabelle-Optionen</i>, Im Beispiel heißt die Tabelle
-						<i>PivotTable_AutorFilter</i>).
-					</p>
+						<p>
+							Als nächstes Feature schauen wir uns die Werte-Vorfilterung an. Dahinter steckt nichts anderes, als folgender Wunsch. Man pflegt ein neues Buch ein und trägt hierfür als Erstes den
+							<i>Autor</i> in das entsprechende Feld. Beim eintragen des
+							<i>Titels</i>, sollen nun automatisch alle Bücher angezeigt werden, die von dem jeweiligen Autor bereits vorhanden sind, z.B. um Doppeleinträge zu vermeiden. Auch diese Funktionalität kann über Pivot-Tabellen realisiert werden. Wir legen also wie bereits für die andern Felder, eine neue Pivot-Tabelle an und geben ihr einen eindeutigen Namen (
+							<i>Rechtsklick -> Pivot-Tabelle-Optionen</i>, Im Beispiel heißt die Tabelle
+							<i>PivotTable_AutorFilter</i>).
+						</p>
 
-					<div class="image_box">
-						<img src="image008_Vorfilterung.JPG" alt="Abbildung 8: Werte Vorfilterung" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 8: Werte Vorfilterung
+						<div class="image_box">
+							<img src="image008_Vorfilterung.JPG" alt="Abbildung 8: Werte Vorfilterung" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 8: Werte Vorfilterung
+							</div>
 						</div>
-					</div>
 
-					<p>
-						Per VBA erstellen wir nun die Regel, dass bei einem Klick ins Buch-Titelfeld der bereits eingegebene Autorenname als Filterwert der Pivot-Tabelle verwendet wird. Dazu müssen zunächst alle vorherigen Filter gelöscht werden
-					</p>
+						<p>
+							Per VBA erstellen wir nun die Regel, dass bei einem Klick ins Buch-Titelfeld der bereits eingegebene Autorenname als Filterwert der Pivot-Tabelle verwendet wird. Dazu müssen zunächst alle vorherigen Filter gelöscht werden
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">PvtTbl.ClearAllFilters</code>
 					</pre>
 
-					<p>
-						<br> Anschließend können wir den neuen Filter setzen
-					</p>
+						<p>
+							<br> Anschließend können wir den neuen Filter setzen
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">PvtTbl.PivotFields("Autor").PivotFilters.Add _ Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value</code>
 					</pre>
 
-					<p>
-						<br> Über das Kommando
-						<i>xlCaptionContains</i> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B.
-						<i>Mustermann, Max und Grisham, John</i> im Autorenfeld geführt werden. Möchte man exakt nach den Autorennamen suchen, ist dies über die Option
-						<i>xlCaptionEquals</i> möglich. In diesem Fall würden nur Bücher mit
-						<i>Grisham, John</i> gefunden werden. Das Beispiel
-						<i>Mustermann, Max und Grisham, John</i> würde nicht auftauchen.
-						<br> Die Länge der Ergebnisliste wird über den bereits bekannten Trick mit der Suche nach dem letzten Eintrag ermittelt.
-					</p>
+						<p>
+							<br> Über das Kommando
+							<i>xlCaptionContains</i> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B.
+							<i>Mustermann, Max und Grisham, John</i> im Autorenfeld geführt werden. Möchte man exakt nach den Autorennamen suchen, ist dies über die Option
+							<i>xlCaptionEquals</i> möglich. In diesem Fall würden nur Bücher mit
+							<i>Grisham, John</i> gefunden werden. Das Beispiel
+							<i>Mustermann, Max und Grisham, John</i> würde nicht auftauchen.
+							<br> Die Länge der Ergebnisliste wird über den bereits bekannten Trick mit der Suche nach dem letzten Eintrag ermittelt.
+						</p>
 
-					<pre>
+						<pre>
 						<code class="VBScript">num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O</code>
 						<code class="VBScript">num_last_line = dWs.Cells(2, num_prefilter_column)</code>
 			 			<code class="VBScript">                    '** Prefilter Option</code>
 						<code class="VBScript">                    ' Bei aktivierter Option werden vom aktuell eingegebenen Autor nur die bereits im Bestand vorhandenen</code>
 						<code class="VBScript">                    ' Titel angezeigt. Es erfolgt also eine Vorfilterung. Bei deaktivierter Funktion werden alle Titel</code>
 						<code class="VBScript">                    ' im Bestand angezeigt</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">                    'Prefilter activated and Current cell is a Title Cell</code>
 						<code class="VBScript">                    If (xWs.OptBtn_Prefilter.Value = True And ActiveCell.Column = 3) Then</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">                        'bestehende Filter löschen</code>
 						<code class="VBScript">                        PvtTbl.ClearAllFilters</code>
 						<code class="VBScript">                        'den content der aktuell ausgewählten Zelle als neuen Filterwert der Pivot-Tabelle nutzen</code>
@@ -871,10 +871,10 @@
 						<code class="VBScript">                            'xlCaptionContains = Abrüfung ob enthalten, z.B. bei Sammelautoren</code>
 						<code class="VBScript">                        PvtTbl.PivotFields("Autor").PivotFilters.Add _</code>
 						<code class="VBScript">                            Type:=xlCaptionContains, Value1:=Application.Cells(ActiveCell.Row, ActiveCell.Column - 1).Value</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">                        num_prefilter_column = 15   'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O</code>
 						<code class="VBScript">                        num_last_line = dWs.Cells(2, num_prefilter_column)</code>
-						<code class="VBScript"></code>
+						<code></code>
 						<code class="VBScript">                        If (num_last_line = 4) Then</code>
 						<code class="VBScript">                            GoTo Unfiltered 'if author is new, hence there is no title content, show the unfiltered list</code>
 						<code class="VBScript">                        Else</code>
@@ -890,139 +890,139 @@
 						<code class="VBScript">                    End If</code>
 					</pre>
 
-					<h2 id="pivottabellen">
-						Pivot-Tabellen Auswertung
-						<a target="_self" href="#pivottabellen" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h2>
+						<h2 id="pivottabellen">
+							Pivot-Tabellen Auswertung
+							<a target="_self" href="#pivottabellen" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
 
-					<p>
-						Abschließend ist vielleicht noch eine statistische Auswertung über den gesamten Bestand interessant.
-						<br>
-						<br> Zum Beispiel:
-					</p>
-
-					<ul class="fa-ul">
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							wie viele Bücher gibt es in den einzelnen Genres
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							in welchen Sprachen sind Bücher vorhanden
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							welche Bücher gibt es von den einzelnen Autoren
-						</li>
-						<li>
-							<span class="fa-li">
-								<i class="fas fa-hand-point-right"></i>
-							</span>
-							... und alles was man sich sonst noch vorstellen kann
-						</li>
-					</ul>
-
-					<p>
-						Zu diesem Thema brauche ich nun eigentlich fast nichts mehr erklären. Denn wie schon mehrfach, kommen wieder einmal die Pivot-Tabellen zum Einsatz. Dazu können wir einfach in einem neuen Tabellenblatt beliebig viele Pivot-Tabellen mit unserer Haupttabelle
-						<i>Data</i> als Datenquelle anlegen. Über die zugehörigen Pivot-Charts können die Tabellen dann auch noch anschaulich visualisiert werden.
-					</p>
-
-					<div class="image_box">
-						<img src="image009_Analyse.JPG" alt="Abbildung 9: Pivot Analyse" onclick="show(this)">
-						<div class="image_text">
-							Abbildung 9: Pivot Analyse
-						</div>
-					</div>
-
-					<h1 id="fazit">
-						Fazit
-						<a target="_self" href="#fazit" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h1>
-
-					<p>
-						Mittels VBA und der exzessiven Nutzung von Pivot-Tabellen, kann die standard Excel-Funktionalität von Drop-Down-Listen und Autovervollständigung deutlich erweitert werden. So ist es möglich eine sehr komfortable, interaktive Umgebung zum Pflegen großer Datenbanken anzulegen. Als Beispiel wurde die Verwaltung des Bücherbestands einer Heimbibliothek dargestellt. Die Techniken können aber ohne Aufwand für viele andere Zwecke angepasst werden.
-					</p>
-
-					<div id="blur_bg" class="modal">
-						<img class="modalcontent" id="bigview" alt="bigview" src=".">
-					</div>
-
-					<hr>
-				</div>
-
-				<div id="footer_article">
-					<p>
-						Haben wir dein Interesse geweckt für noch mehr, oder willst du einfach so über das Thema reden, oder hast du sogar Vorschläge zu dem Artikel?
-						<br>Kontaktier uns einfach, wir sind immer offen für Kritik :)
-					</p>
-					<h4>Wir freuen uns von dir zu hören und wir antworten immer</h4>
-					<div id="buisnesscard">
-						<img alt="logo" src="/logo/logo_1.png">
-
-						<div>
-							<b>su IT --blog</b>
+						<p>
+							Abschließend ist vielleicht noch eine statistische Auswertung über den gesamten Bestand interessant.
 							<br>
-							<i class="fas fa-envelope fa-fw"></i>
-							<a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
+							<br> Zum Beispiel:
+						</p>
 
-							<br>
+						<ul class="fa-ul">
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								wie viele Bücher gibt es in den einzelnen Genres
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								in welchen Sprachen sind Bücher vorhanden
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								welche Bücher gibt es von den einzelnen Autoren
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								... und alles was man sich sonst noch vorstellen kann
+							</li>
+						</ul>
 
-							<i class="fab fa-telegram fa-fw"></i>
-							<a href="https://t.me/suitblog" target="_blank" rel="noopener">@suitblog</a>
+						<p>
+							Zu diesem Thema brauche ich nun eigentlich fast nichts mehr erklären. Denn wie schon mehrfach, kommen wieder einmal die Pivot-Tabellen zum Einsatz. Dazu können wir einfach in einem neuen Tabellenblatt beliebig viele Pivot-Tabellen mit unserer Haupttabelle
+							<i>Data</i> als Datenquelle anlegen. Über die zugehörigen Pivot-Charts können die Tabellen dann auch noch anschaulich visualisiert werden.
+						</p>
+
+						<div class="image_box">
+							<img src="image009_Analyse.JPG" alt="Abbildung 9: Pivot Analyse" onclick="show(this)">
+							<div class="image_text">
+								Abbildung 9: Pivot Analyse
+							</div>
 						</div>
+
+						<h1 id="fazit">
+							Fazit
+							<a target="_self" href="#fazit" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
+
+						<p>
+							Mittels VBA und der exzessiven Nutzung von Pivot-Tabellen, kann die standard Excel-Funktionalität von Drop-Down-Listen und Autovervollständigung deutlich erweitert werden. So ist es möglich eine sehr komfortable, interaktive Umgebung zum Pflegen großer Datenbanken anzulegen. Als Beispiel wurde die Verwaltung des Bücherbestands einer Heimbibliothek dargestellt. Die Techniken können aber ohne Aufwand für viele andere Zwecke angepasst werden.
+						</p>
+
+						<div id="blur_bg" class="modal">
+							<img class="modalcontent" id="bigview" alt="bigview" src=".">
+						</div>
+
+						<hr>
 					</div>
-					<p>
-						Grammatik Fehler? Technischer Fehler? Oder nicht mehr aktuelle Informationen?
-						<br>Falls dieser Atikel irgend eine Art von Update oder Vervollständigung braucht, bitte lasse es uns wissen.
-					</p>
-					<p>
-						Wenn euch der Artikel gefallen hat,
-						<a target="_blank" rel="noopener" href="/about_us.html#mate">spendiert uns doch einen Kaffee</a>! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content kostenlos und werbefrei bereitstellen. Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
-					</p>
-					<h3>
-						Vielen Dank fürs lesen!
-					</h3>
+
+					<div id="footer_article">
+						<p>
+							Haben wir dein Interesse geweckt für noch mehr, oder willst du einfach so über das Thema reden, oder hast du sogar Vorschläge zu dem Artikel?
+							<br>Kontaktier uns einfach, wir sind immer offen für Kritik :)
+						</p>
+						<h4>Wir freuen uns von dir zu hören und wir antworten immer</h4>
+						<div id="buisnesscard">
+							<img alt="logo" src="/logo/logo_1.png">
+
+							<div>
+								<b>su IT --blog</b>
+								<br>
+								<i class="fas fa-envelope fa-fw"></i>
+								<a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
+
+								<br>
+
+								<i class="fab fa-telegram fa-fw"></i>
+								<a href="https://t.me/suitblog" target="_blank" rel="noopener">@suitblog</a>
+							</div>
+						</div>
+						<p>
+							Grammatik Fehler? Technischer Fehler? Oder nicht mehr aktuelle Informationen?
+							<br>Falls dieser Atikel irgend eine Art von Update oder Vervollständigung braucht, bitte lasse es uns wissen.
+						</p>
+						<p>
+							Wenn euch der Artikel gefallen hat,
+							<a target="_blank" rel="noopener" href="/about_us.html#mate">spendiert uns doch einen Kaffee</a>! Damit können wir die laufenden Server-Kosten decken und fortlaufend neuen Content kostenlos und werbefrei bereitstellen. Als Dankeschön gibt es das voll funktionsfähige Excel-File als Download.
+						</p>
+						<h3>
+							Vielen Dank fürs lesen!
+						</h3>
+					</div>
+
 				</div>
 
 			</div>
 
 		</div>
 
-	</div>
-
-	<div id="footer" class="canvas">
-		<canvas height="50" width="200" id="animation_canvas_footer">
-		</canvas>
-		<div id="disclaimer">
-			There is nothing more to discover down here ¯\_(ツ)_/¯
-			<br>
-			<i class="fas fa-closed-captioning"></i> 2017
-			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
-			<a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+		<div id="footer" class="canvas">
+			<canvas height="50" width="200" id="animation_canvas_footer">
+			</canvas>
+			<div id="disclaimer">
+				There is nothing more to discover down here ¯\_(ツ)_/¯
+				<br>
+				<i class="fas fa-closed-captioning"></i> 2017
+				<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
+				<a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+			</div>
 		</div>
-	</div>
 
-	<script src="/js/animation.min.js" async></script>
-	<script src="/js/cli_write.min.js" async></script>
-	<script src="/js/main_nav.min.js" async></script>
-	<script src="/js/additional_nav.min.js" async></script>
-	<script src="/js/scroll.min.js" async></script>
-	<script src="/js/imageview.min.js" async></script>
-	<script src="/js/highlight.pack.js"></script>
-	<script>
-		hljs.initHighlightingOnLoad();
-	</script>
+		<script src="/js/animation.min.js" async></script>
+		<script src="/js/cli_write.min.js" async></script>
+		<script src="/js/main_nav.min.js" async></script>
+		<script src="/js/additional_nav.min.js" async></script>
+		<script src="/js/scroll.min.js" async></script>
+		<script src="/js/imageview.min.js" async></script>
+		<script src="/js/highlight.pack.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
 
-</body>
+	</body>
 
 </html>

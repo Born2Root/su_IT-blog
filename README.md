@@ -39,11 +39,7 @@ suit-blog.net finally online: 13.12.2017
 - about us
 - meme page
 - write posts
-- statistics
-
-- highlighting fixen, keine leerzeichen
 - bild für excel artikel
-- durch min versionen falsche reihenfolge von css (übersichts liste zu weit auseinander)
 
 ## zukunft:
 

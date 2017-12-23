@@ -73,23 +73,20 @@
 	counter-reset: overview;
 	list-style-type: none;
 	padding-left: 30px;
+	margin: 0px 0px 15px 0px;
 }
 
-#pre ol li {
-	margin: 20px 0px;
-}
-
-#pre li li {
-	margin: 0px;
-}
-
-#console {
-	margin-right: -7px;
+#pre li {
+	margin: 2px 0px 0px 0px;
 }
 
 #pre ol li::before {
 	counter-increment: overview;
 	content: counters(overview, ".") " ";
+}
+
+#console {
+	margin-right: -7px;
 }
 
 @font-face {
@@ -146,11 +143,12 @@ ul {
 }
 
 pre {
+	font-size: 15px;
 	width: 100%;
 	white-space: normal;
 	line-height: 22px;
-	box-shadow: 0px 0px 11px 2px #000000a8;
-	-webkit-box-shadow: 0px 0px 11px 2px #000000a8;
+	box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.659);
+	-webkit-box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.659);
 	counter-reset: line;
 	border-left: 5px solid #ff6d00;
 	border-radius: 3px;
@@ -158,6 +156,7 @@ pre {
 }
 
 code {
+	white-space: pre-wrap;
 	counter-increment: line;
 	padding: 2px 0.5em !important;
 	font-family: hack_font;
@@ -186,7 +185,7 @@ code {
 
 code:not(.command):before {
 	color: #ffffff;
-	content: counter(line) ". ";
+	content: counter(line, decimal-leading-zero) ". ";
 }
 
 code:nth-child(even) {

@@ -1,285 +1,350 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+	<head>
 
-	<title>
-		Script To Play Sound In Your Terminal | Part 2 of how to rice your setup | su IT --blog | suit-blog.net
-	</title>
+		<title>
+			Script To Play Sound In Your Terminal | Part 2 of how to rice your setup | su IT --blog | suit-blog.net
+		</title>
 
-	<!-- meta -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="HOW-TO on playing sounds in linux on certain events | suit-blog.net">
-	<meta name="keywords" content="linux, blog, suit, sudo, it, scripts, bash, programming, terminal, console, diy, sound, mplayer, vlc">
-	<meta name="robots" content="index, follow">
+		<!-- meta -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="HOW-TO on playing sounds in linux on certain events | suit-blog.net">
+		<meta name="keywords" content="linux, blog, suit, sudo, it, scripts, bash, programming, terminal, console, diy, sound, mplayer, vlc">
+		<meta name="robots" content="index, follow">
 
-	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
-	<!-- mobile css -->
-	<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.min.css">
-	<!-- desktop css -->
-	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.min.css">
+		<!-- main css -->
+		<link rel="stylesheet" type="text/css" href="/css/main.min.css">
+		<!-- mobile css -->
+		<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.min.css">
+		<!-- desktop css -->
+		<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.min.css">
 
-	<!-- favicon -->
-	<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
+		<!-- favicon -->
+		<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
 
-	<!-- web app manifest -->
-	<link rel="manifest" href="/manifest.json">
+		<!-- web app manifest -->
+		<link rel="manifest" href="/manifest.json">
 
-	<!-- font awesome -->
-	<link rel="stylesheet" href="/css/fontawesome-all.min.css">
+		<!-- font awesome -->
+		<link rel="stylesheet" href="/css/fontawesome-all.min.css">
 
-	<!-- highlight.js -->
-	<link rel="stylesheet" href="/styles/atelier-forest-dark.min.css">
+		<!-- highlight.js -->
+		<link rel="stylesheet" href="/styles/atelier-forest-dark.min.css">
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<div id="header">
+		<div id="header">
 
-		<div id="banner" class="canvas">
+			<div id="banner" class="canvas">
 
-			<canvas height="50" width="200" id="animation_canvas_header">
-			</canvas>
+				<canvas height="50" width="200" id="animation_canvas_header">
+				</canvas>
 
-			<i class="fas fa-bars fa-fw" id="burger"></i>
+				<i class="fas fa-bars fa-fw" id="burger"></i>
 
-			<div id="headline">
-				<a href="/" target="_self">
-					$ su IT --blog
+				<div id="headline">
+					<a href="/" target="_self">
+						$ su IT --blog
+					</a>
+					<div id="subtitle">
+						<span id="console">- we sudo everything</span>
+						<span class="cursor">|</span> -
+					</div>
+				</div>
+
+				<a target="_self" href="/">
+					<img alt="logo" src="/logo/logo_1.png" id="logo">
 				</a>
-				<div id="subtitle">
-					<span id="console">- we sudo everything</span>
-					<span class="cursor">|</span> -
+			</div>
+
+			<div id="menu">
+				<ul>
+					<li>
+						<a href="/index.php?tag=linux;" target="_self">
+							Linux
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=scripts;" target="_self">
+							Scripts
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=raspberry;" target="_self">
+							Raspberry Pi
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=programming;" target="_self">
+							Programming
+						</a>
+					</li>
+					<li>
+						<a href="/gallery.html" target="_self">
+							Gallery
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=various;" target="_self">
+							Various
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div id="body">
+
+			<div id="nav_right" class="nav">
+				<div id="top">
+					<i class="fas fa-arrow-up fa-fw"></i> Top
+				</div>
+
+				<div id="back">
+					<i class="fas fa-arrow-left fa-fw"></i> Back
 				</div>
 			</div>
 
-			<a target="_self" href="/">
-				<img alt="logo" src="/logo/logo_1.png" id="logo">
-			</a>
-		</div>
-
-		<div id="menu">
-			<ul>
-				<li>
-					<a href="/index.php?tag=linux;" target="_self">
-						Linux
+			<div id="nav_left" class="nav">
+				<div>
+					<a target="_blank" rel="noopener" href="/about_us.html#mate">
+						<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
 					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=scripts;" target="_self">
-						Scripts
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=raspberry;" target="_self">
-						Raspberry Pi
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=programming;" target="_self">
-						Programming
-					</a>
-				</li>
-				<li>
-					<a href="/gallery.html" target="_self">
-						Gallery
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=various;" target="_self">
-						Various
-					</a>
-				</li>
-			</ul>
-		</div>
-
-	</div>
-
-	<div id="body">
-
-		<div id="nav_right" class="nav">
-			<div id="top">
-				<i class="fas fa-arrow-up fa-fw"></i> Top
-			</div>
-
-			<div id="back">
-				<i class="fas fa-arrow-left fa-fw"></i> Back
-			</div>
-		</div>
-
-		<div id="nav_left" class="nav">
-			<div>
-				<a target="_blank" rel="noopener" href="/about_us.html#mate">
-					<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
-				</a>
-			</div>
-
-			<div>
-				<a target="_blank" rel="noopener" href="/about_us.html#book">
-					<i class="fas fa-shopping-cart fa-fw"></i> Book Us
-				</a>
-			</div>
-		</div>
-
-		<div id="background">
-		</div>
-
-		<div id="container">
-
-			<div id="article">
+				</div>
 
 				<div>
+					<a target="_blank" rel="noopener" href="/about_us.html#book">
+						<i class="fas fa-shopping-cart fa-fw"></i> Book Us
+					</a>
+				</div>
+			</div>
 
-					<h1>
-						Script To Play Sound In Your Terminal
-					</h1>
-					<h2>
-						Let your terminal play sounds on certain events
-					</h2>
+			<div id="background">
+			</div>
 
-					<div id="box">
-						<div id="tags_article">
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">
-									<i class="fas fa-clock"></i> 5min read</div>
+			<div id="container">
+
+				<div id="article">
+
+					<div>
+
+						<h1>
+							Script To Play Sound In Your Terminal
+						</h1>
+						<h2>
+							Let your terminal play sounds on certain events
+						</h2>
+
+						<div id="box">
+							<div id="tags_article">
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">
+										<i class="fas fa-clock"></i> 5min read</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">linux</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">programming</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">scripts</div>
+								</div>
 							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">linux</div>
-							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">programming</div>
-							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">scripts</div>
-							</div>
+
+							<img src="console.png" alt="logo" class="image">
 						</div>
 
-						<img src="console.png" alt="logo" class="image">
+						<div id="pre">
+
+							<h3>
+								Requirements:
+							</h3>
+							<ul>
+								<li>
+									Difficulty: Easy
+								</li>
+
+								<li>
+									Needs:
+									<ul>
+										<li>
+											mplayer, vlc or similar
+										</li>
+										<li>
+											bash basics
+										</li>
+										<li>
+											linux basics
+										</li>
+										<li>
+											some short sound files
+										</li>
+										<li>
+											that's it, you are good to go :)
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+						</div>
+
 					</div>
 
-					<div id="pre">
+					<div id="body_article">
+						<h1 id="introduction">
+							Introduction
+							<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
 
-						<h3>
-							Requirements:
-						</h3>
-						<ul>
+						<p>
+							Hey,
+							<br>After
+							<a href="/articles/script_to_rice_your_linux_terminal/script_to_rice_your_linux_terminal.html" target="_blank" rel="noopener">the first part</a> of ricing your system, we are working with sound now...
+						</p>
+
+						<p>
+							I had the idea for this script already years ago. Some time after playing through the Portal game series. Back then I was mainly using Windows.
+							<br> I really like the sounds the turrets are making.
+							<!-- image of turret -->
+							<br> So I wondered why not use those sounds somewhere else? Maybe let my PC play them for me at certain events? There surely is a time where it fits.
+						</p>
+
+						<p>
+							But first I needed the sounds, so I googled and found a
+							<a href="https://theportalwiki.com/wiki/Turret_voice_lines" target="_blank" rel="noopener">wiki page</a> which provides all the sound files of the turrets. And even better I found a forum with a
+							<a href="https://www.fileplanet.com/219751/210000/fileinfo/Portal-2---Turret-Sound-Pack" target="_blank" rel="noopener">zip</a> with all sounds included. So we don't have to download them individually, yay :D
+						</p>
+
+
+						<h2 id="firstimplementation">
+							First Implementation
+							<a target="_self" href="#firstimplementation" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
+
+						<p>
+							So, under Windows, it was obvious to open up the controls and just change the sounds to the ones I just downloaded and extracted. And we are done.
+							<br>
+							<br> Now some years later, I came up with this idea again. But this time while using Linux. The problem: in most distros are no default sounds or even a control panel for it, especially not in Arch, which is what I am running. So I had to find a different solution. Something custom. My solution: we simply script it ourself in bash
+						</p>
+
+						<h1 id="introduction">
+							Introduction TODO
+							<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
+
+						<p>
+							I installed mplayer, although every other via console usable player should be right. (I switched and I am now using cvlc, the console version of the vlc player. Works like charm.)
+						</p>
+
+						<fieldset class="info box">
+							<legend>
+								<i class="fas fa-info-circle fa-fw"></i>
+							</legend>
+							If you are using vlc like I am now, just type "cvlc --play-and-exit" instead of "mplayer" in every file we will create.
+						</fieldset>
+
+						<p>
+							Then I looked through the sounds available and picked the ones, I want to use. And I renamed them, so I could access them easily via bash. And then I wrote myself a (very) little bash script:
+						</p>
+
+						<pre>
+							<code class="bash">#!/bin/bash</code>
+							<code></code>
+							<code class="bash">RAND=$[ $RANDOM % 20 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/error/error_$RAND.wav >/dev/null 2>&1 &</code>
+						</pre>
+
+						<p>
+							So what did we just type?
+							<br> The `shebang` of course, to say with what we want to run our program.
+							<br> Then to make things random and not the same every time, a random number in range of the amount of available files.
+						</p>
+
+						<p>
+							And then I call `mplayer` (or whatever you want to use; for me now `cvlc`; see above) with the file name according to the use case, so in this case for error sounds. Every file with the format error_*.wav will be played. Which sounds you use doesn't matter. You can use the portal sounds like I did, then you will hear something like "ahou", "ohh", "please stop" or "critical error". But if you have the sound files of any other videogame or similar you can use them as well. (Maybe you like the sounds of cl4p-tp from Borderlands more. They can also be downloaded)
+						</p>
+
+						<p>
+							And then I redirect the terminal output to `/dev/null` to not get it in my console every time the script is called. This would be very annoying. And would make it hard to read what you were doing.
+							<br> And we want this all to run in the background. So we can continue while our sound is being played and we don't have to wait. Therefore we put an `&` at the end so bash will run it "parallel" in the background.
+						</p>
+
+						<hr>
+
+						<p>
+							So my events when a sound should be played:
+						</p>
+
+						<ul class="fa-ul">
 							<li>
-								Difficulty: Easy
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								on start up
 							</li>
-
 							<li>
-								Needs:
-								<ul>
-									<li>
-										mplayer, vlc or similar
-									</li>
-									<li>
-										bash basics
-									</li>
-									<li>
-										linux basics
-									</li>
-									<li>
-										some short sound files
-									</li>
-									<li>
-										that's it, you are good to go :)
-									</li>
-								</ul>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								before shutdown
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								on error in terminal
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								while find/locate
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								while pacman
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								while whoami
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								before lockscreen (if you got one)
 							</li>
 						</ul>
 
-					</div>
+						<p>
+							The principal of the scripts and the call of them is not every time the same.
+							<br>
+							<br> So I guess we start easy with the lock screen. Although not all of you will have one. But I got one, and I am using i3lock. So for me I got a script which works with some images and gives them then to i3lock and make a fancy looking lock screen. I did not came up with this code, I just modified it and riced it a bit and used it.
+						</p>
 
-				</div>
-
-				<div id="body_article">
-					<h1 id="introduction">
-						Introduction
-						<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h1>
-
-					<p>
-						Hey,
-						<br>After
-						<a href="/articles/script_to_rice_your_linux_terminal/script_to_rice_your_linux_terminal.html" target="_blank" rel="noopener">the first part</a> of ricing your system, we are working with sound now...
-					</p>
-
-					<p>
-						I had the idea for this script already years ago. Some time after playing through the Portal game series. Back then I was mainly using Windows.
-						<br> I really like the sounds the turrets are making.
-						<!-- image of turret -->
-						<br> So I wondered why not use those sounds somewhere else? Maybe let my PC play them for me at certain events? There surely is a time where it fits.
-					</p>
-
-					<p>
-						But first I needed the sounds, so I googled and found a
-						<a href="https://theportalwiki.com/wiki/Turret_voice_lines" target="_blank" rel="noopener">wiki page</a> which provides all the sound files of the turrets. And even better I found a forum with a
-						<a href="https://www.fileplanet.com/219751/210000/fileinfo/Portal-2---Turret-Sound-Pack" target="_blank" rel="noopener">zip</a> with all sounds included. So we don't have to download them individually, yay :D
-					</p>
-
-					<!--
+						<!--
 (linux, scripting, tutorial, rice, shell, advanced)
 
-
-### First Implementation
-So, under Windows, it was obvious to open up the controls and just change the sounds to the ones I just downloaded and extracted. And we are done.
-
-Now some years later, I came up with this idea again. But this time while using Linux. The problem: in most distros are no default sounds or even a control panel for it, especially not in Arch, which is what I am running. So I had to find a different solution. Something custom.
-My solution: we simply script it ourself
-
-
-I installed mplayer, although every other via console usable player should be right. (I switched and I am now using cvlc, the console version of the vlc player. Works like charm.)
-
-<info>
-If you are using vlc like I am now, just type "cvlc --play-and-exit" instead of "mplayer" in every file we will create.
-</info>
-
-Then I looked through the sounds available and picked the ones, I want to use. And I renamed them, so I could access them easily via bash.
-And then I wrote myself a (very) little bash script:
-
-```
-#!/bin/bash
-
-RAND=$[ $RANDOM % 20 ]
-mplayer /home/lukas/scripts/error/error_$RAND.wav >/dev/null 2>&1 &
-```
-
-So what did we just type?
-The `shebang` of course, to say with what we want to run our program.
-Then to make things random and not the same every time, a random number in range of the amount of available files.
-
-And then I call `mplayer` (or whatever you want to use; for me now `cvlc`; see aboth) with the file name according to the use case, so in this case for error sounds. Every file with the format error_*.wav will be played. Which sounds you use doesn't matter. You can use the portal sounds like I did, then you will hear something like "ahou", "ohh", "please stop" or "critical error". But if you have the sound files of any other videogame or similar you can use them as well. (Maybe you like the sounds of cl4p-tp from Borderlands more. They can also be downloaded)
-
-And then I redirect the terminal output to `/dev/null` to not get it in my console every time the script is called. This would be very annoying. And would make it hard to read what you were doing.
-And we want this all to run in the background. So we can continue while our sound is being played and we don't have to wait. Therefore we put an `&` at the end so bash will run it ""parallel"" in the background.
-
-<hr>
-So my events when a sound should be played:
-<ul>
-	<li>on start up</li>
-	<li>before shutdown</li>
-	<li>on error in terminal</li>
-	<li>while <i>find</i>/<i>locate</i></li>
-	<li>while <i>pacman</i></li>
-	<li>while <i>whoami</i></li>
-	<li>before lockscreen (if you got one)</li>
-</ul>
-
-The principal of the scripts and the call of them is not every time the same.
-
-So I guess we start easy with the lock screen. Although not all of you will have one. But I got one, and I am using i3lock.
-So for me I got a script which works with some images and gives them then to i3lock and make a fancy looking lock screen.
-I did not came up with this code, I just modified it and riced it a bit and used it.
 
 ```
 #!/bin/bash
@@ -489,76 +554,76 @@ I was thinking about making it a real program, like Iron Mans J.A.R.V.I.S for ex
 I really hope you liked it, and stay tuned there will another part following.
 	-->
 
-					<div id="blur_bg" class="modal">
-						<img class="modalcontent" id="bigview" alt="bigview" src=".">
-					</div>
-
-					<hr>
-				</div>
-
-				<div id="footer_article">
-					<p>
-						Did we make you interessted in this topic for even more or do you want to talk about it or do you have any suggestions or improvments?
-						<br>Just tell us, we are always open for critique :)
-					</p>
-					<h4>We love to hear from you and we always reply</h4>
-					<div id="buisnesscard">
-						<img alt="logo" src="/logo/logo_1.png">
-
-						<div>
-							<b>su IT --blog</b>
-							<br>
-							<i class="fas fa-envelope fa-fw"></i>
-							<a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
-
-							<br>
-
-							<i class="fab fa-telegram fa-fw"></i>
-							<a href="https://t.me/suitblog" target="_blank" rel="noopener">@suitblog</a>
+						<div id="blur_bg" class="modal">
+							<img class="modalcontent" id="bigview" alt="bigview" src=".">
 						</div>
+
+						<hr>
 					</div>
-					<p>
-						Grammatical errors? Technical errors? Or outdated information?
-						<br>If this article needs any kind of updates or completion, please let us know.
-					</p>
-					<p>
-						If you liked this article
-						<a target="_blank" rel="noopener" href="/about_us.html#mate">Buy Us A Club-Mate</a>! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site.
-					</p>
-					<h3>
-						Thank You for reading!
-					</h3>
+
+					<div id="footer_article">
+						<p>
+							Did we make you interessted in this topic for even more or do you want to talk about it or do you have any suggestions or improvments?
+							<br>Just tell us, we are always open for critique :)
+						</p>
+						<h4>We love to hear from you and we always reply</h4>
+						<div id="buisnesscard">
+							<img alt="logo" src="/logo/logo_1.png">
+
+							<div>
+								<b>su IT --blog</b>
+								<br>
+								<i class="fas fa-envelope fa-fw"></i>
+								<a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
+
+								<br>
+
+								<i class="fab fa-telegram fa-fw"></i>
+								<a href="https://t.me/suitblog" target="_blank" rel="noopener">@suitblog</a>
+							</div>
+						</div>
+						<p>
+							Grammatical errors? Technical errors? Or outdated information?
+							<br>If this article needs any kind of updates or completion, please let us know.
+						</p>
+						<p>
+							If you liked this article
+							<a target="_blank" rel="noopener" href="/about_us.html#mate">Buy Us A Club-Mate</a>! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site.
+						</p>
+						<h3>
+							Thank You for reading!
+						</h3>
+					</div>
+
 				</div>
 
 			</div>
 
 		</div>
 
-	</div>
-
-	<div id="footer" class="canvas">
-		<canvas height="50" width="200" id="animation_canvas_footer">
-		</canvas>
-		<div id="disclaimer">
-			There is nothing more to discover down here ¯\_(ツ)_/¯
-			<br>
-			<i class="fas fa-closed-captioning"></i> 2017
-			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
-			<a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+		<div id="footer" class="canvas">
+			<canvas height="50" width="200" id="animation_canvas_footer">
+			</canvas>
+			<div id="disclaimer">
+				There is nothing more to discover down here ¯\_(ツ)_/¯
+				<br>
+				<i class="fas fa-closed-captioning"></i> 2017
+				<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
+				<a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+			</div>
 		</div>
-	</div>
 
-	<script src="/js/animation.min.js" async></script>
-	<script src="/js/cli_write.min.js" async></script>
-	<script src="/js/main_nav.min.js" async></script>
-	<script src="/js/additional_nav.min.js" async></script>
-	<script src="/js/scroll.min.js" async></script>
-	<script src="/js/imageview.min.js" async></script>
-	<script src="/js/highlight.pack.js"></script>
-	<script>
-		hljs.initHighlightingOnLoad();
-	</script>
+		<script src="/js/animation.min.js" async></script>
+		<script src="/js/cli_write.min.js" async></script>
+		<script src="/js/main_nav.min.js" async></script>
+		<script src="/js/additional_nav.min.js" async></script>
+		<script src="/js/scroll.min.js" async></script>
+		<script src="/js/imageview.min.js" async></script>
+		<script src="/js/highlight.pack.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
 
-</body>
+	</body>
 
 </html>
