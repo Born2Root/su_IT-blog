@@ -39,7 +39,6 @@ suit-blog.net finally online: 13.12.2017
 - about us
 - meme page
 - write posts
-- bild für excel artikel
 
 ## zukunft:
 
