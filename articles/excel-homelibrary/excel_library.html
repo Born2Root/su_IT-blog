@@ -10,9 +10,10 @@
 		<!-- meta -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Excel VBA Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung | suit-blog.net">
+		<meta name="description" content="Excel Datenvalidierung mittels Drop-Down Combo-Box und Autovervollständigung | suit-blog.net">
 		<meta name="keywords" content="excel, vba, combo-box, kombinationsfeld, autotext, autovervollständigung, datenvalidierung, büchersammlung, verwaltung, bibliothek, programming, suit, sudo, blog, diy">
 		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#111111">
 
 		<!-- main css -->
 		<link rel="stylesheet" type="text/css" href="/css/main.min.css">
@@ -132,7 +133,7 @@
 					<div>
 
 						<h1>
-							Excel VBA Datenvalidierung und Autovervollständigung
+							Excel Datenvalidierung und Autovervollständigung
 						</h1>
 						<h2>
 							Am Beispiel einer Bibliotheks-/Bücher-listenverwaltung
@@ -143,11 +144,7 @@
 								<div class="tag_div">
 									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
 									<div class="tag_text">
-										<i class="fas fa-clock"></i> 15min read</div>
-								</div>
-								<div class="tag_div">
-									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-									<div class="tag_text">linux</div>
+										<i class="fas fa-clock"></i> 15min lesen</div>
 								</div>
 								<div class="tag_div">
 									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
@@ -155,11 +152,11 @@
 								</div>
 								<div class="tag_div">
 									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-									<div class="tag_text">raspberry</div>
+									<div class="tag_text">various</div>
 								</div>
 							</div>
 
-							<img src="image002_Werteingabe.gif" alt="logo" class="image">
+							<img src="image005_Pivot_Table.JPG" alt="logo" class="image">
 						</div>
 
 						<h3>Kurzbeschreibung</h3>
@@ -187,12 +184,6 @@
 										</li>
 										<li>
 											VBA-Programmierung
-										</li>
-										<li>
-											Leiterplattenbestückung (Löten, etc.)
-										</li>
-										<li>
-											Elektronikverständnis
 										</li>
 									</ul>
 								</li>
@@ -549,7 +540,7 @@
 						</p>
 
 						<pre>
-						<code class="VBScript">=VERWEIS(2;1/(B5:B4000<>"");ZEILE(B5:B4000))-1</code>
+						<code class="VBScript">=VERWEIS(2;1/(B5:B4000&lt;&gt;"");ZEILE(B5:B4000))-1</code>
 					</pre>
 
 						<div class="image_box">
@@ -665,7 +656,7 @@
 						<code class="VBScript">    On Error Resume Next</code>
 						<code></code>
 						<code class="VBScript">        'Drop-Down Vervollständigungsfeld nur per Doppelklick in Zellen anzeigen, die auch über Datenüberprüfung als DropDown konfiguriert sind</code>
-						<code class="VBScript">        If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count < 1 Then</code>
+						<code class="VBScript">        If ActiveCell.SpecialCells(xlCellTypeSameValidation).Cells.Count &lt; 1 Then</code>
 						<code class="VBScript">            'MsgBox "No Drop Down available"</code>
 						<code class="VBScript">            'do nothing</code>
 						<code class="VBScript">        Else</code>

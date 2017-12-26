@@ -198,7 +198,7 @@ code:nth-child(even) {
 }
 
 #background {
-	background: url("/icon/code.png");
+	background: url("/icon/code.jpg");
 	filter: blur(2px);
 	width: 100%;
 	height: 100%;
@@ -611,7 +611,7 @@ tfoot td {
 .image_box {
 	background-color: #555555;
 	padding: 5px;
-	max-width: 450px;
+	max-width: 500px;
 	margin: 20px auto;
 	box-shadow: #111111 0px 5px 20px 4px;
 	-webkit-box-shadow: #111111 0px 5px 20px 4px;

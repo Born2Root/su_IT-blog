@@ -1,361 +1,362 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+	<head>
 
-	<title>
-		Script To Rice Your Linux Terminal | Part 1 of how to rice your setup | su IT --blog | suit-blog.net
-	</title>
+		<title>
+			Script To Rice Your Linux Terminal | Part 1 of how to rice your setup | su IT --blog | suit-blog.net
+		</title>
 
-	<!-- meta -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="HOW-TO on a more custome terminal start | suit-blog.net">
-	<meta name="keywords" content="linux, blog, suit, sudo, it, scripts, bash, programming, terminal, console, diy">
-	<meta name="robots" content="index, follow">
+		<!-- meta -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="HOW-TO on a more custome terminal start | suit-blog.net">
+		<meta name="keywords" content="linux, blog, suit, sudo, it, scripts, bash, programming, terminal, console, diy">
+		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#111111">
 
-	<!-- main css -->
-	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
-	<!-- mobile css -->
-	<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.min.css">
-	<!-- desktop css -->
-	<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.min.css">
+		<!-- main css -->
+		<link rel="stylesheet" type="text/css" href="/css/main.min.css">
+		<!-- mobile css -->
+		<link rel="stylesheet" media="only screen and (max-width: 767px)" type="text/css" href="/css/mobile.min.css">
+		<!-- desktop css -->
+		<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="/css/desktop.min.css">
 
-	<!-- favicon -->
-	<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
+		<!-- favicon -->
+		<link rel="icon" type="image/png" href="/icon/favicon_64.ico">
 
-	<!-- web app manifest -->
-	<link rel="manifest" href="/manifest.json">
+		<!-- web app manifest -->
+		<link rel="manifest" href="/manifest.json">
 
-	<!-- font awesome -->
-	<link rel="stylesheet" href="/css/fontawesome-all.min.css">
+		<!-- font awesome -->
+		<link rel="stylesheet" href="/css/fontawesome-all.min.css">
 
-	<!-- highlight.js -->
-	<link rel="stylesheet" href="/styles/atelier-forest-dark.min.css">
+		<!-- highlight.js -->
+		<link rel="stylesheet" href="/styles/atelier-forest-dark.min.css">
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<div id="header">
+		<div id="header">
 
-		<div id="banner" class="canvas">
+			<div id="banner" class="canvas">
 
-			<canvas height="50" width="200" id="animation_canvas_header">
-			</canvas>
+				<canvas height="50" width="200" id="animation_canvas_header">
+				</canvas>
 
-			<i class="fas fa-bars fa-fw" id="burger"></i>
+				<i class="fas fa-bars fa-fw" id="burger"></i>
 
-			<div id="headline">
-				<a href="/" target="_self">
-					$ su IT --blog
+				<div id="headline">
+					<a href="/" target="_self">
+						$ su IT --blog
+					</a>
+					<div id="subtitle">
+						<span id="console">- we sudo everything</span>
+						<span class="cursor">|</span> -
+					</div>
+				</div>
+
+				<a target="_self" href="/">
+					<img alt="logo" src="/logo/logo_1.png" id="logo">
 				</a>
-				<div id="subtitle">
-					<span id="console">- we sudo everything</span>
-					<span class="cursor">|</span> -
+			</div>
+
+			<div id="menu">
+				<ul>
+					<li>
+						<a href="/index.php?tag=linux;" target="_self">
+							Linux
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=scripts;" target="_self">
+							Scripts
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=raspberry;" target="_self">
+							Raspberry Pi
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=programming;" target="_self">
+							Programming
+						</a>
+					</li>
+					<li>
+						<a href="/gallery.html" target="_self">
+							Gallery
+						</a>
+					</li>
+					<li>
+						<a href="/index.php?tag=various;" target="_self">
+							Various
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div id="body">
+
+			<div id="nav_right" class="nav">
+				<div id="top">
+					<i class="fas fa-arrow-up fa-fw"></i> Top
+				</div>
+
+				<div id="back">
+					<i class="fas fa-arrow-left fa-fw"></i> Back
 				</div>
 			</div>
 
-			<a target="_self" href="/">
-				<img alt="logo" src="/logo/logo_1.png" id="logo">
-			</a>
-		</div>
-
-		<div id="menu">
-			<ul>
-				<li>
-					<a href="/index.php?tag=linux;" target="_self">
-						Linux
+			<div id="nav_left" class="nav">
+				<div>
+					<a target="_blank" rel="noopener" href="/about_us.html#mate">
+						<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
 					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=scripts;" target="_self">
-						Scripts
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=raspberry;" target="_self">
-						Raspberry Pi
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=programming;" target="_self">
-						Programming
-					</a>
-				</li>
-				<li>
-					<a href="/gallery.html" target="_self">
-						Gallery
-					</a>
-				</li>
-				<li>
-					<a href="/index.php?tag=various;" target="_self">
-						Various
-					</a>
-				</li>
-			</ul>
-		</div>
-
-	</div>
-
-	<div id="body">
-
-		<div id="nav_right" class="nav">
-			<div id="top">
-				<i class="fas fa-arrow-up fa-fw"></i> Top
-			</div>
-
-			<div id="back">
-				<i class="fas fa-arrow-left fa-fw"></i> Back
-			</div>
-		</div>
-
-		<div id="nav_left" class="nav">
-			<div>
-				<a target="_blank" rel="noopener" href="/about_us.html#mate">
-					<i class="fas fa-coffee fa-fw"></i> Buy Us A Club-Mate
-				</a>
-			</div>
-
-			<div>
-				<a target="_blank" rel="noopener" href="/about_us.html#book">
-					<i class="fas fa-shopping-cart fa-fw"></i> Book Us
-				</a>
-			</div>
-		</div>
-
-		<div id="background">
-		</div>
-
-		<div id="container">
-
-			<div id="article">
+				</div>
 
 				<div>
+					<a target="_blank" rel="noopener" href="/about_us.html#book">
+						<i class="fas fa-shopping-cart fa-fw"></i> Book Us
+					</a>
+				</div>
+			</div>
 
-					<h1>
-						Script To Rice Your Linux Terminal
-					</h1>
-					<h2>
-						Get neat distro logos to system infos on console launch
-					</h2>
+			<div id="background">
+			</div>
 
-					<div id="box">
-						<div id="tags_article">
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">
-									<i class="fas fa-clock"></i> 5min read</div>
+			<div id="container">
+
+				<div id="article">
+
+					<div>
+
+						<h1>
+							Script To Rice Your Linux Terminal
+						</h1>
+						<h2>
+							Get neat distro logos to system infos on console launch
+						</h2>
+
+						<div id="box">
+							<div id="tags_article">
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">
+										<i class="fas fa-clock"></i> 5min read</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">linux</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">programming</div>
+								</div>
+								<div class="tag_div">
+									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+									<div class="tag_text">scripts</div>
+								</div>
 							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">linux</div>
-							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">programming</div>
-							</div>
-							<div class="tag_div">
-								<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
-								<div class="tag_text">scripts</div>
-							</div>
+
+							<img src="console.png" alt="logo" class="image">
 						</div>
 
-						<img src="console.png" alt="logo" class="image">
+						<div id="pre">
+
+							<h3>
+								Requirements:
+							</h3>
+							<ul>
+								<li>
+									Difficulty: Easy
+								</li>
+
+								<li>
+									Needs:
+									<ul>
+										<li>
+											screenfetch, archey, screenfo, neofetch or similar
+										</li>
+										<li>
+											bash basics
+										</li>
+										<li>
+											that's it, you are good to go :)
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+						</div>
+
 					</div>
 
-					<div id="pre">
+					<div id="body_article">
+						<h1 id="introduction">
+							Introduction
+							<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
 
-						<h3>
-							Requirements:
-						</h3>
-						<ul>
-							<li>
-								Difficulty: Easy
-							</li>
+						<p>
+							On launch of my terminal, I don't want a blank window. So I installed screenfetch, which is
+						</p>
 
-							<li>
-								Needs:
-								<ul>
-									<li>
-										screenfetch, archey, screenfo, neofetch or similar
-									</li>
-									<li>
-										bash basics
-									</li>
-									<li>
-										that's it, you are good to go :)
-									</li>
-								</ul>
-							</li>
-						</ul>
+						<fieldset class="quote box">
+							<legend>
+								<i class="fas fa-quote-left fa-fw"></i>
+							</legend>
+							one of those nifty terminal theme information + ASCII distribution logos you see in everyone's screenshots nowadays.
+						</fieldset>
 
-					</div>
+						<p>
+							And I put a call to it in my
+							<i>.bashrc</i>.
+							<br>But there is still the problem that it looks the same on every start. Same logo. Same colors.
+							<br>So you are using a script for GNU Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch.
+							<br>If you get bored too this article, will show you a way to change displayed distribution logo & colors on every use.
+						</p>
 
-				</div>
+						<h1 id="content">
+							Content
+							<a target="_self" href="#content" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
 
-				<div id="body_article">
-					<h1 id="introduction">
-						Introduction
-						<a target="_self" href="#introduction" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h1>
+						<p>
+							Programs like screenfetch automatically detect your distro to display the logo and multiple system info's. That's the reason, you are always getting the same logo and with that the same text color.
+							<br> While going randomly through the man page of screenfetch, I noticed the
+							<i>-A</i> Flag.
+						</p>
 
-					<p>
-						On launch of my terminal, I don't want a blank window. So I installed screenfetch, which is
-					</p>
+						<fieldset class="quote box">
+							<legend>
+								<i class="fas fa-quote-left fa-fw"></i>
+							</legend>
+							-A 'DISTRO' Here you can specify the distribution art that you want displayed. This is for when you want your distro detected but want to display a different logo.
+						</fieldset>
 
-					<fieldset class="quote box">
-						<legend>
-							<i class="fas fa-quote-left fa-fw"></i>
-						</legend>
-						one of those nifty terminal theme information + ASCII distribution logos you see in everyone's screenshots nowadays.
-					</fieldset>
+						<p>
+							So it's possible to show the logo of another distro by giving the according name.
+							<br> Because I don't know all distributions supported by screenfetch, I opened the source code and looked through it.
+							<br> I tried all I found and wrote them into an array.
+							<br> Afterwards I noticed, that the man page names them all. I don't know how I could oversee this.
+							<br> But you still couldn't just copy the list. But I tried all 70 of them and came up with this usable list.
+						</p>
 
-					<p>
-						And I put a call to it in my
-						<i>.bashrc</i>.
-						<br>But there is still the problem that it looks the same on every start. Same logo. Same colors.
-						<br>So you are using a script for GNU Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch.
-						<br>If you get bored too this article, will show you a way to change displayed distribution logo & colors on every use.
-					</p>
-
-					<h1 id="content">
-						Content
-						<a target="_self" href="#content" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h1>
-
-					<p>
-						Programs like screenfetch automatically detect your distro to display the logo and multiple system info's. That's the reason, you are always getting the same logo and with that the same text color.
-						<br> While going randomly through the man page of screenfetch, I noticed the
-						<i>-A</i> Flag.
-					</p>
-
-					<fieldset class="quote box">
-						<legend>
-							<i class="fas fa-quote-left fa-fw"></i>
-						</legend>
-						-A 'DISTRO' Here you can specify the distribution art that you want displayed. This is for when you want your distro detected but want to display a different logo.
-					</fieldset>
-
-					<p>
-						So it's possible to show the logo of another distro by giving the according name.
-						<br> Because I don't know all distributions supported by screenfetch, I opened the source code and looked through it.
-						<br> I tried all I found and wrote them into an array.
-						<br> Afterwards I noticed, that the man page names them all. I don't know how I could oversee this.
-						<br> But you still couldn't just copy the list. But I tried all 70 of them and came up with this usable list.
-					</p>
-
-					<pre>
+						<pre>
 						<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
 						</code>
 					</pre>
 
 
-					<p>
-						And now we simply add a random index, to make things fun and different every time we call it. Then we can feed screenfetch with one item of our array at the random index.
-					</p>
+						<p>
+							And now we simply add a random index, to make things fun and different every time we call it. Then we can feed screenfetch with one item of our array at the random index.
+						</p>
 
-					<pre>
+						<pre>
 						<code class="bash">RAND=$[ $RANDOM % 70]</code>
 						<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")</code>
 						<code class="bash">screenfetch -A ${distro[$RAND]} -w</code>
 					</pre>
 
-					<p>
-						Note: The -w Flag ("-w Wrap long lines.") is just there to fit all information on a normal terminal window.
-					</p>
+						<p>
+							Note: The -w Flag ("-w Wrap long lines.") is just there to fit all information on a normal terminal window.
+						</p>
 
-					<div class="image_box">
-						<img src="console.png" alt="console" onclick="show(this)">
-					</div>
-
-					<h1 id="conclusion">
-						Conclusion
-						<a target="_self" href="#conclusion" onclick="onpage_link(event, this);">
-							<i class="fas fa-link fa-fw link"></i>
-						</a>
-					</h1>
-
-					<p>
-						And that's all you have to do. Now you can enjoy all the beautiful logos available. And everytime a different one (or at least one of the 70).
-						<br> And mentioned, you just have to put this code into your .bashrc (or equivalent). So when you launch a new instance, this code will be executed.
-						<br> But you could also make an alias which calls an bash script file with this code inside. Just remember to give the absolute path of screenfetch so you don't create and infinite loop.
-					</p>
-
-					<div id="blur_bg" class="modal">
-						<img class="modalcontent" id="bigview" alt="bigview" src=".">
-					</div>
-
-					<hr>
-				</div>
-
-				<div id="footer_article">
-					<p>
-						Did we make you interessted in this topic for even more or do you want to talk about it or do you have any suggestions or improvments?
-						<br>Just tell us, we are always open for critique :)
-					</p>
-					<h4>We love to hear from you and we always reply</h4>
-					<div id="buisnesscard">
-						<img alt="logo" src="/logo/logo_1.png">
-
-						<div>
-							<b>su IT --blog</b>
-							<br>
-							<i class="fas fa-envelope fa-fw"></i>
-							<a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
-
-							<br>
-
-							<i class="fab fa-telegram fa-fw"></i>
-							<a href="https://t.me/suitblog" target="_blank" rel="noopener">@suitblog</a>
+						<div class="image_box">
+							<img src="console.png" alt="console" onclick="show(this)">
 						</div>
+
+						<h1 id="conclusion">
+							Conclusion
+							<a target="_self" href="#conclusion" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
+
+						<p>
+							And that's all you have to do. Now you can enjoy all the beautiful logos available. And everytime a different one (or at least one of the 70).
+							<br> And mentioned, you just have to put this code into your .bashrc (or equivalent). So when you launch a new instance, this code will be executed.
+							<br> But you could also make an alias which calls an bash script file with this code inside. Just remember to give the absolute path of screenfetch so you don't create and infinite loop.
+						</p>
+
+						<div id="blur_bg" class="modal">
+							<img class="modalcontent" id="bigview" alt="bigview" src=".">
+						</div>
+
+						<hr>
 					</div>
-					<p>
-						Grammatical errors? Technical errors? Or outdated information?
-						<br>If this article needs any kind of updates or completion, please let us know.
-					</p>
-					<p>
-						If you liked this article
-						<a target="_blank" rel="noopener" href="/about_us.html#mate">Buy Us A Club-Mate</a>! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site.
-					</p>
-					<h3>
-						Thank You for reading!
-					</h3>
+
+					<div id="footer_article">
+						<p>
+							Did we make you interessted in this topic for even more or do you want to talk about it or do you have any suggestions or improvments?
+							<br>Just tell us, we are always open for critique :)
+						</p>
+						<h4>We love to hear from you and we always reply</h4>
+						<div id="buisnesscard">
+							<img alt="logo" src="/logo/logo_1.png">
+
+							<div>
+								<b>su IT --blog</b>
+								<br>
+								<i class="fas fa-envelope fa-fw"></i>
+								<a href="mailto:suit-blog@fantasymail.de" target="_self">suit-blog@fantasymail.de</a>
+
+								<br>
+
+								<i class="fab fa-telegram fa-fw"></i>
+								<a href="https://t.me/suitblog" target="_blank" rel="noopener">@suitblog</a>
+							</div>
+						</div>
+						<p>
+							Grammatical errors? Technical errors? Or outdated information?
+							<br>If this article needs any kind of updates or completion, please let us know.
+						</p>
+						<p>
+							If you liked this article
+							<a target="_blank" rel="noopener" href="/about_us.html#mate">Buy Us A Club-Mate</a>! This allows us to pay the server costs and makes it possible to constantly push new content for free and without ads to this site.
+						</p>
+						<h3>
+							Thank You for reading!
+						</h3>
+					</div>
+
 				</div>
 
 			</div>
 
 		</div>
 
-	</div>
-
-	<div id="footer" class="canvas">
-		<canvas height="50" width="200" id="animation_canvas_footer">
-		</canvas>
-		<div id="disclaimer">
-			There is nothing more to discover down here ¯\_(ツ)_/¯
-			<br>
-			<i class="fas fa-closed-captioning"></i> 2017
-			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
-			<a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+		<div id="footer" class="canvas">
+			<canvas height="50" width="200" id="animation_canvas_footer">
+			</canvas>
+			<div id="disclaimer">
+				There is nothing more to discover down here ¯\_(ツ)_/¯
+				<br>
+				<i class="fas fa-closed-captioning"></i> 2017
+				<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> |
+				<a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+			</div>
 		</div>
-	</div>
 
-	<script src="/js/animation.min.js" async></script>
-	<script src="/js/cli_write.min.js" async></script>
-	<script src="/js/main_nav.min.js" async></script>
-	<script src="/js/additional_nav.min.js" async></script>
-	<script src="/js/scroll.min.js" async></script>
-	<script src="/js/imageview.min.js" async></script>
-	<script src="/js/highlight.pack.js"></script>
-	<script>
-		hljs.initHighlightingOnLoad();
-	</script>
+		<script src="/js/animation.min.js" async></script>
+		<script src="/js/cli_write.min.js" async></script>
+		<script src="/js/main_nav.min.js" async></script>
+		<script src="/js/additional_nav.min.js" async></script>
+		<script src="/js/scroll.min.js" async></script>
+		<script src="/js/imageview.min.js" async></script>
+		<script src="/js/highlight.pack.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
 
-</body>
+	</body>
 
 </html>

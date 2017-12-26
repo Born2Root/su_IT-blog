@@ -5,7 +5,7 @@ if (empty($_GET["tag"]) == true) {
 	$search_tags = substr($_GET["tag"], 0, -1);
 }
 
-function print_article($h1, $h2, $article_tags, $img, $a)
+function print_article($h1, $h2, $article_tags, $img, $a, $lang)
 {
 	echo <<<EOT
 
@@ -27,6 +27,10 @@ EOT;
 EOT;
 	}
 	echo <<<EOT
+						<div class="tag_div">
+							<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
+							<div class="tag_text"><i class="fas fa-flag"></i> $lang</div>
+						</div>
 
 					</div>
 				</div>
@@ -69,6 +73,7 @@ function print_link($link)
 	<meta name="description" content="This is the homepage of the su IT --blog. Here, you can find various information technology, programming and technical topics | suit-blog.net">
 	<meta name="keywords" content="linux, raspberry, blog, articles, website, suit, sudo, it, scripts, bash, programming, terminal, diy">
 	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#111111">
 
 	<!-- main css -->
 	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
@@ -247,7 +252,7 @@ EOT;
 
 			$lines = explode("\n", $list);
 
-			for ($i = 2; $i < count($lines); $i += 5) {
+			for ($i = 2; $i < count($lines); $i += 6) {
 				$all_tags = true;
 				foreach (explode(";", $search_tags) as $element) {
 					if (in_array($element, explode(";", $lines[$i])) == false) {
@@ -261,8 +266,9 @@ EOT;
 					$article_tags = explode(";", $lines[$i]);
 					$img = "articles/".$lines[$i+1];
 					$a = "articles/".$lines[$i+2];
+					$lang = $lines[$i+3];
 
-					print_article($h1, $h2, $article_tags, $img, $a);
+					print_article($h1, $h2, $article_tags, $img, $a, $lang);
 				}
 			}
 			?>

@@ -1,10 +1,18 @@
+Excel Datenvalidierung und Autovervollständigung
+Am Beispiel einer Bibliotheks-/Bücher-listenverwaltung
+programming;various
+excel-homelibrary/image005_Pivot_Table.JPG
+excel-homelibrary/excel_library.html
+German
 ThereOHM - DIY Theremin
 Klangvariierendes Theremin via Software DSP
 raspberry;linux;programming
 thereOHM/image001.png
 thereOHM/thereohm.html
+German
 Script To Rice Your Linux Terminal
 Get neat distro logos to system infos on console launch
 programming;linux;scripts
 script_to_rice_your_linux_terminal/console.png
 script_to_rice_your_linux_terminal/script_to_rice_your_linux_terminal.html
+English
