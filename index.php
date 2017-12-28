@@ -73,7 +73,13 @@ function print_link($link)
 	<meta name="description" content="This is the homepage of the su IT --blog. Here, you can find various information technology, programming and technical topics | suit-blog.net">
 	<meta name="keywords" content="linux, raspberry, blog, articles, website, suit, sudo, it, scripts, bash, programming, terminal, diy">
 	<meta name="robots" content="index, follow">
-	<meta name="theme-color" content="#111111">
+
+	<!-- open graph -->
+	<meta property="og:title" content="su IT --blog main page">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://suit-blog.net">
+	<meta property="og:image" content="http://suit-blog.net/logo/logo_1.png">
+	<meta property="og:site_name" content="suIT-blog">
 
 	<!-- main css -->
 	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
@@ -283,7 +289,7 @@ EOT;
 		<div id="disclaimer">
 			There is nothing more to discover down here ¯\_(ツ)_/¯
 			<br> <i class="fas fa-closed-captioning"></i> 2017
-			<a href="/impressum.html" target="_blank" rel="noopener">impressum</a> | <a href="/about_us.html" target="_blank" rel="noopener">about us</a>
+			<a href="/impressum.html" target="_blank" rel="noopener">Impressum</a> | <a href="/about_us.html" target="_blank" rel="noopener">About Us</a>
 		</div>
 	</div>
 

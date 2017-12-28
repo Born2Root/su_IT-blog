@@ -47,9 +47,8 @@ suit-blog.net finally online: 13.12.2017
 - [nur eventuell] links anzeigen ob sie _blank oder _self
 - [nur eventuell] alternativer Cursor verwenden anstatt der Klickhand
 - eastereggs verstecken
-- open graph meta tags hinzufügen?!
 - inline quote
-- shortcuts, filesname, call name inline box
+- shortcuts, filenames, call name inline box
 
 - Screenfetch:
 	- gif zum zeigen der varianten

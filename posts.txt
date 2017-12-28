@@ -1,4 +1,4 @@
-Excel Datenvalidierung und Autovervollständigung
+Excel Datenvalidierung und Auto-vervollständigung
 Am Beispiel einer Bibliotheks-/Bücher-listenverwaltung
 programming;various
 excel-homelibrary/image005_Pivot_Table.JPG

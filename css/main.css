@@ -172,6 +172,10 @@ code {
 	margin: auto;
 }
 
+.fa-telegram {
+	color: #0d86d7;
+}
+
 #buisnesscard img {
 	margin: 10px;
 	width: 130px;
@@ -180,7 +184,8 @@ code {
 #buisnesscard div {
 	position: absolute;
 	bottom: 10px;
-	right: 15px;
+	right: 10px;
+	font-size: 19px;
 }
 
 code:not(.command):before {
