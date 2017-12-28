@@ -1,4 +1,4 @@
-# su_it_blog
+# su IT --blog
 source code for the su IT --blog
 <br>
 http://suit-blog.net
