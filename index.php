@@ -64,7 +64,14 @@ function print_link($link)
 <head>
 
 	<title>
-		su IT --blog main page | suit-blog.net
+		<?php
+		if ($search_tags == null) {
+			echo "su IT --blog main page | suit-blog.net";
+		} else {
+			echo "$search_tags filtered main page | suit-blog.net";
+		}
+		?>
+
 	</title>
 
 	<!-- meta -->
@@ -73,6 +80,7 @@ function print_link($link)
 	<meta name="description" content="This is the homepage of the su IT --blog. Here, you can find various information technology, programming and technical topics | suit-blog.net">
 	<meta name="keywords" content="linux, raspberry, blog, articles, website, suit, sudo, it, scripts, bash, programming, terminal, diy">
 	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#111111">
 
 	<!-- open graph -->
 	<meta property="og:title" content="su IT --blog main page">
