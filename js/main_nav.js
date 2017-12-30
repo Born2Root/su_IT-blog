@@ -14,7 +14,8 @@ document.getElementById("top").onclick = function () {
 		left: 0,
 		behavior: "smooth"
 	});
-	//console.log(location.href.split("#")[0]);
+	window.scrollTo(0, 0);
+
 	var path = location.href.split("#")[0];
 	window.history.pushState({
 		path: path

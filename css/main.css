@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 #header {
 	background-color: #111111;
 	z-index: 11;
@@ -204,7 +208,6 @@ code:nth-child(even) {
 
 #background {
 	background: url("/icon/code.jpg");
-	filter: blur(2px);
 	width: 100%;
 	height: 100%;
 	top: 0px;

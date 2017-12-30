@@ -10,7 +10,6 @@ function onpage_link(event, link) {
 	var path = link.href;
 	var target = document.getElementById(path.substring(path.lastIndexOf("#") + 1));
 
-	//console.log(path.substring(path.lastIndexOf("#") + 1));
 	target.scrollIntoView({
 		behavior: "smooth",
 		block: "center"
