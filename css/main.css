@@ -137,19 +137,12 @@ ul {
 	border-radius: 5px;
 }
 
-
-/*
 #menu a:hover:not(.active) {
 	background-color: #3cff00;
 }
 
 #menu .active:hover {
 	background-color: #ff0000 !important;
-}
-*/
-
-#menu a:hover {
-	background-color: #ff6d00;
 }
 
 .active {
