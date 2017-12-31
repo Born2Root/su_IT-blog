@@ -51,5 +51,5 @@ suit-blog.net finally online: 13.12.2017
 - shortcuts, filenames, call name inline box
 
 - Screenfetch:
-	- gif zum zeigen der varianten
-	- bilder "
+	- gif zum Zeigen der Varianten
+	- Bilder "

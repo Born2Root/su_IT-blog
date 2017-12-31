@@ -15,7 +15,6 @@ html {
 :target,
 .mark {
 	animation: mark 1.5s;
-	-webkit-animation: mark 1.5s;
 }
 
 @keyframes mark {
@@ -138,6 +137,17 @@ ul {
 	border-radius: 5px;
 }
 
+
+/*
+#menu a:hover:not(.active) {
+	background-color: #3cff00;
+}
+
+#menu .active:hover {
+	background-color: #ff0000 !important;
+}
+*/
+
 #menu a:hover {
 	background-color: #ff6d00;
 }
@@ -152,7 +162,6 @@ pre {
 	white-space: normal;
 	line-height: 22px;
 	box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.659);
-	-webkit-box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.659);
 	counter-reset: line;
 	border-left: 5px solid #ff6d00;
 	border-radius: 3px;
@@ -260,7 +269,6 @@ a:not(.post_link):hover {
 	width: 90%;
 	z-index: 10;
 	box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
-	-webkit-box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
 }
 
 .post_link {
@@ -285,7 +293,6 @@ a:not(.post_link):hover {
 	color: #ffffff;
 	padding: 1px 5% 15px 5%;
 	box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
-	-webkit-box-shadow: 10px 6px 3px 0px rgb(255, 109, 0);
 }
 
 #article p {
@@ -380,7 +387,6 @@ hr {
 
 .cursor {
 	animation: blink 0.7s infinite;
-	-webkit-animation: blink 0.7s infinite;
 	margin-left: -7px;
 }
 
@@ -498,7 +504,6 @@ hr {
 	color: #ffffff;
 	cursor: pointer;
 	box-shadow: 0px 0px 13px 0px #000000;
-	-webkit-box-shadow: 0px 0px 13px 0px #000000;
 }
 
 #nav_right {
@@ -598,7 +603,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-	background-color: #0a0a0a;
+	background-color: #0a0a0a !important;
 }
 
 td[rowspan] {
@@ -622,7 +627,6 @@ tfoot td {
 	max-width: 500px;
 	margin: 20px auto;
 	box-shadow: #111111 0px 5px 20px 4px;
-	-webkit-box-shadow: #111111 0px 5px 20px 4px;
 }
 
 .image_box img {
@@ -672,8 +676,6 @@ tfoot td {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	-webkit-animation-name: zoom;
-	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
 	animation-duration: 0.6s;
 }

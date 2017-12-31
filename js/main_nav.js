@@ -9,11 +9,6 @@ document.getElementById("burger").onclick = function () {
 
 //top
 document.getElementById("top").onclick = function () {
-	window.scroll({
-		top: 0,
-		left: 0,
-		behavior: "smooth"
-	});
 	window.scrollTo(0, 0);
 
 	var path = location.href.split("#")[0];

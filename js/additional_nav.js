@@ -11,8 +11,7 @@ function onpage_link(event, link) {
 	var target = document.getElementById(path.substring(path.lastIndexOf("#") + 1));
 
 	target.scrollIntoView({
-		behavior: "smooth",
-		block: "center"
+		behavior: "smooth"
 	});
 	window.history.pushState({
 		path: path
