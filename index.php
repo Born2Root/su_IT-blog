@@ -211,7 +211,7 @@ function print_link($link)
 		<p>
 			It is great to see that you found this page :D
 			<br>If you are interested in any computer tech topic, you can find something here.
-			<br>On this blog, we are showing of, some of the things we done. And hopefully we can inspire you.
+			<br>On this blog, we are showing some of the things we have done. And hopefully we can inspire you.
 		</p>
 
 		<p>
