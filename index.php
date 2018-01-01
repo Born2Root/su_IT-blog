@@ -215,7 +215,7 @@ function print_link($link)
 		</p>
 
 		<p>
-			With <b>su IT --blog</b> we hope to provide super user level articles about various topics in the information technology genre on this blog.
+			With <b>su IT --blog</b> we hope to provide super user level articles about various topics in the information technology genre, all on this blog.
 			<br>
 			Here are some of the topics we will cover soon:
 		</p>
