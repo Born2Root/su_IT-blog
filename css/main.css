@@ -138,7 +138,7 @@ ul {
 }
 
 #menu a:hover:not(.active) {
-	background-color: #3cff00;
+	background-color: #2ed62e;
 }
 
 #menu .active:hover {
