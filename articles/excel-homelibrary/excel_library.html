@@ -491,7 +491,7 @@
 						<p>
 							Zunächst einmal ist das Ziel eine dynamische Tabelle zu erzeugen. D.h. der Datenbereich soll sich dynamisch anpassen, wenn in der Quelldatei neue Werte hinzukommen (neue Bücher eingetragen werden). Das lässt sich über
 							<i>Namensbereiche</i> realisieren. Zum Anlegen wechselt man nach
-							<i>Formeln -> Namens-Manager -> Neu...</i>
+							<i>Formeln -> Namens-Manager -> Neu&#8230;i>
 						</p>
 
 						<div class="image_box">
@@ -567,7 +567,7 @@
 
 						<p>
 							Um die nächsten Schritte zu vereinfachen, benötigen wir einen simpel anzusprechenden Datenbereich, der dynamisch den Inhalt der Pivot-Autoren-Tabelle abdeckt. Also nochmal rein in den Namens-Manager und den Bereich
-							<i>sort_autor</i> angelegt. Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
+							<span class="code">sort_autor</span> angelegt. Diesmal nicht mit der VERSCHIEBEN Formel, sondern per INDIREKT-Zuweisung und der in Zelle B2 ermittelten letzten Tabellenzeile.
 						</p>
 
 						<pre>
@@ -630,7 +630,7 @@
 						</fieldset>
 
 						<p>
-							Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.b. TempCombo.
+							Über Rechtsklick, Eigenschaften (Properties) kann man dieser Combo-Box nun einen Namen geben, z.B. TempCombo.
 						</p>
 
 						<div class="image_box">
@@ -776,7 +776,7 @@
 					</pre>
 
 						<p>
-							Jetzt ist es soweit..., der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert!
+							Jetzt ist es soweit&#8230;, der nächste Test und hoffentlich ein Grinsen im Gesicht. Funkioniert!
 							<br> Aber schade, denn momentan funktioniert es nur für die Autoren. Das ist jedoch gar kein Problem. Um das gleiche Verhalten für alle anderen Spalten (Buchtitel, Genre, usw.) zu erhalten, muss die obige Prozedur mit anlegen von Pivot-Tabellen und Namensbereichen einfach wiederholt werden. Der VBA-Code ist universell und muss nicht angepasst werden.
 							<br>
 							<br> Ein ungewünschtes Verhalten würde man mit der aktuellen Lösung aber nach einiger Zeit feststellen. Denn neu eingegebene Daten werden unten an die Pivot-Tabelle rangehängt. Diese neuen Autoren tauchen dann in der Drop-Down-Liste nicht mehr an der richtigen Stelle auf, weil die Pivot-Tabelle nicht mehr sauber alphabetisch sortiert ist. Blöd, aber mit VBA kein Problem. Mit zwei kleinen Funktionen, kann man erstens, alle Pivot-Tabellen aktualisieren (refreshen) und alle Pivot-Tabellen alphabetisch sortieren.
@@ -823,7 +823,7 @@
 							<i>Autor</i> in das entsprechende Feld. Beim eintragen des
 							<i>Titels</i>, sollen nun automatisch alle Bücher angezeigt werden, die von dem jeweiligen Autor bereits vorhanden sind, z.B. um Doppeleinträge zu vermeiden. Auch diese Funktionalität kann über Pivot-Tabellen realisiert werden. Wir legen also wie bereits für die andern Felder, eine neue Pivot-Tabelle an und geben ihr einen eindeutigen Namen (
 							<i>Rechtsklick -> Pivot-Tabelle-Optionen</i>, Im Beispiel heißt die Tabelle
-							<i>PivotTable_AutorFilter</i>).
+							<span class="code file">PivotTable_AutorFilter</span>).
 						</p>
 
 						<div class="image_box">
@@ -851,9 +851,9 @@
 
 						<p>
 							<br> Über das Kommando
-							<i>xlCaptionContains</i> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B.
+							<span class="code">xlCaptionContains</span> wird nach allen Büchern gesucht, die den Namen des Autors enthalten. Sprich, es werden auch Sammelausgaben gefunden, in denen z.B.
 							<i>Mustermann, Max und Grisham, John</i> im Autorenfeld geführt werden. Möchte man exakt nach den Autorennamen suchen, ist dies über die Option
-							<i>xlCaptionEquals</i> möglich. In diesem Fall würden nur Bücher mit
+							<span class="code file">xlCaptionEquals</span> möglich. In diesem Fall würden nur Bücher mit
 							<i>Grisham, John</i> gefunden werden. Das Beispiel
 							<i>Mustermann, Max und Grisham, John</i> würde nicht auftauchen.
 							<br> Die Länge der Ergebnisliste wird über den bereits bekannten Trick mit der Suche nach dem letzten Eintrag ermittelt.
@@ -932,7 +932,7 @@
 								<span class="fa-li">
 									<i class="fas fa-hand-point-right"></i>
 								</span>
-								... und alles was man sich sonst noch vorstellen kann
+								&#8230; und alles was man sich sonst noch vorstellen kann
 							</li>
 						</ul>
 

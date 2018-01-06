@@ -264,7 +264,9 @@
 							<legend>
 								<i class="fas fa-info-circle fa-fw"></i>
 							</legend>
-							If you are using vlc like I am now, just type "cvlc --play-and-exit" instead of "mplayer" in every file we will create.
+							If you are using vlc like I am now, just type
+							<span class="code">cvlc --play-and-exit</span> instead of
+							<span class="code">mplayer</span> in every file we will create.
 						</fieldset>
 
 						<p>
@@ -280,17 +282,23 @@
 
 						<p>
 							So what did we just type?
-							<br> The `shebang` of course, to say with what we want to run our program.
+							<br> The
+							<span class="code">shebang</span> of course, to say with what we want to run our program.
 							<br> Then to make things random and not the same every time, a random number in range of the amount of available files.
 						</p>
 
 						<p>
-							And then I call `mplayer` (or whatever you want to use; for me now `cvlc`; see above) with the file name according to the use case, so in this case for error sounds. Every file with the format error_*.wav will be played. Which sounds you use doesn't matter. You can use the portal sounds like I did, then you will hear something like "ahou", "ohh", "please stop" or "critical error". But if you have the sound files of any other videogame or similar you can use them as well. (Maybe you like the sounds of cl4p-tp from Borderlands more. They can also be downloaded)
+							And then I call
+							<span class="code">mplayer</span> (or whatever you want to use; for me now
+							<span class="code">cvlc</span> see above &uarr;) with the file name according to the use case, so in this case for error sounds. Every file with the formatvideo game
+							<span class="code file">error_*.wav</span> will be played. Which sounds you use doesn't matter. You can use the portal sounds like I did, then you will hear something like "ahou", "ohh", "please stop" or "critical error". But if you have the sound files of any other video game or similar you can use them as well. (Maybe you like the sounds of cl4p-tp from Borderlands more. Sounds from Borderlangs can also be downloaded)
 						</p>
 
 						<p>
-							And then I redirect the terminal output to `/dev/null` to not get it in my console every time the script is called. This would be very annoying. And would make it hard to read what you were doing.
-							<br> And we want this all to run in the background. So we can continue while our sound is being played and we don't have to wait. Therefore we put an `&` at the end so bash will run it "parallel" in the background.
+							And then I redirect the terminal output to
+							<span class="code file">/dev/null</span> to not get it in my console every time the script is called. This would be very annoying. And would make it hard to read what you were doing.
+							<br> And we want this all to run in the background. So we can continue while our sound is being played and we don't have to wait. Therefore we put an
+							<span class="code">&</span> at the end so bash will run it "parallel" in the background.
 						</p>
 
 						<hr>

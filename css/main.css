@@ -40,7 +40,6 @@ html {
 .box {
 	padding: 20px;
 	font-size: 1.125em;
-	font-style: italic;
 }
 
 .quote {
@@ -150,7 +149,6 @@ ul {
 }
 
 pre {
-	font-size: 15px;
 	width: 100%;
 	white-space: normal;
 	line-height: 22px;
@@ -166,6 +164,7 @@ code {
 	counter-increment: line;
 	padding: 2px 0.5em !important;
 	font-family: hack_font;
+	font-size: 15px;
 }
 
 #buisnesscard {
@@ -192,6 +191,19 @@ code {
 	bottom: 10px;
 	right: 10px;
 	font-size: 19px;
+}
+
+.code {
+	background-color: #111111;
+	padding: 4px;
+	border-radius: 2px;
+	border: 1px #333333 solid;
+	font-family: hack_font;
+	font-size: 15px;
+}
+
+.file{
+	font-style: italic;
 }
 
 code:not(.command):before {

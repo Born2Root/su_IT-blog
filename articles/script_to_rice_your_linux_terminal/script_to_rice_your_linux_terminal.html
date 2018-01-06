@@ -223,7 +223,7 @@
 
 						<p>
 							And I put a call to it in my
-							<i>.bashrc</i>.
+							<span class="code file">.bashrc</span>.
 							<br>But there is still the problem that it looks the same on every start. Same logo. Same colors.
 							<br>So you are using a script for GNU Linux that displays system information like Screenfetch or Archey, Screenfo or Neofetch.
 							<br>If you get bored too this article, will show you a way to change displayed distribution logo & colors on every use.
@@ -239,14 +239,14 @@
 						<p>
 							Programs like screenfetch automatically detect your distro to display the logo and multiple system info's. That's the reason, you are always getting the same logo and with that the same text color.
 							<br> While going randomly through the man page of screenfetch, I noticed the
-							<i>-A</i> Flag.
+							<span class="code file">-A</span> Flag.
 						</p>
 
 						<fieldset class="quote box">
 							<legend>
 								<i class="fas fa-quote-left fa-fw"></i>
 							</legend>
-							-A 'DISTRO' Here you can specify the distribution art that you want displayed. This is for when you want your distro detected but want to display a different logo.
+							<span class="code file">-A 'DISTRO'</span> Here you can specify the distribution art that you want displayed. This is for when you want your distro detected but want to display a different logo.
 						</fieldset>
 
 						<p>
@@ -258,23 +258,23 @@
 						</p>
 
 						<pre>
-						<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
-						</code>
-					</pre>
-
+							<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")
+							</code>
+						</pre>
 
 						<p>
 							And now we simply add a random index, to make things fun and different every time we call it. Then we can feed screenfetch with one item of our array at the random index.
 						</p>
 
 						<pre>
-						<code class="bash">RAND=$[ $RANDOM % 70]</code>
-						<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")</code>
-						<code class="bash">screenfetch -A ${distro[$RAND]} -w</code>
-					</pre>
+							<code class="bash">RAND=$[ $RANDOM % 70]</code>
+							<code class="bash">distro=("Alpine Linux" "Antergos" "Arch Linux" "Arch Linux - Old" "BLAG" "BunsenLabs" "CentOS" "Chakra" "Chapeau" "Chrome OS" "CrunchBang" "CRUX" "Debian" "Deepin" "LinuxDeepin" "Devuan" "elementary OS" "Exherbo" "Fedora" "Frugalware" "Fuduntu" "Funtoo" "Fux" "Gentoo" "gNewSense" "Jiyuu Linux" "Kali Linux" "KaOS" "KDE neon" "Kogaion" "Korora" "Mint" "LMDE" "Logos" "Mageia" "Mandriva" "Manjaro" "Netrunner" "NixOS" "openSUSE" "Parabola GNU/Linux-libre" "Pardus" "Parrot Security" "PCLinuxOS" "Peppermint" "Qubes OS" "Raspbian" "Red Hat Enterprise Linux" "ROSA" "Sabayon" "SailfishOS" "Scientific Linux" "Slackware" "Solus" "SparkyLinux" "SteamOS" "SwagArch" "Trisquel" "Ubuntu" "Viperr" "Void" "DragonFlyBSD" "FreeBSD" "NetBSD" "OpenBSD" "FreeBSD - Old" "Unknown" "Haiku" "Mac OS X" "Cygwin")</code>
+							<code class="bash">screenfetch -A ${distro[$RAND]} -w</code>
+						</pre>
 
 						<p>
-							Note: The -w Flag ("-w Wrap long lines.") is just there to fit all information on a normal terminal window.
+							Note: The
+							<span class="code file">-w</span> Flag ("-w Wrap long lines.") is just there to fit all information on a normal terminal window.
 						</p>
 
 						<div class="image_box">
@@ -290,7 +290,8 @@
 
 						<p>
 							And that's all you have to do. Now you can enjoy all the beautiful logos available. And everytime a different one (or at least one of the 70).
-							<br> And mentioned, you just have to put this code into your .bashrc (or equivalent). So when you launch a new instance, this code will be executed.
+							<br> And mentioned, you just have to put this code into your
+							<span class="code file">.bashrc</span> (or equivalent). So when you launch a new instance, this code will be executed.
 							<br> But you could also make an alias which calls an bash script file with this code inside. Just remember to give the absolute path of screenfetch so you don't create and infinite loop.
 						</p>
 

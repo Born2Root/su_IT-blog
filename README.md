@@ -48,7 +48,6 @@ suit-blog.net finally online: 13.12.2017
 - [nur eventuell] alternativer Cursor verwenden anstatt der Klickhand
 - eastereggs verstecken
 - inline quote
-- shortcuts, filenames, call name inline box
 
 - Screenfetch:
 	- gif zum Zeigen der Varianten
