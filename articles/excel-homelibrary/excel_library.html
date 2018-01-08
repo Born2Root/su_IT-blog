@@ -514,8 +514,8 @@
 						</div>
 
 						<pre>
-						<code class="VBScript">=BEREICH.VERSCHIEBEN($A$3;;;ANZAHL2($A:$A);ANZAHL2($3:$3))</code>
-					</pre>
+							<code class="VBScript">=BEREICH.VERSCHIEBEN($A$3;;;ANZAHL2($A:$A);ANZAHL2($3:$3))</code>
+						</pre>
 
 						<p>
 							Es muss berücksichtigt werden, dass die Überschriftenzeile mit in den Bereich fallen muss. In unserem Formelbeispiel steht die erste Datenbanküberschrift in Zelle A3. Wäre diese in C9 anstatt in A1, so würde die Formel entsprechend abgändert lauten:
@@ -655,7 +655,7 @@
 							Als nächstes kommt folgender VBA-Code in das neu angelegte Unterprogramm, in dem wir nun auf die bereits erstellte Combo-Box zugreifen.
 						</p>
 
-						<pre>
+						<pre class="multiline">
 						<code class="VBScript">'** Bei einem Doppelklick in eine Zelle die Autovervollständigende DropDown List anzeigen</code>
 						<code class="VBScript">Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean)</code>
 						<code class="VBScript">    Set xWs = Application.ActiveSheet</code>
@@ -760,8 +760,7 @@
 
 						</p>
 
-
-						<pre>
+						<pre class="multiline">
 						<code class="VBScript">'** Hide combo box and move to next cell on Enter and Tab</code>
 						<code class="VBScript">Private Sub TempCombo_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)</code>
 						<code class="VBScript">    Select Case KeyCode</code>
@@ -791,7 +790,7 @@
 							In allen Pivots Werte alphabetisch sortieren:
 						</p>
 
-						<pre>
+						<pre class="multiline">
 						<code class="VBScript">Sub PivotTables_AutoSortAZAllFields()</code>
 						<code class="VBScript">    Dim ws As Worksheet</code>
 						<code class="VBScript">    Dim pt As PivotTable</code>
@@ -859,7 +858,7 @@
 							<br> Die Länge der Ergebnisliste wird über den bereits bekannten Trick mit der Suche nach dem letzten Eintrag ermittelt.
 						</p>
 
-						<pre>
+						<pre class="multiline">
 						<code class="VBScript">num_prefilter_column = 15 'die Ergebnisliste der Pivot Tabelle steht in Spalte 15 = O</code>
 						<code class="VBScript">num_last_line = dWs.Cells(2, num_prefilter_column)</code>
 			 			<code class="VBScript">                    '** Prefilter Option</code>
@@ -1012,7 +1011,7 @@
 			<div id="disclaimer">
 				There is nothing more to discover down here ¯\_(ツ)_/¯
 				<br>
-				<i class="fas fa-closed-captioning"></i> 2017
+				<i class="fas fa-closed-captioning"></i> 2018
 				<a href="/impressum.html" target="_blank" rel="noopener">Impressum</a> |
 				<a href="/about_us.html" target="_blank" rel="noopener">About Us</a>
 			</div>

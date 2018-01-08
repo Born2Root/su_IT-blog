@@ -776,7 +776,8 @@
 
 						<p>
 							Versorgt wird der Raspberry Pi über einen Micro USB-Anschluss und ein zughöriges Netzteil (Input: 100-240V, 0.3A, 50/60Hz; Output: 5V, max. 2A). Für die bildgebende Ausgabe kann entweder ein LCD-Display über die DSI-Schnittstelle oder ein herkömmlicher Computermonitor über die HDMI-Schnittstelle angeschlossen werden.
-							<br> Die Tonausgabe kann über den Composite-Ausgang (4-phasige Klinke, Video und Sound) oder HDMI-Ausgang erfolgen. Die entsprechenden Einstellungen müssen in der Systemkonfiguration vorgenommen werden. Da die Onboard-Soundkarte allerdings keinen Audioeingang besitzt, sowie eine relativ rauschbehaftete Audioausgabe, wurde auf eine externe USB-Soundkarte zurückgegriffen (Abbildung 13). Wie sich jedoch im weiteren Projektverlauf herausstellte, verfügen diese als „Stereo Soundkarten“ vertriebenen USB-Geräte zwar über eine Stereo Audioausgabe, allerdings nur über einen Mono Eingang. Exakte Erläuterungen hierzu, sowie Lösungsmöglichkeiten werden im Kapitel Fazit näher erläutert.
+							<br> Die Tonausgabe kann über den Composite-Ausgang (4-phasige Klinke, Video und Sound) oder HDMI-Ausgang erfolgen. Die entsprechenden Einstellungen müssen in der Systemkonfiguration vorgenommen werden. Da die Onboard-Soundkarte allerdings keinen Audioeingang besitzt, sowie eine relativ rauschbehaftete Audioausgabe, wurde auf eine externe USB-Soundkarte zurückgegriffen (Abbildung 13). Wie sich jedoch im weiteren Projektverlauf herausstellte, verfügen diese als „Stereo Soundkarten“ vertriebenen USB-Geräte zwar über eine Stereo Audioausgabe, allerdings nur über einen Mono Eingang. Exakte Erläuterungen hierzu, sowie Lösungsmöglichkeiten werden im
+							<a target="_self" href="#conclusion" onclick="onpage_link(event, this);">Kapitel Conclusion</a> näher erläutert.
 						</p>
 
 						<div class="image_box">
@@ -944,7 +945,8 @@
 						</h3>
 
 						<p>
-							Hier soll zunächst nur auf die Installation des Programmpaketes Pure Data eingegangen werden. Eine weitergehende Beschreibung von Pure Data folgt in Kapitel 6.
+							Hier soll zunächst nur auf die Installation des Programmpaketes Pure Data eingegangen werden. Eine weitergehende Beschreibung von Pure Data folgt in
+							<a target="_self" href="#puredata" onclick="onpage_link(event, this);">Kapitel Pure Data</a>.
 							<br> Pure Data setzt sich aus mehreren Versionen zusammen. Die Basis Version, auch bekannt unter der Bezeichnung „Vanilla“, enthält lediglich eine Zusammenstellung der grundlegendsten Funktionen. Über zahlreich verfügbare Bibliotheken kann der Funktionsumfang anschließend beliebig erweitert werden. Mit dem Paket „Pd-Extended“ kann eine fertige Zusammenstellung, installiert werden, die sowohl Vanilla, als auch einen Großteil der externen Programmbibliotheken enthält. Hierbei ist zu beachten, dass Neuerungen zuerst in der Vanilla Version durchgeführt werden. So kann es vorkommen, dass die Extended Version veraltete Bibliotheken enthält. Dies war der Grund, warum im Zuge des Projektes auf dem Raspberry ein schwerwiegender Fehler in Kombination von Pd-Extended und ALSA auftrat. Dieser Fehler war in der Vanilla Version bereits behoben und trat hier nicht auf. Deshalb wird mit folgendem Befehl zunächst Pd-Vanilla installiert
 						</p>
 						<pre>
@@ -1085,7 +1087,7 @@
 						<p>
 							Die nachfolgenden Konfigurationseinstellungen sollten abgeglichen werden:
 						</p>
-						<pre>
+						<pre class="multiline">
 						<code># where is the PD source package?</code>
 						<code># (this should point to the main folder, which has a "src" (PD Vanilla) or "include" (PD extended) subfolder)</code>
 						<code>PDPATH=/home/pi/pdsource/pd</code>
@@ -1164,7 +1166,7 @@
 							<span class="code file">./flext</span> erzeugt. In dieser muss folgender Code auskommentiert werden
 						</p>
 
-						<pre>
+						<pre class="multiline">
 						<code># comment out to inhibit SIMD (Altivec/SSE) usage</code>
 						<code>#SIMD=1</code>
 					</pre>
@@ -1244,7 +1246,7 @@
 
 						<p>
 							Auf der technischen Zeichnung in Abbildung 19) ist die Wechselschalternummerierung dargestellt. Die Schalter sind durch diese festen GPIOs zugewiesen. In
-							<a target="_self" href="#verdrahtung" onclick="onpage_link(event, this);">Kapitel 5.2</a> können Verdrahtung und Belegung eingesehen werden.
+							<a target="_self" href="#verdrahtung" onclick="onpage_link(event, this);">Kapitel Verdrahtung</a> können Verdrahtung und Belegung eingesehen werden.
 						</p>
 
 						<div class="image_box">
@@ -1523,7 +1525,7 @@
 
 						<p>
 							Für alle, zusätzlich zur Gitarre implementierten, Instrumente wurde auf das bereits in
-							<a target="_self" href="#installationsynthesis" onclick="onpage_link(event, this);">Kapitel 4.2.4</a> erwähnte Sound Synthesis Toolkit zurückgegriffen. Genau wie bei der Gitarrenimplementierung kann der Nutzer auch hier klangverändernde Zusatzeinstellungen vornehmen oder bereits vordefinierte Einstellungen laden.
+							<a target="_self" href="#installationsynthesis" onclick="onpage_link(event, this);">Kapitel Installation des STK</a> erwähnte Sound Synthesis Toolkit zurückgegriffen. Genau wie bei der Gitarrenimplementierung kann der Nutzer auch hier klangverändernde Zusatzeinstellungen vornehmen oder bereits vordefinierte Einstellungen laden.
 							<br> Als besonders interessant zur Klangerzeugung mittels Theremin erwiesen sich nachfolgend aufgelistete STK-Klassen, welche auch alle fest implementiert wurden. Die Einzelimplementierungen werden an dieser Stelle nicht tiefgehender erläutert. Stattdessen wird auf die umfangreiche
 							<a href="https://ccrma.stanford.edu/software/stk/classes.html" target="_blank" rel="noopener">Dokumentation der C++ STK-Klassen</a> verwiesen.
 						</p>
@@ -2446,7 +2448,7 @@
 			<div id="disclaimer">
 				There is nothing more to discover down here ¯\_(ツ)_/¯
 				<br>
-				<i class="fas fa-closed-captioning"></i> 2017
+				<i class="fas fa-closed-captioning"></i> 2018
 				<a href="/impressum.html" target="_blank" rel="noopener">Impressum</a> |
 				<a href="/about_us.html" target="_blank" rel="noopener">About Us</a>
 			</div>

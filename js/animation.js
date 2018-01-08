@@ -105,7 +105,7 @@ function connect(context) {
 		context.beginPath();
 		context.arc(point.x, point.y, point.r, 0, 2 * Math.PI);
 		context.fill();
-		context.stroke();
 	});
+	context.stroke();
 
 }
