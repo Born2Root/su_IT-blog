@@ -440,37 +440,12 @@
 									<ol>
 										<li>
 											<a target="_self" href="#anhanga" onclick="onpage_link(event, this);">
-												Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
-											</a>
-										</li>
-										<li>
-											<a target="_self" href="#x86" onclick="onpage_link(event, this);">
-												x86- vs. x64- vs. ARM-Processor Architecture
-											</a>
-										</li>
-										<li>
-											<a target="_self" href="#windows" onclick="onpage_link(event, this);">
-												Windows Operating System
-											</a>
-										</li>
-										<li>
-											<a target="_self" href="#linux" onclick="onpage_link(event, this);">
-												GNU/Linux Operating System
-											</a>
-										</li>
-										<li>
-											<a target="_self" href="#raspberryplatform" onclick="onpage_link(event, this);">
-												Raspberry Platform
+												Anhang A - Kostenaufschlüsselung
 											</a>
 										</li>
 										<li>
 											<a target="_self" href="#anhangb" onclick="onpage_link(event, this);">
-												Anhang B - Kostenaufschlüsselung
-											</a>
-										</li>
-										<li>
-											<a target="_self" href="#anhangc" onclick="onpage_link(event, this);">
-												Anhang C - Zeit- und Aufgabenplan
+												Anhang B - Zeit- und Aufgabenplan
 											</a>
 										</li>
 									</ol>
@@ -1745,127 +1720,11 @@
 							<br> Garant dafür war vor allem die ausgewogene Mischung zwischen Hardware und Software. So wurden zum einen Platinen entworfen, bestückt und in Betrieb genommen, sowie zwei Gehäuse gefertigt. Zum anderen wurde viel Zeit mit der Programmierung von Pure Data, sowie der Linux Administrierung und Programmierung verbracht. Die kompetente Betreuung sowie Unterstützung sorgte für einen erfolgreichen Verlauf des Projektes.
 						</p>
 
-						<h2 id="anhanga">
-							Anhang A – Englische Schnellstartanleitung für verschiedene Plattformen
-							<a target="_self" href="#anhanga" onclick="onpage_link(event, this);">
-								<i class="fas fa-link fa-fw link"></i>
-							</a>
-						</h2>
-
-						<p>
-							If you want to execute the ThereOHM Pd-Patch, please assure that the following conditions concur to your system configuration. Otherwise the Patch will not work properly.
-						</p>
-
-						<h2 id="x86">
-							x86- vs. x64- vs. ARM-Processor Architecture
-							<a target="_self" href="#x86" onclick="onpage_link(event, this);">
-								<i class="fas fa-link fa-fw link"></i>
-							</a>
-						</h2>
-
-						<p>
-							The Patch uses STK-Libraries, which are currently not native supported for all operating systems. If you’re using an x86 (32Bit) Windows or Linux architecture or a Raspberry Pi you’re fine because all libraries are attached precompiled. If you’re using an x64 (64Bit) system architecture you have compile the libraries on your own. Be aware that this could take some time ;-)
-						</p>
-
-						<h2 id="windows">
-							Windows Operating System
-							<a target="_self" href="#windows" onclick="onpage_link(event, this);">
-								<i class="fas fa-link fa-fw link"></i>
-							</a>
-						</h2>
-
-						<p>
-							If you’re using a Windows operating system please download Pd-Extended following the instructions on the webpage:
-							<a href="http://puredata.info/downloads/pd-extended" target="_blank" rel="noopener">puredata.info/downloads/pd-extended</a>
-						</p>
-
-						<h2 id="linux">
-							GNU/Linux Operating System
-							<a target="_self" href="#linux" onclick="onpage_link(event, this);">
-								<i class="fas fa-link fa-fw link"></i>
-							</a>
-						</h2>
-
-						<p>
-							If you’re using a Linux operating system, please install the following packages to assure that Pure Data works fine.
-						</p>
-
-						<ul class="fa-ul">
-							<li>
-								<span class="fa-li">
-									<i class="fas fa-hand-point-right"></i>
-								</span>
-								Installation of Pd-Extended via thrid party repository:
-								<pre>
-								<code class="command">sudo add-apt-repository "deb http://apt.puredata.info/releases `lsb_release -c | awk '{print $2}'` main"</code>
-								<code class="command">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 9f0fe587374bbe81</code>
-								<code class="command">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key D63D3D09C39F5EEB</code>
-								<code class="command">sudo apt-get update</code>
-								<code class="command">sudo apt-get install pd-extended</code>
-							</pre>
-							</li>
-							<li>
-								<span class="fa-li">
-									<i class="fas fa-hand-point-right"></i>
-								</span>
-								Installation of further packages:
-								<pre>
-								<code class="command">sudo apt-get install g++</code>
-								<code class="command">sudo apt-get install csound</code>
-							</pre>
-							</li>
-						</ul>
-						<p>
-							Otherwise STK will throw the error "libstk.so.0: cannot open shared object file: No such file or directory"
-						</p>
-
-						<pre>
-						<code class="command">sudo apt-get install libasound2-dev</code>
-					</pre>
-
-						<p>
-							Otherwise STK will throw an error that it can't configure Some of the STK-Libraries need special raw audio files. These files are automatically installed if you are using a new operating system and a new Pd-extended version. If you’re not running the latest versions, please check preventively if there are rawfiles located in the folder
-							<span class="code file">/usr/share/stk/rawwaves</span>. If you don't have a
-							<span class="code file">/usr/share/stk</span> directory, you'll need to create it:
-						</p>
-
-						<pre>
-						<code class="command">sudo mkdir /usr/share/stk</code>
-					</pre>
-						<p>
-							Download the binary raws corresponding to your operating system on the CCRMA-Website, or find them attached to the ThereOHM files for x86 architecture:
-							<a href="https://ccrma.stanford.edu/wiki/Stk2pd" target="_blank" rel="noopener">link 1</a>
-							<a href="https://ccrma.stanford.edu/wiki/Stk2pd444" target="_blank" rel="noopener">link 2</a>. After downloading and uncompressing, navigate to the directory and copy the
-							<span class="code">rawwaves</span> program to
-							<span class="code file">/usr/share/stk</span> by typing in the terminal:
-						</p>
-						<pre>
-						<code class="command">sudo cp -r rawwaves /usr/share/stk/rawwaves</code>
-					</pre>
-						<p>
-							Now your system is ready to go! To launch the Patch you only need to give the linux files in the folder read and write access privileges. To save typing effort give all files full access
-						</p>
-						<pre>
-						<code class="command">sudo chmod -R 777 ./MAIN</code>
-					</pre>
-
-						<h2 id="raspberryplatform">
-							Raspberry Platform
-							<a target="_self" href="#raspberryplatform" onclick="onpage_link(event, this);">
-								<i class="fas fa-link fa-fw link"></i>
-							</a>
-						</h2>
-
-						<p>
-							If you’re using a Raspberry Pi please follow the steps mentioned under 3. In addition to this you should start Pd always in sudo mode. Otherwise Pure Data would not work properly. Additionally you can use the prepared Bash-Script to startup. This script is located in the ThereOHM Patch folder. Its name is
-							<span class="code file">Startup_Raspberry.sh</span>.
-						</p>
-
 						<hr>
 
-						<h2 id="anhangb">
-							Anhang B - Kostenaufschlüsselung
-							<a target="_self" href="#anhangb" onclick="onpage_link(event, this);">
+						<h2 id="anhanga">
+							Anhang A - Kostenaufschlüsselung
+							<a target="_self" href="#anhanga" onclick="onpage_link(event, this);">
 								<i class="fas fa-link fa-fw link"></i>
 							</a>
 						</h2>
@@ -2132,9 +1991,9 @@
 
 						<hr>
 
-						<h2 id="anhangc">
-							Anhang C - Zeit- und Aufgabenplan
-							<a target="_self" href="#anhangc" onclick="onpage_link(event, this);">
+						<h2 id="anhangb">
+							Anhang B - Zeit- und Aufgabenplan
+							<a target="_self" href="#anhangb" onclick="onpage_link(event, this);">
 								<i class="fas fa-link fa-fw link"></i>
 							</a>
 						</h2>
