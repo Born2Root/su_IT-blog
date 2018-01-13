@@ -68,16 +68,27 @@ function print_link($link)
 		if ($search_tags == null) {
 			echo "su IT --blog main page | suit-blog.net";
 		} else {
-			echo "$search_tags filtered main page | suit-blog.net";
+			foreach (explode(";", $search_tags) as &$value) {
+				echo $value." ";
+			}
+			echo "filtered main page | suit-blog.net";
 		}
 		?>
-
 	</title>
 
 	<!-- meta -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="This is the homepage of the su IT --blog. Here, you can find various information technology, programming and technical topics | suit-blog.net">
+	<meta name="description" content="<?php
+		if ($search_tags == null) {
+			echo "This is the homepage of the su IT --blog. Here, you can find various information technology, programming and technical topics ";
+		} else {
+			foreach (explode(";", $search_tags) as &$value) {
+				echo $value." ";
+			}
+			echo "filtered homepage of the su IT --blog.";
+		}
+		?>| suit-blog.net">
 	<meta name="keywords" content="linux, raspberry, blog, articles, website, suit, sudo, it, scripts, bash, programming, terminal, diy">
 	<meta name="robots" content="index, follow">
 	<meta name="theme-color" content="#111111">
