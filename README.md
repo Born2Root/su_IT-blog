@@ -47,7 +47,6 @@ suit-blog.net finally online: 13.12.2017
 - [nur eventuell] links anzeigen ob sie _blank oder _self
 - [nur eventuell] alternativer Cursor verwenden anstatt der Klickhand
 - eastereggs verstecken
-- inline quote
 
 - Screenfetch:
 	- gif zum Zeigen der Varianten

@@ -37,6 +37,15 @@ html {
 	}
 }
 
+.fa-border {
+	background-color: #484848;
+}
+
+.fa-border i {
+	padding-right: 7px;
+	color: #ff6d00;
+}
+
 .box {
 	font-size: 1.125em;
 	line-height: 25px;
@@ -202,7 +211,7 @@ code {
 	font-size: 15px;
 }
 
-.file{
+.file {
 	font-style: italic;
 }
 
