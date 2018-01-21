@@ -131,6 +131,65 @@
 
 				<div id="article">
 
+					<style>
+						.test {
+							height: 400px;
+							width: 200px;
+							margin: 3px;
+							border: 1px solid #000000;
+							transform: rotate(15deg);
+							position: relative;
+							overflow: hidden;
+							display: inline-block;
+						}
+
+						.test:before {
+							content: "";
+							position: absolute;
+							width: 400%;
+							height: 200%;
+							top: -40%;
+							left: -50%;
+							z-index: -1;
+							transform: rotate(-15deg);
+						}
+
+						#e1:before {
+							background: url('/images/f_IMG_3802.jpg') 0 0 no-repeat;
+						}
+
+						#e2:before {
+							background: url('/images/f_IMG_7794.jpg') 0 0 no-repeat;
+						}
+
+						#e3:before {
+							background: url('/images/f_IMG_3807.jpg') 0 0 no-repeat;
+						}
+
+						#e4:before {
+							background: url('/images/f_IMG_3819.jpg') 0 0 no-repeat;
+						}
+
+						#e5:before {
+							background: url('/images/f_IMG_3941.jpg') 0 0 no-repeat;
+						}
+					</style>
+
+					<div class="test" id="e1">
+					</div>
+
+					<div class="test" id="e2">
+					</div>
+
+					<div class="test" id="e3">
+					</div>
+
+					<div class="test" id="e4">
+					</div>
+
+					<div class="test" id="e5">
+					</div>
+
 					<h1>
 						About Us
 					</h1>
