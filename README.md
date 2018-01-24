@@ -42,6 +42,7 @@ suit-blog.net finally online: 13.12.2017
 
 ## zukunft:
 
+- RSS feed
 - 404
 - [nur eventuell] search
 - [nur eventuell] links anzeigen ob sie _blank oder _self
