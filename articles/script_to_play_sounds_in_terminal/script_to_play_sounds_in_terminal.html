@@ -353,86 +353,145 @@
 							</li>
 						</ul>
 
+						<h2 id="screensaver">
+							Screensaver
+							<a target="_self" href="#screensaver" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
+
 						<p>
-							The principal of the scripts and the call of them is not every time the same.
+							The scripts look a lot alike, but there are some small differences. So pay close attention.
 							<br>
-							<br> So I guess we start easy with the lock screen. Although not all of you will have one. But I got one, and I am using i3lock. So for me I got a script which works with some images and gives them then to i3lock and make a fancy looking lock screen. I did not came up with this code, I just modified it and riced it a bit and used it.
+							<br> The first sound will play right before your system locks into a screensaver. This will only work if you have any chance to execute a script before your system gets locked.
+							<br> When I created this script, I was using i3lock, the lock screen which suits the i3 window manager.
+							<br> Because I modified the look of i3lock, I already called a script which then calls i3lock. I just had to add this one line.
 						</p>
+
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">/home/lukas/scripts/screensaver.sh</code>
+							<code class="bash">ICON=/home/lukas/scripts/logos/asset1.png</code>
+							<code>...</code>
+							<code class="bash">i3lock -u -i $TMPBG</code>
+						</pre>
+
+						<p>
+							<span class="code">xautolock</span> was started on system start to execute this file after 15mins.
+						</p>
+
+						<p>
+							We don't want to wait for the sound to finish playing, it is already taking long enough to lock the screen. Therefor the
+							<span class="code">&</span> at the end of the line.
+							<br>And the
+							<span class="code file">screensaver.sh</span> looks like this:
+						</p>
+
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 4 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/screensaver/screensaver_$RAND.wav >/dev/null 2>&1</code>
+						</pre>
+
+						<p>
+							The matching files have to be called
+							<span class="code file">screensaver_[index].wav</span> or the code has to be change accordingly.
+						</p>
+
+						<fieldset class="info box">
+							<legend>
+								<i class="fas fa-info-circle fa-fw"></i>
+							</legend>
+							Name and the file format don't matter. As long as they are all the same. And you need some sort of indexing across the files.
+						</fieldset>
+
+						<hr>
+
+						<h2 id="console_error">
+							Console error
+							<a target="_self" href="#console_error" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
+
+						<p>
+							The code looks almost the same.
+						</p>
+
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 20 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/error/error_$RAND.wav >/dev/null 2>&1 &</code>
+						</pre>
+
+						<h3 id="using_bash">
+							Using Bash
+							<a target="_self" href="#using_bash" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h3>
+
+						<p>
+							But now to the call.
+							<br> As you see, my prompt is making a little smiley
+							<span class="code">[^_^]</span>. And that's because of my configuration of my
+							<span class="code file">.bashrc</span> where I set my prompt according to the success of a command.
+							<br>If I get a positive response
+							<span class="code">^_^</span> in green, on a failure
+							<span class="code">0_0</span> in red.
+						</p>
+
+						<p>
+							The code for the smileys alone looks like this:
+							<span class="code">PS1='$(if [[ $? == 0 ]]; then echo ""\n┌[\e[0;32m^_^""; else echo ""\n┌[\e[1;31m0_0""; fi)\e[0m]-[\h]-[\e[0;32;49m\w\[\e[0m]\n└>'</span>
+							<br> But you might already can guess where this is going.
+						</p>
+
+						<p>
+							So this is the code to set the PS1 alias the prompt. And then after echoing
+							<span class="code">0_0</span>, we simply call our script to make a matching sound:
+						</p>
+
+						<pre>
+							<code class="bash">PS1='$(if [[ $? == 0 ]]; then echo ""\n┌[\e[0;32m^_^""; else echo ""\n┌[\e[1;31m0_0""; /home/lukas/scripts/error.sh & fi)\e[0m]-[\h]-[\e[0;32;49m\w\[\e[0m] \n└>'</code>
+						</pre>
+
+						<p>
+							And like this, every time we enter a command the PS1 gets set and we are right there. We will get back to the
+							<span class="code file">.bashrc</span> later.
+						</p>
+
+						<h3 id="using_zsh">
+							Using ZSH and oh-my-zsh
+							<a target="_self" href="#using_zsh" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h3>
+
+						<p>
+							<!-- beschreiben, das ich ein Theme von oh-my-zsh angepasst hab -->
+						</p>
+
+						<pre class="multiline">
+							<code class="zsh">prompt_status() {</code>
+							<code class="zsh">	local symbols</code>
+							<code class="zsh">	symbols=()</code>
+							<code class="zsh">	[[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"</code>
+							<code class="zsh">	[[ $RETVAL == 0 ]] && symbols+="%{%F{green}%}^_^"</code>
+							<code class="zsh">	[[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"</code>
+							<code class="zsh">	[[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"</code>
+							<code></code>
+							<code class="zsh">	[[ -n "$symbols" ]] && prompt_segment black default "$symbols"</code>
+							<code></code>
+							<code class="zsh">	[[ $RETVAL -ne 0 ]] && /home/lukas/scripts/error.sh &</code>
+							<code>}</code>
+						</pre>
 
 						<!--
 (linux, scripting, tutorial, rice, shell, advanced)
 
 
-```
-#!/bin/bash
 
-/home/lukas/scripts/screensaver.sh
-
-RAND1=$[ $RANDOM % 9 ]
-RAND2=-1;
-while [ $RAND1 -eq $RAND2 ] || [ $RAND2 -eq -1 ];
-do
-	RAND2=$[ $RANDOM % 9 ]
-done
-
-ICON1=/home/lukas/scripts/logos/asset$RAND1.png
-ICON2=/home/lukas/scripts/logos/asset$RAND2.png
-
-TMPBG=/tmp/screen.png
-scrot /tmp/screen.png
-
-convert $TMPBG -blur 5x10 -quality 01 $TMPBG
-
-convert $TMPBG $ICON1 -geometry +705+290 -quality 01 -composite -matte $TMPBG
-convert $TMPBG $ICON2 -geometry +2300+260 -quality 01 -composite -matte $TMPBG
-
-i3lock -u -i $TMPBG
-rm /tmp/screen.png
-```
-
-and notice the call of our script at the beginning:
-
-`/home/lukas/scripts/screensaver.sh`
-
-We don't want to wait for the sound to finish playing, it is already taking long enough to lock the screen.
-And the screensaver.sh looks like this:
-
-```
-#!/bin/bash
-
-RAND=$[ $RANDOM % 4 ]
-mplayer /home/lukas/scripts/screensaver/screensaver_$RAND.wav >/dev/null 2>&1 &
-```
-
-The matching files have to be called `screensaver_[index].wav` or the code has to be change accordingly. So has the number of sounds available where we make our random number.
-
-<hr/>
-
-### Next up our error sound script.
-The code looks almost the same.
-
-```
-#!/bin/bash
-
-RAND=$[ $RANDOM % 20 ]
-mplayer /home/lukas/scripts/error/error_$RAND.wav >/dev/null 2>&1 &
-```
-
-But now to the call.
-<img src=""//0x00sec.s3.amazonaws.com/original/2X/e/ee70217135f118b2748c3ec018a58db7862f3b73.png"" width=""690"" height=""388"">
-
-As you see, my prompt is making a little smiley `[^_^]`. And that's because of my configuration of my `.bashrc` where I set my prompt according to the success of a command. If I get a positive response `^_^` in green (<small>it isn't possible to make anything in color with the markdown, is there?</small>), on a failure `0_0` in red.
-(disclaimer: also this code is not created by me, I also just used it for my rice)
-
-The code for this looks like this:
-`PS1='$(if [[ $? == 0 ]]; then echo ""\n┌[\e[0;32m^_^""; else echo ""\n┌[\e[1;31m0_0""; fi)\e[0m]-[\h]-[\e[0;32;49m\w\[\e[0m]\n└>'`
-But you might already can guess where this is going.
-
-So this is the code to set the PS1 alias the prompt. And then after echoing 0_0, we simply call our script to make a matching sound:
-
-`PS1='$(if [[ $? == 0 ]]; then echo ""\n┌[\e[0;32m^_^""; else echo ""\n┌[\e[1;31m0_0""; /home/lukas/scripts/error.sh & fi)\e[0m]-[\h]-[\e[0;32;49m\w\[\e[0m] \n└>'`
-
-And like this, every time we enter a command the PS1 gets set and we are right there. We will get back to the .bashrc later.
 
 <hr/>
 ### startup
