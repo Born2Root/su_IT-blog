@@ -469,7 +469,13 @@
 						</h3>
 
 						<p>
-							<!-- beschreiben, das ich ein Theme von oh-my-zsh angepasst hab -->
+							If you use ZSH as your default shell, you surely have oh-my-zsh, a framework to manage your ZSH config, installed.
+							<br> In this case, your shell won't use the
+							<span class="code file">.bashrc</span>. Instead it uses
+							<span class="code file">.zshrc</span>, so you need to configure your prompt there. But if you are using a theme, the prompt configuration is in the theme file you selected.
+							<br> You can find all downloaded themes under
+							<span class="code file">~/.oh-my-zsh/themes/</span>.
+							<br> I modified the agnoster default themes to my needs:
 						</p>
 
 						<pre class="multiline">
@@ -487,46 +493,67 @@
 							<code>}</code>
 						</pre>
 
+						<hr>
+
+						<h2 id="startup">
+							Startup
+							<a target="_self" href="#startup" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
+
+						<p>
+							Now, startup is really easy. I used the XFCE
+							<i>session and startup</i> tool, which either is pre-installed with XFCE or comes with the utils package.
+							<br>If you use a different desktop environment, you can go for their program doing this kind of stuff. An other option would be to create a .desktop file by hand or create a daemon or a service which calls our script on startup. Be sure to active the daemon so it will work.
+							<br> I'm not going into each option, there are tutorials which tell you how to set this up.
+						</p>
+
+						<p>
+							That's how XFCE makes it:
+							<span class="code file">Greet.desktop</span>.
+						</p>
+
+						<pre class="multiline">
+							<code>[Desktop Entry]</code>
+							<code>Encoding=UTF-8</code>
+							<code>Version=0.9.4</code>
+							<code>Type=Application</code>
+							<code>Name=Greet</code>
+							<code>Comment=</code>
+							<code>Exec=/home/lukas/scripts/startup.sh</code>
+							<code>OnlyShowIn=XFCE;</code>
+							<code>StartupNotify=false</code>
+							<code>Terminal=false</code>
+							<code>Hidden=false</code>
+						</pre>
+
+						<p>
+							<span class="code file">startup.sh</span>:
+						</p>
+
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 10 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/startup/startup_$RAND.wav >/dev/null 2>&1 &</code>
+						</pre>
+
+						<hr>
+
+						<h2 id="shutdown">
+							Shutdown
+							<a target="_self" href="#shutdown" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
+
+						<p>
+							But now for the shutdown sound, we need to create a service. All other possibilities that I tried didn't work.
+							<br>Either did the system already hang out my drive or the sound drivers aren't working anymore, or the system does not wait for the sound to finish playing. That was probably the hardest sound to get playing.
+						</p>
+
 						<!--
 (linux, scripting, tutorial, rice, shell, advanced)
-
-
-
-
-<hr/>
-### startup
-
-Now, startup should be really easy. And I took the easiest way available. I used the XFCE <i>session and startup</i> tool, which either is pre-installed with XFCE or comes with the utils package. So if you use a different desktop environment you can go for their program doing this kind of stuff. An other option would be to create a .desktop file by hand or create a daemon or a service which calls our script on startup. Be sure to active the daemon so it will work.
-I'm not going into each option, there are tutorials which tell you how to set this up.
-
-That's how XFCE makes it:
-`Greet.desktop`
-```
-[Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
-Type=Application
-Name=Greet
-Comment=
-Exec=/home/lukas/scripts/startup.sh
-OnlyShowIn=XFCE;
-StartupNotify=false
-Terminal=false
-Hidden=false
-```
-`startup.sh`:
-
-```
-#!/bin/bash
-
-RAND=$[ $RANDOM % 10 ]
-mplayer /home/lukas/scripts/startup/startup_$RAND.wav >/dev/null 2>&1 &
-```
-
-<hr/>
-### shutdown
-But now for the shutdown sound, we need to create a service. All other possibilities that I tried didn't work.
-Either did the system already hang out my drive or the sound drivers aren't working anymore, or the system does not wait for the sound to finish playing. That was probably the hardest sound to get playing.
 
 
 systemctl daemon-reload
