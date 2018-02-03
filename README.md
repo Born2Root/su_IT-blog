@@ -38,7 +38,6 @@ suit-blog.net finally online: 13.12.2017
 - cross browser
 - about us
 - meme page
-- write posts
 
 ## zukunft:
 

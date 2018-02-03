@@ -18,6 +18,7 @@ CAPS LOCK – Preventing login since 1980
 Cats spend two thirds of their lives sleeping, and the other third making viral videos
 Come to my 127.0.0.1 and I'll give you sudo access
 Computer programmers don't byte, they nibble a bit
+Cracking is like sex. You get in, you get out, and hope that you didn't leave something that can be traced back to you
 dd if=/dev/random of=/dev/sda
 Disclaimer: Any errors in spelling, tact, or fact are transmission errors
 Disobey
@@ -29,7 +30,6 @@ Failure is not an option — it comes bundled with the software
 Freedom is just another word for nothing left to loose
 Fuck society
 Give a man a mask and he will show you his true face
-Cracking is like sex. You get in, you get out, and hope that you didn't leave something that can be traced back to you
 Have you tried turning it off and on again
 Hell is wallpapered with all your deleted selfies
 Hello friend. Hello friend? That's lame. Maybe I should give you a name
@@ -39,6 +39,7 @@ How about no
 How about we do some peer-to-peer sharing? Your domain or mine?
 How do hackers reproduce? Careful, anonymous and through the back door
 How much is the fish?
+I am root
 I don't have a dirty mind, I have a sexy imagination
 I hate when people ask for likes... Like if you agree
 I have seen the truth, and it doesn't make sense
@@ -89,6 +90,7 @@ Programming is like sex, one mistake and you have to support for a lifetime
 Put your panties down, to grant me sudo access
 rm -rf /
 Roses are #FF0000, violets are #0000FF. All my base belong to you
+Roses are Red, Violets are Blue. Unexpected '{' on line 32.
 Scratch here ############## to reveal the password
 SELECT Beer FROM fridge WHERE temp = "COLD";
 Sex:{ find; talk; grep; touch; unzip; mount; workbone; fsck; yes; gasp; fsck; yes; eject; makeclean; zip; done; exit}

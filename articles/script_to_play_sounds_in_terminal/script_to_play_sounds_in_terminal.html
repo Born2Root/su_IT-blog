@@ -153,7 +153,7 @@
 								<div class="tag_div">
 									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
 									<div class="tag_text">
-										<i class="fas fa-clock"></i> 5min read</div>
+										<i class="fas fa-clock"></i> 15min read</div>
 								</div>
 								<div class="tag_div">
 									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
@@ -167,6 +167,7 @@
 									<img src="/icon/hexagon.png" alt="tag" class="tag_img" />
 									<div class="tag_text">scripts</div>
 								</div>
+								<!-- (linux, scripting, tutorial, rice, shell, advanced) -->
 							</div>
 
 							<img src="console.png" alt="logo" class="image">
@@ -275,7 +276,6 @@
 
 						<pre class="multiline">
 							<code class="bash">#!/bin/bash</code>
-							<code></code>
 							<code class="bash">RAND=$[ $RANDOM % 20 ]</code>
 							<code class="bash">mplayer /home/lukas/scripts/error/error_$RAND.wav >/dev/null 2>&1 &</code>
 						</pre>
@@ -350,6 +350,12 @@
 									<i class="fas fa-hand-point-right"></i>
 								</span>
 								before lockscreen (if you got one)
+							</li>
+							<li>
+								<span class="fa-li">
+									<i class="fas fa-hand-point-right"></i>
+								</span>
+								while unpacking zips/rars
 							</li>
 						</ul>
 
@@ -549,113 +555,177 @@
 
 						<p>
 							But now for the shutdown sound, we need to create a service. All other possibilities that I tried didn't work.
-							<br>Either did the system already hang out my drive or the sound drivers aren't working anymore, or the system does not wait for the sound to finish playing. That was probably the hardest sound to get playing.
+							<br>Either did the system already hang out my drive or the sound drivers aren't working anymore, or the system does not wait for the sound to finish playing. That was probably the hardest sound to get playing. [ein bischen weiter ausführen]
+
+							<br> But I got it working now, and it's really awesome.
 						</p>
 
-						<!--
-(linux, scripting, tutorial, rice, shell, advanced)
+						<pre>
+							<code>systemctl daemon-reload [??warum???]</code>
+						</pre>
 
+						<p>
+							<span class="code file">/etc/systemd/system/shutdown.service</span>:
+						</p>
 
-systemctl daemon-reload
+						<pre class="multiline">
+							<code>[Unit]</code>
+							<code>Description=Shutdown Sound</code>
+							<code></code>
+							<code>[Service]</code>
+							<code>Type=oneshot</code>
+							<code>RemainAfterExit=true</code>
+							<code>ExecStart=/bin/true</code>
+							<code>ExecStop=/home/lukas/scripts/shutdown.sh</code>
+							<code></code>
+							<code>[Install]</code>
+							<code>WantedBy=multi-user.target</code>
+						</pre>
 
+						<p>
+							<span class="code file">shutdown.sh</span>:
+						</p>
 
-But I got it working now, and it's really awesome.
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 16 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/shutdown/shutdown_$RAND.wav >/dev/null 2>&1</code>
+						</pre>
 
-Laying in `/etc/systemd/system/shutdown.service`:
-```
-[Unit]
-Description=Shutdown Sound
+						<fieldset class="warning box">
+							<legend>
+								<i class="fas fa-exclamation-triangle fa-fw"></i>
+							</legend>
+							Pay attention that we don't want to put an
+							<span class="code">&</span> at the end, otherwise GNU Linux won't wait with shutting down until the sound is completely played
+						</fieldset>
 
-[Service]
-Type=oneshot
-RemainAfterExit=true
-ExecStart=/bin/true
-ExecStop=/home/lukas/scripts/shutdown.sh
+						<p>
+							Then enable and start the service with:
+						</p>
 
-[Install]
-WantedBy=multi-user.target
-```
+						<pre>
+							<code>systemctl start shutdown.service</code>
+						</pre>
 
-`shutdown.sh`:
+						<hr>
 
-```
-#!/bin/bash
+						<h2 id="shellsounds">
+							Shell sounds
+							<a target="_self" href="#shellsounds" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h2>
 
-RAND=$[ $RANDOM % 16 ]
-mplayer /home/lukas/scripts/shutdown/shutdown_$RAND.wav >/dev/null 2>&1
-```
-<br/>
-!!!Pay attention that we don't want to put an `&` at the end, because then GNU Linux won't wait with shutting down until the sound is completely played!!!
+						<p>
+							The rest of the sounds I want to play, will all be played within the shell.
+							<br>The scrips are all the same and we also call them the same way.
+						</p>
 
-Then enable and start the service with:
-systemctl start shutdown.service
-<br/>
-<hr/>
-Now the rest and they all work the same way.
-We got our scripts:
+						<p>
+							<span class="code file">install.sh</span>:
+						</p>
 
-#### install/pacman
-```
-#!/bin/bash
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 2 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/install/install_$RAND.wav >/dev/null 2>&1 &</code>
+						</pre>
 
-RAND=$[ $RANDOM % 2 ]
-mplayer /home/lukas/scripts/install/install_$RAND.wav >/dev/null 2>&1 &
-```
+						<p>
+							<span class="code file">whoami.sh</span>:
+						</p>
 
-#### whoami
-```
-#!/bin/bash
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 3 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/whoami/whoami_$RAND.wav >/dev/null 2>&1 &</code>
+						</pre>
 
-RAND=$[ $RANDOM % 3 ]
-mplayer /home/lukas/scripts/whoami/whoami_$RAND.wav >/dev/null 2>&1 &
-```
+						<p>
+							<span class="code file">locate.sh</span>:
+						</p>
 
-#### locate/find
-```
-#!/bin/bash
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 2 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/locate/locate_$RAND.wav >/dev/null 2>&1 &</code>
+						</pre>
 
-RAND=$[ $RANDOM % 2 ]
-mplayer /home/lukas/scripts/locate/locate_$RAND.wav >/dev/null 2>&1 &
-```
-<br/>
-And we write us an alias function in our `.bashrc` or wherever you have your aliases.
+						<p>
+							<span class="code file">unrar.sh</span>:
+						</p>
 
-```
-#sound
-whoami_sound(){
-	/home/lukas/scripts/whoami.sh
-	/usr/bin/whoami
-}
-alias whoami=whoami_sound
-locate_sound(){
-	/home/lukas/scripts/locate.sh
-	/usr/bin/locate ""$@""
-}
-alias ""locate""=locate_sound
-find_sound(){
-	/home/lukas/scripts/locate.sh
-	/usr/bin/find ""$@""
-}
-alias ""find""=find_sound
-install_sound(){
-	/home/lukas/scripts/install.sh
-	sudo /usr/bin/pacman ""$@""
-}
-alias pacman=install_sound
-```
+						<pre class="multiline">
+							<code class="bash">#!/bin/bash</code>
+							<code class="bash">RAND=$[ $RANDOM % 1 ]</code>
+							<code class="bash">mplayer /home/lukas/scripts/unrar/unrar_$RAND.wav >/dev/null 2>&1 &</code>
+						</pre>
 
-Every time we call for example whoami, we instead call our function which calls our script and then the command we were calling in the first place. But important, don't just write the command down, write the full path. Otherwise we create and endless loop, because apparently this counts as normal call.
-On command which take parameters we have to give them to our real call too.
+						<hr>
 
--
+						<p>
+							To call the scripts, we write us an alias in our
+							<span class="code file">.bashrc</span> or
+							<span class="code file">.zshrc</span> which then calls a function:
+						</p>
 
-# Conclusions
+						<pre class="multiline">
+							<code class="bash">whoami_sound(){</code>
+							<code class="bash">	/home/lukas/scripts/whoami.sh</code>
+							<code class="bash">	/usr/bin/whoami</code>
+							<code class="bash">}</code>
+							<code class="bash">alias whoami=whoami_sound</code>
+							<code></code>
+							<code class="bash">locate_sound(){</code>
+							<code class="bash">	/home/lukas/scripts/locate.sh</code>
+							<code class="bash">	/usr/bin/locate "$@"</code>
+							<code class="bash">}</code>
+							<code class="bash">alias "locate"=locate_sound</code>
+							<code></code>
+							<code class="bash">find_sound(){</code>
+							<code class="bash">	/home/lukas/scripts/locate.sh</code>
+							<code class="bash">	/usr/bin/find "$@"</code>
+							<code class="bash">}</code>
+							<code class="bash">alias "find"=find_sound</code>
+							<code></code>
+							<code class="bash">install_sound(){</code>
+							<code class="bash">	/home/lukas/scripts/install.sh</code>
+							<code class="bash">	sudo /usr/bin/pacman "$@"</code>
+							<code class="bash">}</code>
+							<code class="bash">alias pacman=install_sound</code>
+							<code></code>
+							<code class="bash">unrar_sound(){</code>
+							<code class="bash">	/home/lukas/scripts/unrar.sh</code>
+							<code class="bash">	sudo /usr/bin/unrar "$@"</code>
+							<code class="bash">}</code>
+							<code class="bash">alias unrar=unrar_sound</code>
+							<code></code>
+							<code class="bash">unzip_sound(){</code>
+							<code class="bash">	/home/lukas/scripts/unrar.sh</code>
+							<code class="bash">	sudo /usr/bin/unzip "$@"</code>
+							<code class="bash">}</code>
+							<code class="bash">alias unzip=unzip_sound</code>
+						</pre>
 
-So that's it. You may want to add a flag to regulate the volume or the output device.
-I was thinking about making it a real program, like Iron Mans J.A.R.V.I.S for example, but I haven't had an idea about how I can get all those different events into a single program. Maybe you got a idea and leave a hint in the comments.
+						<p>
+							Every time we call for example
+							<span class="code">whoami</span>, we instead call our function which calls our script and then the command we were calling in the first place. But pay attention: don't just write the command down, write the full path. Otherwise we create and endless loop.
+							<br> On commands which take parameters we have to give them to our real call too.
+						</p>
 
-I really hope you liked it, and stay tuned there will another part following.
-	-->
+						<hr>
+
+						<h1 id="conclusions">
+							Conclusions
+							<a target="_self" href="#conclusions" onclick="onpage_link(event, this);">
+								<i class="fas fa-link fa-fw link"></i>
+							</a>
+						</h1>
+
+						<p>
+							So that's it. You may want to add a flag to regulate the volume or the output device. I was thinking about making it a real program, like Iron Mans J.A.R.V.I.S for example, but I haven't had an idea about how I can get all those different events into a single program. Maybe you got a idea. Just hit me up.
+						</p>
 
 						<hr>
 					</div>
