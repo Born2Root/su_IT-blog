@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--accent: #ff6d00;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -23,7 +27,7 @@ html {
 		background-color: #202020;
 	}
 	50% {
-		background-color: #ff6d00;
+		background-color: var(--accent);
 	}
 }
 
@@ -33,7 +37,7 @@ html {
 		background-color: #202020;
 	}
 	50% {
-		background-color: #ff6d00;
+		background-color: var(--accent);
 	}
 }
 
@@ -43,7 +47,7 @@ html {
 
 .fa-border i {
 	padding-right: 7px;
-	color: #ff6d00;
+	color: var(--accent);
 }
 
 .box {
@@ -154,7 +158,7 @@ ul {
 }
 
 .active {
-	background-color: #ff6d00 !important;
+	background-color: var(--accent) !important;
 }
 
 pre {
@@ -163,7 +167,7 @@ pre {
 	line-height: 22px;
 	box-shadow: 0px 0px 11px 2px rgba(0, 0, 0, 0.659);
 	counter-reset: line -1;
-	border-left: 5px solid #ff6d00;
+	border-left: 5px solid var(--accent);
 	border-radius: 3px;
 	word-break: break-word;
 }
@@ -345,7 +349,9 @@ h1 {
 
 h2 {
 	margin-left: 5%;
-	font-size: 1.3em;
+	font-size: 1.4em;
+	color: rgba(255, 255, 255, 0.72);
+	font-weight: 500;
 	font-family: hack_font;
 }
 
@@ -386,13 +392,13 @@ iframe {
 
 hr {
 	height: 5px;
-	background-color: #ff6d00;
+	background-color: var(--accent);
 	border: 0px;
 	width: 90%;
 }
 
 .fa-li {
-	color: #ff6d00;
+	color: var(--accent);
 }
 
 #body_article li {
@@ -447,7 +453,7 @@ hr {
 }
 
 #box {
-	border-left: 5px solid #ff6d00;
+	border-left: 5px solid var(--accent);
 	margin: 10px;
 	padding: 10px;
 }
@@ -708,5 +714,5 @@ tfoot td {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #ff6d00;
+	background: var(--accent);
 }
