@@ -6,7 +6,6 @@ modal.onclick = function () {
 
 function show(img) {
 	var modalImg = document.getElementById("bigview");
-	var source = window.getComputedStyle(img, false).backgroundImage.slice(5, -2) || img.src;
 	modal.style.display = "block";
-	modalImg.src = source;
+	modalImg.src = img.src;
 }
